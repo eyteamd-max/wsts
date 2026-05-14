@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>杀戮尖塔2娘化MOD站</title>
+    <!-- 修复 Chrome 图片加载 -->
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
     <style>
         :root {
             --bg: #faf7f4;
@@ -347,15 +348,47 @@
             font-size: 0.9rem; margin-top: 4px; display: inline-block;
         }
         .desc-toggle:hover { text-decoration: underline; }
-        .modal-author { font-size: 1rem; margin: 12px 0; color: var(--text-primary); }
-        .modal-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+
+        /* 作者信息样式增强 */
+        .modal-author {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 18px 0 8px;
+            color: var(--text-primary);
+        }
+        /* 作者主页区域 */
+        .author-links-section {
+            margin: 8px 0 18px;
+        }
+        .author-links-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            display: block;
+            font-weight: 500;
+        }
+        .modal-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
         .modal-link {
-            padding: 8px 20px; border: var(--border-width) solid var(--border-dark);
-            border-radius: 20px; text-decoration: none; color: var(--text-primary);
-            font-weight: 600; font-size: 0.9rem; transition: 0.2s;
+            padding: 8px 20px;
+            border: var(--border-width) solid var(--border-dark);
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
             background: #fffdfb;
         }
-        .modal-link:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
+        .modal-link:hover {
+            background: var(--strawberry-light);
+            color: #fff;
+            border-color: #c97a7a;
+        }
+
         .modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 20px; }
         .modal-tag {
             padding: 5px 16px; border: 2px solid var(--border-dark); border-radius: 20px;
@@ -363,7 +396,13 @@
         }
         .modal-tag.nsfw { background: #ffe8e8; border-color: #f08c8c; color: #b14b4b; }
         .modal-tag.sfw { background: #e8f5e8; border-color: #8cc8a0; color: #3d6b4f; }
-        .modal-download { margin-top: 24px; }
+
+        /* 下载区域分隔 */
+        .download-section {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 2px dashed var(--border-dark);
+        }
         .download-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -502,8 +541,11 @@
                 <span class="desc-toggle" id="descToggle" style="display:none;">展开全文</span>
             </div>
             <p class="modal-author" id="modalAuthor"></p>
-            <div class="modal-links" id="modalLinks"></div>
-            <div class="modal-download">
+            <div class="author-links-section">
+                <span class="author-links-label">作者主页：</span>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+            <div class="download-section">
                 <div class="download-buttons" id="downloadButtons"></div>
             </div>
         </div>
@@ -610,7 +652,6 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
             }
 
-            // 打开详情弹窗
             function openModal(mod) {
                 currentImages = [];
                 if (mod.images && mod.images.length > 0) {
@@ -643,8 +684,10 @@
                     }
                 }, 50);
 
+                // 作者（加粗醒目）
                 modalAuthor.textContent = '作者：' + (mod.author || '佚名');
 
+                // 作者主页链接
                 modalLinks.innerHTML = '';
                 if (mod.authorLinks) {
                     const links = [
@@ -665,7 +708,7 @@
                     });
                 }
 
-                // 渲染下载按钮
+                // 下载按钮
                 downloadButtons.innerHTML = '';
                 const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
                     ? mod.downloadLinks
@@ -705,17 +748,13 @@
                 if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active');
             });
 
-            // 点击标签填入搜索框
             function handleTagClick(tagText) {
                 searchInput.value = tagText;
-                // 切换回“全部MOD”以保证能看到所有相关结果
                 document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
                 const allTag = document.querySelector('.category-tag[data-category="all"]');
                 if (allTag) allTag.classList.add('active');
                 activeCategory = 'all';
-                // 重新加载全部数据（如果当前不是all），但为了立即搜索，直接filterMods即可
                 filterMods();
-                // 让搜索框获得焦点（可选）
                 searchInput.focus();
             }
 
@@ -758,13 +797,11 @@
                             <button class="mod-download-btn view-detail-btn">查看详情</button>
                         </div>`;
 
-                    // 仅“查看详情”按钮打开弹窗
                     card.querySelector('.view-detail-btn').addEventListener('click', (e) => {
                         e.stopPropagation();
                         openModal(mod);
                     });
 
-                    // 标签点击事件
                     card.querySelectorAll('.mod-tag-item').forEach(tagEl => {
                         tagEl.addEventListener('click', (e) => {
                             e.stopPropagation();
