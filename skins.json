@@ -22,13 +22,7 @@
       "bilibili": ""
     },
     "tags": ["sfw", "测试"],
-    "downloadUrl": "https://example.com/download/testA.zip",
-    "videos": [
-      {
-        "url": "https://b23.tv/59FbIWm",
-        "platform": "bilibili"
-      }
-    ]
+    "downloadUrl": "https://example.com/download/testA.zip"
   },
   {
     "id": 2,
@@ -53,12 +47,6 @@
       "bilibili": "https://space.bilibili.com/111222"
     },
     "tags": ["nsfw", "测试", "高质感"],
-    "downloadUrl": "",
-    "videos": [
-      {
-        "url": "https://example.com/testB_preview.mp4",
-        "platform": "direct"
-      }
-    ]
+    "downloadUrl": ""
   }
 ]
