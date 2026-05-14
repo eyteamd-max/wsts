@@ -12,26 +12,21 @@
     "coverImage": "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
     "images": [
       "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
-      "https://example.com/screenshot2.jpg",
-      "https://example.com/screenshot3.jpg"
+      "https://example.com/screenshot2.jpg"
     ],
     "description": "将原版商人替换为可爱的猫娘形象，并附带全日语配音，让爬塔之旅充满喵喵声。",
     "author": "猫猫制造局",
     "authorLinks": {
       "twitter": "https://twitter.com/example",
       "pixiv": "https://www.pixiv.net/users/123456",
-      "bilibili": "https://m.bilibili.com/video/BV1Tr5s6pEUg?buvid=XU8E9758B8FDA5012E21EA445D39C4190B0E1&from_spmid=search.search-result.0.0&is_story_h5=false&mid=RdHpPh6rtHzqgdxcKDkJgA%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=0d9583ba-b87c-42ee-bca7-13971688d88b&share_source=COPY&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1778737741&unique_k=59FbIWm&up_id=40706073"
+      "bilibili": "https://space.bilibili.com/123456"
     },
     "tags": ["sfw", "配音", "商人"],
     "downloadUrl": "https://example.com/download/mod1.zip",
     "videos": [
       {
-        "url": "https://www.bilibili.com/video/BV123456/",
+        "url": "https://b23.tv/59FbIWm",
         "platform": "bilibili"
-      },
-      {
-        "url": "https://example.com/gameplay.mp4",
-        "platform": "direct"
       }
     ]
   },
@@ -48,15 +43,14 @@
     "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
     "images": [
       "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
-      "https://example.com/piggy2.jpg",
-      "https://example.com/piggy3.jpg"
+      "https://example.com/piggy2.jpg"
     ],
     "description": "将故障机器人变成可爱的猪猪造型，附带全新音效和动作。",
     "author": "养猪专业户",
     "authorLinks": {
       "twitter": "",
       "pixiv": "",
-      "bilibili": "https://b23.tv/PnrX9Tn"
+      "bilibili": "https://space.bilibili.com/654321"
     },
     "tags": ["nsfw", "恶搞"],
     "downloadUrl": "https://example.com/download/mod2.zip",
