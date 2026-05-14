@@ -257,7 +257,7 @@
         }
         .mod-download-btn:hover { background:#fff; color:var(--strawberry-milk); transform:scale(1.07); }
 
-        /* ========== 全屏详情弹窗 ========== */
+        /* 全屏详情弹窗 */
         .modal-overlay {
             display: none; position: fixed; inset: 0; background: var(--bg);
             z-index: 300; overflow-y: auto;
@@ -330,20 +330,43 @@
         }
         .video-container video { width: 100%; display: block; }
 
-        /* 图片灯箱 */
+        /* ========== 优化后的图片灯箱 ========== */
         .lightbox-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
-            z-index: 400; align-items: center; justify-content: center;
+            display: none; position: fixed; inset: 0;
+            background: rgba(250, 247, 244, 0.92); /* 奶白色半透明 */
+            backdrop-filter: blur(12px);           /* 模糊背景，融入页面 */
+            z-index: 400;
+            align-items: center; justify-content: center;
         }
         .lightbox-overlay.active { display: flex; }
+
         .lightbox-img {
-            max-width: 90%; max-height: 90%; border-radius: 16px;
-            border: 3px solid #fff; box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            max-width: 92%; max-height: 92%;
+            border-radius: 24px;                  /* 大圆角，软萌 */
+            box-shadow: var(--shadow-deep);       /* 使用页面统一的深投影 */
+            border: none;                          /* 去掉白色边框 */
+            transition: transform 0.3s var(--transition-bounce);
+            cursor: zoom-out;
         }
+        .lightbox-img:hover { transform: scale(1.02); }
+
         .lightbox-close {
-            position: absolute; top: 20px; right: 30px;
-            font-size: 2rem; color: #fff; cursor: pointer;
-            background: none; border: none;
+            position: fixed;
+            top: 16px; right: 24px; z-index: 410;
+            font-size: 2rem; cursor: pointer;
+            color: var(--text-primary);
+            background: #fffdfb;
+            border: var(--border-width) solid var(--border-dark);
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+            line-height: 1;
+            transition: all 0.2s;
+        }
+        .lightbox-close:hover {
+            background: var(--strawberry-light);
+            color: #fff;
+            border-color: #c97a7a;
         }
 
         .footer { text-align:center; padding:30px 4px 20px; color:var(--text-muted); font-size:0.9rem; }
@@ -412,20 +435,17 @@
     <div class="modal-overlay" id="modalOverlay">
         <button class="modal-close" id="modalClose">&times;</button>
         <div class="modal-content" id="modalContent">
-            <!-- 封面图可点击放大 -->
             <div class="modal-cover-wrapper" id="modalCoverWrapper">
                 <img class="modal-cover-img" id="modalCover" src="" alt="MOD封面">
             </div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tags" id="modalTags"></div>
-            <!-- 描述折叠区域 -->
             <div class="modal-description">
                 <div class="desc-text" id="modalDescText"></div>
                 <span class="desc-toggle" id="descToggle" style="display:none;">展开全文</span>
             </div>
             <p class="modal-author" id="modalAuthor"></p>
             <div class="modal-links" id="modalLinks"></div>
-            <!-- 视频预览 -->
             <div class="video-container" id="modalVideo" style="display:none;"></div>
             <div class="modal-download">
                 <a class="mod-download-btn" id="modalDownloadBtn" href="#" target="_blank">点击下载</a>
@@ -433,10 +453,10 @@
         </div>
     </div>
 
-    <!-- 图片灯箱 -->
+    <!-- 优化后的图片灯箱 -->
     <div class="lightbox-overlay" id="lightboxOverlay">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <img class="lightbox-img" id="lightboxImg" src="" alt="大图">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="查看大图">
     </div>
 
     <script>
@@ -568,6 +588,7 @@
                     lightboxOverlay.classList.add('active');
                 }
             });
+
             lightboxClose.addEventListener('click', () => lightboxOverlay.classList.remove('active'));
             lightboxOverlay.addEventListener('click', (e) => {
                 if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active');
