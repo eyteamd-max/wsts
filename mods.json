@@ -27,6 +27,13 @@
       { "text": "度盘", "url": "https://pan.baidu.com/s/xxxx" },
       { "text": "夸克", "url": "https://pan.quark.cn/s/xxxx" },
       { "text": "OneDrive云盘", "url": "https://onedrive.live.com/xxxx" }
+    ],
+    "previewImages": [
+      "https://example.com/preview1.jpg",
+      "https://example.com/preview2.jpg"
+    ],
+    "previewVideos": [
+      { "url": "https://example.com/gameplay.mp4", "poster": "https://example.com/poster1.jpg" }
     ]
   },
   {
@@ -55,6 +62,8 @@
     "downloadLinks": [
       { "text": "度盘", "url": "https://pan.baidu.com/s/yyyy" },
       { "text": "M盘", "url": "https://example.com/mega/mod2" }
-    ]
+    ],
+    "previewImages": [],
+    "previewVideos": []
   }
 ]
