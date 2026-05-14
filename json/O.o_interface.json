@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "测试娘化皮肤A",
+    "category": "skin",
+    "size": "58MB",
+    "date": "5/13",
+    "badge": "推荐",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg, #fce4e4 0%, #f8d0d0 35%, #ffe8e0 100%)",
+    "coverChar": "加载中…",
+    "coverImage": "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
+    "images": [
+      "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
+      "https://example.com/testA_2.jpg"
+    ],
+    "description": "一个测试用娘化皮肤，带有可爱的猫耳和尾巴。",
+    "author": "测试员A",
+    "authorLinks": {
+      "twitter": "",
+      "pixiv": "https://www.pixiv.net/users/000000",
+      "bilibili": ""
+    },
+    "tags": ["sfw", "测试"],
+    "downloadLinks": [
+      { "text": "夸克", "url": "https://pan.quark.cn/s/testA" }
+    ],
+    "previewImages": ["https://example.com/preview_testA.jpg"],
+    "previewVideos": []
+  },
+  {
+    "id": 2,
+    "title": "测试娘化皮肤B",
+    "category": "skin",
+    "size": "72MB",
+    "date": "5/10",
+    "badge": "高赞",
+    "badgeClass": "heart",
+    "coverGradient": "linear-gradient(135deg, #e8e0f0 0%, #d5c8e8 35%, #e8ddf5 100%)",
+    "coverChar": "加载中…",
+    "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+    "images": [
+      "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+      "https://example.com/testB_2.jpg"
+    ],
+    "description": "另一个测试皮肤，风格更偏向成熟御姐。",
+    "author": "测试员B",
+    "authorLinks": {
+      "twitter": "https://twitter.com/test",
+      "pixiv": "",
+      "bilibili": "https://space.bilibili.com/111222"
+    },
+    "tags": ["nsfw", "测试", "高质感"],
+    "downloadLinks": [],
+    "previewImages": [],
+    "previewVideos": [
+      { "url": "https://example.com/testB_preview.mp4", "poster": "https://example.com/poster_testB.jpg" }
+    ]
+  }
+]
