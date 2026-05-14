@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "测试",
+    "title": "测试1",
     "category": "skin",
     "size": "58MB",
     "date": "5/13",
@@ -13,14 +13,14 @@
   },
   {
     "id": 2,
-    "title": "测试",
+    "title": "测试2",
     "category": "skin",
     "size": "72MB",
     "date": "5/10",
     "badge": "高赞",
     "badgeClass": "heart",
     "coverGradient": "linear-gradient(135deg, #e8e0f0 0%, #d5c8e8 35%, #e8ddf5 100%)",
-    "coverChar": "",
+    "coverChar": "🥹",
     "coverImage": "https://example.com/ninja.png"
   }
 ]
