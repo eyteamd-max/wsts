@@ -586,17 +586,36 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
             }
 
+            /*
+             * 解析B站视频链接，提取BV号
+             * 支持格式：
+             * - https://www.bilibili.com/video/BVxxx
+             * - https://m.bilibili.com/video/BVxxx
+             * - https://b23.tv/xxxxx (短链接)
+             */
             async function resolveBvid(url) {
                 if (!url) return null;
+                // 先匹配标准BV链接（包括PC和移动端）
                 const bvMatch = url.match(/bilibili\.com\/video\/(BV[a-zA-Z0-9]+)/);
                 if (bvMatch) return bvMatch[1];
+                
+                // 处理b23.tv短链接
                 if (url.includes('b23.tv')) {
                     try {
-                        const resp = await fetch(url, { method: 'HEAD', redirect: 'follow' });
+                        // 确保URL有协议头
+                        const targetUrl = url.startsWith('http') ? url : 'https://' + url;
+                        // 发送HEAD请求，手动处理重定向以获取最终URL
+                        const resp = await fetch(targetUrl, {
+                            method: 'HEAD',
+                            redirect: 'follow',
+                            credentials: 'omit' // 避免携带Cookie导致异常
+                        });
                         const finalUrl = resp.url;
-                        const bv = finalUrl.match(/bilibili\.com\/video\/(BV[a-zA-Z0-9]+)/);
-                        return bv ? bv[1] : null;
+                        // 在最终URL中匹配BV号
+                        const bvFromFinal = finalUrl.match(/bilibili\.com\/video\/(BV[a-zA-Z0-9]+)/);
+                        if (bvFromFinal) return bvFromFinal[1];
                     } catch (e) {
+                        console.error('解析b23.tv短链接失败:', e);
                         return null;
                     }
                 }
@@ -606,21 +625,28 @@
             function createBilibiliVideoBlock(originalUrl, bvid) {
                 const container = document.createElement('div');
                 container.className = 'video-container';
+                
+                // 创建iframe播放器
                 const iframe = document.createElement('iframe');
-                iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1`;
+                iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&high_quality=1`;
                 iframe.width = '100%';
                 iframe.height = '300';
                 iframe.allowFullscreen = true;
                 iframe.style.borderRadius = '12px';
+                iframe.style.border = 'none';
                 container.appendChild(iframe);
+                
+                // 创建备用跳转链接
                 const linkBtn = document.createElement('a');
                 linkBtn.href = originalUrl;
                 linkBtn.target = '_blank';
+                linkBtn.rel = 'noopener noreferrer';
                 linkBtn.className = 'modal-link';
                 linkBtn.textContent = '在 Bilibili 观看';
-                linkBtn.style.display = 'block';
+                linkBtn.style.display = 'inline-block';
                 linkBtn.style.marginTop = '8px';
                 container.appendChild(linkBtn);
+                
                 return container;
             }
 
@@ -633,6 +659,7 @@
                     const a = document.createElement('a');
                     a.href = url;
                     a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
                     a.className = 'modal-link';
                     a.textContent = '点击此处观看视频';
                     wrapper.appendChild(a);
@@ -647,14 +674,15 @@
                 for (const vid of videos) {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'video-container';
-                    wrapper.innerHTML = '<span>视频加载中...</span>';
+                    wrapper.innerHTML = '<p style="text-align:center;color:var(--text-secondary);">视频加载中...</p>';
                     modalVideosContainer.appendChild(wrapper);
 
                     if (vid.platform === 'bilibili' && vid.url) {
                         const bvid = await resolveBvid(vid.url);
                         wrapper.innerHTML = '';
                         if (bvid) {
-                            wrapper.appendChild(createBilibiliVideoBlock(vid.url, bvid));
+                            const videoBlock = createBilibiliVideoBlock(vid.url, bvid);
+                            wrapper.appendChild(videoBlock);
                         } else {
                             wrapper.appendChild(createVideoPlaceholder('无法解析视频链接', vid.url));
                         }
@@ -667,7 +695,7 @@
                         videoEl.style.borderRadius = '12px';
                         wrapper.appendChild(videoEl);
                     } else {
-                        wrapper.innerHTML = '⚠️ 视频链接缺失';
+                        wrapper.innerHTML = '<p style="text-align:center;color:var(--text-secondary);">⚠️ 视频链接缺失</p>';
                     }
                 }
             }
@@ -719,6 +747,7 @@
                             a.className = 'modal-link';
                             a.href = link.url;
                             a.target = '_blank';
+                            a.rel = 'noopener noreferrer';
                             a.textContent = link.name;
                             modalLinks.appendChild(a);
                         }
