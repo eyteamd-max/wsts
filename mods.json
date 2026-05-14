@@ -19,7 +19,7 @@
     "authorLinks": {
       "twitter": "https://twitter.com/example",
       "pixiv": "https://www.pixiv.net/users/123456",
-      "bilibili": "https://space.bilibili.com/123456"
+      "bilibili": "https://m.bilibili.com/video/BV1Tr5s6pEUg?buvid=XU8E9758B8FDA5012E21EA445D39C4190B0E1&from_spmid=search.search-result.0.0&is_story_h5=false&mid=RdHpPh6rtHzqgdxcKDkJgA%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=0d9583ba-b87c-42ee-bca7-13971688d88b&share_source=COPY&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1778737741&unique_k=59FbIWm&up_id=40706073"
     },
     "tags": ["sfw", "配音", "商人"],
     "downloadUrl": "https://example.com/download/mod1.zip",
@@ -50,7 +50,7 @@
     "authorLinks": {
       "twitter": "",
       "pixiv": "",
-      "bilibili": "https://space.bilibili.com/654321"
+      "bilibili": "https://b23.tv/59FbIWm"
     },
     "tags": ["nsfw", "恶搞"],
     "downloadUrl": "https://example.com/download/mod2.zip",
