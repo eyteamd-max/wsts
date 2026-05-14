@@ -47,6 +47,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* 加载动画 */
         .loading-overlay {
             position: fixed; inset: 0; z-index: 9999;
             background: var(--bg);
@@ -102,7 +103,6 @@
         .main-container { max-width: 1100px; margin: 0 auto; padding: 24px 28px 60px; }
 
         .header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 28px; }
-
         .logo-area { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
         .logo-img { max-height: 100px; width: auto; display: block; border-radius: 16px; object-fit: contain; }
         .logo-tower { display: none; flex-direction: column; align-items: center; gap: 0; }
@@ -254,10 +254,11 @@
             display:inline-block; padding:11px 26px; background:var(--strawberry-milk);
             color:#fff; border:var(--border-width) solid #c97a7a; border-radius:30px;
             font-weight:700; cursor:pointer; transition:all 0.3s var(--transition-bounce);
+            text-decoration: none;
         }
         .mod-download-btn:hover { background:#fff; color:var(--strawberry-milk); transform:scale(1.07); }
 
-        /* 详情弹窗 */
+        /* ========== 详情弹窗 ========== */
         .modal-overlay {
             display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4);
             z-index: 300; align-items: center; justify-content: center;
@@ -274,9 +275,36 @@
             font-size: 1.6rem; cursor: pointer; color: var(--text-secondary);
             background: none; border: none; line-height: 1;
         }
-        .modal-cover { width: 100%; border-radius: 16px; margin-bottom: 18px; border: 2px solid var(--border-dark); }
-        .modal-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; }
-        .modal-description { margin: 14px 0; color: var(--text-secondary); line-height: 1.7; }
+        /* 封面图片容器，可点击放大 */
+        .modal-cover-wrapper {
+            position: relative; cursor: zoom-in;
+            border-radius: 16px; overflow: hidden; margin-bottom: 18px;
+            border: 2px solid var(--border-dark);
+        }
+        .modal-cover-img {
+            width: 100%; display: block;
+        }
+        /* 描述文本折叠 */
+        .modal-description {
+            margin: 14px 0; color: var(--text-secondary); line-height: 1.7;
+            position: relative;
+        }
+        .desc-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;       /* 默认显示3行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .desc-text.expanded {
+            -webkit-line-clamp: unset;
+            display: block;
+        }
+        .desc-toggle {
+            color: var(--strawberry-milk); font-weight: 600; cursor: pointer;
+            font-size: 0.9rem; margin-top: 4px; display: inline-block;
+        }
+        .desc-toggle:hover { text-decoration: underline; }
         .modal-author { font-size: 0.95rem; margin: 10px 0; color: var(--text-primary); }
         .modal-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
         .modal-link {
@@ -293,6 +321,28 @@
         .modal-tag.nsfw { background: #ffe8e8; border-color: #f08c8c; color: #b14b4b; }
         .modal-tag.sfw { background: #e8f5e8; border-color: #8cc8a0; color: #3d6b4f; }
         .modal-download { margin-top: 16px; text-align: right; }
+        /* 视频容器 */
+        .video-container {
+            margin: 16px 0; border-radius: 16px; overflow: hidden;
+            border: 2px solid var(--border-dark);
+        }
+        .video-container video { width: 100%; display: block; }
+
+        /* ========== 图片灯箱 ========== */
+        .lightbox-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+            z-index: 400; align-items: center; justify-content: center;
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-img {
+            max-width: 90%; max-height: 90%; border-radius: 16px;
+            border: 3px solid #fff; box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute; top: 20px; right: 30px;
+            font-size: 2rem; color: #fff; cursor: pointer;
+            background: none; border: none;
+        }
 
         .footer { text-align:center; padding:30px 4px 20px; color:var(--text-muted); font-size:0.9rem; }
 
@@ -359,20 +409,36 @@
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content" id="modalContent">
             <button class="modal-close" id="modalClose">&times;</button>
-            <img class="modal-cover" id="modalCover" src="" alt="MOD封面">
+            <!-- 封面图可点击放大 -->
+            <div class="modal-cover-wrapper" id="modalCoverWrapper">
+                <img class="modal-cover-img" id="modalCover" src="" alt="MOD封面">
+            </div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tags" id="modalTags"></div>
-            <p class="modal-description" id="modalDesc"></p>
+            <!-- 描述折叠区域 -->
+            <div class="modal-description">
+                <div class="desc-text" id="modalDescText"></div>
+                <span class="desc-toggle" id="descToggle" style="display:none;">展开全文</span>
+            </div>
             <p class="modal-author" id="modalAuthor"></p>
             <div class="modal-links" id="modalLinks"></div>
+            <!-- 视频预览区域 -->
+            <div class="video-container" id="modalVideo" style="display:none;"></div>
             <div class="modal-download">
-                <button class="mod-download-btn" id="modalDownloadBtn">点击下载</button>
+                <a class="mod-download-btn" id="modalDownloadBtn" href="#" target="_blank">点击下载</a>
             </div>
         </div>
     </div>
 
+    <!-- 图片灯箱 -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="大图">
+    </div>
+
     <script>
         (function() {
+            // 加载动画
             const loadingOverlay = document.getElementById('loadingOverlay');
             const mainContent = document.getElementById('mainContent');
             mainContent.style.opacity = '0';
@@ -391,30 +457,35 @@
             const searchDropdown = document.getElementById('searchDropdown');
             const searchContainer = document.getElementById('searchContainer');
 
-            // 弹窗相关
+            // 弹窗元素
             const modalOverlay = document.getElementById('modalOverlay');
             const modalClose = document.getElementById('modalClose');
             const modalCover = document.getElementById('modalCover');
             const modalTitle = document.getElementById('modalTitle');
             const modalTags = document.getElementById('modalTags');
-            const modalDesc = document.getElementById('modalDesc');
+            const modalDescText = document.getElementById('modalDescText');
+            const descToggle = document.getElementById('descToggle');
             const modalAuthor = document.getElementById('modalAuthor');
             const modalLinks = document.getElementById('modalLinks');
             const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+            const modalVideo = document.getElementById('modalVideo');
+            const modalCoverWrapper = document.getElementById('modalCoverWrapper');
+
+            // 灯箱元素
+            const lightboxOverlay = document.getElementById('lightboxOverlay');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxImg = document.getElementById('lightboxImg');
 
             const dataSources = { all: 'mods.json', skin: 'skins.json' };
             const dataCache = {};
 
             // 打开详情弹窗
             function openModal(mod) {
-                // 封面图：优先用 coverImage，否则用渐变背景或占位
+                // 封面
                 modalCover.src = mod.coverImage || '';
                 modalCover.style.background = mod.coverGradient || '#f0f0f0';
                 modalTitle.textContent = mod.title;
-                // 描述
-                modalDesc.textContent = mod.description || '暂无介绍';
-                // 作者
-                modalAuthor.textContent = '作者：' + (mod.author || '佚名');
+
                 // 标签
                 modalTags.innerHTML = '';
                 if (mod.tags && Array.isArray(mod.tags)) {
@@ -425,7 +496,25 @@
                         modalTags.appendChild(span);
                     });
                 }
-                // 链接
+
+                // 描述（折叠处理）
+                modalDescText.textContent = mod.description || '暂无介绍';
+                // 重置折叠状态
+                modalDescText.classList.remove('expanded');
+                descToggle.style.display = 'none';
+                descToggle.textContent = '展开全文';
+                // 判断是否需要折叠按钮
+                // 使用 line-height 和行数判断，这里简单用 scrollHeight 与 clientHeight 比较
+                setTimeout(() => {
+                    if (modalDescText.scrollHeight > modalDescText.clientHeight + 2) {
+                        descToggle.style.display = 'inline-block';
+                    }
+                }, 50);
+
+                // 作者
+                modalAuthor.textContent = '作者：' + (mod.author || '佚名');
+
+                // 外部链接
                 modalLinks.innerHTML = '';
                 if (mod.authorLinks) {
                     const links = [
@@ -444,21 +533,62 @@
                         }
                     });
                 }
-                // 下载按钮
-                modalDownloadBtn.onclick = () => {
-                    alert(`正在准备下载：${mod.title}`);
-                };
+
+                // 下载链接
+                // 如果 JSON 中有 downloadUrl，直接使用；否则用占位符
+                const dlUrl = mod.downloadUrl || '#';
+                modalDownloadBtn.href = dlUrl;
+                modalDownloadBtn.onclick = null;
+
+                // 视频预览
+                modalVideo.innerHTML = '';
+                modalVideo.style.display = 'none';
+                if (mod.videoUrl) {
+                    // 支持直接 mp4 链接或 B站嵌入（简单判断）
+                    if (mod.videoUrl.includes('bilibili.com/video/')) {
+                        // 提取 BV 号简单嵌入 iframe
+                        const bvid = mod.videoUrl.split('/video/')[1]?.split('?')[0];
+                        if (bvid) {
+                            modalVideo.innerHTML = `<iframe src="https://player.bilibili.com/player.html?bvid=${bvid}&page=1" 
+                                width="100%" height="300" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>`;
+                            modalVideo.style.display = 'block';
+                        }
+                    } else {
+                        // 普通视频
+                        modalVideo.innerHTML = `<video controls src="${mod.videoUrl}" style="width:100%; border-radius:12px;"></video>`;
+                        modalVideo.style.display = 'block';
+                    }
+                }
+
                 modalOverlay.classList.add('active');
             }
 
             // 关闭弹窗
-            modalClose.addEventListener('click', () => {
-                modalOverlay.classList.remove('active');
-            });
+            modalClose.addEventListener('click', () => modalOverlay.classList.remove('active'));
             modalOverlay.addEventListener('click', (e) => {
                 if (e.target === modalOverlay) modalOverlay.classList.remove('active');
             });
 
+            // 描述展开/折叠
+            descToggle.addEventListener('click', () => {
+                const text = modalDescText;
+                const expanded = text.classList.toggle('expanded');
+                descToggle.textContent = expanded ? '收起' : '展开全文';
+            });
+
+            // 封面图点击打开灯箱
+            modalCoverWrapper.addEventListener('click', () => {
+                if (modalCover.src && modalCover.src !== window.location.href) {
+                    lightboxImg.src = modalCover.src;
+                    lightboxOverlay.classList.add('active');
+                }
+            });
+            lightboxClose.addEventListener('click', () => lightboxOverlay.classList.remove('active'));
+            lightboxOverlay.addEventListener('click', (e) => {
+                if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active');
+            });
+
+            // ---------- 卡片渲染 ----------
             function renderModCards(dataArray) {
                 modGrid.innerHTML = '';
                 if (dataArray.length === 0) {
@@ -469,7 +599,6 @@
                     const card = document.createElement('div');
                     card.className = 'mod-card';
                     const hasCoverImg = mod.coverImage && mod.coverImage.trim() !== '';
-                    // 构建标签显示
                     let tagsHtml = '';
                     if (mod.tags && mod.tags.length) {
                         tagsHtml = '<div class="mod-tag-list">' +
@@ -498,21 +627,25 @@
                             </div>
                             <button class="mod-download-btn">点击下载</button>
                         </div>`;
-                    // 点击卡片整体打开详情弹窗（下载按钮除外）
+                    // 点击卡片打开详情
                     card.addEventListener('click', (e) => {
-                        // 如果点击了下载按钮，不打开弹窗
                         if (e.target.closest('.mod-download-btn')) return;
                         openModal(mod);
                     });
+                    // 下载按钮
                     card.querySelector('.mod-download-btn').addEventListener('click', (e) => {
                         e.stopPropagation();
-                        alert(`正在准备下载：${mod.title}`);
+                        const url = mod.downloadUrl;
+                        if (url) {
+                            window.open(url, '_blank');
+                        } else {
+                            alert('暂无下载链接，请在详情中查看作者主页获取。');
+                        }
                     });
                     modGrid.appendChild(card);
                 });
             }
 
-            // 搜索过滤：同时匹配标题和标签
             function filterMods() {
                 let filtered = [...modData];
                 if (activeCategory !== 'all') {
@@ -521,9 +654,7 @@
                 const query = searchInput.value.trim().toLowerCase();
                 if (query) {
                     filtered = filtered.filter(m => {
-                        // 标题匹配
                         if (m.title.toLowerCase().includes(query)) return true;
-                        // 标签匹配
                         if (m.tags && m.tags.some(tag => tag.toLowerCase().includes(query))) return true;
                         return false;
                     });
@@ -604,9 +735,7 @@
                 if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
             });
 
-            window.addEventListener('DOMContentLoaded', () => {
-                loadModData('all');
-            });
+            window.addEventListener('DOMContentLoaded', () => loadModData('all'));
         })();
     </script>
 </body>
