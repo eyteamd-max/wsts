@@ -24,7 +24,9 @@
     "tags": ["sfw", "测试"],
     "downloadLinks": [
       { "text": "夸克", "url": "https://pan.quark.cn/s/testA" }
-    ]
+    ],
+    "previewImages": ["https://example.com/preview_testA.jpg"],
+    "previewVideos": []
   },
   {
     "id": 2,
@@ -49,6 +51,10 @@
       "bilibili": "https://space.bilibili.com/111222"
     },
     "tags": ["nsfw", "测试", "高质感"],
-    "downloadLinks": []
+    "downloadLinks": [],
+    "previewImages": [],
+    "previewVideos": [
+      { "url": "https://example.com/testB_preview.mp4", "poster": "https://example.com/poster_testB.jpg" }
+    ]
   }
 ]
