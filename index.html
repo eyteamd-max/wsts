@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杀戮尖塔2娘化MOD站14:36</title>
+    <title>杀戮尖塔2娘化MOD站</title>
     <style>
         :root {
             --bg: #faf7f4;
@@ -356,16 +356,7 @@
         .modal-tag.nsfw { background: #ffe8e8; border-color: #f08c8c; color: #b14b4b; }
         .modal-tag.sfw { background: #e8f5e8; border-color: #8cc8a0; color: #3d6b4f; }
         .modal-download { margin-top: 24px; text-align: center; }
-        .video-container {
-            margin: 24px 0; border-radius: 20px; overflow: hidden;
-            border: var(--border-width) solid var(--border-dark);
-            background: #fafafa;
-            padding: 8px;
-        }
-        .video-container iframe,
-        .video-container video {
-            width: 100%; height: 300px; border: none; border-radius: 12px;
-        }
+
         .lightbox-overlay {
             display: none; position: fixed; inset: 0;
             background: rgba(250, 247, 244, 0.92);
@@ -477,7 +468,6 @@
             </div>
             <p class="modal-author" id="modalAuthor"></p>
             <div class="modal-links" id="modalLinks"></div>
-            <div id="modalVideosContainer"></div>
             <div class="modal-download">
                 <a class="mod-download-btn" id="modalDownloadBtn" href="#" target="_blank">点击下载</a>
             </div>
@@ -523,7 +513,6 @@
             const carouselPrev = document.getElementById('carouselPrev');
             const carouselNext = document.getElementById('carouselNext');
             const carouselContainer = document.getElementById('carouselContainer');
-            const modalVideosContainer = document.getElementById('modalVideosContainer');
 
             const lightboxOverlay = document.getElementById('lightboxOverlay');
             const lightboxClose = document.getElementById('lightboxClose');
@@ -586,120 +575,6 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
             }
 
-            /*
-             * 解析B站视频链接，提取BV号
-             * 支持格式：
-             * - https://www.bilibili.com/video/BVxxx
-             * - https://m.bilibili.com/video/BVxxx
-             * - https://b23.tv/xxxxx (短链接)
-             */
-            async function resolveBvid(url) {
-                if (!url) return null;
-                // 先匹配标准BV链接（包括PC和移动端）
-                const bvMatch = url.match(/bilibili\.com\/video\/(BV[a-zA-Z0-9]+)/);
-                if (bvMatch) return bvMatch[1];
-                
-                // 处理b23.tv短链接
-                if (url.includes('b23.tv')) {
-                    try {
-                        // 确保URL有协议头
-                        const targetUrl = url.startsWith('http') ? url : 'https://' + url;
-                        // 发送HEAD请求，手动处理重定向以获取最终URL
-                        const resp = await fetch(targetUrl, {
-                            method: 'HEAD',
-                            redirect: 'follow',
-                            credentials: 'omit' // 避免携带Cookie导致异常
-                        });
-                        const finalUrl = resp.url;
-                        // 在最终URL中匹配BV号
-                        const bvFromFinal = finalUrl.match(/bilibili\.com\/video\/(BV[a-zA-Z0-9]+)/);
-                        if (bvFromFinal) return bvFromFinal[1];
-                    } catch (e) {
-                        console.error('解析b23.tv短链接失败:', e);
-                        return null;
-                    }
-                }
-                return null;
-            }
-
-            function createBilibiliVideoBlock(originalUrl, bvid) {
-                const container = document.createElement('div');
-                container.className = 'video-container';
-                
-                // 创建iframe播放器
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&high_quality=1`;
-                iframe.width = '100%';
-                iframe.height = '300';
-                iframe.allowFullscreen = true;
-                iframe.style.borderRadius = '12px';
-                iframe.style.border = 'none';
-                container.appendChild(iframe);
-                
-                // 创建备用跳转链接
-                const linkBtn = document.createElement('a');
-                linkBtn.href = originalUrl;
-                linkBtn.target = '_blank';
-                linkBtn.rel = 'noopener noreferrer';
-                linkBtn.className = 'modal-link';
-                linkBtn.textContent = '在 Bilibili 观看';
-                linkBtn.style.display = 'inline-block';
-                linkBtn.style.marginTop = '8px';
-                container.appendChild(linkBtn);
-                
-                return container;
-            }
-
-            function createVideoPlaceholder(message, url) {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'video-container';
-                wrapper.style.textAlign = 'center';
-                wrapper.innerHTML = `<p style="margin:12px;color:var(--text-secondary);">${message}</p>`;
-                if (url) {
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.target = '_blank';
-                    a.rel = 'noopener noreferrer';
-                    a.className = 'modal-link';
-                    a.textContent = '点击此处观看视频';
-                    wrapper.appendChild(a);
-                }
-                return wrapper;
-            }
-
-            async function loadVideos(videos) {
-                modalVideosContainer.innerHTML = '';
-                if (!videos || videos.length === 0) return;
-
-                for (const vid of videos) {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'video-container';
-                    wrapper.innerHTML = '<p style="text-align:center;color:var(--text-secondary);">视频加载中...</p>';
-                    modalVideosContainer.appendChild(wrapper);
-
-                    if (vid.platform === 'bilibili' && vid.url) {
-                        const bvid = await resolveBvid(vid.url);
-                        wrapper.innerHTML = '';
-                        if (bvid) {
-                            const videoBlock = createBilibiliVideoBlock(vid.url, bvid);
-                            wrapper.appendChild(videoBlock);
-                        } else {
-                            wrapper.appendChild(createVideoPlaceholder('无法解析视频链接', vid.url));
-                        }
-                    } else if (vid.url) {
-                        wrapper.innerHTML = '';
-                        const videoEl = document.createElement('video');
-                        videoEl.controls = true;
-                        videoEl.src = vid.url;
-                        videoEl.style.width = '100%';
-                        videoEl.style.borderRadius = '12px';
-                        wrapper.appendChild(videoEl);
-                    } else {
-                        wrapper.innerHTML = '<p style="text-align:center;color:var(--text-secondary);">⚠️ 视频链接缺失</p>';
-                    }
-                }
-            }
-
             function openModal(mod) {
                 currentImages = [];
                 if (mod.images && mod.images.length > 0) {
@@ -756,8 +631,6 @@
 
                 const dlUrl = mod.downloadUrl || '#';
                 modalDownloadBtn.href = dlUrl;
-
-                loadVideos(mod.videos || []);
 
                 modalOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
