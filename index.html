@@ -612,9 +612,10 @@
                 <div class="modal-links" id="modalLinks"></div>
             </div>
             <div class="download-section">
+                <span class="author-links-label">MOD下载：</span>
                 <div class="download-buttons" id="downloadButtons"></div>
             </div>
-            <!-- 新增预览图片/视频折叠区 -->
+            <!-- 预览图片/视频折叠区 -->
             <div class="preview-section">
                 <div class="preview-block">
                     <button class="preview-toggle" data-target="previewImages">预览图片 ▾</button>
@@ -732,7 +733,6 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
             }
 
-            // 处理折叠按钮
             document.querySelectorAll('.preview-toggle').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const targetId = btn.getAttribute('data-target');
@@ -800,6 +800,7 @@
                     });
                 }
 
+                // 下载区域（已包含标题“MOD下载：”，动态添加按钮）
                 downloadButtons.innerHTML = '';
                 const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
                     ? mod.downloadLinks
@@ -814,7 +815,7 @@
                     downloadButtons.appendChild(btn);
                 });
 
-                // 填充预览图片
+                // 预览图片
                 previewImagesDiv.innerHTML = '';
                 previewImagesDiv.classList.remove('open');
                 const imgToggle = document.querySelector('.preview-toggle[data-target="previewImages"]');
@@ -838,7 +839,7 @@
                     previewImagesDiv.innerHTML = '<div class="preview-empty">该MOD猫猫还没有配置图片或视频资源的哦</div>';
                 }
 
-                // 填充预览视频
+                // 预览视频
                 previewVideosDiv.innerHTML = '';
                 previewVideosDiv.classList.remove('open');
                 const vidToggle = document.querySelector('.preview-toggle[data-target="previewVideos"]');
