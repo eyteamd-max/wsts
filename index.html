@@ -246,6 +246,13 @@
             padding: 3px 12px; font-size: 0.72rem; border: 2px solid var(--border-dark);
             border-radius: 20px; background: #fff; color: var(--text-secondary);
             font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mod-tag-item:hover {
+            background: var(--strawberry-light);
+            color: #fff;
+            border-color: #c97a7a;
         }
         .mod-tag-item.nsfw { background: #ffe8e8; border-color: #f08c8c; color: #b14b4b; }
         .mod-tag-item.sfw { background: #e8f5e8; border-color: #8cc8a0; color: #3d6b4f; }
@@ -257,7 +264,7 @@
         }
         .mod-download-btn:hover { background:#fff; color:var(--strawberry-milk); transform:scale(1.07); }
 
-        /* 全屏详情弹窗 */
+        /* 详情弹窗 */
         .modal-overlay {
             display: none; position: fixed; inset: 0; background: var(--bg);
             z-index: 300; overflow-y: auto;
@@ -279,7 +286,6 @@
         }
         .modal-close:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
 
-        /* 图片轮播 */
         .carousel-container {
             position: relative;
             border-radius: 20px; overflow: hidden;
@@ -355,7 +361,32 @@
         }
         .modal-tag.nsfw { background: #ffe8e8; border-color: #f08c8c; color: #b14b4b; }
         .modal-tag.sfw { background: #e8f5e8; border-color: #8cc8a0; color: #3d6b4f; }
-        .modal-download { margin-top: 24px; text-align: center; }
+        .modal-download { margin-top: 24px; }
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+        .download-btn-item {
+            display: inline-block;
+            padding: 10px 22px;
+            background: var(--strawberry-milk);
+            color: #fff;
+            border: var(--border-width) solid #c97a7a;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s var(--transition-bounce);
+            text-decoration: none;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .download-btn-item:hover {
+            background: #fff;
+            color: var(--strawberry-milk);
+            transform: scale(1.05);
+        }
 
         .lightbox-overlay {
             display: none; position: fixed; inset: 0;
@@ -368,12 +399,12 @@
         .lightbox-img {
             max-width: 100%;
             max-height: 100%;
-            border-radius: 0;            /* 去掉圆角 */
-            object-fit: contain;         /* 保持原图比例，完整显示 */
+            border-radius: 0;
+            object-fit: contain;
             box-shadow: var(--shadow-deep);
             border: none;
             transition: transform 0.3s var(--transition-bounce);
-           cursor: zoom-out;
+            cursor: zoom-out;
         }
         .lightbox-img:hover { transform: scale(1.02); }
         .lightbox-close {
@@ -471,7 +502,7 @@
             <p class="modal-author" id="modalAuthor"></p>
             <div class="modal-links" id="modalLinks"></div>
             <div class="modal-download">
-                <a class="mod-download-btn" id="modalDownloadBtn" href="#" target="_blank">点击下载</a>
+                <div class="download-buttons" id="downloadButtons"></div>
             </div>
         </div>
     </div>
@@ -509,7 +540,7 @@
             const descToggle = document.getElementById('descToggle');
             const modalAuthor = document.getElementById('modalAuthor');
             const modalLinks = document.getElementById('modalLinks');
-            const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+            const downloadButtons = document.getElementById('downloadButtons');
             const carouselTrack = document.getElementById('carouselTrack');
             const carouselDots = document.getElementById('carouselDots');
             const carouselPrev = document.getElementById('carouselPrev');
@@ -577,6 +608,7 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
             }
 
+            // 打开详情弹窗
             function openModal(mod) {
                 currentImages = [];
                 if (mod.images && mod.images.length > 0) {
@@ -631,8 +663,21 @@
                     });
                 }
 
-                const dlUrl = mod.downloadUrl || '#';
-                modalDownloadBtn.href = dlUrl;
+                // 渲染下载按钮
+                downloadButtons.innerHTML = '';
+                const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
+                    ? mod.downloadLinks
+                    : (mod.downloadUrl ? [{ text: '下载', url: mod.downloadUrl }] : []);
+                
+                downloadLinks.forEach(dl => {
+                    const btn = document.createElement('a');
+                    btn.className = 'download-btn-item';
+                    btn.href = dl.url;
+                    btn.target = '_blank';
+                    btn.rel = 'noopener noreferrer';
+                    btn.textContent = dl.text;
+                    downloadButtons.appendChild(btn);
+                });
 
                 modalOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -657,6 +702,20 @@
             lightboxOverlay.addEventListener('click', (e) => {
                 if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active');
             });
+
+            // 点击标签填入搜索框
+            function handleTagClick(tagText) {
+                searchInput.value = tagText;
+                // 切换回“全部MOD”以保证能看到所有相关结果
+                document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
+                const allTag = document.querySelector('.category-tag[data-category="all"]');
+                if (allTag) allTag.classList.add('active');
+                activeCategory = 'all';
+                // 重新加载全部数据（如果当前不是all），但为了立即搜索，直接filterMods即可
+                filterMods();
+                // 让搜索框获得焦点（可选）
+                searchInput.focus();
+            }
 
             function renderModCards(dataArray) {
                 modGrid.innerHTML = '';
@@ -694,21 +753,23 @@
                                 <span class="mod-meta-tag">大小 ${mod.size}</span>
                                 <span class="mod-meta-tag">日期 ${mod.date}</span>
                             </div>
-                            <button class="mod-download-btn">点击下载</button>
+                            <button class="mod-download-btn view-detail-btn">查看详情</button>
                         </div>`;
-                    card.addEventListener('click', (e) => {
-                        if (e.target.closest('.mod-download-btn')) return;
+
+                    // 仅“查看详情”按钮打开弹窗
+                    card.querySelector('.view-detail-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
                         openModal(mod);
                     });
-                    card.querySelector('.mod-download-btn').addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const url = mod.downloadUrl;
-                        if (url) {
-                            window.open(url, '_blank');
-                        } else {
-                            alert('暂无下载链接，请在详情中查看作者主页获取。');
-                        }
+
+                    // 标签点击事件
+                    card.querySelectorAll('.mod-tag-item').forEach(tagEl => {
+                        tagEl.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            handleTagClick(tagEl.textContent);
+                        });
                     });
+
                     modGrid.appendChild(card);
                 });
             }
