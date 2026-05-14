@@ -279,16 +279,48 @@
         }
         .modal-close:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
 
-        .modal-cover-wrapper {
-            position: relative; cursor: zoom-in;
-            border-radius: 20px; overflow: hidden; margin-bottom: 24px;
+        /* 图片轮播容器 */
+        .carousel-container {
+            position: relative;
+            border-radius: 20px; overflow: hidden;
+            margin-bottom: 24px;
             border: var(--border-width) solid var(--border-dark);
-            max-width: 100%;
         }
-        .modal-cover-img {
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            cursor: zoom-in;
+        }
+        .carousel-slide img {
             width: 100%; display: block; object-fit: cover;
-            max-height: 50vh;
+            max-height: 55vh;
         }
+        .carousel-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: #fffdfb; border: var(--border-width) solid var(--border-dark);
+            border-radius: 50%; width: 38px; height: 38px;
+            font-size: 1.2rem; cursor: pointer; z-index: 5;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-primary); transition: all 0.2s;
+            box-shadow: var(--shadow-soft);
+        }
+        .carousel-btn:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+        .carousel-dots {
+            display: flex; justify-content: center; gap: 8px;
+            padding: 10px 0;
+        }
+        .carousel-dot {
+            width: 10px; height: 10px; background: #ddd8e5;
+            border-radius: 50%; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .carousel-dot.active { background: var(--strawberry-milk); }
+
         .modal-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; }
         .modal-description { margin: 20px 0; color: var(--text-secondary); line-height: 1.7; }
         .desc-text {
@@ -330,11 +362,10 @@
         }
         .video-container video { width: 100%; display: block; }
 
-        /* ========== 优化后的图片灯箱 ========== */
         .lightbox-overlay {
             display: none; position: fixed; inset: 0;
-            background: rgba(250, 247, 244, 0.92); /* 奶白色半透明 */
-            backdrop-filter: blur(12px);           /* 模糊背景，融入页面 */
+            background: rgba(250, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
             z-index: 400;
             align-items: center; justify-content: center;
         }
@@ -342,9 +373,9 @@
 
         .lightbox-img {
             max-width: 92%; max-height: 92%;
-            border-radius: 24px;                  /* 大圆角，软萌 */
-            box-shadow: var(--shadow-deep);       /* 使用页面统一的深投影 */
-            border: none;                          /* 去掉白色边框 */
+            border-radius: 24px;
+            box-shadow: var(--shadow-deep);
+            border: none;
             transition: transform 0.3s var(--transition-bounce);
             cursor: zoom-out;
         }
@@ -435,8 +466,12 @@
     <div class="modal-overlay" id="modalOverlay">
         <button class="modal-close" id="modalClose">&times;</button>
         <div class="modal-content" id="modalContent">
-            <div class="modal-cover-wrapper" id="modalCoverWrapper">
-                <img class="modal-cover-img" id="modalCover" src="" alt="MOD封面">
+            <!-- 轮播容器 -->
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-track" id="carouselTrack"></div>
+                <button class="carousel-btn prev" id="carouselPrev">&#10094;</button>
+                <button class="carousel-btn next" id="carouselNext">&#10095;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
             </div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tags" id="modalTags"></div>
@@ -446,14 +481,15 @@
             </div>
             <p class="modal-author" id="modalAuthor"></p>
             <div class="modal-links" id="modalLinks"></div>
-            <div class="video-container" id="modalVideo" style="display:none;"></div>
+            <!-- 视频列表区域 -->
+            <div id="modalVideosContainer"></div>
             <div class="modal-download">
                 <a class="mod-download-btn" id="modalDownloadBtn" href="#" target="_blank">点击下载</a>
             </div>
         </div>
     </div>
 
-    <!-- 优化后的图片灯箱 -->
+    <!-- 图片灯箱 -->
     <div class="lightbox-overlay" id="lightboxOverlay">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
         <img class="lightbox-img" id="lightboxImg" src="" alt="查看大图">
@@ -479,9 +515,9 @@
             const searchDropdown = document.getElementById('searchDropdown');
             const searchContainer = document.getElementById('searchContainer');
 
+            // 弹窗元素
             const modalOverlay = document.getElementById('modalOverlay');
             const modalClose = document.getElementById('modalClose');
-            const modalCover = document.getElementById('modalCover');
             const modalTitle = document.getElementById('modalTitle');
             const modalTags = document.getElementById('modalTags');
             const modalDescText = document.getElementById('modalDescText');
@@ -489,8 +525,12 @@
             const modalAuthor = document.getElementById('modalAuthor');
             const modalLinks = document.getElementById('modalLinks');
             const modalDownloadBtn = document.getElementById('modalDownloadBtn');
-            const modalVideo = document.getElementById('modalVideo');
-            const modalCoverWrapper = document.getElementById('modalCoverWrapper');
+            const carouselTrack = document.getElementById('carouselTrack');
+            const carouselDots = document.getElementById('carouselDots');
+            const carouselPrev = document.getElementById('carouselPrev');
+            const carouselNext = document.getElementById('carouselNext');
+            const carouselContainer = document.getElementById('carouselContainer');
+            const modalVideosContainer = document.getElementById('modalVideosContainer');
 
             const lightboxOverlay = document.getElementById('lightboxOverlay');
             const lightboxClose = document.getElementById('lightboxClose');
@@ -499,10 +539,78 @@
             const dataSources = { all: 'mods.json', skin: 'skins.json' };
             const dataCache = {};
 
+            let currentImages = [];     // 当前弹窗的图片数组
+            let currentIndex = 0;      // 当前显示的图片索引
+
+            // 更新轮播
+            function updateCarousel() {
+                if (!currentImages.length) {
+                    carouselContainer.style.display = 'none';
+                    return;
+                }
+                carouselContainer.style.display = 'block';
+                carouselTrack.innerHTML = currentImages.map((src, idx) => `
+                    <div class="carousel-slide" data-index="${idx}">
+                        <img src="${src}" alt="预览图 ${idx+1}">
+                    </div>
+                `).join('');
+                carouselDots.innerHTML = currentImages.map((_, idx) => `
+                    <span class="carousel-dot ${idx === currentIndex ? 'active' : ''}" data-index="${idx}"></span>
+                `).join('');
+
+                carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // 绑定点击跳转灯箱
+                carouselTrack.querySelectorAll('.carousel-slide').forEach(slide => {
+                    slide.addEventListener('click', () => {
+                        const idx = parseInt(slide.dataset.index);
+                        if (currentImages[idx]) {
+                            lightboxImg.src = currentImages[idx];
+                            lightboxOverlay.classList.add('active');
+                        }
+                    });
+                });
+
+                // 指示点事件
+                carouselDots.querySelectorAll('.carousel-dot').forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        const idx = parseInt(e.target.dataset.index);
+                        setCurrentIndex(idx);
+                    });
+                });
+
+                // 箭头事件
+                carouselPrev.onclick = () => {
+                    if (currentImages.length <= 1) return;
+                    setCurrentIndex((currentIndex - 1 + currentImages.length) % currentImages.length);
+                };
+                carouselNext.onclick = () => {
+                    if (currentImages.length <= 1) return;
+                    setCurrentIndex((currentIndex + 1) % currentImages.length);
+                };
+            }
+
+            function setCurrentIndex(idx) {
+                currentIndex = idx;
+                carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+                const dots = carouselDots.querySelectorAll('.carousel-dot');
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+            }
+
             function openModal(mod) {
-                modalCover.src = mod.coverImage || '';
+                // 准备图片数组（优先使用 images，否则退回 coverImage）
+                currentImages = [];
+                if (mod.images && mod.images.length > 0) {
+                    currentImages = mod.images;
+                } else if (mod.coverImage) {
+                    currentImages = [mod.coverImage];
+                }
+                currentIndex = 0;
+                updateCarousel();
+
                 modalTitle.textContent = mod.title;
 
+                // 标签
                 modalTags.innerHTML = '';
                 if (mod.tags && Array.isArray(mod.tags)) {
                     mod.tags.forEach(tag => {
@@ -513,6 +621,7 @@
                     });
                 }
 
+                // 描述
                 modalDescText.textContent = mod.description || '暂无介绍';
                 modalDescText.classList.remove('expanded');
                 descToggle.style.display = 'none';
@@ -523,8 +632,10 @@
                     }
                 }, 50);
 
+                // 作者
                 modalAuthor.textContent = '作者：' + (mod.author || '佚名');
 
+                // 链接
                 modalLinks.innerHTML = '';
                 if (mod.authorLinks) {
                     const links = [
@@ -544,23 +655,27 @@
                     });
                 }
 
+                // 下载
                 const dlUrl = mod.downloadUrl || '#';
                 modalDownloadBtn.href = dlUrl;
 
-                modalVideo.innerHTML = '';
-                modalVideo.style.display = 'none';
-                if (mod.videoUrl) {
-                    if (mod.videoUrl.includes('bilibili.com/video/')) {
-                        const bvid = mod.videoUrl.split('/video/')[1]?.split('?')[0];
-                        if (bvid) {
-                            modalVideo.innerHTML = `<iframe src="https://player.bilibili.com/player.html?bvid=${bvid}&page=1" 
-                                width="100%" height="360" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>`;
-                            modalVideo.style.display = 'block';
+                // 视频列表
+                modalVideosContainer.innerHTML = '';
+                if (mod.videos && mod.videos.length > 0) {
+                    mod.videos.forEach((vid, i) => {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'video-container';
+                        if (vid.platform === 'bilibili' && vid.url.includes('bilibili.com/video/')) {
+                            const bvid = vid.url.split('/video/')[1]?.split('?')[0];
+                            if (bvid) {
+                                wrapper.innerHTML = `<iframe src="https://player.bilibili.com/player.html?bvid=${bvid}&page=1" 
+                                    width="100%" height="300" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>`;
+                            }
+                        } else {
+                            wrapper.innerHTML = `<video controls src="${vid.url}" style="width:100%; border-radius:12px;"></video>`;
                         }
-                    } else {
-                        modalVideo.innerHTML = `<video controls src="${mod.videoUrl}" style="width:100%; border-radius:12px;"></video>`;
-                        modalVideo.style.display = 'block';
-                    }
+                        modalVideosContainer.appendChild(wrapper);
+                    });
                 }
 
                 modalOverlay.classList.add('active');
@@ -582,18 +697,12 @@
                 descToggle.textContent = expanded ? '收起' : '展开全文';
             });
 
-            modalCoverWrapper.addEventListener('click', () => {
-                if (modalCover.src && modalCover.src !== window.location.href) {
-                    lightboxImg.src = modalCover.src;
-                    lightboxOverlay.classList.add('active');
-                }
-            });
-
             lightboxClose.addEventListener('click', () => lightboxOverlay.classList.remove('active'));
             lightboxOverlay.addEventListener('click', (e) => {
                 if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active');
             });
 
+            // 卡片渲染
             function renderModCards(dataArray) {
                 modGrid.innerHTML = '';
                 if (dataArray.length === 0) {
