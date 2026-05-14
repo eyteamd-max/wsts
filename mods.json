@@ -22,7 +22,12 @@
       "bilibili": "https://space.bilibili.com/123456"
     },
     "tags": ["sfw", "配音", "商人"],
-    "downloadUrl": "https://example.com/download/mod1.zip"
+    "downloadLinks": [
+      { "text": "M盘", "url": "https://example.com/mega/mod1" },
+      { "text": "度盘", "url": "https://pan.baidu.com/s/xxxx" },
+      { "text": "夸克", "url": "https://pan.quark.cn/s/xxxx" },
+      { "text": "OneDrive云盘", "url": "https://onedrive.live.com/xxxx" }
+    ]
   },
   {
     "id": 2,
@@ -47,6 +52,9 @@
       "bilibili": "https://space.bilibili.com/654321"
     },
     "tags": ["nsfw", "恶搞"],
-    "downloadUrl": "https://example.com/download/mod2.zip"
+    "downloadLinks": [
+      { "text": "度盘", "url": "https://pan.baidu.com/s/yyyy" },
+      { "text": "M盘", "url": "https://example.com/mega/mod2" }
+    ]
   }
 ]
