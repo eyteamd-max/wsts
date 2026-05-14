@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>杀戮尖塔2娘化MOD站</title>
-    <!-- 修复 Chrome 图片加载 -->
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
     <style>
@@ -349,14 +348,12 @@
         }
         .desc-toggle:hover { text-decoration: underline; }
 
-        /* 作者信息样式增强 */
         .modal-author {
             font-size: 1.1rem;
             font-weight: 700;
             margin: 18px 0 8px;
             color: var(--text-primary);
         }
-        /* 作者主页区域 */
         .author-links-section {
             margin: 8px 0 18px;
         }
@@ -397,7 +394,7 @@
         .modal-tag.nsfw { background: #ffe8e8; border-color: #f08c8c; color: #b14b4b; }
         .modal-tag.sfw { background: #e8f5e8; border-color: #8cc8a0; color: #3d6b4f; }
 
-        /* 下载区域分隔 */
+        /* 下载区域 */
         .download-section {
             margin-top: 28px;
             padding-top: 24px;
@@ -429,6 +426,74 @@
             transform: scale(1.05);
         }
 
+        /* 预览折叠区块 */
+        .preview-section {
+            margin-top: 28px;
+            border-top: 2px dashed var(--border-dark);
+            padding-top: 20px;
+        }
+        .preview-block {
+            margin-bottom: 18px;
+        }
+        .preview-toggle {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #fffdfb;
+            border: var(--border-width) solid var(--border-dark);
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s var(--transition-bounce);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            outline: none;
+            user-select: none;
+            box-shadow: var(--shadow-soft);
+        }
+        .preview-toggle:hover {
+            background: var(--strawberry-light);
+            color: #fff;
+            border-color: #c97a7a;
+        }
+        .preview-content {
+            display: none;
+            margin-top: 12px;
+            padding: 12px;
+            border: var(--border-width) solid var(--border-dark);
+            border-radius: 20px;
+            background: #fffdfb;
+        }
+        .preview-content.open {
+            display: block;
+        }
+        .preview-image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .preview-image-item {
+            width: calc(50% - 5px);
+            border-radius: 12px;
+            border: 2px solid var(--border-dark);
+            cursor: zoom-in;
+            object-fit: cover;
+            transition: transform 0.2s;
+        }
+        .preview-image-item:hover {
+            transform: scale(1.02);
+        }
+        .preview-video-item {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--border-dark);
+            outline: none;
+        }
+        .preview-empty {
+            color: var(--text-muted);
+            font-style: italic;
+            text-align: center;
+            padding: 12px;
+        }
         .lightbox-overlay {
             display: none; position: fixed; inset: 0;
             background: rgba(250, 247, 244, 0.92);
@@ -470,6 +535,7 @@
             .header { flex-direction: column; align-items: stretch; }
             .search-wrapper { max-width:100%; }
             .modal-content { padding: 24px 16px 40px; }
+            .preview-image-item { width: 100%; }
         }
     </style>
 </head>
@@ -548,6 +614,17 @@
             <div class="download-section">
                 <div class="download-buttons" id="downloadButtons"></div>
             </div>
+            <!-- 新增预览图片/视频折叠区 -->
+            <div class="preview-section">
+                <div class="preview-block">
+                    <button class="preview-toggle" data-target="previewImages">预览图片 ▾</button>
+                    <div class="preview-content" id="previewImages"></div>
+                </div>
+                <div class="preview-block">
+                    <button class="preview-toggle" data-target="previewVideos">预览视频 ▾</button>
+                    <div class="preview-content" id="previewVideos"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -594,6 +671,9 @@
             const lightboxOverlay = document.getElementById('lightboxOverlay');
             const lightboxClose = document.getElementById('lightboxClose');
             const lightboxImg = document.getElementById('lightboxImg');
+
+            const previewImagesDiv = document.getElementById('previewImages');
+            const previewVideosDiv = document.getElementById('previewVideos');
 
             const dataSources = { all: 'mods.json', skin: 'skins.json' };
             const dataCache = {};
@@ -652,6 +732,20 @@
                 dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
             }
 
+            // 处理折叠按钮
+            document.querySelectorAll('.preview-toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    if (content) {
+                        content.classList.toggle('open');
+                        btn.textContent = content.classList.contains('open')
+                            ? (targetId === 'previewImages' ? '预览图片 ▴' : '预览视频 ▴')
+                            : (targetId === 'previewImages' ? '预览图片 ▾' : '预览视频 ▾');
+                    }
+                });
+            });
+
             function openModal(mod) {
                 currentImages = [];
                 if (mod.images && mod.images.length > 0) {
@@ -684,10 +778,8 @@
                     }
                 }, 50);
 
-                // 作者（加粗醒目）
                 modalAuthor.textContent = '作者：' + (mod.author || '佚名');
 
-                // 作者主页链接
                 modalLinks.innerHTML = '';
                 if (mod.authorLinks) {
                     const links = [
@@ -708,12 +800,10 @@
                     });
                 }
 
-                // 下载按钮
                 downloadButtons.innerHTML = '';
                 const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
                     ? mod.downloadLinks
                     : (mod.downloadUrl ? [{ text: '下载', url: mod.downloadUrl }] : []);
-                
                 downloadLinks.forEach(dl => {
                     const btn = document.createElement('a');
                     btn.className = 'download-btn-item';
@@ -723,6 +813,52 @@
                     btn.textContent = dl.text;
                     downloadButtons.appendChild(btn);
                 });
+
+                // 填充预览图片
+                previewImagesDiv.innerHTML = '';
+                previewImagesDiv.classList.remove('open');
+                const imgToggle = document.querySelector('.preview-toggle[data-target="previewImages"]');
+                if (imgToggle) imgToggle.textContent = '预览图片 ▾';
+
+                if (mod.previewImages && mod.previewImages.length > 0) {
+                    const grid = document.createElement('div');
+                    grid.className = 'preview-image-grid';
+                    mod.previewImages.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.className = 'preview-image-item';
+                        img.addEventListener('click', () => {
+                            lightboxImg.src = src;
+                            lightboxOverlay.classList.add('active');
+                        });
+                        grid.appendChild(img);
+                    });
+                    previewImagesDiv.appendChild(grid);
+                } else {
+                    previewImagesDiv.innerHTML = '<div class="preview-empty">该MOD猫猫还没有配置图片或视频资源的哦</div>';
+                }
+
+                // 填充预览视频
+                previewVideosDiv.innerHTML = '';
+                previewVideosDiv.classList.remove('open');
+                const vidToggle = document.querySelector('.preview-toggle[data-target="previewVideos"]');
+                if (vidToggle) vidToggle.textContent = '预览视频 ▾';
+
+                if (mod.previewVideos && mod.previewVideos.length > 0) {
+                    mod.previewVideos.forEach(vid => {
+                        const video = document.createElement('video');
+                        video.src = vid.url;
+                        video.className = 'preview-video-item';
+                        video.controls = true;
+                        if (vid.poster) {
+                            video.setAttribute('poster', vid.poster);
+                        }
+                        video.preload = 'metadata';
+                        previewVideosDiv.appendChild(video);
+                    });
+                } else {
+                    previewVideosDiv.innerHTML = '<div class="preview-empty">该MOD猫猫还没有配置图片或视频资源的哦</div>';
+                }
 
                 modalOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
