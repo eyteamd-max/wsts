@@ -10,14 +10,16 @@
     "coverGradient": "linear-gradient(135deg, #fce4e4 0%, #f8d0d0 35%, #ffe8e0 100%)",
     "coverChar": "加载中…",
     "coverImage": "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
-    "description": "一个测试用娘化皮肤，带有可爱的帽子。",
-    "author": "测试员",
+    "description": "一个测试用娘化皮肤，带有可爱的猫耳和尾巴。",
+    "author": "测试员A",
     "authorLinks": {
       "twitter": "",
       "pixiv": "https://www.pixiv.net/users/000000",
       "bilibili": ""
     },
-    "tags": ["sfw", "测试"]
+    "tags": ["sfw", "测试"],
+    "downloadUrl": "",
+    "videoUrl": ""
   },
   {
     "id": 2,
@@ -30,13 +32,15 @@
     "coverGradient": "linear-gradient(135deg, #e8e0f0 0%, #d5c8e8 35%, #e8ddf5 100%)",
     "coverChar": "加载中…",
     "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
-    "description": "另一个测试皮肤，风格更偏向成熟。一般怀孕以后还要会员会员会员还有呼呼呼呼一会一会一会一会一会一会雨应该退给他发热热热过一会给夫人故居春天滚与沟通沟通通过要不一会一会一个一盒一盒一盒一盒一盒一盒药还有个以后应该也会给优惠优惠优惠哈哈哈改天给一个月还有火锅退姑姑给他",
-    "author": "测试员",
+    "description": "另一个测试皮肤，风格更偏向成熟御姐。",
+    "author": "测试员B",
     "authorLinks": {
       "twitter": "https://twitter.com/test",
       "pixiv": "",
       "bilibili": "https://space.bilibili.com/111222"
     },
-    "tags": ["nsfw", "测试", "高质感"]
+    "tags": ["nsfw", "测试", "高质感"],
+    "downloadUrl": "https://example.com/download/testB.zip",
+    "videoUrl": "https://www.bilibili.com/video/BV987654/"
   }
 ]
