@@ -19,7 +19,7 @@
     "authorLinks": {
       "twitter": "",
       "pixiv": "https://www.pixiv.net/users/000000",
-      "bilibili": "https://b23.tv/PnrX9Tn"
+      "bilibili": ""
     },
     "tags": ["sfw", "测试"],
     "downloadUrl": "https://example.com/download/testA.zip",
@@ -50,8 +50,7 @@
     "authorLinks": {
       "twitter": "https://twitter.com/test",
       "pixiv": "",
-      "bilibili": "
-      https://b23.tv/59FbIWm"
+      "bilibili": "https://space.bilibili.com/111222"
     },
     "tags": ["nsfw", "测试", "高质感"],
     "downloadUrl": "",
