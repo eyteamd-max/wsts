@@ -9,7 +9,15 @@
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg, #fce4e4 0%, #f8d0d0 35%, #ffe8e0 100%)",
     "coverChar": "加载中…",
-    "coverImage": "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg"
+    "coverImage": "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
+    "description": "将原版商人替换为猫娘形象，并附带全日语配音，让爬塔之旅更加温馨可爱。",
+    "author": "猫猫制造局",
+    "authorLinks": {
+      "twitter": "https://twitter.com/example",
+      "pixiv": "https://www.pixiv.net/users/123456",
+      "bilibili": "https://space.bilibili.com/123456"
+    },
+    "tags": ["sfw", "配音", "商人"]
   },
   {
     "id": 2,
@@ -21,18 +29,14 @@
     "badgeClass": "heart",
     "coverGradient": "linear-gradient(135deg, #e8e0f0 0%, #d5c8e8 35%, #e8ddf5 100%)",
     "coverChar": "加载中…",
-    "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg"
-  },
-  {
-    "id": 2,
-    "title": "故障机器人外观替换MOD：猪煲",
-    "category": "skin",
-    "size": "72MB",
-    "date": "5/10",
-    "badge": "高赞",
-    "badgeClass": "heart",
-    "coverGradient": "linear-gradient(135deg, #e8e0f0 0%, #d5c8e8 35%, #e8ddf5 100%)",
-    "coverChar": "加载中…",
-    "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg"
+    "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+    "description": "将故障机器人变成可爱的猪猪造型，附带全新音效。",
+    "author": "养猪专业户",
+    "authorLinks": {
+      "twitter": "",
+      "pixiv": "",
+      "bilibili": "https://space.bilibili.com/654321"
+    },
+    "tags": ["nsfw", "恶搞"]
   }
 ]
