@@ -414,7 +414,11 @@
         renderPreviewContent();
 
         carouselContainer.style.display = 'block';
-        carouselTrack.innerHTML = '<div style="text-align:center;padding:60px;">萌图竞速中...</div>';
+        carouselTrack.innerHTML = `
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:16px;">
+                <span class="loading-spinner" style="display:inline-block; width:48px; height:48px; border-width:4px;"></span>
+                <span style="color:var(--text-secondary); font-size:0.95rem;">萌图竞速中...</span>
+            </div>`;
         carouselDots.innerHTML = '';
         carouselPrev.style.display = 'none';
         carouselNext.style.display = 'none';
