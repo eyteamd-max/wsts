@@ -1,6 +1,6 @@
 {
   "loadingGifUrls": [
-    "img/loaded.gif",
+    "../img/loaded.gif",
     "https://qqadapt.qpic.cn/mqq_photo/0/ef1255bd485744929323cd72b7a8a89cb472ce7501/0",
     "https://p.qpic.cn/psn_labels/ayJapABWAwW4hmBFXiaqn7icrqSOuPYeSRb8kvrUia3volZF9ThwrEWnM9nics71yQjMG1usCXtOialE/0",
     "http://ugc.qpic.cn/mqq_photo/0/ef1255bd485744929323cd72b7a8a89cb472ce7501/0",
@@ -8,8 +8,7 @@
     "https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif"
   ],
   "logoUrls": [
-    "img/Lihui.gif",
-    "https://p.qpic.cn/psn_labels/ayJapABWAwW4hmBFXiaqn7icrqSOuPYeSRQw4iaPl6ZCFwiaLSUh82aRbO7O6SFOLdZEKAkTIibUIUgc/0",
+    "../img/Lihui.gif",
     "https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif"
   ]
 }
