@@ -767,6 +767,11 @@
                 const hasCoverImg = coverImgSrc.trim() !== '';
                 const imgSrc = hasCoverImg ? coverImgSrc : loaded2Src;
 
+                // 根据是否有真实封面决定 object-fit
+                const imgStyle = hasCoverImg
+                    ? 'object-fit: cover;'
+                    : 'object-fit: contain;'; // 保持 loaded_2.gif 原有大小
+
                 let tagsHtml = '';
                 if (mod.tags && mod.tags.length) {
                     tagsHtml = '<div class="mod-tag-list">' +
@@ -781,6 +786,7 @@
                         <div class="mod-cover-inner">
                             <div class="mod-cover-gradient" style="background:${mod.coverGradient};"></div>
                             <img src="${imgSrc}" alt="${mod.title}" class="mod-cover-img"
+                                 style="position:absolute; width:100%; height:100%; ${imgStyle} z-index:2; border-radius:inherit;"
                                  onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%239a92a5' stroke-width='3'><circle cx='24' cy='24' r='20'/><path d='M24 16v12'/><circle cx='24' cy='32' r='2' fill='%239a92a5'/></svg>`)}'; this.style.opacity=0.4;">
                         </div>
                         <span class="mod-badge ${mod.badgeClass}">${mod.badge}</span>
@@ -902,13 +908,13 @@
             if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
         });
 
-        // ---------- 初始化：加载配置，竞速 loading GIF、logo 和 loaded_2.gif ----------
+        // ---------- 初始化：加载配置，竞速 loading GIF 和 logo ----------
         async function initPage() {
             // 默认 URL 列表
             let loadingGifUrls = ['img/loaded.gif'];
             let logoUrls = ['img/Lihui.gif'];
 
-            // 这里直接定义 loaded_2.gif 的多线路（来自需求）
+            // loaded_2.gif 多线路
             const loaded2GifUrls = [
                 'img/loaded_2.gif',
                 'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
@@ -916,7 +922,7 @@
                 'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
             ];
 
-            // 尝试从 config.json 读取 loadingGifUrls 和 logoUrls（保留原有灵活性）
+            // 尝试读取 config.json
             try {
                 const resp = await fetch('json/config.json');
                 if (resp.ok) {
@@ -940,25 +946,37 @@
             const gifSrc = gifResult.status === 'fulfilled' ? gifResult.value : null;
             const logoSrc = logoResult.status === 'fulfilled' ? logoResult.value : null;
             const loaded2Src = loaded2Result.status === 'fulfilled' ? loaded2Result.value : null;
-
-            // 缓存 loaded_2.gif 竞速结果
             window.loaded2GifSrc = loaded2Src || 'img/loaded_2.gif';
 
-            // ---------- 处理 loading GIF ----------
+            // ---------- 处理 loading GIF（关键：加载成功后才显示，然后隐藏遮罩） ----------
             if (gifSrc) {
-                // 只有图片真正加载成功后，才显示 GIF（避免裂图）
                 const tempImg = new Image();
                 tempImg.onload = () => {
+                    // 图片完全加载，显示到界面
                     loadingGif.src = gifSrc;
                     loadingGif.style.display = 'block';
+                    // 延迟一小段时间，让用户能看到完整的加载画面，再进入主页面
+                    setTimeout(() => {
+                        loadingOverlay.classList.add('hidden');
+                        mainContent.style.opacity = '1';
+                    }, 600);
                 };
                 tempImg.onerror = () => {
-                    // 加载失败则保持隐藏
+                    // 加载失败，不显示图片，但仍然在短暂延迟后进入主页面（避免永远卡住）
                     loadingGif.style.display = 'none';
+                    setTimeout(() => {
+                        loadingOverlay.classList.add('hidden');
+                        mainContent.style.opacity = '1';
+                    }, 400);
                 };
                 tempImg.src = gifSrc;
             } else {
+                // 竞速完全失败，隐藏 GIF，短暂延迟后进入
                 loadingGif.style.display = 'none';
+                setTimeout(() => {
+                    loadingOverlay.classList.add('hidden');
+                    mainContent.style.opacity = '1';
+                }, 400);
             }
 
             // ---------- 处理 Logo ----------
@@ -967,12 +985,6 @@
                 logoImg.style.display = 'block';
                 logoTower.style.display = 'none';
             }
-
-            // ---------- 启动定时隐藏加载覆盖层 ----------
-            setTimeout(() => {
-                loadingOverlay.classList.add('hidden');
-                mainContent.style.opacity = '1';
-            }, 1500);
 
             // 加载 MOD 数据（loaded_2.gif 已就绪）
             loadModData('all');
