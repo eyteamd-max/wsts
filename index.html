@@ -59,7 +59,7 @@
         .loading-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
         .loading-gif {
-            display: block;
+            display: none; /* 默认隐藏，加载成功才显示 */
             margin: 0 auto 20px;
             max-width: min(200px, 50vw);
             max-height: min(200px, 50vh);
@@ -90,6 +90,23 @@
         }
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        /* 卡片左上角加载圈 */
+        .card-loading-circle {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 6;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--strawberry-light);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            background: rgba(255, 253, 251, 0.85);
+            backdrop-filter: blur(2px);
+            pointer-events: none;
         }
 
         .main-container { max-width: 1100px; margin: 0 auto; padding: 24px 28px 60px; }
@@ -419,6 +436,9 @@
         let currentMod = null;
         let activePreviewTab = null;
 
+        // loaded_2.gif 竞速后的地址（全局缓存）
+        window.loaded2GifSrc = null;
+
         function updateCarousel(images) {
             currentImages = images || [];
             currentIndex = 0;
@@ -704,12 +724,37 @@
             searchInput.focus();
         }
 
+        // 为卡片封面添加加载圆圈，并绑定显示/隐藏逻辑
+        function attachCardLoadingCircle(cardElement) {
+            const coverInner = cardElement.querySelector('.mod-cover-inner');
+            const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
+            if (!coverInner || !coverImg) return;
+
+            const circle = document.createElement('span');
+            circle.className = 'card-loading-circle';
+
+            const hideCircle = () => {
+                if (circle.parentNode) circle.style.display = 'none';
+            };
+
+            // 如果图片已经加载完（缓存情况），直接隐藏
+            if (coverImg.complete) {
+                hideCircle();
+            } else {
+                coverImg.addEventListener('load', hideCircle);
+                coverImg.addEventListener('error', hideCircle);
+            }
+            coverInner.appendChild(circle);
+        }
+
         function renderModCards(dataArray) {
             modGrid.innerHTML = '';
             if (dataArray.length === 0) {
                 modGrid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:50px;color:var(--text-muted);">没有找到相关MOD</div>`;
                 return;
             }
+            const loaded2Src = window.loaded2GifSrc || 'img/loaded_2.gif';
+
             dataArray.forEach(mod => {
                 let coverImgSrc = '';
                 if (mod.coverImage) {
@@ -720,6 +765,7 @@
                     }
                 }
                 const hasCoverImg = coverImgSrc.trim() !== '';
+                const imgSrc = hasCoverImg ? coverImgSrc : loaded2Src;
 
                 let tagsHtml = '';
                 if (mod.tags && mod.tags.length) {
@@ -734,12 +780,8 @@
                     <div class="mod-cover">
                         <div class="mod-cover-inner">
                             <div class="mod-cover-gradient" style="background:${mod.coverGradient};"></div>
-                            ${hasCoverImg ? `
-                                <img src="${coverImgSrc}" alt="${mod.title}" class="mod-cover-img"
-                                     onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%239a92a5' stroke-width='3'><circle cx='24' cy='24' r='20'/><path d='M24 16v12'/><circle cx='24' cy='32' r='2' fill='%239a92a5'/></svg>`)}'; this.style.opacity=0.4;"
-                                     style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:2;">
-                            ` : ''}
-                            ${!hasCoverImg ? '<img src="img/loaded_2.gif" class="mod-cover-char" style="z-index:1; width:100%; height:100%; object-fit:contain;">' : ''}
+                            <img src="${imgSrc}" alt="${mod.title}" class="mod-cover-img"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%239a92a5' stroke-width='3'><circle cx='24' cy='24' r='20'/><path d='M24 16v12'/><circle cx='24' cy='32' r='2' fill='%239a92a5'/></svg>`)}'; this.style.opacity=0.4;">
                         </div>
                         <span class="mod-badge ${mod.badgeClass}">${mod.badge}</span>
                     </div>
@@ -763,6 +805,8 @@
                     });
                 });
                 modGrid.appendChild(card);
+                // 为这张卡片添加加载圆圈
+                attachCardLoadingCircle(card);
             });
         }
 
@@ -818,7 +862,8 @@
         async function loadModData(categoryKey = 'all') {
             const url = dataSources[categoryKey];
             if (!url) return;
-            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="img/loaded_2.gif" alt="加载中" style="max-width:200px;"></div>';
+            const loaded2Src = window.loaded2GifSrc || 'img/loaded_2.gif';
+            modGrid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="${loaded2Src}" alt="加载中" style="max-width:200px;"></div>`;
             try {
                 if (dataCache[url]) {
                     modData = dataCache[url];
@@ -857,11 +902,21 @@
             if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
         });
 
-        // ---------- 初始化：加载配置，竞速 loading GIF 和 logo ----------
+        // ---------- 初始化：加载配置，竞速 loading GIF、logo 和 loaded_2.gif ----------
         async function initPage() {
+            // 默认 URL 列表
             let loadingGifUrls = ['img/loaded.gif'];
             let logoUrls = ['img/Lihui.gif'];
 
+            // 这里直接定义 loaded_2.gif 的多线路（来自需求）
+            const loaded2GifUrls = [
+                'img/loaded_2.gif',
+                'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
+                'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
+                'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
+            ];
+
+            // 尝试从 config.json 读取 loadingGifUrls 和 logoUrls（保留原有灵活性）
             try {
                 const resp = await fetch('json/config.json');
                 if (resp.ok) {
@@ -875,31 +930,51 @@
                 }
             } catch (e) {}
 
-            let gifSrc = null;
-            try {
-                gifSrc = await raceImage(loadingGifUrls);
-            } catch (e) {
+            // 并行竞速三个资源
+            const [gifResult, logoResult, loaded2Result] = await Promise.allSettled([
+                raceImage(loadingGifUrls).catch(() => null),
+                raceImage(logoUrls).catch(() => null),
+                raceImage(loaded2GifUrls).catch(() => null)
+            ]);
+
+            const gifSrc = gifResult.status === 'fulfilled' ? gifResult.value : null;
+            const logoSrc = logoResult.status === 'fulfilled' ? logoResult.value : null;
+            const loaded2Src = loaded2Result.status === 'fulfilled' ? loaded2Result.value : null;
+
+            // 缓存 loaded_2.gif 竞速结果
+            window.loaded2GifSrc = loaded2Src || 'img/loaded_2.gif';
+
+            // ---------- 处理 loading GIF ----------
+            if (gifSrc) {
+                // 只有图片真正加载成功后，才显示 GIF（避免裂图）
+                const tempImg = new Image();
+                tempImg.onload = () => {
+                    loadingGif.src = gifSrc;
+                    loadingGif.style.display = 'block';
+                };
+                tempImg.onerror = () => {
+                    // 加载失败则保持隐藏
+                    loadingGif.style.display = 'none';
+                };
+                tempImg.src = gifSrc;
+            } else {
                 loadingGif.style.display = 'none';
             }
-            if (gifSrc) {
-                loadingGif.src = gifSrc;
-            }
 
-            let logoSrc = null;
-            try {
-                logoSrc = await raceImage(logoUrls);
-            } catch (e) {}
+            // ---------- 处理 Logo ----------
             if (logoSrc) {
                 logoImg.src = logoSrc;
                 logoImg.style.display = 'block';
                 logoTower.style.display = 'none';
             }
 
+            // ---------- 启动定时隐藏加载覆盖层 ----------
             setTimeout(() => {
                 loadingOverlay.classList.add('hidden');
                 mainContent.style.opacity = '1';
             }, 1500);
 
+            // 加载 MOD 数据（loaded_2.gif 已就绪）
             loadModData('all');
         }
 
