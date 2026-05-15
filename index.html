@@ -246,7 +246,6 @@
     <div class="main-container" id="mainContent">
         <header class="header">
             <div class="logo-area">
-                <!-- 初始 src 为空，由脚本竞速填充 -->
                 <img src="" alt="鸡煲立绘" class="logo-img" id="logoImg" style="display:none;" onerror="this.style.display='none'; document.getElementById('logoTower').style.display='flex';">
                 <div class="logo-tower" id="logoTower" style="display:flex;">
                     <div class="logo-layer"></div><div class="logo-layer"></div><div class="logo-layer"></div>
@@ -712,7 +711,6 @@
                 return;
             }
             dataArray.forEach(mod => {
-                // 处理 coverImage 可能为字符串或数组
                 let coverImgSrc = '';
                 if (mod.coverImage) {
                     if (Array.isArray(mod.coverImage)) {
@@ -741,7 +739,7 @@
                                      onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%239a92a5' stroke-width='3'><circle cx='24' cy='24' r='20'/><path d='M24 16v12'/><circle cx='24' cy='32' r='2' fill='%239a92a5'/></svg>`)}'; this.style.opacity=0.4;"
                                      style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:2;">
                             ` : ''}
-                            <span class="mod-cover-char" style="${hasCoverImg ? 'display:none;' : 'z-index:1;'}">${mod.coverChar}</span>
+                            ${!hasCoverImg ? '<img src="img/loaded_2.gif" class="mod-cover-char" style="z-index:1; width:100%; height:100%; object-fit:contain;">' : ''}
                         </div>
                         <span class="mod-badge ${mod.badgeClass}">${mod.badge}</span>
                     </div>
@@ -800,7 +798,6 @@
             if (matches.length === 0) {
                 searchDropdown.innerHTML = '<li style="padding:16px;text-align:center;color:var(--text-muted);">没有找到相关MOD</li>';
             } else {
-                // 转义正则特殊字符，防止输入 ( * + 等报错
                 const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
                 const regex = new RegExp(`(${escapedQuery})`, 'gi');
                 matches.slice(0, 8).forEach(m => {
@@ -821,7 +818,7 @@
         async function loadModData(categoryKey = 'all') {
             const url = dataSources[categoryKey];
             if (!url) return;
-            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="http://shp.qpic.cn/collector/1976464052/f9f76e86-c68d-4d39-ac73-8fe8e1413064/0" alt="加载中" style="max-width:200px;"></div>';
+            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="img/loaded_2.gif" alt="加载中" style="max-width:200px;"></div>';
             try {
                 if (dataCache[url]) {
                     modData = dataCache[url];
