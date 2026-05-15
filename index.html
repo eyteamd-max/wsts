@@ -69,6 +69,7 @@
         }
 
         .loading-text {
+            display: none; /* 也默认隐藏，与GIF同步 */
             margin-top: 10px;
             font-family: var(--font-title);
             font-size: 1.1rem;
@@ -92,20 +93,19 @@
             to { transform: rotate(360deg); }
         }
 
-        /* 卡片左上角加载圈 */
-        .card-loading-circle {
+        /* 卡片左上角加载圈，完全复刻 loading-spinner 样式 */
+        .card-spinner {
             position: absolute;
             top: 8px;
             left: 8px;
             z-index: 6;
             width: 18px;
             height: 18px;
-            border: 2px solid var(--strawberry-light);
+            border: 2px solid var(--text-secondary);
             border-top-color: transparent;
             border-radius: 50%;
-            animation: spin 0.7s linear infinite;
-            background: rgba(255, 253, 251, 0.85);
-            backdrop-filter: blur(2px);
+            background: rgba(255, 253, 251, 0.7);
+            animation: spin 0.8s linear infinite;
             pointer-events: none;
         }
 
@@ -165,7 +165,7 @@
         .mod-cover-inner { width:100%; height:100%; position:relative; }
         .mod-cover-gradient { width:100%; height:100%; position:absolute; }
         .mod-cover-char { position:absolute; z-index:1; font-size:4rem; filter:drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
-        .mod-cover-img { position:absolute; width:100%; height:100%; object-fit:cover; z-index:2; border-radius:inherit; }
+        .mod-cover-img { position:absolute; width:100%; height:100%; z-index:2; border-radius:inherit; }
         .mod-badge { position:absolute; top:12px; right:12px; z-index:5; background:#fffdfb; border:2px solid var(--border-dark); border-radius:20px; padding:5px 12px; font-size:0.75rem; font-weight:700; transform:rotate(6deg); }
         .mod-info { padding:16px 18px; }
         .mod-title { font-weight:700; font-size:1.05rem; margin-bottom:8px; }
@@ -254,10 +254,10 @@
     </style>
 </head>
 <body>
-    <!-- 加载界面：GIF + 文字 + 旋转圆圈 -->
+    <!-- 加载界面：GIF + 文字 + 旋转圆圈，初始均隐藏，图片加载成功后同步显示 -->
     <div class="loading-overlay" id="loadingOverlay">
         <img id="loadingGif" class="loading-gif" src="" alt="加载中">
-        <p class="loading-text">药水咕嘟咕嘟...马上就好 <span class="loading-spinner"></span></p>
+        <p class="loading-text" id="loadingText">药水咕嘟咕嘟...马上就好 <span class="loading-spinner"></span></p>
     </div>
 
     <div class="main-container" id="mainContent">
@@ -392,6 +392,7 @@
         // ---------- 全局变量 ----------
         const loadingOverlay = document.getElementById('loadingOverlay');
         const loadingGif = document.getElementById('loadingGif');
+        const loadingText = document.getElementById('loadingText');
         const mainContent = document.getElementById('mainContent');
         mainContent.style.opacity = '0';
         mainContent.style.transition = 'opacity 0.5s ease';
@@ -724,27 +725,26 @@
             searchInput.focus();
         }
 
-        // 为卡片封面添加加载圆圈，并绑定显示/隐藏逻辑
-        function attachCardLoadingCircle(cardElement) {
+        // 为卡片封面添加与 loading-spinner 完全一致的旋转加载圈
+        function attachCardSpinner(cardElement) {
             const coverInner = cardElement.querySelector('.mod-cover-inner');
             const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
             if (!coverInner || !coverImg) return;
 
-            const circle = document.createElement('span');
-            circle.className = 'card-loading-circle';
+            const spinner = document.createElement('span');
+            spinner.className = 'card-spinner';
 
-            const hideCircle = () => {
-                if (circle.parentNode) circle.style.display = 'none';
+            const hideSpinner = () => {
+                if (spinner.parentNode) spinner.style.display = 'none';
             };
 
-            // 如果图片已经加载完（缓存情况），直接隐藏
             if (coverImg.complete) {
-                hideCircle();
+                hideSpinner();
             } else {
-                coverImg.addEventListener('load', hideCircle);
-                coverImg.addEventListener('error', hideCircle);
+                coverImg.addEventListener('load', hideSpinner);
+                coverImg.addEventListener('error', hideSpinner);
             }
-            coverInner.appendChild(circle);
+            coverInner.appendChild(spinner);
         }
 
         function renderModCards(dataArray) {
@@ -767,10 +767,10 @@
                 const hasCoverImg = coverImgSrc.trim() !== '';
                 const imgSrc = hasCoverImg ? coverImgSrc : loaded2Src;
 
-                // 根据是否有真实封面决定 object-fit
+                // 有真实封面用 cover，无封面（loaded_2.gif）用 contain 保持原大小
                 const imgStyle = hasCoverImg
                     ? 'object-fit: cover;'
-                    : 'object-fit: contain;'; // 保持 loaded_2.gif 原有大小
+                    : 'object-fit: contain;';
 
                 let tagsHtml = '';
                 if (mod.tags && mod.tags.length) {
@@ -811,8 +811,8 @@
                     });
                 });
                 modGrid.appendChild(card);
-                // 为这张卡片添加加载圆圈
-                attachCardLoadingCircle(card);
+                // 添加与 loading-spinner 一致的旋转加载圈
+                attachCardSpinner(card);
             });
         }
 
@@ -948,22 +948,24 @@
             const loaded2Src = loaded2Result.status === 'fulfilled' ? loaded2Result.value : null;
             window.loaded2GifSrc = loaded2Src || 'img/loaded_2.gif';
 
-            // ---------- 处理 loading GIF（关键：加载成功后才显示，然后隐藏遮罩） ----------
+            // ---------- 处理 loading GIF：成功则同时显示图片和文字，失败直接进入 ----------
             if (gifSrc) {
                 const tempImg = new Image();
                 tempImg.onload = () => {
-                    // 图片完全加载，显示到界面
+                    // 图片完全加载，同时显示 GIF 和文字
                     loadingGif.src = gifSrc;
                     loadingGif.style.display = 'block';
-                    // 延迟一小段时间，让用户能看到完整的加载画面，再进入主页面
+                    loadingText.style.display = 'block';
+                    // 给用户一点时间看清加载画面，再进入主页面
                     setTimeout(() => {
                         loadingOverlay.classList.add('hidden');
                         mainContent.style.opacity = '1';
                     }, 600);
                 };
                 tempImg.onerror = () => {
-                    // 加载失败，不显示图片，但仍然在短暂延迟后进入主页面（避免永远卡住）
+                    // 加载失败，都不显示，直接进入
                     loadingGif.style.display = 'none';
+                    loadingText.style.display = 'none';
                     setTimeout(() => {
                         loadingOverlay.classList.add('hidden');
                         mainContent.style.opacity = '1';
@@ -971,8 +973,9 @@
                 };
                 tempImg.src = gifSrc;
             } else {
-                // 竞速完全失败，隐藏 GIF，短暂延迟后进入
+                // 竞速完全失败，直接进入
                 loadingGif.style.display = 'none';
+                loadingText.style.display = 'none';
                 setTimeout(() => {
                     loadingOverlay.classList.add('hidden');
                     mainContent.style.opacity = '1';
