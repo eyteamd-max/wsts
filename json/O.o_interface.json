@@ -1,11 +1,51 @@
 [
   {
+    "id": "20260516024135299",
+    "title": "O.o的MOD合集【实时更新】！！",
+    "category": "skin",
+    "size": "None",
+    "date": "2026-05-15",
+    "badge": "云盘",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg, #fce4e4 0%, #f8d0d0 35%, #ffe8e0 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/blob_download_1778873323185.png"
+    ],
+    "images": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/blob_download_1778873323185.png"
+    ],
+    "description": "杀戮尖塔2网盘MOD｜更新时间：5.14\n端游手游均可使用\n（这次收集、整理了很久，希望给我账号点点关注谢谢：https://b23.tv/mjvckEc）\n--------\n【新增内容】\n· 门扉美化-X作者@Lunchshark01\n· 先民美化-欧洛巴斯+特兹卡塔拉\n· 机器人皮肤-X作者@Aduare_rp\n· 机器人卡面美化-戴安娜V0.2.1\n· 涅奥美化-A大\n· 第4章节最终关卡\n· 契约师皮肤-A大\n· 门扉不替换沙漏\n· 门扉替换沙漏\n· 无尽模式\n· 死亡前拦截\n· 自动点击地图\n【更新模组】\n· 储君皮肤-A大（修复BUG）\n· 战士皮肤-A大（修复BUG）\n--------\n完整模组内容已整理成文档，点击下方链接即可查看详情👇\nhttps://docs.qq.com/doc/DV3NtQkNCSU1JeE9s\n--------\n模组下载地址👇\nhttps://pan.quark.cn/s/4223d651f627\n--------\n部分皮肤模组来自作者@anaertailin（A大）\n其他模组来自网上收集，侵删",
+    "author": "@_冬雪寒（云盘更新）",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/mjvckEc"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "O.o",
+      "MOD合集",
+      "云盘整合"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克云盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/blob_download_1778873323185.png"
+    ],
+    "previewVideos": []
+  },
+  {
     "id": "20260429120000001",
     "title": "O.o的皮肤示例",
     "category": "skin",
     "size": "35MB",
     "date": "2026-04-29",
-    "badge": "v0.5.2",
+    "badge": "v1.2.3",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg, #c8ece0 0%, #a8d8c8 100%)",
     "coverChar": "",
