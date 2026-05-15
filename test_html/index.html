@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杀戮尖塔2娘化MOD站</title>
+    <title>杀戮尖塔2娘化MOD站 - 完全编辑版</title>
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
     <style>
@@ -167,7 +167,7 @@
         .mod-info { padding:16px 18px; }
         .mod-title { font-weight:700; font-size:1.05rem; margin-bottom:8px; }
         .mod-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; align-items: center; }
-        .mod-meta-tag { padding:5px 14px; background:#f5f2f8; border:2px solid #ddd8e5; border-radius:20px; font-size:0.78rem; color:var(--text-secondary); }
+        .mod-meta-tag { padding:5px 14px; background:#f5f2f8; border:2px solid #ddd8e5; border-radius:20px; font-size:0.78rem; color:var(--text-secondary); cursor:pointer; }
         .mod-tag-list { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
         .mod-tag-item { padding: 3px 12px; font-size: 0.72rem; border: 2px solid var(--border-dark); border-radius: 20px; background: #fff; color: var(--text-secondary); font-weight: 500; cursor: pointer; transition: all 0.2s; }
         .mod-tag-item:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
@@ -240,7 +240,7 @@
 
         .footer { text-align:center; padding:30px 4px 20px; color:var(--text-muted); font-size:0.9rem; }
 
-        .export-btn, .new-mod-btn {
+        .export-btn, .new-mod-btn, .delete-btn {
             display: inline-block;
             padding: 10px 24px;
             background: #fffdfb;
@@ -254,20 +254,11 @@
             box-shadow: var(--shadow-soft);
             margin-left: 12px;
         }
-        .export-btn:hover, .new-mod-btn:hover {
-            background: var(--strawberry-light);
-            color: #fff;
-            border-color: #c97a7a;
-        }
-        .new-mod-btn {
-            background: var(--strawberry-milk);
-            color: #fff;
-            border-color: #c97a7a;
-        }
-        .new-mod-btn:hover {
-            background: #fff;
-            color: var(--strawberry-milk);
-        }
+        .export-btn:hover, .new-mod-btn:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
+        .new-mod-btn { background: var(--strawberry-milk); color: #fff; border-color: #c97a7a; }
+        .new-mod-btn:hover { background: #fff; color: var(--strawberry-milk); }
+        .delete-btn { background: #ffe8e8; color: #b14b4b; border-color: #f08c8c; }
+        .delete-btn:hover { background: #f08c8c; color: #fff; }
 
         @media (max-width: 900px) {
             .quick-actions { grid-template-columns: repeat(2,1fr); }
@@ -325,6 +316,7 @@
         <footer class="footer"><p>STS2娘化MOD站 © 2026 壹个屑猫猫</p></footer>
     </div>
 
+    <!-- 详情弹窗 -->
     <div class="modal-overlay" id="modalOverlay">
         <button class="modal-close" id="modalClose">&times;</button>
         <div class="modal-content" id="modalContent">
@@ -333,21 +325,29 @@
                 <button class="carousel-btn prev" id="carouselPrev">&#10094;</button>
                 <button class="carousel-btn next" id="carouselNext">&#10095;</button>
                 <div class="carousel-dots" id="carouselDots"></div>
+                <div style="text-align:center; margin-top:8px;">
+                    <button class="export-btn" id="editCarouselBtn">编辑轮播图</button>
+                </div>
             </div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tags" id="modalTags"></div>
             <div class="modal-description">
                 <div class="desc-text" id="modalDescText"></div>
                 <span class="desc-toggle" id="descToggle" style="display:none;">展开全文</span>
+                <div style="margin-top:6px;">
+                    <button class="export-btn" id="editDescBtn">编辑描述</button>
+                </div>
             </div>
             <p class="modal-author" id="modalAuthor"></p>
             <div class="author-links-section">
                 <span class="author-links-label">作者主页：</span>
                 <div class="modal-links" id="modalLinks"></div>
+                <button class="export-btn" id="editLinksBtn" style="margin-top:8px;">编辑作者链接</button>
             </div>
             <div class="download-section">
                 <span class="author-links-label">MOD下载：</span>
                 <div class="download-buttons" id="downloadButtons"></div>
+                <button class="export-btn" id="editDownloadBtn" style="margin-top:8px;">编辑下载链接</button>
             </div>
             <div class="preview-section">
                 <div class="preview-toggles">
@@ -355,6 +355,10 @@
                     <button class="preview-toggle" id="previewVideosBtn">预览视频 ▾</button>
                 </div>
                 <div class="preview-content-area" id="previewContentArea"></div>
+                <div style="margin-top:12px; display:flex; gap:8px;">
+                    <button class="export-btn" id="editPreviewImagesBtn">编辑预览图片</button>
+                    <button class="export-btn" id="editPreviewVideosBtn">编辑预览视频</button>
+                </div>
             </div>
         </div>
     </div>
@@ -757,60 +761,198 @@
         lightboxClose.addEventListener('click', () => lightboxOverlay.classList.remove('active'));
         lightboxOverlay.addEventListener('click', (e) => { if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active'); });
 
-        // ========== 编辑卡片功能 ==========
+        // ========== 编辑功能扩展 ==========
+        function saveAndRefresh() {
+            saveLocalData(activeCategory, modData);
+            renderModCards(modData);
+        }
+
+        // 卡片上的编辑
         function editTitle(mod) {
-            const newTitle = prompt('修改标题：', mod.title);
-            if (newTitle !== null && newTitle.trim() !== '') {
-                mod.title = newTitle.trim();
-                saveLocalData(activeCategory, modData);
-                renderModCards(modData);
-            }
+            const newVal = prompt('修改标题：', mod.title);
+            if (newVal !== null && newVal.trim() !== '') { mod.title = newVal.trim(); saveAndRefresh(); }
         }
-
         function editCover(mod) {
-            const currentUrl = Array.isArray(mod.coverImage) && mod.coverImage.length > 0 ? mod.coverImage[0] : '';
-            const newUrl = prompt('修改封面图片链接（留空则使用默认图）：', currentUrl);
-            if (newUrl !== null) {
-                if (newUrl.trim() === '') {
-                    mod.coverImage = [];
-                } else {
-                    mod.coverImage = [newUrl.trim()];
-                }
-                saveLocalData(activeCategory, modData);
-                renderModCards(modData);
+            const current = (Array.isArray(mod.coverImage) && mod.coverImage.length > 0) ? mod.coverImage[0] : '';
+            const newVal = prompt('修改封面图片链接（留空则使用默认图）：', current);
+            if (newVal !== null) {
+                mod.coverImage = newVal.trim() ? [newVal.trim()] : [];
+                saveAndRefresh();
             }
         }
-
         function editTags(mod) {
-            const currentTags = mod.tags ? mod.tags.join(', ') : '';
-            const input = prompt('输入标签，用逗号分隔（例如：SFW, 娘化, 配音）：', currentTags);
+            const cur = mod.tags ? mod.tags.join(', ') : '';
+            const input = prompt('输入标签，逗号分隔：', cur);
             if (input !== null) {
-                mod.tags = input.split(',').map(t => t.trim()).filter(t => t.length > 0);
-                saveLocalData(activeCategory, modData);
-                renderModCards(modData);
+                mod.tags = input.split(',').map(t => t.trim()).filter(t => t);
+                saveAndRefresh();
             }
         }
-
         function editDownloadLink(mod) {
-            let defaultText = '下载';
-            let defaultUrl = '';
-            if (mod.downloadLinks && mod.downloadLinks.length > 0) {
-                defaultText = mod.downloadLinks[0].text;
-                defaultUrl = mod.downloadLinks[0].url;
-            } else if (mod.downloadUrl) {
-                defaultUrl = mod.downloadUrl;
-            }
-            const input = prompt('输入下载链接（格式：显示文字,链接地址）：', `${defaultText},${defaultUrl}`);
+            let text = '下载', url = '';
+            if (mod.downloadLinks && mod.downloadLinks.length) {
+                text = mod.downloadLinks[0].text;
+                url = mod.downloadLinks[0].url;
+            } else if (mod.downloadUrl) url = mod.downloadUrl;
+            const input = prompt('下载链接（格式：显示文字,链接）：', `${text},${url}`);
             if (input !== null) {
                 const parts = input.split(',').map(s => s.trim());
                 if (parts.length >= 2 && parts[0] && parts[1]) {
                     mod.downloadLinks = [{ text: parts[0], url: parts[1] }];
                     delete mod.downloadUrl;
-                } else {
-                    mod.downloadLinks = [];
-                }
-                saveLocalData(activeCategory, modData);
-                renderModCards(modData);
+                } else mod.downloadLinks = [];
+                saveAndRefresh();
+            }
+        }
+
+        // 卡片上的版本、大小、日期
+        function editBadge(mod) {
+            const newVal = prompt('修改版本号/徽章文字：', mod.badge);
+            if (newVal !== null) { mod.badge = newVal; saveAndRefresh(); }
+        }
+        function editSize(mod) {
+            const newVal = prompt('修改大小（如 58MB）：', mod.size);
+            if (newVal !== null) { mod.size = newVal; saveAndRefresh(); }
+        }
+        function editDate(mod) {
+            const newVal = prompt('修改日期（如 2026-04-27）：', mod.date);
+            if (newVal !== null) { mod.date = newVal; saveAndRefresh(); }
+        }
+
+        // 详情弹窗内的编辑
+        function editModalTitle() {
+            if (!currentMod) return;
+            const newVal = prompt('修改标题：', currentMod.title);
+            if (newVal !== null && newVal.trim() !== '') {
+                currentMod.title = newVal.trim();
+                modalTitle.textContent = currentMod.title;
+                saveAndRefresh();
+            }
+        }
+        function editModalDesc() {
+            if (!currentMod) return;
+            const newVal = prompt('修改描述：', currentMod.description);
+            if (newVal !== null) {
+                currentMod.description = newVal;
+                modalDescText.textContent = currentMod.description || '暂无介绍';
+                saveAndRefresh();
+            }
+        }
+        function editModalAuthor() {
+            if (!currentMod) return;
+            const newVal = prompt('修改作者名：', currentMod.author);
+            if (newVal !== null) {
+                currentMod.author = newVal;
+                modalAuthor.textContent = '作者：' + (currentMod.author || '佚名');
+                saveAndRefresh();
+            }
+        }
+        function editModalLinks() {
+            if (!currentMod) return;
+            const tw = currentMod.authorLinks?.twitter || '';
+            const px = currentMod.authorLinks?.pixiv || '';
+            const bi = currentMod.authorLinks?.bilibili || '';
+            const input = prompt('修改作者链接（Twitter,Pixiv,Bilibili）：', `${tw},${px},${bi}`);
+            if (input !== null) {
+                const parts = input.split(',').map(s => s.trim());
+                if (!currentMod.authorLinks) currentMod.authorLinks = {};
+                currentMod.authorLinks.twitter = parts[0] || '';
+                currentMod.authorLinks.pixiv = parts[1] || '';
+                currentMod.authorLinks.bilibili = parts[2] || '';
+                // 刷新弹窗内的链接显示
+                modalLinks.innerHTML = '';
+                const links = [
+                    { name: 'Twitter', url: currentMod.authorLinks.twitter },
+                    { name: 'Pixiv', url: currentMod.authorLinks.pixiv },
+                    { name: 'Bilibili', url: currentMod.authorLinks.bilibili }
+                ];
+                links.forEach(link => {
+                    if (link.url) {
+                        const a = document.createElement('a');
+                        a.className = 'modal-link';
+                        a.href = link.url;
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.textContent = link.name;
+                        modalLinks.appendChild(a);
+                    }
+                });
+                saveAndRefresh();
+            }
+        }
+        function editModalDownload() {
+            if (!currentMod) return;
+            let text = '下载', url = '';
+            if (currentMod.downloadLinks && currentMod.downloadLinks.length) {
+                text = currentMod.downloadLinks[0].text;
+                url = currentMod.downloadLinks[0].url;
+            } else if (currentMod.downloadUrl) url = currentMod.downloadUrl;
+            const input = prompt('下载链接（格式：显示文字,链接）：', `${text},${url}`);
+            if (input !== null) {
+                const parts = input.split(',').map(s => s.trim());
+                if (parts.length >= 2 && parts[0] && parts[1]) {
+                    currentMod.downloadLinks = [{ text: parts[0], url: parts[1] }];
+                    delete currentMod.downloadUrl;
+                } else currentMod.downloadLinks = [];
+                saveAndRefresh();
+                // 更新弹窗下载按钮
+                downloadButtons.innerHTML = '';
+                currentMod.downloadLinks.forEach(dl => {
+                    const btn = document.createElement('a');
+                    btn.className = 'download-btn-item';
+                    btn.href = dl.url;
+                    btn.target = '_blank';
+                    btn.rel = 'noopener noreferrer';
+                    btn.textContent = dl.text;
+                    downloadButtons.appendChild(btn);
+                });
+            }
+        }
+        function editCarousel() {
+            if (!currentMod) return;
+            const current = (currentMod.images && currentMod.images.length) ? currentMod.images.join(',') : '';
+            const input = prompt('输入轮播图链接，逗号分隔：', current);
+            if (input !== null) {
+                const arr = input.split(',').map(s => s.trim()).filter(s => s);
+                currentMod.images = arr;
+                saveAndRefresh();
+                // 刷新轮播
+                updateCarousel(arr);
+            }
+        }
+        function editPreviewImages() {
+            if (!currentMod) return;
+            const current = currentMod.previewImages ? currentMod.previewImages.join(',') : '';
+            const input = prompt('输入预览图片链接，逗号分隔：', current);
+            if (input !== null) {
+                const arr = input.split(',').map(s => s.trim()).filter(s => s);
+                currentMod.previewImages = arr;
+                saveAndRefresh();
+                // 如果当前预览图片标签打开，则刷新
+                if (activePreviewTab === 'images') renderPreviewContent();
+            }
+        }
+        function editPreviewVideos() {
+            if (!currentMod) return;
+            const current = currentMod.previewVideos ? currentMod.previewVideos.map(v => v.url || '').join(',') : '';
+            const input = prompt('输入预览视频链接，逗号分隔：', current);
+            if (input !== null) {
+                const arr = input.split(',').map(s => s.trim()).filter(s => s);
+                currentMod.previewVideos = arr.map(url => ({ url }));
+                saveAndRefresh();
+                if (activePreviewTab === 'videos') renderPreviewContent();
+            }
+        }
+
+        // 删除卡片
+        function deleteMod(mod) {
+            if (!confirm(`确定要删除卡片 "${mod.title}" 吗？此操作不可恢复。`)) return;
+            const idx = modData.findIndex(m => m.id === mod.id);
+            if (idx > -1) {
+                modData.splice(idx, 1);
+                saveAndRefresh();
+                // 如果删掉的是当前打开的详情，关闭弹窗
+                if (currentMod && currentMod.id === mod.id) closeModal();
             }
         }
 
@@ -835,8 +977,7 @@
                 previewVideos: []
             };
             modData.unshift(newMod);
-            saveLocalData(activeCategory, modData);
-            renderModCards(modData);
+            saveAndRefresh();
             setTimeout(() => editTitle(newMod), 100);
         }
 
@@ -850,18 +991,18 @@
             URL.revokeObjectURL(a.href);
         }
 
-        // ========== 卡片渲染 (编辑绑定) ==========
+        // ========== 卡片渲染 ==========
         function attachCardSpinner(cardElement) {
             const coverInner = cardElement.querySelector('.mod-cover-inner');
             const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
             if (!coverInner || !coverImg) return;
             const spinner = document.createElement('span');
             spinner.className = 'card-spinner';
-            const hideSpinner = () => { if (spinner.parentNode) spinner.style.display = 'none'; };
-            if (coverImg.complete) hideSpinner();
+            const hide = () => { if (spinner.parentNode) spinner.style.display = 'none'; };
+            if (coverImg.complete) hide();
             else {
-                coverImg.addEventListener('load', hideSpinner);
-                coverImg.addEventListener('error', hideSpinner);
+                coverImg.addEventListener('load', hide);
+                coverImg.addEventListener('error', hide);
             }
             coverInner.appendChild(spinner);
         }
@@ -877,15 +1018,12 @@
             dataArray.forEach(mod => {
                 let coverImgSrc = '';
                 if (mod.coverImage) {
-                    if (Array.isArray(mod.coverImage)) {
-                        coverImgSrc = mod.coverImage[0] || '';
-                    } else {
-                        coverImgSrc = mod.coverImage;
-                    }
+                    if (Array.isArray(mod.coverImage)) coverImgSrc = mod.coverImage[0] || '';
+                    else coverImgSrc = mod.coverImage;
                 }
-                const hasCoverImg = coverImgSrc.trim() !== '';
-                const imgSrc = hasCoverImg ? coverImgSrc : loaded2Src;
-                const imgStyle = hasCoverImg ? 'object-fit: cover;' : 'object-fit: contain;';
+                const hasCover = coverImgSrc.trim() !== '';
+                const imgSrc = hasCover ? coverImgSrc : loaded2Src;
+                const imgStyle = hasCover ? 'object-fit: cover;' : 'object-fit: contain;';
 
                 let tagsHtml = '';
                 if (mod.tags && mod.tags.length) {
@@ -912,37 +1050,25 @@
                         <div class="mod-title">${mod.title}</div>
                         ${tagsHtml}
                         <div class="mod-meta">
-                            <span class="mod-meta-tag">大小 ${mod.size}</span>
-                            <span class="mod-meta-tag">日期 ${mod.date}</span>
+                            <span class="mod-meta-tag size-tag">大小 ${mod.size}</span>
+                            <span class="mod-meta-tag date-tag">日期 ${mod.date}</span>
                         </div>
                         <button class="mod-download-btn view-detail-btn">查看详情</button>
                         <button class="mod-download-btn edit-download-btn" style="margin-top:6px;">编辑下载链接</button>
+                        <button class="mod-download-btn delete-card-btn" style="background:#f08c8c; border-color:#b14b4b; margin-top:6px;">删除卡片</button>
                     </div>`;
 
                 // 绑定事件
-                card.querySelector('.view-detail-btn').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openModal(mod);
-                });
-                card.querySelector('.mod-title').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    editTitle(mod);
-                });
-                card.querySelector('.mod-cover-img').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    editCover(mod);
-                });
-                const tagListEl = card.querySelector('.mod-tag-list');
-                if (tagListEl) {
-                    tagListEl.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        editTags(mod);
-                    });
-                }
-                card.querySelector('.edit-download-btn').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    editDownloadLink(mod);
-                });
+                card.querySelector('.mod-title').addEventListener('click', (e) => { e.stopPropagation(); editTitle(mod); });
+                card.querySelector('.mod-cover-img').addEventListener('click', (e) => { e.stopPropagation(); editCover(mod); });
+                const tagList = card.querySelector('.mod-tag-list');
+                if (tagList) tagList.addEventListener('click', (e) => { e.stopPropagation(); editTags(mod); });
+                card.querySelector('.edit-download-btn').addEventListener('click', (e) => { e.stopPropagation(); editDownloadLink(mod); });
+                card.querySelector('.mod-badge').addEventListener('click', (e) => { e.stopPropagation(); editBadge(mod); });
+                card.querySelector('.size-tag').addEventListener('click', (e) => { e.stopPropagation(); editSize(mod); });
+                card.querySelector('.date-tag').addEventListener('click', (e) => { e.stopPropagation(); editDate(mod); });
+                card.querySelector('.view-detail-btn').addEventListener('click', (e) => { e.stopPropagation(); openModal(mod); });
+                card.querySelector('.delete-card-btn').addEventListener('click', (e) => { e.stopPropagation(); deleteMod(mod); });
 
                 modGrid.appendChild(card);
                 attachCardSpinner(card);
@@ -952,14 +1078,12 @@
         // ========== 搜索与分类 ==========
         function filterMods() {
             let filtered = [...modData];
-            if (activeCategory !== 'all') {
-                filtered = filtered.filter(m => m.category === activeCategory);
-            }
+            if (activeCategory !== 'all') filtered = filtered.filter(m => m.category === activeCategory);
             const query = searchInput.value.trim().toLowerCase();
             if (query) {
                 filtered = filtered.filter(m => {
                     if (m.title.toLowerCase().includes(query)) return true;
-                    if (m.tags && m.tags.some(tag => tag.toLowerCase().includes(query))) return true;
+                    if (m.tags && m.tags.some(t => t.toLowerCase().includes(query))) return true;
                     return false;
                 });
             }
@@ -969,21 +1093,14 @@
 
         function updateSearchDropdown(query) {
             searchDropdown.innerHTML = '';
-            if (!query || query.length < 1) {
-                searchDropdown.classList.remove('active');
-                return;
-            }
+            if (!query || query.length < 1) { searchDropdown.classList.remove('active'); return; }
             const lowerQuery = query.toLowerCase();
-            const matches = modData.filter(m => {
-                if (m.title.toLowerCase().includes(lowerQuery)) return true;
-                if (m.tags && m.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) return true;
-                return false;
-            });
+            const matches = modData.filter(m => m.title.toLowerCase().includes(lowerQuery) || (m.tags && m.tags.some(t => t.toLowerCase().includes(lowerQuery))));
             if (matches.length === 0) {
                 searchDropdown.innerHTML = '<li style="padding:16px;text-align:center;color:var(--text-muted);">没有找到相关MOD</li>';
             } else {
-                const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                const regex = new RegExp(`(${escapedQuery})`, 'gi');
+                const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const regex = new RegExp(`(${escaped})`, 'gi');
                 matches.slice(0, 8).forEach(m => {
                     const li = document.createElement('li');
                     li.className = 'search-dropdown-item';
@@ -1009,19 +1126,28 @@
         });
 
         searchInput.addEventListener('input', filterMods);
-        searchInput.addEventListener('focus', () => {
-            if (searchInput.value.trim().length >= 1) updateSearchDropdown(searchInput.value.trim());
-        });
+        searchInput.addEventListener('focus', () => { if (searchInput.value.trim().length) updateSearchDropdown(searchInput.value.trim()); });
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') { searchDropdown.classList.remove('active'); searchInput.blur(); }
             if (e.key === 'Enter') { searchDropdown.classList.remove('active'); filterMods(); }
         });
-        document.addEventListener('click', (e) => {
-            if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
-        });
+        document.addEventListener('click', (e) => { if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active'); });
 
         document.getElementById('newModBtn').addEventListener('click', createNewMod);
         document.getElementById('exportBtn').addEventListener('click', exportJSON);
+
+        // 详情弹窗内的编辑按钮绑定
+        document.getElementById('modalTitle').addEventListener('click', editModalTitle);
+        document.getElementById('editDescBtn').addEventListener('click', editModalDesc);
+        document.getElementById('modalAuthor').addEventListener('click', editModalAuthor);
+        document.getElementById('editLinksBtn').addEventListener('click', editModalLinks);
+        document.getElementById('editDownloadBtn').addEventListener('click', editModalDownload);
+        document.getElementById('editCarouselBtn').addEventListener('click', editCarousel);
+        document.getElementById('editPreviewImagesBtn').addEventListener('click', editPreviewImages);
+        document.getElementById('editPreviewVideosBtn').addEventListener('click', editPreviewVideos);
+
+        previewImagesBtn.addEventListener('click', () => switchPreviewTab('images'));
+        previewVideosBtn.addEventListener('click', () => switchPreviewTab('videos'));
 
         // ========== 数据加载 ==========
         async function loadModData(categoryKey = 'all') {
@@ -1030,15 +1156,13 @@
             const loaded2Src = window.loaded2GifSrc || 'img/loaded_2.gif';
             modGrid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="${loaded2Src}" alt="加载中" style="max-width:200px;"></div>`;
 
-            // 优先读取 localStorage
             let local = loadLocalData(categoryKey);
             if (local) {
                 modData = sortModsByTimeId(local);
             } else {
                 try {
-                    if (dataCache[url]) {
-                        modData = sortModsByTimeId(dataCache[url]);
-                    } else {
+                    if (dataCache[url]) modData = sortModsByTimeId(dataCache[url]);
+                    else {
                         const resp = await fetch(url);
                         if (!resp.ok) throw new Error('加载失败');
                         const raw = await resp.json();
@@ -1070,8 +1194,8 @@
                 const resp = await fetch('json/config.json');
                 if (resp.ok) {
                     const config = await resp.json();
-                    if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
-                    if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
+                    if (config.loadingGifUrls) loadingGifUrls = config.loadingGifUrls;
+                    if (config.logoUrls) logoUrls = config.logoUrls;
                 }
             } catch (e) {}
 
@@ -1085,32 +1209,23 @@
             window.loaded2GifSrc = loaded2R.status === 'fulfilled' ? loaded2R.value : 'img/loaded_2.gif';
 
             if (gifSrc) {
-                const tempImg = new Image();
-                tempImg.onload = () => {
+                const tmp = new Image();
+                tmp.onload = () => {
                     loadingGif.src = gifSrc;
                     loadingGif.style.display = 'block';
                     loadingText.style.display = 'block';
-                    setTimeout(() => {
-                        loadingOverlay.classList.add('hidden');
-                        mainContent.style.opacity = '1';
-                    }, 600);
+                    setTimeout(() => { loadingOverlay.classList.add('hidden'); mainContent.style.opacity = '1'; }, 600);
                 };
-                tempImg.onerror = () => {
+                tmp.onerror = () => {
                     loadingGif.style.display = 'none';
                     loadingText.style.display = 'none';
-                    setTimeout(() => {
-                        loadingOverlay.classList.add('hidden');
-                        mainContent.style.opacity = '1';
-                    }, 400);
+                    setTimeout(() => { loadingOverlay.classList.add('hidden'); mainContent.style.opacity = '1'; }, 400);
                 };
-                tempImg.src = gifSrc;
+                tmp.src = gifSrc;
             } else {
                 loadingGif.style.display = 'none';
                 loadingText.style.display = 'none';
-                setTimeout(() => {
-                    loadingOverlay.classList.add('hidden');
-                    mainContent.style.opacity = '1';
-                }, 400);
+                setTimeout(() => { loadingOverlay.classList.add('hidden'); mainContent.style.opacity = '1'; }, 400);
             }
 
             if (logoSrc) {
@@ -1122,11 +1237,8 @@
             loadModData('all');
         }
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initPage);
-        } else {
-            initPage();
-        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPage);
+        else initPage();
     })();
     </script>
 </body>
