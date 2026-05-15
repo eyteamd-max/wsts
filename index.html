@@ -821,7 +821,7 @@
         async function loadModData(categoryKey = 'all') {
             const url = dataSources[categoryKey];
             if (!url) return;
-            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;">正在准备萌物清单...</div>';
+            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="img/loaded_2.gif" alt="加载中" style="max-width:200px;"></div>';
             try {
                 if (dataCache[url]) {
                     modData = dataCache[url];
