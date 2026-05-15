@@ -332,6 +332,57 @@
     async function openModal(mod) {
         currentMod = mod;
 
+        const loadingOverlayEl = document.createElement('div');
+        loadingOverlayEl.className = 'modal-loading-overlay';
+        loadingOverlayEl.innerHTML = `
+            <div class="modal-loading-spinner"></div>
+            <div class="modal-loading-text">萌图竞速中...</div>
+        `;
+        document.body.appendChild(loadingOverlayEl);
+
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'modal-loading-close';
+        closeBtn.innerHTML = '&times;';
+        document.body.appendChild(closeBtn);
+
+        let cancelled = false;
+
+        const cleanupLoading = () => {
+            if (loadingOverlayEl.parentNode) loadingOverlayEl.remove();
+            if (closeBtn.parentNode) closeBtn.remove();
+        };
+
+        closeBtn.addEventListener('click', () => {
+            cancelled = true;
+            cleanupLoading();
+            currentMod = null;
+        });
+
+        let imageCandidates = [];
+        if (mod.images && mod.images.length > 0) {
+            imageCandidates = mod.images;
+        } else if (mod.coverImage) {
+            imageCandidates = [mod.coverImage];
+        }
+
+        let finalImages = [];
+        try {
+            const results = await Promise.all(
+                imageCandidates.map(item => raceImage(toCandidates(item)).catch(() => null))
+            );
+            if (cancelled) return;
+            finalImages = results.filter(url => url !== null);
+        } catch (e) {
+            if (cancelled) return;
+        }
+
+        cleanupLoading();
+
+        if (cancelled) {
+            currentMod = null;
+            return;
+        }
+
         modalTitle.textContent = mod.title;
 
         modalRid.textContent = 'RID: ' + (mod.id || '无');
@@ -413,15 +464,9 @@
         updatePreviewButtons();
         renderPreviewContent();
 
-        carouselContainer.style.display = 'block';
-        carouselTrack.innerHTML = `
-            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:16px;">
-                <span class="loading-spinner" style="display:inline-block; width:48px; height:48px; border-width:4px;"></span>
-                <span style="color:var(--text-secondary); font-size:0.95rem;">萌图竞速中...</span>
-            </div>`;
-        carouselDots.innerHTML = '';
-        carouselPrev.style.display = 'none';
-        carouselNext.style.display = 'none';
+        updateCarousel(finalImages);
+        carouselPrev.style.display = '';
+        carouselNext.style.display = '';
 
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -431,25 +476,6 @@
                 descToggle.style.display = 'inline-block';
             }
         }, 50);
-
-        let imageCandidates = [];
-        if (mod.images && mod.images.length > 0) {
-            imageCandidates = mod.images;
-        } else if (mod.coverImage) {
-            imageCandidates = [mod.coverImage];
-        }
-
-        try {
-            const finalImages = (await Promise.all(
-                imageCandidates.map(item => raceImage(toCandidates(item)).catch(() => null))
-            )).filter(url => url !== null);
-
-            if (currentMod === mod) {
-                updateCarousel(finalImages);
-                carouselPrev.style.display = '';
-                carouselNext.style.display = '';
-            }
-        } catch (e) {}
     }
 
     function closeModal() {
