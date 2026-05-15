@@ -336,7 +336,7 @@
         loadingOverlayEl.className = 'modal-loading-overlay';
         loadingOverlayEl.innerHTML = `
             <div class="modal-loading-spinner"></div>
-            <div class="modal-loading-text">萌图竞速中...</div>
+            <div class="modal-loading-text">猫猫正在解析界面...</div>
         `;
         document.body.appendChild(loadingOverlayEl);
 
