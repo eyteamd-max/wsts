@@ -336,7 +336,7 @@
         loadingOverlayEl.className = 'modal-loading-overlay';
         loadingOverlayEl.innerHTML = `
             <div class="modal-loading-spinner"></div>
-            <div class="modal-loading-text">猫猫正在解析界面...</div>
+            <div class="modal-loading-text">网页有点重，猫猫正在努力叼过来...</div>
         `;
         document.body.appendChild(loadingOverlayEl);
 
@@ -728,7 +728,11 @@
         ];
 
         try {
-            const resp = await fetch('json/config.json');
+            const fetchWithTimeout = Promise.race([
+                fetch('json/config.json'),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
+            ]);
+            const resp = await fetchWithTimeout;
             if (resp.ok) {
                 const config = await resp.json();
                 if (config.loadingGifUrls && config.loadingGifUrls.length) {
@@ -755,33 +759,18 @@
         window.loaded2GifSrc = loaded2Src || 'img/loaded_2.gif';
 
         if (gifSrc) {
-            const tempImg = new Image();
-            tempImg.onload = () => {
-                loadingGif.src = gifSrc;
-                loadingGif.style.display = 'block';
-                loadingText.style.display = 'block';
-                setTimeout(() => {
-                    loadingOverlay.classList.add('hidden');
-                    mainContent.style.opacity = '1';
-                }, 600);
-            };
-            tempImg.onerror = () => {
-                loadingGif.style.display = 'none';
-                loadingText.style.display = 'none';
-                setTimeout(() => {
-                    loadingOverlay.classList.add('hidden');
-                    mainContent.style.opacity = '1';
-                }, 400);
-            };
-            tempImg.src = gifSrc;
+            loadingGif.src = gifSrc;
+            loadingGif.style.display = 'block';
+            loadingText.style.display = 'block';
         } else {
             loadingGif.style.display = 'none';
             loadingText.style.display = 'none';
-            setTimeout(() => {
-                loadingOverlay.classList.add('hidden');
-                mainContent.style.opacity = '1';
-            }, 400);
         }
+
+        setTimeout(() => {
+            loadingOverlay.classList.add('hidden');
+            mainContent.style.opacity = '1';
+        }, gifSrc ? 600 : 100);
 
         if (logoSrc) {
             logoImg.src = logoSrc;
