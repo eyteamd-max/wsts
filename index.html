@@ -242,7 +242,6 @@
         .lightbox-close { position: fixed; top: 16px; right: 24px; z-index: 410; font-size: 2rem; cursor: pointer; color: var(--text-primary); background: #fffdfb; border: var(--border-width) solid var(--border-dark); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; line-height: 1; transition: all 0.2s; }
         .lightbox-close:hover { background: var(--strawberry-light); color: #fff; border-color: #c97a7a; }
 
-        /* 角色详情全屏弹窗 */
         .chara-overlay {
             display: none; position: fixed; inset: 0; background: rgba(250, 247, 244, 0.92);
             backdrop-filter: blur(10px); z-index: 500; overflow-y: auto;
@@ -256,7 +255,6 @@
             position: relative;
         }
 
-/* 右上角叉号 - 固定定位 */
         .chara-close {
             position: fixed; top: 16px; right: 24px; z-index: 510;
             font-size: 2rem; cursor: pointer; color: var(--text-primary);
@@ -272,7 +270,7 @@
         }
         .chara-image-wrap img {
             max-width: 90vw; max-height: 70vh;
-            border-radius: 16px; /* 保留圆角，无边框 */
+            border-radius: 16px;
             object-fit: contain;
             display: block;
         }
@@ -288,7 +286,6 @@
             border-radius: 14px; border: 1px solid #e8e2dc;
         }
 
-        /* 全局 Toast */
         .toast {
             position: fixed;
             bottom: 28px;
@@ -427,7 +424,6 @@
 
     <script>
     (function() {
-        // ---------- 多链竞速工具函数 ----------
         function raceImage(urls) {
             if (!urls || urls.length === 0) return Promise.reject('no urls');
             return Promise.any(urls.map(url => new Promise((resolve, reject) => {
@@ -480,7 +476,6 @@
             return [item];
         }
 
-        // ---------- 时间 ID 生成函数（供新增数据参考） ----------
         function generateTimeId() {
             const now = new Date();
             const year = now.getFullYear();
@@ -493,12 +488,10 @@
             return `${year}${month}${day}${hours}${minutes}${seconds}${ms}`;
         }
 
-        // ---------- 按时间 ID 字符串升序排序 ----------
         function sortModsByTimeId(dataArray) {
-            return dataArray.slice().sort((a, b) => (a.id || '').localeCompare(b.id || ''));
+            return dataArray.slice().sort((a, b) => (b.id || '').localeCompare(a.id || ''));
         }
 
-        // ---------- 全局变量 ----------
         const loadingOverlay = document.getElementById('loadingOverlay');
         const loadingGif = document.getElementById('loadingGif');
         const loadingText = document.getElementById('loadingText');
@@ -555,7 +548,6 @@
 
         window.loaded2GifSrc = null;
 
-        // ---------- Toast 提示 ----------
         let toastTimer;
         function showToast(message) {
             clearTimeout(toastTimer);
@@ -566,7 +558,6 @@
             }, 2200);
         }
 
-        // ---------- 复制文本 ----------
         function copyText(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 return navigator.clipboard.writeText(text);
@@ -592,7 +583,6 @@
             }
         }
 
-        // ---------- 轮播图逻辑 ----------
         function updateCarousel(images) {
             currentImages = images || [];
             currentIndex = 0;
@@ -787,12 +777,11 @@
 
             modalTitle.textContent = mod.title;
 
-            // 设置 RID 并绑定复制
             modalRid.textContent = 'RID: ' + (mod.id || '无');
             modalRid.onclick = () => {
                 const ridText = 'RID:' + (mod.id || '');
                 copyText(ridText).then(() => {
-                    showToast('RID 已复制');
+                    showToast('RID 已复制，快分享给小伙伴吧~');
                 }).catch(() => {
                     showToast('复制失败，请手动复制');
                 });
@@ -818,11 +807,9 @@
             }, 50);
             modalAuthor.textContent = '作者：' + (mod.author || '佚名');
 
-            // 作者链接：支持数组自定义或兼容旧格式
             modalLinks.innerHTML = '';
             if (mod.authorLinks) {
                 if (Array.isArray(mod.authorLinks)) {
-                    // 新格式：直接使用自定义数组
                     mod.authorLinks.forEach(link => {
                         if (link.text && link.url) {
                             const a = document.createElement('a');
@@ -835,7 +822,6 @@
                         }
                     });
                 } else {
-                    // 旧格式兼容：twitter, pixiv, bilibili 三个字段
                     const links = [
                         { name: 'Twitter', url: mod.authorLinks.twitter },
                         { name: 'Pixiv', url: mod.authorLinks.pixiv },
@@ -1004,15 +990,12 @@
             const query = searchInput.value.trim();
             if (query) {
                 const lowerQuery = query.toLowerCase();
-                // RID 搜索：仅精确匹配完整ID
                 if (lowerQuery.startsWith('rid:')) {
                     const ridPart = lowerQuery.slice(4).trim();
                     filtered = filtered.filter(m => m.id === ridPart);
                 } else if (/^\d+$/.test(query)) {
-                    // 纯数字 ID
                     filtered = filtered.filter(m => m.id === query);
                 } else {
-                    // 原有模糊搜索
                     filtered = filtered.filter(m => {
                         if (m.title.toLowerCase().includes(lowerQuery)) return true;
                         if (m.tags && m.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) return true;
@@ -1031,7 +1014,6 @@
                 return;
             }
             const lowerQuery = query.toLowerCase();
-            // 如果是 RID 搜索模式，不展示下拉建议
             if (lowerQuery.startsWith('rid:') || /^\d+$/.test(query)) {
                 searchDropdown.classList.remove('active');
                 return;
@@ -1106,7 +1088,6 @@
             if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
         });
 
-        // ---------- 角色详情弹窗 ----------
         charaClose.addEventListener('click', () => charaOverlay.classList.remove('active'));
         charaOverlay.addEventListener('click', (e) => {
             if (e.target === charaOverlay) charaOverlay.classList.remove('active');
@@ -1191,9 +1172,7 @@
                 logoTower.style.display = 'none';
             }
 
-            // 绑定 logo 点击事件
             logoArea.addEventListener('click', (e) => {
-                // 防止点到 logo 内部的子元素时触发多次
                 if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
                     openCharaDetail();
                 }
