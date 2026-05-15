@@ -320,14 +320,16 @@
     <div class="modal-overlay" id="modalOverlay">
         <button class="modal-close" id="modalClose">&times;</button>
         <div class="modal-content" id="modalContent">
+            <!-- 轮播容器及其导航、圆点 -->
             <div class="carousel-container" id="carouselContainer">
                 <div class="carousel-track" id="carouselTrack"></div>
                 <button class="carousel-btn prev" id="carouselPrev">&#10094;</button>
                 <button class="carousel-btn next" id="carouselNext">&#10095;</button>
                 <div class="carousel-dots" id="carouselDots"></div>
-                <div style="text-align:center; margin-top:8px;">
-                    <button class="export-btn" id="editCarouselBtn">编辑轮播图</button>
-                </div>
+            </div>
+            <!-- 编辑轮播图按钮移到外面，始终可见 -->
+            <div style="text-align:center; margin-bottom:20px;">
+                <button class="export-btn" id="editCarouselBtn">编辑轮播图</button>
             </div>
             <h2 class="modal-title" id="modalTitle"></h2>
             <div class="modal-tags" id="modalTags"></div>
@@ -507,6 +509,7 @@
         function updateCarousel(images) {
             currentImages = images || [];
             currentIndex = 0;
+            // 无图片时隐藏轮播容器本身，但按钮在外面，所以不影响
             if (!currentImages.length) {
                 carouselContainer.style.display = 'none';
                 return;
@@ -928,7 +931,6 @@
                 const arr = input.split(',').map(s => s.trim()).filter(s => s);
                 currentMod.previewImages = arr;
                 saveAndRefresh();
-                // 如果当前预览图片标签打开，则刷新
                 if (activePreviewTab === 'images') renderPreviewContent();
             }
         }
@@ -951,7 +953,6 @@
             if (idx > -1) {
                 modData.splice(idx, 1);
                 saveAndRefresh();
-                // 如果删掉的是当前打开的详情，关闭弹窗
                 if (currentMod && currentMod.id === mod.id) closeModal();
             }
         }
@@ -1136,7 +1137,7 @@
         document.getElementById('newModBtn').addEventListener('click', createNewMod);
         document.getElementById('exportBtn').addEventListener('click', exportJSON);
 
-        // 详情弹窗内的编辑按钮绑定
+        // 详情弹窗内的编辑按钮绑定（包括移出来的编辑轮播图按钮）
         document.getElementById('modalTitle').addEventListener('click', editModalTitle);
         document.getElementById('editDescBtn').addEventListener('click', editModalDesc);
         document.getElementById('modalAuthor').addEventListener('click', editModalAuthor);
