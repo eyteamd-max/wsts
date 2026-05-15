@@ -1,5 +1,66 @@
 [
   {
+    "id": "20260515140848186",
+    "title": "未命名MOD",
+    "category": "other",
+    "size": "58MB",
+    "date": "5/13",
+    "badge": "v1.5 2",
+    "badgeClass": "star",
+    "coverGradient": "",
+    "coverChar": "加载中…",
+    "coverImage": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+    "images": [
+      "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+      "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
+      "http://i0.hdslb.com/bfs/archive/a57dfc5f21ebe5997b6074ef7e8d67b74204dcb1.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif"
+    ],
+    "description": "老吴~ 哦呜~ 哈 ! ~",
+    "author": "未知",
+    "authorLinks": {
+      "bilibili": "bilibili.com"
+    },
+    "tags": [
+      "机器人",
+      "鸡煲",
+      "NSFW",
+      "外观替换",
+      "故障机器人"
+    ],
+    "downloadLinks": [
+      {
+        "text": "DNS加速",
+        "url": "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif"
+      },
+      {
+        "text": "百度云盘",
+        "url": "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg"
+      }
+    ],
+    "previewImages": [
+      "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif",
+      "http://i1.hdslb.com/bfs/archive/45af2716d96edb19027decc76e6329708cf33efa.jpg",
+      "http://i1.hdslb.com/bfs/archive/f6992e437a64ec4c905e7779de8979fde20625df.jpg",
+      "http://i0.hdslb.com/bfs/archive/a57dfc5f21ebe5997b6074ef7e8d67b74204dcb1.jpg"
+    ],
+    "previewVideos": [
+      {
+        "urls": [
+          "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/whales.mp4"
+        ]
+      },
+      {
+        "urls": [
+          "https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/whales.mp4"
+        ]
+      }
+    ]
+  }
+],
+[
+  {
     "id": 1,
     "title": "猫猫商人娘化&全日语配音",
     "category": "skin",
