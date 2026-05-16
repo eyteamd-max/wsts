@@ -405,7 +405,12 @@
             });
         }
 
-        modalDescText.textContent = mod.description || '暂无介绍';
+        const desc = (mod.description || '暂无介绍')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\n/g, '<br>');
+        modalDescText.innerHTML = desc;
         modalDescText.classList.remove('expanded');
         descToggle.style.display = 'none';
         descToggle.textContent = '展开全文';
