@@ -34,6 +34,10 @@
       {
         "text": "夸克云盘",
         "url": "https://pan.quark.cn/s/4223d651f627"
+      },
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim4136241f2dd4ee465b864236f866a078a9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       }
     ],
     "previewImages": [
@@ -61,9 +65,7 @@
     "coverImage": [
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/IMG_20260517_093600.png"
     ],
-    "images": [
-      "0"
-    ],
+    "images": [],
     "description": "点击下方“腾讯文档”即可查看移植版相关问题解答，该帖转自群公告，如果还是不懂可以加群问",
     "author": "_冬雪寒",
     "authorLinks": [
