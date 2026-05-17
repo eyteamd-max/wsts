@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 MOD 资源站</title>
+<style>
+  :root {
+    --bg: #0f0f1a; --card: #1a1a2e; --card-hover: #22223a;
+    --border: #2a2a4a; --accent: #e94560; --accent-hover: #c73652;
+    --text: #eee; --muted: #888; --success: #4ecca3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* ===== 顶部导航 ===== */
+  .navbar {
+    background: var(--card); border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .navbar .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+  .navbar .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+  .navbar .nav-links a { color: var(--muted); text-decoration: none; transition: color 0.2s; font-size: 0.95rem; }
+  .navbar .nav-links a:hover { color: var(--accent); }
+
+  /* ===== 搜索栏 ===== */
+  .search-section {
+    max-width: 1200px; margin: 2rem auto; padding: 0 2rem;
+  }
+  .search-bar {
+    display: flex; gap: 0.75rem; align-items: center;
+  }
+  .search-bar input {
+    flex: 1; padding: 0.85rem 1.25rem; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--card);
+    color: var(--text); font-size: 1rem;
+  }
+  .search-bar input:focus { outline: none; border-color: var(--accent); }
+  .search-bar button {
+    padding: 0.85rem 1.5rem; border: none; border-radius: 12px;
+    background: var(--accent); color: #fff; cursor: pointer;
+    font-size: 1rem; transition: background 0.2s; white-space: nowrap;
+  }
+  .search-bar button:hover { background: var(--accent-hover); }
+  .search-hint { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; }
+
+  /* 搜索下拉 */
+  .search-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 0 0 12px 12px; max-height: 300px; overflow-y: auto;
+    display: none; z-index: 50;
+  }
+  .search-dropdown.active { display: block; }
+  .dropdown-item {
+    padding: 0.75rem 1.25rem; cursor: pointer; display: flex;
+    justify-content: space-between; align-items: center;
+    transition: background 0.15s;
+  }
+  .dropdown-item:hover { background: var(--card-hover); }
+  .dropdown-title { font-size: 0.95rem; }
+  .dropdown-rid { font-size: 0.8rem; color: var(--muted); }
+
+  /* ===== 分区标签 ===== */
+  .category-tabs {
+    max-width: 1200px; margin: 0 auto 1.5rem; padding: 0 2rem;
+    display: flex; gap: 0.75rem;
+  }
+  .tab-btn {
+    padding: 0.6rem 1.5rem; border: 1px solid var(--border); border-radius: 10px;
+    background: transparent; color: var(--muted); cursor: pointer;
+    font-size: 0.9rem; transition: all 0.2s;
+  }
+  .tab-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .tab-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* ===== MOD 卡片网格 ===== */
+  .mod-grid {
+    max-width: 1200px; margin: 0 auto; padding: 0 2rem 3rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .mod-card {
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid transparent;
+  }
+  .mod-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(233,69,96,0.15);
+    border-color: var(--border);
+  }
+
+  .card-cover {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .cover-char { font-size: 4rem; opacity: 0.3; }
+  .card-badge {
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    padding: 0.25rem 0.75rem; border-radius: 6px;
+    font-size: 0.75rem; font-weight: 700; color: #fff;
+    background: var(--accent);
+  }
+  .card-badge.badge-new { background: var(--success); }
+  .card-badge.badge-hot { background: #ff6b35; }
+  .card-badge.badge-update { background: #4ecdc4; }
+
+  .card-body { padding: 1rem; }
+  .card-title {
+    font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-meta {
+    display: flex; gap: 0.75rem; font-size: 0.8rem; color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .tag {
+    padding: 0.15rem 0.5rem; border-radius: 4px;
+    font-size: 0.7rem; background: rgba(233,69,96,0.15); color: var(--accent);
+  }
+
+  /* ===== 详情弹窗 ===== */
+  .detail-modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+    display: none; align-items: flex-start; justify-content: center;
+    z-index: 200; padding: 2rem; overflow-y: auto;
+  }
+  .detail-modal.active { display: flex; }
+  .detail-content {
+    background: var(--card); border-radius: 16px; width: 100%; max-width: 800px;
+    overflow: hidden; margin-top: 2rem;
+  }
+  .detail-close {
+    position: absolute; top: 1rem; right: 1rem;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(0,0,0,0.5); border: none; color: #fff;
+    font-size: 1.5rem; cursor: pointer; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .detail-cover {
+    height: 250px; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .detail-info { padding: 1.5rem 2rem 2rem; }
+  .detail-info h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .detail-meta { display: flex; gap: 1rem; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .detail-author { margin-bottom: 0.75rem; }
+  .detail-author a { color: var(--accent); text-decoration: none; margin-left: 0.5rem; }
+  .detail-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .detail-desc { line-height: 1.7; margin-bottom: 1.5rem; color: #ccc; }
+  .detail-images, .detail-preview-images { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+  .detail-images img, .detail-preview-images img { width: 100%; border-radius: 8px; }
+  .detail-preview-videos { margin-bottom: 1rem; }
+  .detail-preview-videos iframe, .detail-preview-videos video { width: 100%; border-radius: 8px; margin-bottom: 0.5rem; }
+  .detail-downloads { margin-top: 1.5rem; }
+  .detail-downloads h3 { margin-bottom: 0.75rem; color: var(--accent); }
+  .download-btn {
+    display: inline-block; padding: 0.6rem 1.5rem; border-radius: 8px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    margin-right: 0.5rem; margin-bottom: 0.5rem; transition: background 0.2s;
+  }
+  .download-btn:hover { background: var(--accent-hover); }
+
+  /* ===== 加载动画 ===== */
+  .loading {
+    grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--muted);
+  }
+  .spinner {
+    width: 40px; height: 40px; border: 3px solid var(--border);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin: 0 auto 1rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 768px) {
+    .navbar { padding: 0.75rem 1rem; }
+    .search-section, .category-tabs, .mod-grid { padding-left: 1rem; padding-right: 1rem; }
+    .mod-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+    .card-cover { height: 130px; }
+    .detail-content { border-radius: 12px; }
+    .detail-info { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+  <div class="logo">STS2 MOD 资源站</div>
+  <div class="nav-links">
+    <a href="admin_post.html">管理后台</a>
+  </div>
+</nav>
+
+<!-- 搜索栏 -->
+<div class="search-section">
+  <form class="search-bar" onsubmit="return false;" style="position:relative;">
+    <input type="text" id="searchInput" placeholder="搜索 MOD 标题、标签... 或输入 rid:20260427134303123 精确查询" autocomplete="off">
+    <button type="submit" onclick="performSearch()">搜索</button>
+    <div class="search-dropdown" id="searchDropdown"></div>
+  </form>
+  <div class="search-hint">提示：输入 rid: + RID编号 可跨分区精确查询，如 rid:20260427134303123</div>
+</div>
+
+<!-- 分区标签 -->
+<div class="category-tabs">
+  <button class="tab-btn active" data-category="all" onclick="switchCategory('all', this)">MOD资源</button>
+  <button class="tab-btn" data-category="skin" onclick="switchCategory('skin', this)">O.o的网盘</button>
+</div>
+
+<!-- MOD 卡片网格 -->
+<div class="mod-grid" id="modGrid">
+  <div class="loading">
+    <div class="spinner"></div>
+    <p>加载中...</p>
+  </div>
+</div>
+
+<!-- 详情弹窗 -->
+<div class="detail-modal" id="detailModal"></div>
+
+<script src="main.js"></script>
+<script>
+// 分区切换
+function switchCategory(category, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // 修复需求二：切换分区时清空搜索框
+  document.getElementById('searchInput').value = '';
+  currentSearch = '';
+
+  loadModData(category);
+}
+
+// 点击外部关闭搜索下拉
+document.addEventListener('click', (e) => {
+  const dropdown = document.getElementById('searchDropdown');
+  const searchInput = document.getElementById('searchInput');
+  if (!e.target.closest('.search-bar')) {
+    dropdown.classList.remove('active');
+  }
+});
+</script>
+</body>
+</html>

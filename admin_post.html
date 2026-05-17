@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 MOD 管理后台</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --bg: #0f0f1a; --card: #1a1a2e; --border: #2a2a4a;
+    --accent: #e94560; --accent-hover: #c73652;
+    --text: #eee; --muted: #888; --success: #4ecca3; --danger: #e94560;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* ===== 登录页 ===== */
+  .login-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+    display: flex; align-items: center; justify-content: center; z-index: 9999;
+  }
+  .login-box {
+    background: var(--card); border-radius: 16px; padding: 2.5rem;
+    width: 90%; max-width: 400px; text-align: center;
+  }
+  .login-box h2 { color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem; }
+  .login-box input {
+    width: 100%; padding: 0.85rem; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--bg); color: var(--text); font-size: 1rem; margin-bottom: 1rem;
+  }
+  .login-box input:focus { outline: none; border-color: var(--accent); }
+  .login-box button {
+    width: 100%; padding: 0.85rem; border: none; border-radius: 10px;
+    background: var(--accent); color: #fff; font-size: 1rem; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .login-box button:hover { background: var(--accent-hover); }
+  .login-error { color: var(--danger); margin-top: 0.75rem; font-size: 0.9rem; display: none; }
+
+  /* ===== 主界面 ===== */
+  .admin-container { display: none; padding: 1.5rem; max-width: 1200px; margin: 0 auto; }
+  .admin-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+  }
+  .admin-header h1 { color: var(--accent); font-size: 1.5rem; }
+  .admin-header .logout-btn {
+    padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+    background: transparent; color: var(--muted); cursor: pointer; transition: all 0.2s;
+  }
+  .admin-header .logout-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* 工具栏 */
+  .toolbar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .toolbar select, .toolbar input {
+    padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text); font-size: 0.9rem;
+  }
+  .toolbar input { flex: 1; min-width: 200px; }
+  .toolbar select:focus, .toolbar input:focus { outline: none; border-color: var(--accent); }
+  .btn-primary {
+    padding: 0.6rem 1.5rem; border: none; border-radius: 8px;
+    background: var(--accent); color: #fff; cursor: pointer; font-size: 0.9rem;
+    transition: background 0.2s; white-space: nowrap;
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+
+  /* MOD 列表表格 */
+  .mod-table { width: 100%; border-collapse: collapse; }
+  .mod-table th, .mod-table td {
+    padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border);
+  }
+  .mod-table th { color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
+  .mod-table tr:hover td { background: rgba(233,69,96,0.05); }
+  .mod-table .title-cell { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mod-table .actions { display: flex; gap: 0.5rem; }
+  .btn-sm {
+    padding: 0.35rem 0.75rem; border: 1px solid var(--border); border-radius: 6px;
+    background: transparent; color: var(--text); cursor: pointer; font-size: 0.8rem;
+    transition: all 0.2s;
+  }
+  .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-sm.danger:hover { border-color: var(--danger); color: var(--danger); }
+
+  /* 分页 */
+  .pagination { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+  .pagination button {
+    padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--card); color: var(--text); cursor: pointer; transition: all 0.2s;
+  }
+  .pagination button:hover { border-color: var(--accent); }
+  .pagination button.active { background: var(--accent); border-color: var(--accent); }
+  .pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* ===== 编辑弹窗 ===== */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    display: none; align-items: flex-start; justify-content: center;
+    z-index: 1000; padding: 2rem; overflow-y: auto;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--card); border-radius: 16px; padding: 2rem;
+    width: 100%; max-width: 700px; margin-top: 2rem;
+  }
+  .modal-box h2 { color: var(--accent); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 600; color: #a8d8ea; font-size: 0.9rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 0.7rem; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--bg); color: var(--text); font-size: 0.9rem;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-group .hint { color: var(--muted); font-size: 0.8rem; margin-top: 0.25rem; }
+  .form-row { display: flex; gap: 1rem; }
+  .form-row .form-group { flex: 1; }
+  .modal-actions { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: flex-end; }
+  .btn-cancel {
+    padding: 0.7rem 1.5rem; border: 1px solid var(--border); border-radius: 8px;
+    background: transparent; color: var(--text); cursor: pointer; transition: all 0.2s;
+  }
+  .btn-cancel:hover { border-color: var(--muted); }
+
+  /* Toast 提示 */
+  .toast {
+    position: fixed; top: 1.5rem; right: 1.5rem; padding: 1rem 1.5rem;
+    border-radius: 10px; color: #fff; font-size: 0.95rem; z-index: 10000;
+    transform: translateX(120%); transition: transform 0.3s ease;
+  }
+  .toast.show { transform: translateX(0); }
+  .toast.success { background: var(--success); }
+  .toast.error { background: var(--danger); }
+
+  /* 响应式 */
+  @media (max-width: 768px) {
+    .form-row { flex-direction: column; gap: 0; }
+    .mod-table { font-size: 0.85rem; }
+    .mod-table th:nth-child(4), .mod-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 登录页 ===== -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <h2>STS2 MOD 管理后台</h2>
+    <input type="password" id="loginPassword" placeholder="输入管理密码" autofocus>
+    <button onclick="doLogin()">登 录</button>
+    <div class="login-error" id="loginError">密码错误，请重试</div>
+  </div>
+</div>
+
+<!-- ===== 主界面 ===== -->
+<div class="admin-container" id="adminContainer">
+  <div class="admin-header">
+    <h1>MOD 管理后台</h1>
+    <button class="logout-btn" onclick="doLogout()">退出登录</button>
+  </div>
+
+  <div class="toolbar">
+    <select id="filterSource" onchange="loadMods()">
+      <option value="all">MOD资源区</option>
+      <option value="skin">O.o的网盘区</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="搜索标题或 RID..." oninput="debounceSearch()">
+    <button class="btn-primary" onclick="openEdit()">+ 发布新帖</button>
+  </div>
+
+  <table class="mod-table">
+    <thead>
+      <tr>
+        <th>RID</th>
+        <th>标题</th>
+        <th>分区</th>
+        <th>作者</th>
+        <th>大小</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody id="modTableBody">
+      <tr><td colspan="6" style="text-align:center;color:var(--muted);">加载中...</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pagination" id="pagination"></div>
+</div>
+
+<!-- ===== 编辑弹窗 ===== -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal-box">
+    <h2 id="editTitle">发布新帖</h2>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>RID（留空自动生成）</label>
+        <input type="text" id="eId" placeholder="如 20260427134303123">
+      </div>
+      <div class="form-group">
+        <label>标题 *</label>
+        <input type="text" id="eTitle" placeholder="MOD 标题" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>分区</label>
+        <select id="eSource">
+          <option value="all">MOD资源区</option>
+          <option value="skin">O.o的网盘区</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>分类</label>
+        <select id="eCategory">
+          <option value="skin">Skin</option>
+          <option value="relic">Relic</option>
+          <option value="card">Card</option>
+          <option value="potion">Potion</option>
+          <option value="event">Event</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>作者</label>
+        <input type="text" id="eAuthor" placeholder="作者名">
+      </div>
+      <div class="form-group">
+        <label>文件大小</label>
+        <input type="text" id="eSize" placeholder="如 12.3 MB">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>角标文字</label>
+        <input type="text" id="eBadge" placeholder="如 NEW / HOT">
+      </div>
+      <div class="form-group">
+        <label>角标样式</label>
+        <select id="eBadgeClass">
+          <option value="">默认</option>
+          <option value="badge-new">NEW</option>
+          <option value="badge-hot">HOT</option>
+          <option value="badge-update">UPDATE</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>封面渐变</label>
+      <input type="text" id="eCoverGradient" placeholder="linear-gradient(135deg, #fce4e4 0%, #f8d0d0 100%)">
+    </div>
+
+    <div class="form-group">
+      <label>封面角色</label>
+      <input type="text" id="eCoverChar" placeholder="角色名（无封面图时显示）">
+    </div>
+
+    <div class="form-group">
+      <label>封面图片URL（每行一个）</label>
+      <textarea id="eCoverImage" placeholder="https://example.com/cover.jpg"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>详细介绍</label>
+      <textarea id="eDesc" placeholder="MOD 的详细描述..." style="min-height:150px;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>标签（逗号分隔）</label>
+      <input type="text" id="eTags" placeholder="如：NSFW, 机器人, 角色替换">
+    </div>
+
+    <div class="form-group">
+      <label>作者链接（每行一个，格式：名称|URL）</label>
+      <textarea id="eAuthorLinks" placeholder="GitHub|https://github.com/xxx"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>下载链接（每行一个，格式：名称|URL）</label>
+      <textarea id="eDownloadLinks" placeholder="网盘下载|https://pan.baidu.com/xxx"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>预览图片URL（每行一个）</label>
+      <textarea id="ePreviewImages" placeholder="https://example.com/preview1.jpg"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>预览视频URL（每行一个）</label>
+      <textarea id="ePreviewVideos" placeholder="https://www.bilibili.com/video/xxx"></textarea>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeEdit()">取消</button>
+      <button class="btn-primary" id="saveBtn" onclick="saveMod()">保存到 Supabase</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ==================== 配置 ====================
+const SUPABASE_URL = 'https://bijoqrdxjtvcdmwboorq.supabase.co';  // ← 替换
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpam9xcmR4anR2Y2Rtd2Jvb3JxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5OTAxNjYsImV4cCI6MjA5NDU2NjE2Nn0.M_d19L5FsDXpfuyLfg05ruZOb86v_66qL2pF2ZYxwTw';                // ← 替换
+const ADMIN_PASSWORD = 'H7eVH!k+gS-GGE$';                     // ← 替换为你的密码
+
+// ==================== Supabase 初始化 ====================
+let supabase;
+try {
+  supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} catch (e) {
+  console.error('Supabase 初始化失败，请检查配置:', e);
+}
+
+// ==================== 登录逻辑 ====================
+function doLogin() {
+  const pwd = document.getElementById('loginPassword').value;
+  if (pwd === ADMIN_PASSWORD) {
+    sessionStorage.setItem('admin_auth', '1');
+    document.getElementById('loginOverlay').style.display = 'none';
+    document.getElementById('adminContainer').style.display = 'block';
+    loadMods();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+    document.getElementById('loginPassword').value = '';
+    document.getElementById('loginPassword').focus();
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem('admin_auth');
+  location.reload();
+}
+
+// 回车登录
+document.getElementById('loginPassword').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') doLogin();
+});
+
+// 检查登录状态
+if (sessionStorage.getItem('admin_auth') === '1') {
+  document.getElementById('loginOverlay').style.display = 'none';
+  document.getElementById('adminContainer').style.display = 'block';
+}
+
+// ==================== Toast ====================
+function showToast(msg, isError = false) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.className = `toast ${isError ? 'error' : 'success'} show`;
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// ==================== MOD 列表加载 ====================
+let currentPage = 1;
+const PAGE_SIZE = 20;
+let totalCount = 0;
+
+async function loadMods() {
+  const source = document.getElementById('filterSource').value;
+  const search = document.getElementById('searchInput').value.trim();
+  const tbody = document.getElementById('modTableBody');
+
+  tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);">加载中...</td></tr>';
+
+  try {
+    let query = supabase.from('mods').select('*', { count: 'exact' }).eq('source', source);
+
+    if (search) {
+      // 如果是 RID 搜索
+      if (/^\d{10,}$/.test(search)) {
+        query = query.eq('id', search);
+      } else {
+        query = query.or(`title.ilike.%${search}%,tags.cs.{${search}}`);
+      }
+    }
+
+    const from = (currentPage - 1) * PAGE_SIZE;
+    const to = from + PAGE_SIZE - 1;
+    query = query.order('id', { ascending: false }).range(from, to);
+
+    const { data, error, count } = await query;
+
+    if (error) throw error;
+
+    totalCount = count;
+    renderTable(data || []);
+    renderPagination();
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--danger);">加载失败: ${e.message}</td></tr>`;
+  }
+}
+
+function renderTable(mods) {
+  const tbody = document.getElementById('modTableBody');
+  if (mods.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);">暂无数据</td></tr>';
+    return;
+  }
+  tbody.innerHTML = mods.map(m => `
+    <tr>
+      <td>${m.id}</td>
+      <td class="title-cell">${m.title}</td>
+      <td>${m.source === 'all' ? 'MOD资源' : '网盘'}</td>
+      <td>${m.author || '-'}</td>
+      <td>${m.size || '-'}</td>
+      <td class="actions">
+        <button class="btn-sm" onclick='openEdit(${JSON.stringify(m).replace(/'/g, "&#39;")})'>编辑</button>
+        <button class="btn-sm danger" onclick="deleteMod('${m.id}')">删除</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function renderPagination() {
+  const totalPages = Math.ceil(totalCount / PAGE_SIZE);
+  const container = document.getElementById('pagination');
+  if (totalPages <= 1) { container.innerHTML = ''; return; }
+
+  let html = '';
+  html += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="goPage(${currentPage - 1})">上一页</button>`;
+  for (let i = 1; i <= totalPages && i <= 10; i++) {
+    html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  if (totalPages > 10) {
+    html += `<button disabled>...</button>`;
+    html += `<button class="${totalPages === currentPage ? 'active' : ''}" onclick="goPage(${totalPages})">${totalPages}</button>`;
+  }
+  html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="goPage(${currentPage + 1})">下一页</button>`;
+  container.innerHTML = html;
+}
+
+function goPage(p) {
+  currentPage = p;
+  loadMods();
+}
+
+// 搜索防抖
+let searchTimer;
+function debounceSearch() {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    currentPage = 1;
+    loadMods();
+  }, 400);
+}
+
+// ==================== 编辑弹窗 ====================
+let editingMod = null;
+
+function openEdit(mod = null) {
+  editingMod = mod;
+  const modal = document.getElementById('editModal');
+  document.getElementById('editTitle').textContent = mod ? '编辑帖子' : '发布新帖';
+
+  // 填充表单
+  document.getElementById('eId').value = mod ? mod.id : '';
+  document.getElementById('eTitle').value = mod ? mod.title : '';
+  document.getElementById('eSource').value = mod ? mod.source : 'all';
+  document.getElementById('eCategory').value = mod ? (mod.category || 'skin') : 'skin';
+  document.getElementById('eAuthor').value = mod ? (mod.author || '') : '';
+  document.getElementById('eSize').value = mod ? (mod.size || '') : '';
+  document.getElementById('eBadge').value = mod ? (mod.badge || '') : '';
+  document.getElementById('eBadgeClass').value = mod ? (mod.badgeClass || '') : '';
+  document.getElementById('eCoverGradient').value = mod ? (mod.coverGradient || '') : '';
+  document.getElementById('eCoverChar').value = mod ? (mod.coverChar || '') : '';
+  document.getElementById('eCoverImage').value = mod ? (Array.isArray(mod.coverImage) ? mod.coverImage.join('\n') : '') : '';
+  document.getElementById('eDesc').value = mod ? (mod.description || '') : '';
+  document.getElementById('eTags').value = mod ? (Array.isArray(mod.tags) ? mod.tags.join(', ') : '') : '';
+  document.getElementById('eAuthorLinks').value = mod ? (Array.isArray(mod.authorLinks) ? mod.authorLinks.map(l => typeof l === 'string' ? l : `${l.name}|${l.url}`).join('\n') : '') : '';
+  document.getElementById('eDownloadLinks').value = mod ? (Array.isArray(mod.downloadLinks) ? mod.downloadLinks.map(l => typeof l === 'string' ? l : `${l.name}|${l.url}`).join('\n') : '') : '';
+  document.getElementById('ePreviewImages').value = mod ? (Array.isArray(mod.previewImages) ? mod.previewImages.join('\n') : '') : '';
+  document.getElementById('ePreviewVideos').value = mod ? (Array.isArray(mod.previewVideos) ? mod.previewVideos.map(v => v.urls ? v.urls.join('\n') : v).join('\n') : '') : '';
+
+  modal.classList.add('active');
+}
+
+function closeEdit() {
+  document.getElementById('editModal').classList.remove('active');
+  editingMod = null;
+}
+
+// ==================== 保存 MOD ====================
+async function saveMod() {
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true;
+  btn.textContent = '保存中...';
+
+  const parseLines = (str) => str.split('\n').map(s => s.trim()).filter(Boolean);
+  const parseLinks = (str) => parseLines(str).map(line => {
+    const parts = line.split('|');
+    return parts.length >= 2 ? { name: parts[0].trim(), url: parts[1].trim() } : { name: '链接', url: line.trim() };
+  });
+
+  const payload = {
+    id: document.getElementById('eId').value.trim() || undefined,
+    title: document.getElementById('eTitle').value.trim(),
+    source: document.getElementById('eSource').value,
+    category: document.getElementById('eCategory').value,
+    author: document.getElementById('eAuthor').value.trim(),
+    size: document.getElementById('eSize').value.trim() || 'None',
+    badge: document.getElementById('eBadge').value.trim() || null,
+    badgeClass: document.getElementById('eBadgeClass').value,
+    coverGradient: document.getElementById('eCoverGradient').value.trim() || 'linear-gradient(135deg, #fce4e4 0%, #f8d0d0 100%)',
+    coverChar: document.getElementById('eCoverChar').value.trim(),
+    coverImage: parseLines(document.getElementById('eCoverImage').value),
+    description: document.getElementById('eDesc').value.trim(),
+    tags: document.getElementById('eTags').value.split(',').map(s => s.trim()).filter(Boolean),
+    authorLinks: parseLinks(document.getElementById('eAuthorLinks').value),
+    downloadLinks: parseLinks(document.getElementById('eDownloadLinks').value),
+    previewImages: parseLines(document.getElementById('ePreviewImages').value),
+    previewVideos: parseLines(document.getElementById('ePreviewVideos').value).map(url => ({ urls: [url] }))
+  };
+
+  if (!payload.title) {
+    showToast('标题不能为空！', true);
+    btn.disabled = false;
+    btn.textContent = '保存到 Supabase';
+    return;
+  }
+
+  try {
+    const { error } = await supabase.from('mods').upsert([payload], { onConflict: 'id' });
+    if (error) throw error;
+    showToast(editingMod ? '修改已保存' : '新帖已发布');
+    closeEdit();
+    loadMods();
+  } catch (e) {
+    showToast('保存失败：' + e.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '保存到 Supabase';
+  }
+}
+
+// ==================== 删除 MOD ====================
+async function deleteMod(id) {
+  if (!confirm(`确定删除 RID ${id} 吗？不可恢复！`)) return;
+  try {
+    const { error } = await supabase.from('mods').delete().eq('id', id);
+    if (error) throw error;
+    showToast('已删除');
+    loadMods();
+  } catch (e) {
+    showToast('删除失败：' + e.message, true);
+  }
+}
+
+// ==================== 快捷键 ====================
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeEdit();
+});
+</script>
+</body>
+</html>
