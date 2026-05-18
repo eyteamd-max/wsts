@@ -1,0 +1,7 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+/resources/json/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
