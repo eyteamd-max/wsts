@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杀戮尖塔2娘化MOD站</title>
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
+    <style>
+        /* 内联关键样式：让loading和主结构在CSS文件加载前就可见 */
+        .loading-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #faf7f4; z-index: 9999;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+        }
+        .loading-gif {
+            display: none; /* 默认隐藏，实际不使用外部GIF */
+        }
+        /* 简洁加载圈 */
+        .loading-spinner-main {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #e2dbd0;
+            border-top-color: #e89b9b;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            display: block;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-size: 1.1rem; color: #6b6378;
+            animation: loadingPulse 1.5s ease-in-out infinite;
+            margin-top: 10px;
+        }
+        .loading-spinner {
+            display: inline-block; width: 1em; height: 1em;
+            border: 2px solid #6b6378; border-top-color: transparent;
+            border-radius: 50%; margin-left: 8px;
+            animation: spin 0.8s linear infinite; vertical-align: middle;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes loadingPulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
+    </style>
+    <link rel="stylesheet" href="resources/css/style.css?v=20260520">
+</head>
+<body>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div id="potionWrapper" style="display:flex;flex-direction:column;align-items:center;">
+            <div class="loading-spinner-main"></div>
+        </div>
+        <img class="loading-gif" id="loadingGif" alt="加载中">
+        <span class="loading-text" id="loadingText">正在加载资源<span class="loading-spinner"></span></span>
+    </div>
+
+    <div class="main-container" id="mainContent">
+        <div class="header">
+            <div class="logo-area" id="logoArea">
+                <img class="logo-img" id="logoImg" alt="Logo" style="display:none;">
+                <div class="logo-tower" id="logoTower">
+                    <div class="logo-layer"></div>
+                    <div class="logo-layer"></div>
+                    <div class="logo-layer"></div>
+                </div>
+                <span class="logo-title">杀戮尖塔2娘化MOD站</span>
+            </div>
+            <div class="search-wrapper">
+                <div class="search-container" id="searchContainer">
+                    <input type="text" class="search-input" id="searchInput" placeholder="搜索MOD名称、标签，或输入 RID:xxxxx 查询...">
+                    <div class="search-mascot"></div>
+                    <ul class="search-dropdown" id="searchDropdown"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-tags" id="categoryTags">
+            <span class="category-tag active" data-category="all">MOD资源</span>
+            <span class="category-tag" data-category="skin">O.o的网盘</span>
+        </div>
+
+        <div class="quick-actions">
+            <a class="quick-card" href="resources/group/group.html">
+                <span class="quick-card-title">加入群聊</span>
+                <span class="quick-card-desc">交流MOD与疑问解答</span>
+            </a>
+            <a class="quick-card" href="https://docs.qq.com/doc/DV2pXb3pneU5YUGdx" target="_blank" rel="noopener noreferrer">
+                <span class="quick-card-title">移植版教程</span>
+                <span class="quick-card-desc">常见问题自助解答</span>
+            </a>
+            <a class="quick-card" href="https://pan.quark.cn/s/4223d651f627" target="_blank" rel="noopener noreferrer">
+                <span class="quick-card-title">MOD下载</span>
+                <span class="quick-card-desc">夸克网盘合集</span>
+            </a>
+            <a class="quick-card" href="https://b23.tv/mjvckEc" target="_blank" rel="noopener noreferrer">
+                <span class="quick-card-title">关注B站</span>
+                <span class="quick-card-desc">获取最新动态</span>
+            </a>
+        </div>
+
+        <h2 class="mod-section-title">MOD 列表</h2>
+        <div class="mod-grid" id="modGrid"></div>
+
+        <!-- 【新增8】分页器容器 -->
+        <div class="pagination" id="pagination"></div>
+
+        <!-- 【新增9】manifest加载失败提示 -->
+        <div class="manifest-error" id="manifestError" style="display:none;">
+            <div class="manifest-error-state">
+                <p>配置加载失败，请刷新重试</p>
+            </div>
+        </div>
+
+        <div class="footer">杀戮尖塔2娘化MOD站 · 仅供学习交流</div>
+    </div>
+
+    <!-- 【新增6】RID复制弹窗 -->
+    <div class="rid-popup-overlay" id="ridPopupOverlay" style="display:none;"></div>
+    <div class="rid-popup" id="ridPopup" style="display:none;">
+        <div class="rid-popup-title">选择复制内容</div>
+        <button class="rid-popup-btn" id="ridCopyRid">复制 RID</button>
+        <button class="rid-popup-btn" id="ridCopyLink">复制帖子链接</button>
+        <button class="rid-popup-cancel" id="ridPopupCancel">取消</button>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-track" id="carouselTrack"></div>
+                <button class="carousel-btn prev" id="carouselPrev">&#8249;</button>
+                <button class="carousel-btn next" id="carouselNext">&#8250;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <span class="modal-rid" id="modalRid"></span>
+            <div class="modal-tags" id="modalTags"></div>
+            <div class="modal-description">
+                <div class="desc-text" id="modalDescText"></div>
+                <span class="desc-toggle" id="descToggle">展开全文</span>
+            </div>
+            <div class="modal-author" id="modalAuthor"></div>
+            <div class="author-links-section">
+                <span class="author-links-label">作者主页</span>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+            <div class="download-section">
+                <div class="download-buttons" id="downloadButtons"></div>
+            </div>
+            <div class="preview-section">
+                <div class="preview-toggles">
+                    <button class="preview-toggle" id="previewImagesBtn">预览图片 ▾</button>
+                    <button class="preview-toggle" id="previewVideosBtn">预览视频 ▾</button>
+                </div>
+                <div class="preview-content-area" id="previewContentArea"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" alt="查看大图">
+    </div>
+
+    <div class="chara-overlay" id="charaOverlay">
+        <button class="chara-close" id="charaClose">&times;</button>
+        <div class="chara-modal">
+            <div class="chara-image-wrap">
+                <img id="charaImg" alt="鸡煲立绘">
+            </div>
+            <h2 class="chara-name">故障机器人（鸡煲）</h2>
+            <div class="chara-details">
+                <p><strong>性别：</strong>未知</p>
+                <p><strong>年龄：</strong>千年机体</p>
+                <p><strong>画师：</strong>anaertailin（A大）</p>
+                <p><strong>规格：</strong>全身立绘，透明底，尺寸722×1420</p>
+                <p><strong>原图来源：</strong><a href="https://www.ifdian.net/album/c125877626ff11eea47652540025c377/6e1abe8c6c2011eea7b752540025c377?utm_source=copylink&utm_medium=link" target="_blank" rel="noopener noreferrer">爱发电原贴</a></p>
+            </div>
+            <p class="chara-desc">一具产生了自我意识的战斗型机器人。它装载的远古科技让它可以操控充能球。</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="resources/js/main.js?v=20260520" defer></script>
+</body>
+</html>
