@@ -942,7 +942,23 @@
     } catch (e) {}
 
     const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-    const logoPromise = raceImage(logoUrls).catch(function() { return null; });
+
+    /* ===== 鸡煲立绘加载：失败自动重试 3 次，间隔 2 秒 ===== */
+    const logoPromise = (async function loadLogoWithRetry() {
+      let lastErr;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          return await raceImage(logoUrls);   // 竞速加载，取最快成功的链接
+        } catch (err) {
+          lastErr = err;
+          if (attempt < 2) {                  // 前两次失败后等待 2 秒再试
+            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+          }
+        }
+      }
+      return null; // 3 次都失败，返回 null，保持 fallback 旋转动画
+    })();
+
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
 
     setTimeout(function() {
