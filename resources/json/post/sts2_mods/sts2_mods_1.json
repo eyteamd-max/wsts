@@ -29,7 +29,9 @@
     "badgeClass": "heart",
     "coverGradient": "linear-gradient(135deg, #e8e0f0 0%, #d5c8e8 35%, #e8ddf5 100%)",
     "coverChar": "加载中…",
-    "coverImage": [],
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/fhcyxyyxyfwedyyd.jpg"
+    ],
     "images": [],
     "description": "",
     "author": "",
