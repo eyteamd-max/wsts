@@ -71,6 +71,8 @@
   const logoArea = document.getElementById('logoArea');
 
   let modData = [];
+  // ===== 修复：新增 allModData 保存当前分区完整数据，用于搜索后恢复 =====
+  let allModData = [];
   let activeCategory = 'all';
   let currentPage = 1;
   const ITEMS_PER_PAGE = 8;
@@ -701,7 +703,7 @@
   }
 
   // ========== 全站搜索（RID搜索跨分区） ==========
-  
+
   // ========== 分享链接预加载（loading 阶段执行） ==========
   async function performGlobalRidSearchEarly(rid) {
     sharedRidParam = rid;
@@ -748,47 +750,68 @@
     return null;
   }
 
+  // ===== 修复：filterMods 从 allModData 过滤，不再污染原始数据 =====
   function filterMods() {
-    let filtered = modData.slice();
-    if (activeCategory !== 'all') { filtered = filtered.filter(function(m) { return m.category === activeCategory; }); }
     const query = searchInput.value.trim();
-    if (query) {
-      const lowerQuery = query.toLowerCase();
-      if (lowerQuery.startsWith('rid:')) {
-        const ridPart = lowerQuery.slice(4).trim();
-        performGlobalRidSearch(ridPart).then(function(found) {
-          if (found) {
-            openModal(found);
-            searchInput.value = '';
-            searchDropdown.classList.remove('active');
-          } else {
-            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:50px;color:var(--text-muted);">未找到该 RID</div>';
-            paginationEl.innerHTML = '';
-          }
-        });
-        return;
-      } else if (/^\d+$/.test(query)) {
-        performGlobalRidSearch(query).then(function(found) {
-          if (found) {
-            openModal(found);
-            searchInput.value = '';
-            searchDropdown.classList.remove('active');
-          } else {
-            modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:50px;color:var(--text-muted);">未找到该 RID</div>';
-            paginationEl.innerHTML = '';
-          }
-        });
-        return;
-      } else {
-        filtered = filtered.filter(function(m) {
-          if (m.title.toLowerCase().includes(lowerQuery)) return true;
-          if (m.tags && m.tags.some(function(tag) { return tag.toLowerCase().includes(lowerQuery); })) return true;
-          return false;
-        });
-      }
+
+    // 如果搜索框为空，从 allModData 恢复完整列表
+    if (!query) {
+      modData = allModData.slice();
+      currentPage = 1;
+      renderPage(1);
+      searchDropdown.classList.remove('active');
+      return;
     }
-    currentPage = 1;
+
+    let filtered = allModData.slice();
+    if (activeCategory !== 'all') { 
+      filtered = filtered.filter(function(m) { return m.category === activeCategory; }); 
+    }
+
+    const lowerQuery = query.toLowerCase();
+    if (lowerQuery.startsWith('rid:')) {
+      const ridPart = lowerQuery.slice(4).trim();
+      performGlobalRidSearch(ridPart).then(function(found) {
+        if (found) {
+          openModal(found);
+          searchInput.value = '';
+          searchDropdown.classList.remove('active');
+          // 清空后恢复列表
+          modData = allModData.slice();
+          currentPage = 1;
+          renderPage(1);
+        } else {
+          modData = [];
+          renderPage(1);
+        }
+      });
+      return;
+    } else if (/^\d+$/.test(query)) {
+      performGlobalRidSearch(query).then(function(found) {
+        if (found) {
+          openModal(found);
+          searchInput.value = '';
+          searchDropdown.classList.remove('active');
+          // 清空后恢复列表
+          modData = allModData.slice();
+          currentPage = 1;
+          renderPage(1);
+        } else {
+          modData = [];
+          renderPage(1);
+        }
+      });
+      return;
+    } else {
+      filtered = filtered.filter(function(m) {
+        if (m.title.toLowerCase().includes(lowerQuery)) return true;
+        if (m.tags && m.tags.some(function(tag) { return tag.toLowerCase().includes(lowerQuery); })) return true;
+        return false;
+      });
+    }
+
     modData = filtered;
+    currentPage = 1;
     renderPage(1);
     updateSearchDropdown(query);
   }
@@ -833,7 +856,9 @@
 
     if (manifest && manifest[dir]) {
       const data = await loadAllDataForCategory(categoryKey);
-      modData = data;
+      // ===== 修复：同时更新 allModData 和 modData =====
+      allModData = data;
+      modData = data.slice();
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
@@ -845,7 +870,8 @@
     if (!url) return;
     try {
       if (dataCache[url]) {
-        modData = dataCache[url];
+        allModData = dataCache[url];
+        modData = allModData.slice();
       } else {
         const controller = new AbortController();
         const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
@@ -854,8 +880,9 @@
         if (!response.ok) throw new Error('加载失败');
         let rawData = await response.json();
         rawData = sortModsByTimeId(rawData);
-        modData = rawData;
-        dataCache[url] = modData;
+        allModData = rawData;
+        modData = allModData.slice();
+        dataCache[url] = allModData;
       }
       searchInput.value = '';
       searchDropdown.classList.remove('active');
