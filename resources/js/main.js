@@ -1,3 +1,4 @@
+
 (function() {
   // ========== 工具函数 ==========
   function raceImage(urls, timeout = 3500) {
@@ -71,6 +72,7 @@
   const logoArea = document.getElementById('logoArea');
 
   let modData = [];
+  let baseModData = []; // 当前分区原始数据（用于搜索过滤基准）
   let activeCategory = 'all';
   let currentPage = 1;
   const ITEMS_PER_PAGE = 8;
@@ -752,8 +754,8 @@
   }
 
   function filterMods() {
-    let filtered = modData.slice();
-    if (activeCategory !== 'all') { filtered = filtered.filter(function(m) { return m.category === activeCategory; }); }
+    let filtered = baseModData.slice(); // 从原始数据开始过滤，避免累积过滤
+    // baseModData 已按当前分区加载，无需再次过滤 category
     const query = searchInput.value.trim();
     if (query) {
       const lowerQuery = query.toLowerCase();
@@ -837,6 +839,7 @@
     if (manifest && manifest[dir]) {
       const data = await loadAllDataForCategory(categoryKey);
       modData = data;
+      baseModData = data; // 保存原始数据
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
@@ -860,6 +863,7 @@
         modData = rawData;
         dataCache[url] = modData;
       }
+      baseModData = modData; // 保存原始数据
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
