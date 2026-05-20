@@ -345,6 +345,22 @@
     throw lastError;
   }
 
+  async function raceVideoWithRetry(urls, maxRetries) {
+    maxRetries = maxRetries || 2;
+    let lastError;
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        return await raceVideo(urls);
+      } catch (err) {
+        lastError = err;
+        if (attempt < maxRetries) {
+          await new Promise(function(r) { setTimeout(r, 500); });
+        }
+      }
+    }
+    throw lastError;
+  }
+
   function switchPreviewTab(tab) {
     activePreviewTab = (activePreviewTab === tab) ? null : tab;
     updatePreviewButtons();
@@ -434,7 +450,7 @@
         urls = [item.url];
       }
       if (urls.length === 0) { ph.textContent = '视频链接缺失'; return; }
-      raceVideo(urls).then(function(video) {
+      raceVideoWithRetry(urls).then(function(video) {
         video.className = 'preview-video-item';
         video.controls = true;
         if (item.poster) video.poster = item.poster;
@@ -516,7 +532,7 @@
       .replace(/>/g, '&gt;')
       .replace(/\n/g, '<br>');
 
-    const urlRegex = /(https?:\/\/[^\s<"]+)/g;
+    const urlRegex = /(https?:\/\/[^\s<<"]+)/g;
     desc = desc.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer" class="desc-link">$1</a>');
 
     modalDescText.innerHTML = desc;
