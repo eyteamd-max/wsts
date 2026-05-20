@@ -1,5 +1,54 @@
 [
   {
+    "id": "20260520161234614",
+    "title": "储君  -【Mesugaki_Regent】雌小鬼",
+    "category": "skin",
+    "size": "2.49MB",
+    "date": "2026-05-20",
+    "badge": "0.1.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160816.jpg"
+    ],
+    "images": [],
+    "description": "储君 Mesugaki_Regent 版本 0.1.1 更新\n\n- 补丁说明\n\n1. 模式现在即使在 MAC 环境下也能正常运行！[修改 dll 文件]\n\n2. 小储君 [点] 现在正确显示在百科全书等物品中。\n\n3. 角色选择界面的屏幕比例已更改，以支持从 16:9 到 21:9。\n\n4. 射击动作变得更可爱了。\n\n---\n\nTwitter(MOD原帖)：https://x.com/i/status/2043730520031613188\n\n预览图片和预览视频我放的韩文展示画面，但国内玩家实装后会正常显示中文，请放心使用。\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"MR储君\"是 v0.1.0 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路\n\n\n",
+    "author": "@Seic_Oh，@DodoBird0615",
+    "authorLinks": [
+      {
+        "text": "Twitter(@Seic_Oh)",
+        "url": "https://x.com/Seic_Oh"
+      },
+      {
+        "text": "Twitter(@DodoBird0615)",
+        "url": "https://x.com/DodoBird0615"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "储君",
+      "外观替换",
+      "Seic_Oh",
+      "DodoBird0615",
+      "雌小鬼",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b3f4223ca2e7428c92a033e59a6ed72e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160835.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160852.jpg"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_u5ImI-H2fyMAZAI9_(656p).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_XO99w5ocxL7yyoVG_(1160p).mp4"
+    ]
+  },
+  {
     "id": "20260430151207045",
     "title": "故障机器人外观替换MOD：猪煲",
     "category": "skin",
@@ -47,23 +96,59 @@
     ]
   },
   {
-    "id": "20260427134303123",
-    "title": "猫猫商人娘化&全日语配音",
+    "id": "20260520165111837",
+    "title": "猎手皮肤-A大猎宝改选人小图小头像版",
     "category": "skin",
-    "size": "58MB",
-    "date": "2026-04-27",
-    "badge": "v0.6.0",
+    "size": "9.96MB",
+    "date": "2026-05-20",
+    "badge": "v0.8",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg, #fce4e4 0%, #f8d0d0 35%, #ffe8e0 100%)",
     "coverChar": "加载中…",
-    "coverImage": [],
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/1779259620690_901506994.png"
+    ],
     "images": [],
-    "description": "",
-    "author": "",
-    "authorLinks": {},
-    "tags": [],
-    "downloadLinks": [],
-    "previewImages": [],
-    "previewVideos": []
+    "description": "该MOD的夸克网盘路径：\n角色皮肤 MOD / 静默猎手 / ➷\n猎手皮肤-A大猎宝改选人小图小头像版.zip↜\n\n\n\nMOD介绍：\n\n该版本目前同步的是 A大 的《STS2劣人0.8,增加选人界面动画》最新版（暂时）。此改版在选人画面中新增了 A大 未加入的小头像，并将其替换为B站UP主“蛞蝓仔仔”所绘制的\"小猎宝抓蛇咬\"形象。",
+    "author": "anaertailin（A大）",
+    "authorLinks": [
+      {
+        "text": "bilibili(A大)",
+        "url": "https://b23.tv/GE9akQ7"
+      },
+      {
+        "text": "爱发电(A大)",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      },
+      {
+        "text": "蛞蝓仔仔(小头像画师)",
+        "url": "https://b23.tv/sds19Xy"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "静默猎手",
+      "猎宝",
+      "外观替换",
+      "A大，anaertailin",
+      "蛞蝓仔仔",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/d2f0b0049b7c73ddce3d6a5e4de149ab_w1484_h743_s662.jpeg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/1779259620690_901506994.png",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_143138_com.megacrit.sts2.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_143308_com.megacrit.sts2.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_143332_com.megacrit.sts2.jpg"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenrecording_20260520_142956_com.megacrit.sts2.mp4"
+    ]
   }
 ]
