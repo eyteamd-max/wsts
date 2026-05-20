@@ -519,11 +519,11 @@
     modalTags.innerHTML = '';
     if (mod.tags && Array.isArray(mod.tags)) {
       mod.tags.forEach(function(tag) {
-        const span = document.createElement('span');
-        span.className = 'modal-tag ' + tag.toLowerCase();
-        span.textContent = tag.toUpperCase();
-        modalTags.appendChild(span);
-      });
+      const span = document.createElement('span');
+      span.className = 'modal-tag ' + tag.toLowerCase();
+      span.textContent = tag;
+      modalTags.appendChild(span);
+     });
     }
 
     let desc = (mod.description || '暂无介绍')
@@ -682,9 +682,10 @@
       const imgStyle = hasCoverImg ? 'object-fit: cover;' : 'object-fit: contain;';
       let tagsHtml = '';
       if (mod.tags && mod.tags.length) {
-        tagsHtml = '<div class="mod-tag-list">' + mod.tags.map(function(t) {
-          return '<span class="mod-tag-item ' + t.toLowerCase() + '">' + t.toUpperCase() + '</span>';
-        }).join('') + '</div>';
+      tagsHtml = '<div class="mod-tag-list">' + mod.tags.map(function(t) {
+      return '<span class="mod-tag-item ' + t.toLowerCase() + '">' + t + '</span>';
+      }).join('') + '</div>';
+
       }
       const card = document.createElement('div');
       card.className = 'mod-card';
