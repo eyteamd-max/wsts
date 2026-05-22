@@ -1,21 +1,32 @@
 (function() {
 
-  function raceImage(urls, timeout = 3500) {
+  // ========== 配置常量 ==========
+  const FALLBACK_LOADED2 = 'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif';
+  const SITE_DOMAIN = 'axxxx.cyou';
+  const ITEMS_PER_PAGE = 8;
+  const LOADING_MIN_TIME = 4000; // 首屏最少停留 4 秒
+  const IMAGE_TIMEOUT = 1500;    // 单图片超时 1.5 秒
+  const IMAGE_TOTAL_TIMEOUT = 3000; // 图片总超时 3 秒
+  const VIDEO_TIMEOUT = 8000;
+
+  // ========== 工具函数 ==========
+
+  function raceImage(urls, timeout) {
+    timeout = timeout || IMAGE_TIMEOUT;
     if (!urls || urls.length === 0) return Promise.reject('no urls');
-    const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('image load timeout')), timeout));
+    const timeoutPromise = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('image load timeout')), timeout)
+    );
     const loadPromises = urls.map(url => new Promise((resolve, reject) => {
       const img = new Image();
       const stallTimer = setTimeout(() => reject(new Error('image load stalled')), timeout + 2000);
-      img.onload = img.onerror = (e) => {
-        clearTimeout(stallTimer);
-        if (e.type === 'load') resolve(url);
-        else reject(new Error('image load failed'));
-      };
+      img.onload = () => { clearTimeout(stallTimer); resolve(url); };
+      img.onerror = () => { clearTimeout(stallTimer); reject(new Error('image load failed')); };
       img.src = url;
     }));
     return Promise.race([
       Promise.any([timeoutPromise, ...loadPromises]),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('total timeout')), timeout + 3000))
+      new Promise((_, reject) => setTimeout(() => reject(new Error('total timeout')), IMAGE_TOTAL_TIMEOUT))
     ]);
   }
 
@@ -27,7 +38,7 @@
       video.preload = 'auto';
       video.muted = true;
       video.playsInline = true;
-      const timer = setTimeout(() => reject(new Error('video load stalled')), 8000);
+      const timer = setTimeout(() => reject(new Error('video load stalled')), VIDEO_TIMEOUT);
       video.onloadeddata = () => { clearTimeout(timer); resolve({ url, video }); };
       video.onerror = () => { clearTimeout(timer); reject(new Error('video load failed')); };
       video.src = url;
@@ -57,6 +68,8 @@
     return dataArray.slice().sort((a, b) => (b.id || '').localeCompare(a.id || ''));
   }
 
+  // ========== DOM 元素 ==========
+
   const loadingOverlay = document.getElementById('loadingOverlay');
   const loadingGif = document.getElementById('loadingGif');
   const loadingText = document.getElementById('loadingText');
@@ -73,7 +86,6 @@
   let baseModData = [];
   let activeCategory = 'all';
   let currentPage = 1;
-  const ITEMS_PER_PAGE = 8;
 
   let allSiteData = {};
   let manifestCache = {};
@@ -105,6 +117,7 @@
   const charaClose = document.getElementById('charaClose');
   const charaImg = document.getElementById('charaImg');
   const toast = document.getElementById('toast');
+  const modalLoadingOverlay = document.getElementById('modalLoadingOverlay');
 
   const dataSources = {
     all: 'resources/json/post/sts2_mods/sts2_mods_1.json',
@@ -117,10 +130,7 @@
   let currentMod = null;
   let activePreviewTab = null;
 
-  const FALLBACK_LOADED2 = 'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif';
   window.loaded2GifSrc = null;
-
-  const SITE_DOMAIN = 'axxxx.cyou';
 
   let toastTimer;
   function showToast(message) {
@@ -143,8 +153,14 @@
         document.body.appendChild(textarea);
         textarea.focus();
         textarea.select();
-        try { document.execCommand('copy'); document.body.removeChild(textarea); resolve(); }
-        catch (err) { document.body.removeChild(textarea); reject(err); }
+        try { 
+          document.execCommand('copy'); 
+          document.body.removeChild(textarea); 
+          resolve(); 
+        } catch (err) { 
+          document.body.removeChild(textarea); 
+          reject(err); 
+        }
       });
     }
   }
@@ -163,10 +179,7 @@
 
   async function loadManifest(categoryKey) {
     if (manifestCache[categoryKey]) return manifestCache[categoryKey];
-    const dirMap = {
-      all: 'sts2_mods',
-      skin: 'O.o_interface'
-    };
+    const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
     const dir = dirMap[categoryKey];
     if (!dir) return null;
     const manifestUrl = 'resources/json/post/' + dir + '/manifest.json';
@@ -176,16 +189,11 @@
       const data = await resp.json();
       manifestCache[categoryKey] = data;
       return data;
-    } catch (e) {
-      return null;
-    }
+    } catch (e) { return null; }
   }
 
   async function loadJsonByManifest(categoryKey, fileIndex) {
-    const dirMap = {
-      all: 'sts2_mods',
-      skin: 'O.o_interface'
-    };
+    const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
     const dir = dirMap[categoryKey];
     if (!dir) return [];
     const url = 'resources/json/post/' + dir + '/' + dir + '_' + fileIndex + '.json';
@@ -198,14 +206,11 @@
       let rawData = await response.json();
       rawData = sortModsByTimeId(rawData);
       return rawData;
-    } catch (error) {
-      return [];
-    }
+    } catch (error) { return []; }
   }
 
-    async function loadAllDataForCategory(categoryKey) {
+  async function loadAllDataForCategory(categoryKey) {
     if (allSiteData[categoryKey]) return allSiteData[categoryKey];
-
     const manifest = await loadManifest(categoryKey);
     const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
     const dir = dirMap[categoryKey];
@@ -213,8 +218,7 @@
     if (manifest && manifest[dir]) {
       const rangeStr = manifest[dir];
       const indices = parseManifestRange(rangeStr);
-
-      const dataArrays = await Promise.all(indices.map(function(idx) { return loadJsonByManifest(categoryKey, idx); }));
+      const dataArrays = await Promise.all(indices.map(idx => loadJsonByManifest(categoryKey, idx)));
       const allData = dataArrays.flat();
       allSiteData[categoryKey] = allData;
       return allData;
@@ -224,7 +228,7 @@
     if (!url) return [];
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
+      const timeoutId = setTimeout(() => controller.abort(), 8000);
       const response = await fetch(url, { signal: controller.signal });
       clearTimeout(timeoutId);
       if (!response.ok) return [];
@@ -232,10 +236,48 @@
       rawData = sortModsByTimeId(rawData);
       allSiteData[categoryKey] = rawData;
       return rawData;
-    } catch (error) {
-      return [];
-    }
+    } catch (error) { return []; }
   }
+
+  // ========== 懒加载系统 ==========
+
+  const lazyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const realSrc = img.dataset.src;
+        if (realSrc) {
+          const tempImg = new Image();
+          tempImg.onload = () => {
+            img.src = realSrc;
+            img.classList.add('loaded');
+            img.classList.remove('lazy');
+            const placeholder = img.parentElement.querySelector('.mod-cover-placeholder');
+            if (placeholder) placeholder.remove();
+          };
+          tempImg.onerror = () => {
+            img.src = window.loaded2GifSrc || FALLBACK_LOADED2;
+            img.classList.add('loaded', 'fallback');
+            img.classList.remove('lazy');
+            const placeholder = img.parentElement.querySelector('.mod-cover-placeholder');
+            if (placeholder) placeholder.remove();
+          };
+          tempImg.src = realSrc;
+          img.removeAttribute('data-src');
+        }
+        lazyObserver.unobserve(img);
+      }
+    });
+  }, { rootMargin: '100px', threshold: 0.01 });
+
+  function attachLazyLoad(imgElement, src) {
+    imgElement.dataset.src = src;
+    imgElement.classList.add('lazy');
+    imgElement.style.opacity = '0';
+    lazyObserver.observe(imgElement);
+  }
+
+  // ========== 分页 ==========
 
   function renderPagination(totalItems, currentPageNum) {
     paginationEl.innerHTML = '';
@@ -266,7 +308,11 @@
       const first = document.createElement('button');
       first.className = 'pagination-page';
       first.textContent = '1';
-      first.addEventListener('click', () => { currentPage = 1; renderPage(1); modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      first.addEventListener('click', () => { 
+        currentPage = 1; 
+        renderPage(1); 
+        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+      });
       paginationEl.appendChild(first);
       if (startPage > 2) {
         const dots = document.createElement('span');
@@ -298,7 +344,11 @@
       const last = document.createElement('button');
       last.className = 'pagination-page';
       last.textContent = totalPages;
-      last.addEventListener('click', () => { currentPage = totalPages; renderPage(totalPages); modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      last.addEventListener('click', () => { 
+        currentPage = totalPages; 
+        renderPage(totalPages); 
+        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+      });
       paginationEl.appendChild(last);
     }
 
@@ -320,7 +370,7 @@
     const start = (pageNum - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     const pageData = modData.slice(start, end);
-    renderModCards(pageData);
+    renderModCards(pageData, pageNum);
     renderPagination(modData.length, pageNum);
   }
 
@@ -333,13 +383,10 @@
     maxRetries = maxRetries || 2;
     let lastError;
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
-      try {
-        return await raceImage(urls);
-      } catch (err) {
+      try { return await raceImage(urls); } 
+      catch (err) {
         lastError = err;
-        if (attempt < maxRetries) {
-          await new Promise(function(r) { setTimeout(r, 500); });
-        }
+        if (attempt < maxRetries) await new Promise(r => setTimeout(r, 500));
       }
     }
     throw lastError;
@@ -349,13 +396,10 @@
     maxRetries = maxRetries || 2;
     let lastError;
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
-      try {
-        return await raceVideo(urls);
-      } catch (err) {
+      try { return await raceVideo(urls); } 
+      catch (err) {
         lastError = err;
-        if (attempt < maxRetries) {
-          await new Promise(function(r) { setTimeout(r, 500); });
-        }
+        if (attempt < maxRetries) await new Promise(r => setTimeout(r, 500));
       }
     }
     throw lastError;
@@ -398,7 +442,7 @@
     grid.className = 'preview-image-grid';
     previewContentArea.innerHTML = '';
     previewContentArea.appendChild(grid);
-    const placeholders = items.map(function() {
+    const placeholders = items.map(() => {
       const ph = document.createElement('div');
       ph.className = 'preview-image-item';
       ph.style.background = '#f0f0f0';
@@ -408,91 +452,162 @@
       return ph;
     });
     await Promise.allSettled(
-      items.map(function(item, idx) {
+      items.map((item, idx) => {
         const urls = toCandidates(item);
-        return raceImageWithRetry(urls, 2).then(function(url) {
+        return raceImageWithRetry(urls, 2).then(url => {
           const img = document.createElement('img');
           img.src = url;
           img.className = 'preview-image-item';
           img.style.cursor = 'zoom-in';
-          img.addEventListener('click', function() { openLightbox(url); });
+          img.addEventListener('click', () => openLightbox(url));
           grid.replaceChild(img, placeholders[idx]);
-        }).catch(function() { placeholders[idx].textContent = '加载失败'; });
+        }).catch(() => { placeholders[idx].textContent = '加载失败'; });
       })
     );
   }
 
-  async function renderPreviewVideos(items) {
+  // ========== 视频卡片系统 ==========
+
+  function renderPreviewVideos(items) {
     if (items.length === 0) {
       previewContentArea.innerHTML = '<div class="preview-empty-card">该MOD猫猫还没有配置视频资源哦</div>';
       return;
     }
-    const list = document.createElement('div');
-    list.className = 'preview-video-list';
+    const grid = document.createElement('div');
+    grid.className = 'video-card-grid';
     previewContentArea.innerHTML = '';
-    previewContentArea.appendChild(list);
-    items.forEach(function(item) {
-      const ph = document.createElement('div');
-      ph.className = 'preview-video-item';
-      ph.style.background = '#f0f0f0';
-      ph.style.height = '200px';
-      ph.style.display = 'flex';
-      ph.style.alignItems = 'center';
-      ph.style.justifyContent = 'center';
-      ph.textContent = '视频加载中...';
-      list.appendChild(ph);
+    previewContentArea.appendChild(grid);
+
+    items.forEach((item, index) => {
       let urls = [];
+      let poster = '';
+      let title = '视频 ' + (index + 1);
+      
       if (typeof item === 'string') {
         urls = [item];
+        title = item.split('/').pop().split('?')[0] || title;
       } else if (item.urls && Array.isArray(item.urls) && item.urls.length > 0) {
         urls = item.urls;
+        poster = item.poster || '';
+        title = item.title || title;
       } else if (item.url) {
         urls = [item.url];
+        poster = item.poster || '';
+        title = item.title || title;
       }
-      if (urls.length === 0) { ph.textContent = '视频链接缺失'; return; }
-      raceVideoWithRetry(urls).then(function(video) {
-        video.className = 'preview-video-item';
-        video.controls = true;
-        if (item.poster) video.poster = item.poster;
-        list.replaceChild(video, ph);
-      }).catch(function() { ph.textContent = '视频加载失败'; });
+
+      if (urls.length === 0) return;
+
+      const card = document.createElement('div');
+      card.className = 'video-card';
+      card.dataset.index = index;
+
+      const posterWrap = document.createElement('div');
+      posterWrap.className = 'video-card-poster-wrap';
+
+      // 加载 poster 图
+      if (poster) {
+        const posterImg = document.createElement('img');
+        posterImg.className = 'video-card-poster';
+        posterImg.alt = title;
+        posterImg.src = poster;
+        posterImg.onerror = () => {
+          posterImg.style.display = 'none';
+          posterWrap.style.background = 'linear-gradient(135deg, #f5f2f8 0%, #ede8f5 100%)';
+        };
+        posterWrap.appendChild(posterImg);
+      } else {
+        posterWrap.style.background = 'linear-gradient(135deg, #f5f2f8 0%, #ede8f5 100%)';
+      }
+
+      const playBtn = document.createElement('div');
+      playBtn.className = 'video-card-play-btn';
+      playBtn.innerHTML = '<div class="video-card-play-icon"></div>';
+      posterWrap.appendChild(playBtn);
+
+      const info = document.createElement('div');
+      info.className = 'video-card-info';
+      const titleEl = document.createElement('div');
+      titleEl.className = 'video-card-title';
+      titleEl.textContent = title;
+      titleEl.title = title;
+      info.appendChild(titleEl);
+
+      card.appendChild(posterWrap);
+      card.appendChild(info);
+      grid.appendChild(card);
+
+      // 点击播放
+      card.addEventListener('click', async () => {
+        if (card.dataset.loading === 'true') return;
+        card.dataset.loading = 'true';
+
+        // 显示加载中
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'video-loading-overlay';
+        loadingOverlay.innerHTML = `
+          <div class="video-loading-spinner"></div>
+          <p class="video-loading-text">视频准备中…</p>
+        `;
+        posterWrap.appendChild(loadingOverlay);
+
+        try {
+          const video = await raceVideoWithRetry(urls, 2);
+          
+          // 移除加载中，显示播放器
+          loadingOverlay.remove();
+          playBtn.style.display = 'none';
+          
+          const playerWrap = document.createElement('div');
+          playerWrap.className = 'video-player-wrap';
+          video.controls = true;
+          video.autoplay = true;
+          video.muted = false;
+          playerWrap.appendChild(video);
+          
+          posterWrap.innerHTML = '';
+          posterWrap.appendChild(playerWrap);
+          posterWrap.style.height = 'auto';
+          posterWrap.style.background = 'transparent';
+          
+        } catch (err) {
+          // 显示错误
+          loadingOverlay.remove();
+          const errorOverlay = document.createElement('div');
+          errorOverlay.className = 'video-error-overlay';
+          errorOverlay.innerHTML = `
+            <div class="video-error-icon"></div>
+            <p class="video-error-text">视频加载失败</p>
+            <button class="video-retry-btn">重新加载</button>
+          `;
+          posterWrap.appendChild(errorOverlay);
+          
+          errorOverlay.querySelector('.video-retry-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            errorOverlay.remove();
+            card.dataset.loading = 'false';
+            card.click();
+          });
+        }
+      });
     });
   }
 
-  previewImagesBtn.addEventListener('click', function() { switchPreviewTab('images'); });
-  previewVideosBtn.addEventListener('click', function() { switchPreviewTab('videos'); });
+  previewImagesBtn.addEventListener('click', () => switchPreviewTab('images'));
+  previewVideosBtn.addEventListener('click', () => switchPreviewTab('videos'));
 
-    async function openModal(mod) {
+  // ========== Modal 系统（带 Loading 遮罩） ==========
+
+  async function openModal(mod) {
     currentMod = mod;
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // 显示 Loading 遮罩
+    modalLoadingOverlay.classList.remove('hidden');
 
+    // 先填充文字内容（不依赖图片）
     modalTitle.textContent = mod.title;
-
-    const modalCoverWrap = document.getElementById('modalCoverWrap');
-    const modalCoverImg  = document.getElementById('modalCoverImg');
-    let modalCoverSrc = '';
-    if (mod.coverImage) {
-        if (Array.isArray(mod.coverImage)) { modalCoverSrc = mod.coverImage[0] || ''; }
-        else { modalCoverSrc = mod.coverImage; }
-    }
-    const hasModalCover = modalCoverSrc.trim() !== '';
-
-    if (hasModalCover) {
-        modalCoverImg.src = modalCoverSrc;
-        modalCoverImg.style.objectFit = 'cover';
-        modalCoverImg.style.cursor = 'zoom-in';
-        modalCoverImg.onclick = function(e) {
-            e.stopPropagation();
-            openLightbox(modalCoverImg.src);
-        };
-        modalCoverWrap.style.display = 'block';
-        modalCoverImg.style.display = 'block';
-    } else {
-
-        modalCoverWrap.style.display = 'none';
-        modalCoverImg.src = '';
-        modalCoverImg.onclick = null;
-    }
-
     modalRid.textContent = 'RID: ' + (mod.id || '无');
 
     modalRid.onclick = function(e) {
@@ -501,16 +616,18 @@
       ridDropdown.style.display = isVisible ? 'none' : 'block';
     };
 
-    ridDropdown.querySelectorAll('.rid-option').forEach(function(btn) {
+    ridDropdown.querySelectorAll('.rid-option').forEach(btn => {
       btn.onclick = function(e) {
         e.stopPropagation();
         const action = btn.dataset.action;
         if (action === 'copy-rid') {
           const ridText = 'RID:' + (mod.id || '');
-          copyText(ridText).then(function() { showToast('RID 已复制，快分享给小伙伴吧~'); }).catch(function() { showToast('复制失败，请手动复制'); });
+          copyText(ridText).then(() => showToast('RID 已复制，快分享给小伙伴吧~'))
+            .catch(() => showToast('复制失败，请手动复制'));
         } else if (action === 'copy-link') {
           const linkText = 'https://' + SITE_DOMAIN + '/?rid=' + (mod.id || '');
-          copyText(linkText).then(function() { showToast('帖子链接已复制~'); }).catch(function() { showToast('复制失败，请手动复制'); });
+          copyText(linkText).then(() => showToast('帖子链接已复制~'))
+            .catch(() => showToast('复制失败，请手动复制'));
         }
         ridDropdown.style.display = 'none';
       };
@@ -518,12 +635,12 @@
 
     modalTags.innerHTML = '';
     if (mod.tags && Array.isArray(mod.tags)) {
-      mod.tags.forEach(function(tag) {
-      const span = document.createElement('span');
-      span.className = 'modal-tag ' + tag.toLowerCase();
-      span.textContent = tag;
-      modalTags.appendChild(span);
-     });
+      mod.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'modal-tag ' + tag.toLowerCase();
+        span.textContent = tag;
+        modalTags.appendChild(span);
+      });
     }
 
     let desc = (mod.description || '暂无介绍')
@@ -531,10 +648,8 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/\n/g, '<br>');
-
     const urlRegex = /(https?:\/\/[^\s<<"]+)/g;
     desc = desc.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer" class="desc-link">$1</a>');
-
     modalDescText.innerHTML = desc;
     modalDescText.classList.remove('expanded');
     descToggle.style.display = 'none';
@@ -545,7 +660,7 @@
     modalLinks.innerHTML = '';
     if (mod.authorLinks) {
       if (Array.isArray(mod.authorLinks)) {
-        mod.authorLinks.forEach(function(link) {
+        mod.authorLinks.forEach(link => {
           if (link.text && link.url) {
             const a = document.createElement('a');
             a.className = 'modal-link';
@@ -562,7 +677,7 @@
           { name: 'Pixiv', url: mod.authorLinks.pixiv },
           { name: 'Bilibili', url: mod.authorLinks.bilibili }
         ];
-        links.forEach(function(link) {
+        links.forEach(link => {
           if (link.url) {
             const a = document.createElement('a');
             a.className = 'modal-link';
@@ -580,7 +695,7 @@
     const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
       ? mod.downloadLinks
       : (mod.downloadUrl ? [{ text: '下载', url: mod.downloadUrl }] : []);
-    downloadLinks.forEach(function(dl) {
+    downloadLinks.forEach(dl => {
       const btn = document.createElement('a');
       btn.className = 'download-btn-item';
       btn.href = dl.url;
@@ -594,13 +709,63 @@
     updatePreviewButtons();
     renderPreviewContent();
 
-    modalOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    setTimeout(function() {
+    // 处理封面图加载
+    const modalCoverWrap = document.getElementById('modalCoverWrap');
+    const modalCoverImg = document.getElementById('modalCoverImg');
+    let modalCoverSrc = '';
+    if (mod.coverImage) {
+      if (Array.isArray(mod.coverImage)) modalCoverSrc = mod.coverImage[0] || '';
+      else modalCoverSrc = mod.coverImage;
+    }
+    const hasModalCover = modalCoverSrc.trim() !== '';
+
+    if (hasModalCover) {
+      modalCoverImg.src = '';
+      modalCoverImg.style.objectFit = 'cover';
+      modalCoverImg.style.cursor = 'zoom-in';
+      modalCoverImg.onclick = (e) => {
+        e.stopPropagation();
+        openLightbox(modalCoverImg.src);
+      };
+      modalCoverWrap.style.display = 'block';
+      modalCoverImg.style.display = 'block';
+
+      // 等待封面图加载完成
+      await new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          modalCoverImg.src = modalCoverSrc;
+          resolve();
+        };
+        img.onerror = () => {
+          modalCoverWrap.style.display = 'none';
+          resolve();
+        };
+        img.src = modalCoverSrc;
+        
+        // 超时兜底
+        setTimeout(() => {
+          if (!modalCoverImg.src) {
+            modalCoverWrap.style.display = 'none';
+            resolve();
+          }
+        }, 3000);
+      });
+    } else {
+      modalCoverWrap.style.display = 'none';
+      modalCoverImg.src = '';
+      modalCoverImg.onclick = null;
+    }
+
+    // 等一小会儿确保布局稳定，然后隐藏 Loading
+    setTimeout(() => {
+      modalLoadingOverlay.classList.add('hidden');
+      
+      // 检查描述是否需要展开按钮
       if (modalDescText.scrollHeight > modalDescText.clientHeight + 2) {
         descToggle.style.display = 'inline-block';
       }
-    }, 50);
+    }, 100);
   }
 
   function closeModal() {
@@ -609,29 +774,27 @@
     currentMod = null;
     activePreviewTab = null;
     ridDropdown.style.display = 'none';
+    modalLoadingOverlay.classList.add('hidden');
 
     const modalCoverImg = document.getElementById('modalCoverImg');
     if (modalCoverImg) { modalCoverImg.src = ''; modalCoverImg.onclick = null; }
   }
 
   modalClose.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', function(e) { if (e.target === modalOverlay) closeModal(); });
-  descToggle.addEventListener('click', function() {
+  modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+  descToggle.addEventListener('click', () => {
     const expanded = modalDescText.classList.toggle('expanded');
     descToggle.textContent = expanded ? '收起' : '展开全文';
   });
-  lightboxClose.addEventListener('click', function() { lightboxOverlay.classList.remove('active'); });
-  lightboxOverlay.addEventListener('click', function(e) { if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active'); });
+  lightboxClose.addEventListener('click', () => lightboxOverlay.classList.remove('active'));
+  lightboxOverlay.addEventListener('click', e => { if (e.target === lightboxOverlay) lightboxOverlay.classList.remove('active'); });
 
-  document.addEventListener('click', function(e) {
-    if (!modalRidWrap.contains(e.target)) {
-      ridDropdown.style.display = 'none';
-    }
+  document.addEventListener('click', e => {
+    if (!modalRidWrap.contains(e.target)) ridDropdown.style.display = 'none';
   });
 
   function handleTagClick(tagText) {
     searchInput.value = tagText;
-
     filterMods();
     searchInput.focus();
   }
@@ -640,14 +803,11 @@
     const coverInner = cardElement.querySelector('.mod-cover-inner');
     const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
     if (!coverInner || !coverImg) return;
-
-    if (coverImg.complete && coverImg.naturalWidth > 0) {
-      return;
-    }
+    if (coverImg.complete && coverImg.naturalWidth > 0) return;
 
     const spinner = document.createElement('span');
     spinner.className = 'card-spinner';
-    const hideSpinner = function() {
+    const hideSpinner = () => {
       if (spinner.parentNode) {
         spinner.style.display = 'none';
         spinner.remove();
@@ -657,45 +817,64 @@
     coverImg.addEventListener('load', hideSpinner, { once: true });
     coverImg.addEventListener('error', hideSpinner, { once: true });
 
-    setTimeout(function() {
-      if (coverImg.complete) hideSpinner();
-    }, 500);
-
+    setTimeout(() => { if (coverImg.complete) hideSpinner(); }, 500);
     coverInner.appendChild(spinner);
   }
 
-  function renderModCards(dataArray) {
+  // ========== 渲染 MOD 卡片（含懒加载） ==========
+
+  function renderModCards(dataArray, pageNum) {
     modGrid.innerHTML = '';
     if (dataArray.length === 0) {
       modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:50px;color:var(--text-muted);">没有找到相关MOD</div>';
       return;
     }
+    
     const loaded2Src = window.loaded2GifSrc || FALLBACK_LOADED2;
-    dataArray.forEach(function(mod) {
+    const isFirstPage = pageNum === 1;
+    
+    dataArray.forEach((mod, index) => {
       let coverImgSrc = '';
       if (mod.coverImage) {
-        if (Array.isArray(mod.coverImage)) { coverImgSrc = mod.coverImage[0] || ''; }
-        else { coverImgSrc = mod.coverImage; }
+        if (Array.isArray(mod.coverImage)) coverImgSrc = mod.coverImage[0] || '';
+        else coverImgSrc = mod.coverImage;
       }
       const hasCoverImg = coverImgSrc.trim() !== '';
       const imgSrc = hasCoverImg ? coverImgSrc : loaded2Src;
-      const imgStyle = hasCoverImg ? 'object-fit: cover;' : 'object-fit: contain;';
+      const isLazy = isFirstPage && index >= 4; // 首屏前4张立即加载，后面懒加载
+      
       let tagsHtml = '';
       if (mod.tags && mod.tags.length) {
-      tagsHtml = '<div class="mod-tag-list">' + mod.tags.map(function(t) {
-      return '<span class="mod-tag-item ' + t.toLowerCase() + '">' + t + '</span>';
-      }).join('') + '</div>';
-
+        tagsHtml = '<div class="mod-tag-list">' + mod.tags.map(t => 
+          '<span class="mod-tag-item ' + t.toLowerCase() + '">' + t + '</span>'
+        ).join('') + '</div>';
       }
+
       const card = document.createElement('div');
       card.className = 'mod-card';
+      
+      // 构建卡片 HTML
+      let imgHtml = '';
+      if (isLazy && hasCoverImg) {
+        // 懒加载：先显示占位，data-src 存真实地址
+        imgHtml = 
+          '<div class="mod-cover-placeholder"></div>' +
+          '<img data-src="' + coverImgSrc + '" alt="' + mod.title + '" class="mod-cover-img lazy"' +
+          ' style="position:absolute; width:100%; height:100%; object-fit: cover; z-index:2; border-radius:inherit;"' +
+          ' onerror="this.onerror=null; this.src=\'' + loaded2Src + '\'; this.classList.add(\'fallback\'); this.classList.remove(\'lazy\'); this.style.opacity=1; this.parentElement.querySelector(\'.mod-cover-placeholder\')?.remove();">';
+      } else {
+        // 立即加载
+        imgHtml = 
+          '<img src="' + imgSrc + '" alt="' + mod.title + '" class="mod-cover-img"' +
+          ' style="position:absolute; width:100%; height:100%; ' + (hasCoverImg ? 'object-fit: cover;' : 'object-fit: contain;') + ' z-index:2; border-radius:inherit;"' +
+          ' onerror="this.onerror=null; this.src=\'' + loaded2Src + '\'; this.classList.add(\'fallback\');">';
+      }
+
       card.innerHTML =
         '<div class="mod-cover">' +
           '<div class="mod-cover-inner">' +
             '<div class="mod-cover-gradient" style="background:' + mod.coverGradient + ';"></div>' +
-            '<img src="' + imgSrc + '" alt="' + mod.title + '" class="mod-cover-img"' +
-              ' style="position:absolute; width:100%; height:100%; ' + imgStyle + ' z-index:2; border-radius:inherit;"' +
-              ' onerror="this.onerror=null; this.src=\'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 48 48\' fill=\'none\' stroke=\'%239a92a5\' stroke-width=\'3\'><circle cx=\'24\' cy=\'24\' r=\'20\'/><path d=\'M24 16v12\'/><circle cx=\'24\' cy=\'32\' r=\'2\' fill=\'%239a92a5\'/></svg>') + '\'; this.style.opacity=0.4;">' +
+            imgHtml +
           '</div>' +
           '<span class="mod-badge ' + mod.badgeClass + '">' + mod.badge + '</span>' +
         '</div>' +
@@ -709,9 +888,10 @@
           '<button class="mod-download-btn view-detail-btn">查看详情</button>' +
         '</div>';
 
+      // 绑定事件
       const coverImgEl = card.querySelector('.mod-cover-img');
-      if (coverImgEl && hasCoverImg) {
-        coverImgEl.addEventListener('click', function(e) {
+      if (coverImgEl && hasCoverImg && !isLazy) {
+        coverImgEl.addEventListener('click', e => {
           e.stopPropagation();
           if (coverImgEl.src && coverImgEl.src.indexOf('data:image/svg') === -1) {
             openLightbox(coverImgEl.src);
@@ -719,31 +899,43 @@
         });
       }
 
-      card.querySelector('.view-detail-btn').addEventListener('click', function(e) { e.stopPropagation(); openModal(mod); });
-      card.querySelectorAll('.mod-tag-item').forEach(function(tagEl) {
-        tagEl.addEventListener('click', function(e) { e.stopPropagation(); handleTagClick(tagEl.textContent); });
+      card.querySelector('.view-detail-btn').addEventListener('click', e => { 
+        e.stopPropagation(); 
+        openModal(mod); 
       });
+      card.querySelectorAll('.mod-tag-item').forEach(tagEl => {
+        tagEl.addEventListener('click', e => { 
+          e.stopPropagation(); 
+          handleTagClick(tagEl.textContent); 
+        });
+      });
+      
       modGrid.appendChild(card);
-      attachCardSpinner(card);
+
+      // 懒加载绑定
+      if (isLazy && hasCoverImg) {
+        const lazyImg = card.querySelector('.mod-cover-img.lazy');
+        if (lazyImg) attachLazyLoad(lazyImg, coverImgSrc);
+      } else if (!isLazy) {
+        attachCardSpinner(card);
+      }
     });
   }
 
-    async function performGlobalRidSearch(rid) {
-    const categories = ['all', 'skin'];
+  // ========== 搜索与过滤 ==========
 
+  async function performGlobalRidSearch(rid) {
+    const categories = ['all', 'skin'];
     for (const cat of categories) {
       if (allSiteData[cat]) {
-        const found = allSiteData[cat].find(function(m) { return m.id === rid; });
+        const found = allSiteData[cat].find(m => m.id === rid);
         if (found) return found;
       }
     }
-
     for (const cat of categories) {
-      if (!allSiteData[cat]) {
-        await loadAllDataForCategory(cat);
-      }
+      if (!allSiteData[cat]) await loadAllDataForCategory(cat);
       if (allSiteData[cat]) {
-        const found = allSiteData[cat].find(function(m) { return m.id === rid; });
+        const found = allSiteData[cat].find(m => m.id === rid);
         if (found) return found;
       }
     }
@@ -752,13 +944,13 @@
 
   function filterMods() {
     let filtered = baseModData.slice();
-
     const query = searchInput.value.trim();
+    
     if (query) {
       const lowerQuery = query.toLowerCase();
       if (lowerQuery.startsWith('rid:')) {
         const ridPart = lowerQuery.slice(4).trim();
-        performGlobalRidSearch(ridPart).then(function(found) {
+        performGlobalRidSearch(ridPart).then(found => {
           if (found) {
             openModal(found);
             searchInput.value = '';
@@ -770,7 +962,7 @@
         });
         return;
       } else if (/^\d+$/.test(query)) {
-        performGlobalRidSearch(query).then(function(found) {
+        performGlobalRidSearch(query).then(found => {
           if (found) {
             openModal(found);
             searchInput.value = '';
@@ -782,13 +974,14 @@
         });
         return;
       } else {
-        filtered = filtered.filter(function(m) {
+        filtered = filtered.filter(m => {
           if (m.title.toLowerCase().includes(lowerQuery)) return true;
-          if (m.tags && m.tags.some(function(tag) { return tag.toLowerCase().includes(lowerQuery); })) return true;
+          if (m.tags && m.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) return true;
           return false;
         });
       }
     }
+    
     currentPage = 1;
     modData = filtered;
     renderPage(1);
@@ -800,21 +993,27 @@
     if (!query || query.length < 1) { searchDropdown.classList.remove('active'); return; }
     const lowerQuery = query.toLowerCase();
     if (lowerQuery.startsWith('rid:') || /^\d+$/.test(query)) { searchDropdown.classList.remove('active'); return; }
-    const matches = modData.filter(function(m) {
+    
+    const matches = modData.filter(m => {
       if (m.title.toLowerCase().includes(lowerQuery)) return true;
-      if (m.tags && m.tags.some(function(tag) { return tag.toLowerCase().includes(lowerQuery); })) return true;
+      if (m.tags && m.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) return true;
       return false;
     });
+    
     if (matches.length === 0) {
       searchDropdown.innerHTML = '<li style="padding:16px;text-align:center;color:var(--text-muted);">没有找到相关MOD</li>';
     } else {
       const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const regex = new RegExp('(' + escapedQuery + ')', 'gi');
-      matches.slice(0, 8).forEach(function(m) {
+      matches.slice(0, 8).forEach(m => {
         const li = document.createElement('li');
         li.className = 'search-dropdown-item';
         li.innerHTML = m.title.replace(regex, '<mark>$1</mark>');
-        li.addEventListener('click', function() { searchInput.value = m.title; searchDropdown.classList.remove('active'); filterMods(); });
+        li.addEventListener('click', () => { 
+          searchInput.value = m.title; 
+          searchDropdown.classList.remove('active'); 
+          filterMods(); 
+        });
         searchDropdown.appendChild(li);
       });
     }
@@ -849,7 +1048,7 @@
         modData = dataCache[url];
       } else {
         const controller = new AbortController();
-        const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
         const response = await fetch(url, { signal: controller.signal });
         clearTimeout(timeoutId);
         if (!response.ok) throw new Error('加载失败');
@@ -867,50 +1066,48 @@
     }
   }
 
-  document.getElementById('categoryTags').addEventListener('click', function(e) {
+  document.getElementById('categoryTags').addEventListener('click', e => {
     const tag = e.target.closest('.category-tag');
     if (!tag) return;
-    document.querySelectorAll('.category-tag').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
     tag.classList.add('active');
     activeCategory = tag.getAttribute('data-category') || 'all';
     loadModData(activeCategory);
   });
 
   searchInput.addEventListener('input', filterMods);
-  searchInput.addEventListener('focus', function() {
+  searchInput.addEventListener('focus', () => {
     if (searchInput.value.trim().length >= 1) updateSearchDropdown(searchInput.value.trim());
   });
-  searchInput.addEventListener('keydown', function(e) {
+  searchInput.addEventListener('keydown', e => {
     if (e.key === 'Escape') { searchDropdown.classList.remove('active'); searchInput.blur(); }
     if (e.key === 'Enter') { searchDropdown.classList.remove('active'); filterMods(); }
   });
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', e => {
     if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
   });
 
-  charaClose.addEventListener('click', function() { charaOverlay.classList.remove('active'); });
-  charaOverlay.addEventListener('click', function(e) { if (e.target === charaOverlay) charaOverlay.classList.remove('active'); });
+  charaClose.addEventListener('click', () => charaOverlay.classList.remove('active'));
+  charaOverlay.addEventListener('click', e => { if (e.target === charaOverlay) charaOverlay.classList.remove('active'); });
 
   function openCharaDetail() {
-    if (logoImg.src && logoImg.style.display !== 'none') { charaImg.src = logoImg.src; }
-    else { charaImg.src = ''; }
+    if (logoImg.src && logoImg.style.display !== 'none') charaImg.src = logoImg.src;
+    else charaImg.src = '';
     charaOverlay.classList.add('active');
   }
 
-    async function handleUrlParams() {
+  async function handleUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const rid = params.get('rid');
     if (rid) {
       const found = await performGlobalRidSearch(rid);
-      if (found) {
-        openModal(found);
-      } else {
-        showToast('未找到该帖子');
-      }
-
+      if (found) openModal(found);
+      else showToast('未找到该帖子');
       history.replaceState({}, document.title, window.location.pathname);
     }
   }
+
+  // ========== 初始化 ==========
 
   async function initPage() {
     let loadingGifUrls = [
@@ -928,7 +1125,7 @@
     try {
       const fetchWithTimeout = Promise.race([
         fetch('resources/json/config.json'),
-        new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
+        new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
       ]);
       const resp = await fetchWithTimeout;
       if (resp.ok) {
@@ -939,50 +1136,51 @@
       }
     } catch (e) {}
 
-    const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-
+    const gifPromise = raceImage(loadingGifUrls, 3000).catch(() => null);
     const logoPromise = (async function loadLogoWithRetry() {
       let lastErr;
       for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          return await raceImage(logoUrls);
-        } catch (err) {
+        try { return await raceImage(logoUrls, 3000); } 
+        catch (err) {
           lastErr = err;
-          if (attempt < 2) {
-            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
-          }
+          if (attempt < 2) await new Promise(resolve => setTimeout(resolve, 2000));
         }
       }
       return null;
     })();
+    const loaded2Promise = raceImage(loaded2GifUrls, 3000).catch(() => null);
 
-    const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
+    // 强制 Loading 最少停留 4 秒
+    const minLoadingTime = new Promise(resolve => setTimeout(resolve, LOADING_MIN_TIME));
 
-    setTimeout(function() {
-      loadingOverlay.classList.add('hidden');
-      mainContent.style.opacity = '1';
-      loadModData('all');
-    }, 100);
+    // 并行：等 4 秒 和 关键资源加载
+    await Promise.all([minLoadingTime, gifPromise, logoPromise, loaded2Promise]);
 
-    gifPromise.then(function(src) {
+    // 4 秒到了，淡出 Loading
+    loadingOverlay.classList.add('hidden');
+    mainContent.style.opacity = '1';
+    loadModData('all');
+
+    // 应用加载到的资源
+    gifPromise.then(src => {
       if (src) {
         loadingGif.src = src;
         loadingGif.style.display = 'block';
         if (potionWrapper) potionWrapper.style.display = 'none';
       }
     });
-    logoPromise.then(function(src) {
+    logoPromise.then(src => {
       if (src) {
         logoImg.src = src;
         logoImg.style.display = 'block';
         logoTower.style.display = 'none';
       }
     });
-    loaded2Promise.then(function(src) {
+    loaded2Promise.then(src => {
       if (src) window.loaded2GifSrc = src;
     });
 
-    logoArea.addEventListener('click', function(e) {
+    logoArea.addEventListener('click', e => {
       if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
         openCharaDetail();
       }
