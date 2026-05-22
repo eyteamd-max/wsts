@@ -57,7 +57,6 @@
     return dataArray.slice().sort((a, b) => (b.id || '').localeCompare(a.id || ''));
   }
 
-  // ========== 新增：图片并发预加载（不阻塞、不插入DOM） ==========
   function preloadImagesWithConcurrency(urls, concurrency) {
     return new Promise(function(resolve) {
       if (!urls || urls.length === 0) { resolve(); return; }
@@ -91,7 +90,6 @@
     });
   }
 
-  // ========== 新增：视频 metadata 并发预加载（不阻塞） ==========
   function preloadVideosMetadata(urls, concurrency) {
     return new Promise(function(resolve) {
       if (!urls || urls.length === 0) { resolve(); return; }
@@ -162,7 +160,7 @@
 
   let allSiteData = {};
   let manifestCache = {};
-  let dataLoadingPromises = {}; // ========== 新增：飞行中缓存 ==========
+  let dataLoadingPromises = {};
 
   const modGrid = document.getElementById('modGrid');
   const paginationEl = document.getElementById('pagination');
@@ -289,7 +287,6 @@
     }
   }
 
-  // ========== 修改：加入飞行中缓存，防止后台预加载和正式渲染重复请求 ==========
   async function loadAllDataForCategory(categoryKey) {
     if (allSiteData[categoryKey]) return allSiteData[categoryKey];
     if (dataLoadingPromises[categoryKey]) return await dataLoadingPromises[categoryKey];
@@ -1010,7 +1007,6 @@
     }
   }
 
-  // ========== 修改：3500ms 保底，后台疯狂预加载资源 ==========
     async function initPage() {
     let loadingGifUrls = [
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
@@ -1057,10 +1053,8 @@
 
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
 
-    // ========== 10秒窗口：后台深度预加载战役 ==========
     (async function preloadCampaign() {
       try {
-        // 1. 先并行抢 JSON（利用飞行中缓存）
         const [allData, skinData] = await Promise.all([
           loadAllDataForCategory('all'),
           loadAllDataForCategory('skin')
@@ -1071,18 +1065,15 @@
         const previewImgUrls = [];
         const videoUrls = [];
 
-        // 10秒窗口策略：前 3 页（24个）MOD 的深度资源也抢
         const PRELOAD_PAGES = 3;
-        const PRELOAD_DEPTH = ITEMS_PER_PAGE * PRELOAD_PAGES; // 24
+        const PRELOAD_DEPTH = ITEMS_PER_PAGE * PRELOAD_PAGES;
 
         allMods.forEach(function(mod, idx) {
-          // P0：所有 MOD 的封面图（全部抢，门面不能含糊）
           if (mod.coverImage) {
             const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
             if (url.trim()) coverUrls.push(url);
           }
 
-          // P1：前 3 页 MOD 的预览图，每个 MOD 抢前 4 张（10秒足够深）
           if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewImages)) {
             mod.previewImages.slice(0, 4).forEach(function(item) {
               const urls = toCandidates(item);
@@ -1090,7 +1081,6 @@
             });
           }
 
-          // P2：前 3 页 MOD 的预览视频，每个 MOD 抢前 2 个视频的 metadata
           if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewVideos) && mod.previewVideos.length) {
             mod.previewVideos.slice(0, 2).forEach(function(item) {
               let urls = [];
@@ -1102,11 +1092,9 @@
           }
         });
 
-        // 提升并发槽位：图片 10 路并行，视频 4 路并行
         preloadImagesWithConcurrency(coverUrls.concat(previewImgUrls), 10);
         preloadVideosMetadata(videoUrls, 4);
       } catch (e) {
-        // 预加载失败静默处理，绝不阻塞 10 秒后进入主页面
       }
     })();
 
@@ -1128,7 +1116,6 @@
       if (src) window.loaded2GifSrc = src;
     });
 
-    // ========== 关键修改：10000ms（10秒）后强制揭开遮罩 ==========
     setTimeout(function() {
       loadingOverlay.classList.add('hidden');
       mainContent.style.opacity = '1';
