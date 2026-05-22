@@ -57,6 +57,91 @@
     return dataArray.slice().sort((a, b) => (b.id || '').localeCompare(a.id || ''));
   }
 
+  // ========== 新增：图片并发预加载（不阻塞、不插入DOM） ==========
+  function preloadImagesWithConcurrency(urls, concurrency) {
+    return new Promise(function(resolve) {
+      if (!urls || urls.length === 0) { resolve(); return; }
+      var index = 0;
+      var running = 0;
+      var total = urls.length;
+
+      function next() {
+        if (index >= total) {
+          if (running === 0) resolve();
+          return;
+        }
+        var url = urls[index++];
+        running++;
+        var img = new Image();
+        var timer = setTimeout(function() {
+          running--;
+          next();
+        }, 2500);
+        img.onload = img.onerror = function() {
+          clearTimeout(timer);
+          running--;
+          next();
+        };
+        img.src = url;
+      }
+
+      for (var i = 0; i < Math.min(concurrency, total); i++) {
+        next();
+      }
+    });
+  }
+
+  // ========== 新增：视频 metadata 并发预加载（不阻塞） ==========
+  function preloadVideosMetadata(urls, concurrency) {
+    return new Promise(function(resolve) {
+      if (!urls || urls.length === 0) { resolve(); return; }
+      var index = 0;
+      var running = 0;
+      var total = urls.length;
+
+      function next() {
+        if (index >= total) {
+          if (running === 0) resolve();
+          return;
+        }
+        var url = urls[index++];
+        running++;
+        var video = document.createElement('video');
+        video.preload = 'metadata';
+        video.muted = true;
+        video.playsInline = true;
+        video.style.position = 'fixed';
+        video.style.top = '-9999px';
+        video.style.left = '-9999px';
+        video.style.width = '1px';
+        video.style.height = '1px';
+        video.style.opacity = '0';
+        video.style.pointerEvents = 'none';
+        document.body.appendChild(video);
+
+        var timer = setTimeout(function() {
+          video.src = '';
+          video.remove();
+          running--;
+          next();
+        }, 4000);
+
+        video.onloadedmetadata = video.onerror = function() {
+          clearTimeout(timer);
+          video.src = '';
+          video.remove();
+          running--;
+          next();
+        };
+        video.src = url;
+      }
+
+      for (var i = 0; i < Math.min(concurrency, total); i++) {
+        next();
+      }
+    });
+  }
+
   const loadingOverlay = document.getElementById('loadingOverlay');
   const loadingGif = document.getElementById('loadingGif');
   const loadingText = document.getElementById('loadingText');
@@ -77,6 +162,7 @@
 
   let allSiteData = {};
   let manifestCache = {};
+  let dataLoadingPromises = {}; // ========== 新增：飞行中缓存 ==========
 
   const modGrid = document.getElementById('modGrid');
   const paginationEl = document.getElementById('pagination');
@@ -203,37 +289,49 @@
     }
   }
 
-    async function loadAllDataForCategory(categoryKey) {
+  // ========== 修改：加入飞行中缓存，防止后台预加载和正式渲染重复请求 ==========
+  async function loadAllDataForCategory(categoryKey) {
     if (allSiteData[categoryKey]) return allSiteData[categoryKey];
+    if (dataLoadingPromises[categoryKey]) return await dataLoadingPromises[categoryKey];
 
-    const manifest = await loadManifest(categoryKey);
-    const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
-    const dir = dirMap[categoryKey];
+    const promise = (async function() {
+      const manifest = await loadManifest(categoryKey);
+      const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
+      const dir = dirMap[categoryKey];
 
-    if (manifest && manifest[dir]) {
-      const rangeStr = manifest[dir];
-      const indices = parseManifestRange(rangeStr);
+      if (manifest && manifest[dir]) {
+        const rangeStr = manifest[dir];
+        const indices = parseManifestRange(rangeStr);
 
-      const dataArrays = await Promise.all(indices.map(function(idx) { return loadJsonByManifest(categoryKey, idx); }));
-      const allData = dataArrays.flat();
-      allSiteData[categoryKey] = allData;
-      return allData;
-    }
+        const dataArrays = await Promise.all(indices.map(function(idx) { return loadJsonByManifest(categoryKey, idx); }));
+        const allData = dataArrays.flat();
+        allSiteData[categoryKey] = allData;
+        return allData;
+      }
 
-    const url = dataSources[categoryKey];
-    if (!url) return [];
+      const url = dataSources[categoryKey];
+      if (!url) return [];
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (!response.ok) return [];
+        let rawData = await response.json();
+        rawData = sortModsByTimeId(rawData);
+        allSiteData[categoryKey] = rawData;
+        return rawData;
+      } catch (error) {
+        return [];
+      }
+    })();
+
+    dataLoadingPromises[categoryKey] = promise;
     try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
-      const response = await fetch(url, { signal: controller.signal });
-      clearTimeout(timeoutId);
-      if (!response.ok) return [];
-      let rawData = await response.json();
-      rawData = sortModsByTimeId(rawData);
-      allSiteData[categoryKey] = rawData;
-      return rawData;
-    } catch (error) {
-      return [];
+      const result = await promise;
+      return result;
+    } finally {
+      delete dataLoadingPromises[categoryKey];
     }
   }
 
@@ -912,6 +1010,7 @@
     }
   }
 
+  // ========== 修改：3500ms 保底，后台疯狂预加载资源 ==========
   async function initPage() {
     let loadingGifUrls = [
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
@@ -958,12 +1057,56 @@
 
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
 
-    setTimeout(function() {
-      loadingOverlay.classList.add('hidden');
-      mainContent.style.opacity = '1';
-      loadModData('all');
-    }, 100);
+    // 后台静默预加载战役：一进来就并发抢 JSON + 图片 + 视频 metadata
+    (async function preloadCampaign() {
+      try {
+        // 1. 先并行把两个分类的 JSON 数据抢到手（利用飞行中缓存）
+        const [allData, skinData] = await Promise.all([
+          loadAllDataForCategory('all'),
+          loadAllDataForCategory('skin')
+        ]);
 
+        const allMods = allData.concat(skinData);
+        const coverUrls = [];
+        const previewImgUrls = [];
+        const videoUrls = [];
+
+        allMods.forEach(function(mod, idx) {
+          // P0：所有 MOD 的封面图（门面，必须全抢）
+          if (mod.coverImage) {
+            const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+            if (url.trim()) coverUrls.push(url);
+          }
+
+          // P1：仅第一页（8个）MOD 的预览图，每个 MOD 只抢前 2 张
+          if (idx < ITEMS_PER_PAGE && Array.isArray(mod.previewImages)) {
+            mod.previewImages.slice(0, 2).forEach(function(item) {
+              const urls = toCandidates(item);
+              if (urls.length && urls[0]) previewImgUrls.push(urls[0]);
+            });
+          }
+
+          // P2：仅第一页 MOD 的预览视频，只抢 metadata，每个 MOD 只抢第一个视频的第一个 URL
+          if (idx < ITEMS_PER_PAGE && Array.isArray(mod.previewVideos) && mod.previewVideos.length) {
+            const item = mod.previewVideos[0];
+            let urls = [];
+            if (typeof item === 'string') urls = [item];
+            else if (item.urls && Array.isArray(item.urls) && item.urls.length) urls = item.urls;
+            else if (item.url) urls = [item.url];
+            if (urls.length && urls[0]) videoUrls.push(urls[0]);
+          }
+        });
+
+        // 2. 并发抢资源：图片开 6 个槽位，视频开 2 个槽位
+        // 不 await，让它在后台自己跑，3500ms 到了也无所谓
+        preloadImagesWithConcurrency(coverUrls.concat(previewImgUrls), 6);
+        preloadVideosMetadata(videoUrls, 2);
+      } catch (e) {
+        // 预加载失败静默处理，绝不阻塞 3500ms 后进入主页面
+      }
+    })();
+
+    // 原有：处理 loadingGif / logo / loaded2Gif 竞速结果
     gifPromise.then(function(src) {
       if (src) {
         loadingGif.src = src;
@@ -981,6 +1124,13 @@
     loaded2Promise.then(function(src) {
       if (src) window.loaded2GifSrc = src;
     });
+
+    // ========== 关键修改：3500ms 后强制揭开遮罩 ==========
+    setTimeout(function() {
+      loadingOverlay.classList.add('hidden');
+      mainContent.style.opacity = '1';
+      loadModData('all');
+    }, 3500);
 
     logoArea.addEventListener('click', function(e) {
       if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
