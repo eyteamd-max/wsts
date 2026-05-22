@@ -1130,7 +1130,7 @@
       loadingOverlay.classList.add('hidden');
       mainContent.style.opacity = '1';
       loadModData('all');
-    }, 3500);
+    }, 10000);
 
     logoArea.addEventListener('click', function(e) {
       if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
