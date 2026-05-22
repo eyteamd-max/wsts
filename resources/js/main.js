@@ -1011,7 +1011,7 @@
   }
 
   // ========== 修改：3500ms 保底，后台疯狂预加载资源 ==========
-  async function initPage() {
+    async function initPage() {
     let loadingGifUrls = [
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
     ];
@@ -1057,10 +1057,10 @@
 
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
 
-    // 后台静默预加载战役：一进来就并发抢 JSON + 图片 + 视频 metadata
+    // ========== 10秒窗口：后台深度预加载战役 ==========
     (async function preloadCampaign() {
       try {
-        // 1. 先并行把两个分类的 JSON 数据抢到手（利用飞行中缓存）
+        // 1. 先并行抢 JSON（利用飞行中缓存）
         const [allData, skinData] = await Promise.all([
           loadAllDataForCategory('all'),
           loadAllDataForCategory('skin')
@@ -1071,42 +1071,45 @@
         const previewImgUrls = [];
         const videoUrls = [];
 
+        // 10秒窗口策略：前 3 页（24个）MOD 的深度资源也抢
+        const PRELOAD_PAGES = 3;
+        const PRELOAD_DEPTH = ITEMS_PER_PAGE * PRELOAD_PAGES; // 24
+
         allMods.forEach(function(mod, idx) {
-          // P0：所有 MOD 的封面图（门面，必须全抢）
+          // P0：所有 MOD 的封面图（全部抢，门面不能含糊）
           if (mod.coverImage) {
             const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
             if (url.trim()) coverUrls.push(url);
           }
 
-          // P1：仅第一页（8个）MOD 的预览图，每个 MOD 只抢前 2 张
-          if (idx < ITEMS_PER_PAGE && Array.isArray(mod.previewImages)) {
-            mod.previewImages.slice(0, 2).forEach(function(item) {
+          // P1：前 3 页 MOD 的预览图，每个 MOD 抢前 4 张（10秒足够深）
+          if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewImages)) {
+            mod.previewImages.slice(0, 4).forEach(function(item) {
               const urls = toCandidates(item);
               if (urls.length && urls[0]) previewImgUrls.push(urls[0]);
             });
           }
 
-          // P2：仅第一页 MOD 的预览视频，只抢 metadata，每个 MOD 只抢第一个视频的第一个 URL
-          if (idx < ITEMS_PER_PAGE && Array.isArray(mod.previewVideos) && mod.previewVideos.length) {
-            const item = mod.previewVideos[0];
-            let urls = [];
-            if (typeof item === 'string') urls = [item];
-            else if (item.urls && Array.isArray(item.urls) && item.urls.length) urls = item.urls;
-            else if (item.url) urls = [item.url];
-            if (urls.length && urls[0]) videoUrls.push(urls[0]);
+          // P2：前 3 页 MOD 的预览视频，每个 MOD 抢前 2 个视频的 metadata
+          if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewVideos) && mod.previewVideos.length) {
+            mod.previewVideos.slice(0, 2).forEach(function(item) {
+              let urls = [];
+              if (typeof item === 'string') urls = [item];
+              else if (item.urls && Array.isArray(item.urls) && item.urls.length) urls = item.urls;
+              else if (item.url) urls = [item.url];
+              if (urls.length && urls[0]) videoUrls.push(urls[0]);
+            });
           }
         });
 
-        // 2. 并发抢资源：图片开 6 个槽位，视频开 2 个槽位
-        // 不 await，让它在后台自己跑，3500ms 到了也无所谓
-        preloadImagesWithConcurrency(coverUrls.concat(previewImgUrls), 6);
-        preloadVideosMetadata(videoUrls, 2);
+        // 提升并发槽位：图片 10 路并行，视频 4 路并行
+        preloadImagesWithConcurrency(coverUrls.concat(previewImgUrls), 10);
+        preloadVideosMetadata(videoUrls, 4);
       } catch (e) {
-        // 预加载失败静默处理，绝不阻塞 3500ms 后进入主页面
+        // 预加载失败静默处理，绝不阻塞 10 秒后进入主页面
       }
     })();
 
-    // 原有：处理 loadingGif / logo / loaded2Gif 竞速结果
     gifPromise.then(function(src) {
       if (src) {
         loadingGif.src = src;
@@ -1125,7 +1128,7 @@
       if (src) window.loaded2GifSrc = src;
     });
 
-    // ========== 关键修改：3500ms 后强制揭开遮罩 ==========
+    // ========== 关键修改：10000ms（10秒）后强制揭开遮罩 ==========
     setTimeout(function() {
       loadingOverlay.classList.add('hidden');
       mainContent.style.opacity = '1';
