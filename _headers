@@ -1,5 +1,0 @@
-/resources/css/*
-  Cache-Control: no-cache
-
-/resources/js/*
-  Cache-Control: no-cache
