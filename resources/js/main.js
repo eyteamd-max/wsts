@@ -1,3 +1,4 @@
+
 (function() {
 
   function raceImage(urls, timeout = 3500) {
@@ -255,7 +256,7 @@
     if (!dir) return null;
     const manifestUrl = 'resources/json/post/' + dir + '/manifest.json';
     try {
-      const resp = await fetch(manifestUrl);
+      const resp = await fetch(manifestUrl, { cache: 'no-store' });
       if (!resp.ok) return null;
       const data = await resp.json();
       manifestCache[categoryKey] = data;
@@ -276,7 +277,7 @@
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 8000);
-      const response = await fetch(url, { signal: controller.signal });
+      const response = await fetch(url, { signal: controller.signal, cache: 'no-store' });
       clearTimeout(timeoutId);
       if (!response.ok) return [];
       let rawData = await response.json();
@@ -311,7 +312,7 @@
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
-        const response = await fetch(url, { signal: controller.signal });
+        const response = await fetch(url, { signal: controller.signal, cache: 'no-store' });
         clearTimeout(timeoutId);
         if (!response.ok) return [];
         let rawData = await response.json();
@@ -945,7 +946,7 @@
       } else {
         const controller = new AbortController();
         const timeoutId = setTimeout(function() { controller.abort(); }, 8000);
-        const response = await fetch(url, { signal: controller.signal });
+        const response = await fetch(url, { signal: controller.signal, cache: 'no-store' });
         clearTimeout(timeoutId);
         if (!response.ok) throw new Error('加载失败');
         let rawData = await response.json();
@@ -1022,7 +1023,7 @@
 
     try {
       const fetchWithTimeout = Promise.race([
-        fetch('resources/json/config.json'),
+        fetch('resources/json/config.json', { cache: 'no-store' }),
         new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
       ]);
       const resp = await fetchWithTimeout;
