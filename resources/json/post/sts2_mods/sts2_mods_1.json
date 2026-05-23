@@ -1,5 +1,346 @@
 [
   {
+    "id": "20260523151450874",
+    "title": "STS2-沙耶mod-非常可爱的沙耶",
+    "category": "skin",
+    "size": "55.41MB",
+    "date": "2026-05-23",
+    "badge": "v1.7",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0"
+    ],
+    "images": [],
+    "description": "本模MOD由B站UP主 千导院枫 所制作，新增的角色为沙耶，质量极高，非常可爱！目前可在选人界面的大图预览中切换四款皮肤：默认、兔女郎、赤足、圣女。后续更新将第一时间在本帖发布",
+    "author": "千导院枫",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/TEdS6XL"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "沙耶",
+      "新增角色",
+      "沙耶之歌",
+      "千导院枫",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41fa15a4c7974f411daa61205cbf28d29a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/6ea93b43-63cb-44e0-8621-078fdfd4831f/0",
+      "http://shp.qpic.cn/collector/1976464052/6c770708-7a31-4cdf-91b8-a7ae729f28fe/0",
+      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0",
+      "http://shp.qpic.cn/collector/1976464052/9e75c918-f47b-4ccf-bb99-26c9c0432c5c/0",
+      "http://shp.qpic.cn/collector/1976464052/624a9a3a-573e-4a77-816b-2316117486e4/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1i1Gi6hETD/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260523150506097",
+    "title": "故障机器人-原A大-Kira改-最新修复版",
+    "category": "skin",
+    "size": "7.39MB",
+    "date": "2026-05-23",
+    "badge": "Ver.1.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/IMG_20260520_202045.jpg"
+    ],
+    "images": [],
+    "description": "本MOD是故障机器人的外观替换模组，原为A大的一代模组，现已简单移植到塔Ⅱ版本。最新移植优化版由热心网友Kira完成，系SFW鸡煲修正版 Ver1.0，此改版最后编辑于2026年4月19日…\n\n\n---\n\n\n改版调整：\n1.鸡煲拥有了简单的攻击动画\n2.细微调整了人物的大小比例\n3.修复了遗物错位的问题\n4.鸡煲在火堆处新增了插图\n5.添加了死亡动画，不再是原地待机了\n\n\n---\n\nPS：\n我发现 _冬雪寒 网盘内分享的\"A大鸡煲\"是早期移植的未优化版本，缺少攻击动画、死亡动画和营火人物贴图，且兼容性很差。因此，猫猫自行上传了最新的二代移植优化版，并提供了在线下载线路",
+    "author": "anaertailin（A大）",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/GE9akQ7"
+      },
+      {
+        "text": "爱发电",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "故障机器人",
+      "鸡煲",
+      "外观替换",
+      "修复版",
+      "Kira",
+      "anaertailin",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim419c726edd4868401d9921771dde28f603?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_200827_com.megacrit.sts2.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_201133_com.megacrit.sts2.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_202942_com.megacrit.sts2.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_203728_com.megacrit.sts2.jpg"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenrecording_20260520_203647_com.megacrit.sts2.mp4"
+    ]
+  },
+  {
+    "id": "20260523133736416",
+    "title": "战士&全卡图手绘替换：绯刃战姬",
+    "category": "skin",
+    "size": "20.06MB",
+    "date": "2026-05-23",
+    "badge": "v0.103.2",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/3bb19a16-9439-48c7-8469-f91da9d92fff/0"
+    ],
+    "images": [],
+    "description": "MOD介绍：\n\n本 MOD 为铁甲战士的外观替换模组，可免费公开下载。所有美术资源均为手绘创作，不含任何 AI 生成内容，请尊重画师的劳动成果\n\n下载前建议关注 B 站 UP 主「阿塔Official」。卡图部分除「惊逃」那几张外已基本完成替换，并包含隐藏彩蛋\n\n本 MOD 最后更新于 5 月 4 日，后续如有更新，会持续跟进\n\n功能说明 将铁甲战士替换为机娘「阿塔」，并替换绝大多数卡图\n\n制作信息 MOD 制作：OLC 角色形象原创：阿塔Official 美术绘制：百南芋、Coria、INGOTzw、闪光菠萝皮 等（阿塔Official 已委托并获得使用权）\n\n授权与版权 相关内容版权归阿塔Official 所有（All rights reserved） 本作品采用 CC BY-NC-ND 4.0 协议授权 转载请注明出处，禁止修改、二次创作及商业用途\n\n特别感谢 @灯火橘Channel、画师 blueles",
+    "author": "阿塔_Official",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/fHSySTD"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "阿塔_Official",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414072f4481d7f402bad7b7e531d73c0a1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/d980b79b-dca9-4447-ab6c-c68ce18ef3ad/0",
+      "http://shp.qpic.cn/collector/1976464052/36837cfe-2f4f-4787-8580-452d21ad51d4/0",
+      "http://shp.qpic.cn/collector/1976464052/c4063436-8b8d-46fd-ae0e-839e2763cdf9/0",
+      "http://shp.qpic.cn/collector/1976464052/2c7c81ba-a60a-4afc-92ad-532a567a0f79/0",
+      "http://shp.qpic.cn/collector/1976464052/92150c50-ae8f-4b6e-8627-59110d5b6011/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV17M9iBwEfz/&type=mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/f70c5f011cdf9223.mp4"
+    ]
+  },
+  {
+    "id": "20260523121745156",
+    "title": "故障机器人-Aduare_rp的娘化皮肤",
+    "category": "skin",
+    "size": "6.89MB",
+    "date": "2026-05-23",
+    "badge": "v0.1.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/3cb1f35f-34fe-4ea0-8d85-9a6e8e064d59/0"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→故障机器人 / \n❸→机器人皮肤-X作者@Aduare_rp.zip\n\n\nMOD介绍：\n\n本MOD是韩国大佬Aduare做的故障机器人外观替换模组，作者最后更新于2026年4月27日。受安东尼团队聘请阿妮塔·萨尔基相当顾问的风波影响，这很可能已是最后一次更新了。新闻链接：https://www.gamersky.com/news/202605/2135308.shtml",
+    "author": "Aduare_rp",
+    "authorLinks": [
+      {
+        "text": "Twitter",
+        "url": "https://x.com/Aduare_rp"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "故障机器人",
+      "鸡煲",
+      "外观替换",
+      "Aduare_rp",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/2d4177bc-ffea-47fd-ab61-bd2f5210c04c/0",
+      "http://shp.qpic.cn/collector/1976464052/dbb1c8c0-9dfc-4ec2-8e74-8a4c07751d3e/0",
+      "http://shp.qpic.cn/collector/1976464052/c5221204-a9fc-47f7-836c-45161b4b3dc6/0",
+      "http://shp.qpic.cn/collector/1976464052/ae91d152-7f98-475c-b782-7660f4455b68/0",
+      "http://shp.qpic.cn/collector/1976464052/2ddcba2e-0a85-41c5-a06e-3b8aa81d6dbb/0"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/709e171e9dce4531.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/fbd6cd884bcc7b29.mp4"
+    ]
+  },
+  {
+    "id": "20260521143210375",
+    "title": "A大骨妹-亡灵契约师-技能动画先行版",
+    "category": "skin",
+    "size": "1.14MB",
+    "date": "2026-05-21",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/25e539d5b896662bb1e403feda0efc30_w1783_h980_s1636.jpeg"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→亡灵契约师 / \n❸→契约师皮肤-A大.zip\n\n\nMOD介绍：\n\n这是 anaertailin（A大）发布的亡灵契约师角色替换 MOD，目前为先行版，选人界面大图、小头像、营地等还未修改，后续更新本帖会持续更新。",
+    "author": "anaertailin（A大）",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/TSlqNJh"
+      },
+      {
+        "text": "爱发电",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换",
+      "先行版",
+      "半成品",
+      "anaertailin",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/1779323046763_1830328051.png",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/25e539d5b896662bb1e403feda0efc30_w1783_h980_s1636.jpeg"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1pi9eBNEMx/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260521143202351",
+    "title": "储君  -【Mesugaki_Regent】雌小鬼",
+    "category": "skin",
+    "size": "2.49MB",
+    "date": "2026-05-21",
+    "badge": "v0.1.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160816.jpg"
+    ],
+    "images": [],
+    "description": "储君 Mesugaki_Regent 版本 0.1.1 更新\n\n- 补丁说明\n\n1. 模式现在即使在 MAC 环境下也能正常运行！[修改 dll 文件]\n\n2. 小储君 [点] 现在正确显示在百科全书等物品中。\n\n3. 角色选择界面的屏幕比例已更改，以支持从 16:9 到 21:9。\n\n4. 射击动作变得更可爱了。\n\n---\n\nTwitter(MOD原帖)：https://x.com/i/status/2043730520031613188\n\n预览图片和预览视频我放的韩文展示画面，但国内玩家实装后会正常显示中文，请放心使用。\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"MR储君\"是 v0.1.0 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路\n\n\n",
+    "author": "Seic_Oh，DodoBird0615",
+    "authorLinks": [
+      {
+        "text": "X : @Seic_Oh",
+        "url": "https://x.com/Seic_Oh"
+      },
+      {
+        "text": "X : @DodoBird0615",
+        "url": "https://x.com/DodoBird0615"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "储君",
+      "外观替换",
+      "Seic_Oh",
+      "DodoBird0615",
+      "雌小鬼",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b3f4223ca2e7428c92a033e59a6ed72e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160835.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160852.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260521_064258.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260521_064208.jpg"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_u5ImI-H2fyMAZAI9_(656p).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_XO99w5ocxL7yyoVG_(1160p).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_mIJ7JXKyjywf3XsQ_(866p).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HE4jS3XbIAA_bnI_(gif).mp4"
+    ]
+  },
+  {
+    "id": "20260521143157376",
+    "title": "储君皮肤-A大储君改选人小图小头像版",
+    "category": "skin",
+    "size": "9.07MB",
+    "date": "2026-05-21",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4440c227378cfe6a.jpg"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→ / 储君\n❸→储君皮肤-A大(新增选人头像小图).zip\n\n---\n\nMOD介绍：\n\n此改版目前同步的是 A大 的《STS2储君抢先体验版》4/22最新版（暂时）。此改版在选人画面中新增了 A大 未加入的小头像，并将其替换为“选人界面小图版”的形象。",
+    "author": "anaertailin（A大）",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/TSlqNJh"
+      },
+      {
+        "text": "爱发电",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "储君",
+      "外观替换",
+      "anaertailin",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/f5759c20c303ac69.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/961990dc6c33372e.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/90338a468ec2ee63.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/80b62ee41d405db4.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/3946075ef2539a5f.jpg"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/dbb156a1ffa016a5.mp4"
+    ]
+  },
+  {
     "id": "20260521142219597",
     "title": "亡灵契约师-Booba Necrobinder Mod",
     "category": "skin",
@@ -163,108 +504,6 @@
     ]
   },
   {
-    "id": "20260521143157376",
-    "title": "储君皮肤-A大储君改选人小图小头像版",
-    "category": "skin",
-    "size": "9.07MB",
-    "date": "2026-05-21",
-    "badge": "v0.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4440c227378cfe6a.jpg"
-    ],
-    "images": [],
-    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→ / 储君\n❸→储君皮肤-A大(新增选人头像小图).zip\n\n---\n\nMOD介绍：\n\n此改版目前同步的是 A大 的《STS2储君抢先体验版》4/22最新版（暂时）。此改版在选人画面中新增了 A大 未加入的小头像，并将其替换为“选人界面小图版”的形象。",
-    "author": "anaertailin（A大）",
-    "authorLinks": [
-      {
-        "text": "bilibili",
-        "url": "https://b23.tv/TSlqNJh"
-      },
-      {
-        "text": "爱发电",
-        "url": "https://www.ifdian.net/a/anaertailin"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "储君",
-      "外观替换",
-      "anaertailin",
-      "夸克"
-    ],
-    "downloadLinks": [
-      {
-        "text": "夸克网盘",
-        "url": "https://pan.quark.cn/s/4223d651f627"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/f5759c20c303ac69.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/961990dc6c33372e.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/90338a468ec2ee63.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/80b62ee41d405db4.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/3946075ef2539a5f.jpg"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/dbb156a1ffa016a5.mp4"
-    ]
-  },
-  {
-    "id": "20260521143202351",
-    "title": "储君  -【Mesugaki_Regent】雌小鬼",
-    "category": "skin",
-    "size": "2.49MB",
-    "date": "2026-05-21",
-    "badge": "v0.1.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160816.jpg"
-    ],
-    "images": [],
-    "description": "储君 Mesugaki_Regent 版本 0.1.1 更新\n\n- 补丁说明\n\n1. 模式现在即使在 MAC 环境下也能正常运行！[修改 dll 文件]\n\n2. 小储君 [点] 现在正确显示在百科全书等物品中。\n\n3. 角色选择界面的屏幕比例已更改，以支持从 16:9 到 21:9。\n\n4. 射击动作变得更可爱了。\n\n---\n\nTwitter(MOD原帖)：https://x.com/i/status/2043730520031613188\n\n预览图片和预览视频我放的韩文展示画面，但国内玩家实装后会正常显示中文，请放心使用。\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"MR储君\"是 v0.1.0 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路\n\n\n",
-    "author": "Seic_Oh，DodoBird0615",
-    "authorLinks": [
-      {
-        "text": "X : @Seic_Oh",
-        "url": "https://x.com/Seic_Oh"
-      },
-      {
-        "text": "X : @DodoBird0615",
-        "url": "https://x.com/DodoBird0615"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "储君",
-      "外观替换",
-      "Seic_Oh",
-      "DodoBird0615",
-      "雌小鬼",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b3f4223ca2e7428c92a033e59a6ed72e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160835.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160852.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260521_064258.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260521_064208.jpg"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_u5ImI-H2fyMAZAI9_(656p).mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_XO99w5ocxL7yyoVG_(1160p).mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_mIJ7JXKyjywf3XsQ_(866p).mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HE4jS3XbIAA_bnI_(gif).mp4"
-    ]
-  },
-  {
     "id": "20260521091529089",
     "title": "A大战士-STS2驼鹿【4/22】新版本",
     "category": "skin",
@@ -314,106 +553,6 @@
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/RID/9999.mp4",
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/RID/9998.mp4",
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/RID/9994.mp4"
-    ]
-  },
-  {
-    "id": "20260521143210375",
-    "title": "A大骨妹-亡灵契约师-技能动画先行版",
-    "category": "skin",
-    "size": "1.14MB",
-    "date": "2026-05-21",
-    "badge": "v0.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/25e539d5b896662bb1e403feda0efc30_w1783_h980_s1636.jpeg"
-    ],
-    "images": [],
-    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→亡灵契约师 / \n❸→契约师皮肤-A大.zip\n\n\nMOD介绍：\n\n这是 anaertailin（A大）发布的亡灵契约师角色替换 MOD，目前为先行版，选人界面大图、小头像、营地等还未修改，后续更新本帖会持续更新。",
-    "author": "anaertailin（A大）",
-    "authorLinks": [
-      {
-        "text": "bilibili",
-        "url": "https://b23.tv/TSlqNJh"
-      },
-      {
-        "text": "爱发电",
-        "url": "https://www.ifdian.net/a/anaertailin"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "亡灵契约师",
-      "骨妹",
-      "外观替换",
-      "先行版",
-      "半成品",
-      "anaertailin",
-      "夸克"
-    ],
-    "downloadLinks": [
-      {
-        "text": "夸克网盘",
-        "url": "https://pan.quark.cn/s/4223d651f627"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/1779323046763_1830328051.png",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/25e539d5b896662bb1e403feda0efc30_w1783_h980_s1636.jpeg"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1pi9eBNEMx/&type=mp4"
-    ]
-  },
-  {
-    "id": "20260521143214970",
-    "title": "故障机器人-原A大-Kira改-最新修复版",
-    "category": "skin",
-    "size": "7.39MB",
-    "date": "2026-05-21",
-    "badge": "Ver.1.0",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/IMG_20260520_202045.jpg"
-    ],
-    "images": [],
-    "description": "本MOD是故障机器人的外观替换模组，原为A大的一代模组，现已简单移植到塔Ⅱ版本。最新移植优化版由热心网友Kira完成，系SFW鸡煲修正版 Ver1.0，此改版最后编辑于2026年4月19日…\n\n\n---\n\n\n改版调整：\n1.鸡煲拥有了简单的攻击动画\n2.细微调整了人物的大小比例\n3.修复了遗物错位的问题\n4.鸡煲在火堆处新增了插图\n5.添加了死亡动画，不再是原地待机了\n\n\n---\n\nPS：\n我发现 _冬雪寒 网盘内分享的\"A大鸡煲\"是早期移植的未优化版本，缺少攻击动画、死亡动画和营火人物贴图，且兼容性很差。因此，猫猫自行上传了最新的二代移植优化版，并提供了在线下载线路",
-    "author": "anaertailin（A大）",
-    "authorLinks": [
-      {
-        "text": "bilibili",
-        "url": "https://b23.tv/GE9akQ7"
-      },
-      {
-        "text": "爱发电",
-        "url": "https://www.ifdian.net/a/anaertailin"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "故障机器人",
-      "鸡煲",
-      "外观替换",
-      "修复版",
-      "Kira",
-      "anaertailin",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim419c726edd4868401d9921771dde28f603?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_200827_com.megacrit.sts2.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_201133_com.megacrit.sts2.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_202942_com.megacrit.sts2.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenshot_20260520_203728_com.megacrit.sts2.jpg"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenrecording_20260520_203647_com.megacrit.sts2.mp4"
     ]
   },
   {
