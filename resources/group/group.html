@@ -6,152 +6,80 @@
     <title>加入玩家群，一起交流 MOD 与疑问解答</title>
     <meta name="referrer" content="no-referrer">
     <style>
-        :root {
-            --bg: #faf8f5;
-            --card-bg: #fffefb;
-            --text: #3b3733;
-            --text-secondary: #6b645b;
-            --text-muted: #9e958a;
-            --border: #e2dbd0;
-            --border-light: #ede6db;
-            --accent: #d4846a;
-            --accent-hover: #c0735a;
-            --accent-bg: #fdf3ee;
-            --shadow-sm: 0 1px 3px rgba(60, 50, 40, 0.06);
-            --shadow-md: 0 4px 16px rgba(60, 50, 40, 0.09);
-            --shadow-lg: 0 8px 28px rgba(60, 50, 40, 0.13);
-            --radius: 18px;
-            --radius-sm: 12px;
-            --font-stack: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: var(--font-stack);
-            background-color: var(--bg);
-            background-image:
-                radial-gradient(ellipse at 20% 15%, rgba(212, 132, 106, 0.04) 0%, transparent 55%),
-                radial-gradient(ellipse at 75% 70%, rgba(160, 140, 120, 0.03) 0%, transparent 50%);
-            background-attachment: fixed;
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f3f0;
+            color: #2d2a26;
             min-height: 100vh;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: 32px 16px 56px;
+            padding: 48px 16px;
             display: flex;
-            align-items: flex-start;
             justify-content: center;
         }
 
         .container {
             width: 100%;
-            max-width: 640px;
+            max-width: 520px;
             text-align: center;
         }
 
         .header {
             margin-bottom: 32px;
-            padding: 0 4px;
         }
 
         .subtitle {
-            font-size: 0.95rem;
-            color: #8e8578;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            line-height: 1.5;
-            display: inline-block;
-            position: relative;
-        }
-
-        .subtitle::before,
-        .subtitle::after {
-            content: '·';
-            display: inline-block;
-            margin: 0 6px;
-            color: #d0c4b5;
-            font-weight: 400;
             font-size: 0.9rem;
-            vertical-align: middle;
+            color: #8a8279;
+            font-weight: 400;
+            letter-spacing: 0.04em;
         }
 
         .group-list {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 14px;
             align-items: center;
         }
 
         .group-card {
-            background: var(--card-bg);
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px 22px 22px;
+            background: #fff;
+            border: 1px solid #e8e4de;
+            border-radius: 16px;
+            padding: 22px;
             width: 100%;
-            max-width: 420px;
-            box-shadow: var(--shadow-sm);
-            transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 16px;
             text-align: left;
-            position: relative;
+            box-shadow: 0 1px 2px rgba(60,50,40,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .group-card:hover {
-            box-shadow: var(--shadow-md);
-            border-color: #d5cdc0;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(60,50,40,0.08);
+            border-color: #ddd7ce;
         }
 
-        .group-card--active:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: #dcc0b2;
+        .group-card--channel {
+            background: #fcfbfa;
+            border-color: #ebe7e0;
         }
 
-        .group-card--inactive {
-            background: #fafaf7;
-            border-color: var(--border-light);
-            box-shadow: none;
-            opacity: 0.72;
-        }
-
-        .group-card--inactive:hover {
-            box-shadow: var(--shadow-sm);
-            border-color: var(--border-light);
-            transform: none;
-            opacity: 0.8;
+        .group-card--channel:hover {
+            border-color: #e0dbd2;
         }
 
         .avatar-wrap {
             flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
             overflow: hidden;
-            border: 2px solid var(--border);
-            background: #f3f0ea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .group-card--active .avatar-wrap {
-            border-color: #e0cfc2;
-            box-shadow: 0 0 0 3px rgba(212, 132, 106, 0.08);
-        }
-
-        .group-card--inactive .avatar-wrap {
-            border-color: #e8e4db;
-            background: #f5f3ee;
+            background: #f0ece4;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
         }
 
         .avatar-img {
@@ -162,14 +90,14 @@
         }
 
         .avatar-fallback {
-            font-size: 1.8rem;
-            line-height: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
             color: #c5bdb0;
-            user-select: none;
-        }
-
-        .group-card--inactive .avatar-fallback {
-            color: #d5d0c6;
+            font-weight: 600;
         }
 
         .group-info {
@@ -177,159 +105,171 @@
             min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
+            padding-top: 2px;
         }
 
         .group-name-row {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .group-name {
             font-weight: 650;
             font-size: 0.95rem;
-            color: var(--text);
-            line-height: 1.35;
-            letter-spacing: 0.015em;
+            color: #2d2a26;
+            letter-spacing: 0.01em;
         }
 
         .group-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 2px 10px;
-            border-radius: 20px;
+            padding: 3px 10px;
+            border-radius: 6px;
             font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.03em;
-            line-height: 1.6;
-            white-space: nowrap;
-            user-select: none;
-            flex-shrink: 0;
+            background: #fdf1ec;
+            color: #c46a50;
+            letter-spacing: 0.02em;
         }
 
-        .group-card--active .group-badge {
-            background: #fef2ed;
-            color: #c06a4e;
-            border: 1px solid #f3d3c6;
+        .group-card--channel .group-badge {
+            background: #f3f0ea;
+            color: #8a7e6e;
         }
 
-        .group-card--inactive .group-badge {
-            background: #f3f1ed;
+        .hint-sub {
+            font-size: 0.82rem;
+            color: #c08a70;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        .group-meta {
+            font-size: 0.86rem;
+            color: #6b645b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .group-meta .label {
             color: #a09888;
-            border: 1px solid #e4dfd5;
+            font-size: 0.8rem;
         }
 
-        .group-number-row {
+        .group-meta .number {
+            font-weight: 600;
+            color: #4a4540;
+            font-family: 'SF Mono', 'JetBrains Mono', 'Consolas', 'Menlo', 'PingFang SC', monospace;
+            letter-spacing: 0.02em;
+            font-size: 0.88rem;
+        }
+
+        .answer-row {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            letter-spacing: 0.03em;
+            gap: 10px;
+            padding: 8px 14px;
+            background: #fdf8f5;
+            border-radius: 10px;
+            border: 1px solid #f0e6de;
+            align-self: flex-start;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+            user-select: none;
         }
 
-        .group-number-row .label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 400;
+        .answer-row:hover {
+            background: #faf0ea;
+            border-color: #e5d5cc;
         }
 
-        .group-number-row .number {
-            font-weight: 600;
-            color: var(--text);
-            letter-spacing: 0.04em;
-            font-variant-numeric: tabular-nums;
-            font-family: 'SF Mono', 'JetBrains Mono', 'Consolas', 'Menlo', 'PingFang SC', monospace;
+        .answer-row:active {
+            transform: scale(0.98);
         }
 
-        .group-card--inactive .group-number-row .number {
-            color: var(--text-muted);
+        .answer-label {
+            font-size: 0.78rem;
+            color: #b09888;
             font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .answer-code {
+            font-family: 'SF Mono', 'JetBrains Mono', 'Consolas', 'Menlo', 'PingFang SC', monospace;
+            font-weight: 700;
+            color: #b86b52;
+            font-size: 0.92rem;
+            letter-spacing: 0.06em;
         }
 
         .action-area {
             flex-shrink: 0;
-            margin-left: auto;
+            padding-top: 4px;
         }
 
-        .copy-btn {
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
             padding: 9px 18px;
-            background: var(--accent);
-            color: #fff;
             border: none;
-            border-radius: 22px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 0.84rem;
-            cursor: pointer;
-            transition: all var(--transition);
-            letter-spacing: 0.02em;
-            font-family: var(--font-stack);
-            white-space: nowrap;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-            outline: none;
-            box-shadow: 0 2px 8px rgba(212, 132, 106, 0.22);
-        }
-
-        .copy-btn:hover {
-            background: var(--accent-hover);
-            box-shadow: 0 4px 14px rgba(212, 132, 106, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .copy-btn:active {
-            transform: scale(0.96);
-            box-shadow: 0 1px 4px rgba(212, 132, 106, 0.2);
-            transition: 0.1s;
-        }
-
-        .status-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 9px 16px;
-            background: #f3f1ec;
-            color: #a09888;
-            border: 1px solid #e6e1d7;
-            border-radius: 22px;
-            font-weight: 500;
             font-size: 0.82rem;
-            letter-spacing: 0.02em;
+            cursor: pointer;
+            font-family: inherit;
+            text-decoration: none;
             white-space: nowrap;
-            user-select: none;
-            cursor: default;
+            transition: all 0.15s ease;
         }
 
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #c5bcaa;
-            flex-shrink: 0;
+        .btn-copy {
+            background: #d4846a;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(180,100,70,0.15);
+        }
+
+        .btn-copy:hover {
+            background: #c2735a;
+            box-shadow: 0 3px 10px rgba(180,100,70,0.2);
+        }
+
+        .btn-copy:active {
+            transform: scale(0.97);
+        }
+
+        .btn-link {
+            background: #8a7e6e;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(100,90,80,0.12);
+        }
+
+        .btn-link:hover {
+            background: #7d7162;
+            box-shadow: 0 3px 10px rgba(100,90,80,0.18);
+        }
+
+        .btn-link:active {
+            transform: scale(0.97);
         }
 
         .toast {
             position: fixed;
             bottom: 28px;
             left: 50%;
-            transform: translateX(-50%) translateY(120px);
-            background: #fffefb;
-            border: 1.5px solid #d5cdc0;
-            border-radius: 24px;
+            transform: translateX(-50%) translateY(100px);
+            background: #fff;
+            border: 1px solid #e5e0d8;
+            border-radius: 12px;
             padding: 10px 22px;
-            font-weight: 550;
-            font-size: 0.88rem;
-            color: var(--text);
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #3b3733;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1);
             z-index: 200;
-            white-space: nowrap;
-            letter-spacing: 0.02em;
             pointer-events: none;
         }
 
@@ -344,92 +284,30 @@
         .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            padding: 8px 18px;
-            background: transparent;
-            border: 1.5px solid transparent;
-            border-radius: 20px;
+            gap: 6px;
+            padding: 8px 16px;
             text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.88rem;
-            transition: all var(--transition);
-            letter-spacing: 0.02em;
+            color: #8e8578;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
         }
 
         .back-link:hover {
-            background: #fffefb;
-            border-color: #e2dbd0;
-            color: var(--text);
-            box-shadow: var(--shadow-sm);
+            background: #fff;
+            color: #5a544d;
+            border-color: #e5e0d8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         @media (max-width: 480px) {
-            body {
-                padding: 20px 10px 44px;
-            }
-
-            .subtitle {
-                font-size: 0.85rem;
-            }
-            .subtitle::before,
-            .subtitle::after {
-                margin: 0 4px;
-                font-size: 0.8rem;
-            }
-
-            .header {
-                margin-bottom: 24px;
-            }
-
-            .group-card {
-                flex-wrap: wrap;
-                padding: 20px 16px 18px;
-                gap: 12px;
-                border-radius: var(--radius-sm);
-            }
-
-            .avatar-wrap {
-                width: 50px;
-                height: 50px;
-            }
-            .avatar-fallback {
-                font-size: 1.5rem;
-            }
-
-            .group-info {
-                flex: 1 1 auto;
-                min-width: 140px;
-            }
-            .group-name {
-                font-size: 0.9rem;
-            }
-            .group-badge {
-                font-size: 0.68rem;
-                padding: 1px 8px;
-            }
-            .group-number-row {
-                font-size: 0.82rem;
-            }
-
-            .action-area {
-                margin-left: 0;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .copy-btn,
-            .status-tag {
-                padding: 8px 16px;
-                font-size: 0.8rem;
-                border-radius: 20px;
-            }
-
-            .back-link {
-                font-size: 0.82rem;
-                padding: 7px 14px;
-            }
+            body { padding: 28px 12px; }
+            .group-card { padding: 18px; gap: 14px; }
+            .avatar-wrap { width: 48px; height: 48px; border-radius: 12px; }
+            .group-name { font-size: 0.9rem; }
+            .btn { padding: 8px 16px; font-size: 0.8rem; }
+            .answer-row { padding: 6px 12px; }
         }
     </style>
 </head>
@@ -442,7 +320,7 @@
         <div class="group-list" id="groupList"></div>
 
         <div class="back-link-wrap">
-            <a href="../../index.html" class="back-link">← 返回 MOD 站首页</a>
+            <a href="../../index.html" class="back-link">&larr; 返回 MOD 站首页</a>
         </div>
     </div>
 
@@ -456,14 +334,20 @@
                     badge: '一群',
                     number: '1101853266',
                     avatar: 'https://p.qlogo.cn/gh/1101853266/1101853266/0',
-                    active: true
+                    active: true,
+                    type: 'group',
+                    hint: '如果群满了可以加频道',
+                    answer: '_冬雪寒'
                 },
                 {
-                    name: '二群',
-                    badge: '二群',
-                    number: null,
-                    avatar: '',
-                    active: false
+                    name: '杀戮尖塔2 移植版交流频道',
+                    badge: '频道',
+                    number: 'pd52310485',
+                    link: 'https://pd.qq.com/s/18petknya?b=9',
+                    answer: '_冬雪寒',
+                    avatar: 'https://p.qlogo.cn/gh/1101853266/1101853266/0',
+                    active: true,
+                    type: 'channel'
                 }
             ];
 
@@ -474,30 +358,22 @@
                 groupList.innerHTML = '';
                 groups.forEach((group) => {
                     const card = document.createElement('div');
-                    card.className = 'group-card';
-                    if (group.active) {
-                        card.classList.add('group-card--active');
-                    } else {
-                        card.classList.add('group-card--inactive');
-                    }
+                    card.className = 'group-card' + (group.type === 'channel' ? ' group-card--channel' : '');
 
                     const avatarWrap = document.createElement('div');
                     avatarWrap.className = 'avatar-wrap';
-
                     if (group.avatar && group.active) {
                         const img = document.createElement('img');
                         img.className = 'avatar-img';
                         img.src = group.avatar;
                         img.alt = group.name;
                         img.loading = 'lazy';
-                        img.addEventListener('error', () => {
-                            avatarWrap.innerHTML = '<span class="avatar-fallback">🐱</span>';
-                        });
+                        img.onerror = () => {
+                            avatarWrap.innerHTML = '<div class="avatar-fallback">?</div>';
+                        };
                         avatarWrap.appendChild(img);
-                    } else if (group.active) {
-                        avatarWrap.innerHTML = '<span class="avatar-fallback">🐱</span>';
                     } else {
-                        avatarWrap.innerHTML = '<span class="avatar-fallback">🌱</span>';
+                        avatarWrap.innerHTML = '<div class="avatar-fallback">?</div>';
                     }
 
                     const info = document.createElement('div');
@@ -517,42 +393,50 @@
                     nameRow.appendChild(nameEl);
                     nameRow.appendChild(badgeEl);
 
-                    const numberRow = document.createElement('div');
-                    numberRow.className = 'group-number-row';
-
-                    const label = document.createElement('span');
-                    label.className = 'label';
-                    label.textContent = '群号：';
-
-                    const numberVal = document.createElement('span');
-                    numberVal.className = 'number';
-                    numberVal.textContent = group.number || '暂无';
-
-                    numberRow.appendChild(label);
-                    numberRow.appendChild(numberVal);
-
                     info.appendChild(nameRow);
-                    info.appendChild(numberRow);
+
+                    if (group.hint) {
+                        const hintEl = document.createElement('div');
+                        hintEl.className = 'hint-sub';
+                        hintEl.textContent = group.hint;
+                        info.appendChild(hintEl);
+                    }
+
+                    const metaRow = document.createElement('div');
+                    metaRow.className = 'group-meta';
+                    metaRow.innerHTML = '<span class="label">' + (group.type === 'channel' ? '频道号' : '群号') + '</span><span class="number">' + escapeHtml(group.number || '暂无') + '</span>';
+                    info.appendChild(metaRow);
+
+                    if (group.answer) {
+                        const answerRow = document.createElement('div');
+                        answerRow.className = 'answer-row';
+                        answerRow.innerHTML = '<span class="answer-label">验证答案</span><span class="answer-code">' + escapeHtml(group.answer) + '</span>';
+                        answerRow.addEventListener('click', () => {
+                            copyToClipboard(group.answer, '答案已复制');
+                        });
+                        info.appendChild(answerRow);
+                    }
 
                     const actionArea = document.createElement('div');
                     actionArea.className = 'action-area';
 
-                    if (group.active && group.number) {
+                    if (group.active && group.type === 'group' && group.number) {
                         const copyBtn = document.createElement('button');
-                        copyBtn.className = 'copy-btn';
+                        copyBtn.className = 'btn btn-copy';
                         copyBtn.textContent = '复制群号';
-                        copyBtn.setAttribute('data-number', group.number);
-                        copyBtn.addEventListener('click', (e) => {
+                        copyBtn.onclick = (e) => {
                             e.stopPropagation();
-                            const num = copyBtn.getAttribute('data-number');
-                            copyToClipboard(num);
-                        });
+                            copyToClipboard(group.number, '群号已复制，快去粘贴加群吧！');
+                        };
                         actionArea.appendChild(copyBtn);
-                    } else {
-                        const statusTag = document.createElement('span');
-                        statusTag.className = 'status-tag';
-                        statusTag.innerHTML = '<span class="status-dot"></span>暂未开放';
-                        actionArea.appendChild(statusTag);
+                    } else if (group.active && group.type === 'channel' && group.link) {
+                        const linkBtn = document.createElement('a');
+                        linkBtn.className = 'btn btn-link';
+                        linkBtn.href = group.link;
+                        linkBtn.target = '_blank';
+                        linkBtn.rel = 'noopener noreferrer';
+                        linkBtn.textContent = '进入频道';
+                        actionArea.appendChild(linkBtn);
                     }
 
                     card.appendChild(avatarWrap);
@@ -562,32 +446,35 @@
                 });
             }
 
-            function copyToClipboard(text) {
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            function copyToClipboard(text, message) {
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(text).then(() => {
-                        showToast('群号已复制，快去粘贴加群吧！');
+                        showToast(message);
                     }).catch(() => {
-                        fallbackCopy(text);
+                        fallbackCopy(text, message);
                     });
                 } else {
-                    fallbackCopy(text);
+                    fallbackCopy(text, message);
                 }
             }
 
-            function fallbackCopy(text) {
+            function fallbackCopy(text, message) {
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
-                textarea.style.pointerEvents = 'none';
+                textarea.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
                 document.body.appendChild(textarea);
-                textarea.focus();
                 textarea.select();
                 try {
                     document.execCommand('copy');
-                    showToast('群号已复制，快去粘贴加群吧！');
+                    showToast(message);
                 } catch (err) {
-                    showToast('⚠️ 复制失败，请手动复制群号');
+                    showToast('复制失败，请手动复制');
                 }
                 document.body.removeChild(textarea);
             }
@@ -599,7 +486,7 @@
                 toast.classList.add('show');
                 toastTimer = setTimeout(() => {
                     toast.classList.remove('show');
-                }, 2200);
+                }, 2000);
             }
 
             renderGroups();
