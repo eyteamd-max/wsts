@@ -189,8 +189,12 @@
     ],
     "downloadLinks": [
       {
-        "text": "在线下载",
+        "text": "beta最新版",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "v0.103.2兼容版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       }
     ],
     "previewImages": [
