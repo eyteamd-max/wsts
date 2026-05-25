@@ -1,56 +1,218 @@
 [
   {
-    "id": "20260523151450874",
-    "title": "STS2-沙耶mod-非常可爱的沙耶",
+    "id": "20260525193558799",
+    "title": "二次元猎宝2-卡面美化-v1.2",
     "category": "skin",
-    "size": "55.41MB",
-    "date": "2026-05-23",
-    "badge": "v1.7",
+    "size": "34.11MB",
+    "date": "2026-05-25",
+    "badge": "v1.2",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0"
+      "http://shp.qpic.cn/collector/1976464052/47577f98-e566-4511-9f76-40b3351be587/0"
     ],
     "images": [],
-    "description": "本模MOD由B站UP主 千导院枫 所制作，新增的角色为沙耶，质量极高，非常可爱！目前可在选人界面的大图预览中切换四款皮肤：默认、兔女郎、赤足、圣女。后续更新将第一时间在本帖发布",
-    "author": "千导院枫",
+    "description": "此模组是B站UP主 Xpp__ 大佬所发布的【二次元猎宝2-v1.2】这是一款静默猎手的卡面美化MOD，卡面共修改56张，多为卡通风格。基于AI生成的纯色背景立绘，又经PS手工修改\n\n\n视频制作与发布：Xpp__\nMod编写及修缮：@绫末LingEnd  \n特别感谢：@GhoulEmperor 、@失地骑士Hatk  ",
+    "author": "Xpp__，绫末LingEnd",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/TEdS6XL"
+        "text": "B站｜Xpp__",
+        "url": "https://b23.tv/cRuTAVP"
+      },
+      {
+        "text": "爱发电｜Xpp__",
+        "url": "https://ifdian.net/a/xppppx"
+      },
+      {
+        "text": "B站｜绫末LingEnd",
+        "url": "https://b23.tv/4aj5HaH"
       }
     ],
     "tags": [
       "SFW",
-      "沙耶",
-      "新增角色",
-      "沙耶之歌",
-      "千导院枫",
+      "静默猎手",
+      "猎宝",
+      "卡面美化",
+      "Xpp__",
+      "绫末LingEnd"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41c3100649c9a24a1da6d900517f928b39?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8eb3b352-8002-457e-a8ce-00d3778b9b18/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1utRyB5EkB/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260525180152791",
+    "title": "猎宝-原版风格卡面美化/白卡",
+    "category": "skin",
+    "size": "5.48MB",
+    "date": "2026-05-25",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/4f87d742-5e88-4b6e-8897-a0afa3d8b5a9/0"
+    ],
+    "images": [],
+    "description": "卡面由 AI 加 PS 制作，形象为 @anaertailin 老师的猎宝。卡面 MOD 技术支持为 @惜梦yy。该模组当前版本仅美化了猎宝的 35 张白卡，后续如有更新，本帖会持续跟进。您也可在群内 @壹个屑猫猫 提醒我更新",
+    "author": "[发布] - 羽饰panacheㅤ[形象] - anaertailin（A大）ㅤ[mod支持] - 惜梦yy",
+    "authorLinks": [
+      {
+        "text": "B站｜羽饰panache",
+        "url": "https://b23.tv/wtieG9C"
+      },
+      {
+        "text": "B站｜anaertailin（A大）",
+        "url": "https://b23.tv/ppxalX0"
+      },
+      {
+        "text": "B站｜惜梦yy",
+        "url": "https://b23.tv/OyyLFnn"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "静默猎手",
+      "猎宝",
+      "卡面美化",
+      "羽饰panache",
+      "惜梦yy",
+      "anaertailin",
       "在线下载"
     ],
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41fa15a4c7974f411daa61205cbf28d29a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41ce9a34ed47244c6482c937500a3276e1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       }
     ],
     "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/6ea93b43-63cb-44e0-8621-078fdfd4831f/0",
-      "http://shp.qpic.cn/collector/1976464052/6c770708-7a31-4cdf-91b8-a7ae729f28fe/0",
-      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0",
-      "http://shp.qpic.cn/collector/1976464052/9e75c918-f47b-4ccf-bb99-26c9c0432c5c/0",
-      "http://shp.qpic.cn/collector/1976464052/624a9a3a-573e-4a77-816b-2316117486e4/0"
+      "http://shp.qpic.cn/collector/1976464052/a57f79bb-594c-4e86-a6c2-3fffb5a07d01/0"
     ],
     "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1i1Gi6hETD/&type=mp4"
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/c0ad866a266e7158.mp4"
     ]
   },
   {
-    "id": "20260523150506097",
+    "id": "20260525165509092",
+    "title": "战士和鸡煲的卡面美化移植 原STS1",
+    "category": "skin",
+    "size": "11.55MB",
+    "date": "2026-05-25",
+    "badge": "v1.0.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/456c6103-5d18-4462-b6d2-7b971b2c8076/0"
+    ],
+    "images": [],
+    "description": "战士与鸡煲娘化卡面来自失地骑士Hatk老师，卡面的人物形象来自于anaertailin（A大）老师，喜欢的话记得去B站和爱发电支持。\n\nPS：预览图只展示了部分卡面\n此MOD将战士与鸡煲的娘化卡面合二为一了，没办法和其他的战士 or 鸡煲的卡面模组兼容…",
+    "author": "[发布] - 羽饰panache，[制作] - 失地骑士Hatk，[形象] - anaertailin（A大）",
+    "authorLinks": [
+      {
+        "text": "B站｜羽饰panache",
+        "url": "https://b23.tv/wtieG9C"
+      },
+      {
+        "text": "B站｜失地骑士Hatk",
+        "url": "https://b23.tv/onEtS1f"
+      },
+      {
+        "text": "B站｜anaertailin（A大）",
+        "url": "https://b23.tv/KGeej7G"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "故障机器人",
+      "鸡煲",
+      "卡面美化",
+      "羽饰panache",
+      "失地骑士Hatk",
+      "anaertailin",
+      "在线下载",
+      "移植"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41c0d955f49893421cb4256cc4a1bd7006?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/4abaad09-1ffe-400c-af75-574b00742150/0",
+      "http://shp.qpic.cn/collector/1976464052/69a75690-7558-4a9c-ac47-dfbe5b2ac532/0",
+      "http://shp.qpic.cn/collector/1976464052/d0de3f9f-f038-4884-aab0-798f22a8145e/0",
+      "http://shp.qpic.cn/collector/1976464052/6e8d2026-d703-4300-bdfd-e4c9099277c8/0"
+    ],
+    "previewVideos": []
+  },
+  {
+    "id": "20260525211008731",
+    "title": "STS2 WineFox Mod / 酒狐MOD",
+    "category": "skin",
+    "size": "57.38MB",
+    "date": "2026-05-25",
+    "badge": "v1.1.21",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/90aefd68-76cb-48d5-b4bc-1137881c2d7f/0"
+    ],
+    "images": [],
+    "description": "WineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃\n\n\nv1.1.21更新日志：\n1.[清算时间] 基础伤害与材料增伤修改 2 -> 1\n2.[规划专家] 改为被丢弃的技能牌获得保留。（含3回合结束弃牌）\n3.[铁镐] 升级效果改为（下两次你从牌中获得资源时，额外获得4个铁）\n4.更新[全力倾泻]卡面\n5.[魔力超负荷] 基础费用调整为 1\n6.[抓挠] 新增总伤害显示逻辑（power/hook）\n7.修复了沙漠神殿获取部分遗物时，效果不生效的问题\n8.添加对手机版的兼容\n\n\n注意：Mod适配了杀戮尖塔2beta版v0.105.0新更新的接口，由于接口大改，需要切换到beta版才能正常运行mod，使用正式版v0.103.2将无法正常继续游戏！\n\n\n开源地址：\nhttps://github.com/LuoTianOrange/STS2_WineFox\n前置库：\nhttps://github.com/BAKAOLC/STS2-RitsuLib",
+    "author": "灯火橘Channel",
+    "authorLinks": [
+      {
+        "text": "B站｜灯火橘Channel",
+        "url": "https://b23.tv/WxskPAP"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "酒狐",
+      "WineFox",
+      "我的世界",
+      "Minecraft",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/c5629b80-166c-4d23-8a14-fd079d9329d0/0",
+      "http://shp.qpic.cn/collector/1976464052/ca877725-86f7-420b-a506-b9891550a622/0",
+      "http://shp.qpic.cn/collector/1976464052/7fb62f9d-f995-43f2-9f27-04e8ef714eeb/0",
+      "http://shp.qpic.cn/collector/1976464052/79d511f6-42b7-4da3-9565-0d66385c550a/0",
+      "http://shp.qpic.cn/collector/1976464052/c76aa0a4-1e19-4537-bf43-3055b744da50/0",
+      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0",
+      "http://shp.qpic.cn/collector/1976464052/d73bd772-9cb6-490d-ab23-053f90b0fe47/0",
+      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
+      "http://shp.qpic.cn/collector/1976464052/94d66fa0-b1b6-4269-9be2-caed8cff698d/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1thXRBNEi3/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260525142839389",
     "title": "故障机器人-原A大-Kira改-最新修复版",
     "category": "skin",
     "size": "7.39MB",
-    "date": "2026-05-23",
+    "date": "2026-05-25",
     "badge": "Ver.1.0",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
@@ -97,6 +259,159 @@
     ]
   },
   {
+    "id": "20260525142800943",
+    "title": "亡灵契约师-Booba Necrobinder Mod",
+    "category": "skin",
+    "size": "5.62MB",
+    "date": "2026-05-25",
+    "badge": "v1.0.7",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/IMG_20260520_180147.jpg"
+    ],
+    "images": [],
+    "description": "这是一位韩国大佬制作的外观替换MOD，具体修改内容为：替换了骨妹的的战斗视觉效果、商人视觉效果、休息站界面、角色选择界面以及其他一些相关的 UI 素材（本帖收录的版本为2026年5月14日下午12:27更新的最新版，我把该模组的前置和主体MOD整合到一起了，里面会显示有两个文件夹，不用管他正常导入就行）\n\n---\n\n更新日志：\n\n构建错误修复\n\n修复了在 Radeon 显卡上启用 MSAA 时角色在战斗中不出现的问题。\n\n减小了 Necrobinder 图集的大小，以消除锯齿/锯齿边缘。\n\n移除未使用的子视口相关内容。\n\n修复了商家动画可能卡顿的问题\n\n修复了仅限测试版使用的清单兼容性问题\n\n移除了 BaseLib 依赖项\n\n---\n\n该模组的Twitter原文链接：\nhttps://x.com/i/status/2053763683134939613\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"BN契约师\"是 v1.0.3 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路",
+    "author": "JINROU，Iyan-kim，Jiun Kim",
+    "authorLinks": [
+      {
+        "text": "X : @JINROU",
+        "url": "https://x.com/rkem741"
+      },
+      {
+        "text": "X : @Iyan-kim",
+        "url": "https://x.com/IyanE_VRC_"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换",
+      "JINROU",
+      "Jiun Kim",
+      "Iyan-kim",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41e58d07704580485381f19c10b177bb8b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_172850.jpg",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_172829.jpg"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_i_d-TdBYy5KyW20B_(1080p).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_74QMYpAO9sesOCNP_(818p).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HG5BhS-a0AAXDJ1_(gif).mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HG5BiTebEAAxTBT_(gif).mp4"
+    ]
+  },
+  {
+    "id": "20260525211002363",
+    "title": "杀戮尖塔2商人娘化-带日/中语音",
+    "category": "skin",
+    "size": "8.03MB",
+    "date": "2026-05-25",
+    "badge": "v1.5.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/cfe2e5c3-bfd0-4b66-b889-3f3e08614fe2/0"
+    ],
+    "images": [],
+    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。",
+    "author": "Peslanna",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/h35srrd"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "商人",
+      "假商人",
+      "语音",
+      "外观替换",
+      "Peslanna",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "开源地址",
+        "url": "https://github.com/LinXce/merchant-2-cute-ii"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/dfbed67a-0391-495f-82f0-7c0fe087a011/0",
+      "http://shp.qpic.cn/collector/1976464052/e6ae55a0-f06b-44bf-9280-404e21ed939b/0",
+      "http://shp.qpic.cn/collector/1976464052/321835c1-be52-4b6a-8a88-93f931b90ccc/0",
+      "http://shp.qpic.cn/collector/1976464052/2b9b41aa-10c6-4918-aa62-5246a6172ce6/0",
+      "http://shp.qpic.cn/collector/1976464052/ebb9d36b-25e7-45c4-88ab-9db7063505fe/0",
+      "http://shp.qpic.cn/collector/1976464052/3e8918f4-6408-410b-85b1-8a6012064462/0",
+      "http://shp.qpic.cn/collector/1976464052/a0880d8c-7442-4d50-9218-058025306fdb/0",
+      "http://shp.qpic.cn/collector/1976464052/710eb09f-6400-4972-9a3b-fe0d78a0c740/0",
+      "http://shp.qpic.cn/collector/1976464052/a968c47a-56cc-4eb8-9fbf-9cb2f611d2f3/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1W1RNBbECy/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260523151450874",
+    "title": "STS2-沙耶mod-非常可爱的沙耶",
+    "category": "skin",
+    "size": "55.41MB",
+    "date": "2026-05-23",
+    "badge": "v1.7",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0"
+    ],
+    "images": [],
+    "description": "本模MOD由B站UP主 千导院枫 所制作，新增的角色为沙耶，质量极高，非常可爱！目前可在选人界面的大图预览中切换四款皮肤：默认、兔女郎、赤足、圣女。后续更新将第一时间在本帖发布",
+    "author": "千导院枫",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/TEdS6XL"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "沙耶",
+      "新增角色",
+      "沙耶之歌",
+      "千导院枫",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41fa15a4c7974f411daa61205cbf28d29a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/6ea93b43-63cb-44e0-8621-078fdfd4831f/0",
+      "http://shp.qpic.cn/collector/1976464052/6c770708-7a31-4cdf-91b8-a7ae729f28fe/0",
+      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0",
+      "http://shp.qpic.cn/collector/1976464052/9e75c918-f47b-4ccf-bb99-26c9c0432c5c/0",
+      "http://shp.qpic.cn/collector/1976464052/624a9a3a-573e-4a77-816b-2316117486e4/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1i1Gi6hETD/&type=mp4"
+    ]
+  },
+  {
     "id": "20260523133736416",
     "title": "战士&全卡图手绘替换：绯刃战姬",
     "category": "skin",
@@ -140,6 +455,60 @@
     "previewVideos": [
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV17M9iBwEfz/&type=mp4",
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/f70c5f011cdf9223.mp4"
+    ]
+  },
+  {
+    "id": "20260523133736016",
+    "title": "战士外观替换MOD：加丝敏",
+    "category": "skin",
+    "size": "7.09MB",
+    "date": "2026-05-23",
+    "badge": "v0.1.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/eba5797e-3ffb-44b4-8895-a708b5569bcc/0"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→铁甲战士 / \n❸→战士皮肤-加丝敏.zip\n\n\nMOD介绍：\n\n本mod采用了﻿﻿﻿@比逗逗丶老师的模板+部分修改，替换了铁甲战士大部分原版动画素材\n食用方法：将文件解压进杀戮尖塔2本体文件的mods文件夹中，如果没有mods文件夹手动新建一个mods即可\n\n注意事项：\n1.如果是第一次安装mod的玩家注意有mod的存档与正常存档并不同步，需要手动覆盖存档，具体解决方法可在b站搜索\n2.安装了突破多人联机上限的mod可能会导致商店的动画出现问题。\n3.如果有其他采用﻿﻿@比逗逗丶老师 模板的mod，暂时不确定会不会有冲突出现，请多留意\n4.出现bug请在评论区留言反馈，会尽可能在后续版本中更新修复",
+    "author": "浅井猴猴_Saru",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/0RZOWRF"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "加丝敏",
+      "外观替换",
+      "浅井猴猴_Saru",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a936e264-7b8d-4211-ad57-13c05844a414/0",
+      "http://shp.qpic.cn/collector/1976464052/b07d7d74-0ba4-4d62-a0c2-052269ffa8e0/0",
+      "http://shp.qpic.cn/collector/1976464052/b48c2901-cadf-421c-80a1-3e4778e93933/0",
+      "http://shp.qpic.cn/collector/1976464052/ba7e38e0-9d27-4309-a486-4f4403af6a07/0",
+      "http://shp.qpic.cn/collector/1976464052/7cfc28d4-e9e2-4cf5-a4f2-9c3f565ad393/0",
+      "http://shp.qpic.cn/collector/1976464052/640e02bc-6272-4c47-9c70-796767b92934/0",
+      "http://shp.qpic.cn/collector/1976464052/2ced43af-3d73-4604-bca0-aab4577c83a7/0",
+      "http://shp.qpic.cn/collector/1976464052/16a25a4b-baf4-445d-a537-586a14b6a3ef/0",
+      "http://shp.qpic.cn/collector/1976464052/6b1a0862-1017-4d2c-8dec-6642ae99c1af/0",
+      "http://shp.qpic.cn/collector/1976464052/593a12a2-0df5-46ca-83fc-2f304cabc991/0",
+      "http://shp.qpic.cn/collector/1976464052/de803f40-b926-4574-a5bf-8ac7d045cdf5/0",
+      "http://shp.qpic.cn/collector/1976464052/2a4b4f01-eae8-4661-8215-d011b85cf6a8/0",
+      "http://shp.qpic.cn/collector/1976464052/4728c522-b146-4e34-895a-7070697be1d3/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1PPDYB4EaG/&type=mp4"
     ]
   },
   {
@@ -338,58 +707,6 @@
     ],
     "previewVideos": [
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/dbb156a1ffa016a5.mp4"
-    ]
-  },
-  {
-    "id": "20260521142219597",
-    "title": "亡灵契约师-Booba Necrobinder Mod",
-    "category": "skin",
-    "size": "5.62MB",
-    "date": "2026-05-21",
-    "badge": "v1.0.7",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/IMG_20260520_180147.jpg"
-    ],
-    "images": [],
-    "description": "这是一位韩国大佬制作的外观替换MOD，具体修改内容为：替换了骨妹的的战斗视觉效果、商人视觉效果、休息站界面、角色选择界面以及其他一些相关的 UI 素材（本帖收录的版本为2026年5月14日下午12:27更新的最新版，我把该模组的前置和主体MOD整合到一起了，里面会显示有两个文件夹，不用管他正常导入就行）\n\n---\n\n更新日志：\n\n构建错误修复\n\n修复了在 Radeon 显卡上启用 MSAA 时角色在战斗中不出现的问题。\n\n减小了 Necrobinder 图集的大小，以消除锯齿/锯齿边缘。\n\n移除未使用的子视口相关内容。\n\n修复了商家动画可能卡顿的问题\n\n修复了仅限测试版使用的清单兼容性问题\n\n移除了 BaseLib 依赖项\n\n---\n\n该模组的Twitter原文链接：\nhttps://x.com/i/status/2053763683134939613\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"BN契约师\"是 v1.0.3 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路",
-    "author": "JINROU，Iyan-kim，Jiun Kim",
-    "authorLinks": [
-      {
-        "text": "X : @JINROU",
-        "url": "https://x.com/rkem741"
-      },
-      {
-        "text": "X : @Iyan-kim",
-        "url": "https://x.com/IyanE_VRC_"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "亡灵契约师",
-      "骨妹",
-      "外观替换",
-      "JINROU",
-      "Jiun Kim",
-      "Iyan-kim",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41e58d07704580485381f19c10b177bb8b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_172850.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_172829.jpg"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_i_d-TdBYy5KyW20B_(1080p).mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_74QMYpAO9sesOCNP_(818p).mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HG5BhS-a0AAXDJ1_(gif).mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HG5BiTebEAAxTBT_(gif).mp4"
     ]
   },
   {
