@@ -1,5 +1,489 @@
 [
   {
+    "id": "20260526233100958",
+    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
+    "category": "skin",
+    "size": "43.30MB",
+    "date": "2026-05-26",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/2561b35b-2260-43af-b402-ceb423e7d8e3/0"
+    ],
+    "images": [],
+    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2",
+    "author": "拾叁",
+    "authorLinks": [],
+    "tags": [
+      "SFW",
+      "蛊真人",
+      "古月方源",
+      "神秘渠道",
+      "拾叁",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组下载[主体]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim416b485e4b0d404c5fac69ec3cbbfc5ca5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "所需前置[前置]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
+      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
+      "http://shp.qpic.cn/collector/1976464052/e8dee9b0-130b-4381-9f26-d535f203d1ac/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1cQVT6ZEvJ/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526193258464",
+    "title": "Boss娘化-永世沙漏の娘化皮肤",
+    "category": "skin",
+    "size": "248.2MB",
+    "date": "2026-05-26",
+    "badge": "v1.4",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/f60826fd-afa3-465e-a215-66716cc61eae/0"
+    ],
+    "images": [],
+    "description": "本模组将STS2荣耀阶段的Boss\"永世沙漏\"替换为了B站up主 Kiteseven 所绘制的娘化形象\n\n\nv1.4更新日志：\n本次更新优化了性能表现。因需预加载挂载脚本，首次进入场景时可能存在短暂加载时间。攻击动画已调整，两版受击动画已合并：受到低伤害时触发害羞脸，受到超过30点伤害时触发嫌弃脸。编写了伤害检测补丁，联机模式下是否存在问题尚待验证",
+    "author": "Kiteseven",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/iptZUTM"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "永世沙漏",
+      "怪物娘化",
+      "BOSS",
+      "外观替换",
+      "Kiteseven",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414de1fefee4e04dab95070b8ba8a36858?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/06d0dc51-72b9-444a-86c6-89058d86136f/0",
+      "http://shp.qpic.cn/collector/1976464052/92aaf4de-8e69-4f3a-b749-e2d667633835/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1BeVP6kEK2/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526192411155",
+    "title": "怪物娘化-残杀千足虫の娘化皮肤",
+    "category": "skin",
+    "size": "545.4KB",
+    "date": "2026-05-26",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/9d5ce5ff-15a5-4a95-a3be-f3ebb7cf8802/0"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→怪物美化 MOD / \n❷→残杀千足虫 / \n❸→残杀千足虫美化.zip\n\n\nMOD介绍：\n本模组将STS2巢穴阶段的精英怪\"残杀千足虫\"替换为了B站up主 Kiteseven 所绘制的娘化形象，MOD详情请看预览视频",
+    "author": "Kiteseven",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/iptZUTM"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "残杀千足虫",
+      "怪物娘化",
+      "外观替换",
+      "Kiteseven",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/fa3708a4-ebf5-4450-9fba-85646ef45b6f/0",
+      "http://shp.qpic.cn/collector/1976464052/11c51ff4-32c8-4373-b7c8-a5b35dd33858/0",
+      "http://shp.qpic.cn/collector/1976464052/14dbe895-7445-431f-8506-36e5f4af6982/0",
+      "http://shp.qpic.cn/collector/1976464052/f8c6a63d-147a-4c54-821c-8c8e9032fa73/0",
+      "http://shp.qpic.cn/collector/1976464052/9d5ce5ff-15a5-4a95-a3be-f3ebb7cf8802/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1QiLY6DEEs/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526184821334",
+    "title": "Boss娘化-墨影幻灵の娘化皮肤",
+    "category": "skin",
+    "size": "6.30MB",
+    "date": "2026-05-26",
+    "badge": "v0.0.2",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/c8e89a8b-33e7-45f4-a1d2-a5147188be5c/0"
+    ],
+    "images": [],
+    "description": "本模组将STS2密林阶段的BOSS\"墨影幻灵\"替换为了B站up主 锭_GRAYINGOT 所绘制的娘化形象",
+    "author": "锭_grayingot",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/0G8IbgZ"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "墨影幻灵",
+      "怪物娘化",
+      "BOSS",
+      "外观替换",
+      "锭_GRAYINGOT",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41d930c70d68194ee899273a6387d6991f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a00a397b-fb55-49db-99d7-c97790e6d2a7/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1zNGB6qEMe/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526153038629",
+    "title": "Boss娘化-灵魂异鱼@锭_grayingot",
+    "category": "skin",
+    "size": "11.7MB",
+    "date": "2026-05-26",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/96a32d98-47d9-4c55-ae94-3c89764ff884/0"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→怪物美化 MOD / \n❷→灵魂异鱼 / \n❸→灵魂异鱼美化.zip\n\n\nMOD介绍：\n本模组将STS2暗港阶段的BOSS\"灵魂异鱼\"替换为了B站up主 锭_GRAYINGOT 所绘制的娘化形象",
+    "author": "锭_grayingot",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/0G8IbgZ"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "灵魂异鱼",
+      "怪物娘化",
+      "boss",
+      "外观替换",
+      "锭_grayingot",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/9d304fa2-21eb-4362-a1d6-33c20f392e93/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1VmRiBbEb8/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526134130714",
+    "title": "观者MOD-自带美化版-103正式版",
+    "category": "skin",
+    "size": "56.75MB",
+    "date": "2026-05-26",
+    "badge": "v0.5.20",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0"
+    ],
+    "images": [],
+    "description": "本模组将《杀戮尖塔1》中的观者角色重新加入二代，并且 角色/美化/卡面 一体，无需额外安装观者的素体人物MOD。\n\n\nCredits：\n观者MOD本体：Boninall\n卡面美化：失地骑士Hatk\n人物美化形象：anaertailin（A大）",
+    "author": "Boninall，失地骑士Hatk，anaertailin",
+    "authorLinks": [
+      {
+        "text": "B站｜Boninall",
+        "url": "https://b23.tv/u4sGcFl"
+      },
+      {
+        "text": "B站｜anaertailin",
+        "url": "https://b23.tv/ppxalX0"
+      },
+      {
+        "text": "B站｜失地骑士Hatk",
+        "url": "https://b23.tv/Jj3rMqi"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "观者",
+      "新增角色",
+      "外观替换",
+      "失地骑士Hatk",
+      "anaertailin",
+      "Boninall",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414f934a75585743eda3e0317556293f6a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0",
+      "http://shp.qpic.cn/collector/1976464052/98f335ff-a201-45b5-b389-ac22bb9177f6/0",
+      "http://shp.qpic.cn/collector/1976464052/220004d6-6b2a-47a3-a86e-6db29fa1312c/0",
+      "http://shp.qpic.cn/collector/1976464052/e92c20cb-7318-40a0-a78a-aae6e74df2a9/0",
+      "http://shp.qpic.cn/collector/1976464052/d99e5300-2f83-4bf5-a9fa-f59bbc7855a2/0",
+      "http://shp.qpic.cn/collector/1976464052/5feeea85-1f75-4c2e-b3a1-16af511a82d7/0",
+      "http://shp.qpic.cn/collector/1976464052/2663632c-23e8-4989-ab26-c0d27a95d1cd/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1B3DMByEi1/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526124610434",
+    "title": "亡灵契约师皮肤MOD:空洞骑士",
+    "category": "skin",
+    "size": "7.27MB",
+    "date": "2026-05-26",
+    "badge": "v1.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/31912802-22fe-4f65-850a-aed14b65ab13/0"
+    ],
+    "images": [],
+    "description": "让纯粹容器替小骑士极其霸道地挡刀与斩击！\n\n本MOD将亡灵契约师替换为《空洞骑士》纯粹容器与小骑士联动皮肤，由B站up主 学习miku 开发制作。因工期较为仓促且作者自述对空洞骑士和骨妹了解有限，当前版本在设定还原与动作细节上可能存在不严谨之处，后续将根据反馈持续优化。\n\n━━━━━━━━━━━━━━━\n\nv1.0.1 更新内容：\n\n强化代码特效清除处理，战斗画面更干净\n修复了螃蟹战斗中的模型正确转向判定\n采用 Godot 同名物理文件替换法，解决小头像全局替换问题\n修复了假商人事件中的模型替换错误\n完善多人联机读档界面的背景图替换（联机部分尚待实测验证）\n\nPS：作者近期处于专业课期末考阶段，后续更新速度会变慢\n\n━━━━━━━━━━━━━━━\n\n特别鸣谢：\n\nTeam Cherry《空洞骑士》原开发团队提供角色原型与美术概念\n画师 -KTSN- / fuifui 创作极其霸气的同人插画并用作选人界面核心背景大图\nMegaCrit《杀戮尖塔2》开发团队提供底层架构与MOD支持",
+    "author": "学习miku",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/AClcVZu"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "奥斯提",
+      "骨手",
+      "空洞骑士",
+      "学习miku",
+      "外观替换",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim413de013ec0fcd45529fd417284d16e88b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/bf02c7a2-db45-4d35-818b-66cf43915d20/0",
+      "http://shp.qpic.cn/collector/1976464052/bc7615ff-08d6-43f2-91b4-f24971d143c1/0",
+      "http://shp.qpic.cn/collector/1976464052/1b0c3103-71a2-408d-b23f-2944224cf312/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1fhR1BcEug/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260526083114451",
+    "title": "幽幽子fumo替换奥斯提+音效替换",
+    "category": "skin",
+    "size": "4.78MB",
+    "date": "2026-05-26",
+    "badge": "v0.1.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/2caa47f1-3c1f-4bdf-a6db-e2da92b7f3f5/0"
+    ],
+    "images": [],
+    "description": "幽幽子也是亡灵。会被召唤很合理吧~\n\n本MOD将亡灵契约师的“奥斯提/骨手”替换为了东方Project角色的“幽幽子fumo”形象，包还内附带了幽幽子fumo的音效替换。\n\nv0.1.0 更新内容： 修复了可能触发其他角色皮肤变成红色方块的显示异常问题",
+    "author": "嫦娥未曾看见",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/oNS9OoA"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "奥斯提",
+      "骨手",
+      "幽幽子fumo",
+      "东方Project",
+      "嫦娥未曾看见",
+      "外观替换",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim4183fcc80d202b4243ad9ed259ec4dd7b2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/afc8e213-d88e-44a9-9be8-7633a9178a85/0",
+      "http://shp.qpic.cn/collector/1976464052/31e63aa5-fb05-464d-a440-b10e62bbbf17/0",
+      "http://shp.qpic.cn/collector/1976464052/fe6ac067-f052-4ec5-9969-5113ec1e33d3/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1iw9XBgEWq/&type=mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/c28f47321128d816.mp4"
+    ]
+  },
+  {
+    "id": "20260525211008731",
+    "title": "STS2 WineFox Mod / 酒狐MOD",
+    "category": "skin",
+    "size": "57.38MB",
+    "date": "2026-05-25",
+    "badge": "v1.1.21",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/90aefd68-76cb-48d5-b4bc-1137881c2d7f/0"
+    ],
+    "images": [],
+    "description": "WineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃\n\n\nv1.1.21更新日志：\n1.[清算时间] 基础伤害与材料增伤修改 2 -> 1\n2.[规划专家] 改为被丢弃的技能牌获得保留。（含3回合结束弃牌）\n3.[铁镐] 升级效果改为（下两次你从牌中获得资源时，额外获得4个铁）\n4.更新[全力倾泻]卡面\n5.[魔力超负荷] 基础费用调整为 1\n6.[抓挠] 新增总伤害显示逻辑（power/hook）\n7.修复了沙漠神殿获取部分遗物时，效果不生效的问题\n8.添加对手机版的兼容\n\n\n注意：Mod适配了杀戮尖塔2beta版v0.105.0新更新的接口，由于接口大改，需要切换到beta版才能正常运行mod，使用正式版v0.103.2将无法正常继续游戏！\n\n\n开源地址：\nhttps://github.com/LuoTianOrange/STS2_WineFox\n前置库：\nhttps://github.com/BAKAOLC/STS2-RitsuLib",
+    "author": "灯火橘Channel",
+    "authorLinks": [
+      {
+        "text": "B站｜灯火橘Channel",
+        "url": "https://b23.tv/WxskPAP"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "酒狐",
+      "WineFox",
+      "我的世界",
+      "Minecraft",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "beta最新版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "v0.103.2兼容版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/c5629b80-166c-4d23-8a14-fd079d9329d0/0",
+      "http://shp.qpic.cn/collector/1976464052/ca877725-86f7-420b-a506-b9891550a622/0",
+      "http://shp.qpic.cn/collector/1976464052/7fb62f9d-f995-43f2-9f27-04e8ef714eeb/0",
+      "http://shp.qpic.cn/collector/1976464052/79d511f6-42b7-4da3-9565-0d66385c550a/0",
+      "http://shp.qpic.cn/collector/1976464052/c76aa0a4-1e19-4537-bf43-3055b744da50/0",
+      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0",
+      "http://shp.qpic.cn/collector/1976464052/d73bd772-9cb6-490d-ab23-053f90b0fe47/0",
+      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
+      "http://shp.qpic.cn/collector/1976464052/94d66fa0-b1b6-4269-9be2-caed8cff698d/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1thXRBNEi3/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260525211002363",
+    "title": "杀戮尖塔2商人娘化-带日/中语音",
+    "category": "skin",
+    "size": "8.03MB",
+    "date": "2026-05-25",
+    "badge": "v1.5.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/cfe2e5c3-bfd0-4b66-b889-3f3e08614fe2/0"
+    ],
+    "images": [],
+    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。",
+    "author": "Peslanna",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/h35srrd"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "商人",
+      "假商人",
+      "语音",
+      "外观替换",
+      "Peslanna",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "开源地址",
+        "url": "https://github.com/LinXce/merchant-2-cute-ii"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/dfbed67a-0391-495f-82f0-7c0fe087a011/0",
+      "http://shp.qpic.cn/collector/1976464052/e6ae55a0-f06b-44bf-9280-404e21ed939b/0",
+      "http://shp.qpic.cn/collector/1976464052/321835c1-be52-4b6a-8a88-93f931b90ccc/0",
+      "http://shp.qpic.cn/collector/1976464052/2b9b41aa-10c6-4918-aa62-5246a6172ce6/0",
+      "http://shp.qpic.cn/collector/1976464052/ebb9d36b-25e7-45c4-88ab-9db7063505fe/0",
+      "http://shp.qpic.cn/collector/1976464052/3e8918f4-6408-410b-85b1-8a6012064462/0",
+      "http://shp.qpic.cn/collector/1976464052/a0880d8c-7442-4d50-9218-058025306fdb/0",
+      "http://shp.qpic.cn/collector/1976464052/710eb09f-6400-4972-9a3b-fe0d78a0c740/0",
+      "http://shp.qpic.cn/collector/1976464052/a968c47a-56cc-4eb8-9fbf-9cb2f611d2f3/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1W1RNBbECy/&type=mp4"
+    ]
+  },
+  {
     "id": "20260525193558799",
     "title": "二次元猎宝2-卡面美化-v1.2",
     "category": "skin",
@@ -158,61 +642,6 @@
     "previewVideos": []
   },
   {
-    "id": "20260525211008731",
-    "title": "STS2 WineFox Mod / 酒狐MOD",
-    "category": "skin",
-    "size": "57.38MB",
-    "date": "2026-05-25",
-    "badge": "v1.1.21",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/90aefd68-76cb-48d5-b4bc-1137881c2d7f/0"
-    ],
-    "images": [],
-    "description": "WineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃\n\n\nv1.1.21更新日志：\n1.[清算时间] 基础伤害与材料增伤修改 2 -> 1\n2.[规划专家] 改为被丢弃的技能牌获得保留。（含3回合结束弃牌）\n3.[铁镐] 升级效果改为（下两次你从牌中获得资源时，额外获得4个铁）\n4.更新[全力倾泻]卡面\n5.[魔力超负荷] 基础费用调整为 1\n6.[抓挠] 新增总伤害显示逻辑（power/hook）\n7.修复了沙漠神殿获取部分遗物时，效果不生效的问题\n8.添加对手机版的兼容\n\n\n注意：Mod适配了杀戮尖塔2beta版v0.105.0新更新的接口，由于接口大改，需要切换到beta版才能正常运行mod，使用正式版v0.103.2将无法正常继续游戏！\n\n\n开源地址：\nhttps://github.com/LuoTianOrange/STS2_WineFox\n前置库：\nhttps://github.com/BAKAOLC/STS2-RitsuLib",
-    "author": "灯火橘Channel",
-    "authorLinks": [
-      {
-        "text": "B站｜灯火橘Channel",
-        "url": "https://b23.tv/WxskPAP"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "酒狐",
-      "WineFox",
-      "我的世界",
-      "Minecraft",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "beta最新版",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "v0.103.2兼容版",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/c5629b80-166c-4d23-8a14-fd079d9329d0/0",
-      "http://shp.qpic.cn/collector/1976464052/ca877725-86f7-420b-a506-b9891550a622/0",
-      "http://shp.qpic.cn/collector/1976464052/7fb62f9d-f995-43f2-9f27-04e8ef714eeb/0",
-      "http://shp.qpic.cn/collector/1976464052/79d511f6-42b7-4da3-9565-0d66385c550a/0",
-      "http://shp.qpic.cn/collector/1976464052/c76aa0a4-1e19-4537-bf43-3055b744da50/0",
-      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0",
-      "http://shp.qpic.cn/collector/1976464052/d73bd772-9cb6-490d-ab23-053f90b0fe47/0",
-      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
-      "http://shp.qpic.cn/collector/1976464052/94d66fa0-b1b6-4269-9be2-caed8cff698d/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1thXRBNEi3/&type=mp4"
-    ]
-  },
-  {
     "id": "20260525142839389",
     "title": "故障机器人-原A大-Kira改-最新修复版",
     "category": "skin",
@@ -316,59 +745,48 @@
     ]
   },
   {
-    "id": "20260525211002363",
-    "title": "杀戮尖塔2商人娘化-带日/中语音",
+    "id": "20260523191955404",
+    "title": "Boss娘化-门扉缔造者の外观替换",
     "category": "skin",
-    "size": "8.03MB",
-    "date": "2026-05-25",
-    "badge": "v1.5.0",
+    "size": "4.64MB",
+    "date": "2026-05-23",
+    "badge": "v0.0.1",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/cfe2e5c3-bfd0-4b66-b889-3f3e08614fe2/0"
+      "http://shp.qpic.cn/collector/1976464052/3449194d-7c41-4ccf-9257-6c1d7974c646/0"
     ],
     "images": [],
-    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。",
-    "author": "Peslanna",
+    "description": "该MOD的夸克网盘路径：\n❶→怪物美化 MOD / \n❷→门扉缔造者 / \n❸→门扉美化-X作者@Lunchshark01.zip\n\n\nMOD介绍：\n本模组将STS2荣耀阶段的BOSS\"门扉缔造者\"替换为了Twitter博主 LunchShark (점심상어)  所绘制的可爱娘化形象",
+    "author": "LunchShark (점심상어)",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/h35srrd"
+        "text": "Twitter(X)",
+        "url": "https://x.com/lunchshark01"
       }
     ],
     "tags": [
       "SFW",
-      "商人",
-      "假商人",
-      "语音",
+      "门扉缔造者",
+      "怪物娘化",
+      "BOSS",
       "外观替换",
-      "Peslanna",
-      "在线下载"
+      "Lunchshark01",
+      "夸克"
     ],
     "downloadLinks": [
       {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "开源地址",
-        "url": "https://github.com/LinXce/merchant-2-cute-ii"
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
       }
     ],
     "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/dfbed67a-0391-495f-82f0-7c0fe087a011/0",
-      "http://shp.qpic.cn/collector/1976464052/e6ae55a0-f06b-44bf-9280-404e21ed939b/0",
-      "http://shp.qpic.cn/collector/1976464052/321835c1-be52-4b6a-8a88-93f931b90ccc/0",
-      "http://shp.qpic.cn/collector/1976464052/2b9b41aa-10c6-4918-aa62-5246a6172ce6/0",
-      "http://shp.qpic.cn/collector/1976464052/ebb9d36b-25e7-45c4-88ab-9db7063505fe/0",
-      "http://shp.qpic.cn/collector/1976464052/3e8918f4-6408-410b-85b1-8a6012064462/0",
-      "http://shp.qpic.cn/collector/1976464052/a0880d8c-7442-4d50-9218-058025306fdb/0",
-      "http://shp.qpic.cn/collector/1976464052/710eb09f-6400-4972-9a3b-fe0d78a0c740/0",
-      "http://shp.qpic.cn/collector/1976464052/a968c47a-56cc-4eb8-9fbf-9cb2f611d2f3/0"
+      "http://shp.qpic.cn/collector/1976464052/c75aa1ca-c5ea-4b96-a2fe-af3a563b8ab9/0",
+      "http://shp.qpic.cn/collector/1976464052/aeebab06-175e-41fd-95f2-c12b0c31b6c0/0",
+      "http://shp.qpic.cn/collector/1976464052/b0cce429-5d24-4553-963f-dbe9cafee702/0",
+      "http://shp.qpic.cn/collector/1976464052/c49cd56f-32ae-4f25-9d6e-b42866a6382e/0"
     ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1W1RNBbECy/&type=mp4"
-    ]
+    "previewVideos": []
   },
   {
     "id": "20260523151450874",
@@ -533,7 +951,7 @@
     "author": "Aduare_rp",
     "authorLinks": [
       {
-        "text": "Twitter",
+        "text": "Twitter(X)",
         "url": "https://x.com/Aduare_rp"
       }
     ],
