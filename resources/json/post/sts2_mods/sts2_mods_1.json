@@ -1,33 +1,235 @@
 [
   {
+    "id": "20260527142500562",
+    "title": "储君-Kaguya式储小鬼-异色皮",
+    "category": "skin",
+    "size": "10.83MB",
+    "date": "2026-05-27",
+    "badge": "v0.2.4",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/b4d932a3-9c8e-4ff9-bd43-4b24bd149815/0"
+    ],
+    "images": [],
+    "description": "储小鬼 / 雌小鬼储君的 Kaguya 式外观替换皮肤\n\n简介：\n为 STS2 角色「储君 (Regent)」的外观更换为白宵燿夜的\"储君 Kaguya式皮肤\"，模组内包含全新的立绘、动画与音效，质量较高\n\n制作人员：\n美术：原画 - 白宵燿夜 (Shirayoi=Kaguya)\n　　　动画 - 小丧狗\n程序：文和 (VIN) / 协力 - AOShiRo\n音效：未来猫\n特别感谢：wsl\n\n注意事项：\n本模组内置 Harmony 本地化补丁，安装后可能会对游戏部分文本进行修改。\n如果和其他同样使用 Harmony 的文本类 Mod 一起使用，可能出现冲突，请自行排查。",
+    "author": "白宵燿夜",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/g8r43SX"
+      },
+      {
+        "text": "爱发电",
+        "url": "https://www.ifdian.net/a/WIZ_Shirayoi_Kaguya?tab=feed&utm_source=copylink&utm_medium=link"
+      },
+      {
+        "text": "Twitter(X)",
+        "url": "https://x.com/shirayoikaguya"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "储君",
+      "Kaguya",
+      "雌小鬼",
+      "外观替换",
+      "白宵燿夜",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41619c3f62ff7f4c60bf7653fb08ea018e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/b4d932a3-9c8e-4ff9-bd43-4b24bd149815/0",
+      "http://shp.qpic.cn/collector/1976464052/56c4fcdf-d273-476c-b212-5f2f01b1aff6/0",
+      "http://shp.qpic.cn/collector/1976464052/ca43e764-88cd-4133-9087-0a337d0fa67a/0",
+      "http://shp.qpic.cn/collector/1976464052/cb50f75a-3cea-4eb8-a562-98f7fda06883/0"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/ceaa3a26ac4cebb1.mp4",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV18VSUBkEQt/&type=mp4",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1uhSoBAE7M/&type=mp4",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1FZdpBMExb/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260527123817410",
+    "title": "先民美化-瓦库-超酷的动态立绘替换",
+    "category": "skin",
+    "size": "11.22MB",
+    "date": "2026-05-27",
+    "badge": "v1.01.2",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/51965260-720f-4f46-a7db-b4c1fa03a4ca/0"
+    ],
+    "images": [],
+    "description": "超级炫酷的瓦库动态立绘替换！原版瓦库画得跟奶龙似的，堂堂恶魔怎能这么难看？本模组重绘了动态立绘，让瓦库终于有个恶魔该有的样子了。\n\n\n制作：\n画师＃聖银十字-墨殒辰星\n代码man＃NotBear_As\n骨骼动画＃mmmmm基因\n\n\nPS：\n模组里还藏了个小细节“恶魔不能同时眨眼”",
+    "author": "聖银十字-墨殒辰星，NotBear_As，mmmmm基因",
+    "authorLinks": [
+      {
+        "text": "B站｜聖银十字-墨殒辰星",
+        "url": "https://b23.tv/nQET0Jt"
+      },
+      {
+        "text": "B站｜NotBear_As",
+        "url": "https://b23.tv/UAjVkzT"
+      },
+      {
+        "text": "B站｜mmmmm基因",
+        "url": "https://b23.tv/ytVlztJ"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "瓦库",
+      "先古之民",
+      "先民美化",
+      "聖银十字-墨殒辰星",
+      "NotBear_As",
+      "mmmmm基因",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41d25f057a8e2f476895bd4a81993b4ddb?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8a23f3ee-b878-45e7-9cf2-61a220ad92ec/0",
+      "http://shp.qpic.cn/collector/1976464052/51965260-720f-4f46-a7db-b4c1fa03a4ca/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV11fRVBQEkE/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260527120103131",
+    "title": "先民美化-瓦库(VAKUU)-呜鸟乌与",
+    "category": "skin",
+    "size": "3.30MB",
+    "date": "2026-05-27",
+    "badge": "v0.1.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/1a85da86-5e67-44f7-97e1-40d0b9e6bd8c/0"
+    ],
+    "images": [],
+    "description": "这样才对...",
+    "author": "鸣鸟乌与",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/jrKcFCK"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "瓦库",
+      "先古之民",
+      "先民美化",
+      "鸣鸟乌与",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b02d57fc849245e585ae10c33dd00693?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/c202363a-ebed-486d-bb01-c06f6b8f5ce3/0",
+      "http://shp.qpic.cn/collector/1976464052/1a85da86-5e67-44f7-97e1-40d0b9e6bd8c/0"
+    ],
+    "previewVideos": []
+  },
+  {
+    "id": "20260527112106161",
+    "title": "先民美化-涅奥美化-A大&善良大鲸鱼",
+    "category": "skin",
+    "size": "5.44MB",
+    "date": "2026-05-27",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/1ccb1ff6-6023-482d-abf2-668cb335f5b8/0"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→先民美化 MOD /\n❷→涅奥 /\n❸→涅奥美化-A大.zip\n\n\nMOD介绍：\n本模组将STS2中先古之民「涅奥（复生之母）」的外观替换为了B站up主 anaertailin（A大） 所绘制的「善良大鲸鱼」的娘化形象",
+    "author": "anaertailin",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/ppxalX0"
+      },
+      {
+        "text": "爱发电",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "涅奥",
+      "鲸鱼",
+      "先古之民",
+      "先民美化",
+      "anaertailin",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/1ccb1ff6-6023-482d-abf2-668cb335f5b8/0"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/ef10779d155e3f95.mp4"
+    ]
+  },
+  {
     "id": "20260526233100958",
     "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
     "category": "skin",
     "size": "43.30MB",
     "date": "2026-05-26",
-    "badge": "v0.0.1",
+    "badge": "v2_0.0.1",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
       "http://shp.qpic.cn/collector/1976464052/2561b35b-2260-43af-b402-ceb423e7d8e3/0"
     ],
     "images": [],
-    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2",
-    "author": "拾叁",
-    "authorLinks": [],
+    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2\n\nGitHub项目源码：\nhttps://github.com/heshisan789-bot/STS2-Guzhenren-mod",
+    "author": "荷拾叁",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/efSUWup"
+      }
+    ],
     "tags": [
       "SFW",
       "蛊真人",
       "古月方源",
-      "神秘渠道",
-      "拾叁",
+      "荷拾叁",
       "新增角色",
       "在线下载"
     ],
     "downloadLinks": [
       {
-        "text": "模组下载[主体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim416b485e4b0d404c5fac69ec3cbbfc5ca5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "text": "[主体]模组下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b53a98b756be4f4191f0d2229b59be7a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       },
       {
         "text": "所需前置[前置]",
@@ -441,7 +643,7 @@
       "http://shp.qpic.cn/collector/1976464052/cfe2e5c3-bfd0-4b66-b889-3f3e08614fe2/0"
     ],
     "images": [],
-    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。",
+    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。\n\n\n\n手脚切换教程(详细版)：\n控制台输入merchant hand/foot切换\n手机版不会用控制台的话看这个↓\n教程视频：https://b23.tv/MQDU5U5",
     "author": "Peslanna",
     "authorLinks": [
       {
@@ -690,6 +892,60 @@
     ],
     "previewVideos": [
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Screenrecording_20260520_203647_com.megacrit.sts2.mp4"
+    ]
+  },
+  {
+    "id": "20260525142829389",
+    "title": "先民美化-欧洛巴斯+特兹卡塔拉",
+    "category": "skin",
+    "size": "6.13MB",
+    "date": "2026-05-25",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/3cb60724-014b-4aa4-b66a-b8de1f60e7f2/0"
+    ],
+    "images": [],
+    "description": "该MOD的夸克网盘路径：\n❶→先民美化 MOD / \n❷→先民美化-欧洛巴斯+特兹卡塔拉.zip\n\n\nMOD介绍：\n本模组将先古之民「特兹卡塔拉（南瓜）」与「欧洛巴斯（大眼）」的外观进行了替换/美化。\n\n\n制作人员：\n动画：Dodobird\nMod 作者：LunchShark（점심상어）",
+    "author": "LunchShark（점심상어），Dodobird",
+    "authorLinks": [
+      {
+        "text": "X：Dodobird",
+        "url": "https://x.com/DodoBird0615"
+      },
+      {
+        "text": "X：LunchShark（점심상어）",
+        "url": "https://x.com/lunchshark01"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "欧洛巴斯",
+      "特兹卡塔拉",
+      "大眼",
+      "南瓜",
+      "先古之民",
+      "先民美化",
+      "LunchShark（점심상어）",
+      "Dodobird",
+      "夸克"
+    ],
+    "downloadLinks": [
+      {
+        "text": "夸克网盘",
+        "url": "https://pan.quark.cn/s/4223d651f627"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/b29522a1-9c97-4449-8704-61b0b36c7037/0",
+      "http://shp.qpic.cn/collector/1976464052/1149fd66-672b-43cd-9be4-f997d0aaf340/0",
+      "http://shp.qpic.cn/collector/1976464052/2a8ae198-db1f-4ee7-972a-cbe666bdcced/0",
+      "http://shp.qpic.cn/collector/1976464052/c2d64f27-e5be-4ff8-83d7-3f31be713241/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1CvRJBaENz/&type=mp4",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1udR4BwEeX/&type=mp4"
     ]
   },
   {
