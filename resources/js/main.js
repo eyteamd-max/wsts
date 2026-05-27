@@ -63,6 +63,7 @@
       var index = 0;
       var running = 0;
       var total = urls.length;
+
       function next() {
         if (index >= total) {
           if (running === 0) resolve();
@@ -82,6 +83,57 @@
         };
         img.src = url;
       }
+
+      for (var i = 0; i < Math.min(concurrency, total); i++) {
+        next();
+      }
+    });
+  }
+
+  function preloadVideosMetadata(urls, concurrency) {
+    return new Promise(function(resolve) {
+      if (!urls || urls.length === 0) { resolve(); return; }
+      var index = 0;
+      var running = 0;
+      var total = urls.length;
+
+      function next() {
+        if (index >= total) {
+          if (running === 0) resolve();
+          return;
+        }
+        var url = urls[index++];
+        running++;
+        var video = document.createElement('video');
+        video.preload = 'metadata';
+        video.muted = true;
+        video.playsInline = true;
+        video.style.position = 'fixed';
+        video.style.top = '-9999px';
+        video.style.left = '-9999px';
+        video.style.width = '1px';
+        video.style.height = '1px';
+        video.style.opacity = '0';
+        video.style.pointerEvents = 'none';
+        document.body.appendChild(video);
+
+        var timer = setTimeout(function() {
+          video.src = '';
+          video.remove();
+          running--;
+          next();
+        }, 4000);
+
+        video.onloadedmetadata = video.onerror = function() {
+          clearTimeout(timer);
+          video.src = '';
+          video.remove();
+          running--;
+          next();
+        };
+        video.src = url;
+      }
+
       for (var i = 0; i < Math.min(concurrency, total); i++) {
         next();
       }
@@ -247,6 +299,7 @@
       if (manifest && manifest[dir]) {
         const rangeStr = manifest[dir];
         const indices = parseManifestRange(rangeStr);
+
         const dataArrays = await Promise.all(indices.map(function(idx) { return loadJsonByManifest(categoryKey, idx); }));
         const allData = dataArrays.flat();
         allSiteData[categoryKey] = allData;
@@ -284,12 +337,12 @@
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
     if (totalPages <= 1) return;
 
+    // Helper: create page button
     function createPageBtn(pageNum, isActive) {
       const btn = document.createElement('button');
       btn.className = 'pagination-page' + (isActive ? ' active' : '');
       btn.textContent = pageNum;
       btn.addEventListener('click', () => {
-        if (currentPage === pageNum) return;
         currentPage = pageNum;
         renderPage(pageNum);
         modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -297,6 +350,7 @@
       return btn;
     }
 
+    // Helper: create ellipsis span
     function createDots() {
       const dots = document.createElement('span');
       dots.className = 'pagination-dots';
@@ -304,8 +358,10 @@
       return dots;
     }
 
+    // Detect mobile viewport (≤480px)
     const isMobile = window.innerWidth <= 480;
 
+    // Left arrow
     const prevBtn = document.createElement('button');
     prevBtn.className = 'pagination-btn';
     prevBtn.innerHTML = '&#8249;';
@@ -320,16 +376,26 @@
     paginationEl.appendChild(prevBtn);
 
     if (isMobile && totalPages > 5) {
+      // Mobile simplified mode: left arrow, first, current, last, right arrow
+      // Single ellipsis between first/current and current/last
+      // Avoid duplicate if current is first or last
       const pages = [];
+
+      // Always add first page
       pages.push(1);
+
+      // Add ellipsis and current page if current is not first
       if (currentPageNum !== 1) {
         pages.push('...');
         pages.push(currentPageNum);
       }
+
+      // Add ellipsis and last page if current is not last
       if (currentPageNum !== totalPages) {
         pages.push('...');
         pages.push(totalPages);
       }
+
       pages.forEach(item => {
         if (item === '...') {
           paginationEl.appendChild(createDots());
@@ -338,30 +404,47 @@
         }
       });
     } else if (totalPages <= 5) {
+      // Full display: show all page numbers
       for (let i = 1; i <= totalPages; i++) {
         paginationEl.appendChild(createPageBtn(i, i === currentPageNum));
       }
     } else {
+      // Compact ellipsis mode (totalPages > 5)
+      // Always show first page
       paginationEl.appendChild(createPageBtn(1, 1 === currentPageNum));
+
+      // Determine neighbor pages
       const leftNeighbor = currentPageNum - 1;
       const rightNeighbor = currentPageNum + 1;
+
+      // Collect middle pages: current + neighbors (deduplicated, excluding first and last)
       const middleSet = new Set();
       if (leftNeighbor > 1 && leftNeighbor < totalPages) middleSet.add(leftNeighbor);
       if (currentPageNum > 1 && currentPageNum < totalPages) middleSet.add(currentPageNum);
       if (rightNeighbor > 1 && rightNeighbor < totalPages) middleSet.add(rightNeighbor);
+
       const middlePages = Array.from(middleSet).sort((a, b) => a - b);
+
+      // Add ellipsis between first page and first middle page if gap > 1
       if (middlePages.length > 0 && middlePages[0] > 2) {
         paginationEl.appendChild(createDots());
       }
+
+      // Add middle pages
       middlePages.forEach(p => {
         paginationEl.appendChild(createPageBtn(p, p === currentPageNum));
       });
+
+      // Add ellipsis between last middle page and last page if gap > 1
       if (middlePages.length > 0 && middlePages[middlePages.length - 1] < totalPages - 1) {
         paginationEl.appendChild(createDots());
       }
+
+      // Always show last page
       paginationEl.appendChild(createPageBtn(totalPages, totalPages === currentPageNum));
     }
 
+    // Right arrow
     const nextBtn = document.createElement('button');
     nextBtn.className = 'pagination-btn';
     nextBtn.innerHTML = '&#8250;';
@@ -374,6 +457,14 @@
       }
     });
     paginationEl.appendChild(nextBtn);
+  }
+
+  function renderPage(pageNum) {
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageData = modData.slice(start, end);
+    renderModCards(pageData);
+    renderPagination(modData.length, pageNum);
   }
 
   function openLightbox(src) {
@@ -514,9 +605,11 @@
   previewImagesBtn.addEventListener('click', function() { switchPreviewTab('images'); });
   previewVideosBtn.addEventListener('click', function() { switchPreviewTab('videos'); });
 
-  async function openModal(mod) {
+    async function openModal(mod) {
     currentMod = mod;
+
     modalTitle.textContent = mod.title;
+
     const modalCoverWrap = document.getElementById('modalCoverWrap');
     const modalCoverImg  = document.getElementById('modalCoverImg');
     let modalCoverSrc = '';
@@ -525,6 +618,7 @@
         else { modalCoverSrc = mod.coverImage; }
     }
     const hasModalCover = modalCoverSrc.trim() !== '';
+
     if (hasModalCover) {
         modalCoverImg.src = modalCoverSrc;
         modalCoverImg.style.objectFit = 'cover';
@@ -536,16 +630,20 @@
         modalCoverWrap.style.display = 'block';
         modalCoverImg.style.display = 'block';
     } else {
+
         modalCoverWrap.style.display = 'none';
         modalCoverImg.src = '';
         modalCoverImg.onclick = null;
     }
+
     modalRid.textContent = 'RID: ' + (mod.id || '无');
+
     modalRid.onclick = function(e) {
       e.stopPropagation();
       const isVisible = ridDropdown.style.display === 'block';
       ridDropdown.style.display = isVisible ? 'none' : 'block';
     };
+
     ridDropdown.querySelectorAll('.rid-option').forEach(function(btn) {
       btn.onclick = function(e) {
         e.stopPropagation();
@@ -560,6 +658,7 @@
         ridDropdown.style.display = 'none';
       };
     });
+
     modalTags.innerHTML = '';
     if (mod.tags && Array.isArray(mod.tags)) {
       mod.tags.forEach(function(tag) {
@@ -569,18 +668,23 @@
       modalTags.appendChild(span);
      });
     }
+
     let desc = (mod.description || '暂无介绍')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/\n/g, '<br>');
+
     const urlRegex = /(https?:\/\/[^\s<<"]+)/g;
     desc = desc.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer" class="desc-link">$1</a>');
+
     modalDescText.innerHTML = desc;
     modalDescText.classList.remove('expanded');
     descToggle.style.display = 'none';
     descToggle.textContent = '展开全文';
+
     modalAuthor.textContent = '作者：' + (mod.author || '佚名');
+
     modalLinks.innerHTML = '';
     if (mod.authorLinks) {
       if (Array.isArray(mod.authorLinks)) {
@@ -614,6 +718,7 @@
         });
       }
     }
+
     downloadButtons.innerHTML = '';
     const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
       ? mod.downloadLinks
@@ -627,9 +732,11 @@
       btn.textContent = dl.text;
       downloadButtons.appendChild(btn);
     });
+
     activePreviewTab = null;
     updatePreviewButtons();
     renderPreviewContent();
+
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     setTimeout(function() {
@@ -645,6 +752,7 @@
     currentMod = null;
     activePreviewTab = null;
     ridDropdown.style.display = 'none';
+
     const modalCoverImg = document.getElementById('modalCoverImg');
     if (modalCoverImg) { modalCoverImg.src = ''; modalCoverImg.onclick = null; }
   }
@@ -666,6 +774,7 @@
 
   function handleTagClick(tagText) {
     searchInput.value = tagText;
+
     filterMods();
     searchInput.focus();
   }
@@ -674,9 +783,11 @@
     const coverInner = cardElement.querySelector('.mod-cover-inner');
     const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
     if (!coverInner || !coverImg) return;
+
     if (coverImg.complete && coverImg.naturalWidth > 0) {
       return;
     }
+
     const spinner = document.createElement('span');
     spinner.className = 'card-spinner';
     const hideSpinner = function() {
@@ -685,11 +796,14 @@
         spinner.remove();
       }
     };
+
     coverImg.addEventListener('load', hideSpinner, { once: true });
     coverImg.addEventListener('error', hideSpinner, { once: true });
+
     setTimeout(function() {
       if (coverImg.complete) hideSpinner();
     }, 500);
+
     coverInner.appendChild(spinner);
   }
 
@@ -714,10 +828,10 @@
       tagsHtml = '<div class="mod-tag-list">' + mod.tags.map(function(t) {
       return '<span class="mod-tag-item ' + t.toLowerCase() + '">' + t + '</span>';
       }).join('') + '</div>';
+
       }
       const card = document.createElement('div');
       card.className = 'mod-card';
-      card.setAttribute('data-mod-id', mod.id);
       card.innerHTML =
         '<div class="mod-cover">' +
           '<div class="mod-cover-inner">' +
@@ -737,6 +851,7 @@
           '</div>' +
           '<button class="mod-download-btn view-detail-btn">查看详情</button>' +
         '</div>';
+
       const coverImgEl = card.querySelector('.mod-cover-img');
       if (coverImgEl && hasCoverImg) {
         coverImgEl.addEventListener('click', function(e) {
@@ -746,6 +861,7 @@
           }
         });
       }
+
       card.querySelector('.view-detail-btn').addEventListener('click', function(e) { e.stopPropagation(); openModal(mod); });
       card.querySelectorAll('.mod-tag-item').forEach(function(tagEl) {
         tagEl.addEventListener('click', function(e) { e.stopPropagation(); handleTagClick(tagEl.textContent); });
@@ -755,127 +871,16 @@
     });
   }
 
-  let preloadedPages = new Set();
-
-  async function preloadPageCovers(pageNum) {
-    if (preloadedPages.has(pageNum)) return;
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageMods = modData.slice(start, end);
-    if (pageMods.length === 0) return;
-    const coverUrls = [];
-    pageMods.forEach(mod => {
-      if (mod.coverImage) {
-        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-        if (url.trim()) coverUrls.push(url);
-      }
-    });
-    if (coverUrls.length === 0) return;
-    await preloadImagesWithConcurrency(coverUrls, 4);
-    preloadedPages.add(pageNum);
-  }
-
-  async function preloadPagePreviewImages(pageNum) {
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageMods = modData.slice(start, end);
-    if (pageMods.length === 0) return;
-    const previewUrls = [];
-    pageMods.forEach(mod => {
-      if (Array.isArray(mod.previewImages)) {
-        mod.previewImages.slice(0, 4).forEach(item => {
-          const urls = toCandidates(item);
-          if (urls.length && urls[0]) previewUrls.push(urls[0]);
-        });
-      }
-    });
-    if (previewUrls.length === 0) return;
-    await preloadImagesWithConcurrency(previewUrls, 6);
-  }
-
-  async function preloadAdjacentPage(currentPageNum) {
-    const nextPage = currentPageNum + 1;
-    const totalPages = Math.ceil(modData.length / ITEMS_PER_PAGE);
-    if (nextPage <= totalPages && !preloadedPages.has(nextPage)) {
-      await preloadPageCovers(nextPage);
-    }
-  }
-
-  let currentPageCoverWatcher = null;
-  function setupPageCoverWatcher(pageNum, onAllLoaded) {
-    if (currentPageCoverWatcher) {
-      currentPageCoverWatcher.cleanup();
-      currentPageCoverWatcher = null;
-    }
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageMods = modData.slice(start, end);
-    let remaining = pageMods.length;
-    if (remaining === 0) {
-      if (onAllLoaded) onAllLoaded();
-      return;
-    }
-    const cleanupFunctions = [];
-    let completed = false;
-    function onOneLoaded() {
-      if (completed) return;
-      remaining--;
-      if (remaining === 0) {
-        completed = true;
-        if (onAllLoaded) onAllLoaded();
-        cleanup();
-      }
-    }
-    function cleanup() {
-      cleanupFunctions.forEach(fn => fn());
-    }
-    const watcher = { cleanup };
-    currentPageCoverWatcher = watcher;
-
-    pageMods.forEach(mod => {
-      const card = document.querySelector(`.mod-card[data-mod-id="${mod.id}"]`);
-      if (!card) {
-        onOneLoaded();
-        return;
-      }
-      const coverImg = card.querySelector('.mod-cover-img');
-      if (!coverImg) {
-        onOneLoaded();
-        return;
-      }
-      const loadHandler = () => onOneLoaded();
-      const errorHandler = () => onOneLoaded();
-      coverImg.addEventListener('load', loadHandler, { once: true });
-      coverImg.addEventListener('error', errorHandler, { once: true });
-      cleanupFunctions.push(() => {
-        coverImg.removeEventListener('load', loadHandler);
-        coverImg.removeEventListener('error', errorHandler);
-      });
-      if (coverImg.complete) {
-        onOneLoaded();
-      }
-    });
-  }
-
-  function renderPage(pageNum) {
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageData = modData.slice(start, end);
-    renderModCards(pageData);
-    renderPagination(modData.length, pageNum);
-    setupPageCoverWatcher(pageNum, async () => {
-      await preloadAdjacentPage(pageNum);
-    });
-  }
-
-  async function performGlobalRidSearch(rid) {
+    async function performGlobalRidSearch(rid) {
     const categories = ['all', 'skin'];
+
     for (const cat of categories) {
       if (allSiteData[cat]) {
         const found = allSiteData[cat].find(function(m) { return m.id === rid; });
         if (found) return found;
       }
     }
+
     for (const cat of categories) {
       if (!allSiteData[cat]) {
         await loadAllDataForCategory(cat);
@@ -890,6 +895,7 @@
 
   function filterMods() {
     let filtered = baseModData.slice();
+
     const query = searchInput.value.trim();
     if (query) {
       const lowerQuery = query.toLowerCase();
@@ -964,14 +970,11 @@
     const loaded2Src = window.loaded2GifSrc || FALLBACK_LOADED2;
     modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="' + loaded2Src + '" alt="加载中" style="max-width:200px;"></div>';
     paginationEl.innerHTML = '';
-    preloadedPages.clear();
-    if (currentPageCoverWatcher) {
-      currentPageCoverWatcher.cleanup();
-      currentPageCoverWatcher = null;
-    }
+
     const manifest = await loadManifest(categoryKey);
     const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
     const dir = dirMap[categoryKey];
+
     if (manifest && manifest[dir]) {
       const data = await loadAllDataForCategory(categoryKey);
       modData = data;
@@ -981,6 +984,7 @@
       renderPage(1);
       return;
     }
+
     const url = dataSources[categoryKey];
     if (!url) return;
     try {
@@ -1027,6 +1031,7 @@
     if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
   });
 
+  // Re-render pagination on viewport resize (for mobile/desktop mode switch)
   let resizeTimer = null;
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
@@ -1046,23 +1051,22 @@
     charaOverlay.classList.add('active');
   }
 
-  async function handleUrlParams() {
+    async function handleUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const rid = params.get('rid');
     if (rid) {
       const found = await performGlobalRidSearch(rid);
       if (found) {
         openModal(found);
-        loadingOverlay.classList.add('hidden');
-        mainContent.style.opacity = '1';
       } else {
         showToast('未找到该帖子');
       }
+
       history.replaceState({}, document.title, window.location.pathname);
     }
   }
 
-  async function initPage() {
+    async function initPage() {
     let loadingGifUrls = [
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
     ];
@@ -1090,7 +1094,69 @@
     } catch (e) {}
 
     const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
+
+    const logoPromise = (async function loadLogoWithRetry() {
+      let lastErr;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          return await raceImage(logoUrls);
+        } catch (err) {
+          lastErr = err;
+          if (attempt < 2) {
+            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+          }
+        }
+      }
+      return null;
+    })();
+
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
+
+    (async function preloadCampaign() {
+      try {
+        const [allData, skinData] = await Promise.all([
+          loadAllDataForCategory('all'),
+          loadAllDataForCategory('skin')
+        ]);
+
+        const allMods = allData.concat(skinData);
+        const coverUrls = [];
+        const previewImgUrls = [];
+        const videoUrls = [];
+
+        const PRELOAD_PAGES = 3;
+        const PRELOAD_DEPTH = ITEMS_PER_PAGE * PRELOAD_PAGES;
+
+        allMods.forEach(function(mod, idx) {
+          if (mod.coverImage) {
+            const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+            if (url.trim()) coverUrls.push(url);
+          }
+
+          if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewImages)) {
+            mod.previewImages.slice(0, 4).forEach(function(item) {
+              const urls = toCandidates(item);
+              if (urls.length && urls[0]) previewImgUrls.push(urls[0]);
+            });
+          }
+
+          if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewVideos) && mod.previewVideos.length) {
+            mod.previewVideos.slice(0, 2).forEach(function(item) {
+              let urls = [];
+              if (typeof item === 'string') urls = [item];
+              else if (item.urls && Array.isArray(item.urls) && item.urls.length) urls = item.urls;
+              else if (item.url) urls = [item.url];
+              if (urls.length && urls[0]) videoUrls.push(urls[0]);
+            });
+          }
+        });
+
+        preloadImagesWithConcurrency(coverUrls.concat(previewImgUrls), 10);
+        preloadVideosMetadata(videoUrls, 4);
+      } catch (e) {
+      }
+    })();
+
     gifPromise.then(function(src) {
       if (src) {
         loadingGif.src = src;
@@ -1098,58 +1164,22 @@
         if (potionWrapper) potionWrapper.style.display = 'none';
       }
     });
+    logoPromise.then(function(src) {
+      if (src) {
+        logoImg.src = src;
+        logoImg.style.display = 'block';
+        logoTower.style.display = 'none';
+      }
+    });
     loaded2Promise.then(function(src) {
       if (src) window.loaded2GifSrc = src;
     });
 
-    // 启动 JSON 加载（不等待，让 handleUrlParams 去等待）
-    const jsonPromise = Promise.all([
-      loadAllDataForCategory('all'),
-      loadAllDataForCategory('skin')
-    ]);
-
-    // 处理 URL 参数（内部会等待 JSON 完成）
-    handleUrlParams();
-
-    // 等待 JSON 加载完成，然后加载 MOD 列表
-    await jsonPromise;
-    await loadModData('all');
-
-    // 预加载首页封面（优先级最高）
-    const currentMods = modData.slice(0, ITEMS_PER_PAGE);
-    const coverUrlsFirstPage = [];
-    currentMods.forEach(mod => {
-      if (mod.coverImage) {
-        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-        if (url.trim()) coverUrlsFirstPage.push(url);
-      }
-    });
-    if (coverUrlsFirstPage.length) {
-      preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
-    }
-
-    // 预加载首页预览图片（优先级次之）
-    preloadPagePreviewImages(1);
-
-    // 预加载下一页封面（相邻页）
-    preloadAdjacentPage(1);
-
-    // 加载鸡煲立绘（最低优先级）
-    (async function loadLogo() {
-      for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          const src = await raceImage(logoUrls);
-          if (src) {
-            logoImg.src = src;
-            logoImg.style.display = 'block';
-            logoTower.style.display = 'none';
-            break;
-          }
-        } catch (err) {
-          if (attempt < 2) await new Promise(r => setTimeout(r, 2000));
-        }
-      }
-    })();
+    setTimeout(function() {
+      loadingOverlay.classList.add('hidden');
+      mainContent.style.opacity = '1';
+      loadModData('all');
+    }, 10000);
 
     logoArea.addEventListener('click', function(e) {
       if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
@@ -1157,12 +1187,7 @@
       }
     });
 
-    // 如果 handleUrlParams 已经打开了弹窗并隐藏了 loading，这里就不重复隐藏了
-    // 否则，隐藏 loading 并显示主内容（无 RID 或 RID 无效）
-    if (!loadingOverlay.classList.contains('hidden')) {
-      loadingOverlay.classList.add('hidden');
-      mainContent.style.opacity = '1';
-    }
+    handleUrlParams();
   }
 
   if (document.readyState === 'loading') {
