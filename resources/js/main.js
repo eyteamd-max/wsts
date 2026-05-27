@@ -90,56 +90,6 @@
     });
   }
 
-  function preloadVideosMetadata(urls, concurrency) {
-    return new Promise(function(resolve) {
-      if (!urls || urls.length === 0) { resolve(); return; }
-      var index = 0;
-      var running = 0;
-      var total = urls.length;
-
-      function next() {
-        if (index >= total) {
-          if (running === 0) resolve();
-          return;
-        }
-        var url = urls[index++];
-        running++;
-        var video = document.createElement('video');
-        video.preload = 'metadata';
-        video.muted = true;
-        video.playsInline = true;
-        video.style.position = 'fixed';
-        video.style.top = '-9999px';
-        video.style.left = '-9999px';
-        video.style.width = '1px';
-        video.style.height = '1px';
-        video.style.opacity = '0';
-        video.style.pointerEvents = 'none';
-        document.body.appendChild(video);
-
-        var timer = setTimeout(function() {
-          video.src = '';
-          video.remove();
-          running--;
-          next();
-        }, 4000);
-
-        video.onloadedmetadata = video.onerror = function() {
-          clearTimeout(timer);
-          video.src = '';
-          video.remove();
-          running--;
-          next();
-        };
-        video.src = url;
-      }
-
-      for (var i = 0; i < Math.min(concurrency, total); i++) {
-        next();
-      }
-    });
-  }
-
   const loadingOverlay = document.getElementById('loadingOverlay');
   const loadingGif = document.getElementById('loadingGif');
   const loadingText = document.getElementById('loadingText');
@@ -337,12 +287,12 @@
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
     if (totalPages <= 1) return;
 
-    // Helper: create page button
     function createPageBtn(pageNum, isActive) {
       const btn = document.createElement('button');
       btn.className = 'pagination-page' + (isActive ? ' active' : '');
       btn.textContent = pageNum;
       btn.addEventListener('click', () => {
+        if (currentPage === pageNum) return;
         currentPage = pageNum;
         renderPage(pageNum);
         modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -350,7 +300,6 @@
       return btn;
     }
 
-    // Helper: create ellipsis span
     function createDots() {
       const dots = document.createElement('span');
       dots.className = 'pagination-dots';
@@ -358,10 +307,8 @@
       return dots;
     }
 
-    // Detect mobile viewport (≤480px)
     const isMobile = window.innerWidth <= 480;
 
-    // Left arrow
     const prevBtn = document.createElement('button');
     prevBtn.className = 'pagination-btn';
     prevBtn.innerHTML = '&#8249;';
@@ -376,26 +323,16 @@
     paginationEl.appendChild(prevBtn);
 
     if (isMobile && totalPages > 5) {
-      // Mobile simplified mode: left arrow, first, current, last, right arrow
-      // Single ellipsis between first/current and current/last
-      // Avoid duplicate if current is first or last
       const pages = [];
-
-      // Always add first page
       pages.push(1);
-
-      // Add ellipsis and current page if current is not first
       if (currentPageNum !== 1) {
         pages.push('...');
         pages.push(currentPageNum);
       }
-
-      // Add ellipsis and last page if current is not last
       if (currentPageNum !== totalPages) {
         pages.push('...');
         pages.push(totalPages);
       }
-
       pages.forEach(item => {
         if (item === '...') {
           paginationEl.appendChild(createDots());
@@ -404,47 +341,30 @@
         }
       });
     } else if (totalPages <= 5) {
-      // Full display: show all page numbers
       for (let i = 1; i <= totalPages; i++) {
         paginationEl.appendChild(createPageBtn(i, i === currentPageNum));
       }
     } else {
-      // Compact ellipsis mode (totalPages > 5)
-      // Always show first page
       paginationEl.appendChild(createPageBtn(1, 1 === currentPageNum));
-
-      // Determine neighbor pages
       const leftNeighbor = currentPageNum - 1;
       const rightNeighbor = currentPageNum + 1;
-
-      // Collect middle pages: current + neighbors (deduplicated, excluding first and last)
       const middleSet = new Set();
       if (leftNeighbor > 1 && leftNeighbor < totalPages) middleSet.add(leftNeighbor);
       if (currentPageNum > 1 && currentPageNum < totalPages) middleSet.add(currentPageNum);
       if (rightNeighbor > 1 && rightNeighbor < totalPages) middleSet.add(rightNeighbor);
-
       const middlePages = Array.from(middleSet).sort((a, b) => a - b);
-
-      // Add ellipsis between first page and first middle page if gap > 1
       if (middlePages.length > 0 && middlePages[0] > 2) {
         paginationEl.appendChild(createDots());
       }
-
-      // Add middle pages
       middlePages.forEach(p => {
         paginationEl.appendChild(createPageBtn(p, p === currentPageNum));
       });
-
-      // Add ellipsis between last middle page and last page if gap > 1
       if (middlePages.length > 0 && middlePages[middlePages.length - 1] < totalPages - 1) {
         paginationEl.appendChild(createDots());
       }
-
-      // Always show last page
       paginationEl.appendChild(createPageBtn(totalPages, totalPages === currentPageNum));
     }
 
-    // Right arrow
     const nextBtn = document.createElement('button');
     nextBtn.className = 'pagination-btn';
     nextBtn.innerHTML = '&#8250;';
@@ -457,14 +377,6 @@
       }
     });
     paginationEl.appendChild(nextBtn);
-  }
-
-  function renderPage(pageNum) {
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageData = modData.slice(start, end);
-    renderModCards(pageData);
-    renderPagination(modData.length, pageNum);
   }
 
   function openLightbox(src) {
@@ -605,11 +517,9 @@
   previewImagesBtn.addEventListener('click', function() { switchPreviewTab('images'); });
   previewVideosBtn.addEventListener('click', function() { switchPreviewTab('videos'); });
 
-    async function openModal(mod) {
+  async function openModal(mod) {
     currentMod = mod;
-
     modalTitle.textContent = mod.title;
-
     const modalCoverWrap = document.getElementById('modalCoverWrap');
     const modalCoverImg  = document.getElementById('modalCoverImg');
     let modalCoverSrc = '';
@@ -618,7 +528,6 @@
         else { modalCoverSrc = mod.coverImage; }
     }
     const hasModalCover = modalCoverSrc.trim() !== '';
-
     if (hasModalCover) {
         modalCoverImg.src = modalCoverSrc;
         modalCoverImg.style.objectFit = 'cover';
@@ -630,20 +539,16 @@
         modalCoverWrap.style.display = 'block';
         modalCoverImg.style.display = 'block';
     } else {
-
         modalCoverWrap.style.display = 'none';
         modalCoverImg.src = '';
         modalCoverImg.onclick = null;
     }
-
     modalRid.textContent = 'RID: ' + (mod.id || '无');
-
     modalRid.onclick = function(e) {
       e.stopPropagation();
       const isVisible = ridDropdown.style.display === 'block';
       ridDropdown.style.display = isVisible ? 'none' : 'block';
     };
-
     ridDropdown.querySelectorAll('.rid-option').forEach(function(btn) {
       btn.onclick = function(e) {
         e.stopPropagation();
@@ -658,7 +563,6 @@
         ridDropdown.style.display = 'none';
       };
     });
-
     modalTags.innerHTML = '';
     if (mod.tags && Array.isArray(mod.tags)) {
       mod.tags.forEach(function(tag) {
@@ -668,23 +572,18 @@
       modalTags.appendChild(span);
      });
     }
-
     let desc = (mod.description || '暂无介绍')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/\n/g, '<br>');
-
     const urlRegex = /(https?:\/\/[^\s<<"]+)/g;
     desc = desc.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer" class="desc-link">$1</a>');
-
     modalDescText.innerHTML = desc;
     modalDescText.classList.remove('expanded');
     descToggle.style.display = 'none';
     descToggle.textContent = '展开全文';
-
     modalAuthor.textContent = '作者：' + (mod.author || '佚名');
-
     modalLinks.innerHTML = '';
     if (mod.authorLinks) {
       if (Array.isArray(mod.authorLinks)) {
@@ -718,7 +617,6 @@
         });
       }
     }
-
     downloadButtons.innerHTML = '';
     const downloadLinks = mod.downloadLinks && mod.downloadLinks.length
       ? mod.downloadLinks
@@ -732,11 +630,9 @@
       btn.textContent = dl.text;
       downloadButtons.appendChild(btn);
     });
-
     activePreviewTab = null;
     updatePreviewButtons();
     renderPreviewContent();
-
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     setTimeout(function() {
@@ -752,7 +648,6 @@
     currentMod = null;
     activePreviewTab = null;
     ridDropdown.style.display = 'none';
-
     const modalCoverImg = document.getElementById('modalCoverImg');
     if (modalCoverImg) { modalCoverImg.src = ''; modalCoverImg.onclick = null; }
   }
@@ -774,17 +669,17 @@
 
   function handleTagClick(tagText) {
     searchInput.value = tagText;
-
     filterMods();
     searchInput.focus();
   }
 
-  function attachCardSpinner(cardElement) {
+  function attachCardSpinner(cardElement, onImageLoaded) {
     const coverInner = cardElement.querySelector('.mod-cover-inner');
     const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
     if (!coverInner || !coverImg) return;
 
     if (coverImg.complete && coverImg.naturalWidth > 0) {
+      if (onImageLoaded) onImageLoaded();
       return;
     }
 
@@ -795,6 +690,7 @@
         spinner.style.display = 'none';
         spinner.remove();
       }
+      if (onImageLoaded) onImageLoaded();
     };
 
     coverImg.addEventListener('load', hideSpinner, { once: true });
@@ -805,6 +701,107 @@
     }, 500);
 
     coverInner.appendChild(spinner);
+  }
+
+  let currentPageCoverWatcher = null;
+
+  function setupPageCoverWatcher(pageNum, modsOnPage, onAllLoaded) {
+    if (currentPageCoverWatcher) {
+      currentPageCoverWatcher.cleanup();
+      currentPageCoverWatcher = null;
+    }
+    let remaining = modsOnPage.length;
+    if (remaining === 0) {
+      if (onAllLoaded) onAllLoaded();
+      return;
+    }
+    const cleanupFunctions = [];
+    let completed = false;
+    function onOneLoaded() {
+      if (completed) return;
+      remaining--;
+      if (remaining === 0) {
+        completed = true;
+        if (onAllLoaded) onAllLoaded();
+        cleanup();
+      }
+    }
+    function cleanup() {
+      cleanupFunctions.forEach(fn => fn());
+    }
+    const watcher = { cleanup };
+    currentPageCoverWatcher = watcher;
+
+    modsOnPage.forEach(mod => {
+      const card = document.querySelector(`.mod-card[data-mod-id="${mod.id}"]`);
+      if (!card) {
+        onOneLoaded();
+        return;
+      }
+      const coverInner = card.querySelector('.mod-cover-inner');
+      const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
+      if (!coverImg) {
+        onOneLoaded();
+        return;
+      }
+      const loadHandler = () => onOneLoaded();
+      const errorHandler = () => onOneLoaded();
+      coverImg.addEventListener('load', loadHandler, { once: true });
+      coverImg.addEventListener('error', errorHandler, { once: true });
+      cleanupFunctions.push(() => {
+        coverImg.removeEventListener('load', loadHandler);
+        coverImg.removeEventListener('error', errorHandler);
+      });
+      if (coverImg.complete) {
+        onOneLoaded();
+      }
+    });
+  }
+
+  let preloadedPages = new Set();
+
+  async function preloadPageCovers(pageNum, modsList) {
+    if (preloadedPages.has(pageNum)) return;
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageMods = modsList.slice(start, end);
+    if (pageMods.length === 0) return;
+    const coverUrls = [];
+    pageMods.forEach(mod => {
+      if (mod.coverImage) {
+        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+        if (url.trim()) coverUrls.push(url);
+      }
+    });
+    if (coverUrls.length === 0) return;
+    await preloadImagesWithConcurrency(coverUrls, 4);
+    preloadedPages.add(pageNum);
+  }
+
+  async function preloadPagePreviewImages(pageNum, modsList) {
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageMods = modsList.slice(start, end);
+    if (pageMods.length === 0) return;
+    const previewUrls = [];
+    pageMods.forEach(mod => {
+      if (Array.isArray(mod.previewImages)) {
+        mod.previewImages.slice(0, 4).forEach(item => {
+          const urls = toCandidates(item);
+          if (urls.length && urls[0]) previewUrls.push(urls[0]);
+        });
+      }
+    });
+    if (previewUrls.length === 0) return;
+    await preloadImagesWithConcurrency(previewUrls, 6);
+  }
+
+  async function preloadAdjacentPage(currentPageNum, modsList) {
+    const nextPage = currentPageNum + 1;
+    const totalPages = Math.ceil(modsList.length / ITEMS_PER_PAGE);
+    if (nextPage <= totalPages && !preloadedPages.has(nextPage)) {
+      await preloadPageCovers(nextPage, modsList);
+    }
   }
 
   function renderModCards(dataArray) {
@@ -828,10 +825,10 @@
       tagsHtml = '<div class="mod-tag-list">' + mod.tags.map(function(t) {
       return '<span class="mod-tag-item ' + t.toLowerCase() + '">' + t + '</span>';
       }).join('') + '</div>';
-
       }
       const card = document.createElement('div');
       card.className = 'mod-card';
+      card.setAttribute('data-mod-id', mod.id);
       card.innerHTML =
         '<div class="mod-cover">' +
           '<div class="mod-cover-inner">' +
@@ -851,7 +848,6 @@
           '</div>' +
           '<button class="mod-download-btn view-detail-btn">查看详情</button>' +
         '</div>';
-
       const coverImgEl = card.querySelector('.mod-cover-img');
       if (coverImgEl && hasCoverImg) {
         coverImgEl.addEventListener('click', function(e) {
@@ -861,26 +857,35 @@
           }
         });
       }
-
       card.querySelector('.view-detail-btn').addEventListener('click', function(e) { e.stopPropagation(); openModal(mod); });
       card.querySelectorAll('.mod-tag-item').forEach(function(tagEl) {
         tagEl.addEventListener('click', function(e) { e.stopPropagation(); handleTagClick(tagEl.textContent); });
       });
       modGrid.appendChild(card);
-      attachCardSpinner(card);
+      attachCardSpinner(card, null);
     });
   }
 
-    async function performGlobalRidSearch(rid) {
-    const categories = ['all', 'skin'];
+  function renderPage(pageNum) {
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageData = modData.slice(start, end);
+    renderModCards(pageData);
+    renderPagination(modData.length, pageNum);
+    const modsList = modData;
+    setupPageCoverWatcher(pageNum, pageData, async () => {
+      await preloadAdjacentPage(pageNum, modsList);
+    });
+  }
 
+  async function performGlobalRidSearch(rid) {
+    const categories = ['all', 'skin'];
     for (const cat of categories) {
       if (allSiteData[cat]) {
         const found = allSiteData[cat].find(function(m) { return m.id === rid; });
         if (found) return found;
       }
     }
-
     for (const cat of categories) {
       if (!allSiteData[cat]) {
         await loadAllDataForCategory(cat);
@@ -895,7 +900,6 @@
 
   function filterMods() {
     let filtered = baseModData.slice();
-
     const query = searchInput.value.trim();
     if (query) {
       const lowerQuery = query.toLowerCase();
@@ -970,11 +974,14 @@
     const loaded2Src = window.loaded2GifSrc || FALLBACK_LOADED2;
     modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;"><img src="' + loaded2Src + '" alt="加载中" style="max-width:200px;"></div>';
     paginationEl.innerHTML = '';
-
+    preloadedPages.clear();
+    if (currentPageCoverWatcher) {
+      currentPageCoverWatcher.cleanup();
+      currentPageCoverWatcher = null;
+    }
     const manifest = await loadManifest(categoryKey);
     const dirMap = { all: 'sts2_mods', skin: 'O.o_interface' };
     const dir = dirMap[categoryKey];
-
     if (manifest && manifest[dir]) {
       const data = await loadAllDataForCategory(categoryKey);
       modData = data;
@@ -982,9 +989,9 @@
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
+      await preloadPagePreviewImages(1, modData);
       return;
     }
-
     const url = dataSources[categoryKey];
     if (!url) return;
     try {
@@ -1005,6 +1012,7 @@
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
+      await preloadPagePreviewImages(1, modData);
     } catch (error) {
       modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;">MOD数据加载失败，请稍后再试</div>';
     }
@@ -1031,7 +1039,6 @@
     if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
   });
 
-  // Re-render pagination on viewport resize (for mobile/desktop mode switch)
   let resizeTimer = null;
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
@@ -1051,7 +1058,7 @@
     charaOverlay.classList.add('active');
   }
 
-    async function handleUrlParams() {
+  async function handleUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const rid = params.get('rid');
     if (rid) {
@@ -1061,12 +1068,11 @@
       } else {
         showToast('未找到该帖子');
       }
-
       history.replaceState({}, document.title, window.location.pathname);
     }
   }
 
-    async function initPage() {
+  async function initPage() {
     let loadingGifUrls = [
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
     ];
@@ -1078,7 +1084,6 @@
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
       'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
     ];
-
     try {
       const fetchWithTimeout = Promise.race([
         fetch('resources/json/config.json', { cache: 'no-store' }),
@@ -1092,71 +1097,8 @@
         if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
       }
     } catch (e) {}
-
     const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-
-    const logoPromise = (async function loadLogoWithRetry() {
-      let lastErr;
-      for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          return await raceImage(logoUrls);
-        } catch (err) {
-          lastErr = err;
-          if (attempt < 2) {
-            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
-          }
-        }
-      }
-      return null;
-    })();
-
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
-
-    (async function preloadCampaign() {
-      try {
-        const [allData, skinData] = await Promise.all([
-          loadAllDataForCategory('all'),
-          loadAllDataForCategory('skin')
-        ]);
-
-        const allMods = allData.concat(skinData);
-        const coverUrls = [];
-        const previewImgUrls = [];
-        const videoUrls = [];
-
-        const PRELOAD_PAGES = 3;
-        const PRELOAD_DEPTH = ITEMS_PER_PAGE * PRELOAD_PAGES;
-
-        allMods.forEach(function(mod, idx) {
-          if (mod.coverImage) {
-            const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-            if (url.trim()) coverUrls.push(url);
-          }
-
-          if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewImages)) {
-            mod.previewImages.slice(0, 4).forEach(function(item) {
-              const urls = toCandidates(item);
-              if (urls.length && urls[0]) previewImgUrls.push(urls[0]);
-            });
-          }
-
-          if (idx < PRELOAD_DEPTH && Array.isArray(mod.previewVideos) && mod.previewVideos.length) {
-            mod.previewVideos.slice(0, 2).forEach(function(item) {
-              let urls = [];
-              if (typeof item === 'string') urls = [item];
-              else if (item.urls && Array.isArray(item.urls) && item.urls.length) urls = item.urls;
-              else if (item.url) urls = [item.url];
-              if (urls.length && urls[0]) videoUrls.push(urls[0]);
-            });
-          }
-        });
-
-        preloadImagesWithConcurrency(coverUrls.concat(previewImgUrls), 10);
-        preloadVideosMetadata(videoUrls, 4);
-      } catch (e) {
-      }
-    })();
-
     gifPromise.then(function(src) {
       if (src) {
         loadingGif.src = src;
@@ -1164,29 +1106,58 @@
         if (potionWrapper) potionWrapper.style.display = 'none';
       }
     });
-    logoPromise.then(function(src) {
-      if (src) {
-        logoImg.src = src;
-        logoImg.style.display = 'block';
-        logoTower.style.display = 'none';
-      }
-    });
     loaded2Promise.then(function(src) {
       if (src) window.loaded2GifSrc = src;
     });
-
-    setTimeout(function() {
-      loadingOverlay.classList.add('hidden');
-      mainContent.style.opacity = '1';
-      loadModData('all');
-    }, 10000);
-
+    const jsonLoaded = (async () => {
+      await Promise.all([
+        loadAllDataForCategory('all'),
+        loadAllDataForCategory('skin')
+      ]);
+    })();
+    const loadingDone = await Promise.race([
+      jsonLoaded,
+      new Promise(resolve => setTimeout(resolve, 12000))
+    ]);
+    loadingOverlay.classList.add('hidden');
+    mainContent.style.opacity = '1';
+    await loadModData('all');
+    const currentMods = modData.slice(0, ITEMS_PER_PAGE);
+    const coverUrlsFirstPage = [];
+    currentMods.forEach(mod => {
+      if (mod.coverImage) {
+        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+        if (url.trim()) coverUrlsFirstPage.push(url);
+      }
+    });
+    if (coverUrlsFirstPage.length) {
+      await preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+    }
+    await preloadPagePreviewImages(1, modData);
+    await preloadAdjacentPage(1, modData);
+    const logoPromise = (async function loadLogoWithRetry() {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          return await raceImage(logoUrls);
+        } catch (err) {
+          if (attempt < 2) {
+            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+          }
+        }
+      }
+      return null;
+    })();
+    const logoSrc = await logoPromise;
+    if (logoSrc) {
+      logoImg.src = logoSrc;
+      logoImg.style.display = 'block';
+      logoTower.style.display = 'none';
+    }
     logoArea.addEventListener('click', function(e) {
       if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
         openCharaDetail();
       }
     });
-
     handleUrlParams();
   }
 
