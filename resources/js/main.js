@@ -1073,97 +1073,114 @@
   }
 
   async function initPage() {
-    let loadingGifUrls = [
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
-    ];
-    let logoUrls = [
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
-    ];
-    let loaded2GifUrls = [
-      'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
-      'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
-    ];
-    try {
-      const fetchWithTimeout = Promise.race([
-        fetch('resources/json/config.json', { cache: 'no-store' }),
-        new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
-      ]);
-      const resp = await fetchWithTimeout;
-      if (resp.ok) {
-        const config = await resp.json();
-        if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
-        if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
-        if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
-      }
-    } catch (e) {}
-    const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-    const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
-    gifPromise.then(function(src) {
-      if (src) {
-        loadingGif.src = src;
-        loadingGif.style.display = 'block';
-        if (potionWrapper) potionWrapper.style.display = 'none';
-      }
-    });
-    loaded2Promise.then(function(src) {
-      if (src) window.loaded2GifSrc = src;
-    });
-    const jsonLoaded = (async () => {
-      await Promise.all([
-        loadAllDataForCategory('all'),
-        loadAllDataForCategory('skin')
-      ]);
-    })();
-    const loadingDone = await Promise.race([
-      jsonLoaded,
-      new Promise(resolve => setTimeout(resolve, 12000))
+  console.log('[initPage] start');
+  
+  // 1. 获取配置（非阻塞，失败有默认值）
+  let loadingGifUrls = ['https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'];
+  let logoUrls = ['https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'];
+  let loaded2GifUrls = [
+    'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
+    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
+    'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
+  ];
+  try {
+    const resp = await Promise.race([
+      fetch('resources/json/config.json', { cache: 'no-store' }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
     ]);
-    loadingOverlay.classList.add('hidden');
-    mainContent.style.opacity = '1';
-    await loadModData('all');
-    const currentMods = modData.slice(0, ITEMS_PER_PAGE);
-    const coverUrlsFirstPage = [];
-    currentMods.forEach(mod => {
-      if (mod.coverImage) {
-        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-        if (url.trim()) coverUrlsFirstPage.push(url);
-      }
-    });
-    if (coverUrlsFirstPage.length) {
-      await preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+    if (resp.ok) {
+      const config = await resp.json();
+      if (config.loadingGifUrls?.length) loadingGifUrls = config.loadingGifUrls;
+      if (config.logoUrls?.length) logoUrls = config.logoUrls;
+      if (config.loaded2GifUrls?.length) loaded2GifUrls = config.loaded2GifUrls;
     }
-    await preloadPagePreviewImages(1, modData);
-    await preloadAdjacentPage(1, modData);
-    const logoPromise = (async function loadLogoWithRetry() {
-      for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          return await raceImage(logoUrls);
-        } catch (err) {
-          if (attempt < 2) {
-            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
-          }
-        }
-      }
-      return null;
-    })();
-    const logoSrc = await logoPromise;
-    if (logoSrc) {
-      logoImg.src = logoSrc;
-      logoImg.style.display = 'block';
-      logoTower.style.display = 'none';
+  } catch (e) {}
+
+  // 2. 预加载 loading gif 和占位图（不阻塞）
+  raceImage(loadingGifUrls).then(src => {
+    if (src) {
+      loadingGif.src = src;
+      loadingGif.style.display = 'block';
+      if (potionWrapper) potionWrapper.style.display = 'none';
     }
-    logoArea.addEventListener('click', function(e) {
-      if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
-        openCharaDetail();
-      }
-    });
-    handleUrlParams();
+  }).catch(() => {});
+  raceImage(loaded2GifUrls).then(src => {
+    if (src) window.loaded2GifSrc = src;
+  }).catch(() => {});
+
+  // 3. 核心：加载所有 JSON 数据（必须等待）
+  console.log('[initPage] loading JSON...');
+  await Promise.all([
+    loadAllDataForCategory('all'),
+    loadAllDataForCategory('skin')
+  ]);
+  console.log('[initPage] JSON loaded');
+
+  // 4. 处理 RID 参数
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid');
+  let ridMod = null;
+  if (rid) {
+    ridMod = await performGlobalRidSearch(rid);
+    if (ridMod) {
+      console.log('[initPage] RID found, opening modal');
+      openModal(ridMod);
+      history.replaceState({}, document.title, window.location.pathname);
+      // 弹窗已显示，可以立即隐藏 loading
+      loadingOverlay.classList.add('hidden');
+      mainContent.style.opacity = '1';
+      // 后台加载列表（不等待，不阻塞弹窗交互）
+      loadModData('all').then(() => {
+        preloadPagePreviewImages(1, modData);
+        preloadAdjacentPage(1, modData);
+      }).catch(console.error);
+    } else {
+      console.log('[initPage] RID not found');
+    }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPage);
-  } else {
-    initPage();
+  // 5. 如果没有 RID 或 RID 无效，正常加载列表并等待完成后再隐藏 loading
+  if (!ridMod) {
+    console.log('[initPage] loading mod list...');
+    await loadModData('all');
+    console.log('[initPage] list rendered');
+    loadingOverlay.classList.add('hidden');
+    mainContent.style.opacity = '1';
+    // 后台预加载
+    preloadPagePreviewImages(1, modData);
+    preloadAdjacentPage(1, modData);
+    if (rid) showToast('未找到该帖子');
   }
-})();
+
+  // 6. 加载鸡煲立绘（最低优先级）
+  (async () => {
+    for (let i = 0; i < 3; i++) {
+      try {
+        const src = await raceImage(logoUrls);
+        if (src) {
+          logoImg.src = src;
+          logoImg.style.display = 'block';
+          logoTower.style.display = 'none';
+          break;
+        }
+      } catch (e) { /* ignore */ }
+      if (i < 2) await new Promise(r => setTimeout(r, 2000));
+    }
+  })();
+
+  // 7. 绑定 logo 点击
+  logoArea.addEventListener('click', (e) => {
+    if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
+      openCharaDetail();
+    }
+  });
+
+  // 8. 超时兜底：10秒后强制隐藏 loading（避免网络极差卡死）
+  setTimeout(() => {
+    if (!loadingOverlay.classList.contains('hidden')) {
+      loadingOverlay.classList.add('hidden');
+      mainContent.style.opacity = '1';
+      console.warn('[initPage] force hide loading after 10s');
+    }
+  }, 10000);
+}
