@@ -1073,97 +1073,115 @@
   }
 
   async function initPage() {
-    let loadingGifUrls = [
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
-    ];
-    let logoUrls = [
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
-    ];
-    let loaded2GifUrls = [
-      'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
-      'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
-    ];
+  let loadingGifUrls = [
+    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
+  ];
+  let logoUrls = [
+    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
+  ];
+  let loaded2GifUrls = [
+    'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
+    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
+    'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
+  ];
+  try {
+    const fetchWithTimeout = Promise.race([
+      fetch('resources/json/config.json', { cache: 'no-store' }),
+      new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
+    ]);
+    const resp = await fetchWithTimeout;
+    if (resp.ok) {
+      const config = await resp.json();
+      if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
+      if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
+      if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
+    }
+  } catch (e) {}
+
+  const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
+  const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
+  gifPromise.then(function(src) {
+    if (src) {
+      loadingGif.src = src;
+      loadingGif.style.display = 'block';
+      if (potionWrapper) potionWrapper.style.display = 'none';
+    }
+  });
+  loaded2Promise.then(function(src) {
+    if (src) window.loaded2GifSrc = src;
+  });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid');
+  let ridFound = false;
+  let ridTargetMod = null;
+
+  if (rid) {
     try {
-      const fetchWithTimeout = Promise.race([
-        fetch('resources/json/config.json', { cache: 'no-store' }),
-        new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
-      ]);
-      const resp = await fetchWithTimeout;
-      if (resp.ok) {
-        const config = await resp.json();
-        if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
-        if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
-        if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
-      }
-    } catch (e) {}
-    const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-    const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
-    gifPromise.then(function(src) {
-      if (src) {
-        loadingGif.src = src;
-        loadingGif.style.display = 'block';
-        if (potionWrapper) potionWrapper.style.display = 'none';
-      }
-    });
-    loaded2Promise.then(function(src) {
-      if (src) window.loaded2GifSrc = src;
-    });
-    const jsonLoaded = (async () => {
       await Promise.all([
         loadAllDataForCategory('all'),
         loadAllDataForCategory('skin')
       ]);
-    })();
-    const loadingDone = await Promise.race([
-      jsonLoaded,
-      new Promise(resolve => setTimeout(resolve, 12000))
-    ]);
-    loadingOverlay.classList.add('hidden');
-    mainContent.style.opacity = '1';
-    await loadModData('all');
-    const currentMods = modData.slice(0, ITEMS_PER_PAGE);
-    const coverUrlsFirstPage = [];
-    currentMods.forEach(mod => {
-      if (mod.coverImage) {
-        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-        if (url.trim()) coverUrlsFirstPage.push(url);
+      ridTargetMod = await performGlobalRidSearch(rid);
+      if (ridTargetMod) {
+        ridFound = true;
+      } else {
+        showToast('未找到该帖子');
       }
-    });
-    if (coverUrlsFirstPage.length) {
-      await preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+    } catch (e) {
+      console.error('RID search error', e);
     }
-    await preloadPagePreviewImages(1, modData);
-    await preloadAdjacentPage(1, modData);
-    const logoPromise = (async function loadLogoWithRetry() {
-      for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          return await raceImage(logoUrls);
-        } catch (err) {
-          if (attempt < 2) {
-            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
-          }
-        }
-      }
-      return null;
-    })();
-    const logoSrc = await logoPromise;
-    if (logoSrc) {
-      logoImg.src = logoSrc;
-      logoImg.style.display = 'block';
-      logoTower.style.display = 'none';
-    }
-    logoArea.addEventListener('click', function(e) {
-      if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
-        openCharaDetail();
-      }
-    });
-    handleUrlParams();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPage);
+  setTimeout(function() {
+    loadingOverlay.classList.add('hidden');
+    mainContent.style.opacity = '1';
+  }, 1000);
+
+  if (ridFound && ridTargetMod) {
+    await loadModData('all');
+    openModal(ridTargetMod);
+    history.replaceState({}, document.title, window.location.pathname);
   } else {
-    initPage();
+    await loadModData('all');
   }
-})();
+
+  const currentMods = modData.slice(0, ITEMS_PER_PAGE);
+  const coverUrlsFirstPage = [];
+  currentMods.forEach(mod => {
+    if (mod.coverImage) {
+      const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+      if (url.trim()) coverUrlsFirstPage.push(url);
+    }
+  });
+  if (coverUrlsFirstPage.length) {
+    preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+  }
+  preloadPagePreviewImages(1, modData);
+  preloadAdjacentPage(1, modData);
+
+  const logoPromise = (async function loadLogoWithRetry() {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        return await raceImage(logoUrls);
+      } catch (err) {
+        if (attempt < 2) {
+          await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+        }
+      }
+    }
+    return null;
+  })();
+  const logoSrc = await logoPromise;
+  if (logoSrc) {
+    logoImg.src = logoSrc;
+    logoImg.style.display = 'block';
+    logoTower.style.display = 'none';
+  }
+
+  logoArea.addEventListener('click', function(e) {
+    if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
+      openCharaDetail();
+    }
+  });
+}
