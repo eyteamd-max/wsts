@@ -236,6 +236,61 @@ body {
     user-select: none;
 }
 
+/* 页码跳转输入框 */
+.pagination-jump {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+    padding: 4px 14px;
+    background: #fffdfb;
+    border: var(--border-width) solid var(--border-dark);
+    border-radius: 30px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s var(--transition-bounce);
+}
+.pagination-jump:hover {
+    border-color: var(--strawberry-milk);
+    box-shadow: var(--shadow-medium);
+}
+.pagination-jump-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.pagination-jump-input {
+    width: 44px;
+    height: 28px;
+    padding: 0 4px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: #fff;
+    border: 2px solid #ddd8e5;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s;
+    -moz-appearance: textfield;
+}
+.pagination-jump-input::-webkit-outer-spin-button,
+.pagination-jump-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.pagination-jump-input:focus {
+    border-color: var(--strawberry-milk);
+    box-shadow: 0 0 0 3px rgba(232, 155, 155, 0.15);
+}
+.pagination-jump-total {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
 .modal-overlay { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 300; overflow-y: auto; }
 .modal-overlay.active { display: block; }
 .modal-content { width: 100%; max-width: 800px; margin: 0 auto; padding: 40px 28px 60px; position: relative; min-height: 100vh; }
@@ -432,6 +487,12 @@ body {
     .preview-image-item { width: 100%; }
     .pagination-btn,
     .pagination-page { min-width: 36px; height: 36px; font-size: 0.85rem; }
+    .pagination-jump {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 .modal-loading-overlay {
