@@ -1073,9 +1073,7 @@
   }
 
   async function initPage() {
-  console.log('[initPage] start');
-  
-  // 1. 获取配置（非阻塞，失败有默认值）
+  // 1. 加载配置（非阻塞，仅用于备用URL）
   let loadingGifUrls = ['https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'];
   let logoUrls = ['https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'];
   let loaded2GifUrls = [
@@ -1108,51 +1106,41 @@
     if (src) window.loaded2GifSrc = src;
   }).catch(() => {});
 
-  // 3. 核心：加载所有 JSON 数据（必须等待）
-  console.log('[initPage] loading JSON...');
+  // 3. 必须等待 JSON 数据加载完成
   await Promise.all([
     loadAllDataForCategory('all'),
     loadAllDataForCategory('skin')
   ]);
-  console.log('[initPage] JSON loaded');
 
-  // 4. 处理 RID 参数
+  // 4. 处理 RID
   const urlParams = new URLSearchParams(window.location.search);
   const rid = urlParams.get('rid');
   let ridMod = null;
   if (rid) {
     ridMod = await performGlobalRidSearch(rid);
-    if (ridMod) {
-      console.log('[initPage] RID found, opening modal');
-      openModal(ridMod);
-      history.replaceState({}, document.title, window.location.pathname);
-      // 弹窗已显示，可以立即隐藏 loading
-      loadingOverlay.classList.add('hidden');
-      mainContent.style.opacity = '1';
-      // 后台加载列表（不等待，不阻塞弹窗交互）
-      loadModData('all').then(() => {
-        preloadPagePreviewImages(1, modData);
-        preloadAdjacentPage(1, modData);
-      }).catch(console.error);
-    } else {
-      console.log('[initPage] RID not found');
-    }
   }
 
-  // 5. 如果没有 RID 或 RID 无效，正常加载列表并等待完成后再隐藏 loading
-  if (!ridMod) {
-    console.log('[initPage] loading mod list...');
-    await loadModData('all');
-    console.log('[initPage] list rendered');
+  // 5. 核心分支
+  if (ridMod) {
+    // 有 RID 且找到：立即打开弹窗，不加载任何其他内容
+    openModal(ridMod);
+    history.replaceState({}, document.title, window.location.pathname);
+    // 隐藏 loading（弹窗已显示，loading 可以消失）
     loadingOverlay.classList.add('hidden');
     mainContent.style.opacity = '1';
-    // 后台预加载
-    preloadPagePreviewImages(1, modData);
-    preloadAdjacentPage(1, modData);
+    // 后台静默加载列表（延迟 500ms，确保弹窗完全稳定，且不干扰）
+    setTimeout(() => {
+      loadModData('all').catch(console.error);
+    }, 500);
+  } else {
+    // 无 RID 或 RID 无效：正常加载列表
+    await loadModData('all');
+    loadingOverlay.classList.add('hidden');
+    mainContent.style.opacity = '1';
     if (rid) showToast('未找到该帖子');
   }
 
-  // 6. 加载鸡煲立绘（最低优先级）
+  // 6. 鸡煲立绘（最低优先级，不阻塞）
   (async () => {
     for (let i = 0; i < 3; i++) {
       try {
@@ -1163,7 +1151,7 @@
           logoTower.style.display = 'none';
           break;
         }
-      } catch (e) { /* ignore */ }
+      } catch (e) {}
       if (i < 2) await new Promise(r => setTimeout(r, 2000));
     }
   })();
@@ -1175,12 +1163,12 @@
     }
   });
 
-  // 8. 超时兜底：10秒后强制隐藏 loading（避免网络极差卡死）
+  // 8. 超时兜底（防止永远卡 loading）
   setTimeout(() => {
     if (!loadingOverlay.classList.contains('hidden')) {
       loadingOverlay.classList.add('hidden');
       mainContent.style.opacity = '1';
-      console.warn('[initPage] force hide loading after 10s');
+      console.warn('Force hide loading after 10s');
     }
   }, 10000);
 }
