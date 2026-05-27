@@ -1073,65 +1073,54 @@
   }
 
   async function initPage() {
-  let loadingGifUrls = [
-    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
-  ];
-  let logoUrls = [
-    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
-  ];
-  let loaded2GifUrls = [
-    'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
-    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
-    'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
-  ];
-
-  try {
-    const fetchWithTimeout = Promise.race([
-      fetch('resources/json/config.json', { cache: 'no-store' }),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
+    let loadingGifUrls = [
+      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
+    ];
+    let logoUrls = [
+      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
+    ];
+    let loaded2GifUrls = [
+      'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
+      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
+      'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
+    ];
+    try {
+      const fetchWithTimeout = Promise.race([
+        fetch('resources/json/config.json', { cache: 'no-store' }),
+        new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
+      ]);
+      const resp = await fetchWithTimeout;
+      if (resp.ok) {
+        const config = await resp.json();
+        if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
+        if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
+        if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
+      }
+    } catch (e) {}
+    const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
+    const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
+    gifPromise.then(function(src) {
+      if (src) {
+        loadingGif.src = src;
+        loadingGif.style.display = 'block';
+        if (potionWrapper) potionWrapper.style.display = 'none';
+      }
+    });
+    loaded2Promise.then(function(src) {
+      if (src) window.loaded2GifSrc = src;
+    });
+    const jsonLoaded = (async () => {
+      await Promise.all([
+        loadAllDataForCategory('all'),
+        loadAllDataForCategory('skin')
+      ]);
+    })();
+    const loadingDone = await Promise.race([
+      jsonLoaded,
+      new Promise(resolve => setTimeout(resolve, 12000))
     ]);
-    const resp = await fetchWithTimeout;
-    if (resp.ok) {
-      const config = await resp.json();
-      if (config.loadingGifUrls?.length) loadingGifUrls = config.loadingGifUrls;
-      if (config.logoUrls?.length) logoUrls = config.logoUrls;
-      if (config.loaded2GifUrls?.length) loaded2GifUrls = config.loaded2GifUrls;
-    }
-  } catch (e) {}
-
-  const gifPromise = raceImage(loadingGifUrls).catch(() => null);
-  const loaded2Promise = raceImage(loaded2GifUrls).catch(() => null);
-  gifPromise.then(src => {
-    if (src) {
-      loadingGif.src = src;
-      loadingGif.style.display = 'block';
-      if (potionWrapper) potionWrapper.style.display = 'none';
-    }
-  });
-  loaded2Promise.then(src => {
-    if (src) window.loaded2GifSrc = src;
-  });
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid');
-  let ridTargetMod = null;
-
-  const jsonPromise = Promise.all([
-    loadAllDataForCategory('all'),
-    loadAllDataForCategory('skin')
-  ]);
-
-  if (rid) {
-    await jsonPromise;
-    ridTargetMod = await performGlobalRidSearch(rid);
-  }
-
-  setTimeout(() => {
     loadingOverlay.classList.add('hidden');
     mainContent.style.opacity = '1';
-  }, 1000);
-
-  const loadListAndPreload = async () => {
     await loadModData('all');
     const currentMods = modData.slice(0, ITEMS_PER_PAGE);
     const coverUrlsFirstPage = [];
@@ -1142,41 +1131,39 @@
       }
     });
     if (coverUrlsFirstPage.length) {
-      preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+      await preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
     }
-    preloadPagePreviewImages(1, modData);
-    preloadAdjacentPage(1, modData);
-  };
-
-  if (ridTargetMod) {
-    loadListAndPreload();
-    openModal(ridTargetMod);
-    history.replaceState({}, document.title, window.location.pathname);
-  } else {
-    await loadListAndPreload();
-    if (rid) showToast('未找到该帖子');
-  }
-
-  const logoPromise = (async () => {
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        return await raceImage(logoUrls);
-      } catch (err) {
-        if (attempt < 2) await new Promise(resolve => setTimeout(resolve, 2000));
+    await preloadPagePreviewImages(1, modData);
+    await preloadAdjacentPage(1, modData);
+    const logoPromise = (async function loadLogoWithRetry() {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          return await raceImage(logoUrls);
+        } catch (err) {
+          if (attempt < 2) {
+            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+          }
+        }
       }
+      return null;
+    })();
+    const logoSrc = await logoPromise;
+    if (logoSrc) {
+      logoImg.src = logoSrc;
+      logoImg.style.display = 'block';
+      logoTower.style.display = 'none';
     }
-    return null;
-  })();
-  const logoSrc = await logoPromise;
-  if (logoSrc) {
-    logoImg.src = logoSrc;
-    logoImg.style.display = 'block';
-    logoTower.style.display = 'none';
+    logoArea.addEventListener('click', function(e) {
+      if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
+        openCharaDetail();
+      }
+    });
+    handleUrlParams();
   }
 
-  logoArea.addEventListener('click', (e) => {
-    if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
-      openCharaDetail();
-    }
-  });
-}
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
+})();
