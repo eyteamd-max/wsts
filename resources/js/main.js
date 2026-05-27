@@ -156,7 +156,7 @@
   let baseModData = [];
   let activeCategory = 'all';
   let currentPage = 1;
-  const ITEMS_PER_PAGE = 8;
+  const ITEMS_PER_PAGE = 10;
 
   let allSiteData = {};
   let manifestCache = {};
@@ -337,7 +337,31 @@
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
     if (totalPages <= 1) return;
 
-    // 上一页按钮
+    // Helper: create page button
+    function createPageBtn(pageNum, isActive) {
+      const btn = document.createElement('button');
+      btn.className = 'pagination-page' + (isActive ? ' active' : '');
+      btn.textContent = pageNum;
+      btn.addEventListener('click', () => {
+        currentPage = pageNum;
+        renderPage(pageNum);
+        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return btn;
+    }
+
+    // Helper: create ellipsis span
+    function createDots() {
+      const dots = document.createElement('span');
+      dots.className = 'pagination-dots';
+      dots.textContent = '...';
+      return dots;
+    }
+
+    // Detect mobile viewport (≤480px)
+    const isMobile = window.innerWidth <= 480;
+
+    // Left arrow
     const prevBtn = document.createElement('button');
     prevBtn.className = 'pagination-btn';
     prevBtn.innerHTML = '&#8249;';
@@ -351,73 +375,76 @@
     });
     paginationEl.appendChild(prevBtn);
 
-    // 精简页码逻辑：最多显示5个数字按钮
-    // 始终显示第1页和最后1页，当前页附近±1，中间用省略号
-    const maxVisible = 5;
-    let pagesToShow = [];
+    if (isMobile && totalPages > 5) {
+      // Mobile simplified mode: left arrow, first, current, last, right arrow
+      // Single ellipsis between first/current and current/last
+      // Avoid duplicate if current is first or last
+      const pages = [];
 
-    if (totalPages <= maxVisible) {
-      // 页数少，全部显示
-      for (let i = 1; i <= totalPages; i++) pagesToShow.push(i);
+      // Always add first page
+      pages.push(1);
+
+      // Add ellipsis and current page if current is not first
+      if (currentPageNum !== 1) {
+        pages.push('...');
+        pages.push(currentPageNum);
+      }
+
+      // Add ellipsis and last page if current is not last
+      if (currentPageNum !== totalPages) {
+        pages.push('...');
+        pages.push(totalPages);
+      }
+
+      pages.forEach(item => {
+        if (item === '...') {
+          paginationEl.appendChild(createDots());
+        } else {
+          paginationEl.appendChild(createPageBtn(item, item === currentPageNum));
+        }
+      });
+    } else if (totalPages <= 5) {
+      // Full display: show all page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        paginationEl.appendChild(createPageBtn(i, i === currentPageNum));
+      }
     } else {
-      // 页数多，精简显示
-      pagesToShow.push(1);
+      // Compact ellipsis mode (totalPages > 5)
+      // Always show first page
+      paginationEl.appendChild(createPageBtn(1, 1 === currentPageNum));
 
-      let startPage = Math.max(2, currentPageNum - 1);
-      let endPage = Math.min(totalPages - 1, currentPageNum + 1);
+      // Determine neighbor pages
+      const leftNeighbor = currentPageNum - 1;
+      const rightNeighbor = currentPageNum + 1;
 
-      // 确保中间区域至少有3个数字（如果空间允许）
-      if (currentPageNum <= 3) {
-        startPage = 2;
-        endPage = Math.min(4, totalPages - 1);
-      } else if (currentPageNum >= totalPages - 2) {
-        startPage = Math.max(2, totalPages - 3);
-        endPage = totalPages - 1;
+      // Collect middle pages: current + neighbors (deduplicated, excluding first and last)
+      const middleSet = new Set();
+      if (leftNeighbor > 1 && leftNeighbor < totalPages) middleSet.add(leftNeighbor);
+      if (currentPageNum > 1 && currentPageNum < totalPages) middleSet.add(currentPageNum);
+      if (rightNeighbor > 1 && rightNeighbor < totalPages) middleSet.add(rightNeighbor);
+
+      const middlePages = Array.from(middleSet).sort((a, b) => a - b);
+
+      // Add ellipsis between first page and first middle page if gap > 1
+      if (middlePages.length > 0 && middlePages[0] > 2) {
+        paginationEl.appendChild(createDots());
       }
 
-      // 在开头添加省略号（如果需要）
-      if (startPage > 2) {
-        pagesToShow.push('...');
-      } else if (startPage === 2) {
-        // 连续，不省略
+      // Add middle pages
+      middlePages.forEach(p => {
+        paginationEl.appendChild(createPageBtn(p, p === currentPageNum));
+      });
+
+      // Add ellipsis between last middle page and last page if gap > 1
+      if (middlePages.length > 0 && middlePages[middlePages.length - 1] < totalPages - 1) {
+        paginationEl.appendChild(createDots());
       }
 
-      // 中间页码
-      for (let i = startPage; i <= endPage; i++) {
-        pagesToShow.push(i);
-      }
-
-      // 在末尾添加省略号（如果需要）
-      if (endPage < totalPages - 1) {
-        pagesToShow.push('...');
-      } else if (endPage === totalPages - 1) {
-        // 连续，不省略
-      }
-
-      pagesToShow.push(totalPages);
+      // Always show last page
+      paginationEl.appendChild(createPageBtn(totalPages, totalPages === currentPageNum));
     }
 
-    // 渲染页码按钮
-    pagesToShow.forEach(function(item) {
-      if (item === '...') {
-        const dots = document.createElement('span');
-        dots.className = 'pagination-dots';
-        dots.textContent = '...';
-        paginationEl.appendChild(dots);
-      } else {
-        const btn = document.createElement('button');
-        btn.className = 'pagination-page' + (item === currentPageNum ? ' active' : '');
-        btn.textContent = item;
-        btn.addEventListener('click', () => {
-          currentPage = item;
-          renderPage(item);
-          modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-        paginationEl.appendChild(btn);
-      }
-    });
-
-    // 下一页按钮
+    // Right arrow
     const nextBtn = document.createElement('button');
     nextBtn.className = 'pagination-btn';
     nextBtn.innerHTML = '&#8250;';
@@ -430,53 +457,9 @@
       }
     });
     paginationEl.appendChild(nextBtn);
-
-    // 页码跳转输入框
-    const jumpWrap = document.createElement('div');
-    jumpWrap.className = 'pagination-jump';
-
-    const jumpLabel = document.createElement('span');
-    jumpLabel.className = 'pagination-jump-label';
-    jumpLabel.textContent = '前往';
-
-    const jumpInput = document.createElement('input');
-    jumpInput.className = 'pagination-jump-input';
-    jumpInput.type = 'number';
-    jumpInput.min = 1;
-    jumpInput.max = totalPages;
-    jumpInput.value = '';
-    jumpInput.placeholder = '';
-
-    const jumpTotal = document.createElement('span');
-    jumpTotal.className = 'pagination-jump-total';
-    jumpTotal.textContent = '/ ' + totalPages + ' 页';
-
-    jumpInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        let val = parseInt(jumpInput.value, 10);
-        if (!isNaN(val)) {
-          if (val < 1) val = 1;
-          if (val > totalPages) val = totalPages;
-          currentPage = val;
-          renderPage(val);
-          modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        jumpInput.value = '';
-        jumpInput.blur();
-      }
-    });
-
-    jumpInput.addEventListener('blur', function() {
-      jumpInput.value = '';
-    });
-
-    jumpWrap.appendChild(jumpLabel);
-    jumpWrap.appendChild(jumpInput);
-    jumpWrap.appendChild(jumpTotal);
-    paginationEl.appendChild(jumpWrap);
   }
 
-function renderPage(pageNum) {
+  function renderPage(pageNum) {
     const start = (pageNum - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     const pageData = modData.slice(start, end);
@@ -1046,6 +1029,17 @@ function renderPage(pageNum) {
   });
   document.addEventListener('click', function(e) {
     if (!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
+  });
+
+  // Re-render pagination on viewport resize (for mobile/desktop mode switch)
+  let resizeTimer = null;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      if (modData.length > 0) {
+        renderPagination(modData.length, currentPage);
+      }
+    }, 200);
   });
 
   charaClose.addEventListener('click', function() { charaOverlay.classList.remove('active'); });
