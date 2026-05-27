@@ -1047,113 +1047,127 @@
   }
 
   async function handleUrlParams() {
-  const params = new URLSearchParams(window.location.search);
-  const rid = params.get('rid');
-  if (rid) {
-    const found = await performGlobalRidSearch(rid);
-    if (found) {
-      openModal(found);
+    const params = new URLSearchParams(window.location.search);
+    const rid = params.get('rid');
+    if (rid) {
+      const found = await performGlobalRidSearch(rid);
+      if (found) {
+        openModal(found);
+        loadingOverlay.classList.add('hidden');
+        mainContent.style.opacity = '1';
+      } else {
+        showToast('未找到该帖子');
+      }
+      history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+
+  async function initPage() {
+    let loadingGifUrls = [
+      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
+    ];
+    let logoUrls = [
+      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
+    ];
+    let loaded2GifUrls = [
+      'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
+      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
+      'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
+    ];
+
+    try {
+      const fetchWithTimeout = Promise.race([
+        fetch('resources/json/config.json', { cache: 'no-store' }),
+        new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
+      ]);
+      const resp = await fetchWithTimeout;
+      if (resp.ok) {
+        const config = await resp.json();
+        if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
+        if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
+        if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
+      }
+    } catch (e) {}
+
+    const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
+    const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
+    gifPromise.then(function(src) {
+      if (src) {
+        loadingGif.src = src;
+        loadingGif.style.display = 'block';
+        if (potionWrapper) potionWrapper.style.display = 'none';
+      }
+    });
+    loaded2Promise.then(function(src) {
+      if (src) window.loaded2GifSrc = src;
+    });
+
+    // 启动 JSON 加载（不等待，让 handleUrlParams 去等待）
+    const jsonPromise = Promise.all([
+      loadAllDataForCategory('all'),
+      loadAllDataForCategory('skin')
+    ]);
+
+    // 处理 URL 参数（内部会等待 JSON 完成）
+    handleUrlParams();
+
+    // 等待 JSON 加载完成，然后加载 MOD 列表
+    await jsonPromise;
+    await loadModData('all');
+
+    // 预加载首页封面（优先级最高）
+    const currentMods = modData.slice(0, ITEMS_PER_PAGE);
+    const coverUrlsFirstPage = [];
+    currentMods.forEach(mod => {
+      if (mod.coverImage) {
+        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+        if (url.trim()) coverUrlsFirstPage.push(url);
+      }
+    });
+    if (coverUrlsFirstPage.length) {
+      preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+    }
+
+    // 预加载首页预览图片（优先级次之）
+    preloadPagePreviewImages(1);
+
+    // 预加载下一页封面（相邻页）
+    preloadAdjacentPage(1);
+
+    // 加载鸡煲立绘（最低优先级）
+    (async function loadLogo() {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          const src = await raceImage(logoUrls);
+          if (src) {
+            logoImg.src = src;
+            logoImg.style.display = 'block';
+            logoTower.style.display = 'none';
+            break;
+          }
+        } catch (err) {
+          if (attempt < 2) await new Promise(r => setTimeout(r, 2000));
+        }
+      }
+    })();
+
+    logoArea.addEventListener('click', function(e) {
+      if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
+        openCharaDetail();
+      }
+    });
+
+    // 如果 handleUrlParams 已经打开了弹窗并隐藏了 loading，这里就不重复隐藏了
+    // 否则，隐藏 loading 并显示主内容（无 RID 或 RID 无效）
+    if (!loadingOverlay.classList.contains('hidden')) {
       loadingOverlay.classList.add('hidden');
       mainContent.style.opacity = '1';
-    } else {
-      showToast('未找到该帖子');
     }
-    history.replaceState({}, document.title, window.location.pathname);
-  }
-}
-
-async function initPage() {
-  let loadingGifUrls = [
-    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
-  ];
-  let logoUrls = [
-    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
-  ];
-  let loaded2GifUrls = [
-    'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
-    'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
-    'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
-  ];
-
-  try {
-    const fetchWithTimeout = Promise.race([
-      fetch('resources/json/config.json', { cache: 'no-store' }),
-      new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
-    ]);
-    const resp = await fetchWithTimeout;
-    if (resp.ok) {
-      const config = await resp.json();
-      if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
-      if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
-      if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
-    }
-  } catch (e) {}
-
-  const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-  const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
-  gifPromise.then(function(src) {
-    if (src) {
-      loadingGif.src = src;
-      loadingGif.style.display = 'block';
-      if (potionWrapper) potionWrapper.style.display = 'none';
-    }
-  });
-  loaded2Promise.then(function(src) {
-    if (src) window.loaded2GifSrc = src;
-  });
-
-  const jsonPromise = Promise.all([
-    loadAllDataForCategory('all'),
-    loadAllDataForCategory('skin')
-  ]);
-
-  handleUrlParams();
-
-  await jsonPromise;
-  await loadModData('all');
-
-  const currentMods = modData.slice(0, ITEMS_PER_PAGE);
-  const coverUrlsFirstPage = [];
-  currentMods.forEach(mod => {
-    if (mod.coverImage) {
-      const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-      if (url.trim()) coverUrlsFirstPage.push(url);
-    }
-  });
-
-  let coverLoadPromise = Promise.resolve();
-  if (coverUrlsFirstPage.length > 0) {
-    coverLoadPromise = preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
   }
 
-  const timeoutPromise = new Promise(resolve => setTimeout(resolve, 5000));
-  await Promise.race([coverLoadPromise, timeoutPromise]);
-
-  loadingOverlay.classList.add('hidden');
-  mainContent.style.opacity = '1';
-
-  preloadPagePreviewImages(1);
-  preloadAdjacentPage(1);
-
-  (async function loadLogo() {
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        const src = await raceImage(logoUrls);
-        if (src) {
-          logoImg.src = src;
-          logoImg.style.display = 'block';
-          logoTower.style.display = 'none';
-          break;
-        }
-      } catch (err) {
-        if (attempt < 2) await new Promise(r => setTimeout(r, 2000));
-      }
-    }
-  })();
-
-  logoArea.addEventListener('click', function(e) {
-    if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
-      openCharaDetail();
-    }
-  });
-}
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
+})();
