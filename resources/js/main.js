@@ -1,4 +1,3 @@
-
 (function() {
 
   function raceImage(urls, timeout = 3500) {
@@ -338,6 +337,7 @@
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
     if (totalPages <= 1) return;
 
+    // 上一页按钮
     const prevBtn = document.createElement('button');
     prevBtn.className = 'pagination-btn';
     prevBtn.innerHTML = '&#8249;';
@@ -351,53 +351,73 @@
     });
     paginationEl.appendChild(prevBtn);
 
+    // 精简页码逻辑：最多显示5个数字按钮
+    // 始终显示第1页和最后1页，当前页附近±1，中间用省略号
     const maxVisible = 5;
-    let startPage = Math.max(1, currentPageNum - Math.floor(maxVisible / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
-    if (endPage - startPage < maxVisible - 1) {
-      startPage = Math.max(1, endPage - maxVisible + 1);
-    }
+    let pagesToShow = [];
 
-    if (startPage > 1) {
-      const first = document.createElement('button');
-      first.className = 'pagination-page';
-      first.textContent = '1';
-      first.addEventListener('click', () => { currentPage = 1; renderPage(1); modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-      paginationEl.appendChild(first);
+    if (totalPages <= maxVisible) {
+      // 页数少，全部显示
+      for (let i = 1; i <= totalPages; i++) pagesToShow.push(i);
+    } else {
+      // 页数多，精简显示
+      pagesToShow.push(1);
+
+      let startPage = Math.max(2, currentPageNum - 1);
+      let endPage = Math.min(totalPages - 1, currentPageNum + 1);
+
+      // 确保中间区域至少有3个数字（如果空间允许）
+      if (currentPageNum <= 3) {
+        startPage = 2;
+        endPage = Math.min(4, totalPages - 1);
+      } else if (currentPageNum >= totalPages - 2) {
+        startPage = Math.max(2, totalPages - 3);
+        endPage = totalPages - 1;
+      }
+
+      // 在开头添加省略号（如果需要）
       if (startPage > 2) {
-        const dots = document.createElement('span');
-        dots.className = 'pagination-dots';
-        dots.textContent = '...';
-        paginationEl.appendChild(dots);
+        pagesToShow.push('...');
+      } else if (startPage === 2) {
+        // 连续，不省略
       }
-    }
 
-    for (let i = startPage; i <= endPage; i++) {
-      const btn = document.createElement('button');
-      btn.className = 'pagination-page' + (i === currentPageNum ? ' active' : '');
-      btn.textContent = i;
-      btn.addEventListener('click', () => {
-        currentPage = i;
-        renderPage(i);
-        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-      paginationEl.appendChild(btn);
-    }
+      // 中间页码
+      for (let i = startPage; i <= endPage; i++) {
+        pagesToShow.push(i);
+      }
 
-    if (endPage < totalPages) {
+      // 在末尾添加省略号（如果需要）
       if (endPage < totalPages - 1) {
+        pagesToShow.push('...');
+      } else if (endPage === totalPages - 1) {
+        // 连续，不省略
+      }
+
+      pagesToShow.push(totalPages);
+    }
+
+    // 渲染页码按钮
+    pagesToShow.forEach(function(item) {
+      if (item === '...') {
         const dots = document.createElement('span');
         dots.className = 'pagination-dots';
         dots.textContent = '...';
         paginationEl.appendChild(dots);
+      } else {
+        const btn = document.createElement('button');
+        btn.className = 'pagination-page' + (item === currentPageNum ? ' active' : '');
+        btn.textContent = item;
+        btn.addEventListener('click', () => {
+          currentPage = item;
+          renderPage(item);
+          modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        paginationEl.appendChild(btn);
       }
-      const last = document.createElement('button');
-      last.className = 'pagination-page';
-      last.textContent = totalPages;
-      last.addEventListener('click', () => { currentPage = totalPages; renderPage(totalPages); modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-      paginationEl.appendChild(last);
-    }
+    });
 
+    // 下一页按钮
     const nextBtn = document.createElement('button');
     nextBtn.className = 'pagination-btn';
     nextBtn.innerHTML = '&#8250;';
@@ -410,9 +430,53 @@
       }
     });
     paginationEl.appendChild(nextBtn);
+
+    // 页码跳转输入框
+    const jumpWrap = document.createElement('div');
+    jumpWrap.className = 'pagination-jump';
+
+    const jumpLabel = document.createElement('span');
+    jumpLabel.className = 'pagination-jump-label';
+    jumpLabel.textContent = '前往';
+
+    const jumpInput = document.createElement('input');
+    jumpInput.className = 'pagination-jump-input';
+    jumpInput.type = 'number';
+    jumpInput.min = 1;
+    jumpInput.max = totalPages;
+    jumpInput.value = '';
+    jumpInput.placeholder = '';
+
+    const jumpTotal = document.createElement('span');
+    jumpTotal.className = 'pagination-jump-total';
+    jumpTotal.textContent = '/ ' + totalPages + ' 页';
+
+    jumpInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        let val = parseInt(jumpInput.value, 10);
+        if (!isNaN(val)) {
+          if (val < 1) val = 1;
+          if (val > totalPages) val = totalPages;
+          currentPage = val;
+          renderPage(val);
+          modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        jumpInput.value = '';
+        jumpInput.blur();
+      }
+    });
+
+    jumpInput.addEventListener('blur', function() {
+      jumpInput.value = '';
+    });
+
+    jumpWrap.appendChild(jumpLabel);
+    jumpWrap.appendChild(jumpInput);
+    jumpWrap.appendChild(jumpTotal);
+    paginationEl.appendChild(jumpWrap);
   }
 
-  function renderPage(pageNum) {
+function renderPage(pageNum) {
     const start = (pageNum - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     const pageData = modData.slice(start, end);
