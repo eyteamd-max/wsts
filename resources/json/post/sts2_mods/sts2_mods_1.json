@@ -1390,9 +1390,9 @@
   },
   {
     "id": "20260521130656862",
-    "title": "粉丝移植-A大的dd1魅魔修女SFW",
+    "title": "A大的dd1魅魔修女-卡结算修复版",
     "category": "skin",
-    "size": "2.43MB",
+    "size": "9.02MB",
     "date": "2026-05-21",
     "badge": "v0.0.1",
     "badgeClass": "star",
@@ -1401,7 +1401,7 @@
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/feba3fb516b5755a.jpg"
     ],
     "images": [],
-    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→静默猎手 / \n❸→猎手皮肤-魅魔修女.zip\n\n---\n\nMOD介绍：\n\n本版本为A大充电群\"魔改圈\"内的粉丝\"jszsjs\"自行移植的静默猎手外观替换MOD。该MOD原为 dd1 (暗黑地牢1) 的弩手模组，现已移植至杀戮尖塔Ⅱ，并更名为\"魅魔修女\"。目前，该模组文件已被A大从充电群中移除，后续大概率不会再更新了",
+    "description": "本版本为A大充电群\"魔改圈\"内的粉丝\"jszsjs\"自行移植的静默猎手外观替换MOD。该MOD原为 dd1 (暗黑地牢1) 的弩手模组，现已移植至杀戮尖塔Ⅱ，并更名为\"魅魔修女\"。目前，该模组文件已被A大从充电群中移除，后续大概率不会再更新了\n\nPS：此版本修复了卡结算的问题（理论上）",
     "author": "anaertailin(作者)，jszsjs(存疑)",
     "authorLinks": [
       {
@@ -1424,12 +1424,12 @@
       "移植版",
       "anaertailin",
       "jszsjs",
-      "夸克"
+      "在线下载"
     ],
     "downloadLinks": [
       {
-        "text": "夸克网盘",
-        "url": "https://pan.quark.cn/s/4223d651f627"
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim410fedce8b244348bb905b8274f436ede1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       }
     ],
     "previewImages": [
