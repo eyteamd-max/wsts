@@ -1084,90 +1084,85 @@
     'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
     'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
   ];
+
   try {
     const fetchWithTimeout = Promise.race([
       fetch('resources/json/config.json', { cache: 'no-store' }),
-      new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, 3000); })
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
     ]);
     const resp = await fetchWithTimeout;
     if (resp.ok) {
       const config = await resp.json();
-      if (config.loadingGifUrls && config.loadingGifUrls.length) loadingGifUrls = config.loadingGifUrls;
-      if (config.logoUrls && config.logoUrls.length) logoUrls = config.logoUrls;
-      if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
+      if (config.loadingGifUrls?.length) loadingGifUrls = config.loadingGifUrls;
+      if (config.logoUrls?.length) logoUrls = config.logoUrls;
+      if (config.loaded2GifUrls?.length) loaded2GifUrls = config.loaded2GifUrls;
     }
   } catch (e) {}
 
-  const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
-  const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
-  gifPromise.then(function(src) {
+  const gifPromise = raceImage(loadingGifUrls).catch(() => null);
+  const loaded2Promise = raceImage(loaded2GifUrls).catch(() => null);
+  gifPromise.then(src => {
     if (src) {
       loadingGif.src = src;
       loadingGif.style.display = 'block';
       if (potionWrapper) potionWrapper.style.display = 'none';
     }
   });
-  loaded2Promise.then(function(src) {
+  loaded2Promise.then(src => {
     if (src) window.loaded2GifSrc = src;
   });
 
   const urlParams = new URLSearchParams(window.location.search);
   const rid = urlParams.get('rid');
-  let ridFound = false;
   let ridTargetMod = null;
 
+  const jsonPromise = Promise.all([
+    loadAllDataForCategory('all'),
+    loadAllDataForCategory('skin')
+  ]);
+
   if (rid) {
-    try {
-      await Promise.all([
-        loadAllDataForCategory('all'),
-        loadAllDataForCategory('skin')
-      ]);
-      ridTargetMod = await performGlobalRidSearch(rid);
-      if (ridTargetMod) {
-        ridFound = true;
-      } else {
-        showToast('未找到该帖子');
-      }
-    } catch (e) {
-      console.error('RID search error', e);
-    }
+    await jsonPromise;
+    ridTargetMod = await performGlobalRidSearch(rid);
   }
 
-  setTimeout(function() {
+  setTimeout(() => {
     loadingOverlay.classList.add('hidden');
     mainContent.style.opacity = '1';
   }, 1000);
 
-  if (ridFound && ridTargetMod) {
+  const loadListAndPreload = async () => {
     await loadModData('all');
+    const currentMods = modData.slice(0, ITEMS_PER_PAGE);
+    const coverUrlsFirstPage = [];
+    currentMods.forEach(mod => {
+      if (mod.coverImage) {
+        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+        if (url.trim()) coverUrlsFirstPage.push(url);
+      }
+    });
+    if (coverUrlsFirstPage.length) {
+      preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+    }
+    preloadPagePreviewImages(1, modData);
+    preloadAdjacentPage(1, modData);
+  };
+
+  if (ridTargetMod) {
+    loadListAndPreload();
     openModal(ridTargetMod);
     history.replaceState({}, document.title, window.location.pathname);
   } else {
-    await loadModData('all');
+    await loadListAndPreload();
+    if (rid) showToast('未找到该帖子');
   }
 
-  const currentMods = modData.slice(0, ITEMS_PER_PAGE);
-  const coverUrlsFirstPage = [];
-  currentMods.forEach(mod => {
-    if (mod.coverImage) {
-      const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-      if (url.trim()) coverUrlsFirstPage.push(url);
-    }
-  });
-  if (coverUrlsFirstPage.length) {
-    preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
-  }
-  preloadPagePreviewImages(1, modData);
-  preloadAdjacentPage(1, modData);
-
-  const logoPromise = (async function loadLogoWithRetry() {
+  const logoPromise = (async () => {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         return await raceImage(logoUrls);
       } catch (err) {
-        if (attempt < 2) {
-          await new Promise(function(resolve) { setTimeout(resolve, 2000); });
-        }
+        if (attempt < 2) await new Promise(resolve => setTimeout(resolve, 2000));
       }
     }
     return null;
@@ -1179,7 +1174,7 @@
     logoTower.style.display = 'none';
   }
 
-  logoArea.addEventListener('click', function(e) {
+  logoArea.addEventListener('click', (e) => {
     if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
       openCharaDetail();
     }
