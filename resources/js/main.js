@@ -63,7 +63,6 @@
       var index = 0;
       var running = 0;
       var total = urls.length;
-
       function next() {
         if (index >= total) {
           if (running === 0) resolve();
@@ -83,7 +82,6 @@
         };
         img.src = url;
       }
-
       for (var i = 0; i < Math.min(concurrency, total); i++) {
         next();
       }
@@ -249,7 +247,6 @@
       if (manifest && manifest[dir]) {
         const rangeStr = manifest[dir];
         const indices = parseManifestRange(rangeStr);
-
         const dataArrays = await Promise.all(indices.map(function(idx) { return loadJsonByManifest(categoryKey, idx); }));
         const allData = dataArrays.flat();
         allSiteData[categoryKey] = allData;
@@ -673,16 +670,13 @@
     searchInput.focus();
   }
 
-  function attachCardSpinner(cardElement, onImageLoaded) {
+  function attachCardSpinner(cardElement) {
     const coverInner = cardElement.querySelector('.mod-cover-inner');
     const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
     if (!coverInner || !coverImg) return;
-
     if (coverImg.complete && coverImg.naturalWidth > 0) {
-      if (onImageLoaded) onImageLoaded();
       return;
     }
-
     const spinner = document.createElement('span');
     spinner.className = 'card-spinner';
     const hideSpinner = function() {
@@ -690,118 +684,13 @@
         spinner.style.display = 'none';
         spinner.remove();
       }
-      if (onImageLoaded) onImageLoaded();
     };
-
     coverImg.addEventListener('load', hideSpinner, { once: true });
     coverImg.addEventListener('error', hideSpinner, { once: true });
-
     setTimeout(function() {
       if (coverImg.complete) hideSpinner();
     }, 500);
-
     coverInner.appendChild(spinner);
-  }
-
-  let currentPageCoverWatcher = null;
-
-  function setupPageCoverWatcher(pageNum, modsOnPage, onAllLoaded) {
-    if (currentPageCoverWatcher) {
-      currentPageCoverWatcher.cleanup();
-      currentPageCoverWatcher = null;
-    }
-    let remaining = modsOnPage.length;
-    if (remaining === 0) {
-      if (onAllLoaded) onAllLoaded();
-      return;
-    }
-    const cleanupFunctions = [];
-    let completed = false;
-    function onOneLoaded() {
-      if (completed) return;
-      remaining--;
-      if (remaining === 0) {
-        completed = true;
-        if (onAllLoaded) onAllLoaded();
-        cleanup();
-      }
-    }
-    function cleanup() {
-      cleanupFunctions.forEach(fn => fn());
-    }
-    const watcher = { cleanup };
-    currentPageCoverWatcher = watcher;
-
-    modsOnPage.forEach(mod => {
-      const card = document.querySelector(`.mod-card[data-mod-id="${mod.id}"]`);
-      if (!card) {
-        onOneLoaded();
-        return;
-      }
-      const coverInner = card.querySelector('.mod-cover-inner');
-      const coverImg = coverInner ? coverInner.querySelector('.mod-cover-img') : null;
-      if (!coverImg) {
-        onOneLoaded();
-        return;
-      }
-      const loadHandler = () => onOneLoaded();
-      const errorHandler = () => onOneLoaded();
-      coverImg.addEventListener('load', loadHandler, { once: true });
-      coverImg.addEventListener('error', errorHandler, { once: true });
-      cleanupFunctions.push(() => {
-        coverImg.removeEventListener('load', loadHandler);
-        coverImg.removeEventListener('error', errorHandler);
-      });
-      if (coverImg.complete) {
-        onOneLoaded();
-      }
-    });
-  }
-
-  let preloadedPages = new Set();
-
-  async function preloadPageCovers(pageNum, modsList) {
-    if (preloadedPages.has(pageNum)) return;
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageMods = modsList.slice(start, end);
-    if (pageMods.length === 0) return;
-    const coverUrls = [];
-    pageMods.forEach(mod => {
-      if (mod.coverImage) {
-        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
-        if (url.trim()) coverUrls.push(url);
-      }
-    });
-    if (coverUrls.length === 0) return;
-    await preloadImagesWithConcurrency(coverUrls, 4);
-    preloadedPages.add(pageNum);
-  }
-
-  async function preloadPagePreviewImages(pageNum, modsList) {
-    const start = (pageNum - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const pageMods = modsList.slice(start, end);
-    if (pageMods.length === 0) return;
-    const previewUrls = [];
-    pageMods.forEach(mod => {
-      if (Array.isArray(mod.previewImages)) {
-        mod.previewImages.slice(0, 4).forEach(item => {
-          const urls = toCandidates(item);
-          if (urls.length && urls[0]) previewUrls.push(urls[0]);
-        });
-      }
-    });
-    if (previewUrls.length === 0) return;
-    await preloadImagesWithConcurrency(previewUrls, 6);
-  }
-
-  async function preloadAdjacentPage(currentPageNum, modsList) {
-    const nextPage = currentPageNum + 1;
-    const totalPages = Math.ceil(modsList.length / ITEMS_PER_PAGE);
-    if (nextPage <= totalPages && !preloadedPages.has(nextPage)) {
-      await preloadPageCovers(nextPage, modsList);
-    }
   }
 
   function renderModCards(dataArray) {
@@ -862,7 +751,109 @@
         tagEl.addEventListener('click', function(e) { e.stopPropagation(); handleTagClick(tagEl.textContent); });
       });
       modGrid.appendChild(card);
-      attachCardSpinner(card, null);
+      attachCardSpinner(card);
+    });
+  }
+
+  let preloadedPages = new Set();
+
+  async function preloadPageCovers(pageNum) {
+    if (preloadedPages.has(pageNum)) return;
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageMods = modData.slice(start, end);
+    if (pageMods.length === 0) return;
+    const coverUrls = [];
+    pageMods.forEach(mod => {
+      if (mod.coverImage) {
+        const url = Array.isArray(mod.coverImage) ? (mod.coverImage[0] || '') : mod.coverImage;
+        if (url.trim()) coverUrls.push(url);
+      }
+    });
+    if (coverUrls.length === 0) return;
+    await preloadImagesWithConcurrency(coverUrls, 4);
+    preloadedPages.add(pageNum);
+  }
+
+  async function preloadPagePreviewImages(pageNum) {
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageMods = modData.slice(start, end);
+    if (pageMods.length === 0) return;
+    const previewUrls = [];
+    pageMods.forEach(mod => {
+      if (Array.isArray(mod.previewImages)) {
+        mod.previewImages.slice(0, 4).forEach(item => {
+          const urls = toCandidates(item);
+          if (urls.length && urls[0]) previewUrls.push(urls[0]);
+        });
+      }
+    });
+    if (previewUrls.length === 0) return;
+    await preloadImagesWithConcurrency(previewUrls, 6);
+  }
+
+  async function preloadAdjacentPage(currentPageNum) {
+    const nextPage = currentPageNum + 1;
+    const totalPages = Math.ceil(modData.length / ITEMS_PER_PAGE);
+    if (nextPage <= totalPages && !preloadedPages.has(nextPage)) {
+      await preloadPageCovers(nextPage);
+    }
+  }
+
+  let currentPageCoverWatcher = null;
+  function setupPageCoverWatcher(pageNum, onAllLoaded) {
+    if (currentPageCoverWatcher) {
+      currentPageCoverWatcher.cleanup();
+      currentPageCoverWatcher = null;
+    }
+    const start = (pageNum - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const pageMods = modData.slice(start, end);
+    let remaining = pageMods.length;
+    if (remaining === 0) {
+      if (onAllLoaded) onAllLoaded();
+      return;
+    }
+    const cleanupFunctions = [];
+    let completed = false;
+    function onOneLoaded() {
+      if (completed) return;
+      remaining--;
+      if (remaining === 0) {
+        completed = true;
+        if (onAllLoaded) onAllLoaded();
+        cleanup();
+      }
+    }
+    function cleanup() {
+      cleanupFunctions.forEach(fn => fn());
+    }
+    const watcher = { cleanup };
+    currentPageCoverWatcher = watcher;
+
+    pageMods.forEach(mod => {
+      const card = document.querySelector(`.mod-card[data-mod-id="${mod.id}"]`);
+      if (!card) {
+        onOneLoaded();
+        return;
+      }
+      const coverImg = card.querySelector('.mod-cover-img');
+      if (!coverImg) {
+        onOneLoaded();
+        return;
+      }
+      const loadHandler = () => onOneLoaded();
+      const errorHandler = () => onOneLoaded();
+      coverImg.addEventListener('load', loadHandler, { once: true });
+      coverImg.addEventListener('error', errorHandler, { once: true });
+      cleanupFunctions.push(() => {
+        coverImg.removeEventListener('load', loadHandler);
+        coverImg.removeEventListener('error', errorHandler);
+      });
+      if (coverImg.complete) {
+        onOneLoaded();
+      }
     });
   }
 
@@ -872,9 +863,8 @@
     const pageData = modData.slice(start, end);
     renderModCards(pageData);
     renderPagination(modData.length, pageNum);
-    const modsList = modData;
-    setupPageCoverWatcher(pageNum, pageData, async () => {
-      await preloadAdjacentPage(pageNum, modsList);
+    setupPageCoverWatcher(pageNum, async () => {
+      await preloadAdjacentPage(pageNum);
     });
   }
 
@@ -989,7 +979,6 @@
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
-      await preloadPagePreviewImages(1, modData);
       return;
     }
     const url = dataSources[categoryKey];
@@ -1012,7 +1001,6 @@
       searchInput.value = '';
       searchDropdown.classList.remove('active');
       renderPage(1);
-      await preloadPagePreviewImages(1, modData);
     } catch (error) {
       modGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;">MOD数据加载失败，请稍后再试</div>';
     }
@@ -1065,6 +1053,8 @@
       const found = await performGlobalRidSearch(rid);
       if (found) {
         openModal(found);
+        loadingOverlay.classList.add('hidden');
+        mainContent.style.opacity = '1';
       } else {
         showToast('未找到该帖子');
       }
@@ -1084,6 +1074,7 @@
       'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
       'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
     ];
+
     try {
       const fetchWithTimeout = Promise.race([
         fetch('resources/json/config.json', { cache: 'no-store' }),
@@ -1097,6 +1088,7 @@
         if (config.loaded2GifUrls && config.loaded2GifUrls.length) loaded2GifUrls = config.loaded2GifUrls;
       }
     } catch (e) {}
+
     const gifPromise = raceImage(loadingGifUrls).catch(function() { return null; });
     const loaded2Promise = raceImage(loaded2GifUrls).catch(function() { return null; });
     gifPromise.then(function(src) {
@@ -1109,19 +1101,21 @@
     loaded2Promise.then(function(src) {
       if (src) window.loaded2GifSrc = src;
     });
-    const jsonLoaded = (async () => {
-      await Promise.all([
-        loadAllDataForCategory('all'),
-        loadAllDataForCategory('skin')
-      ]);
-    })();
-    const loadingDone = await Promise.race([
-      jsonLoaded,
-      new Promise(resolve => setTimeout(resolve, 12000))
+
+    // 启动 JSON 加载（不等待，让 handleUrlParams 去等待）
+    const jsonPromise = Promise.all([
+      loadAllDataForCategory('all'),
+      loadAllDataForCategory('skin')
     ]);
-    loadingOverlay.classList.add('hidden');
-    mainContent.style.opacity = '1';
+
+    // 处理 URL 参数（内部会等待 JSON 完成）
+    handleUrlParams();
+
+    // 等待 JSON 加载完成，然后加载 MOD 列表
+    await jsonPromise;
     await loadModData('all');
+
+    // 预加载首页封面（优先级最高）
     const currentMods = modData.slice(0, ITEMS_PER_PAGE);
     const coverUrlsFirstPage = [];
     currentMods.forEach(mod => {
@@ -1131,34 +1125,44 @@
       }
     });
     if (coverUrlsFirstPage.length) {
-      await preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
+      preloadImagesWithConcurrency(coverUrlsFirstPage, 6);
     }
-    await preloadPagePreviewImages(1, modData);
-    await preloadAdjacentPage(1, modData);
-    const logoPromise = (async function loadLogoWithRetry() {
+
+    // 预加载首页预览图片（优先级次之）
+    preloadPagePreviewImages(1);
+
+    // 预加载下一页封面（相邻页）
+    preloadAdjacentPage(1);
+
+    // 加载鸡煲立绘（最低优先级）
+    (async function loadLogo() {
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
-          return await raceImage(logoUrls);
-        } catch (err) {
-          if (attempt < 2) {
-            await new Promise(function(resolve) { setTimeout(resolve, 2000); });
+          const src = await raceImage(logoUrls);
+          if (src) {
+            logoImg.src = src;
+            logoImg.style.display = 'block';
+            logoTower.style.display = 'none';
+            break;
           }
+        } catch (err) {
+          if (attempt < 2) await new Promise(r => setTimeout(r, 2000));
         }
       }
-      return null;
     })();
-    const logoSrc = await logoPromise;
-    if (logoSrc) {
-      logoImg.src = logoSrc;
-      logoImg.style.display = 'block';
-      logoTower.style.display = 'none';
-    }
+
     logoArea.addEventListener('click', function(e) {
       if (e.target === logoArea || e.target === logoImg || e.target.closest('.logo-img') || e.target.closest('.logo-tower')) {
         openCharaDetail();
       }
     });
-    handleUrlParams();
+
+    // 如果 handleUrlParams 已经打开了弹窗并隐藏了 loading，这里就不重复隐藏了
+    // 否则，隐藏 loading 并显示主内容（无 RID 或 RID 无效）
+    if (!loadingOverlay.classList.contains('hidden')) {
+      loadingOverlay.classList.add('hidden');
+      mainContent.style.opacity = '1';
+    }
   }
 
   if (document.readyState === 'loading') {
