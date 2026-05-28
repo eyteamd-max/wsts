@@ -512,9 +512,8 @@
     gotoInput.setAttribute('aria-label', '输入页码');
 
     var gotoBtn = document.createElement('button');
-    gotoBtn.className = 'pagination-goto-btn';
-    gotoBtn.innerHTML = '';
     gotoBtn.className = 'pagination-goto-btn goto-search-icon';
+    gotoBtn.innerHTML = '';
     gotoBtn.setAttribute('aria-label', '跳转到指定页');
 
     var gotoMobile = document.createElement('button');
