@@ -513,12 +513,13 @@
 
     var gotoBtn = document.createElement('button');
     gotoBtn.className = 'pagination-goto-btn';
-    gotoBtn.textContent = 'Go';
+    gotoBtn.innerHTML = '';
+    gotoBtn.className = 'pagination-goto-btn goto-search-icon';
     gotoBtn.setAttribute('aria-label', '跳转到指定页');
 
     var gotoMobile = document.createElement('button');
-    gotoMobile.className = 'pagination-goto-mobile-trigger';
-    gotoMobile.innerHTML = '⇢';
+    gotoMobile.className = 'pagination-goto-mobile-trigger goto-search-icon';
+    gotoMobile.innerHTML = '';
     gotoMobile.setAttribute('aria-label', '跳转页码');
 
     function doGoto(value) {
