@@ -1476,3 +1476,52 @@ body {
 @media (min-width: 481px) {
   .goto-popup-overlay { display: none !important; }
 }
+.goto-search-icon {
+  position: relative;
+  overflow: visible;
+}
+
+.goto-search-icon::before {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 2.5px solid var(--border-dark);
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+}
+
+.goto-search-icon::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 2.5px;
+  background: var(--border-dark);
+  border-radius: 1px;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 9px;
+  right: 10px;
+}
+
+.goto-search-icon:hover::before {
+  border-color: #c97a7a;
+}
+
+.goto-search-icon:hover::after {
+  background: #c97a7a;
+}
+
+@media (max-width: 480px) {
+  .goto-search-icon::before {
+    width: 11px;
+    height: 11px;
+  }
+
+  .goto-search-icon::after {
+    width: 6px;
+    bottom: 7px;
+    right: 8px;
+  }
+}
