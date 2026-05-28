@@ -1476,58 +1476,14 @@ body {
 @media (min-width: 481px) {
   .goto-popup-overlay { display: none !important; }
 }
-.goto-search-icon {
-  position: relative;
-  overflow: visible;
+.goto-icon-svg {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  display: inline-block;
 }
 
-.goto-search-icon::before {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  border: 2.5px solid var(--border-dark);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-70%, -70%);
-}
-
-.goto-search-icon::after {
-  content: '';
-  display: block;
-  width: 7px;
-  height: 2.5px;
-  background: var(--border-dark);
-  border-radius: 1px;
-  position: absolute;
-  bottom: 11px;
-  right: 10px;
-  transform: rotate(45deg);
-  transform-origin: top left;
-}
-
-.goto-search-icon:hover::before {
-  border-color: #c97a7a;
-}
-
-.goto-search-icon:hover::after {
-  background: #c97a7a;
-}
-
-@media (max-width: 480px) {
-  .goto-search-icon::before {
-    width: 10px;
-    height: 10px;
-    border-width: 2px;
-    transform: translate(-65%, -65%);
-  }
-
-  .goto-search-icon::after {
-    width: 6px;
-    height: 2px;
-    bottom: 8px;
-    right: 7px;
-  }
+.goto-icon-svg-sm {
+  width: 14px;
+  height: 14px;
 }
