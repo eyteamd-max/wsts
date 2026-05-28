@@ -512,13 +512,13 @@
     gotoInput.setAttribute('aria-label', '输入页码');
 
     var gotoBtn = document.createElement('button');
-    gotoBtn.className = 'pagination-goto-btn goto-search-icon';
-    gotoBtn.innerHTML = '';
+    gotoBtn.className = 'pagination-goto-btn';
+    gotoBtn.innerHTML = '<svg class="goto-icon-svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
     gotoBtn.setAttribute('aria-label', '跳转到指定页');
 
     var gotoMobile = document.createElement('button');
-    gotoMobile.className = 'pagination-goto-mobile-trigger goto-search-icon';
-    gotoMobile.innerHTML = '';
+    gotoMobile.className = 'pagination-goto-mobile-trigger';
+    gotoMobile.innerHTML = '<svg class="goto-icon-svg goto-icon-svg-sm" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
     gotoMobile.setAttribute('aria-label', '跳转页码');
 
     function doGoto(value) {
