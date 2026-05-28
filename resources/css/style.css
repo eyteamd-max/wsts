@@ -1483,26 +1483,29 @@ body {
 
 .goto-search-icon::before {
   content: '';
-  display: inline-block;
-  width: 13px;
-  height: 13px;
+  display: block;
+  width: 12px;
+  height: 12px;
   border: 2.5px solid var(--border-dark);
   border-radius: 50%;
-  vertical-align: middle;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -70%);
 }
 
 .goto-search-icon::after {
   content: '';
-  display: inline-block;
+  display: block;
   width: 7px;
   height: 2.5px;
   background: var(--border-dark);
   border-radius: 1px;
-  transform: rotate(45deg);
   position: absolute;
-  bottom: 9px;
+  bottom: 11px;
   right: 10px;
+  transform: rotate(45deg);
+  transform-origin: top left;
 }
 
 .goto-search-icon:hover::before {
@@ -1515,13 +1518,16 @@ body {
 
 @media (max-width: 480px) {
   .goto-search-icon::before {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+    transform: translate(-65%, -65%);
   }
 
   .goto-search-icon::after {
     width: 6px;
-    bottom: 7px;
-    right: 8px;
+    height: 2px;
+    bottom: 8px;
+    right: 7px;
   }
 }
