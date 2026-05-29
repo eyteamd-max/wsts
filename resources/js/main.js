@@ -402,160 +402,151 @@
 
     preloadState.currentPreloadPage = 2;
   }
-  function renderPagination(totalItems, currentPageNum) {
-    paginationEl.innerHTML = '';
-    var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-    if (totalPages <= 1) return;
+      function renderPagination(totalItems, currentPageNum) {
+        paginationEl.innerHTML = '';
+        var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+        if (totalPages <= 1) return;
 
-    function createPageBtn(pageNum, isActive) {
-      var btn = document.createElement('button');
-      btn.className = 'pagination-page' + (isActive ? ' active' : '');
-      btn.textContent = pageNum;
-      btn.addEventListener('click', function () {
-        currentPage = pageNum;
-        renderPage(pageNum);
-        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-      return btn;
-    }
+        paginationEl.style.display = 'flex';
+        paginationEl.style.flexWrap = 'nowrap';
+        paginationEl.style.alignItems = 'center';
+        paginationEl.style.width = '100%';
+        paginationEl.style.maxWidth = '100%';
+        paginationEl.style.boxSizing = 'border-box';
+        paginationEl.style.overflow = 'hidden';
 
-    function createDots() {
-      var dots = document.createElement('span');
-      dots.className = 'pagination-dots';
-      dots.textContent = '...';
-      return dots;
-    }
-
-    var isMobile = window.innerWidth <= 480;
-
-    var prevBtn = document.createElement('button');
-    prevBtn.className = 'pagination-btn';
-    prevBtn.innerHTML = '&#8249;';
-    prevBtn.disabled = currentPageNum <= 1;
-    prevBtn.addEventListener('click', function () {
-      if (currentPageNum > 1) {
-        currentPage = currentPageNum - 1;
-        renderPage(currentPage);
-        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-    paginationEl.appendChild(prevBtn);
-
-    if (isMobile && totalPages > 5) {
-      var pages = [];
-      pages.push(1);
-      if (currentPageNum !== 1) {
-        pages.push('...');
-        pages.push(currentPageNum);
-      }
-      if (currentPageNum !== totalPages) {
-        pages.push('...');
-        pages.push(totalPages);
-      }
-      pages.forEach(function (item) {
-        if (item === '...') {
-          paginationEl.appendChild(createDots());
-        } else {
-          paginationEl.appendChild(createPageBtn(item, item === currentPageNum));
+        function createBtn(type, content, disabled, clickHandler) {
+            var btn = document.createElement('button');
+            btn.className = type;
+            btn.innerHTML = content;
+            btn.style.flexShrink = '1';
+            btn.style.minWidth = '0';
+            if (disabled) btn.disabled = true;
+            if (clickHandler) btn.addEventListener('click', clickHandler);
+            return btn;
         }
-      });
-    } else if (totalPages <= 5) {
-      for (var i = 1; i <= totalPages; i++) {
-        paginationEl.appendChild(createPageBtn(i, i === currentPageNum));
-      }
-    } else {
-      paginationEl.appendChild(createPageBtn(1, 1 === currentPageNum));
 
-      var leftNeighbor = currentPageNum - 1;
-      var rightNeighbor = currentPageNum + 1;
-      var middleSet = new Set();
+        function createPageBtn(pageNum) {
+            return createBtn('pagination-page' + (pageNum === currentPageNum ? ' active' : ''), 
+                pageNum, false, function () {
+                    currentPage = pageNum;
+                    renderPage(pageNum);
+                    modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+        }
 
-      if (leftNeighbor > 1 && leftNeighbor < totalPages) middleSet.add(leftNeighbor);
-      if (currentPageNum > 1 && currentPageNum < totalPages) middleSet.add(currentPageNum);
-      if (rightNeighbor > 1 && rightNeighbor < totalPages) middleSet.add(rightNeighbor);
+        function createDots() {
+            var span = document.createElement('span');
+            span.className = 'pagination-dots';
+            span.textContent = '...';
+            span.style.flexShrink = '1';
+            span.style.minWidth = '0';
+            return span;
+        }
 
-      var middlePages = Array.from(middleSet).sort(function (a, b) { return a - b; });
+        var items = [];
 
-      if (middlePages.length > 0 && middlePages[0] > 2) {
-        paginationEl.appendChild(createDots());
-      }
-      middlePages.forEach(function (p) {
-        paginationEl.appendChild(createPageBtn(p, p === currentPageNum));
-      });
-      if (middlePages.length > 0 && middlePages[middlePages.length - 1] < totalPages - 1) {
-        paginationEl.appendChild(createDots());
-      }
+        items.push(createBtn('pagination-btn', '&#8249;', currentPageNum <= 1, function () {
+            if (currentPageNum > 1) {
+                currentPage--;
+                renderPage(currentPage);
+                modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }));
 
-      paginationEl.appendChild(createPageBtn(totalPages, totalPages === currentPageNum));
+        items.push(createPageBtn(1));
+
+        if (totalPages <= 4) {
+            for (var i = 2; i <= totalPages; i++) {
+                items.push(createPageBtn(i));
+            }
+        } else {
+            if (currentPageNum <= 4) {
+                for (var j = 2; j <= 4; j++) {
+                    items.push(createPageBtn(j));
+                }
+                items.push(createDots());
+                items.push(createPageBtn(totalPages));
+            } else {
+                items.push(createDots());
+                
+                if (currentPageNum - 1 > 1) {
+                    items.push(createPageBtn(currentPageNum - 1));
+                }
+                items.push(createPageBtn(currentPageNum));
+                if (currentPageNum + 1 < totalPages) {
+                    items.push(createPageBtn(currentPageNum + 1));
+                }
+
+                items.push(createDots());
+                items.push(createPageBtn(totalPages));
+            }
+        }
+
+        items.push(createBtn('pagination-btn', '&#8250;', currentPageNum >= totalPages, function () {
+            if (currentPageNum < totalPages) {
+                currentPage++;
+                renderPage(currentPage);
+                modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }));
+
+        items.forEach(function(item) {
+            paginationEl.appendChild(item);
+        });
+
+        var gotoWrap = document.createElement('span');
+        gotoWrap.className = 'pagination-goto';
+        gotoWrap.style.flexShrink = '0';
+        gotoWrap.style.marginLeft = '8px';
+
+        var gotoInput = document.createElement('input');
+        gotoInput.type = 'text';
+        gotoInput.className = 'pagination-goto-input';
+        gotoInput.placeholder = '\\';
+        gotoInput.maxLength = 3;
+        gotoInput.setAttribute('aria-label', '输入页码');
+
+        var gotoBtn = document.createElement('button');
+        gotoBtn.className = 'pagination-goto-btn';
+        gotoBtn.innerHTML = '<svg class="goto-icon-svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
+        gotoBtn.setAttribute('aria-label', '跳转到指定页');
+
+        var gotoMobile = document.createElement('button');
+        gotoMobile.className = 'pagination-goto-mobile-trigger';
+        gotoMobile.innerHTML = '<svg class="goto-icon-svg goto-icon-svg-sm" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
+        gotoMobile.setAttribute('aria-label', '跳转页码');
+
+        function doGoto(value) {
+            var num = parseInt(value, 10);
+            if (isNaN(num) || num < 1 || num > totalPages) {
+                showToast('页码范围：1 ~ ' + totalPages);
+                return;
+            }
+            currentPage = num;
+            renderPage(num);
+            modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            gotoInput.value = '';
+        }
+
+        gotoInput.addEventListener('input', function () {
+            this.value = this.value.replace(/[^\d]/g, '').slice(0, 3);
+        });
+        gotoInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') doGoto(this.value);
+        });
+        gotoBtn.addEventListener('click', function () {
+            doGoto(gotoInput.value);
+        });
+        gotoMobile.addEventListener('click', function () {
+            openGotoPopup(totalPages);
+        });
+
+        gotoWrap.appendChild(gotoInput);
+        gotoWrap.appendChild(gotoBtn);
+        gotoWrap.appendChild(gotoMobile);
+        paginationEl.appendChild(gotoWrap);
     }
-
-    var nextBtn = document.createElement('button');
-    nextBtn.className = 'pagination-btn';
-    nextBtn.innerHTML = '&#8250;';
-    nextBtn.disabled = currentPageNum >= totalPages;
-    nextBtn.addEventListener('click', function () {
-      if (currentPageNum < totalPages) {
-        currentPage = currentPageNum + 1;
-        renderPage(currentPage);
-        modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-    paginationEl.appendChild(nextBtn);
-    var gotoWrap = document.createElement('span');
-    gotoWrap.className = 'pagination-goto';
-
-    var gotoInput = document.createElement('input');
-    gotoInput.type = 'text';
-    gotoInput.className = 'pagination-goto-input';
-    gotoInput.placeholder = totalPages + '';
-    gotoInput.maxLength = 3;
-    gotoInput.setAttribute('aria-label', '输入页码');
-
-    var gotoBtn = document.createElement('button');
-    gotoBtn.className = 'pagination-goto-btn';
-    gotoBtn.innerHTML = '<svg class="goto-icon-svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
-    gotoBtn.setAttribute('aria-label', '跳转到指定页');
-
-    var gotoMobile = document.createElement('button');
-    gotoMobile.className = 'pagination-goto-mobile-trigger';
-    gotoMobile.innerHTML = '<svg class="goto-icon-svg goto-icon-svg-sm" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
-    gotoMobile.setAttribute('aria-label', '跳转页码');
-
-    function doGoto(value) {
-      var num = parseInt(value, 10);
-      if (isNaN(num) || num < 1 || num > totalPages) {
-        showToast('页码范围：1 ~ ' + totalPages);
-        return;
-      }
-      currentPage = num;
-      renderPage(num);
-      modGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      gotoInput.value = '';
-    }
-
-    gotoInput.addEventListener('input', function () {
-      this.value = this.value.replace(/[^\d]/g, '').slice(0, 3);
-    });
-
-    gotoInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        doGoto(this.value);
-      }
-    });
-
-    gotoBtn.addEventListener('click', function () {
-      doGoto(gotoInput.value);
-    });
-
-    gotoMobile.addEventListener('click', function () {
-      openGotoPopup(totalPages);
-    });
-
-    gotoWrap.appendChild(gotoInput);
-    gotoWrap.appendChild(gotoBtn);
-    gotoWrap.appendChild(gotoMobile);
-    paginationEl.appendChild(gotoWrap);
-  }
 
   function openGotoPopup(totalPages) {
     var existing = document.getElementById('gotoPopupOverlay');
@@ -1300,15 +1291,16 @@
   }
   async function initPage() {
     var loadingGifUrls = [
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded.gif'
+      'http://shp.qpic.cn/collector/1976464052/8ca28b73-c355-4abe-92e8-d4da82b9c560/0',
+      'https://p.qpic.cn/psn_labels/ayJapABWAwW4hmBFXiaqn7icrqSOuPYeSRQw4iaPl6ZCFxU66CiaGkhEicLCnEibnfSRX2T4Zhze15Rbg/0'
     ];
     var logoUrls = [
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/Lihui.gif'
+      'http://shp.qpic.cn/collector/1976464052/96cdbd3e-dbfb-4d1e-894e-a213de625f4b/0',
+      'http://shp.qpic.cn/collector/2716502452/2819511f-0d0a-440d-9f45-cd666ec577d8/0'
     ];
     var loaded2GifUrls = [
       'http://shp.qpic.cn/collector/1976464052/35195f23-993a-4bae-a95b-b01054c9aa2c/0',
-      'https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif',
-      'https://cdn.jsdelivr.net/gh/eyteamd-max/HTML-full-linked-html-/loaded_2.gif'
+      'https://p.qpic.cn/psn_labels/ayJapABWAwW4hmBFXiaqn7icrqSOuPYeSRb8kvrUia3vonmc1Qke2xRzZticdf6bkIGYzicc43F7x6RI/0'
     ];
 
     try {
