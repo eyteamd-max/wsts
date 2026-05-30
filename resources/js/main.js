@@ -1,4 +1,105 @@
 (function () {
+  var VideoLoadQueue = {
+    maxConcurrent: 2,
+    running: 0,
+    queue: [],
+    taskIdCounter: 0,
+    activeTasks: {},
+    enqueue: function (taskFn) {
+      var taskId = ++this.taskIdCounter;
+      var self = this;
+      return new Promise(function (resolve, reject) {
+        self.activeTasks[taskId] = { resolve: resolve, reject: reject, cancelled: false };
+        self.queue.push({
+          taskId: taskId,
+          run: function () {
+            if (!self.activeTasks[taskId] || self.activeTasks[taskId].cancelled) {
+              delete self.activeTasks[taskId];
+              self.running--;
+              self._next();
+              return;
+            }
+            taskFn().then(function (result) {
+              if (!self.activeTasks[taskId]) { self.running--; self._next(); return; }
+              if (self.activeTasks[taskId].cancelled) { delete self.activeTasks[taskId]; self.running--; self._next(); return; }
+              self.activeTasks[taskId].resolve(result);
+              delete self.activeTasks[taskId];
+              self.running--;
+              self._next();
+            }).catch(function (err) {
+              if (!self.activeTasks[taskId]) { self.running--; self._next(); return; }
+              if (self.activeTasks[taskId].cancelled) { delete self.activeTasks[taskId]; self.running--; self._next(); return; }
+              self.activeTasks[taskId].reject(err);
+              delete self.activeTasks[taskId];
+              self.running--;
+              self._next();
+            });
+          }
+        });
+        self._next();
+      });
+    },
+    _next: function () {
+      while (this.running < this.maxConcurrent && this.queue.length > 0) {
+        var task = this.queue.shift();
+        this.running++;
+        task.run();
+      }
+    },
+    cancelAll: function () {
+      this.queue = [];
+      for (var id in this.activeTasks) {
+        if (this.activeTasks.hasOwnProperty(id)) {
+          this.activeTasks[id].cancelled = true;
+        }
+      }
+    }
+  };
+
+  var ImageLoadQueue = {
+    maxConcurrent: 4,
+    running: 0,
+    queue: [],
+    enqueue: function (taskFn) {
+      var self = this;
+      return new Promise(function (resolve, reject) {
+        self.queue.push({ fn: taskFn, resolve: resolve, reject: reject });
+        self._next();
+      });
+    },
+    _next: function () {
+      var self = this;
+      while (self.running < self.maxConcurrent && self.queue.length > 0) {
+        var item = self.queue.shift();
+        self.running++;
+        item.fn().then(function (result) {
+          item.resolve(result);
+          self.running--;
+          self._next();
+        }).catch(function (err) {
+          item.reject(err);
+          self.running--;
+          self._next();
+        });
+      }
+    }
+  };
+
+  var pendingVideos = [];
+  var videoLoadGeneration = 0;
+  var renderSessionId = 0;
+
+  function cleanupPendingVideos() {
+    if (pendingVideos.length === 0) return;
+    var videos = pendingVideos.slice();
+    pendingVideos = [];
+    videos.forEach(function (v) {
+      v.onloadedmetadata = v.onloadeddata = v.onerror = null;
+      v.removeAttribute('src');
+      v.load();
+    });
+  }
+
   function raceImage(urls, timeout) {
     timeout = timeout || 3500;
     if (!urls || urls.length === 0) return Promise.reject('no urls');
@@ -43,33 +144,40 @@
     var promises = urls.map(function (url) {
       return new Promise(function (resolve, reject) {
         var video = document.createElement('video');
-        video.preload = 'auto';
+        video.preload = 'metadata';
         video.muted = true;
         video.playsInline = true;
 
         var timer = setTimeout(function () {
+          var pIdx = pendingVideos.indexOf(video);
+          if (pIdx !== -1) pendingVideos.splice(pIdx, 1);
           reject(new Error('video load stalled'));
-        }, 8000);
+        }, 5000);
 
-        video.onloadeddata = function () {
+        video.onloadedmetadata = function () {
           clearTimeout(timer);
+          var pIdx = pendingVideos.indexOf(video);
+          if (pIdx !== -1) pendingVideos.splice(pIdx, 1);
           resolve({ url: url, video: video });
         };
         video.onerror = function () {
           clearTimeout(timer);
+          var pIdx = pendingVideos.indexOf(video);
+          if (pIdx !== -1) pendingVideos.splice(pIdx, 1);
           reject(new Error('video load failed'));
         };
 
         video.src = url;
         videos.push(video);
+        pendingVideos.push(video);
       });
     });
 
     return Promise.any(promises).then(function (result) {
       videos.forEach(function (v) {
         if (v !== result.video) {
-          v.onloadeddata = v.onerror = null;
-          v.src = '';
+          v.onloadedmetadata = v.onerror = null;
+          v.removeAttribute('src');
           v.load();
         }
       });
@@ -78,11 +186,17 @@
       cleanVideo.muted = true;
       cleanVideo.playsInline = true;
       cleanVideo.preload = 'metadata';
+
+      result.video.onloadedmetadata = result.video.onerror = null;
+      result.video.removeAttribute('src');
+      result.video.load();
+
       return cleanVideo;
     }).catch(function (e) {
       videos.forEach(function (v) {
-        v.onloadeddata = v.onerror = null;
-        v.src = '';
+        v.onloadedmetadata = v.onerror = null;
+        v.removeAttribute('src');
+        v.load();
       });
       throw e;
     });
@@ -647,11 +761,14 @@
 
   async function raceVideoWithRetry(urls, maxRetries) {
     maxRetries = maxRetries || 2;
+    var myGeneration = videoLoadGeneration;
     var lastError;
     for (var attempt = 0; attempt <= maxRetries; attempt++) {
+      if (videoLoadGeneration !== myGeneration) throw new Error('cancelled');
       try {
         return await raceVideo(urls);
       } catch (err) {
+        if (videoLoadGeneration !== myGeneration) throw new Error('cancelled');
         lastError = err;
         if (attempt < maxRetries) {
           await new Promise(function (r) { setTimeout(r, 500); });
@@ -677,6 +794,11 @@
   }
 
   function renderPreviewContent() {
+    renderSessionId++;
+    videoLoadGeneration++;
+    VideoLoadQueue.cancelAll();
+    cleanupPendingVideos();
+
     if (!currentMod) {
       previewContentArea.innerHTML = '';
       return;
@@ -703,6 +825,8 @@
     previewContentArea.innerHTML = '';
     previewContentArea.appendChild(grid);
 
+    var mySessionId = renderSessionId;
+
     var placeholders = items.map(function () {
       var ph = document.createElement('div');
       ph.className = 'preview-image-item';
@@ -716,14 +840,18 @@
     await Promise.allSettled(
       items.map(function (item, idx) {
         var urls = toCandidates(item);
-        return raceImageWithRetry(urls, 2).then(function (url) {
+        return ImageLoadQueue.enqueue(function () {
+          return raceImageWithRetry(urls, 2);
+        }).then(function (url) {
+          if (renderSessionId !== mySessionId) return;
           var img = document.createElement('img');
           img.src = url;
           img.className = 'preview-image-item';
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', function () { openLightbox(url); });
-          grid.replaceChild(img, placeholders[idx]);
+          if (placeholders[idx].parentNode) grid.replaceChild(img, placeholders[idx]);
         }).catch(function () {
+          if (renderSessionId !== mySessionId) return;
           placeholders[idx].textContent = '加载失败';
         });
       })
@@ -741,7 +869,9 @@
     previewContentArea.innerHTML = '';
     previewContentArea.appendChild(list);
 
-    items.forEach(function (item) {
+    var mySessionId = renderSessionId;
+
+    var videoPromises = items.map(function (item) {
       var ph = document.createElement('div');
       ph.className = 'preview-video-item';
       ph.style.background = '#f0f0f0';
@@ -763,18 +893,29 @@
 
       if (urls.length === 0) {
         ph.textContent = '视频链接缺失';
-        return;
+        return Promise.resolve();
       }
 
-      raceVideoWithRetry(urls).then(function (video) {
+      var enqueueTime = Date.now();
+
+      return VideoLoadQueue.enqueue(function () {
+        if (renderSessionId !== mySessionId) return Promise.reject(new Error('cancelled'));
+        var queueWaitMs = Date.now() - enqueueTime;
+        if (queueWaitMs > 30000) return Promise.reject(new Error('video total timeout'));
+        return raceVideoWithRetry(urls);
+      }).then(function (video) {
+        if (renderSessionId !== mySessionId) return;
         video.className = 'preview-video-item';
         video.controls = true;
         if (item.poster) video.poster = item.poster;
-        list.replaceChild(video, ph);
+        if (ph.parentNode) list.replaceChild(video, ph);
       }).catch(function () {
+        if (renderSessionId !== mySessionId) return;
         ph.textContent = '视频加载失败';
       });
     });
+
+    await Promise.allSettled(videoPromises);
   }
 
   previewImagesBtn.addEventListener('click', function () {
@@ -862,7 +1003,7 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/\n/g, '<br>');
-    var urlRegex = /(https?:\/\/[^\s<<"]+)/g;
+    var urlRegex = /(https?:\/\/[^\s<"]+)/g;
     desc = desc.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer" class="desc-link">$1</a>');
     modalDescText.innerHTML = desc;
     modalDescText.classList.remove('expanded');
@@ -933,11 +1074,16 @@
     }, 50);
   }
   function closeModal() {
+    videoLoadGeneration++;
+    renderSessionId++;
+    VideoLoadQueue.cancelAll();
+    cleanupPendingVideos();
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
     currentMod = null;
     activePreviewTab = null;
     ridDropdown.style.display = 'none';
+    previewContentArea.innerHTML = '';
     var modalCoverImg = document.getElementById('modalCoverImg');
     if (modalCoverImg) {
       modalCoverImg.src = '';
@@ -1038,7 +1184,7 @@
             '<div class="mod-cover-gradient" style="background:' + mod.coverGradient + ';"></div>' +
             '<img src="' + imgSrc + '" alt="' + mod.title + '" class="mod-cover-img"' +
               ' style="position:absolute; width:100%; height:100%; ' + imgStyle + ' z-index:2; border-radius:inherit;"' +
-              ' onerror="this.onerror=null; this.src=\'data:image/svg+xml;charset=UTF-8,' +
+              ' onerror="this.onerror=null; this.src=\'' +
               encodeURIComponent('<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 48 48\' fill=\'none\' stroke=\'%239a92a5\' stroke-width=\'3\'><circle cx=\'24\' cy=\'24\' r=\'20\'/><path d=\'M24 16v12\'/><circle cx=\'24\' cy=\'32\' r=\'2\' fill=\'%239a92a5\'/></svg>') +
               '\'; this.style.opacity=0.4;">' +
           '</div>' +
