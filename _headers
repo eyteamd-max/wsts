@@ -1,0 +1,17 @@
+/
+  Cache-Control: no-cache
+
+/resources/css/*
+  Cache-Control: public, max-age=604800
+
+/resources/js/*
+  Cache-Control: public, max-age=604800
+
+/resources/json/config.json
+  Cache-Control: public, max-age=86400
+
+/resources/json/*/manifest.json
+  Cache-Control: no-store
+
+/resources/json/post/**/*.json
+  Cache-Control: public, max-age=300
