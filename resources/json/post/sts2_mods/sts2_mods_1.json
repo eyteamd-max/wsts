@@ -430,54 +430,6 @@
     ]
   },
   {
-    "id": "20260526233100958",
-    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
-    "category": "skin",
-    "size": "43.30MB",
-    "date": "2026-05-26",
-    "badge": "v2_0.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/2561b35b-2260-43af-b402-ceb423e7d8e3/0"
-    ],
-    "images": [],
-    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2\n\nGitHub项目源码：\nhttps://github.com/heshisan789-bot/STS2-Guzhenren-mod",
-    "author": "荷拾叁",
-    "authorLinks": [
-      {
-        "text": "bilibili",
-        "url": "https://b23.tv/efSUWup"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "蛊真人",
-      "古月方源",
-      "荷拾叁",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "[主体]模组下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b53a98b756be4f4191f0d2229b59be7a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "所需前置[前置]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
-      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
-      "http://shp.qpic.cn/collector/1976464052/e8dee9b0-130b-4381-9f26-d535f203d1ac/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1cQVT6ZEvJ/&type=mp4"
-    ]
-  },
-  {
     "id": "20260526193258464",
     "title": "Boss娘化-永世沙漏の娘化皮肤",
     "category": "skin",
