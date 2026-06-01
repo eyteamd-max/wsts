@@ -1,5 +1,55 @@
 [
   {
+    "id": "20260601090139746",
+    "title": "A大骨妹-亡灵契约师-选人大图动态版",
+    "category": "skin",
+    "size": "4.78MB",
+    "date": "2026-06-01",
+    "badge": "v0.8",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/b33d32d5-7bea-4563-baf5-37fb70d85e8e/0"
+    ],
+    "images": [],
+    "description": "这是 anaertailin（A大）发布的亡灵契约师角色替换 MOD，详情请看预览视频和预览图片",
+    "author": "anaertailin（A大）",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/TSlqNJh"
+      },
+      {
+        "text": "爱发电",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换",
+      "anaertailin",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz5bcd7f3188574180814daaf498c5c930?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/5c24a757-22a0-4c6b-b22c-041f79714755/0",
+      "http://shp.qpic.cn/collector/1976464052/54d7b33e-1470-4e0a-8642-62cc58b74705/0",
+      "http://shp.qpic.cn/collector/1976464052/6f34b7f9-3565-4a2c-be9f-15b3603250b2/0",
+      "http://shp.qpic.cn/collector/1976464052/437a0ff7-d266-4f5b-af0e-71ca48573158/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1pi9eBNEMx/&type=mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/bd903312872f4fb1.mp4"
+    ]
+  },
+  {
     "id": "20260531121801583",
     "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
     "category": "skin",
