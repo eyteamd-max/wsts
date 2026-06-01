@@ -1,5 +1,62 @@
 [
   {
+    "id": "20260601194426119",
+    "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
+    "category": "skin",
+    "size": "36.65MB",
+    "date": "2026-06-01",
+    "badge": "v2.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/df9aedd2-a871-466c-bc1a-67c2d22ff05f/0"
+    ],
+    "images": [],
+    "description": "蕾忍宗刻意路过的忍者\n通过蕾克拉驱动忍术和科学忍具\n听说尖塔再次开放了，于是决定再来打打看\n\n\nPS：\n喜报，现在移动端也可以正常加载蕾忍了\n运行需求：前置BaseLib v3.0.6 / 本体 v0.103.3",
+    "author": "命莲寺上单",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/2LaJNWm"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "蕾忍",
+      "蕾忍宗",
+      "新增角色",
+      "命莲寺上单",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组下载[本体]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgze5e09cb515cb4e32ad9d73d4db11400d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "所需前置[前置]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz0cb677cab88943c9808465cc5be9ca53?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/ec5c16f1-5d29-4841-9636-72a2bcdfac72/0",
+      "http://shp.qpic.cn/collector/1976464052/e3342c15-a5de-44eb-8be5-2571f6a84c34/0",
+      "http://shp.qpic.cn/collector/1976464052/88e51138-8d14-4f19-af12-8f3a60c31e46/0",
+      "http://shp.qpic.cn/collector/1976464052/4bd02ec0-957e-460c-bab8-7d959b103526/0",
+      "http://shp.qpic.cn/collector/1976464052/1ed31da8-4b0a-42de-9231-963ac1fead68/0",
+      "http://shp.qpic.cn/collector/1976464052/509d04fe-b63b-4730-bb57-3fd734ad59c1/0",
+      "http://shp.qpic.cn/collector/1976464052/517e44b7-7887-4f7e-b703-b13a64cf3138/0",
+      "http://shp.qpic.cn/collector/1976464052/1412e1f9-da92-4440-b8c1-0d3896baede5/0",
+      "http://shp.qpic.cn/collector/1976464052/6d5a215a-ab91-4957-a83f-04d77943219c/0",
+      "http://shp.qpic.cn/collector/1976464052/ffaa1f50-2ff5-40b4-adf6-cda01feb8574/0",
+      "http://shp.qpic.cn/collector/1976464052/e1a5e453-d07c-48d9-9b55-6bcc573b5e27/0",
+      "http://shp.qpic.cn/collector/1976464052/df9aedd2-a871-466c-bc1a-67c2d22ff05f/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1Y59eBJEAn/&type=mp4"
+    ]
+  },
+  {
     "id": "20260601090139746",
     "title": "A大骨妹-亡灵契约师-选人小图小头像版",
     "category": "skin",
