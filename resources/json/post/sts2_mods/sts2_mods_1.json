@@ -109,12 +109,12 @@
     ]
   },
   {
-    "id": "20260531121801583",
+    "id": "20260603134124400",
     "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
     "category": "skin",
-    "size": "90.45MB",
-    "date": "2026-05-31",
-    "badge": "v0.0.6",
+    "size": "90.83MB",
+    "date": "2026-06-03",
+    "badge": "v0.0.7",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
@@ -140,7 +140,7 @@
     "downloadLinks": [
       {
         "text": "模组下载[主体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6ce8fefa178f472c9fd04d6302ea8f8b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7d2ba84de9d04c93817ee7f72c1850dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       },
       {
         "text": "所需前置[前置]",
@@ -154,7 +154,7 @@
       "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
     ],
     "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1cQVT6ZEvJ/&type=mp4"
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
     ]
   },
   {
@@ -900,12 +900,16 @@
     ],
     "downloadLinks": [
       {
-        "text": "beta最新版",
+        "text": "v0.103.2最版[推荐]",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       },
       {
-        "text": "v0.103.2兼容版",
+        "text": "v0.103.2兼容版[备选]",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "N网下载[历史与最新版]",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/859"
       }
     ],
     "previewImages": [
