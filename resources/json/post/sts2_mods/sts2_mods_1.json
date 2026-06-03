@@ -1,5 +1,48 @@
 [
   {
+    "id": "20260604004917269",
+    "title": "莫德凯撒MOD-两度被杀 三度重生...",
+    "category": "skin",
+    "size": "101.80MB",
+    "date": "2026-06-04",
+    "badge": "v0.1.8",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/90c9bef4-0cb8-407b-83fe-d1290fe341d1/0"
+    ],
+    "images": [],
+    "description": "MOD调整介绍v0.1.8：\n现在莫德凯撒时间线解锁会在对局结束后提示并要求解锁后才能进行其他行为了\n\n现在莫德凯撒能够存储自己的一些进度了，当前存储的有：最高进阶，时间线解锁，当你卸载mod时，这些存档仍然留在你的存档文件夹中，除非你将拥有莫德凯撒进度的存档进行删除（比如说原游戏存档3打了个进阶10然后给存档3删了，mod的进度存档也会跟着删除）（目前支持云存档）\n\n不灭之身现在有最高层数限制了：999999",
+    "author": "雪丶我",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/IiLTWxV"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "莫德凯撒",
+      "新增角色",
+      "雪丶我",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1143c3ff3b1d4edabf866e713f5e94dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/0098eca3-9012-4f7f-8e01-a791018ba50e/0",
+      "http://shp.qpic.cn/collector/1976464052/a764fbdb-2f61-41c9-b79f-47334d257dc6/0",
+      "http://shp.qpic.cn/collector/1976464052/837d8016-b84a-4783-86c0-b9f04c357af5/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1SYdaBLEwh/&type=mp4"
+    ]
+  },
+  {
     "id": "20260603192403392",
     "title": "建筑师MOD-第4章节最终关卡",
     "category": "skin",
