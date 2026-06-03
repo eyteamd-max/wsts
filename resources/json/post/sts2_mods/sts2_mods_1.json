@@ -1,5 +1,106 @@
 [
   {
+    "id": "20260603192403392",
+    "title": "建筑师MOD-第4章节最终关卡",
+    "category": "skin",
+    "size": "8.16MB",
+    "date": "2026-06-03",
+    "badge": "v0.1.2e",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0"
+    ],
+    "images": [],
+    "description": "新增自定义章节，包含全新事件和一场策略性十足的史诗级 Boss 战。现在，您将有更多机会使用您的终局卡组！\n\n概要 ↴\n在第 3 幕结束后，即可进入第 4 幕 （无需任何条件），其中包括一场极具策略性的 Boss 战。\n第四幕死亡没有惩罚。角色属性和游戏历史记录有单独的第四幕切换开关。\n游玩第四幕 可以获得更多经验值，用于解锁时间线。\n\n平衡 ↴\n第一幕至第三幕不变\n难度会根据玩家人数、第四幕难度设置以及略微的飞升等级而调整。",
+    "author": "iKenster",
+    "authorLinks": [
+      {
+        "text": "N网主页",
+        "url": "https://www.nexusmods.com/profile/iKenster"
+      },
+      {
+        "text": "YouTube",
+        "url": "https://youtube.com/@ikenster-q3n"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "建筑师",
+      "BOSS",
+      "玩法扩展",
+      "iKenster",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz8c73083328e04628a2a8b860a125fa0e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/088c9693-73b5-4491-b414-9810848a2dbb/0",
+      "http://shp.qpic.cn/collector/1976464052/3fe12934-5ff0-416d-8389-a02c42f5a945/0",
+      "http://shp.qpic.cn/collector/1976464052/a2f8139e-e608-44f2-afc6-8f2b88a8c699/0",
+      "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0",
+      "http://shp.qpic.cn/collector/1976464052/d0772f6f-799b-4071-ba5f-7791aaa3dbd1/0",
+      "http://shp.qpic.cn/collector/1976464052/b017122b-5cf8-4da2-9957-ef68f8cd770a/0"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/d93811672a36a8f8.mp4",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1VFwVzmEjG/&type=mp4"
+    ]
+  },
+  {
+    "id": "20260603134124400",
+    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
+    "category": "skin",
+    "size": "90.83MB",
+    "date": "2026-06-03",
+    "badge": "v0.0.7",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/ded4b62c-6d46-4c80-8100-9cd71484f210/0"
+    ],
+    "images": [],
+    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2\n\nGitHub项目源码：\nhttps://github.com/heshisan789-bot/STS2-Guzhenren-mod",
+    "author": "荷拾叁",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/efSUWup"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "蛊真人",
+      "古月方源",
+      "荷拾叁",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组下载[主体]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7d2ba84de9d04c93817ee7f72c1850dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "所需前置[前置]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/6584eef9-5f46-4264-bd21-659214e7d17f/0",
+      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
+      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
+      "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
+    ]
+  },
+  {
     "id": "20260601194426119",
     "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
     "category": "skin",
@@ -106,55 +207,6 @@
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/0c5b46007217b160.mp4",
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/422d2716e481f74e.mp4",
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/31e83d336528775f.mp4"
-    ]
-  },
-  {
-    "id": "20260603134124400",
-    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
-    "category": "skin",
-    "size": "90.83MB",
-    "date": "2026-06-03",
-    "badge": "v0.0.7",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/ded4b62c-6d46-4c80-8100-9cd71484f210/0"
-    ],
-    "images": [],
-    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2\n\nGitHub项目源码：\nhttps://github.com/heshisan789-bot/STS2-Guzhenren-mod",
-    "author": "荷拾叁",
-    "authorLinks": [
-      {
-        "text": "bilibili",
-        "url": "https://b23.tv/efSUWup"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "蛊真人",
-      "古月方源",
-      "荷拾叁",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组下载[主体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7d2ba84de9d04c93817ee7f72c1850dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "所需前置[前置]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/6584eef9-5f46-4264-bd21-659214e7d17f/0",
-      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
-      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
-      "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
     ]
   },
   {
