@@ -105,10 +105,22 @@
         .live-row { will-change: transform; }
 
         .footer-text {
+            display: block;
+            width: 100%;
             white-space: nowrap;
-            font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+            text-align: center;
+            text-decoration: none;
+            transition: color .15s ease;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        .footer-text:hover {
+            color: #64748b;
+        }
+
+        #top-status p {
+            transition: font-size .3s ease;
         }
     </style>
 </head>
@@ -218,7 +230,7 @@
     </div>
 
     <footer class="text-center anim-fade" style="animation-delay:.2s">
-        <p class="footer-text text-slate-400 leading-relaxed">GitHub Releases 解析器 / STS2娘化MOD站 © 2026 壹个屑猫猫</p>
+        <a href="../../index.html" class="footer-text text-slate-400 leading-relaxed">GitHub Releases 解析器 / STS2娘化MOD站 © 2026 壹个屑猫猫</a>
     </footer>
 
 </div>
@@ -271,6 +283,71 @@ function parseGitHubRepoUrl(url) {
     return null;
 }
 
+function autoFitTopStatus() {
+    var el = document.getElementById('top-status');
+    if (!el) return;
+    var p = el.querySelector('p');
+    if (!p) return;
+
+    if (_segs.length < 2) {
+        p.style.fontSize = '';
+        return;
+    }
+
+    var cw = el.clientWidth;
+    if (cw < 50) return;
+
+    var fullText = '';
+    for (var i = 0; i < _segs.length; i++) {
+        if (i > 0) fullText += ' / ';
+        fullText += _segs[i].text;
+    }
+    if (!fullText) return;
+
+    var m = document.createElement('span');
+    m.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-size:14px;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;';
+    m.textContent = fullText;
+    el.appendChild(m);
+    var tw = m.offsetWidth;
+    el.removeChild(m);
+
+    if (tw <= 0) return;
+
+    if (tw <= cw * 0.95) {
+        var fs = 14 * cw * 0.92 / tw;
+        fs = Math.min(17, Math.max(12, fs));
+        p.style.fontSize = fs.toFixed(1) + 'px';
+        return;
+    }
+
+    var linesNeeded = tw / cw;
+    var targetLines = linesNeeded <= 2.3 ? 2 : 3;
+    var fs = 14 * targetLines * cw * 0.88 / tw;
+    fs = Math.max(11, Math.min(17, fs));
+    p.style.fontSize = fs.toFixed(1) + 'px';
+}
+
+function autoFitFooter() {
+    var footer = document.querySelector('.footer-text');
+    if (!footer) return;
+
+    var cw = footer.clientWidth;
+    if (cw < 50) return;
+
+    var m = document.createElement('span');
+    m.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-size:14px;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;';
+    m.textContent = footer.textContent;
+    document.body.appendChild(m);
+    var tw = m.offsetWidth;
+    document.body.removeChild(m);
+
+    if (tw <= 0) return;
+
+    var fs = 14 * cw * 0.96 / tw;
+    fs = Math.max(9, Math.min(18, fs));
+    footer.style.fontSize = fs.toFixed(1) + 'px';
+}
+
 var _segs = [], _vis = 0, _timer = null, _phase = 'latency';
 
 function esc(s) {
@@ -292,6 +369,7 @@ function initTopStatus() {
     _phase = 'latency';
     clearTimeout(_timer);
     renderTop();
+    autoFitTopStatus();
 }
 
 function ensureSeg(idx) {
@@ -340,6 +418,7 @@ function fastTypeToEnd() {
                 _timer = setTimeout(step, 36);
             } else {
                 renderTop();
+                autoFitTopStatus();
                 resolve();
             }
         })();
@@ -348,11 +427,13 @@ function fastTypeToEnd() {
 
 function addSegAndType(text, cls) {
     _segs.push({text: text, cls: cls || 'text-slate-400'});
+    autoFitTopStatus();
     return fastTypeToEnd();
 }
 
 function addSeg(text, cls) {
     _segs.push({text: text, cls: cls || 'text-slate-400'});
+    autoFitTopStatus();
 }
 
 function renderTop() {
@@ -382,6 +463,20 @@ function renderTop() {
     }
     html += '</p>';
     c.innerHTML = html;
+
+    var p = c.querySelector('p');
+    if (p && _segs.length >= 2) {
+        var currentFs = c.dataset._afs;
+        if (currentFs) p.style.fontSize = currentFs;
+    }
+}
+
+function saveTopFontSize() {
+    var el = document.getElementById('top-status');
+    var p = el ? el.querySelector('p') : null;
+    if (p && p.style.fontSize) {
+        el.dataset._afs = p.style.fontSize;
+    }
 }
 
 var _t0 = 0, _tid = null;
@@ -931,6 +1026,7 @@ async function runAllTests() {
     ensureSeg(0);
 
     addSeg('正在测试线路稳定性...', 'text-slate-400');
+    autoFitTopStatus();
     _phase = 'speed';
     var avail = proxyResults.filter(function(r) { return r.latencySuccess && !r._skip; });
     if (avail.length === 0) {
@@ -940,8 +1036,10 @@ async function runAllTests() {
         document.getElementById('progress-bar').style.width = '100%';
         setStatus('测速完成（无可用线路）');
         ensureSeg(1);
+        autoFitTopStatus();
         await addSegAndType('解析成功 ! !', 'text-red-400');
         await addSegAndType('本次耗时 ' + totalTime + 's', 'text-slate-400');
+        saveTopFontSize();
         renderFinal(totalTime);
         isTesting = false;
         return;
@@ -979,6 +1077,8 @@ async function runAllTests() {
     await addSegAndType('解析成功 ! !', goodOnes.length > 0 ? 'text-emerald-500' : 'text-red-400');
     await addSegAndType('本次耗时 ' + totalTime + 's', 'text-slate-400');
     await addSegAndType('如下载缓慢，请切换下方其他线路', 'text-indigo-400');
+    saveTopFontSize();
+    autoFitTopStatus();
     await new Promise(function(r) { setTimeout(r, 300); });
     renderFinal(totalTime);
     isTesting = false;
@@ -997,7 +1097,16 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     currentRepoInfo = repoInfo;
     GITHUB_REPO_URL = 'https://github.com/' + repoInfo.fullName;
-    setTimeout(runAllTests, 300);
+
+    setTimeout(function() {
+        autoFitFooter();
+        runAllTests();
+    }, 300);
+});
+
+window.addEventListener('resize', function() {
+    autoFitFooter();
+    autoFitTopStatus();
 });
 </script>
 
