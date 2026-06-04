@@ -3,58 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Releases 解析 - 建议多测几次速</title>
+    <title>GitHub Releases 解析</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(16px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         @keyframes shimmer {
             0% { background-position: -200% 0; }
             100% { background-position: 200% 0; }
         }
+
         @keyframes pulseDot {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: .5; transform: scale(.85); }
         }
+
         @keyframes cardReveal {
             from { opacity: 0; transform: translateY(24px) scale(.98); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
+
         @keyframes tickPulse {
             0% { opacity: .6; }
             50% { opacity: 1; }
             100% { opacity: .6; }
         }
+
         @keyframes dotWave {
             0%, 60%, 100% { opacity: .2; transform: translateY(0); }
             30% { opacity: 1; transform: translateY(-2px); }
         }
+
         .anim-fade-up { animation: fadeInUp .5s cubic-bezier(.16,1,.3,1) both; }
         .anim-fade { animation: fadeIn .4s ease both; }
         .anim-card { animation: cardReveal .6s cubic-bezier(.16,1,.3,1) both; }
+
         .shimmer-bar {
             background: linear-gradient(90deg, #c7d2fe 25%, #a5b4fc 50%, #c7d2fe 75%);
             background-size: 200% 100%;
             animation: shimmer 1.4s infinite;
         }
+
         .pulse-dot { animation: pulseDot 1.2s ease-in-out infinite; }
         .tick-pulse { animation: tickPulse 1s ease-in-out infinite; }
+
         .typing-dots {
             display: inline-flex;
             gap: 1px;
             margin-left: 2px;
             vertical-align: 1px;
         }
+
         .typing-dots span {
             font-size: 13px;
             font-weight: 700;
@@ -62,36 +74,42 @@
             opacity: .2;
             animation: dotWave 1.2s ease-in-out infinite;
         }
+
         .typing-dots span:nth-child(1) { animation-delay: 0s; }
         .typing-dots span:nth-child(2) { animation-delay: .15s; }
         .typing-dots span:nth-child(3) { animation-delay: .3s; }
+
+        .speed-bar { transition: width .7s cubic-bezier(.16,1,.3,1); }
+
         .btn-primary { transition: all .2s cubic-bezier(.16,1,.3,1); }
         .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(79,70,229,.25); }
         .btn-primary:active { transform: translateY(0); }
+
         .btn-outline { transition: all .15s ease; }
         .btn-outline:hover { background: #f8fafc; }
+
         .btn-ghost { transition: all .15s ease; }
         .btn-ghost:hover { background: #f1f5f9; }
+
         .meta-card { transition: background .15s ease; }
         .meta-card:hover { background: #f8fafc; }
+
         .route-row { transition: all .15s ease; }
         .route-row:hover { border-color: #cbd5e1; background: #fafbfc; }
+
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
         .live-row { will-change: transform; }
+
         .footer-text {
-            display: block;
-            width: 100%;
             white-space: nowrap;
-            text-align: center;
-            text-decoration: none;
-            transition: color .15s ease;
+            font-size: clamp(0.6rem, 1.8vw, 0.75rem);
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .footer-text:hover { color: #64748b; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen text-slate-900 antialiased">
@@ -121,7 +139,9 @@
                 </div>
                 <a id="header-repo-link" href="#" target="_blank" rel="noopener"
                    class="btn-ghost ml-auto shrink-0 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-slate-400 text-xs font-medium whitespace-nowrap border border-transparent hover:border-slate-200 hover:text-slate-600 hidden">
-                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
                     仓库
                 </a>
             </div>
@@ -136,7 +156,9 @@
                     <span id="status-text" class="text-sm font-medium text-slate-600">正在初始化测速环境...</span>
                 </div>
                 <div id="elapsed-area" class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-slate-400 tick-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <svg class="w-3.5 h-3.5 text-slate-400 tick-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
                     <span id="elapsed-time" class="text-xs font-mono text-slate-400">0.0s</span>
                 </div>
             </div>
@@ -157,7 +179,9 @@
     <div id="error-card" class="hidden mb-6">
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center">
             <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
             </div>
             <p id="error-title" class="text-sm font-medium text-slate-700 mb-1">参数错误</p>
             <p id="error-desc" class="text-xs text-slate-400 mb-4">请提供有效的 GitHub 仓库链接作为 url 参数</p>
@@ -170,7 +194,9 @@
     <div id="no-routes" class="hidden mb-6">
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center">
             <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
             </div>
             <p class="text-sm font-medium text-slate-700 mb-1">暂无可用线路</p>
             <p class="text-xs text-slate-400 mb-4">所有代理通道均无法连接，请稍后重试</p>
@@ -184,13 +210,15 @@
     <div id="retest-area" class="hidden text-center mb-8">
         <button onclick="runAllTests()"
                 class="btn-ghost inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-slate-500 text-sm font-medium whitespace-nowrap border border-transparent hover:border-slate-200">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
             重新测速
         </button>
     </div>
 
     <footer class="text-center anim-fade" style="animation-delay:.2s">
-        <a href="../../index.html" class="footer-text text-slate-400 leading-relaxed">GitHub Releases 解析器 / STS2娘化MOD站 © 2026 壹个屑猫猫</a>
+        <p class="footer-text text-slate-400 leading-relaxed">GitHub Releases 解析器 / STS2娘化MOD站 © 2026 壹个屑猫猫</p>
     </footer>
 
 </div>
@@ -221,14 +249,14 @@ var RELEASE = {
 var proxyResults = [];
 var isTesting = false;
 
-var LATENCY_TIMEOUT = 6000;
-var SPEED_TIMEOUT = 5000;
-var PING_COUNT = 5;
-var PING_INTERVAL = 200;
+var LATENCY_TIMEOUT = 5000;
 var LATENCY_CUTOFF = 4000;
-var ANOMALY_RATIO = 3;
-var ANOMALY_PENALTY = 0.6;
-var RETRY_DELAY = 1000;
+var CORS_DOWNLOAD_DURATION = 6000;
+var CORS_RANGE_DURATION = 5000;
+var CORS_SAMPLE_INTERVAL = 400;
+var PING_COUNT = 7;
+var PING_INTERVAL = 200;
+var SPEED_TIMEOUT = 5000;
 
 function getQueryParam(name) {
     return new URLSearchParams(window.location.search).get(name);
@@ -243,24 +271,7 @@ function parseGitHubRepoUrl(url) {
     return null;
 }
 
-function autoFitFooter() {
-    var footer = document.querySelector('.footer-text');
-    if (!footer) return;
-    var cw = footer.clientWidth;
-    if (cw < 50) return;
-    var m = document.createElement('span');
-    m.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-size:14px;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;';
-    m.textContent = footer.textContent;
-    document.body.appendChild(m);
-    var tw = m.offsetWidth;
-    document.body.removeChild(m);
-    if (tw <= 0) return;
-    var fs = 14 * cw * 0.96 / tw;
-    fs = Math.max(9, Math.min(18, fs));
-    footer.style.fontSize = fs.toFixed(1) + 'px';
-}
-
-var _segs = [], _vis = 0, _timer = null, _phase = 'latency', _targetFs = '';
+var _segs = [], _vis = 0, _timer = null, _phase = 'latency';
 
 function esc(s) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -275,47 +286,10 @@ function totalLen() {
     return n;
 }
 
-function calcTopFs() {
-    if (_segs.length < 2) { _targetFs = ''; return; }
-    var el = document.getElementById('top-status');
-    if (!el) return;
-    var cw = el.clientWidth;
-    if (cw < 50) return;
-    var fullText = '';
-    for (var i = 0; i < _segs.length; i++) {
-        if (i > 0) fullText += ' / ';
-        fullText += _segs[i].text;
-    }
-    if (!fullText) return;
-    var m = document.createElement('span');
-    m.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-size:14px;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;';
-    m.textContent = fullText;
-    el.appendChild(m);
-    var tw = m.offsetWidth;
-    el.removeChild(m);
-    if (tw <= 0) return;
-    var fs = 14 * cw * 1.8 / tw;
-    fs = Math.min(17, Math.max(11, fs));
-    var tester = document.createElement('p');
-    tester.style.cssText = 'position:absolute;visibility:hidden;width:' + cw + 'px;margin:0;padding:0;font-size:' + fs + 'px;line-height:1.625;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;';
-    tester.textContent = fullText;
-    el.appendChild(tester);
-    var twoLineH = fs * 1.625 * 2;
-    for (var iter = 0; iter < 5; iter++) {
-        if (tester.offsetHeight <= twoLineH + 1) break;
-        fs = fs * 0.9;
-        tester.style.fontSize = fs + 'px';
-        twoLineH = fs * 1.625 * 2;
-    }
-    el.removeChild(tester);
-    _targetFs = fs.toFixed(1) + 'px';
-}
-
 function initTopStatus() {
     _segs = [{text:'正在从Github开源库查找最新版本...',cls:'text-slate-400'}];
     _vis = 0;
     _phase = 'latency';
-    _targetFs = '';
     clearTimeout(_timer);
     renderTop();
 }
@@ -385,9 +359,7 @@ function renderTop() {
     var c = document.getElementById('top-status');
     var total = totalLen();
     var typing = _vis < total;
-    var html = '<p class="leading-relaxed text-xs"';
-    if (_targetFs) html += ' style="font-size:' + _targetFs + '"';
-    html += '>';
+    var html = '<p class="text-xs leading-relaxed">';
     var ci = 0;
     for (var i = 0; i < _segs.length; i++) {
         var sep = i > 0 ? ' / ' : '';
@@ -460,8 +432,8 @@ async function fetchRelease() {
         releaseFetched = true;
         var n = document.getElementById('header-filename');
         if (n) n.textContent = RELEASE.fileName;
-        var sz = document.getElementById('header-size');
-        if (sz) sz.textContent = RELEASE.fileSize;
+        var s = document.getElementById('header-size');
+        if (s) s.textContent = RELEASE.fileSize;
         var p = document.getElementById('header-repo');
         if (p) p.textContent = currentRepoInfo.fullName;
         var repoLink = document.getElementById('header-repo-link');
@@ -500,7 +472,140 @@ async function measureLatency(url, timeout) {
     }
 }
 
-function measureSpeedByMultiplePings(proxyUrl) {
+async function downloadWithCORS(testUrl, maxDuration, label) {
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function() { controller.abort(); }, maxDuration + 3000);
+    var startTime = performance.now();
+    var bytesReceived = 0;
+    var speedSamples = [];
+    var lastSampleTime = startTime;
+    var lastSampleBytes = 0;
+    var response, reader;
+    try {
+        response = await fetch(
+            testUrl + (testUrl.indexOf('?') > -1 ? '&' : '?') + '_t=' + Date.now(),
+            { mode: 'cors', signal: controller.signal, cache: 'no-store' }
+        );
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        reader = response.body.getReader();
+        while (true) {
+            var result = await reader.read();
+            if (result.done) break;
+            bytesReceived += result.value.length;
+            var now = performance.now();
+            if (now - lastSampleTime >= CORS_SAMPLE_INTERVAL) {
+                var intervalBytes = bytesReceived - lastSampleBytes;
+                var intervalTime = now - lastSampleTime;
+                var instantSpeed = (intervalBytes / 1024) / (intervalTime / 1000);
+                speedSamples.push({elapsed: now - startTime, speed: instantSpeed});
+                lastSampleTime = now;
+                lastSampleBytes = bytesReceived;
+            }
+            if (now - startTime >= maxDuration) break;
+        }
+    } catch (e) {
+    } finally {
+        clearTimeout(timeoutId);
+        try { if (reader) reader.cancel(); } catch (e) {}
+        try { controller.abort(); } catch (e) {}
+    }
+    var totalElapsed = (performance.now() - startTime) / 1000;
+    if (totalElapsed < 0.3 || bytesReceived < 10240) {
+        throw new Error('数据不足: ' + Math.round(bytesReceived / 1024) + 'KB / ' + totalElapsed.toFixed(1) + 's');
+    }
+    var overallSpeed = (bytesReceived / 1024) / totalElapsed;
+    var sustainedSpeed = overallSpeed;
+    if (speedSamples.length >= 4) {
+        var halfIdx = Math.floor(speedSamples.length / 2);
+        var secondHalf = speedSamples.slice(halfIdx);
+        sustainedSpeed = secondHalf.reduce(function(s, x) { return s + x.speed; }, 0) / secondHalf.length;
+    }
+    var minWindowSpeed = overallSpeed;
+    if (speedSamples.length >= 4) {
+        for (var i = 0; i < speedSamples.length; i++) {
+            var windowEnd = speedSamples[i].elapsed + 2000;
+            var windowSamples = [];
+            for (var j = i; j < speedSamples.length && speedSamples[j].elapsed <= windowEnd; j++) {
+                windowSamples.push(speedSamples[j].speed);
+            }
+            if (windowSamples.length >= 2) {
+                var windowAvg = windowSamples.reduce(function(a, b) { return a + b; }, 0) / windowSamples.length;
+                if (windowAvg < minWindowSpeed) minWindowSpeed = windowAvg;
+            }
+        }
+    }
+    var peakSpeed = overallSpeed;
+    if (speedSamples.length >= 2) {
+        peakSpeed = Math.max.apply(null, speedSamples.map(function(s) { return s.speed; }));
+    }
+    var timeStability = peakSpeed > 0 ? minWindowSpeed / peakSpeed : 0;
+    timeStability = Math.min(1, timeStability);
+    var reportedSpeed = Math.min(overallSpeed, sustainedSpeed, minWindowSpeed);
+    if (timeStability < 0.3) {
+        reportedSpeed *= (timeStability + 0.3);
+    }
+    return {
+        success: true,
+        speed: Math.round(reportedSpeed),
+        stability: parseFloat(timeStability.toFixed(2)),
+        peakSpeed: Math.round(peakSpeed),
+        sustainedSpeed: Math.round(sustainedSpeed),
+        minWindowSpeed: Math.round(minWindowSpeed),
+        sampleCount: speedSamples.length,
+        method: 'download',
+        note: speedSamples.length + '次采样 · 稳定性' + parseFloat(timeStability.toFixed(2)) + (label ? ' · ' + label : '')
+    };
+}
+
+async function downloadRangeCORS(testUrl, offset, chunkSize, maxDuration) {
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function() { controller.abort(); }, maxDuration + 3000);
+    var startTime = performance.now();
+    var bytesReceived = 0;
+    var speedSamples = [];
+    var lastSampleTime = startTime;
+    var lastSampleBytes = 0;
+    var response, reader;
+    try {
+        response = await fetch(
+            testUrl + (testUrl.indexOf('?') > -1 ? '&' : '?') + '_t=' + Date.now() + '&range=1',
+            { mode: 'cors', signal: controller.signal, cache: 'no-store', headers: { 'Range': 'bytes=' + offset + '-' + (offset + chunkSize - 1) } }
+        );
+        if (response.status !== 206 && response.status !== 200) throw new Error('HTTP ' + response.status);
+        var rangeSupported = (response.status === 206);
+        reader = response.body.getReader();
+        while (true) {
+            var result = await reader.read();
+            if (result.done) break;
+            bytesReceived += result.value.length;
+            var now = performance.now();
+            if (now - lastSampleTime >= CORS_SAMPLE_INTERVAL) {
+                var intervalBytes = bytesReceived - lastSampleBytes;
+                var intervalTime = now - lastSampleTime;
+                speedSamples.push((intervalBytes / 1024) / (intervalTime / 1000));
+                lastSampleTime = now;
+                lastSampleBytes = bytesReceived;
+            }
+            if (now - startTime >= maxDuration || (rangeSupported && bytesReceived >= chunkSize)) break;
+        }
+    } catch (e) {
+    } finally {
+        clearTimeout(timeoutId);
+        try { if (reader) reader.cancel(); } catch (e) {}
+        try { controller.abort(); } catch (e) {}
+    }
+    var totalElapsed = (performance.now() - startTime) / 1000;
+    if (totalElapsed < 0.3 || bytesReceived < 5120) throw new Error('中段数据不足');
+    var speed = (bytesReceived / 1024) / totalElapsed;
+    if (speedSamples.length >= 4) {
+        var halfIdx = Math.floor(speedSamples.length / 2);
+        var secondHalf = speedSamples.slice(halfIdx);
+        speed = secondHalf.reduce(function(a, b) { return a + b; }, 0) / secondHalf.length;
+    }
+    return Math.round(speed);
+}
+
+function measureSpeedByPingsImproved(proxyUrl) {
     return new Promise(function(resolve) {
         var pings = [];
         var count = 0;
@@ -508,67 +613,105 @@ function measureSpeedByMultiplePings(proxyUrl) {
         var testUrl = proxyUrl + GITHUB_RELEASE_URL;
         function doPing() {
             if (count >= maxP) {
-                var vp = pings.filter(function(p) { return p < 10000; });
-                if (!vp.length) {
-                    resolve({success: false, speed: 0, error: '全部超时', hasAnomaly: true});
+                var validPings = pings.filter(function(p) { return p < 10000; });
+                if (!validPings.length) {
+                    resolve({success: false, speed: 0, stability: 0, error: '全部超时', method: 'ping', note: '不可用'});
                     return;
                 }
-                var sorted = vp.slice().sort(function(a, b) { return a - b; });
-                if (sorted.length > 2) sorted = sorted.slice(1, -1);
+                var sorted = validPings.slice().sort(function(a, b) { return a - b; });
+                if (sorted.length > 4) sorted = sorted.slice(1, -1);
                 var median = sorted[Math.floor(sorted.length / 2)];
-                var avg = vp.reduce(function(a, b) { return a + b; }, 0) / vp.length;
-                var v = vp.reduce(function(a, b) { return a + Math.pow(b - avg, 2); }, 0) / vp.length;
-                var st = Math.sqrt(v) / Math.max(avg, 1);
-                var maxPing = Math.max.apply(null, vp);
-                var hasAnomaly = maxPing > median * ANOMALY_RATIO;
-                var bs = 0;
-                if (median < 300) bs = 2500;
-                else if (median < 500) bs = 1500;
-                else if (median < 1000) bs = 800;
-                else if (median < 2000) bs = 300;
-                else if (median < 5000) bs = 100;
-                else bs = 20;
-                var f = Math.max(.5, 1 - st);
-                var sp = bs * f;
-                if (hasAnomaly) sp = sp * ANOMALY_PENALTY;
-                var noteText = vp.length + '次采样';
-                noteText += hasAnomaly ? ' · 延迟异常' : ' · 稳定';
+                var avg = validPings.reduce(function(a, b) { return a + b; }, 0) / validPings.length;
+                var variance = validPings.reduce(function(a, b) { return a + Math.pow(b - avg, 2); }, 0) / validPings.length;
+                var cv = Math.sqrt(variance) / Math.max(avg, 1);
+                var baseSpeed;
+                if (median < 100) baseSpeed = 1800;
+                else if (median < 200) baseSpeed = 1000;
+                else if (median < 300) baseSpeed = 600;
+                else if (median < 500) baseSpeed = 350;
+                else if (median < 1000) baseSpeed = 180;
+                else if (median < 2000) baseSpeed = 80;
+                else if (median < 5000) baseSpeed = 25;
+                else baseSpeed = 8;
+                var stabilityFactor = Math.max(0.2, 1 - cv * 0.6);
+                var speed = Math.round(baseSpeed * stabilityFactor);
+                var stability = parseFloat(stabilityFactor.toFixed(2));
                 resolve({
                     success: true,
-                    speed: parseFloat(sp.toFixed(0)),
-                    stability: parseFloat(st.toFixed(2)),
-                    hasAnomaly: hasAnomaly,
-                    note: noteText
+                    speed: speed,
+                    stability: stability,
+                    method: 'ping',
+                    note: validPings.length + '次采样 · 稳定性' + stability + ' · 估算值'
                 });
                 return;
             }
             var s = performance.now();
             var c = new AbortController();
             var t = setTimeout(function() { c.abort(); }, SPEED_TIMEOUT);
-            fetch(testUrl + '?_t=' + Date.now() + '_' + count, {
-                method: 'HEAD', mode: 'no-cors', signal: c.signal
-            })
-            .then(function() {
-                clearTimeout(t);
-                pings.push(performance.now() - s);
-                count++;
-                setTimeout(doPing, PING_INTERVAL);
-            })
-            .catch(function() {
-                clearTimeout(t);
-                pings.push(10000);
-                count++;
-                setTimeout(doPing, PING_INTERVAL);
-            });
+            fetch(testUrl + '?_t=' + Date.now() + '_' + count, {method: 'HEAD', mode: 'no-cors', signal: c.signal})
+                .then(function() {
+                    clearTimeout(t);
+                    pings.push(performance.now() - s);
+                    count++;
+                    setTimeout(doPing, PING_INTERVAL);
+                })
+                .catch(function() {
+                    clearTimeout(t);
+                    pings.push(10000);
+                    count++;
+                    setTimeout(doPing, PING_INTERVAL);
+                });
         }
         doPing();
     });
 }
 
-function getScore(l, s) {
+async function measureSpeedRobust(proxyUrl) {
+    var testUrl = proxyUrl + GITHUB_RELEASE_URL;
+    var fileSizeBytes = parseFloat(RELEASE.fileSize) * 1048576;
+    var startResult;
+    try {
+        startResult = await downloadWithCORS(testUrl, CORS_DOWNLOAD_DURATION, '首段');
+    } catch (e) {
+        return await measureSpeedByPingsImproved(proxyUrl);
+    }
+    var middleSpeed = null;
+    if (fileSizeBytes > 5 * 1024 * 1024) {
+        var middleOffset = Math.floor(fileSizeBytes / 2);
+        var rangeChunk = 2 * 1024 * 1024;
+        try {
+            middleSpeed = await downloadRangeCORS(testUrl, middleOffset, rangeChunk, CORS_RANGE_DURATION);
+        } catch (e) {}
+    }
+    var finalSpeed = startResult.speed;
+    var finalStability = startResult.stability;
+    if (middleSpeed !== null && middleSpeed > 0) {
+        var positionRatio = Math.min(startResult.speed, middleSpeed) / Math.max(startResult.speed, middleSpeed, 1);
+        var positionStability = Math.min(1, positionRatio);
+        finalSpeed = Math.min(startResult.speed, middleSpeed);
+        finalStability = parseFloat((finalStability * positionStability).toFixed(2));
+        if (middleSpeed < startResult.speed * 0.3) {
+            finalSpeed = Math.round(middleSpeed * 0.7);
+            finalStability = Math.min(finalStability, 0.15);
+        }
+        startResult.note = '多点测速 · 稳定性' + finalStability;
+    }
+    return {
+        success: true,
+        speed: finalSpeed,
+        stability: finalStability,
+        method: 'download',
+        note: startResult.note,
+        speedNote: startResult.note
+    };
+}
+
+function getScore(l, s, stability) {
+    stability = (stability !== undefined && stability !== null) ? stability : 0.5;
     var ls = Math.max(0, 100 - (l / 5000) * 100);
     var ss = Math.min(100, (s / 3072) * 100);
-    return Math.round(ls * .3 + ss * .7);
+    var stScore = stability * 100;
+    return Math.round(ls * 0.2 + ss * 0.5 + stScore * 0.3);
 }
 
 function scoreColor(s) {
@@ -582,6 +725,13 @@ function latencyLabel(ms) {
     if (ms < 500) return {text: '极速', cls: 'text-emerald-600'};
     if (ms < 2000) return {text: '可用', cls: 'text-amber-600'};
     return {text: '较慢', cls: 'text-orange-600'};
+}
+
+function stabilityLabel(st) {
+    if (st >= 0.8) return {text: '稳定', cls: 'text-emerald-600'};
+    if (st >= 0.5) return {text: '一般', cls: 'text-amber-600'};
+    if (st >= 0.3) return {text: '波动', cls: 'text-orange-600'};
+    return {text: '不稳定', cls: 'text-red-500'};
 }
 
 function showToast(msg) {
@@ -634,13 +784,11 @@ function _statusHtml(item, phase) {
     }
     if (phase === 'speed-done') {
         if (item.speedSuccess) {
-            var speedText = item.speed >= 1024
-                ? (item.speed / 1024).toFixed(1) + ' MB/s'
-                : item.speed + ' KB/s';
-            var anomalyTag = item.hasAnomaly
-                ? '<span class="text-xs ml-1.5 text-orange-500">延迟异常</span>'
-                : '<span class="text-xs ml-1.5 text-emerald-500">稳定</span>';
-            return '<span class="text-xs font-mono text-slate-600">' + speedText + '</span>' + anomalyTag;
+            var speedText = item.speed >= 1024 ? (item.speed / 1024).toFixed(1) + ' MB/s' : item.speed + ' KB/s';
+            var st = item.stability || 0;
+            var stLabel = stabilityLabel(st);
+            return '<span class="text-xs font-mono text-slate-600">' + speedText + '</span>' +
+                '<span class="text-xs ml-1.5 ' + stLabel.cls + '">' + stLabel.text + '</span>';
         }
         return '<span class="text-xs text-red-400">失败</span>';
     }
@@ -673,7 +821,7 @@ function _getSortedOrder() {
             var aRank = ra.speedSuccess ? 3 : (ra._ld && ra.latencySuccess && !ra._skip) ? 2 : (ra._ld ? 1 : 0);
             var bRank = rb.speedSuccess ? 3 : (rb._ld && rb.latencySuccess && !rb._skip) ? 2 : (rb._ld ? 1 : 0);
             if (aRank !== bRank) return bRank - aRank;
-            if (aRank === 3 && bRank === 3) return rb.speed - ra.speed;
+            if (aRank === 3 && bRank === 3) return getScore(rb.latency, rb.speed, rb.stability) - getScore(ra.latency, ra.speed, ra.stability);
             if (aRank === 2 && bRank === 2) return ra.latency - rb.latency;
             return 0;
         } else {
@@ -764,7 +912,8 @@ function updateLiveList() {
 
 function renderFinal(totalTime) {
     var avail = proxyResults.filter(function(r) { return r.latencySuccess && r.speedSuccess; });
-    avail.sort(function(a, b) { return getScore(b.latency, b.speed) - getScore(a.latency, a.speed); });
+    var savedY = window.scrollY;
+    avail.sort(function(a, b) { return getScore(b.latency, b.speed, b.stability) - getScore(a.latency, a.speed, a.stability); });
     document.getElementById('testing-status').classList.add('hidden');
     document.getElementById('live-list').classList.add('hidden');
     if (!avail.length) {
@@ -773,17 +922,17 @@ function renderFinal(totalTime) {
         return;
     }
     var best = avail[0];
-    var bs = getScore(best.latency, best.speed);
+    var bs = getScore(best.latency, best.speed, best.stability);
     var bt = best.speed >= 1024 ? (best.speed / 1024).toFixed(1) + ' MB/s' : best.speed + ' KB/s';
     var du = best.url + GITHUB_RELEASE_URL;
     var sc = scoreColor(bs);
-    var stabilityText = best.hasAnomaly ? '延迟异常' : '稳定';
-    var stabilityCls = best.hasAnomaly ? 'text-orange-500' : 'text-emerald-600';
+    var stInfo = stabilityLabel(best.stability || 0);
+    var methodLabel = best.method === 'download' ? '实测' : '估算';
     var h = '<div class="anim-card"><div class="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">';
     h += '<div class="px-6 pt-5 pb-4"><div class="flex items-center gap-2.5 mb-4">';
     h += '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-semibold whitespace-nowrap"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>最优线路</span>';
     h += '<span class="inline-flex items-center px-2.5 py-1 rounded-lg ' + sc.bg + ' ' + sc.text + ' text-xs font-semibold whitespace-nowrap">' + bs + ' 分</span>';
-    h += '<span class="inline-flex items-center px-2 py-1 rounded-lg ' + (best.hasAnomaly ? 'bg-orange-50 text-orange-600' : 'bg-emerald-50 text-emerald-600') + ' text-xs font-medium whitespace-nowrap">' + stabilityText + '</span>';
+    h += '<span class="inline-flex items-center px-2 py-1 rounded-lg bg-slate-50 text-slate-500 text-xs font-medium whitespace-nowrap">' + methodLabel + '</span>';
     h += '</div>';
     h += '<h2 class="text-lg font-bold text-slate-900 mb-0.5">' + RELEASE.fileName + '</h2>';
     h += '<p class="text-sm text-slate-400">' + RELEASE.version + '</p></div>';
@@ -795,7 +944,7 @@ function renderFinal(totalTime) {
     h += '<div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm text-slate-500 mb-4">';
     h += '<span class="whitespace-nowrap">延迟 <span class="font-mono font-medium text-slate-700">' + best.latency + 'ms</span></span>';
     h += '<span class="whitespace-nowrap">速度 <span class="font-mono font-medium text-slate-700">' + bt + '</span></span>';
-    h += '<span class="whitespace-nowrap">稳定性 <span class="font-mono font-medium ' + stabilityCls + '">' + stabilityText + '</span></span>';
+    h += '<span class="whitespace-nowrap">稳定性 <span class="font-mono font-medium ' + stInfo.cls + '">' + ((best.stability || 0) * 100).toFixed(0) + '% ' + stInfo.text + '</span></span>';
     h += '<span class="whitespace-nowrap">测速耗时 <span class="font-mono font-medium text-slate-700">' + totalTime + 's</span></span></div>';
     h += '<div class="flex flex-wrap items-center gap-2.5">';
     h += '<a href="' + du + '" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-medium whitespace-nowrap shadow-md shadow-indigo-500/15"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>立即下载最新版</a>';
@@ -803,20 +952,21 @@ function renderFinal(totalTime) {
     h += '</div></div></div></div>';
     document.getElementById('best-card').innerHTML = h;
     document.getElementById('best-card').classList.remove('hidden');
+
     if (avail.length > 1) {
         var bh = '<div class="anim-card" style="animation-delay:.12s"><div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3.5">备用线路</h3><div class="space-y-2">';
         for (var j = 1; j < avail.length; j++) {
             var r = avail[j];
-            var rs = getScore(r.latency, r.speed);
+            var rs = getScore(r.latency, r.speed, r.stability);
             var rsc = scoreColor(rs);
             var rt = r.speed >= 1024 ? (r.speed / 1024).toFixed(1) + ' MB/s' : r.speed + ' KB/s';
             var ru = r.url + GITHUB_RELEASE_URL;
             var dl = .08 * j;
-            var rStabText = r.hasAnomaly ? '延迟异常' : '稳定';
-            var rStabCls = r.hasAnomaly ? 'text-orange-500' : 'text-emerald-600';
+            var rst = stabilityLabel(r.stability || 0);
+            var rmethod = r.method === 'download' ? '实测' : '估算';
             bh += '<div class="route-row flex items-center justify-between px-4 py-3 rounded-xl border border-slate-100 anim-row" style="animation-delay:' + dl + 's">';
-            bh += '<div class="flex items-center gap-3 min-w-0"><span class="text-xs font-mono text-slate-300 w-5 shrink-0">#' + (j + 1) + '</span><div class="min-w-0"><div class="text-sm font-medium text-slate-700 whitespace-nowrap truncate">' + r.name + '</div><div class="text-xs text-slate-400 whitespace-nowrap">' + r.latency + 'ms · ' + rt + ' · <span class="' + rStabCls + '">' + rStabText + '</span></div></div></div>';
-            bh += '<div class="flex items-center gap-2.5 shrink-0 ml-3"><span class="inline-flex items-center px-2 py-0.5 rounded-md ' + rsc.bg + ' ' + rsc.text + ' text-xs font-semibold whitespace-nowrap">' + rs + ' 分</span>';
+            bh += '<div class="flex items-center gap-3 min-w-0"><span class="text-xs font-mono text-slate-300 w-5 shrink-0">#' + (j + 1) + '</span><div class="min-w-0"><div class="text-sm font-medium text-slate-700 whitespace-nowrap truncate">' + r.name + '</div><div class="text-xs text-slate-400 whitespace-nowrap">' + r.latency + 'ms · ' + rt + ' · ' + rst.text + '</div></div></div>';
+            bh += '<div class="flex items-center gap-2.5 shrink-0 ml-3"><span class="inline-flex items-center px-1.5 py-0.5 rounded bg-slate-50 text-slate-400 text-xs font-medium whitespace-nowrap">' + rmethod + '</span><span class="inline-flex items-center px-2 py-0.5 rounded-md ' + rsc.bg + ' ' + rsc.text + ' text-xs font-semibold whitespace-nowrap">' + rs + ' 分</span>';
             bh += '<a href="' + ru + '" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center px-3 py-1.5 rounded-lg text-slate-500 text-xs font-medium whitespace-nowrap border border-transparent hover:border-slate-200">下载</a></div></div>';
         }
         bh += '</div></div></div>';
@@ -824,25 +974,11 @@ function renderFinal(totalTime) {
         document.getElementById('backup-section').classList.remove('hidden');
     }
     document.getElementById('retest-area').classList.remove('hidden');
+    requestAnimationFrame(function() { window.scrollTo(0, savedY); });
 }
 
 function mi(l, v) {
     return '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5 whitespace-nowrap">' + l + '</div><div class="text-sm font-medium text-slate-700 truncate">' + v + '</div></div>';
-}
-
-function applyLatencyResult(item, result) {
-    item.latency = result.latency;
-    item.latencySuccess = result.success;
-    item.latencyError = result.error || '';
-    item._tl = false;
-    item._ld = true;
-    if (item.latencySuccess && item.latency >= LATENCY_CUTOFF) {
-        item._skip = true;
-        item.speedTested = true;
-        item.speedSuccess = false;
-        item.speedError = '延迟过高已跳过';
-        item._sd = true;
-    }
 }
 
 async function runAllTests() {
@@ -876,6 +1012,7 @@ async function runAllTests() {
         isTesting = false;
         return;
     }
+
     _phase = 'latency';
     setStatus('正在并行测试代理延迟...');
     for (var i = 0; i < GITHUB_PROXIES.length; i++) {
@@ -883,47 +1020,38 @@ async function runAllTests() {
         proxyResults.push({
             name: proxy.name, url: proxy.url, desc: proxy.desc,
             latency: 0, latencySuccess: false, latencyError: '',
-            speed: 0, speedTested: false, speedSuccess: false, speedError: '',
-            speedNote: '', hasAnomaly: false,
+            speed: 0, speedTested: false, speedSuccess: false, speedError: '', speedNote: '',
+            stability: 0, method: '',
             _tl: true, _ts: false, _ld: false, _sd: false, _skip: false
         });
     }
     updateLiveList();
     showProgress('延迟测试', 0, GITHUB_PROXIES.length);
+
     var latencyPromises = proxyResults.map(function(item, idx) {
         var testUrl = item.url + GITHUB_RELEASE_URL + '?_t=' + Date.now() + '_' + idx;
         return measureLatency(testUrl, LATENCY_TIMEOUT).then(function(result) {
-            applyLatencyResult(item, result);
+            item.latency = result.latency;
+            item.latencySuccess = result.success;
+            item.latencyError = result.error || '';
+            item._tl = false;
+            item._ld = true;
+            if (item.latencySuccess && item.latency >= LATENCY_CUTOFF) {
+                item._skip = true;
+                item.speedTested = true;
+                item.speedSuccess = false;
+                item.speedError = '延迟过高已跳过';
+                item._sd = true;
+            }
             updateLiveList();
             showProgress('延迟测试', proxyResults.filter(function(r) { return r._ld; }).length, GITHUB_PROXIES.length);
             return item;
         });
     });
     await Promise.allSettled(latencyPromises);
-    var failedItems = proxyResults.filter(function(r) {
-        return r._ld && !r.latencySuccess && !r._skip;
-    });
-    if (failedItems.length > 0) {
-        setStatus('重试失败的线路（' + failedItems.length + '条）...');
-        await new Promise(function(r) { setTimeout(r, RETRY_DELAY); });
-        for (var fi = 0; fi < failedItems.length; fi++) {
-            failedItems[fi]._tl = true;
-            failedItems[fi]._ld = false;
-        }
-        updateLiveList();
-        var retryPromises = failedItems.map(function(item, idx) {
-            var testUrl = item.url + GITHUB_RELEASE_URL + '?_t=' + Date.now() + '&retry=1_' + idx;
-            return measureLatency(testUrl, LATENCY_TIMEOUT).then(function(result) {
-                applyLatencyResult(item, result);
-                updateLiveList();
-                showProgress('延迟测试', proxyResults.filter(function(r) { return r._ld; }).length, GITHUB_PROXIES.length);
-                return item;
-            });
-        });
-        await Promise.allSettled(retryPromises);
-    }
     ensureSeg(0);
-    addSeg('正在测试线路稳定性...', 'text-slate-400');
+
+    addSeg('正在测试下载稳定性...', 'text-slate-400');
     _phase = 'speed';
     var avail = proxyResults.filter(function(r) { return r.latencySuccess && !r._skip; });
     if (avail.length === 0) {
@@ -939,18 +1067,30 @@ async function runAllTests() {
         isTesting = false;
         return;
     }
-    setStatus('正在测试线路稳定性...');
+
+    setStatus('正在测试下载稳定性（' + avail.length + '条线路）...');
     showProgress('稳定性测速', 0, avail.length);
+
     var speedPromises = avail.map(function(item) {
         item._ts = true;
         updateLiveList();
-        return measureSpeedByMultiplePings(item.url).then(function(sr) {
+        return measureSpeedRobust(item.url).then(function(sr) {
             item.speedTested = true;
             item.speedSuccess = sr.success;
-            item.speed = sr.speed;
+            item.speed = sr.speed || 0;
             item.speedError = sr.error || '';
             item.speedNote = sr.note || '';
-            item.hasAnomaly = sr.hasAnomaly || false;
+            item.stability = sr.stability || 0;
+            item.method = sr.method || '';
+            item._ts = false;
+            item._sd = true;
+            updateLiveList();
+            showProgress('稳定性测速', avail.filter(function(r) { return r._sd; }).length, avail.length);
+            return item;
+        }).catch(function(e) {
+            item.speedTested = true;
+            item.speedSuccess = false;
+            item.speedError = e.message || '测速失败';
             item._ts = false;
             item._sd = true;
             updateLiveList();
@@ -959,6 +1099,7 @@ async function runAllTests() {
         });
     });
     await Promise.allSettled(speedPromises);
+
     var totalTime = stopTimer();
     document.getElementById('status-dot').className = 'w-2 h-2 rounded-full bg-emerald-500';
     document.getElementById('progress-bar').className = 'h-full rounded-full bg-emerald-500 transition-all duration-500 ease-out';
@@ -966,11 +1107,9 @@ async function runAllTests() {
     setStatus('测速完成');
     ensureSeg(1);
     var goodOnes = proxyResults.filter(function(r) { return r.latencySuccess && r.speedSuccess; });
-    _segs.push({text: '解析成功 ! !', cls: goodOnes.length > 0 ? 'text-emerald-500' : 'text-red-400'});
-    _segs.push({text: '本次耗时 ' + totalTime + 's', cls: 'text-slate-400'});
-    _segs.push({text: '如下载缓慢，请切换下方其他线路', cls: 'text-indigo-400'});
-    calcTopFs();
-    await fastTypeToEnd();
+    await addSegAndType('解析成功 ! !', goodOnes.length > 0 ? 'text-emerald-500' : 'text-red-400');
+    await addSegAndType('本次耗时 ' + totalTime + 's', 'text-slate-400');
+    await addSegAndType('如下载缓慢，请切换下方其他线路', 'text-indigo-400');
     await new Promise(function(r) { setTimeout(r, 300); });
     renderFinal(totalTime);
     isTesting = false;
@@ -989,16 +1128,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     currentRepoInfo = repoInfo;
     GITHUB_REPO_URL = 'https://github.com/' + repoInfo.fullName;
-    setTimeout(function() {
-        autoFitFooter();
-        runAllTests();
-    }, 300);
-});
-
-window.addEventListener('resize', function() {
-    autoFitFooter();
-    calcTopFs();
-    renderTop();
+    setTimeout(runAllTests, 300);
 });
 </script>
 
