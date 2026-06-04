@@ -374,13 +374,11 @@ function fastTypeToEnd() {
 
 function addSegAndType(text, cls) {
     _segs.push({text: text, cls: cls || 'text-slate-400'});
-    calcTopFs();
     return fastTypeToEnd();
 }
 
 function addSeg(text, cls) {
     _segs.push({text: text, cls: cls || 'text-slate-400'});
-    calcTopFs();
 }
 
 function renderTop() {
@@ -941,7 +939,7 @@ async function runAllTests() {
         isTesting = false;
         return;
     }
-    setStatus('正在测试线路稳定性（' + avail.length + '条线路）...');
+    setStatus('正在测试线路稳定性...');
     showProgress('稳定性测速', 0, avail.length);
     var speedPromises = avail.map(function(item) {
         item._ts = true;
@@ -968,9 +966,11 @@ async function runAllTests() {
     setStatus('测速完成');
     ensureSeg(1);
     var goodOnes = proxyResults.filter(function(r) { return r.latencySuccess && r.speedSuccess; });
-    await addSegAndType('解析成功 ! !', goodOnes.length > 0 ? 'text-emerald-500' : 'text-red-400');
-    await addSegAndType('本次耗时 ' + totalTime + 's', 'text-slate-400');
-    await addSegAndType('如下载缓慢，请切换下方其他线路', 'text-indigo-400');
+    _segs.push({text: '解析成功 ! !', cls: goodOnes.length > 0 ? 'text-emerald-500' : 'text-red-400'});
+    _segs.push({text: '本次耗时 ' + totalTime + 's', cls: 'text-slate-400'});
+    _segs.push({text: '如下载缓慢，请切换下方其他线路', cls: 'text-indigo-400'});
+    calcTopFs();
+    await fastTypeToEnd();
     await new Promise(function(r) { setTimeout(r, 300); });
     renderFinal(totalTime);
     isTesting = false;
