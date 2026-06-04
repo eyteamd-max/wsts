@@ -249,13 +249,14 @@ var RELEASE = {
 var proxyResults = [];
 var isTesting = false;
 
-var LATENCY_TIMEOUT = 5000;
+var LATENCY_TIMEOUT = 6000;
 var SPEED_TIMEOUT = 5000;
 var PING_COUNT = 5;
 var PING_INTERVAL = 200;
 var LATENCY_CUTOFF = 4000;
 var ANOMALY_RATIO = 3;
 var ANOMALY_PENALTY = 0.6;
+var RETRY_DELAY = 1000;
 
 function getQueryParam(name) {
     return new URLSearchParams(window.location.search).get(name);
@@ -482,7 +483,7 @@ function measureSpeedByMultiplePings(proxyUrl) {
             if (count >= maxP) {
                 var vp = pings.filter(function(p) { return p < 10000; });
                 if (!vp.length) {
-                    resolve({success: false, speed: 0, error: '全部超时'});
+                    resolve({success: false, speed: 0, error: '全部超时', hasAnomaly: true});
                     return;
                 }
 
@@ -491,7 +492,7 @@ function measureSpeedByMultiplePings(proxyUrl) {
                 var median = sorted[Math.floor(sorted.length / 2)];
                 var avg = vp.reduce(function(a, b) { return a + b; }, 0) / vp.length;
                 var v = vp.reduce(function(a, b) { return a + Math.pow(b - avg, 2); }, 0) / vp.length;
-                var st = Math.sqrt(v) / avg;
+                var st = Math.sqrt(v) / Math.max(avg, 1);
 
                 var maxPing = Math.max.apply(null, vp);
                 var hasAnomaly = maxPing > median * ANOMALY_RATIO;
@@ -512,11 +513,7 @@ function measureSpeedByMultiplePings(proxyUrl) {
                 }
 
                 var noteText = vp.length + '次采样';
-                if (hasAnomaly) {
-                    noteText += ' · 延迟异常';
-                } else {
-                    noteText += ' · 稳定';
-                }
+                noteText += hasAnomaly ? ' · 延迟异常' : ' · 稳定';
 
                 resolve({
                     success: true,
@@ -819,6 +816,21 @@ function mi(l, v) {
     return '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5 whitespace-nowrap">' + l + '</div><div class="text-sm font-medium text-slate-700 truncate">' + v + '</div></div>';
 }
 
+function applyLatencyResult(item, result) {
+    item.latency = result.latency;
+    item.latencySuccess = result.success;
+    item.latencyError = result.error || '';
+    item._tl = false;
+    item._ld = true;
+    if (item.latencySuccess && item.latency >= LATENCY_CUTOFF) {
+        item._skip = true;
+        item.speedTested = true;
+        item.speedSuccess = false;
+        item.speedError = '延迟过高已跳过';
+        item._sd = true;
+    }
+}
+
 async function runAllTests() {
     if (isTesting) return;
     isTesting = true;
@@ -882,24 +894,40 @@ async function runAllTests() {
     var latencyPromises = proxyResults.map(function(item, idx) {
         var testUrl = item.url + GITHUB_RELEASE_URL + '?_t=' + Date.now() + '_' + idx;
         return measureLatency(testUrl, LATENCY_TIMEOUT).then(function(result) {
-            item.latency = result.latency;
-            item.latencySuccess = result.success;
-            item.latencyError = result.error || '';
-            item._tl = false;
-            item._ld = true;
-            if (item.latencySuccess && item.latency >= LATENCY_CUTOFF) {
-                item._skip = true;
-                item.speedTested = true;
-                item.speedSuccess = false;
-                item.speedError = '延迟过高已跳过';
-                item._sd = true;
-            }
+            applyLatencyResult(item, result);
             updateLiveList();
             showProgress('延迟测试', proxyResults.filter(function(r) { return r._ld; }).length, GITHUB_PROXIES.length);
             return item;
         });
     });
     await Promise.allSettled(latencyPromises);
+
+    var failedItems = proxyResults.filter(function(r) {
+        return r._ld && !r.latencySuccess && !r._skip;
+    });
+
+    if (failedItems.length > 0) {
+        setStatus('重试失败的线路（' + failedItems.length + '条）...');
+        await new Promise(function(r) { setTimeout(r, RETRY_DELAY); });
+
+        for (var fi = 0; fi < failedItems.length; fi++) {
+            failedItems[fi]._tl = true;
+            failedItems[fi]._ld = false;
+        }
+        updateLiveList();
+
+        var retryPromises = failedItems.map(function(item, idx) {
+            var testUrl = item.url + GITHUB_RELEASE_URL + '?_t=' + Date.now() + '&retry=1_' + idx;
+            return measureLatency(testUrl, LATENCY_TIMEOUT).then(function(result) {
+                applyLatencyResult(item, result);
+                updateLiveList();
+                showProgress('延迟测试', proxyResults.filter(function(r) { return r._ld; }).length, GITHUB_PROXIES.length);
+                return item;
+            });
+        });
+        await Promise.allSettled(retryPromises);
+    }
+
     ensureSeg(0);
 
     addSeg('正在测试线路稳定性...', 'text-slate-400');
