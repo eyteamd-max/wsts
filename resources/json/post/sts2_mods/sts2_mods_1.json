@@ -1,5 +1,61 @@
 [
   {
+    "id": "20260605010029767",
+    "title": "핏짜 的骨妹 - 白毛红帽 异瞳形象",
+    "category": "skin",
+    "size": "6.32MB",
+    "date": "2026-06-05",
+    "badge": "v0.9.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/e3637b0a-c836-4ca7-9b33-0ebe0df77408/0"
+    ],
+    "images": [],
+    "description": "此版本是韩国大佬 \" 핏짜 \" 老师为了验证模组是否正常运行，而发布的Beta测试版本。此测试版包含一些仍在开发中的资源，但不包括石头剪刀布。如果您在使用模组时遇到任何错误或问题，请在作者那里留言反馈",
+    "author": "핏짜",
+    "authorLinks": [
+      {
+        "text": "FANBOX",
+        "url": "https://piszzzza.fanbox.cc/"
+      },
+      {
+        "text": "Twitter(X)",
+        "url": "https://x.com/piszzzza"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换",
+      "핏짜",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz3496a560e80144e7b822bf53c67867ac?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/d01108f3-0e7d-4f22-b45b-7f495cbbfc71/0",
+      "http://shp.qpic.cn/collector/1976464052/df680d4c-0634-4200-8f39-0d5f3ee9940a/0",
+      "http://shp.qpic.cn/collector/1976464052/7e804ebf-305f-4552-ab4c-9095f9645bc5/0",
+      "http://shp.qpic.cn/collector/1976464052/debb5382-3e5d-4d57-87ac-599f4a8823e1/0",
+      "http://shp.qpic.cn/collector/1976464052/681df6e9-a183-4268-a1f6-d38bb033c27e/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz583a045580d4404788cd743091d4fa24?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz33e82559845c4bafaf8a55ed1b762bba?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz59f183f9f05b4944b4783ebc9addf108?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzc0a8bf7af61d46438eec8f3cfebec4d2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz88cd0603048241fea2591dff9329107e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz176a17f07b614c88b3caa8cdf66cc3c2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzabeb9f10fbb944a5862b002d90ad20f4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ]
+  },
+  {
     "id": "20260604004917269",
     "title": "莫德凯撒MOD-两度被杀 三度重生...",
     "category": "skin",
@@ -95,12 +151,12 @@
     ]
   },
   {
-    "id": "20260603134124400",
+    "id": "20260605010024406",
     "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
     "category": "skin",
     "size": "90.83MB",
-    "date": "2026-06-03",
-    "badge": "v0.0.7",
+    "date": "2026-06-05",
+    "badge": "v5_0.0.8",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
@@ -126,7 +182,7 @@
     "downloadLinks": [
       {
         "text": "模组下载[主体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7d2ba84de9d04c93817ee7f72c1850dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzec08e7a12c7c49f5963bf281d1d4cc8e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       },
       {
         "text": "所需前置[前置]",
@@ -282,6 +338,10 @@
       {
         "text": "在线下载",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2"
       }
     ],
     "previewImages": [],
@@ -995,7 +1055,7 @@
     ],
     "downloadLinks": [
       {
-        "text": "v0.103.2最版[推荐]",
+        "text": "v0.103.2正式版[推荐]",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       },
       {
@@ -1005,6 +1065,10 @@
       {
         "text": "N网下载[历史与最新版]",
         "url": "https://www.nexusmods.com/slaythespire2/mods/859"
+      },
+      {
+        "text": "在线解析最新版[基于GH Releases]",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox"
       }
     ],
     "previewImages": [
@@ -1035,7 +1099,7 @@
       "http://shp.qpic.cn/collector/1976464052/cfe2e5c3-bfd0-4b66-b889-3f3e08614fe2/0"
     ],
     "images": [],
-    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。\n\n\n\n手脚切换教程(详细版)：\n控制台输入merchant hand/foot切换\n手机版不会用控制台的话看这个↓\n教程视频：https://b23.tv/MQDU5U5",
+    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。\n\n\n\n手脚切换教程(详细版)：\n控制台输入merchant hand/foot切换\n手机版不会用控制台的话看这个↓\n教程视频：https://b23.tv/MQDU5U5\n\n\nGitHub开源地址：\nhttps://github.com/LinXce/merchant-2-cute-ii",
     "author": "Peslanna",
     "authorLinks": [
       {
@@ -1058,8 +1122,8 @@
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
       },
       {
-        "text": "开源地址",
-        "url": "https://github.com/LinXce/merchant-2-cute-ii"
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LinXce/merchant-2-cute-ii"
       }
     ],
     "previewImages": [
