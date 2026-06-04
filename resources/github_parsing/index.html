@@ -250,13 +250,12 @@ var proxyResults = [];
 var isTesting = false;
 
 var LATENCY_TIMEOUT = 5000;
-var LATENCY_CUTOFF = 4000;
-var CORS_DOWNLOAD_DURATION = 6000;
-var CORS_RANGE_DURATION = 5000;
-var CORS_SAMPLE_INTERVAL = 400;
-var PING_COUNT = 7;
-var PING_INTERVAL = 200;
 var SPEED_TIMEOUT = 5000;
+var PING_COUNT = 5;
+var PING_INTERVAL = 200;
+var LATENCY_CUTOFF = 4000;
+var ANOMALY_RATIO = 3;
+var ANOMALY_PENALTY = 0.6;
 
 function getQueryParam(name) {
     return new URLSearchParams(window.location.search).get(name);
@@ -432,8 +431,8 @@ async function fetchRelease() {
         releaseFetched = true;
         var n = document.getElementById('header-filename');
         if (n) n.textContent = RELEASE.fileName;
-        var s = document.getElementById('header-size');
-        if (s) s.textContent = RELEASE.fileSize;
+        var sz = document.getElementById('header-size');
+        if (sz) sz.textContent = RELEASE.fileSize;
         var p = document.getElementById('header-repo');
         if (p) p.textContent = currentRepoInfo.fullName;
         var repoLink = document.getElementById('header-repo-link');
@@ -472,246 +471,91 @@ async function measureLatency(url, timeout) {
     }
 }
 
-async function downloadWithCORS(testUrl, maxDuration, label) {
-    var controller = new AbortController();
-    var timeoutId = setTimeout(function() { controller.abort(); }, maxDuration + 3000);
-    var startTime = performance.now();
-    var bytesReceived = 0;
-    var speedSamples = [];
-    var lastSampleTime = startTime;
-    var lastSampleBytes = 0;
-    var response, reader;
-    try {
-        response = await fetch(
-            testUrl + (testUrl.indexOf('?') > -1 ? '&' : '?') + '_t=' + Date.now(),
-            { mode: 'cors', signal: controller.signal, cache: 'no-store' }
-        );
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        reader = response.body.getReader();
-        while (true) {
-            var result = await reader.read();
-            if (result.done) break;
-            bytesReceived += result.value.length;
-            var now = performance.now();
-            if (now - lastSampleTime >= CORS_SAMPLE_INTERVAL) {
-                var intervalBytes = bytesReceived - lastSampleBytes;
-                var intervalTime = now - lastSampleTime;
-                var instantSpeed = (intervalBytes / 1024) / (intervalTime / 1000);
-                speedSamples.push({elapsed: now - startTime, speed: instantSpeed});
-                lastSampleTime = now;
-                lastSampleBytes = bytesReceived;
-            }
-            if (now - startTime >= maxDuration) break;
-        }
-    } catch (e) {
-    } finally {
-        clearTimeout(timeoutId);
-        try { if (reader) reader.cancel(); } catch (e) {}
-        try { controller.abort(); } catch (e) {}
-    }
-    var totalElapsed = (performance.now() - startTime) / 1000;
-    if (totalElapsed < 0.3 || bytesReceived < 10240) {
-        throw new Error('数据不足: ' + Math.round(bytesReceived / 1024) + 'KB / ' + totalElapsed.toFixed(1) + 's');
-    }
-    var overallSpeed = (bytesReceived / 1024) / totalElapsed;
-    var sustainedSpeed = overallSpeed;
-    if (speedSamples.length >= 4) {
-        var halfIdx = Math.floor(speedSamples.length / 2);
-        var secondHalf = speedSamples.slice(halfIdx);
-        sustainedSpeed = secondHalf.reduce(function(s, x) { return s + x.speed; }, 0) / secondHalf.length;
-    }
-    var minWindowSpeed = overallSpeed;
-    if (speedSamples.length >= 4) {
-        for (var i = 0; i < speedSamples.length; i++) {
-            var windowEnd = speedSamples[i].elapsed + 2000;
-            var windowSamples = [];
-            for (var j = i; j < speedSamples.length && speedSamples[j].elapsed <= windowEnd; j++) {
-                windowSamples.push(speedSamples[j].speed);
-            }
-            if (windowSamples.length >= 2) {
-                var windowAvg = windowSamples.reduce(function(a, b) { return a + b; }, 0) / windowSamples.length;
-                if (windowAvg < minWindowSpeed) minWindowSpeed = windowAvg;
-            }
-        }
-    }
-    var peakSpeed = overallSpeed;
-    if (speedSamples.length >= 2) {
-        peakSpeed = Math.max.apply(null, speedSamples.map(function(s) { return s.speed; }));
-    }
-    var timeStability = peakSpeed > 0 ? minWindowSpeed / peakSpeed : 0;
-    timeStability = Math.min(1, timeStability);
-    var reportedSpeed = Math.min(overallSpeed, sustainedSpeed, minWindowSpeed);
-    if (timeStability < 0.3) {
-        reportedSpeed *= (timeStability + 0.3);
-    }
-    return {
-        success: true,
-        speed: Math.round(reportedSpeed),
-        stability: parseFloat(timeStability.toFixed(2)),
-        peakSpeed: Math.round(peakSpeed),
-        sustainedSpeed: Math.round(sustainedSpeed),
-        minWindowSpeed: Math.round(minWindowSpeed),
-        sampleCount: speedSamples.length,
-        method: 'download',
-        note: speedSamples.length + '次采样 · 稳定性' + parseFloat(timeStability.toFixed(2)) + (label ? ' · ' + label : '')
-    };
-}
-
-async function downloadRangeCORS(testUrl, offset, chunkSize, maxDuration) {
-    var controller = new AbortController();
-    var timeoutId = setTimeout(function() { controller.abort(); }, maxDuration + 3000);
-    var startTime = performance.now();
-    var bytesReceived = 0;
-    var speedSamples = [];
-    var lastSampleTime = startTime;
-    var lastSampleBytes = 0;
-    var response, reader;
-    try {
-        response = await fetch(
-            testUrl + (testUrl.indexOf('?') > -1 ? '&' : '?') + '_t=' + Date.now() + '&range=1',
-            { mode: 'cors', signal: controller.signal, cache: 'no-store', headers: { 'Range': 'bytes=' + offset + '-' + (offset + chunkSize - 1) } }
-        );
-        if (response.status !== 206 && response.status !== 200) throw new Error('HTTP ' + response.status);
-        var rangeSupported = (response.status === 206);
-        reader = response.body.getReader();
-        while (true) {
-            var result = await reader.read();
-            if (result.done) break;
-            bytesReceived += result.value.length;
-            var now = performance.now();
-            if (now - lastSampleTime >= CORS_SAMPLE_INTERVAL) {
-                var intervalBytes = bytesReceived - lastSampleBytes;
-                var intervalTime = now - lastSampleTime;
-                speedSamples.push((intervalBytes / 1024) / (intervalTime / 1000));
-                lastSampleTime = now;
-                lastSampleBytes = bytesReceived;
-            }
-            if (now - startTime >= maxDuration || (rangeSupported && bytesReceived >= chunkSize)) break;
-        }
-    } catch (e) {
-    } finally {
-        clearTimeout(timeoutId);
-        try { if (reader) reader.cancel(); } catch (e) {}
-        try { controller.abort(); } catch (e) {}
-    }
-    var totalElapsed = (performance.now() - startTime) / 1000;
-    if (totalElapsed < 0.3 || bytesReceived < 5120) throw new Error('中段数据不足');
-    var speed = (bytesReceived / 1024) / totalElapsed;
-    if (speedSamples.length >= 4) {
-        var halfIdx = Math.floor(speedSamples.length / 2);
-        var secondHalf = speedSamples.slice(halfIdx);
-        speed = secondHalf.reduce(function(a, b) { return a + b; }, 0) / secondHalf.length;
-    }
-    return Math.round(speed);
-}
-
-function measureSpeedByPingsImproved(proxyUrl) {
+function measureSpeedByMultiplePings(proxyUrl) {
     return new Promise(function(resolve) {
         var pings = [];
         var count = 0;
         var maxP = PING_COUNT;
         var testUrl = proxyUrl + GITHUB_RELEASE_URL;
+
         function doPing() {
             if (count >= maxP) {
-                var validPings = pings.filter(function(p) { return p < 10000; });
-                if (!validPings.length) {
-                    resolve({success: false, speed: 0, stability: 0, error: '全部超时', method: 'ping', note: '不可用'});
+                var vp = pings.filter(function(p) { return p < 10000; });
+                if (!vp.length) {
+                    resolve({success: false, speed: 0, error: '全部超时'});
                     return;
                 }
-                var sorted = validPings.slice().sort(function(a, b) { return a - b; });
-                if (sorted.length > 4) sorted = sorted.slice(1, -1);
+
+                var sorted = vp.slice().sort(function(a, b) { return a - b; });
+                if (sorted.length > 2) sorted = sorted.slice(1, -1);
                 var median = sorted[Math.floor(sorted.length / 2)];
-                var avg = validPings.reduce(function(a, b) { return a + b; }, 0) / validPings.length;
-                var variance = validPings.reduce(function(a, b) { return a + Math.pow(b - avg, 2); }, 0) / validPings.length;
-                var cv = Math.sqrt(variance) / Math.max(avg, 1);
-                var baseSpeed;
-                if (median < 100) baseSpeed = 1800;
-                else if (median < 200) baseSpeed = 1000;
-                else if (median < 300) baseSpeed = 600;
-                else if (median < 500) baseSpeed = 350;
-                else if (median < 1000) baseSpeed = 180;
-                else if (median < 2000) baseSpeed = 80;
-                else if (median < 5000) baseSpeed = 25;
-                else baseSpeed = 8;
-                var stabilityFactor = Math.max(0.2, 1 - cv * 0.6);
-                var speed = Math.round(baseSpeed * stabilityFactor);
-                var stability = parseFloat(stabilityFactor.toFixed(2));
+                var avg = vp.reduce(function(a, b) { return a + b; }, 0) / vp.length;
+                var v = vp.reduce(function(a, b) { return a + Math.pow(b - avg, 2); }, 0) / vp.length;
+                var st = Math.sqrt(v) / avg;
+
+                var maxPing = Math.max.apply(null, vp);
+                var hasAnomaly = maxPing > median * ANOMALY_RATIO;
+
+                var bs = 0;
+                if (median < 300) bs = 2500;
+                else if (median < 500) bs = 1500;
+                else if (median < 1000) bs = 800;
+                else if (median < 2000) bs = 300;
+                else if (median < 5000) bs = 100;
+                else bs = 20;
+
+                var f = Math.max(.5, 1 - st);
+                var sp = bs * f;
+
+                if (hasAnomaly) {
+                    sp = sp * ANOMALY_PENALTY;
+                }
+
+                var noteText = vp.length + '次采样';
+                if (hasAnomaly) {
+                    noteText += ' · 延迟异常';
+                } else {
+                    noteText += ' · 稳定';
+                }
+
                 resolve({
                     success: true,
-                    speed: speed,
-                    stability: stability,
-                    method: 'ping',
-                    note: validPings.length + '次采样 · 稳定性' + stability + ' · 估算值'
+                    speed: parseFloat(sp.toFixed(0)),
+                    stability: parseFloat(st.toFixed(2)),
+                    hasAnomaly: hasAnomaly,
+                    note: noteText
                 });
                 return;
             }
+
             var s = performance.now();
             var c = new AbortController();
             var t = setTimeout(function() { c.abort(); }, SPEED_TIMEOUT);
-            fetch(testUrl + '?_t=' + Date.now() + '_' + count, {method: 'HEAD', mode: 'no-cors', signal: c.signal})
-                .then(function() {
-                    clearTimeout(t);
-                    pings.push(performance.now() - s);
-                    count++;
-                    setTimeout(doPing, PING_INTERVAL);
-                })
-                .catch(function() {
-                    clearTimeout(t);
-                    pings.push(10000);
-                    count++;
-                    setTimeout(doPing, PING_INTERVAL);
-                });
+            fetch(testUrl + '?_t=' + Date.now() + '_' + count, {
+                method: 'HEAD', mode: 'no-cors', signal: c.signal
+            })
+            .then(function() {
+                clearTimeout(t);
+                pings.push(performance.now() - s);
+                count++;
+                setTimeout(doPing, PING_INTERVAL);
+            })
+            .catch(function() {
+                clearTimeout(t);
+                pings.push(10000);
+                count++;
+                setTimeout(doPing, PING_INTERVAL);
+            });
         }
+
         doPing();
     });
 }
 
-async function measureSpeedRobust(proxyUrl) {
-    var testUrl = proxyUrl + GITHUB_RELEASE_URL;
-    var fileSizeBytes = parseFloat(RELEASE.fileSize) * 1048576;
-    var startResult;
-    try {
-        startResult = await downloadWithCORS(testUrl, CORS_DOWNLOAD_DURATION, '首段');
-    } catch (e) {
-        return await measureSpeedByPingsImproved(proxyUrl);
-    }
-    var middleSpeed = null;
-    if (fileSizeBytes > 5 * 1024 * 1024) {
-        var middleOffset = Math.floor(fileSizeBytes / 2);
-        var rangeChunk = 2 * 1024 * 1024;
-        try {
-            middleSpeed = await downloadRangeCORS(testUrl, middleOffset, rangeChunk, CORS_RANGE_DURATION);
-        } catch (e) {}
-    }
-    var finalSpeed = startResult.speed;
-    var finalStability = startResult.stability;
-    if (middleSpeed !== null && middleSpeed > 0) {
-        var positionRatio = Math.min(startResult.speed, middleSpeed) / Math.max(startResult.speed, middleSpeed, 1);
-        var positionStability = Math.min(1, positionRatio);
-        finalSpeed = Math.min(startResult.speed, middleSpeed);
-        finalStability = parseFloat((finalStability * positionStability).toFixed(2));
-        if (middleSpeed < startResult.speed * 0.3) {
-            finalSpeed = Math.round(middleSpeed * 0.7);
-            finalStability = Math.min(finalStability, 0.15);
-        }
-        startResult.note = '多点测速 · 稳定性' + finalStability;
-    }
-    return {
-        success: true,
-        speed: finalSpeed,
-        stability: finalStability,
-        method: 'download',
-        note: startResult.note,
-        speedNote: startResult.note
-    };
-}
-
-function getScore(l, s, stability) {
-    stability = (stability !== undefined && stability !== null) ? stability : 0.5;
+function getScore(l, s) {
     var ls = Math.max(0, 100 - (l / 5000) * 100);
     var ss = Math.min(100, (s / 3072) * 100);
-    var stScore = stability * 100;
-    return Math.round(ls * 0.2 + ss * 0.5 + stScore * 0.3);
+    return Math.round(ls * .3 + ss * .7);
 }
 
 function scoreColor(s) {
@@ -725,13 +569,6 @@ function latencyLabel(ms) {
     if (ms < 500) return {text: '极速', cls: 'text-emerald-600'};
     if (ms < 2000) return {text: '可用', cls: 'text-amber-600'};
     return {text: '较慢', cls: 'text-orange-600'};
-}
-
-function stabilityLabel(st) {
-    if (st >= 0.8) return {text: '稳定', cls: 'text-emerald-600'};
-    if (st >= 0.5) return {text: '一般', cls: 'text-amber-600'};
-    if (st >= 0.3) return {text: '波动', cls: 'text-orange-600'};
-    return {text: '不稳定', cls: 'text-red-500'};
 }
 
 function showToast(msg) {
@@ -784,11 +621,13 @@ function _statusHtml(item, phase) {
     }
     if (phase === 'speed-done') {
         if (item.speedSuccess) {
-            var speedText = item.speed >= 1024 ? (item.speed / 1024).toFixed(1) + ' MB/s' : item.speed + ' KB/s';
-            var st = item.stability || 0;
-            var stLabel = stabilityLabel(st);
-            return '<span class="text-xs font-mono text-slate-600">' + speedText + '</span>' +
-                '<span class="text-xs ml-1.5 ' + stLabel.cls + '">' + stLabel.text + '</span>';
+            var speedText = item.speed >= 1024
+                ? (item.speed / 1024).toFixed(1) + ' MB/s'
+                : item.speed + ' KB/s';
+            var anomalyTag = item.hasAnomaly
+                ? '<span class="text-xs ml-1.5 text-orange-500">延迟异常</span>'
+                : '<span class="text-xs ml-1.5 text-emerald-500">稳定</span>';
+            return '<span class="text-xs font-mono text-slate-600">' + speedText + '</span>' + anomalyTag;
         }
         return '<span class="text-xs text-red-400">失败</span>';
     }
@@ -821,7 +660,7 @@ function _getSortedOrder() {
             var aRank = ra.speedSuccess ? 3 : (ra._ld && ra.latencySuccess && !ra._skip) ? 2 : (ra._ld ? 1 : 0);
             var bRank = rb.speedSuccess ? 3 : (rb._ld && rb.latencySuccess && !rb._skip) ? 2 : (rb._ld ? 1 : 0);
             if (aRank !== bRank) return bRank - aRank;
-            if (aRank === 3 && bRank === 3) return getScore(rb.latency, rb.speed, rb.stability) - getScore(ra.latency, ra.speed, ra.stability);
+            if (aRank === 3 && bRank === 3) return rb.speed - ra.speed;
             if (aRank === 2 && bRank === 2) return ra.latency - rb.latency;
             return 0;
         } else {
@@ -912,7 +751,7 @@ function updateLiveList() {
 
 function renderFinal(totalTime) {
     var avail = proxyResults.filter(function(r) { return r.latencySuccess && r.speedSuccess; });
-    avail.sort(function(a, b) { return getScore(b.latency, b.speed, b.stability) - getScore(a.latency, a.speed, a.stability); });
+    avail.sort(function(a, b) { return getScore(b.latency, b.speed) - getScore(a.latency, a.speed); });
     document.getElementById('testing-status').classList.add('hidden');
     document.getElementById('live-list').classList.add('hidden');
     if (!avail.length) {
@@ -921,17 +760,18 @@ function renderFinal(totalTime) {
         return;
     }
     var best = avail[0];
-    var bs = getScore(best.latency, best.speed, best.stability);
+    var bs = getScore(best.latency, best.speed);
     var bt = best.speed >= 1024 ? (best.speed / 1024).toFixed(1) + ' MB/s' : best.speed + ' KB/s';
     var du = best.url + GITHUB_RELEASE_URL;
     var sc = scoreColor(bs);
-    var stInfo = stabilityLabel(best.stability || 0);
-    var methodLabel = best.method === 'download' ? '实测' : '估算';
+    var stabilityText = best.hasAnomaly ? '延迟异常' : '稳定';
+    var stabilityCls = best.hasAnomaly ? 'text-orange-500' : 'text-emerald-600';
+
     var h = '<div class="anim-card"><div class="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">';
     h += '<div class="px-6 pt-5 pb-4"><div class="flex items-center gap-2.5 mb-4">';
     h += '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-semibold whitespace-nowrap"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>最优线路</span>';
     h += '<span class="inline-flex items-center px-2.5 py-1 rounded-lg ' + sc.bg + ' ' + sc.text + ' text-xs font-semibold whitespace-nowrap">' + bs + ' 分</span>';
-    h += '<span class="inline-flex items-center px-2 py-1 rounded-lg bg-slate-50 text-slate-500 text-xs font-medium whitespace-nowrap">' + methodLabel + '</span>';
+    h += '<span class="inline-flex items-center px-2 py-1 rounded-lg ' + (best.hasAnomaly ? 'bg-orange-50 text-orange-600' : 'bg-emerald-50 text-emerald-600') + ' text-xs font-medium whitespace-nowrap">' + stabilityText + '</span>';
     h += '</div>';
     h += '<h2 class="text-lg font-bold text-slate-900 mb-0.5">' + RELEASE.fileName + '</h2>';
     h += '<p class="text-sm text-slate-400">' + RELEASE.version + '</p></div>';
@@ -943,7 +783,7 @@ function renderFinal(totalTime) {
     h += '<div class="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm text-slate-500 mb-4">';
     h += '<span class="whitespace-nowrap">延迟 <span class="font-mono font-medium text-slate-700">' + best.latency + 'ms</span></span>';
     h += '<span class="whitespace-nowrap">速度 <span class="font-mono font-medium text-slate-700">' + bt + '</span></span>';
-    h += '<span class="whitespace-nowrap">稳定性 <span class="font-mono font-medium ' + stInfo.cls + '">' + ((best.stability || 0) * 100).toFixed(0) + '% ' + stInfo.text + '</span></span>';
+    h += '<span class="whitespace-nowrap">稳定性 <span class="font-mono font-medium ' + stabilityCls + '">' + stabilityText + '</span></span>';
     h += '<span class="whitespace-nowrap">测速耗时 <span class="font-mono font-medium text-slate-700">' + totalTime + 's</span></span></div>';
     h += '<div class="flex flex-wrap items-center gap-2.5">';
     h += '<a href="' + du + '" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-medium whitespace-nowrap shadow-md shadow-indigo-500/15"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>立即下载最新版</a>';
@@ -956,16 +796,16 @@ function renderFinal(totalTime) {
         var bh = '<div class="anim-card" style="animation-delay:.12s"><div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3.5">备用线路</h3><div class="space-y-2">';
         for (var j = 1; j < avail.length; j++) {
             var r = avail[j];
-            var rs = getScore(r.latency, r.speed, r.stability);
+            var rs = getScore(r.latency, r.speed);
             var rsc = scoreColor(rs);
             var rt = r.speed >= 1024 ? (r.speed / 1024).toFixed(1) + ' MB/s' : r.speed + ' KB/s';
             var ru = r.url + GITHUB_RELEASE_URL;
             var dl = .08 * j;
-            var rst = stabilityLabel(r.stability || 0);
-            var rmethod = r.method === 'download' ? '实测' : '估算';
+            var rStabText = r.hasAnomaly ? '延迟异常' : '稳定';
+            var rStabCls = r.hasAnomaly ? 'text-orange-500' : 'text-emerald-600';
             bh += '<div class="route-row flex items-center justify-between px-4 py-3 rounded-xl border border-slate-100 anim-row" style="animation-delay:' + dl + 's">';
-            bh += '<div class="flex items-center gap-3 min-w-0"><span class="text-xs font-mono text-slate-300 w-5 shrink-0">#' + (j + 1) + '</span><div class="min-w-0"><div class="text-sm font-medium text-slate-700 whitespace-nowrap truncate">' + r.name + '</div><div class="text-xs text-slate-400 whitespace-nowrap">' + r.latency + 'ms · ' + rt + ' · ' + rst.text + '</div></div></div>';
-            bh += '<div class="flex items-center gap-2.5 shrink-0 ml-3"><span class="inline-flex items-center px-1.5 py-0.5 rounded bg-slate-50 text-slate-400 text-xs font-medium whitespace-nowrap">' + rmethod + '</span><span class="inline-flex items-center px-2 py-0.5 rounded-md ' + rsc.bg + ' ' + rsc.text + ' text-xs font-semibold whitespace-nowrap">' + rs + ' 分</span>';
+            bh += '<div class="flex items-center gap-3 min-w-0"><span class="text-xs font-mono text-slate-300 w-5 shrink-0">#' + (j + 1) + '</span><div class="min-w-0"><div class="text-sm font-medium text-slate-700 whitespace-nowrap truncate">' + r.name + '</div><div class="text-xs text-slate-400 whitespace-nowrap">' + r.latency + 'ms · ' + rt + ' · <span class="' + rStabCls + '">' + rStabText + '</span></div></div></div>';
+            bh += '<div class="flex items-center gap-2.5 shrink-0 ml-3"><span class="inline-flex items-center px-2 py-0.5 rounded-md ' + rsc.bg + ' ' + rsc.text + ' text-xs font-semibold whitespace-nowrap">' + rs + ' 分</span>';
             bh += '<a href="' + ru + '" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center px-3 py-1.5 rounded-lg text-slate-500 text-xs font-medium whitespace-nowrap border border-transparent hover:border-slate-200">下载</a></div></div>';
         }
         bh += '</div></div></div>';
@@ -1003,6 +843,7 @@ async function runAllTests() {
     clearTimeout(_flipCleanup);
     startTimer();
     releaseFetched = false;
+
     try {
         await fetchRelease();
     } catch (e) {
@@ -1016,11 +857,23 @@ async function runAllTests() {
     for (var i = 0; i < GITHUB_PROXIES.length; i++) {
         var proxy = GITHUB_PROXIES[i];
         proxyResults.push({
-            name: proxy.name, url: proxy.url, desc: proxy.desc,
-            latency: 0, latencySuccess: false, latencyError: '',
-            speed: 0, speedTested: false, speedSuccess: false, speedError: '', speedNote: '',
-            stability: 0, method: '',
-            _tl: true, _ts: false, _ld: false, _sd: false, _skip: false
+            name: proxy.name,
+            url: proxy.url,
+            desc: proxy.desc,
+            latency: 0,
+            latencySuccess: false,
+            latencyError: '',
+            speed: 0,
+            speedTested: false,
+            speedSuccess: false,
+            speedError: '',
+            speedNote: '',
+            hasAnomaly: false,
+            _tl: true,
+            _ts: false,
+            _ld: false,
+            _sd: false,
+            _skip: false
         });
     }
     updateLiveList();
@@ -1049,7 +902,7 @@ async function runAllTests() {
     await Promise.allSettled(latencyPromises);
     ensureSeg(0);
 
-    addSeg('正在测试下载稳定性...', 'text-slate-400');
+    addSeg('正在测试线路稳定性...', 'text-slate-400');
     _phase = 'speed';
     var avail = proxyResults.filter(function(r) { return r.latencySuccess && !r._skip; });
     if (avail.length === 0) {
@@ -1066,29 +919,19 @@ async function runAllTests() {
         return;
     }
 
-    setStatus('正在测试下载稳定性（' + avail.length + '条线路）...');
+    setStatus('正在测试线路稳定性（' + avail.length + '条线路）...');
     showProgress('稳定性测速', 0, avail.length);
 
     var speedPromises = avail.map(function(item) {
         item._ts = true;
         updateLiveList();
-        return measureSpeedRobust(item.url).then(function(sr) {
+        return measureSpeedByMultiplePings(item.url).then(function(sr) {
             item.speedTested = true;
             item.speedSuccess = sr.success;
-            item.speed = sr.speed || 0;
+            item.speed = sr.speed;
             item.speedError = sr.error || '';
             item.speedNote = sr.note || '';
-            item.stability = sr.stability || 0;
-            item.method = sr.method || '';
-            item._ts = false;
-            item._sd = true;
-            updateLiveList();
-            showProgress('稳定性测速', avail.filter(function(r) { return r._sd; }).length, avail.length);
-            return item;
-        }).catch(function(e) {
-            item.speedTested = true;
-            item.speedSuccess = false;
-            item.speedError = e.message || '测速失败';
+            item.hasAnomaly = sr.hasAnomaly || false;
             item._ts = false;
             item._sd = true;
             updateLiveList();
