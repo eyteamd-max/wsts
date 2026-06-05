@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>塔Ⅱ手机版 · 游戏本体下载</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<title>塔Ⅱ手机版 - STS2娘化MOD站</title>
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
 <style>
@@ -34,160 +30,104 @@
   --font-body: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
   --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   background-color: var(--bg);
-  background-image: radial-gradient(ellipse at 15% 20%, rgba(232, 155, 155, 0.06) 0%, transparent 55%),
-                    radial-gradient(ellipse at 78% 65%, rgba(168, 216, 200, 0.07) 0%, transparent 55%),
-                    radial-gradient(ellipse at 40% 80%, rgba(200, 184, 216, 0.05) 0%, transparent 50%),
-                    radial-gradient(circle at 60% 30%, rgba(251, 232, 195, 0.06) 0%, transparent 45%);
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(232, 155, 155, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 78% 65%, rgba(168, 216, 200, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 40% 80%, rgba(200, 184, 216, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 60% 30%, rgba(251, 232, 195, 0.06) 0%, transparent 45%);
   background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
-.main-container {
-  max-width: 960px;
+.page-container {
+  max-width: 860px;
   margin: 0 auto;
   padding: 24px 20px 60px;
 }
-
 .page-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
-
-.page-title {
-  font-family: var(--font-title);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--text-primary);
-}
-
-.page-title::after {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: var(--strawberry-milk);
-  border-radius: 50%;
-  margin-left: 6px;
-  vertical-align: middle;
-  animation: dotPulse 2s ease-in-out infinite;
-}
-
-@keyframes dotPulse {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.8); opacity: 0.3; }
-}
-
-.back-link {
+.back-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #e2dbd0;
+  padding: 8px 18px;
   background: #fffdfb;
-  transition: all 0.2s;
+  border: var(--border-width) solid var(--border-dark);
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-bounce);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
-
-.back-link:hover {
-  background: #fef0f0;
-  color: #c97a7a;
-  border-color: #f5c4c4;
+.back-btn:hover {
+  background: var(--strawberry-light);
+  color: #fff;
+  border-color: #c97a7a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-deep);
 }
-
-.section-title {
-  font-size: 1.25rem;
+.page-title {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 16px;
-  padding-left: 12px;
-  border-left: 4px solid var(--strawberry-milk);
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  white-space: nowrap;
 }
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 32px;
-  height: 3px;
-  background: var(--mint-jelly);
-  border-radius: 2px;
-}
-
 .search-wrapper {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   position: relative;
   z-index: 50;
 }
-
-.search-container {
-  position: relative;
-}
-
 .search-input {
   width: 100%;
-  padding: 14px 48px 14px 20px;
+  padding: 14px 48px 14px 22px;
   font-size: 0.95rem;
   border: var(--border-width) solid var(--border-dark);
-  border-radius: 999px;
+  border-radius: 50px;
   background: #fffdfb;
   color: var(--text-primary);
   outline: none;
   transition: all 0.3s;
   box-shadow: var(--shadow-soft);
+  font-family: var(--font-body);
 }
-
 .search-input:focus {
   box-shadow: var(--shadow-deep);
   border-color: var(--strawberry-milk);
 }
-
 .search-icon {
   position: absolute;
-  right: 14px;
+  right: 16px;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
   pointer-events: none;
 }
-
 .search-dropdown {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
-  right: 0;
+  left: 8px;
+  right: 8px;
   background: #fffdfb;
   border: var(--border-width) solid var(--border-dark);
-  border-radius: 20px;
+  border-radius: 22px;
   box-shadow: var(--shadow-medium);
   z-index: 200;
   max-height: 260px;
@@ -199,510 +139,522 @@ body {
   list-style: none;
   padding: 6px 0;
 }
-
 .search-dropdown.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
 .search-dropdown-item {
-  padding: 10px 18px;
+  padding: 11px 20px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.93rem;
   color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
-
 .search-dropdown-item:hover {
   background: #fef0f0;
   color: #c97a7a;
 }
-
 .search-dropdown-item mark {
-  background: #fce4e4;
-  color: #b14b4b;
-  border-radius: 4px;
+  background: var(--cream-light);
+  color: #c97a7a;
+  border-radius: 3px;
   padding: 0 2px;
 }
-
-.latest-version-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 32px;
+.latest-section {
+  margin-bottom: 36px;
 }
-
-@media (max-width: 720px) {
-  .latest-version-row {
-    grid-template-columns: 1fr;
-  }
-}
-
 .latest-card {
   background: #fffdfb;
   border: var(--border-width) solid var(--border-dark);
-  border-radius: 24px;
-  padding: 20px 22px 22px;
+  border-radius: var(--radius-xl);
+  padding: 26px 24px;
   box-shadow: var(--shadow-soft);
+  transition: all 0.35s var(--transition-bounce);
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .latest-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-deep);
+}
+.latest-card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.latest-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #f8f5f2;
+  border: 2px solid #e2dbd0;
+}
+.latest-info {
+  flex: 1;
+  min-width: 0;
+}
+.latest-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--strawberry-light);
+  color: #c97a7a;
+  border-radius: 12px;
+  padding: 3px 12px;
+  margin-bottom: 6px;
+}
+.latest-version {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.latest-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.latest-meta-size {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.latest-meta-tip {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.latest-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.latest-desc.expanded {
+  -webkit-line-clamp: unset;
+  display: block;
+}
+.desc-toggle {
+  color: var(--strawberry-milk);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 2px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.desc-toggle:hover {
+  color: #c97a7a;
+  text-decoration: underline;
+}
+.latest-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: var(--strawberry-milk);
+  color: #fff;
+  border: var(--border-width) solid #c97a7a;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-bounce);
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.btn-download:hover {
+  background: #fff;
+  color: var(--strawberry-milk);
+  transform: scale(1.05);
+}
+.btn-tutorial {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: #fffdfb;
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border-dark);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-bounce);
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.btn-tutorial:hover {
+  background: var(--cream-light);
+  border-color: #d4c490;
+  transform: scale(1.05);
+}
+.history-section {
+  margin-bottom: 24px;
+}
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.history-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.history-tabs {
+  display: flex;
+  background: #ede9e3;
+  border-radius: 20px;
+  padding: 3px;
+  gap: 0;
+  flex-shrink: 0;
+}
+.history-tab {
+  padding: 6px 18px;
+  border-radius: 17px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s var(--transition-bounce);
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.history-tab.active {
+  background: var(--strawberry-milk);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(232, 155, 155, 0.3);
+}
+.history-tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary);
+}
+.version-card {
+  background: #fffdfb;
+  border: var(--border-width) solid var(--border-dark);
+  border-radius: 22px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s var(--transition-bounce);
+}
+.version-card:hover {
+  transform: translateY(-3px);
   box-shadow: var(--shadow-medium);
 }
-
-.latest-card.launcher {
-  border-top: 4px solid #f5c4c4;
-}
-
-.latest-card.game {
-  border-top: 4px solid #a8d8c8;
-}
-
-.latest-header {
+.version-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 8px;
 }
-
-.latest-title {
+.version-card-version {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
 }
-
-.latest-badge {
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: #fce4e4;
-  color: #b14b4b;
-}
-
-.latest-body {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px 12px;
-  align-items: start;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.latest-label {
-  color: var(--text-muted);
+.version-card-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 14px;
+  background: var(--mint-light);
+  color: #4a8a6a;
+  border: 1.5px solid #8cc8a0;
   white-space: nowrap;
 }
-
-.latest-value {
-  font-weight: 500;
-}
-
-.latest-desc {
-  margin-top: 10px;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.latest-actions {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-.btn-primary {
-  padding: 10px 20px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #f5c4c4, #e89b9b);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 10px rgba(232, 155, 155, 0.25);
-  transition: transform 0.12s, box-shadow 0.12s, background 0.15s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(232, 155, 155, 0.35);
-  background: linear-gradient(135deg, #e89b9b, #d68888);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(232, 155, 155, 0.3);
-}
-
-.btn-secondary {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid #e2dbd0;
-  background: #fffdfb;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-}
-
-.btn-secondary:hover {
-  background: #fef0f0;
-  color: #c97a7a;
-  border-color: #f5c4c4;
-}
-
-.latest-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  object-fit: cover;
-  border: 2px solid #e8e2dc;
-}
-
-.latest-icon-placeholder {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: #f5f2f8;
-  border: 2px solid #e8e2dc;
+.version-card-meta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-.section-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.section-title-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  min-width: 0;
-}
-
-.pill-tabs {
-  display: flex;
-  gap: 0;
-  border-radius: 999px;
-  border: 1.5px solid #e2dbd0;
-  background: #faf7f4;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.pill-tab {
-  padding: 7px 14px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  outline: none;
-  transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
-}
-
-.pill-tab:first-child {
-  border-right: 1px solid #e2dbd0;
-}
-
-.pill-tab.active {
-  background: linear-gradient(135deg, #f5c4c4, #e89b9b);
-  color: #fff;
-}
-
-.pill-tab:hover:not(.active) {
-  background: #fef0f0;
-  color: #c97a7a;
-}
-
-.version-list {
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 12px;
-  margin-bottom: 32px;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  flex-wrap: wrap;
 }
-
-.version-card {
-  background: #fffdfb;
-  border: var(--border-width) solid var(--border-dark);
-  border-radius: 20px;
-  padding: 16px 18px 16px 20px;
-  box-shadow: var(--shadow-soft);
-  position: relative;
-  transition: transform 0.15s, box-shadow 0.15s;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 12px 14px;
-  align-items: center;
-}
-
-.version-card:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-medium);
-}
-
-.version-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 2px solid #e8e2dc;
-}
-
-.version-icon-placeholder {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  background: #f5f2f8;
-  border: 2px solid #e8e2dc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.7rem;
-}
-
-.version-main {
-  min-width: 0;
-}
-
-.version-title {
+.version-card-size {
   font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 4px;
   color: var(--text-primary);
 }
-
-.version-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-
-.version-desc {
-  font-size: 0.85rem;
+.version-card-desc {
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-
-.version-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+.version-card-desc.expanded {
+  -webkit-line-clamp: unset;
+  display: block;
 }
-
-.version-download {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1.5px solid #e2dbd0;
-  background: #fffdfb;
-  color: var(--text-secondary);
-  font-size: 0.82rem;
+.version-card-toggle {
+  color: var(--strawberry-milk);
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: none;
+  font-size: 0.82rem;
+  margin-top: 2px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.version-card-toggle:hover {
+  color: #c97a7a;
+  text-decoration: underline;
+}
+.version-card-actions {
+  margin-top: 12px;
+}
+.btn-small-download {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  padding: 8px 20px;
+  background: var(--strawberry-milk);
+  color: #fff;
+  border: var(--border-width) solid #c97a7a;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-bounce);
+  font-family: var(--font-body);
+  white-space: nowrap;
 }
-
-.version-download:hover {
-  background: #fef0f0;
-  color: #c97a7a;
-  border-color: #f5c4c4;
+.btn-small-download:hover {
+  background: #fff;
+  color: var(--strawberry-milk);
+  transform: scale(1.05);
 }
-
-.version-size {
-  font-size: 0.78rem;
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
   color: var(--text-muted);
-  text-align: right;
+  font-size: 0.95rem;
 }
-
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin: 20px 0 10px;
+  gap: 10px;
+  margin: 30px 0 10px;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow: hidden;
 }
-
-.pagination-btn,
-.pagination-page {
+.pagination-btn, .pagination-page {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  height: 36px;
-  padding: 0 10px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
   background: #fffdfb;
   border: var(--border-width) solid var(--border-dark);
-  border-radius: 999px;
+  border-radius: 30px;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.2s var(--transition-bounce);
+  transition: all 0.3s var(--transition-bounce);
   box-shadow: var(--shadow-soft);
   user-select: none;
-  white-space: nowrap;
 }
-
-.pagination-btn:hover:not(:disabled),
-.pagination-page:hover:not(.active) {
+.pagination-btn:hover:not(:disabled), .pagination-page:hover:not(.active) {
   background: var(--strawberry-light);
   color: #fff;
   border-color: #c97a7a;
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
-
 .pagination-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
   pointer-events: none;
 }
-
 .pagination-page.active {
   background: var(--strawberry-milk);
   color: #fff;
   border-color: #c97a7a;
-  box-shadow: 0 2px 8px rgba(232, 155, 155, 0.25);
+  box-shadow: 0 2px 12px rgba(232, 155, 155, 0.3);
 }
-
 .pagination-dots {
   color: var(--text-muted);
   font-weight: 600;
   padding: 0 4px;
   user-select: none;
 }
-
 .pagination-goto {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-left: 8px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  margin-left: 10px;
+  flex-shrink: 0;
 }
-
 .pagination-goto-input {
   width: 52px;
-  height: 36px;
+  height: 40px;
   padding: 0 10px;
   background: #fffdfb;
   border: var(--border-width) solid var(--border-dark);
-  border-radius: 999px;
+  border-radius: 30px;
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-primary);
   text-align: center;
   outline: none;
   box-shadow: var(--shadow-soft);
-  transition: all 0.2s var(--transition-bounce);
+  transition: all 0.3s var(--transition-bounce);
   -moz-appearance: textfield;
 }
-
 .pagination-goto-input::-webkit-outer-spin-button,
 .pagination-goto-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .pagination-goto-input:focus {
   border-color: var(--strawberry-milk);
   box-shadow: var(--shadow-deep);
 }
-
 .pagination-goto-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  height: 36px;
-  padding: 0 12px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 14px;
   background: #fffdfb;
   border: var(--border-width) solid var(--border-dark);
-  border-radius: 999px;
+  border-radius: 30px;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.2s var(--transition-bounce);
+  transition: all 0.3s var(--transition-bounce);
   box-shadow: var(--shadow-soft);
   user-select: none;
-  white-space: nowrap;
 }
-
 .pagination-goto-btn:hover {
   background: var(--strawberry-light);
   color: #fff;
   border-color: #c97a7a;
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
-
 .pagination-goto-mobile-trigger {
   display: none;
 }
-
-@media (max-width: 520px) {
-  .pagination-goto-input,
-  .pagination-goto-btn {
+.footer {
+  text-align: center;
+  padding: 30px 4px 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: #fffefb;
+  border: 1.5px solid #d5cdc0;
+  border-radius: 24px;
+  padding: 10px 22px;
+  font-weight: 550;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-deep);
+  transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+  z-index: 600;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+@media (max-width: 600px) {
+  .page-container {
+    padding: 18px 14px 50px;
+  }
+  .page-header {
+    gap: 10px;
+  }
+  .page-title {
+    font-size: 1.2rem;
+  }
+  .latest-card {
+    padding: 20px 18px;
+  }
+  .latest-card-inner {
+    gap: 14px;
+  }
+  .latest-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+  }
+  .latest-version {
+    font-size: 1.05rem;
+  }
+  .latest-actions {
+    gap: 8px;
+  }
+  .btn-download, .btn-tutorial {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+  }
+  .history-tab {
+    padding: 5px 14px;
+    font-size: 0.78rem;
+  }
+  .version-card {
+    padding: 16px 16px;
+  }
+  .pagination-btn, .pagination-page {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+  .pagination-goto-input, .pagination-goto-btn {
     display: none;
   }
   .pagination-goto-mobile-trigger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 32px;
-    height: 32px;
-    padding: 0 8px;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
     background: #fffdfb;
     border: var(--border-width) solid var(--border-dark);
-    border-radius: 999px;
-    font-size: 0.8rem;
+    border-radius: 30px;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-primary);
     cursor: pointer;
     box-shadow: var(--shadow-soft);
-    transition: all 0.2s var(--transition-bounce);
+    transition: all 0.3s var(--transition-bounce);
     user-select: none;
   }
   .pagination-goto-mobile-trigger:hover {
@@ -711,484 +663,560 @@ body {
     border-color: #c97a7a;
   }
   .pagination-goto {
-    margin-left: 4px;
-  }
-  .pagination {
-    gap: 6px;
-  }
-  .pagination-btn,
-  .pagination-page {
-    min-width: 32px;
-    height: 32px;
-    font-size: 0.8rem;
-    padding: 0 6px;
+    margin-left: 6px;
   }
 }
-
-.footer {
+.goto-popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 700;
+  align-items: flex-end;
+  justify-content: center;
+}
+.goto-popup-overlay.active {
+  display: flex;
+}
+.goto-popup {
+  width: 100%;
+  max-width: 360px;
+  background: #fffdfb;
+  border: var(--border-width) solid var(--border-dark);
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 32px;
+  box-shadow: var(--shadow-deep);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: popupSlideUp 0.3s var(--transition-bounce);
+}
+@keyframes popupSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.goto-popup-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.goto-popup-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.goto-popup-input {
+  width: 80px;
+  height: 44px;
+  padding: 0 14px;
+  background: #fffdfb;
+  border: var(--border-width) solid var(--border-dark);
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
   text-align: center;
-  padding: 20px 4px 16px;
-  color: var(--text-muted);
-  font-size: 0.8rem;
+  outline: none;
+  -moz-appearance: textfield;
+}
+.goto-popup-input::-webkit-outer-spin-button,
+.goto-popup-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.goto-popup-input:focus {
+  border-color: var(--strawberry-milk);
+}
+.goto-popup-confirm {
+  height: 44px;
+  padding: 0 24px;
+  background: var(--strawberry-milk);
+  color: #fff;
+  border: var(--border-width) solid #c97a7a;
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-bounce);
+}
+.goto-popup-confirm:hover {
+  background: #fff;
+  color: var(--strawberry-milk);
+  transform: scale(1.05);
+}
+@media (min-width: 601px) {
+  .goto-popup-overlay {
+    display: none !important;
+  }
 }
 </style>
 </head>
 <body>
-<div class="main-container">
+
+<div class="page-container">
   <header class="page-header">
-    <h1 class="page-title">塔Ⅱ手机版 · 游戏本体下载</h1>
-    <a href="../../index.html" class="back-link">&larr; 返回主站</a>
+    <a href="../../index.html" class="back-btn">&larr; 返回</a>
+    <h1 class="page-title">塔Ⅱ手机版</h1>
   </header>
 
-  <section class="search-wrapper">
-    <div class="search-container">
-      <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号或关键词（如 v0.103.2、启动器）..." autocomplete="off">
-      <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
-        <circle cx="8.5" cy="8.5" r="5.5"/>
-        <line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/>
-      </svg>
-      <ul class="search-dropdown" id="searchDropdown"></ul>
-    </div>
-  </section>
+  <div class="search-wrapper" id="searchWrapper">
+    <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号..." autocomplete="off">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#9a92a5" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+    <ul class="search-dropdown" id="searchDropdown"></ul>
+  </div>
 
-  <section class="latest-version-row">
-    <div class="latest-card launcher">
-      <div class="latest-header">
-        <div>
-          <div class="latest-title">启动器 · 最新版本</div>
-          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">需配合游戏本体使用</div>
-        </div>
-        <img class="latest-icon" src="http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0" alt="启动器图标">
-      </div>
-      <div class="latest-body">
-        <div class="latest-label">版本</div>
-        <div class="latest-value">0.1.0</div>
-        <div class="latest-label">更新时间</div>
-        <div class="latest-value">2026年6月5日</div>
-        <div class="latest-label">大小</div>
-        <div class="latest-value">66.62MB</div>
-      </div>
-      <div class="latest-desc">杀戮尖塔2的最新版启动器，需要配合游戏本体使用，目前推荐版本v0.103.2兼容性较强</div>
-      <div class="latest-actions">
-        <a href="https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7f808c35d3e44f1db95b4e62d85494d0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D" class="btn-primary" target="_blank" rel="noopener">下载启动器</a>
-      </div>
-    </div>
-
-    <div class="latest-card game">
-      <div class="latest-header">
-        <div>
-          <div class="latest-title">游戏本体 · 推荐版本</div>
-          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">请根据需求选择版本</div>
-        </div>
-        <img class="latest-icon" src="http://shp.qpic.cn/collector/1976464052/e2e5de8f-a1cd-40e2-aef5-e6acc9327b3b/0" alt="游戏本体图标">
-      </div>
-      <div class="latest-body">
-        <div class="latest-label">版本</div>
-        <div class="latest-value">v0.103.2</div>
-        <div class="latest-label">更新时间</div>
-        <div class="latest-value">2026年6月5日</div>
-        <div class="latest-label">大小</div>
-        <div class="latest-value">289.44MB</div>
-      </div>
-      <div class="latest-desc">猫猫暂时还没有想好介绍哦...不过推荐使用这个版本，稳定性较强ദ്ദി˶ᵒ ᵕ ˂)</div>
-      <div class="latest-actions">
-        <a href="https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6b56a9c2329149028afac59056d22849?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D" class="btn-primary" target="_blank" rel="noopener">下载游戏本体</a>
-        <a href="http://shp.qpic.cn/collector/1976464052/d7bab84e-8cf3-462f-9570-a39127d90a32/0" class="btn-secondary" target="_blank" rel="noopener">使用教程</a>
-      </div>
-    </div>
-  </section>
+  <section class="latest-section" id="latestSection"></section>
 
   <section class="history-section">
-    <div class="section-controls">
-      <div class="section-title-row">
-        <h2 class="section-title">历史版本</h2>
-        <div class="pill-tabs" id="historyTabs">
-          <button class="pill-tab active" data-type="launcher">启动器</button>
-          <button class="pill-tab" data-type="game">游戏本体</button>
-        </div>
+    <div class="history-header">
+      <h2 class="history-title">历史版本</h2>
+      <div class="history-tabs">
+        <button class="history-tab active" data-tab="launcher">启动器</button>
+        <button class="history-tab" data-tab="game">游戏本体</button>
       </div>
     </div>
-
-    <div class="version-list" id="versionList"></div>
-
+    <div id="historyList"></div>
     <div class="pagination" id="pagination"></div>
   </section>
 
-  <footer class="footer">塔Ⅱ手机版下载页 © 2026 壹个屑猫猫</footer>
+  <footer class="footer"><p>STS2娘化MOD站 © 2026 壹个屑猫猫</p></footer>
 </div>
 
+<div class="toast" id="toast"></div>
+
 <script>
-var LAUNCHER_DATA = [
-  {
-    type: 'launcher',
-    version: '0.1.0',
-    date: '2026年6月5日',
-    size: '66.62MB',
-    url: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7f808c35d3e44f1db95b4e62d85494d0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D',
-    desc: '杀戮尖塔2的最新版启动器，需要配合游戏本体使用，目前推荐版本v0.103.2兼容性较强',
-    iconUrl: 'http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0'
-  }
-];
+(function() {
+  var LAUNCHER_ICON = 'http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0';
+  var GAME_ICON = 'http://shp.qpic.cn/collector/1976464052/e2e5de8f-a1cd-40e2-aef5-e6acc9327b3b/0';
 
-var GAME_DATA = [
-  {
-    type: 'game',
-    version: 'v0.103.2',
-    date: '2026年6月5日',
-    size: '289.44MB',
-    url: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6b56a9c2329149028afac59056d22849?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D',
-    desc: '猫猫暂时还没有想好介绍哦...不过推荐使用这个版本，稳定性较强ദ്ദി˶ᵒ ᵕ ˂)',
-    iconUrl: 'http://shp.qpic.cn/collector/1976464052/e2e5de8f-a1cd-40e2-aef5-e6acc9327b3b/0'
-  },
-  {
-    type: 'game',
-    version: 'v0.103.3',
-    date: '2026年6月5日',
-    size: '829.44MB',
-    url: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6ff2c90c0b7248249d818620ae68b451?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D',
-    desc: '猫猫暂时还没有想好介绍哦...'
-  },
-  {
-    type: 'game',
-    version: 'v0.106.1',
-    date: '2026年6月5日',
-    size: '862.12MB',
-    url: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgza86aaebac7d941cf8067bb86a0fd48be?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D',
-    desc: '猫猫暂时还没有想好介绍哦...'
-  },
-  {
-    type: 'game',
-    version: 'v0.107.0',
-    date: '2026年6月5日',
-    size: '865.39MB',
-    url: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz43be7b3709f540b5be6ba344a6212b33?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D',
-    desc: '猫猫暂时还没有想好介绍哦...'
-  }
-];
+  var launcherData = [
+    {
+      version: '0.1.0',
+      date: '2026-06-05',
+      size: '66.62MB',
+      description: '杀戮尖塔2的最新版启动器，需要配合游戏本体使用，目前推荐版本v0.103.2兼容性较强',
+      downloadUrl: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz7f808c35d3e44f1db95b4e62d85494d0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D'
+    }
+  ];
 
-var ITEMS_PER_PAGE = 5;
-var currentType = 'launcher';
-var currentPage = 1;
-var currentData = [];
+  var gameData = [
+    {
+      version: 'v0.103.2',
+      date: '2026-06-05',
+      size: '289.44MB',
+      description: '猫猫暂时还没有想好介绍哦...不过推荐使用这个版本，稳定性较强ദ്ദി˶ᵒ ᵕ ˂)',
+      downloadUrl: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6b56a9c2329149028afac59056d22849?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D'
+    },
+    {
+      version: 'v0.103.3',
+      date: '2026-06-05',
+      size: '829.44MB',
+      description: '猫猫暂时还没有想好介绍哦...',
+      downloadUrl: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6ff2c90c0b7248249d818620ae68b451?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D'
+    },
+    {
+      version: 'v0.106.1',
+      date: '2026-06-05',
+      size: '862.12MB',
+      description: '猫猫暂时还没有想好介绍哦...',
+      downloadUrl: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgza86aaebac7d941cf8067bb86a0fd48be?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D'
+    },
+    {
+      version: 'v0.107.0',
+      date: '2026-06-05',
+      size: '865.39MB',
+      description: '猫猫暂时还没有想好介绍哦...',
+      downloadUrl: 'https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz43be7b3709f540b5be6ba344a6212b33?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D'
+    }
+  ];
 
-function escapeHtml(s) {
-  var div = document.createElement('div');
-  div.textContent = s;
-  return div.innerHTML;
-}
+  var currentTab = 'launcher';
+  var currentPage = 1;
+  var ITEMS_PER_PAGE = 5;
+  var searchQuery = '';
+  var toastTimer;
 
-function getCurrentData() {
-  if (currentType === 'launcher') {
-    currentData = LAUNCHER_DATA.slice();
-  } else {
-    currentData = GAME_DATA.slice();
-  }
-}
-
-function getPageSlice(data, page) {
-  var start = (page - 1) * ITEMS_PER_PAGE;
-  var end = start + ITEMS_PER_PAGE;
-  return data.slice(start, end);
-}
-
-function renderVersionCard(item, index) {
-  var card = document.createElement('div');
-  card.className = 'version-card';
-
-  var iconWrap = document.createElement('div');
-  if (item.iconUrl) {
-    var img = document.createElement('img');
-    img.className = 'version-icon';
-    img.src = item.iconUrl;
-    img.alt = item.version + ' 图标';
-    img.onerror = function () {
-      this.style.display = 'none';
-      var placeholder = document.createElement('div');
-      placeholder.className = 'version-icon-placeholder';
-      placeholder.textContent = item.type === 'launcher' ? '启' : '游';
-      iconWrap.appendChild(placeholder);
-    };
-    iconWrap.appendChild(img);
-  } else {
-    var placeholder = document.createElement('div');
-    placeholder.className = 'version-icon-placeholder';
-    placeholder.textContent = item.type === 'launcher' ? '启' : '游';
-    iconWrap.appendChild(placeholder);
+  function showToast(message) {
+    clearTimeout(toastTimer);
+    var t = document.getElementById('toast');
+    t.textContent = message;
+    t.classList.add('show');
+    toastTimer = setTimeout(function() {
+      t.classList.remove('show');
+    }, 2200);
   }
 
-  var main = document.createElement('div');
-  main.className = 'version-main';
+  function renderLatest() {
+    var section = document.getElementById('latestSection');
+    var latest = launcherData[0];
+    var descId = 'latest-desc';
+    var toggleId = 'latest-toggle';
+    section.innerHTML =
+      '<div class="latest-card">' +
+        '<div class="latest-card-inner">' +
+          '<img src="' + LAUNCHER_ICON + '" alt="启动器" class="latest-icon">' +
+          '<div class="latest-info">' +
+            '<span class="latest-label">最新版</span>' +
+            '<div class="latest-version">启动器 ' + latest.version + '</div>' +
+            '<div class="latest-meta">' +
+              '<span class="latest-meta-size">' + latest.size + '</span>' +
+              '<span class="latest-meta-tip">＊需配合游戏本体一起使用</span>' +
+              '<span>' + latest.date + '</span>' +
+            '</div>' +
+            '<div class="latest-desc" id="' + descId + '">' + latest.description + '</div>' +
+            '<span class="desc-toggle" id="' + toggleId + '" style="display:none;">展开</span>' +
+            '<div class="latest-actions">' +
+              '<a href="' + latest.downloadUrl + '" target="_blank" rel="noopener noreferrer" class="btn-download">下载启动器</a>' +
+              '<a href="https://m.bilibili.com/video/BV1chojBxEcG" target="_blank" rel="noopener noreferrer" class="btn-tutorial">使用教程</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
 
-  var title = document.createElement('div');
-  title.className = 'version-title';
-  title.textContent = item.version;
-  main.appendChild(title);
-
-  var meta = document.createElement('div');
-  meta.className = 'version-meta';
-  var dateSpan = document.createElement('span');
-  dateSpan.textContent = '更新时间：' + item.date;
-  meta.appendChild(dateSpan);
-  var sizeSpan = document.createElement('span');
-  sizeSpan.textContent = '大小：' + item.size;
-  meta.appendChild(sizeSpan);
-  main.appendChild(meta);
-
-  var desc = document.createElement('div');
-  desc.className = 'version-desc';
-  desc.textContent = item.desc || '暂无介绍';
-  main.appendChild(desc);
-
-  var actions = document.createElement('div');
-  actions.className = 'version-actions';
-
-  var downloadBtn = document.createElement('a');
-  downloadBtn.className = 'version-download';
-  downloadBtn.href = item.url;
-  downloadBtn.target = '_blank';
-  downloadBtn.rel = 'noopener noreferrer';
-  downloadBtn.textContent = '下载此版本';
-  actions.appendChild(downloadBtn);
-
-  var sizeNote = document.createElement('div');
-  sizeNote.className = 'version-size';
-  sizeNote.textContent = item.size;
-  actions.appendChild(sizeNote);
-
-  card.appendChild(iconWrap);
-  card.appendChild(main);
-  card.appendChild(actions);
-
-  return card;
-}
-
-function renderHistory() {
-  var listEl = document.getElementById('versionList');
-  listEl.innerHTML = '';
-  getCurrentData();
-  var total = currentData.length;
-  var totalPages = Math.ceil(total / ITEMS_PER_PAGE);
-  if (currentPage > totalPages) currentPage = totalPages || 1;
-  var slice = getPageSlice(currentData, currentPage);
-  slice.forEach(function (item, idx) {
-    var card = renderVersionCard(item, idx);
-    listEl.appendChild(card);
-  });
-  renderPagination(total, currentPage);
-}
-
-function renderPagination(totalItems, currentPageNum) {
-  var paginationEl = document.getElementById('pagination');
-  paginationEl.innerHTML = '';
-  var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-  if (totalPages <= 1) {
-    paginationEl.style.display = 'none';
-    return;
-  }
-  paginationEl.style.display = 'flex';
-
-  function createBtn(type, content, disabled, clickHandler) {
-    var btn = document.createElement('button');
-    btn.className = type;
-    btn.innerHTML = content;
-    if (disabled) btn.disabled = true;
-    if (clickHandler) btn.addEventListener('click', clickHandler);
-    return btn;
+    var descEl = document.getElementById(descId);
+    var toggleEl = document.getElementById(toggleId);
+    if (descEl && toggleEl) {
+      setTimeout(function() {
+        if (descEl.scrollHeight > descEl.clientHeight + 2) {
+          toggleEl.style.display = 'inline-block';
+        }
+      }, 30);
+      toggleEl.addEventListener('click', function() {
+        var expanded = descEl.classList.toggle('expanded');
+        toggleEl.textContent = expanded ? '收起' : '展开';
+      });
+    }
   }
 
-  function createPageBtn(pageNum) {
-    return createBtn('pagination-page' + (pageNum === currentPageNum ? ' active' : ''), pageNum, false, function () {
-      currentPage = pageNum;
-      renderHistory();
-      document.getElementById('versionList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  function getCurrentData() {
+    var data = currentTab === 'launcher' ? launcherData : gameData;
+    if (!searchQuery) return data.slice();
+    var q = searchQuery.toLowerCase();
+    return data.filter(function(item) {
+      return item.version.toLowerCase().indexOf(q) !== -1 || item.description.toLowerCase().indexOf(q) !== -1;
     });
   }
 
-  function createDots() {
-    var span = document.createElement('span');
-    span.className = 'pagination-dots';
-    span.textContent = '...';
-    return span;
-  }
+  function renderHistory() {
+    var list = document.getElementById('historyList');
+    var data = getCurrentData();
+    var totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+    if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+    var start = (currentPage - 1) * ITEMS_PER_PAGE;
+    var pageData = data.slice(start, start + ITEMS_PER_PAGE);
 
-  var items = [];
-  items.push(createBtn('pagination-btn', '&#8249;', currentPageNum <= 1, function () {
-    if (currentPageNum > 1) {
-      currentPage--;
-      renderHistory();
-      document.getElementById('versionList').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }));
-
-  items.push(createPageBtn(1));
-
-  if (totalPages <= 5) {
-    for (var i = 2; i <= totalPages; i++) {
-      items.push(createPageBtn(i));
-    }
-  } else {
-    if (currentPageNum <= 3) {
-      for (var j = 2; j <= 4; j++) {
-        items.push(createPageBtn(j));
-      }
-      items.push(createDots());
-      items.push(createPageBtn(totalPages));
-    } else {
-      items.push(createDots());
-      if (currentPageNum - 1 > 1) {
-        items.push(createPageBtn(currentPageNum - 1));
-      }
-      items.push(createPageBtn(currentPageNum));
-      if (currentPageNum + 1 < totalPages) {
-        items.push(createPageBtn(currentPageNum + 1));
-      }
-      items.push(createDots());
-      items.push(createPageBtn(totalPages));
-    }
-  }
-
-  items.push(createBtn('pagination-btn', '&#8250;', currentPageNum >= totalPages, function () {
-    if (currentPageNum < totalPages) {
-      currentPage++;
-      renderHistory();
-      document.getElementById('versionList').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }));
-
-  items.forEach(function (item) {
-    paginationEl.appendChild(item);
-  });
-
-  var gotoWrap = document.createElement('span');
-  gotoWrap.className = 'pagination-goto';
-  gotoWrap.style.flexShrink = '0';
-  gotoWrap.style.marginLeft = '8px';
-
-  var gotoInput = document.createElement('input');
-  gotoInput.type = 'text';
-  gotoInput.className = 'pagination-goto-input';
-  gotoInput.placeholder = '页码';
-  gotoInput.maxLength = 3;
-  gotoInput.setAttribute('aria-label', '输入页码');
-
-  var gotoBtn = document.createElement('button');
-  gotoBtn.className = 'pagination-goto-btn';
-  gotoBtn.innerHTML = '跳转';
-  gotoBtn.setAttribute('aria-label', '跳转到指定页');
-
-  var gotoMobile = document.createElement('button');
-  gotoMobile.className = 'pagination-goto-mobile-trigger';
-  gotoMobile.innerHTML = '&#8230;';
-  gotoMobile.setAttribute('aria-label', '跳转页码');
-
-  function doGoto(value) {
-    var num = parseInt(value, 10);
-    if (isNaN(num) || num < 1 || num > totalPages) {
+    if (pageData.length === 0) {
+      list.innerHTML = '<div class="empty-state">没有找到匹配的版本</div>';
+      document.getElementById('pagination').innerHTML = '';
       return;
     }
-    currentPage = num;
-    renderHistory();
-    document.getElementById('versionList').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    gotoInput.value = '';
-  }
 
-  gotoInput.addEventListener('input', function () {
-    this.value = this.value.replace(/[^\d]/g, '').slice(0, 3);
-  });
-  gotoInput.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') doGoto(this.value);
-  });
-  gotoBtn.addEventListener('click', function () {
-    doGoto(gotoInput.value);
-  });
-  gotoMobile.addEventListener('click', function () {
-    var num = prompt('跳转到第几页？(1 ~ ' + totalPages + ')');
-    if (num !== null) doGoto(num);
-  });
-
-  gotoWrap.appendChild(gotoInput);
-  gotoWrap.appendChild(gotoBtn);
-  gotoWrap.appendChild(gotoMobile);
-  paginationEl.appendChild(gotoWrap);
-}
-
-function updateSearchDropdown(query) {
-  var dropdown = document.getElementById('searchDropdown');
-  dropdown.innerHTML = '';
-  if (!query || query.length < 1) {
-    dropdown.classList.remove('active');
-    return;
-  }
-  var lowerQuery = query.toLowerCase();
-  var matches = currentData.filter(function (item) {
-    return item.version.toLowerCase().includes(lowerQuery) ||
-           (item.desc && item.desc.toLowerCase().includes(lowerQuery));
-  });
-  if (matches.length === 0) {
-    dropdown.innerHTML = '<li style="padding:12px 18px;text-align:center;color:var(--text-muted);">没有找到相关版本</li>';
-  } else {
-    var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    var regex = new RegExp('(' + escapedQuery + ')', 'gi');
-    matches.slice(0, 8).forEach(function (m) {
-      var li = document.createElement('li');
-      li.className = 'search-dropdown-item';
-      li.innerHTML = m.version.replace(regex, '<mark>$1</mark>') + ' <span style="color:var(--text-muted);font-size:0.8rem;">' + m.date + '</span>';
-      li.addEventListener('click', function () {
-        document.getElementById('searchInput').value = m.version;
-        dropdown.classList.remove('active');
-        currentPage = 1;
-        currentType = m.type;
-        document.getElementById('historyTabs').querySelectorAll('.pill-tab').forEach(function (btn) {
-          btn.classList.toggle('active', btn.dataset.type === currentType);
-        });
-        renderHistory();
-      });
-      dropdown.appendChild(li);
+    var html = '';
+    pageData.forEach(function(item, idx) {
+      var descId = 'hist-desc-' + currentTab + '-' + (start + idx);
+      var toggleId = 'hist-toggle-' + currentTab + '-' + (start + idx);
+      var isFirst = (currentTab === 'launcher' && start + idx === 0) || (currentTab === 'game' && start + idx === 0);
+      html +=
+        '<div class="version-card">' +
+          '<div class="version-card-header">' +
+            '<span class="version-card-version">' + item.version + '</span>' +
+            (isFirst ? '<span class="version-card-badge">推荐</span>' : '') +
+          '</div>' +
+          '<div class="version-card-meta">' +
+            '<span>' + item.date + '</span>' +
+            '<span class="version-card-size">' + item.size + '</span>' +
+          '</div>' +
+          '<div class="version-card-desc" id="' + descId + '">' + item.description + '</div>' +
+          '<span class="version-card-toggle" id="' + toggleId + '" style="display:none;">展开</span>' +
+          '<div class="version-card-actions">' +
+            '<a href="' + item.downloadUrl + '" target="_blank" rel="noopener noreferrer" class="btn-small-download">下载</a>' +
+          '</div>' +
+        '</div>';
     });
-  }
-  dropdown.classList.add('active');
-}
+    list.innerHTML = html;
 
-document.getElementById('searchInput').addEventListener('input', function () {
-  updateSearchDropdown(this.value.trim());
-});
+    pageData.forEach(function(item, idx) {
+      var descId = 'hist-desc-' + currentTab + '-' + (start + idx);
+      var toggleId = 'hist-toggle-' + currentTab + '-' + (start + idx);
+      var descEl = document.getElementById(descId);
+      var toggleEl = document.getElementById(toggleId);
+      if (descEl && toggleEl) {
+        (function(de, te) {
+          setTimeout(function() {
+            if (de.scrollHeight > de.clientHeight + 2) {
+              te.style.display = 'inline-block';
+            }
+          }, 30);
+          te.addEventListener('click', function() {
+            var expanded = de.classList.toggle('expanded');
+            te.textContent = expanded ? '收起' : '展开';
+          });
+        })(descEl, toggleEl);
+      }
+    });
 
-document.getElementById('searchInput').addEventListener('focus', function () {
-  if (this.value.trim().length >= 1) {
-    updateSearchDropdown(this.value.trim());
+    renderPagination(data.length, currentPage);
   }
-});
 
-document.getElementById('searchInput').addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    document.getElementById('searchDropdown').classList.remove('active');
-    this.blur();
-  }
-  if (e.key === 'Enter') {
-    document.getElementById('searchDropdown').classList.remove('active');
-  }
-});
+  function renderPagination(totalItems, currentPageNum) {
+    var paginationEl = document.getElementById('pagination');
+    paginationEl.innerHTML = '';
+    var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    if (totalPages <= 1) return;
 
-document.addEventListener('click', function (e) {
-  if (!document.querySelector('.search-container').contains(e.target)) {
-    document.getElementById('searchDropdown').classList.remove('active');
-  }
-});
+    function createBtn(cls, content, disabled, handler) {
+      var btn = document.createElement('button');
+      btn.className = cls;
+      btn.innerHTML = content;
+      if (disabled) btn.disabled = true;
+      if (handler) btn.addEventListener('click', handler);
+      return btn;
+    }
 
-document.getElementById('historyTabs').addEventListener('click', function (e) {
-  var btn = e.target.closest('.pill-tab');
-  if (!btn) return;
-  var type = btn.dataset.type;
-  if (type === currentType) return;
-  currentType = type;
-  currentPage = 1;
-  document.querySelectorAll('.pill-tab').forEach(function (b) {
-    b.classList.toggle('active', b.dataset.type === type);
+    function createPageBtn(pageNum) {
+      return createBtn('pagination-page' + (pageNum === currentPageNum ? ' active' : ''), pageNum, false, function() {
+        currentPage = pageNum;
+        renderHistory();
+        document.getElementById('historyList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    function createDots() {
+      var span = document.createElement('span');
+      span.className = 'pagination-dots';
+      span.textContent = '...';
+      return span;
+    }
+
+    paginationEl.appendChild(createBtn('pagination-btn', '&#8249;', currentPageNum <= 1, function() {
+      if (currentPageNum > 1) {
+        currentPage--;
+        renderHistory();
+        document.getElementById('historyList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }));
+
+    paginationEl.appendChild(createPageBtn(1));
+
+    if (totalPages <= 4) {
+      for (var i = 2; i <= totalPages; i++) {
+        paginationEl.appendChild(createPageBtn(i));
+      }
+    } else {
+      if (currentPageNum <= 4) {
+        for (var j = 2; j <= 4; j++) paginationEl.appendChild(createPageBtn(j));
+        paginationEl.appendChild(createDots());
+        paginationEl.appendChild(createPageBtn(totalPages));
+      } else {
+        paginationEl.appendChild(createDots());
+        if (currentPageNum - 1 > 1) paginationEl.appendChild(createPageBtn(currentPageNum - 1));
+        paginationEl.appendChild(createPageBtn(currentPageNum));
+        if (currentPageNum + 1 < totalPages) paginationEl.appendChild(createPageBtn(currentPageNum + 1));
+        paginationEl.appendChild(createDots());
+        paginationEl.appendChild(createPageBtn(totalPages));
+      }
+    }
+
+    paginationEl.appendChild(createBtn('pagination-btn', '&#8250;', currentPageNum >= totalPages, function() {
+      if (currentPageNum < totalPages) {
+        currentPage++;
+        renderHistory();
+        document.getElementById('historyList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }));
+
+    var gotoWrap = document.createElement('span');
+    gotoWrap.className = 'pagination-goto';
+
+    var gotoInput = document.createElement('input');
+    gotoInput.type = 'text';
+    gotoInput.className = 'pagination-goto-input';
+    gotoInput.placeholder = '\\';
+    gotoInput.maxLength = 3;
+    gotoInput.setAttribute('aria-label', '输入页码');
+
+    var gotoBtn = document.createElement('button');
+    gotoBtn.className = 'pagination-goto-btn';
+    gotoBtn.innerHTML = '<svg style="width:18px;height:18px;vertical-align:middle;" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
+    gotoBtn.setAttribute('aria-label', '跳转到指定页');
+
+    var gotoMobile = document.createElement('button');
+    gotoMobile.className = 'pagination-goto-mobile-trigger';
+    gotoMobile.innerHTML = '<svg style="width:14px;height:14px;" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
+    gotoMobile.setAttribute('aria-label', '跳转页码');
+
+    function doGoto(value) {
+      var num = parseInt(value, 10);
+      if (isNaN(num) || num < 1 || num > totalPages) {
+        showToast('页码范围：1 ~ ' + totalPages);
+        return;
+      }
+      currentPage = num;
+      renderHistory();
+      gotoInput.value = '';
+      document.getElementById('historyList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    gotoInput.addEventListener('input', function() {
+      this.value = this.value.replace(/[^\d]/g, '').slice(0, 3);
+    });
+    gotoInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doGoto(this.value);
+    });
+    gotoBtn.addEventListener('click', function() {
+      doGoto(gotoInput.value);
+    });
+    gotoMobile.addEventListener('click', function() {
+      openGotoPopup(totalPages);
+    });
+
+    gotoWrap.appendChild(gotoInput);
+    gotoWrap.appendChild(gotoBtn);
+    gotoWrap.appendChild(gotoMobile);
+    paginationEl.appendChild(gotoWrap);
+  }
+
+  function openGotoPopup(totalPages) {
+    var existing = document.getElementById('gotoPopupOverlay');
+    if (existing) existing.remove();
+    var overlay = document.createElement('div');
+    overlay.className = 'goto-popup-overlay active';
+    overlay.id = 'gotoPopupOverlay';
+    var popup = document.createElement('div');
+    popup.className = 'goto-popup';
+    var title = document.createElement('div');
+    title.className = 'goto-popup-title';
+    title.textContent = '跳转到第几页？(共 ' + totalPages + ' 页)';
+    var row = document.createElement('div');
+    row.className = 'goto-popup-row';
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'goto-popup-input';
+    input.placeholder = '页码';
+    input.maxLength = 3;
+    input.inputMode = 'numeric';
+    input.addEventListener('input', function() {
+      this.value = this.value.replace(/[^\d]/g, '').slice(0, 3);
+    });
+    var confirmBtn = document.createElement('button');
+    confirmBtn.className = 'goto-popup-confirm';
+    confirmBtn.textContent = '跳转';
+    function doMobileGoto() {
+      var num = parseInt(input.value, 10);
+      if (isNaN(num) || num < 1 || num > totalPages) {
+        showToast('页码范围：1 ~ ' + totalPages);
+        return;
+      }
+      currentPage = num;
+      renderHistory();
+      overlay.remove();
+      setTimeout(function() {
+        document.getElementById('historyList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doMobileGoto();
+    });
+    confirmBtn.addEventListener('click', doMobileGoto);
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) overlay.remove();
+    });
+    row.appendChild(input);
+    row.appendChild(confirmBtn);
+    popup.appendChild(title);
+    popup.appendChild(row);
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
+    setTimeout(function() { input.focus(); }, 100);
+  }
+
+  function updateSearchDropdown() {
+    var dropdown = document.getElementById('searchDropdown');
+    var query = searchInput.value.trim();
+    dropdown.innerHTML = '';
+    if (!query) {
+      dropdown.classList.remove('active');
+      return;
+    }
+    var q = query.toLowerCase();
+    var allData = currentTab === 'launcher' ? launcherData : gameData;
+    var matches = allData.filter(function(item) {
+      return item.version.toLowerCase().indexOf(q) !== -1 || item.description.toLowerCase().indexOf(q) !== -1;
+    });
+    if (matches.length === 0) {
+      dropdown.innerHTML = '<li style="padding:16px;text-align:center;color:var(--text-muted);">没有找到相关版本</li>';
+    } else {
+      var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var regex = new RegExp('(' + escapedQuery + ')', 'gi');
+      matches.slice(0, 8).forEach(function(item) {
+        var li = document.createElement('li');
+        li.className = 'search-dropdown-item';
+        li.innerHTML = item.version.replace(regex, '<mark>$1</mark>') + ' <span style="color:var(--text-muted);font-size:0.8rem;margin-left:6px;">' + item.size + '</span>';
+        li.addEventListener('click', function() {
+          searchInput.value = item.version;
+          searchQuery = item.version;
+          dropdown.classList.remove('active');
+          currentPage = 1;
+          renderHistory();
+        });
+        dropdown.appendChild(li);
+      });
+    }
+    dropdown.classList.add('active');
+  }
+
+  var searchInput = document.getElementById('searchInput');
+  var searchDropdown = document.getElementById('searchDropdown');
+  var searchWrapper = document.getElementById('searchWrapper');
+
+  searchInput.addEventListener('input', function() {
+    searchQuery = this.value.trim();
+    currentPage = 1;
+    renderHistory();
+    updateSearchDropdown();
   });
-  renderHistory();
-});
 
-renderHistory();
+  searchInput.addEventListener('focus', function() {
+    if (this.value.trim().length >= 1) updateSearchDropdown();
+  });
+
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      searchDropdown.classList.remove('active');
+      searchInput.blur();
+    }
+    if (e.key === 'Enter') {
+      searchDropdown.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!searchWrapper.contains(e.target)) {
+      searchDropdown.classList.remove('active');
+    }
+  });
+
+  document.querySelectorAll('.history-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.history-tab').forEach(function(t) {
+        t.classList.remove('active');
+      });
+      this.classList.add('active');
+      currentTab = this.getAttribute('data-tab');
+      currentPage = 1;
+      searchInput.value = '';
+      searchQuery = '';
+      searchDropdown.classList.remove('active');
+      renderHistory();
+    });
+  });
+
+  renderLatest();
+  renderHistory();
+})();
 </script>
 </body>
 </html>
