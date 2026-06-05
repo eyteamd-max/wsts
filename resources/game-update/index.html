@@ -68,16 +68,13 @@ body{
   border:2px solid var(--border-dark);background:#f5f2f8;
 }
 .latest-info{flex:1;min-width:0}
-.latest-header-row{
-  display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;
+.latest-version{
+  font-family:var(--font-title);font-size:1.3rem;font-weight:700;margin-bottom:6px;
 }
-.latest-version{font-family:var(--font-title);font-size:1.3rem;font-weight:700}
-.latest-header-sep{color:var(--text-muted);font-size:0.85rem;font-weight:400}
-.latest-header-tag{
-  font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:12px;
-  background:#f5f2f8;border:1.5px solid #ddd8e5;color:var(--text-secondary);
+.latest-suffix{
+  font-size:0.76rem;color:var(--text-muted);font-weight:600;
+  letter-spacing:0.05em;
 }
-.latest-header-tag.size-tag{background:var(--cream-light);border-color:#e5d5b0;color:#8a7a50}
 .latest-hint{font-size:0.72rem;color:var(--strawberry-milk);font-weight:500;margin-bottom:10px}
 .desc-wrap{
   display:flex;align-items:baseline;gap:6px;margin-bottom:16px;
@@ -421,15 +418,7 @@ function renderLatestCard(){
   latestCard.innerHTML=
     '<img class="latest-icon" src="'+LAUNCHER_ICON+'" alt="启动器图标" onerror="this.style.display=\'none\'">'+
     '<div class="latest-info">'+
-      '<div class="latest-header-row">'+
-        '<span class="latest-version">'+latest.version+'</span>'+
-        '<span class="latest-header-sep">/</span>'+
-        '<span class="latest-header-tag">最新版本</span>'+
-        '<span class="latest-header-sep">/</span>'+
-        '<span class="latest-header-tag">启动器</span>'+
-        '<span class="latest-header-sep">/</span>'+
-        '<span class="latest-header-tag size-tag">'+latest.size+'</span>'+
-      '</div>'+
+      '<div class="latest-version">'+latest.version+' <span class="latest-suffix">/ 最新版本 / 启动器 / '+latest.size+'</span></div>'+
       '<div class="latest-hint">* 需配合游戏本体一起使用</div>'+
       '<div class="desc-wrap">'+
         '<span class="desc-text" id="latest-desc">'+latest.description+'</span>'+
@@ -517,8 +506,7 @@ function renderPagination(totalItems,currentPageNum){
   var totalPages=Math.ceil(totalItems/ITEMS_PER_PAGE);
   if(totalPages<=1) return;
   function createBtn(cls,content,disabled,handler){
-    var btn=document.createElement('button');
-    btn.className=cls;btn.innerHTML=content;
+    var btn=document.createElement('button');btn.className=cls;btn.innerHTML=content;
     btn.style.flexShrink='1';btn.style.minWidth='0';
     if(disabled) btn.disabled=true;
     if(handler) btn.addEventListener('click',handler);
