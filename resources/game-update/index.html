@@ -7,52 +7,38 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
 <style>
-:root {
-  --bg: #faf7f4;
-  --strawberry-milk: #e89b9b;
-  --strawberry-light: #f5c4c4;
-  --mint-jelly: #a8d8c8;
-  --mint-light: #c8ece0;
-  --cream-yellow: #fbe8c3;
-  --cream-light: #fdf3dc;
-  --lavender: #c8b8d8;
-  --lavender-light: #dfd4ea;
-  --border-dark: #4a4458;
-  --text-primary: #3d3648;
-  --text-secondary: #6b6378;
-  --text-muted: #9a92a5;
-  --shadow-soft: 0 4px 20px rgba(74,68,88,0.08);
-  --shadow-medium: 0 8px 32px rgba(74,68,88,0.13);
-  --shadow-deep: 0 14px 44px rgba(74,68,88,0.18);
-  --radius-xl: 28px;
-  --border-width: 2.5px;
-  --font-title: 'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  --font-body: 'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  --transition-bounce: cubic-bezier(0.34,1.56,0.64,1);
+:root{
+  --bg:#faf7f4;--strawberry-milk:#e89b9b;--strawberry-light:#f5c4c4;
+  --mint-jelly:#a8d8c8;--mint-light:#c8ece0;--cream-yellow:#fbe8c3;
+  --cream-light:#fdf3dc;--lavender:#c8b8d8;--lavender-light:#dfd4ea;
+  --border-dark:#4a4458;--text-primary:#3d3648;--text-secondary:#6b6378;
+  --text-muted:#9a92a5;
+  --shadow-soft:0 4px 20px rgba(74,68,88,0.08);
+  --shadow-medium:0 8px 32px rgba(74,68,88,0.13);
+  --shadow-deep:0 14px 44px rgba(74,68,88,0.18);
+  --radius-xl:28px;--border-width:2.5px;
+  --font-title:'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
+  --font-body:'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
+  --transition-bounce:cubic-bezier(0.34,1.56,0.64,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:var(--font-body);
-  background-color:var(--bg);
+  font-family:var(--font-body);background-color:var(--bg);
   background-image:
     radial-gradient(ellipse at 15% 20%,rgba(232,155,155,0.06) 0%,transparent 55%),
     radial-gradient(ellipse at 78% 65%,rgba(168,216,200,0.07) 0%,transparent 55%),
     radial-gradient(ellipse at 40% 80%,rgba(200,184,216,0.05) 0%,transparent 50%),
     radial-gradient(circle at 60% 30%,rgba(251,232,195,0.06) 0%,transparent 45%);
-  background-attachment:fixed;
-  color:var(--text-primary);
-  min-height:100vh;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+  background-attachment:fixed;color:var(--text-primary);
+  min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;
 }
 .page-container{max-width:820px;margin:0 auto;padding:28px 22px 60px}
 .page-header{display:flex;align-items:center;gap:14px;margin-bottom:30px}
 .back-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:9px 18px;background:#fffdfb;
-  border:var(--border-width) solid var(--border-dark);border-radius:20px;
-  color:var(--text-primary);font-weight:600;font-size:0.88rem;
+  display:inline-flex;align-items:center;gap:6px;padding:9px 18px;
+  background:#fffdfb;border:var(--border-width) solid var(--border-dark);
+  border-radius:20px;color:var(--text-primary);font-weight:600;font-size:0.88rem;
   text-decoration:none;transition:all 0.3s var(--transition-bounce);
   box-shadow:var(--shadow-soft);flex-shrink:0;
 }
@@ -82,40 +68,42 @@ body{
   border:2px solid var(--border-dark);background:#f5f2f8;
 }
 .latest-info{flex:1;min-width:0}
-.latest-label{
-  font-size:0.76rem;color:var(--text-muted);font-weight:600;
-  letter-spacing:0.05em;margin-bottom:3px;
+.latest-header-row{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;
 }
-.latest-version{font-family:var(--font-title);font-size:1.3rem;font-weight:700;margin-bottom:6px}
-.latest-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
-.meta-tag{
-  padding:4px 12px;background:#f5f2f8;border:2px solid #ddd8e5;border-radius:20px;
-  font-size:0.78rem;color:var(--text-secondary);font-weight:500;
+.latest-version{font-family:var(--font-title);font-size:1.3rem;font-weight:700}
+.latest-header-sep{color:var(--text-muted);font-size:0.85rem;font-weight:400}
+.latest-header-tag{
+  font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:12px;
+  background:#f5f2f8;border:1.5px solid #ddd8e5;color:var(--text-secondary);
 }
-.meta-hint{font-size:0.72rem;color:var(--strawberry-milk);font-weight:500}
-.latest-desc{
-  font-size:0.88rem;color:var(--text-secondary);line-height:1.65;margin-bottom:16px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  transition:all 0.3s ease;
+.latest-header-tag.size-tag{background:var(--cream-light);border-color:#e5d5b0;color:#8a7a50}
+.latest-hint{font-size:0.72rem;color:var(--strawberry-milk);font-weight:500;margin-bottom:10px}
+.desc-wrap{
+  display:flex;align-items:baseline;gap:6px;margin-bottom:16px;
 }
-.latest-desc.expanded{-webkit-line-clamp:unset;display:block}
+.desc-text{
+  flex:1;min-width:0;font-size:0.88rem;color:var(--text-secondary);
+  line-height:1.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.desc-text.expanded{white-space:normal;overflow:visible}
 .desc-toggle{
-  color:var(--strawberry-milk);font-weight:600;cursor:pointer;
-  font-size:0.85rem;margin-top:2px;display:inline-block;transition:color 0.2s;
+  flex-shrink:0;color:var(--strawberry-milk);font-weight:600;cursor:pointer;
+  font-size:0.85rem;white-space:nowrap;
 }
 .desc-toggle:hover{color:#c97a7a;text-decoration:underline}
 .latest-actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn-dl{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:10px 24px;background:var(--strawberry-milk);color:#fff;
+  display:inline-flex;align-items:center;gap:6px;padding:10px 24px;
+  background:var(--strawberry-milk);color:#fff;
   border:var(--border-width) solid #c97a7a;border-radius:30px;
   font-weight:700;font-size:0.9rem;cursor:pointer;text-decoration:none;
   transition:all 0.3s var(--transition-bounce);
 }
 .btn-dl:hover{background:#fff;color:var(--strawberry-milk);transform:scale(1.05)}
 .btn-tutorial{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:10px 24px;background:#fffdfb;color:var(--text-primary);
+  display:inline-flex;align-items:center;gap:6px;padding:10px 24px;
+  background:#fffdfb;color:var(--text-primary);
   border:var(--border-width) solid var(--border-dark);border-radius:30px;
   font-weight:700;font-size:0.9rem;cursor:pointer;text-decoration:none;
   transition:all 0.3s var(--transition-bounce);
@@ -125,13 +113,33 @@ body{
 .search-section{margin-bottom:26px;position:relative;z-index:50}
 .search-container{position:relative}
 .search-input{
-  width:100%;padding:14px 24px;font-size:0.95rem;
+  width:100%;padding:15px 52px 15px 24px;font-size:0.95rem;
   border:var(--border-width) solid var(--border-dark);border-radius:50px;
   background:#fffdfb;color:var(--text-primary);outline:none;
   transition:all 0.3s;box-shadow:var(--shadow-soft);font-family:var(--font-body);
 }
 .search-input:focus{box-shadow:var(--shadow-deep);border-color:var(--strawberry-milk)}
 .search-input::placeholder{color:var(--text-muted)}
+.search-mascot{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:28px;height:28px;pointer-events:none;
+}
+.search-mascot::before,.search-mascot::after{
+  content:'';position:absolute;border-radius:50%;
+}
+.search-mascot::before{
+  width:18px;height:18px;top:2px;left:5px;
+  background:var(--strawberry-light);border:2px solid var(--border-dark);
+  animation:mascotPeek 2.5s ease-in-out infinite;
+}
+.search-mascot::after{
+  width:10px;height:10px;bottom:0;right:2px;
+  background:var(--cream-yellow);border:2px solid var(--border-dark);
+}
+@keyframes mascotPeek{
+  0%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}
+  60%{transform:translateY(2px)}85%{transform:translateY(-4px)}
+}
 .search-dropdown{
   position:absolute;top:calc(100% + 8px);left:8px;right:8px;
   background:#fffdfb;border:var(--border-width) solid var(--border-dark);
@@ -181,25 +189,26 @@ body{
 .version-list{display:flex;flex-direction:column;gap:14px;margin-bottom:30px}
 .version-card{
   background:#fffdfb;border:var(--border-width) solid var(--border-dark);
-  border-radius:22px;overflow:hidden;
-  box-shadow:var(--shadow-soft);transition:all 0.35s var(--transition-bounce);
-  cursor:default;
+  border-radius:22px;overflow:hidden;box-shadow:var(--shadow-soft);
+  transition:all 0.35s var(--transition-bounce);cursor:default;
 }
 .version-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-deep)}
 .version-card-inner{padding:18px 20px;display:flex;align-items:center;gap:16px}
 .version-info{flex:1;min-width:0}
 .version-name{font-weight:700;font-size:1.02rem;margin-bottom:4px}
-.version-desc{
-  font-size:0.84rem;color:var(--text-secondary);line-height:1.55;margin-bottom:8px;
-  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
-  transition:all 0.3s ease;
+.vdesc-wrap{
+  display:flex;align-items:baseline;gap:6px;margin-bottom:8px;
 }
-.version-desc.expanded{-webkit-line-clamp:unset;display:block}
-.version-card-toggle{
-  color:var(--strawberry-milk);font-weight:600;cursor:pointer;
-  font-size:0.82rem;margin-top:2px;display:inline-block;transition:color 0.2s;
+.vdesc-text{
+  flex:1;min-width:0;font-size:0.84rem;color:var(--text-secondary);
+  line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
-.version-card-toggle:hover{color:#c97a7a;text-decoration:underline}
+.vdesc-text.expanded{white-space:normal;overflow:visible}
+.vdesc-toggle{
+  flex-shrink:0;color:var(--strawberry-milk);font-weight:600;cursor:pointer;
+  font-size:0.82rem;white-space:nowrap;
+}
+.vdesc-toggle:hover{color:#c97a7a;text-decoration:underline}
 .version-meta{display:flex;gap:8px;flex-wrap:wrap}
 .version-meta-tag{
   padding:3px 10px;background:#f5f2f8;border:2px solid #ddd8e5;border-radius:20px;
@@ -332,30 +341,25 @@ body{
   .pagination-goto-mobile-trigger:hover{background:var(--strawberry-light);color:#fff;border-color:#c97a7a}
   .pagination-goto{margin-left:6px}
 }
-@media(min-width:601px){
-  .goto-popup-overlay{display:none!important}
-}
+@media(min-width:601px){.goto-popup-overlay{display:none!important}}
 </style>
 </head>
 <body>
-
 <div class="page-container">
   <header class="page-header">
     <a href="../../index.html" class="back-btn">&larr; 返回MOD站</a>
     <h1 class="page-title">塔Ⅱ手机版</h1>
   </header>
-
   <section class="latest-section">
     <div class="latest-card" id="latestCard"></div>
   </section>
-
   <section class="search-section">
     <div class="search-container" id="searchContainer">
       <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号、描述内容..." autocomplete="off">
+      <span class="search-mascot"></span>
       <ul class="search-dropdown" id="searchDropdown"></ul>
     </div>
   </section>
-
   <section class="history-section">
     <div class="history-header">
       <h2 class="history-title">历史版本</h2>
@@ -367,12 +371,9 @@ body{
     <div class="version-list" id="versionList"></div>
     <div class="pagination" id="pagination"></div>
   </section>
-
   <footer class="footer"><p>STS2娘化MOD站 © 2026 壹个屑猫猫</p></footer>
 </div>
-
 <div class="toast" id="toast"></div>
-
 <script>
 (function(){
 var LAUNCHER_ICON='http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0';
@@ -417,30 +418,34 @@ function renderLatestCard(){
   var latest=launcherData.find(function(d){return d.isLatest});
   if(!latest){latestCard.style.display='none';return}
   latestCard.style.display='flex';
-  var descId='latest-desc';
-  var toggleId='latest-toggle';
   latestCard.innerHTML=
     '<img class="latest-icon" src="'+LAUNCHER_ICON+'" alt="启动器图标" onerror="this.style.display=\'none\'">'+
     '<div class="latest-info">'+
-      '<div class="latest-label">最新版本 / 启动器</div>'+
-      '<div class="latest-version">'+latest.version+'</div>'+
-      '<div class="latest-meta">'+
-        '<span class="meta-tag">'+latest.size+'</span>'+
-        '<span class="meta-hint">* 需配合游戏本体一起使用</span>'+
+      '<div class="latest-header-row">'+
+        '<span class="latest-version">'+latest.version+'</span>'+
+        '<span class="latest-header-sep">/</span>'+
+        '<span class="latest-header-tag">最新版本</span>'+
+        '<span class="latest-header-sep">/</span>'+
+        '<span class="latest-header-tag">启动器</span>'+
+        '<span class="latest-header-sep">/</span>'+
+        '<span class="latest-header-tag size-tag">'+latest.size+'</span>'+
       '</div>'+
-      '<div class="latest-desc" id="'+descId+'">'+latest.description+'</div>'+
-      '<span class="desc-toggle" id="'+toggleId+'" style="display:none;">展开</span>'+
+      '<div class="latest-hint">* 需配合游戏本体一起使用</div>'+
+      '<div class="desc-wrap">'+
+        '<span class="desc-text" id="latest-desc">'+latest.description+'</span>'+
+        '<span class="desc-toggle" id="latest-toggle" style="display:none;">展开</span>'+
+      '</div>'+
       '<div class="latest-actions">'+
         '<a class="btn-dl" href="'+latest.downloadUrl+'" target="_blank" rel="noopener">下载启动器</a>'+
         '<a class="btn-tutorial" href="'+TUTORIAL_URL+'" target="_blank" rel="noopener">使用教程</a>'+
       '</div>'+
     '</div>';
-  var descEl=document.getElementById(descId);
-  var toggleEl=document.getElementById(toggleId);
+  var descEl=document.getElementById('latest-desc');
+  var toggleEl=document.getElementById('latest-toggle');
   if(descEl&&toggleEl){
     setTimeout(function(){
-      if(descEl.scrollHeight>descEl.clientHeight+2){
-        toggleEl.style.display='inline-block';
+      if(descEl.scrollWidth>descEl.clientWidth+2){
+        toggleEl.style.display='inline';
       }
     },30);
     toggleEl.addEventListener('click',function(){
@@ -458,9 +463,6 @@ function getCurrentData(){
       return item.version.toLowerCase().indexOf(query)!==-1||item.description.toLowerCase().indexOf(query)!==-1;
     });
   }
-  if(activeTab==='launcher'){
-    data=data.filter(function(item){return !item.isLatest});
-  }
   currentFilteredData=data;
   return data;
 }
@@ -474,14 +476,16 @@ function renderVersionCards(pageData){
   pageData.forEach(function(item,idx){
     var card=document.createElement('div');
     card.className='version-card';
-    var descId='vdesc-'+activeTab+'-'+idx;
-    var toggleId='vtoggle-'+activeTab+'-'+idx;
+    var did='vd-'+activeTab+'-'+idx;
+    var tid='vt-'+activeTab+'-'+idx;
     card.innerHTML=
       '<div class="version-card-inner">'+
         '<div class="version-info">'+
           '<div class="version-name">'+item.version+'</div>'+
-          '<div class="version-desc" id="'+descId+'">'+item.description+'</div>'+
-          '<span class="version-card-toggle" id="'+toggleId+'" style="display:none;">展开</span>'+
+          '<div class="vdesc-wrap">'+
+            '<span class="vdesc-text" id="'+did+'">'+item.description+'</span>'+
+            '<span class="vdesc-toggle" id="'+tid+'" style="display:none;">展开</span>'+
+          '</div>'+
           '<div class="version-meta">'+
             '<span class="version-meta-tag">'+item.size+'</span>'+
             '<span class="version-meta-tag">'+item.date+'</span>'+
@@ -490,20 +494,20 @@ function renderVersionCards(pageData){
         '<a class="version-dl-btn" href="'+item.downloadUrl+'" target="_blank" rel="noopener">下载</a>'+
       '</div>';
     versionList.appendChild(card);
-    var descEl=document.getElementById(descId);
-    var toggleEl=document.getElementById(toggleId);
-    if(descEl&&toggleEl){
-      (function(de,te){
+    var de=document.getElementById(did);
+    var te=document.getElementById(tid);
+    if(de&&te){
+      (function(d,t){
         setTimeout(function(){
-          if(de.scrollHeight>de.clientHeight+2){
-            te.style.display='inline-block';
+          if(d.scrollWidth>d.clientWidth+2){
+            t.style.display='inline';
           }
         },30);
-        te.addEventListener('click',function(){
-          var expanded=de.classList.toggle('expanded');
-          te.textContent=expanded?'收起':'展开';
+        t.addEventListener('click',function(){
+          var expanded=d.classList.toggle('expanded');
+          t.textContent=expanded?'收起':'展开';
         });
-      })(descEl,toggleEl);
+      })(de,te);
     }
   });
 }
@@ -512,143 +516,93 @@ function renderPagination(totalItems,currentPageNum){
   paginationEl.innerHTML='';
   var totalPages=Math.ceil(totalItems/ITEMS_PER_PAGE);
   if(totalPages<=1) return;
-
   function createBtn(cls,content,disabled,handler){
     var btn=document.createElement('button');
-    btn.className=cls;
-    btn.innerHTML=content;
-    btn.style.flexShrink='1';
-    btn.style.minWidth='0';
+    btn.className=cls;btn.innerHTML=content;
+    btn.style.flexShrink='1';btn.style.minWidth='0';
     if(disabled) btn.disabled=true;
     if(handler) btn.addEventListener('click',handler);
     return btn;
   }
-
   function createPageBtn(num){
     return createBtn('pagination-page'+(num===currentPageNum?' active':''),num,false,function(){
-      currentPage=num;
-      renderCurrentPage();
+      currentPage=num;renderCurrentPage();
       versionList.scrollIntoView({behavior:'smooth',block:'start'});
     });
   }
-
   function createDots(){
-    var s=document.createElement('span');
-    s.className='pagination-dots';
-    s.textContent='...';
-    s.style.flexShrink='1';
-    s.style.minWidth='0';
-    return s;
+    var s=document.createElement('span');s.className='pagination-dots';
+    s.textContent='...';s.style.flexShrink='1';s.style.minWidth='0';return s;
   }
-
   var items=[];
   items.push(createBtn('pagination-btn','&#8249;',currentPageNum<=1,function(){
     if(currentPage>1){currentPage--;renderCurrentPage();versionList.scrollIntoView({behavior:'smooth',block:'start'})}
   }));
   items.push(createPageBtn(1));
-  if(totalPages<=4){
-    for(var i=2;i<=totalPages;i++) items.push(createPageBtn(i));
-  } else {
+  if(totalPages<=4){for(var i=2;i<=totalPages;i++) items.push(createPageBtn(i))}
+  else{
     if(currentPageNum<=4){
       for(var j=2;j<=4;j++) items.push(createPageBtn(j));
-      items.push(createDots());
-      items.push(createPageBtn(totalPages));
-    } else {
+      items.push(createDots());items.push(createPageBtn(totalPages));
+    }else{
       items.push(createDots());
       if(currentPageNum-1>1) items.push(createPageBtn(currentPageNum-1));
       items.push(createPageBtn(currentPageNum));
       if(currentPageNum+1<totalPages) items.push(createPageBtn(currentPageNum+1));
-      items.push(createDots());
-      items.push(createPageBtn(totalPages));
+      items.push(createDots());items.push(createPageBtn(totalPages));
     }
   }
   items.push(createBtn('pagination-btn','&#8250;',currentPageNum>=totalPages,function(){
     if(currentPage<totalPages){currentPage++;renderCurrentPage();versionList.scrollIntoView({behavior:'smooth',block:'start'})}
   }));
   items.forEach(function(it){paginationEl.appendChild(it)});
-
-  var gotoWrap=document.createElement('span');
-  gotoWrap.className='pagination-goto';
-  gotoWrap.style.flexShrink='0';
-  gotoWrap.style.marginLeft='8px';
-
-  var gotoInput=document.createElement('input');
-  gotoInput.type='text';
-  gotoInput.className='pagination-goto-input';
-  gotoInput.placeholder='\\';
-  gotoInput.maxLength=3;
-  gotoInput.setAttribute('aria-label','输入页码');
-
-  var gotoBtn=document.createElement('button');
-  gotoBtn.className='pagination-goto-btn';
+  var gotoWrap=document.createElement('span');gotoWrap.className='pagination-goto';
+  gotoWrap.style.flexShrink='0';gotoWrap.style.marginLeft='8px';
+  var gotoInput=document.createElement('input');gotoInput.type='text';
+  gotoInput.className='pagination-goto-input';gotoInput.placeholder='\\';
+  gotoInput.maxLength=3;gotoInput.setAttribute('aria-label','输入页码');
+  var gotoBtn=document.createElement('button');gotoBtn.className='pagination-goto-btn';
   gotoBtn.innerHTML='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:18px;height:18px"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
   gotoBtn.setAttribute('aria-label','跳转到指定页');
-
-  var gotoMobile=document.createElement('button');
-  gotoMobile.className='pagination-goto-mobile-trigger';
+  var gotoMobile=document.createElement('button');gotoMobile.className='pagination-goto-mobile-trigger';
   gotoMobile.innerHTML='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" style="width:14px;height:14px"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
   gotoMobile.setAttribute('aria-label','跳转页码');
-
   function doGoto(val){
     var num=parseInt(val,10);
     if(isNaN(num)||num<1||num>totalPages){showToast('页码范围：1 ~ '+totalPages);return}
-    currentPage=num;
-    renderCurrentPage();
-    gotoInput.value='';
+    currentPage=num;renderCurrentPage();gotoInput.value='';
     versionList.scrollIntoView({behavior:'smooth',block:'start'});
   }
-
   gotoInput.addEventListener('input',function(){this.value=this.value.replace(/[^\d]/g,'').slice(0,3)});
   gotoInput.addEventListener('keydown',function(e){if(e.key==='Enter')doGoto(this.value)});
   gotoBtn.addEventListener('click',function(){doGoto(gotoInput.value)});
   gotoMobile.addEventListener('click',function(){openGotoPopup(totalPages)});
-
-  gotoWrap.appendChild(gotoInput);
-  gotoWrap.appendChild(gotoBtn);
-  gotoWrap.appendChild(gotoMobile);
+  gotoWrap.appendChild(gotoInput);gotoWrap.appendChild(gotoBtn);gotoWrap.appendChild(gotoMobile);
   paginationEl.appendChild(gotoWrap);
 }
 
 function openGotoPopup(totalPages){
-  var existing=document.getElementById('gotoPopupOverlay');
-  if(existing) existing.remove();
-  var overlay=document.createElement('div');
-  overlay.className='goto-popup-overlay active';
-  overlay.id='gotoPopupOverlay';
-  var popup=document.createElement('div');
-  popup.className='goto-popup';
-  var title=document.createElement('div');
-  title.className='goto-popup-title';
+  var existing=document.getElementById('gotoPopupOverlay');if(existing) existing.remove();
+  var overlay=document.createElement('div');overlay.className='goto-popup-overlay active';overlay.id='gotoPopupOverlay';
+  var popup=document.createElement('div');popup.className='goto-popup';
+  var title=document.createElement('div');title.className='goto-popup-title';
   title.textContent='跳转到第几页？(共 '+totalPages+' 页)';
-  var row=document.createElement('div');
-  row.className='goto-popup-row';
-  var input=document.createElement('input');
-  input.type='text';
-  input.className='goto-popup-input';
-  input.placeholder='页码';
-  input.maxLength=3;
-  input.inputMode='numeric';
+  var row=document.createElement('div');row.className='goto-popup-row';
+  var input=document.createElement('input');input.type='text';input.className='goto-popup-input';
+  input.placeholder='页码';input.maxLength=3;input.inputMode='numeric';
   input.addEventListener('input',function(){this.value=this.value.replace(/[^\d]/g,'').slice(0,3)});
-  var confirmBtn=document.createElement('button');
-  confirmBtn.className='goto-popup-confirm';
-  confirmBtn.textContent='跳转';
+  var confirmBtn=document.createElement('button');confirmBtn.className='goto-popup-confirm';confirmBtn.textContent='跳转';
   function doMobileGoto(){
     var num=parseInt(input.value,10);
     if(isNaN(num)||num<1||num>totalPages){showToast('页码范围：1 ~ '+totalPages);return}
-    currentPage=num;
-    renderCurrentPage();
-    overlay.remove();
+    currentPage=num;renderCurrentPage();overlay.remove();
     setTimeout(function(){versionList.scrollIntoView({behavior:'smooth',block:'start'})},50);
   }
   input.addEventListener('keydown',function(e){if(e.key==='Enter')doMobileGoto()});
   confirmBtn.addEventListener('click',doMobileGoto);
   overlay.addEventListener('click',function(e){if(e.target===overlay)overlay.remove()});
-  row.appendChild(input);
-  row.appendChild(confirmBtn);
-  popup.appendChild(title);
-  popup.appendChild(row);
-  overlay.appendChild(popup);
-  document.body.appendChild(overlay);
+  row.appendChild(input);row.appendChild(confirmBtn);popup.appendChild(title);popup.appendChild(row);
+  overlay.appendChild(popup);document.body.appendChild(overlay);
   setTimeout(function(){input.focus()},100);
 }
 
@@ -661,9 +615,7 @@ function renderCurrentPage(){
 }
 
 function switchTab(tab){
-  activeTab=tab;
-  currentPage=1;
-  searchInput.value='';
+  activeTab=tab;currentPage=1;searchInput.value='';
   searchDropdown.classList.remove('active');
   tabLauncher.classList.toggle('active',tab==='launcher');
   tabGame.classList.toggle('active',tab==='game');
@@ -674,42 +626,35 @@ tabLauncher.addEventListener('click',function(){switchTab('launcher')});
 tabGame.addEventListener('click',function(){switchTab('game')});
 
 function updateSearchDropdown(){
-  var query=searchInput.value.trim();
-  searchDropdown.innerHTML='';
+  var query=searchInput.value.trim();searchDropdown.innerHTML='';
   if(!query){searchDropdown.classList.remove('active');return}
-  var lowerQuery=query.toLowerCase();
-  var results=[];
+  var lowerQuery=query.toLowerCase();var results=[];
   launcherData.forEach(function(item){
-    if(item.version.toLowerCase().indexOf(lowerQuery)!==-1||item.description.toLowerCase().indexOf(lowerQuery)!==-1){
+    if(item.version.toLowerCase().indexOf(lowerQuery)!==-1||item.description.toLowerCase().indexOf(lowerQuery)!==-1)
       results.push({item:item,type:'launcher',typeName:'启动器'});
-    }
   });
   gameData.forEach(function(item){
-    if(item.version.toLowerCase().indexOf(lowerQuery)!==-1||item.description.toLowerCase().indexOf(lowerQuery)!==-1){
+    if(item.version.toLowerCase().indexOf(lowerQuery)!==-1||item.description.toLowerCase().indexOf(lowerQuery)!==-1)
       results.push({item:item,type:'game',typeName:'游戏本体'});
-    }
   });
   if(results.length===0){
     searchDropdown.innerHTML='<li class="search-dropdown-empty">没有找到匹配的版本</li>';
-  } else {
+  }else{
     var escapedQuery=query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
     var regex=new RegExp('('+escapedQuery+')','gi');
     results.slice(0,8).forEach(function(r){
-      var li=document.createElement('li');
-      li.className='search-dropdown-item';
+      var li=document.createElement('li');li.className='search-dropdown-item';
       var highlighted=r.item.version.replace(regex,'<mark>$1</mark>');
       li.innerHTML='<span class="search-item-type '+r.type+'">'+r.typeName+'</span>'+'<span>'+highlighted+'</span>';
       li.addEventListener('click',function(){
-        if(activeTab!==r.type){switchTab(r.type)}
-        searchInput.value='';
-        searchDropdown.classList.remove('active');
-        var fullData=activeTab==='launcher'?launcherData.filter(function(d){return !d.isLatest}):gameData;
+        if(activeTab!==r.type) switchTab(r.type);
+        searchInput.value='';searchDropdown.classList.remove('active');
+        var fullData=activeTab==='launcher'?launcherData:gameData;
         var idx=-1;
         for(var i=0;i<fullData.length;i++){if(fullData[i].version===r.item.version){idx=i;break}}
         if(idx!==-1){
           var targetPage=Math.floor(idx/ITEMS_PER_PAGE)+1;
-          currentPage=targetPage;
-          renderCurrentPage();
+          currentPage=targetPage;renderCurrentPage();
           setTimeout(function(){
             var cards=versionList.querySelectorAll('.version-card');
             var cardIdx=idx%ITEMS_PER_PAGE;
@@ -727,21 +672,13 @@ function updateSearchDropdown(){
   searchDropdown.classList.add('active');
 }
 
-searchInput.addEventListener('input',function(){
-  currentPage=1;
-  renderCurrentPage();
-  updateSearchDropdown();
-});
-searchInput.addEventListener('focus',function(){
-  if(searchInput.value.trim().length>=1) updateSearchDropdown();
-});
+searchInput.addEventListener('input',function(){currentPage=1;renderCurrentPage();updateSearchDropdown()});
+searchInput.addEventListener('focus',function(){if(searchInput.value.trim().length>=1) updateSearchDropdown()});
 searchInput.addEventListener('keydown',function(e){
   if(e.key==='Escape'){searchDropdown.classList.remove('active');searchInput.blur()}
   if(e.key==='Enter'){searchDropdown.classList.remove('active')}
 });
-document.addEventListener('click',function(e){
-  if(!searchContainer.contains(e.target)) searchDropdown.classList.remove('active');
-});
+document.addEventListener('click',function(e){if(!searchContainer.contains(e.target)) searchDropdown.classList.remove('active')});
 
 renderLatestCard();
 renderCurrentPage();
