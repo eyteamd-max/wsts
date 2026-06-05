@@ -3,153 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>塔Ⅱ 手机版更新中心 - STS2娘化MOD站</title>
+<title>塔Ⅱ手机版 · 更新中心 - STS2娘化MOD站</title>
 <meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="img-src * data:;">
 <style>
 :root{
   --bg:#faf7f4;
-  --strawberry:#e89b9b;
+  --strawberry-milk:#e89b9b;
   --strawberry-light:#f5c4c4;
-  --mint:#a8d8c8;
+  --mint-jelly:#a8d8c8;
   --mint-light:#c8ece0;
-  --cream:#fbe8c3;
+  --cream-yellow:#fbe8c3;
   --cream-light:#fdf3dc;
-  --border:#4a4458;
-  --text-1:#3d3648;
-  --text-2:#6b6378;
-  --text-3:#9a92a5;
-  --shadow-s:0 2px 12px rgba(74,68,88,.06);
-  --shadow-m:0 6px 24px rgba(74,68,88,.10);
+  --border-dark:#4a4458;
+  --text-primary:#3d3648;
+  --text-secondary:#6b6378;
+  --text-muted:#9a92a5;
+  --shadow-soft:0 4px 20px rgba(74,68,88,.08);
+  --shadow-medium:0 8px 32px rgba(74,68,88,.13);
+  --shadow-deep:0 14px 44px rgba(74,68,88,.18);
+  --radius-xl:28px;
   --bw:2.5px;
-  --r:20px;
+  --font-body:'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
   --bounce:cubic-bezier(.34,1.56,.64,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  background:var(--bg);
-  background-image:radial-gradient(ellipse at 15% 20%,rgba(232,155,155,.05) 0%,transparent 55%),
-    radial-gradient(ellipse at 78% 65%,rgba(168,216,200,.06) 0%,transparent 55%),
-    radial-gradient(ellipse at 40% 80%,rgba(200,184,216,.04) 0%,transparent 50%);
-  background-attachment:fixed;
-  color:var(--text-1);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;
-}
+body{font-family:var(--font-body);background:var(--bg);background-image:radial-gradient(ellipse at 15% 20%,rgba(232,155,155,.05) 0%,transparent 55%),radial-gradient(ellipse at 78% 65%,rgba(168,216,200,.06) 0%,transparent 55%);background-attachment:fixed;color:var(--text-primary);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
 
 /* Loading */
 .loading{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .4s,visibility .4s}
 .loading.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loading-spin{width:40px;height:40px;border:3.5px solid #e2dbd0;border-top-color:var(--strawberry);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:14px}
-.loading-txt{font-size:.95rem;color:var(--text-2);animation:pulse 1.5s ease-in-out infinite}
+.loading-spin{width:42px;height:42px;border:3.5px solid #e2dbd0;border-top-color:var(--strawberry-milk);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:14px}
+.loading-txt{font-size:.95rem;color:var(--text-secondary);animation:pulse 1.5s ease-in-out infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 
-/* Container */
-.wrap{max-width:720px;margin:0 auto;padding:20px 18px 60px;opacity:0;transition:opacity .4s}
+/* Main */
+.wrap{max-width:740px;margin:0 auto;padding:20px 18px 40px;opacity:0;transition:opacity .4s}
 
 /* Top Bar */
-.topbar{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-.back{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;text-decoration:none;color:var(--text-2);font-size:.84rem;font-weight:600;border:2px solid var(--border);border-radius:30px;background:#fffdfb;box-shadow:var(--shadow-s);transition:all .25s var(--bounce);white-space:nowrap}
+.topbar{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.back{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;text-decoration:none;color:var(--text-secondary);font-size:.84rem;font-weight:600;border:2px solid var(--border-dark);border-radius:30px;background:#fffdfb;box-shadow:var(--shadow-soft);transition:all .25s var(--bounce);white-space:nowrap}
 .back:hover{background:var(--strawberry-light);color:#fff;border-color:#c97a7a;transform:translateY(-2px)}
 .back svg{width:15px;height:15px}
-.topbar-title{font-size:1.1rem;font-weight:700;color:var(--text-1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-title{font-size:1.08rem;font-weight:700;color:var(--text-primary)}
 
-/* Search */
-.search{position:relative;margin-bottom:14px}
-.search-input{width:100%;padding:13px 44px 13px 20px;font-size:.92rem;border:var(--bw) solid var(--border);border-radius:50px;background:#fffdfb;color:var(--text-1);outline:none;transition:all .25s;box-shadow:var(--shadow-s);font-family:inherit}
-.search-input:focus{box-shadow:var(--shadow-m);border-color:var(--strawberry)}
-.search-input::placeholder{color:var(--text-3)}
-.search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--text-3);pointer-events:none}
-.search-clear{position:absolute;right:40px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:none;background:var(--text-3);color:#fff;border-radius:50%;font-size:13px;cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1;transition:background .15s}
-.search-clear:hover{background:var(--text-2)}
-.search-clear.show{display:flex}
+/* Section Title */
+.sec-title{font-size:1.3rem;font-weight:700;margin-bottom:18px;padding-left:14px;border-left:5px solid var(--strawberry-milk);position:relative;display:inline-block}
+.sec-title::after{content:'';position:absolute;bottom:-3px;left:14px;width:32px;height:3px;background:var(--mint-jelly);border-radius:2px}
+.sec-title--mint{border-left-color:var(--mint-jelly)}
+.sec-title--mint::after{background:var(--strawberry-milk)}
 
-/* Filter Pills */
-.pills{display:flex;gap:10px;margin-bottom:24px}
-.pill{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:2px solid var(--border);border-radius:24px;font-size:.84rem;font-weight:600;color:var(--text-1);cursor:pointer;user-select:none;background:#fffdfb;box-shadow:var(--shadow-s);transition:all .25s var(--bounce)}
-.pill::before{content:'';width:8px;height:8px;border-radius:50%;border:2px solid var(--border);transition:all .25s}
-.pill--launcher::before{background:var(--mint-light)}
-.pill--game::before{background:var(--cream)}
-.pill.active{color:#fff;border-color:#c97a7a;background:var(--strawberry-light)}
-.pill.active::before{background:#fff;border-color:#c97a7a}
-.pill:hover:not(.active){transform:translateY(-2px);box-shadow:var(--shadow-m)}
-
-/* Latest Section */
-.latest-title{font-size:1.15rem;font-weight:700;margin-bottom:14px;padding-left:14px;border-left:5px solid var(--strawberry);display:inline-block}
+/* Latest Grid */
 .latest-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px}
-.latest-grid.single{grid-template-columns:1fr}
 
 /* Latest Card */
-.lcard{background:#fffdfb;border:var(--bw) solid var(--border);border-radius:var(--r);padding:18px 18px 16px;box-shadow:var(--shadow-s);transition:all .3s var(--bounce);position:relative;overflow:hidden}
-.lcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.lcard{background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:var(--radius-xl);padding:18px 18px 16px;box-shadow:var(--shadow-soft);transition:all .3s var(--bounce);position:relative;overflow:hidden}
+.lcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-medium)}
 .lcard--launcher{background:linear-gradient(135deg,#f4faf8 0%,#edf7f3 100%)}
 .lcard--game{background:linear-gradient(135deg,#fefbf0 0%,#fdf6e6 100%)}
 .lcard-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:10px}
-.lcard-icon{width:48px;height:48px;border-radius:14px;object-fit:cover;flex-shrink:0;border:2px solid var(--border);background:#fff}
+.lcard-icon{width:48px;height:48px;border-radius:14px;object-fit:cover;flex-shrink:0;border:2px solid var(--border-dark);background:#fff}
 .lcard-info{flex:1;min-width:0}
-.lcard-ver{font-size:1.2rem;font-weight:800;color:var(--text-1);line-height:1.3}
-.lcard-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.68rem;font-weight:700;background:var(--strawberry-light);color:#fff;border:1.5px solid #c97a7a;margin-left:8px;vertical-align:middle}
-.lcard-type{font-size:.8rem;color:var(--text-2);font-weight:600;margin-top:2px}
-.lcard-meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:6px;font-size:.8rem;color:var(--text-2)}
+.lcard-type{font-size:.78rem;color:var(--text-muted);font-weight:600;margin-bottom:2px}
+.lcard-ver{font-size:1.15rem;font-weight:800;color:var(--text-primary);line-height:1.3}
+.lcard-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.68rem;font-weight:700;background:var(--strawberry-light);color:#fff;border:1.5px solid #c97a7a;margin-left:6px;vertical-align:middle}
+.lcard-meta{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:5px;font-size:.78rem;color:var(--text-secondary)}
 .lcard-meta span{display:inline-flex;align-items:center;gap:3px}
-.lcard-meta svg{width:13px;height:13px;color:var(--text-3);flex-shrink:0}
-.lcard-compat{font-size:.76rem;color:#5ba88a;font-weight:600;background:rgba(168,216,200,.18);padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:3px;margin-top:6px}
-.lcard-compat svg{width:12px;height:12px}
-.lcard-desc{font-size:.84rem;color:var(--text-2);line-height:1.6;margin:10px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;transition:all .3s}
+.lcard-meta svg{width:13px;height:13px;color:var(--text-muted);flex-shrink:0}
+.lcard-desc{font-size:.82rem;color:var(--text-secondary);line-height:1.55;margin:10px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;transition:all .3s}
 .lcard-desc.expanded{-webkit-line-clamp:unset;display:block}
-.lcard-toggle{color:var(--strawberry);font-weight:600;cursor:pointer;font-size:.82rem;background:none;border:none;font-family:inherit;padding:0;margin-top:2px}
+.lcard-toggle{color:var(--strawberry-milk);font-weight:600;cursor:pointer;font-size:.8rem;background:none;border:none;font-family:inherit;padding:0}
 .lcard-toggle:hover{text-decoration:underline}
-.lcard-dls{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.dl-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;background:var(--strawberry);color:#fff;border:2px solid #c97a7a;border-radius:30px;font-weight:700;font-size:.8rem;cursor:pointer;text-decoration:none;white-space:nowrap;transition:all .25s var(--bounce);font-family:inherit}
-.dl-btn:hover{background:#fff;color:var(--strawberry);transform:scale(1.04)}
+.lcard-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dl-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;background:var(--strawberry-milk);color:#fff;border:2px solid #c97a7a;border-radius:30px;font-weight:700;font-size:.8rem;cursor:pointer;text-decoration:none;white-space:nowrap;transition:all .25s var(--bounce);font-family:inherit}
+.dl-btn:hover{background:#fff;color:var(--strawberry-milk);transform:scale(1.04)}
 .dl-btn svg{width:13px;height:13px}
+.dl-btn--outline{background:transparent;color:var(--strawberry-milk);border-color:var(--strawberry-milk)}
+.dl-btn--outline:hover{background:var(--strawberry-milk);color:#fff}
+.lcard-compat{font-size:.74rem;color:#5ba88a;font-weight:600;background:rgba(168,216,200,.18);padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:3px;margin-top:8px}
+.lcard-compat svg{width:12px;height:12px}
 
-/* History Section */
-.hist-title{font-size:1.15rem;font-weight:700;margin-bottom:14px;padding-left:14px;border-left:5px solid var(--mint);display:inline-block;position:relative}
-.hist-title::after{content:'';position:absolute;bottom:-3px;left:14px;width:32px;height:3px;background:var(--cream);border-radius:2px}
-.hist-list{display:flex;flex-direction:column;gap:10px}
+/* Filter Bar */
+.filter-bar{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.pills{display:flex;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border:2px solid var(--border-dark);border-radius:24px;font-size:.82rem;font-weight:600;color:var(--text-primary);cursor:pointer;user-select:none;background:#fffdfb;box-shadow:var(--shadow-soft);transition:all .25s var(--bounce)}
+.pill::before{content:'';width:8px;height:8px;border-radius:50%;border:2px solid var(--border-dark);transition:all .25s}
+.pill--launcher::before{background:var(--mint-light)}
+.pill--game::before{background:var(--cream-yellow)}
+.pill.active{color:#fff;border-color:#c97a7a;background:var(--strawberry-light)}
+.pill.active::before{background:#fff;border-color:#c97a7a}
+.pill:hover:not(.active){transform:translateY(-2px);box-shadow:var(--shadow-medium)}
+
+/* Search */
+.search-wrap{flex:1;min-width:180px;position:relative}
+.search-input{width:100%;padding:10px 40px 10px 18px;font-size:.88rem;border:var(--bw) solid var(--border-dark);border-radius:50px;background:#fffdfb;color:var(--text-primary);outline:none;transition:all .25s;box-shadow:var(--shadow-soft);font-family:inherit}
+.search-input:focus{box-shadow:var(--shadow-medium);border-color:var(--strawberry-milk)}
+.search-input::placeholder{color:var(--text-muted)}
+.search-icon{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--text-muted);pointer-events:none}
+.search-clear{position:absolute;right:34px;top:50%;transform:translateY(-50%);width:20px;height:20px;border:none;background:var(--text-muted);color:#fff;border-radius:50%;font-size:12px;cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1;transition:background .15s}
+.search-clear:hover{background:var(--text-secondary)}
+.search-clear.show{display:flex}
+
+/* Search Dropdown */
+.search-dropdown{position:absolute;top:calc(100% + 6px);left:4px;right:4px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:20px;box-shadow:var(--shadow-medium);z-index:200;max-height:240px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s;list-style:none;padding:6px 0}
+.search-dropdown.active{opacity:1;visibility:visible;transform:translateY(0)}
+.search-dropdown-item{padding:10px 18px;cursor:pointer;font-size:.86rem;color:var(--text-primary);display:flex;align-items:center;gap:10px;transition:background .15s}
+.search-dropdown-item:hover{background:#fef0f0;color:#c97a7a}
+.search-dropdown-item .sdi-type{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0}
+.sdi-type--launcher{background:var(--mint-light);color:#4a8a6e;border:1.5px solid #8cc8a0}
+.sdi-type--game{background:var(--cream-yellow);color:#8a7a3e;border:1.5px solid #d4c47a}
+.sdi-right{min-width:0;flex:1}
+.sdi-ver{font-weight:700;font-size:.88rem}
+.sdi-sub{font-size:.76rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+mark{background:rgba(232,155,155,.22);color:var(--text-primary);border-radius:3px;padding:0 2px}
+
+/* History List */
+.hist-list{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
 
 /* History Card */
-.hcard{background:#fffdfb;border:var(--bw) solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-s);transition:all .25s var(--bounce);animation:fadeUp .4s cubic-bezier(.16,1,.3,1) both}
-.hcard:hover{transform:translateY(-2px);box-shadow:var(--shadow-m)}
+.hcard{background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:var(--radius-xl);padding:16px 18px;box-shadow:var(--shadow-soft);transition:all .25s var(--bounce);animation:fadeUp .4s cubic-bezier(.16,1,.3,1) both}
+.hcard:hover{transform:translateY(-2px);box-shadow:var(--shadow-medium)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.hcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.hcard-ver{font-weight:800;font-size:1rem;color:var(--text-1)}
-.hcard-tag{padding:2px 10px;border-radius:20px;font-size:.7rem;font-weight:700;border:1.5px solid var(--border)}
+.hcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.hcard-ver{font-weight:800;font-size:1rem;color:var(--text-primary)}
+.hcard-tag{padding:2px 10px;border-radius:20px;font-size:.7rem;font-weight:700;border:1.5px solid var(--border-dark)}
 .hcard-tag--launcher{background:var(--mint-light);color:#4a8a6e;border-color:#8cc8a0}
-.hcard-tag--game{background:var(--cream);color:#8a7a3e;border-color:#d4c47a}
-.hcard-date{font-size:.8rem;color:var(--text-3);margin-left:auto;white-space:nowrap}
-.hcard-size{font-size:.8rem;color:var(--text-2);margin-bottom:6px}
-.hcard-desc{font-size:.84rem;color:var(--text-2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;transition:all .3s}
+.hcard-tag--game{background:var(--cream-yellow);color:#8a7a3e;border-color:#d4c47a}
+.hcard-date{font-size:.8rem;color:var(--text-muted);margin-left:auto;white-space:nowrap}
+.hcard-size{font-size:.8rem;color:var(--text-secondary);margin-bottom:6px}
+.hcard-desc{font-size:.84rem;color:var(--text-secondary);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;transition:all .3s}
 .hcard-desc.expanded{-webkit-line-clamp:unset;display:block}
-.hcard-toggle{color:var(--strawberry);font-weight:600;cursor:pointer;font-size:.82rem;background:none;border:none;font-family:inherit;padding:0;margin-top:2px}
+.hcard-toggle{color:var(--strawberry-milk);font-weight:600;cursor:pointer;font-size:.8rem;background:none;border:none;font-family:inherit;padding:0}
 .hcard-toggle:hover{text-decoration:underline}
-.hcard-dls{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.hcard-dls .dl-btn{padding:7px 14px;font-size:.78rem}
+.hcard-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.hcard-btns .dl-btn{padding:7px 14px;font-size:.78rem}
 
-/* Empty State */
-.empty{text-align:center;padding:40px 16px;color:var(--text-3);border:var(--bw) solid var(--border);border-radius:var(--r);background:#fffdfb;font-size:.9rem}
-.empty svg{width:32px;height:32px;color:#d5cdc0;margin-bottom:8px}
+/* Empty */
+.empty{text-align:center;padding:36px 16px;color:var(--text-muted);border:var(--bw) solid var(--border-dark);border-radius:var(--radius-xl);background:#fffdfb;font-size:.9rem}
 
-/* Highlight Mark */
-mark{background:rgba(232,155,155,.22);color:var(--text-1);border-radius:3px;padding:0 2px;font-weight:inherit}
-
-/* Footer */
-.footer{text-align:center;padding:28px 0 16px;color:var(--text-3);font-size:.84rem}
-.footer a{color:var(--strawberry);text-decoration:none}
-.footer a:hover{text-decoration:underline}
+/* Pagination - 1:1 from main site */
+.pagination{display:flex;justify-content:center;align-items:center;gap:10px;margin:24px 0 36px;flex-wrap:nowrap;overflow:hidden}
+.pagination-btn,.pagination-page{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 12px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:30px;font-family:var(--font-body);font-size:.9rem;font-weight:600;color:var(--text-primary);cursor:pointer;transition:all .3s var(--bounce);box-shadow:var(--shadow-soft);user-select:none}
+.pagination-btn:hover:not(:disabled),.pagination-page:hover:not(.active){background:var(--strawberry-light);color:#fff;border-color:#c97a7a;transform:scale(1.07)}
+.pagination-btn:disabled{opacity:.3;cursor:not-allowed;pointer-events:none}
+.pagination-page.active{background:var(--strawberry-milk);color:#fff;border-color:#c97a7a;box-shadow:0 2px 12px rgba(232,155,155,.3)}
+.pagination-dots{color:var(--text-muted);font-weight:600;padding:0 4px;user-select:none}
+.pagination-goto{display:inline-flex;align-items:center;gap:6px;margin-left:10px}
+.pagination-goto-input{width:52px;height:40px;padding:0 10px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:30px;font-family:var(--font-body);font-size:.88rem;font-weight:600;color:var(--text-primary);text-align:center;outline:none;box-shadow:var(--shadow-soft);transition:all .3s var(--bounce);-moz-appearance:textfield}
+.pagination-goto-input::-webkit-outer-spin-button,.pagination-goto-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.pagination-goto-input:focus{border-color:var(--strawberry-milk);box-shadow:var(--shadow-deep)}
+.pagination-goto-btn{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 14px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:30px;font-family:var(--font-body);font-size:.82rem;font-weight:600;color:var(--text-primary);cursor:pointer;transition:all .3s var(--bounce);box-shadow:var(--shadow-soft);user-select:none}
+.pagination-goto-btn:hover{background:var(--strawberry-light);color:#fff;border-color:#c97a7a;transform:scale(1.07)}
+.pagination-goto-mobile-trigger{display:none}
+@media(max-width:480px){
+  .pagination{gap:6px}
+  .pagination-btn,.pagination-page{min-width:32px;height:32px;font-size:.8rem;padding:0 8px}
+  .pagination-dots{font-size:.8rem;padding:0 2px}
+  .pagination-goto-input,.pagination-goto-btn{display:none}
+  .pagination-goto-mobile-trigger{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 8px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:30px;font-size:.8rem;font-weight:600;color:var(--text-primary);cursor:pointer;box-shadow:var(--shadow-soft);transition:all .3s var(--bounce);user-select:none}
+  .pagination-goto-mobile-trigger:hover{background:var(--strawberry-light);color:#fff;border-color:#c97a7a}
+  .pagination-goto{margin-left:6px}
+}
+.goto-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:700;align-items:flex-end;justify-content:center}
+.goto-popup-overlay.active{display:flex}
+.goto-popup{width:100%;max-width:360px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:24px 24px 0 0;padding:24px 20px 32px;box-shadow:var(--shadow-deep);display:flex;flex-direction:column;align-items:center;gap:16px;animation:popupSlideUp .3s var(--bounce)}
+@keyframes popupSlideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.goto-popup-title{font-size:.95rem;font-weight:600;color:var(--text-primary)}
+.goto-popup-row{display:flex;align-items:center;gap:10px}
+.goto-popup-input{width:80px;height:44px;padding:0 14px;background:#fffdfb;border:var(--bw) solid var(--border-dark);border-radius:30px;font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--text-primary);text-align:center;outline:none;-moz-appearance:textfield}
+.goto-popup-input::-webkit-outer-spin-button,.goto-popup-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.goto-popup-input:focus{border-color:var(--strawberry-milk)}
+.goto-popup-confirm{height:44px;padding:0 24px;background:var(--strawberry-milk);color:#fff;border:var(--bw) solid #c97a7a;border-radius:30px;font-family:var(--font-body);font-size:.92rem;font-weight:700;cursor:pointer;transition:all .3s var(--bounce)}
+.goto-popup-confirm:hover{background:#fff;color:var(--strawberry-milk);transform:scale(1.05)}
+@media(min-width:481px){.goto-popup-overlay{display:none!important}}
 
 /* Toast */
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#fffdfb;border:1.5px solid #d5cdc0;border-radius:22px;padding:9px 20px;font-weight:550;font-size:.85rem;color:var(--text-1);box-shadow:var(--shadow-m);transition:transform .3s cubic-bezier(.34,1.4,.64,1);z-index:600;white-space:nowrap;pointer-events:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#fffefb;border:1.5px solid #d5cdc0;border-radius:22px;padding:9px 20px;font-weight:550;font-size:.85rem;color:var(--text-primary);box-shadow:var(--shadow-medium);transition:transform .3s cubic-bezier(.34,1.4,.64,1);z-index:600;white-space:nowrap;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
+/* Footer */
+.footer{text-align:center;padding:20px 0 16px;color:var(--text-muted);font-size:.84rem}
+.footer a{color:var(--strawberry-milk);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
 /* Responsive */
-@media(max-width:640px){
+@media(max-width:560px){
   .latest-grid{grid-template-columns:1fr}
-  .wrap{padding:16px 14px 48px}
-  .topbar-title{font-size:1rem}
-  .lcard-ver{font-size:1.05rem}
-  .hcard-date{margin-left:0;flex-basis:100%}
+  .wrap{padding:16px 14px 36px}
+  .filter-bar{gap:8px}
+  .search-wrap{min-width:140px;flex-basis:100%}
 }
 </style>
 </head>
@@ -162,7 +206,6 @@ mark{background:rgba(232,155,155,.22);color:var(--text-1);border-radius:3px;padd
 
 <div class="wrap" id="mainContent">
 
-  <!-- Top Bar -->
   <nav class="topbar">
     <a href="../../index.html" class="back">
       <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -171,32 +214,33 @@ mark{background:rgba(232,155,155,.22);color:var(--text-1);border-radius:3px;padd
     <span class="topbar-title">塔Ⅱ手机版 · 更新中心</span>
   </nav>
 
-  <!-- Search -->
-  <div class="search">
-    <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号，如 0.103.2 ..." autocomplete="off">
-    <button class="search-clear" id="searchClear">&times;</button>
-    <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.35-4.35"/></svg>
-  </div>
-
-  <!-- Filter Pills -->
-  <div class="pills" id="pills">
-    <span class="pill pill--launcher" data-type="launcher">启动器</span>
-    <span class="pill pill--game" data-type="game">游戏本体</span>
-  </div>
-
-  <!-- Latest Section -->
+  <!-- Latest Version -->
   <section>
-    <h2 class="latest-title">最新版本</h2>
+    <h2 class="sec-title">最新版本</h2>
     <div class="latest-grid" id="latestGrid"></div>
   </section>
 
-  <!-- History Section -->
+  <!-- Filter + Search -->
+  <div class="filter-bar">
+    <div class="pills" id="pills">
+      <span class="pill pill--launcher" data-type="launcher">启动器</span>
+      <span class="pill pill--game" data-type="game">游戏本体</span>
+    </div>
+    <div class="search-wrap" id="searchContainer">
+      <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号或更新内容..." autocomplete="off">
+      <button class="search-clear" id="searchClear">&times;</button>
+      <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.35-4.35"/></svg>
+      <ul class="search-dropdown" id="searchDropdown"></ul>
+    </div>
+  </div>
+
+  <!-- History -->
   <section>
-    <h2 class="hist-title">历史版本</h2>
+    <h2 class="sec-title sec-title--mint">历史版本</h2>
     <div class="hist-list" id="histList"></div>
+    <div class="pagination" id="pagination"></div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>STS2娘化MOD站 &copy; 2026 壹个屑猫猫 &nbsp;|&nbsp; <a href="../../index.html">返回首页</a></p>
   </footer>
@@ -206,263 +250,287 @@ mark{background:rgba(232,155,155,.22);color:var(--text-1);border-radius:3px;padd
 
 <script>
 (function(){
+
   /* ── Fixed icon URLs (not from JSON) ── */
-  var ICON_LAUNCHER = 'http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0';
-  var ICON_GAME     = 'http://shp.qpic.cn/collector/1976464052/e2e5de8f-a1cd-40e2-aef5-e6acc9327b3b/0';
+  var ICON_LAUNCHER='http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0';
+  var ICON_GAME='http://shp.qpic.cn/collector/1976464052/e2e5de8f-a1cd-40e2-aef5-e6acc9327b3b/0';
+  var TUTORIAL_URL='https://m.bilibili.com/video/BV1chojBxEcG';
+  var DATA_URL='../json/game_update/game_versions.json';
+  var ITEMS_PER_PAGE=10;
 
-  var DATA_URL = '../json/game_update/game_versions.json';
-  var allData  = { launcher: [], game: [] };
+  var allData={launcher:[],game:[]};
+  var filteredData=[];
+  var activeFilter=null;
+  var searchQuery='';
+  var currentPage=1;
 
-  var activeFilter = null; // null = show both, 'launcher' or 'game'
-  var searchQuery  = '';
-
-  var loadingOverlay = document.getElementById('loadingOverlay');
-  var mainContent    = document.getElementById('mainContent');
-  var latestGrid     = document.getElementById('latestGrid');
-  var histList       = document.getElementById('histList');
-  var searchInput    = document.getElementById('searchInput');
-  var searchClear    = document.getElementById('searchClear');
-  var pillsEl        = document.getElementById('pills');
-  var toastEl        = document.getElementById('toast');
+  var loadingOverlay=document.getElementById('loadingOverlay');
+  var mainContent=document.getElementById('mainContent');
+  var latestGrid=document.getElementById('latestGrid');
+  var histList=document.getElementById('histList');
+  var paginationEl=document.getElementById('pagination');
+  var searchInput=document.getElementById('searchInput');
+  var searchDropdown=document.getElementById('searchDropdown');
+  var searchContainer=document.getElementById('searchContainer');
+  var searchClear=document.getElementById('searchClear');
+  var pillsEl=document.getElementById('pills');
+  var toastEl=document.getElementById('toast');
   var toastTimer;
 
-  /* ── Icons (inline SVGs) ── */
-  var SVG = {
-    calendar: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
-    size:     '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
-    info:     '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
-    download: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>'
+  /* ── SVG icons ── */
+  var SVG={
+    calendar:'<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    size:'<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+    download:'<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>',
+    info:'<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+    ext:'<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>'
   };
 
-  /* ── Utilities ── */
-  function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
-
-  function showToast(msg){
-    clearTimeout(toastTimer);
-    toastEl.textContent=msg;
-    toastEl.classList.add('show');
-    toastTimer=setTimeout(function(){ toastEl.classList.remove('show'); },2200);
-  }
-
-  function highlightText(text, query){
-    if(!query) return esc(text);
-    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-    var re = new RegExp('('+escaped+')','gi');
-    return esc(text).replace(re,'<mark>$1</mark>');
-  }
+  /* ── Utils ── */
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+  function highlightText(t,q){if(!q)return esc(t);var re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');return esc(t).replace(re,'<mark>$1</mark>')}
+  function showToast(m){clearTimeout(toastTimer);toastEl.textContent=m;toastEl.classList.add('show');toastTimer=setTimeout(function(){toastEl.classList.remove('show')},2200)}
 
   /* ── Data Loading ── */
   async function loadData(){
     try{
-      var ctrl=new AbortController();
-      var tid=setTimeout(function(){ctrl.abort();},8000);
-      var resp=await fetch(DATA_URL,{signal:ctrl.signal,cache:'no-store'});
-      clearTimeout(tid);
-      if(!resp.ok) throw new Error('HTTP '+resp.status);
-      var data=await resp.json();
-      allData.launcher=data.launcher||[];
-      allData.game=data.game||[];
-    }catch(e){
-      console.error('加载版本数据失败:',e);
-      allData.launcher=[];
-      allData.game=[];
-    }
+      var ctrl=new AbortController();var tid=setTimeout(function(){ctrl.abort()},8000);
+      var resp=await fetch(DATA_URL,{signal:ctrl.signal,cache:'no-store'});clearTimeout(tid);
+      if(!resp.ok)throw new Error('HTTP '+resp.status);
+      var d=await resp.json();allData.launcher=d.launcher||[];allData.game=d.game||[];
+    }catch(e){console.error('加载失败:',e);allData.launcher=[];allData.game=[]}
   }
 
-  /* ── Build combined list for history ── */
-  function getCombinedList(){
+  /* ── Combined list for history ── */
+  function getCombined(){
     var list=[];
-    allData.launcher.forEach(function(v){ list.push(Object.assign({},v,{type:'launcher'})); });
-    allData.game.forEach(function(v){ list.push(Object.assign({},v,{type:'game'})); });
-    list.sort(function(a,b){ return b.date.localeCompare(a.date)||b.version.localeCompare(a.version); });
+    allData.launcher.forEach(function(v){list.push(Object.assign({},v,{type:'launcher'}))});
+    allData.game.forEach(function(v){list.push(Object.assign({},v,{type:'game'}))});
+    list.sort(function(a,b){return b.date.localeCompare(a.date)||b.version.localeCompare(a.version)});
     return list;
   }
 
   /* ── Filter + Search ── */
-  function getFilteredList(){
-    var list=getCombinedList();
+  function applyFilter(){
+    var list=getCombined();
     // Remove latest of each type
-    var latestL=allData.launcher[0];
-    var latestG=allData.game[0];
+    var lL=allData.launcher[0],lG=allData.game[0];
     list=list.filter(function(v){
-      if(v.type==='launcher' && latestL && v.version===latestL.version && v.date===latestL.date) return false;
-      if(v.type==='game' && latestG && v.version===latestG.version && v.date===latestG.date) return false;
+      if(v.type==='launcher'&&lL&&v.version===lL.version&&v.date===lL.date)return false;
+      if(v.type==='game'&&lG&&v.version===lG.version&&v.date===lG.date)return false;
       return true;
     });
-    if(activeFilter) list=list.filter(function(v){ return v.type===activeFilter; });
+    if(activeFilter)list=list.filter(function(v){return v.type===activeFilter});
     if(searchQuery){
       var q=searchQuery.toLowerCase();
-      list=list.filter(function(v){
-        return v.version.toLowerCase().indexOf(q)!==-1 || v.changelog.toLowerCase().indexOf(q)!==-1;
-      });
+      list=list.filter(function(v){return v.version.toLowerCase().indexOf(q)!==-1||v.changelog.toLowerCase().indexOf(q)!==-1});
     }
-    return list;
+    filteredData=list;
+    currentPage=1;
   }
 
   /* ── Render Latest ── */
   function renderLatest(){
-    var latestL=allData.launcher[0]||null;
-    var latestG=allData.game[0]||null;
-    var html='';
-    var showL=!activeFilter||activeFilter==='launcher';
-    var showG=!activeFilter||activeFilter==='game';
-
-    // Determine grid class
-    var singleMode=(activeFilter!==null);
-    latestGrid.className='latest-grid'+(singleMode?' single':'');
-
-    if(showL && latestL){
-      html+=buildLatestCard(latestL,'launcher',ICON_LAUNCHER);
-    }
-    if(showG && latestG){
-      html+=buildLatestCard(latestG,'game',ICON_GAME);
-    }
-
-    if(!html){
-      html='<div class="empty" style="grid-column:1/-1">暂无版本信息</div>';
-    }
-    latestGrid.innerHTML=html;
+    var lL=allData.launcher[0]||null,lG=allData.game[0]||null;
+    var h='';
+    if(lL)h+=buildLatestCard(lL,'launcher',ICON_LAUNCHER);
+    if(lG)h+=buildLatestCard(lG,'game',ICON_GAME);
+    if(!h)h='<div class="empty" style="grid-column:1/-1">暂无版本信息</div>';
+    latestGrid.innerHTML=h;
     bindToggles(latestGrid);
   }
 
   function buildLatestCard(v,type,iconUrl){
     var typeLabel=type==='launcher'?'APK 启动器':'游戏本体';
     var h='<div class="lcard lcard--'+type+'">';
-
-    // Top: icon + info
     h+='<div class="lcard-top">';
     h+='<img class="lcard-icon" src="'+esc(iconUrl)+'" alt="'+typeLabel+'" onerror="this.style.display=\'none\'">';
     h+='<div class="lcard-info">';
-    h+='<div class="lcard-ver">'+highlightText(v.version,searchQuery)+'<span class="lcard-badge">最新版</span></div>';
     h+='<div class="lcard-type">'+typeLabel+'</div>';
-    h+='<div class="lcard-meta">';
-    h+='<span>'+SVG.calendar+esc(v.date)+'</span>';
-    h+='<span>'+SVG.size+esc(v.size)+'</span>';
-    h+='</div>';
-    if(type==='launcher'&&v.requiredGameVersion){
-      h+='<div class="lcard-compat">'+SVG.info+'需本体 '+esc(v.requiredGameVersion)+'</div>';
-    }
+    h+='<div class="lcard-ver">'+highlightText(v.version,searchQuery)+'<span class="lcard-badge">最新版</span></div>';
+    h+='<div class="lcard-meta"><span>'+SVG.calendar+esc(v.date)+'</span><span>'+SVG.size+esc(v.size)+'</span></div>';
     h+='</div></div>';
-
-    // Changelog
     var descId='ld-'+type;
     h+='<div class="lcard-desc" id="'+descId+'">'+highlightText(v.changelog,searchQuery)+'</div>';
     h+='<button class="lcard-toggle" data-target="'+descId+'">展开</button>';
-
-    // Downloads
-    h+='<div class="lcard-dls">';
-    v.downloadLinks.forEach(function(dl){
-      h+='<a href="'+esc(dl.url)+'" target="_blank" rel="noopener" class="dl-btn">'+SVG.download+esc(dl.text)+'</a>';
-    });
+    h+='<div class="lcard-btns">';
+    v.downloadLinks.forEach(function(dl){h+='<a href="'+esc(dl.url)+'" target="_blank" rel="noopener" class="dl-btn">'+SVG.download+esc(dl.text)+'</a>'});
+    // 使用教程 button on game card
+    if(type==='game'){h+='<a href="'+TUTORIAL_URL+'" target="_blank" rel="noopener" class="dl-btn dl-btn--outline">'+SVG.ext+'使用教程</a>'}
     h+='</div>';
-
+    if(type==='launcher'&&v.requiredGameVersion){h+='<div class="lcard-compat">'+SVG.info+'需本体 '+esc(v.requiredGameVersion)+'</div>'}
     h+='</div>';
     return h;
   }
 
   /* ── Render History ── */
   function renderHistory(){
-    var list=getFilteredList();
-    if(!list.length){
-      histList.innerHTML='<div class="empty">'+SVG.download.replace('width="24"','width="32"').replace('height="24"','height="32"')+'<p>没有找到匹配的版本</p></div>';
-      return;
-    }
-
-    var html='';
-    list.forEach(function(v,idx){
-      html+=buildHistCard(v,idx);
-    });
-    histList.innerHTML=html;
+    var start=(currentPage-1)*ITEMS_PER_PAGE;
+    var pageData=filteredData.slice(start,start+ITEMS_PER_PAGE);
+    if(!filteredData.length){histList.innerHTML='<div class="empty">没有找到匹配的版本</div>';paginationEl.innerHTML='';return}
+    var h='';
+    pageData.forEach(function(v,idx){h+=buildHistCard(v,idx)});
+    histList.innerHTML=h;
     bindToggles(histList);
+    renderPagination(filteredData.length,currentPage);
   }
 
   function buildHistCard(v,idx){
     var typeLabel=v.type==='launcher'?'启动器':'游戏本体';
     var tagCls=v.type==='launcher'?'hcard-tag--launcher':'hcard-tag--game';
     var h='<div class="hcard" style="animation-delay:'+(idx*0.04)+'s">';
-
-    // Head
-    h+='<div class="hcard-head">';
-    h+='<span class="hcard-ver">'+highlightText(v.version,searchQuery)+'</span>';
+    h+='<div class="hcard-head"><span class="hcard-ver">'+highlightText(v.version,searchQuery)+'</span>';
     h+='<span class="hcard-tag '+tagCls+'">'+typeLabel+'</span>';
-    h+='<span class="hcard-date">'+esc(v.date)+'</span>';
-    h+='</div>';
-
-    // Size + compat
+    h+='<span class="hcard-date">'+esc(v.date)+'</span></div>';
     h+='<div class="hcard-size">'+esc(v.size);
-    if(v.type==='launcher'&&v.requiredGameVersion){
-      h+=' &nbsp;·&nbsp; 需本体 '+esc(v.requiredGameVersion);
-    }
+    if(v.type==='launcher'&&v.requiredGameVersion)h+=' &nbsp;·&nbsp; 需本体 '+esc(v.requiredGameVersion);
     h+='</div>';
-
-    // Changelog
     var descId='hd-'+v.type+'-'+idx;
     h+='<div class="hcard-desc" id="'+descId+'">'+highlightText(v.changelog,searchQuery)+'</div>';
     h+='<button class="hcard-toggle" data-target="'+descId+'">展开</button>';
-
-    // Downloads
-    h+='<div class="hcard-dls">';
-    v.downloadLinks.forEach(function(dl){
-      h+='<a href="'+esc(dl.url)+'" target="_blank" rel="noopener" class="dl-btn">'+SVG.download+esc(dl.text)+'</a>';
-    });
-    h+='</div>';
-
-    h+='</div>';
+    h+='<div class="hcard-btns">';
+    v.downloadLinks.forEach(function(dl){h+='<a href="'+esc(dl.url)+'" target="_blank" rel="noopener" class="dl-btn">'+SVG.download+esc(dl.text)+'</a>'});
+    h+='</div></div>';
     return h;
   }
 
-  /* ── Bind toggle buttons ── */
   function bindToggles(container){
     container.querySelectorAll('[data-target]').forEach(function(btn){
       btn.addEventListener('click',function(){
-        var target=document.getElementById(btn.dataset.target);
-        if(!target) return;
-        var expanded=target.classList.toggle('expanded');
-        btn.textContent=expanded?'收起':'展开';
+        var t=document.getElementById(btn.dataset.target);if(!t)return;
+        var exp=t.classList.toggle('expanded');btn.textContent=exp?'收起':'展开';
       });
     });
   }
 
-  /* ── Render All ── */
-  function renderAll(){
-    renderLatest();
-    renderHistory();
+  /* ── Pagination (1:1 from main site) ── */
+  function renderPagination(totalItems,currentPageNum){
+    paginationEl.innerHTML='';
+    var totalPages=Math.ceil(totalItems/ITEMS_PER_PAGE);
+    if(totalPages<=1)return;
+    paginationEl.style.display='flex';paginationEl.style.flexWrap='nowrap';
+    paginationEl.style.alignItems='center';paginationEl.style.width='100%';
+    paginationEl.style.maxWidth='100%';paginationEl.style.boxSizing='border-box';paginationEl.style.overflow='hidden';
+
+    function mkBtn(cls,content,disabled,handler){
+      var b=document.createElement('button');b.className=cls;b.innerHTML=content;
+      b.style.flexShrink='1';b.style.minWidth='0';
+      if(disabled)b.disabled=true;if(handler)b.addEventListener('click',handler);return b;
+    }
+    function mkPage(pn){
+      return mkBtn('pagination-page'+(pn===currentPageNum?' active':''),pn,false,function(){
+        currentPage=pn;renderHistory();histList.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    }
+    function mkDots(){var s=document.createElement('span');s.className='pagination-dots';s.textContent='...';s.style.flexShrink='1';s.style.minWidth='0';return s}
+
+    var items=[];
+    items.push(mkBtn('pagination-btn','&#8249;',currentPageNum<=1,function(){
+      if(currentPageNum>1){currentPage--;renderHistory();histList.scrollIntoView({behavior:'smooth',block:'start'})}
+    }));
+    items.push(mkPage(1));
+    if(totalPages<=4){for(var i=2;i<=totalPages;i++)items.push(mkPage(i))}
+    else if(currentPageNum<=4){for(var j=2;j<=4;j++)items.push(mkPage(j));items.push(mkDots());items.push(mkPage(totalPages))}
+    else{items.push(mkDots());if(currentPageNum-1>1)items.push(mkPage(currentPageNum-1));items.push(mkPage(currentPageNum));
+      if(currentPageNum+1<totalPages)items.push(mkPage(currentPageNum+1));items.push(mkDots());items.push(mkPage(totalPages))}
+    items.push(mkBtn('pagination-btn','&#8250;',currentPageNum>=totalPages,function(){
+      if(currentPageNum<totalPages){currentPage++;renderHistory();histList.scrollIntoView({behavior:'smooth',block:'start'})}
+    }));
+    items.forEach(function(it){paginationEl.appendChild(it)});
+
+    // Goto
+    var gw=document.createElement('span');gw.className='pagination-goto';gw.style.flexShrink='0';gw.style.marginLeft='8px';
+    var gi=document.createElement('input');gi.type='text';gi.className='pagination-goto-input';gi.placeholder='\\';gi.maxLength='3';gi.setAttribute('aria-label','输入页码');
+    var gb=document.createElement('button');gb.className='pagination-goto-btn';
+    gb.innerHTML='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" style="width:18px;height:18px;vertical-align:middle;display:inline-block"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17.5" y2="17.5"/></svg>';
+    gb.setAttribute('aria-label','跳转到指定页');
+    var gm=document.createElement('button');gm.className='pagination-goto-mobile-trigger';
+    gm.innerHTML=gb.innerHTML;gm.setAttribute('aria-label','跳转页码');
+
+    function doGoto(val){var n=parseInt(val,10);if(isNaN(n)||n<1||n>totalPages){showToast('页码范围：1 ~ '+totalPages);return}currentPage=n;renderHistory();gi.value=''}
+    gi.addEventListener('input',function(){this.value=this.value.replace(/[^\d]/g,'').slice(0,3)});
+    gi.addEventListener('keydown',function(e){if(e.key==='Enter')doGoto(this.value)});
+    gb.addEventListener('click',function(){doGoto(gi.value)});
+    gm.addEventListener('click',function(){openGotoPopup(totalPages)});
+    gw.appendChild(gi);gw.appendChild(gb);gw.appendChild(gm);paginationEl.appendChild(gw);
   }
 
-  /* ── Filter Pills ── */
-  pillsEl.addEventListener('click',function(e){
-    var pill=e.target.closest('.pill');
-    if(!pill) return;
-    var type=pill.dataset.type;
-    if(activeFilter===type){
-      activeFilter=null;
-      pill.classList.remove('active');
+  function openGotoPopup(totalPages){
+    var ex=document.getElementById('gotoPopupOverlay');if(ex)ex.remove();
+    var ov=document.createElement('div');ov.className='goto-popup-overlay active';ov.id='gotoPopupOverlay';
+    var pop=document.createElement('div');pop.className='goto-popup';
+    var tit=document.createElement('div');tit.className='goto-popup-title';tit.textContent='跳转到第几页？(共 '+totalPages+' 页)';
+    var row=document.createElement('div');row.className='goto-popup-row';
+    var inp=document.createElement('input');inp.type='text';inp.className='goto-popup-input';inp.placeholder='页码';inp.maxLength='3';inp.inputMode='numeric';
+    inp.addEventListener('input',function(){this.value=this.value.replace(/[^\d]/g,'').slice(0,3)});
+    var conf=document.createElement('button');conf.className='goto-popup-confirm';conf.textContent='跳转';
+    function doGo(){var n=parseInt(inp.value,10);if(isNaN(n)||n<1||n>totalPages){showToast('页码范围：1 ~ '+totalPages);return}currentPage=n;renderHistory();ov.remove();setTimeout(function(){histList.scrollIntoView({behavior:'smooth',block:'start'})},50)}
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')doGo()});
+    conf.addEventListener('click',doGo);
+    ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});
+    row.appendChild(inp);row.appendChild(conf);pop.appendChild(tit);pop.appendChild(row);ov.appendChild(pop);document.body.appendChild(ov);
+    setTimeout(function(){inp.focus()},100);
+  }
+
+  /* ── Search Dropdown ── */
+  function updateSearchDropdown(query){
+    searchDropdown.innerHTML='';
+    if(!query||query.length<1){searchDropdown.classList.remove('active');return}
+    var q=query.toLowerCase();
+    var matches=[];
+    var combined=getCombined();
+    combined.forEach(function(v){
+      var verMatch=v.version.toLowerCase().indexOf(q)!==-1;
+      var changeMatch=v.changelog.toLowerCase().indexOf(q)!==-1;
+      if(verMatch||changeMatch)matches.push(v);
+    });
+    if(!matches.length){
+      searchDropdown.innerHTML='<li style="padding:14px 18px;text-align:center;color:var(--text-muted);font-size:.86rem">没有找到匹配的版本</li>';
     }else{
-      activeFilter=type;
-      pillsEl.querySelectorAll('.pill').forEach(function(p){p.classList.remove('active');});
-      pill.classList.add('active');
+      var escapedQ=query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      var regex=new RegExp('('+escapedQ+')','gi');
+      matches.slice(0,8).forEach(function(v){
+        var li=document.createElement('li');li.className='search-dropdown-item';
+        var typeLabel=v.type==='launcher'?'启动器':'游戏本体';
+        var typeCls=v.type==='launcher'?'sdi-type--launcher':'sdi-type--game';
+        var verHtml=esc(v.version).replace(regex,'<mark>$1</mark>');
+        var subText=v.date+' · '+v.size;
+        li.innerHTML='<span class="sdi-type '+typeCls+'">'+typeLabel+'</span><div class="sdi-right"><div class="sdi-ver">'+verHtml+'</div><div class="sdi-sub">'+esc(subText)+'</div></div>';
+        li.addEventListener('click',function(){searchInput.value=v.version;searchQuery=v.version;searchClear.classList.toggle('show',searchQuery.length>0);searchDropdown.classList.remove('active');applyFilter();renderHistory()});
+        searchDropdown.appendChild(li);
+      });
     }
-    renderAll();
+    searchDropdown.classList.add('active');
+  }
+
+  /* ── Event Handlers ── */
+  pillsEl.addEventListener('click',function(e){
+    var pill=e.target.closest('.pill');if(!pill)return;
+    var type=pill.dataset.type;
+    if(activeFilter===type){activeFilter=null;pill.classList.remove('active')}
+    else{activeFilter=type;pillsEl.querySelectorAll('.pill').forEach(function(p){p.classList.remove('active')});pill.classList.add('active')}
+    applyFilter();renderHistory();
   });
 
-  /* ── Search ── */
   searchInput.addEventListener('input',function(){
     searchQuery=this.value.trim();
     searchClear.classList.toggle('show',searchQuery.length>0);
-    renderAll();
+    applyFilter();renderHistory();updateSearchDropdown(searchQuery);
   });
-  searchClear.addEventListener('click',function(){
-    searchInput.value='';
-    searchQuery='';
-    searchClear.classList.remove('show');
-    searchInput.focus();
-    renderAll();
+  searchInput.addEventListener('focus',function(){if(searchQuery.length>=1)updateSearchDropdown(searchQuery)});
+  searchInput.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){searchDropdown.classList.remove('active');searchInput.blur()}
+    if(e.key==='Enter'){searchDropdown.classList.remove('active')}
   });
+  searchClear.addEventListener('click',function(){searchInput.value='';searchQuery='';searchClear.classList.remove('show');searchInput.focus();applyFilter();renderHistory()});
+  document.addEventListener('click',function(e){if(!searchContainer.contains(e.target))searchDropdown.classList.remove('active')});
 
   /* ── Init ── */
   async function init(){
     await loadData();
-    renderAll();
+    applyFilter();
+    renderLatest();
+    renderHistory();
     loadingOverlay.classList.add('hidden');
     mainContent.style.opacity='1';
   }
