@@ -6,381 +6,194 @@
 <title>塔Ⅱ 手机版更新中心 - STS2娘化MOD站</title>
 <meta name="referrer" content="no-referrer">
 <style>
-:root {
-  --bg: #faf7f4;
-  --strawberry-milk: #e89b9b;
-  --strawberry-light: #f5c4c4;
-  --mint-jelly: #a8d8c8;
-  --mint-light: #c8ece0;
-  --cream-yellow: #fbe8c3;
-  --cream-light: #fdf3dc;
-  --lavender: #c8b8d8;
-  --lavender-light: #dfd4ea;
-  --border-dark: #4a4458;
-  --text-primary: #3d3648;
-  --text-secondary: #6b6378;
-  --text-muted: #9a92a5;
-  --shadow-soft: 0 4px 20px rgba(74,68,88,0.08);
-  --shadow-medium: 0 8px 32px rgba(74,68,88,0.13);
-  --shadow-deep: 0 14px 44px rgba(74,68,88,0.18);
-  --radius-xl: 28px;
-  --border-width: 2.5px;
-  --font-title: 'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  --font-body: 'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  --transition-bounce: cubic-bezier(0.34,1.56,0.64,1);
+:root{
+  --bg:#faf7f4;
+  --strawberry:#e89b9b;
+  --strawberry-light:#f5c4c4;
+  --mint:#a8d8c8;
+  --mint-light:#c8ece0;
+  --cream:#fbe8c3;
+  --cream-light:#fdf3dc;
+  --border:#4a4458;
+  --text-1:#3d3648;
+  --text-2:#6b6378;
+  --text-3:#9a92a5;
+  --shadow-s:0 2px 12px rgba(74,68,88,.06);
+  --shadow-m:0 6px 24px rgba(74,68,88,.10);
+  --bw:2.5px;
+  --r:20px;
+  --bounce:cubic-bezier(.34,1.56,.64,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:var(--font-body);
-  background-color:var(--bg);
-  background-image:
-    radial-gradient(ellipse at 15% 20%,rgba(232,155,155,0.06) 0%,transparent 55%),
-    radial-gradient(ellipse at 78% 65%,rgba(168,216,200,0.07) 0%,transparent 55%),
-    radial-gradient(ellipse at 40% 80%,rgba(200,184,216,0.05) 0%,transparent 50%),
-    radial-gradient(circle at 60% 30%,rgba(251,232,195,0.06) 0%,transparent 45%);
+  font-family:'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
+  background:var(--bg);
+  background-image:radial-gradient(ellipse at 15% 20%,rgba(232,155,155,.05) 0%,transparent 55%),
+    radial-gradient(ellipse at 78% 65%,rgba(168,216,200,.06) 0%,transparent 55%),
+    radial-gradient(ellipse at 40% 80%,rgba(200,184,216,.04) 0%,transparent 50%);
   background-attachment:fixed;
-  color:var(--text-primary);
-  min-height:100vh;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+  color:var(--text-1);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;
 }
 
-/* === Loading === */
-.loading-overlay{
-  position:fixed;inset:0;z-index:9999;background:var(--bg);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;
-  transition:opacity .5s ease,visibility .5s ease;opacity:1;visibility:visible;
-}
-.loading-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loading-spinner{
-  width:44px;height:44px;border:4px solid #e2dbd0;border-top-color:var(--strawberry-milk);
-  border-radius:50%;animation:spin .8s linear infinite;margin-bottom:18px;
-}
-.loading-text{
-  font-family:var(--font-title);font-size:1rem;color:var(--text-secondary);
-  animation:loadPulse 1.5s ease-in-out infinite;
-}
+/* Loading */
+.loading{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .4s,visibility .4s}
+.loading.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loading-spin{width:40px;height:40px;border:3.5px solid #e2dbd0;border-top-color:var(--strawberry);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:14px}
+.loading-txt{font-size:.95rem;color:var(--text-2);animation:pulse 1.5s ease-in-out infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes loadPulse{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 
-/* === Main Container === */
-.main-container{
-  max-width:780px;margin:0 auto;padding:24px 20px 60px;
-  opacity:0;transition:opacity .5s ease;
-}
+/* Container */
+.wrap{max-width:720px;margin:0 auto;padding:20px 18px 60px;opacity:0;transition:opacity .4s}
 
-/* === Header === */
-.page-header{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:32px;flex-wrap:wrap;gap:12px;
-}
-.back-link{
-  display:inline-flex;align-items:center;gap:6px;padding:10px 18px;
-  text-decoration:none;color:var(--text-secondary);font-size:.88rem;font-weight:600;
-  border:var(--border-width) solid var(--border-dark);border-radius:30px;
-  background:#fffdfb;box-shadow:var(--shadow-soft);
-  transition:all .3s var(--transition-bounce);
-}
-.back-link:hover{
-  background:var(--strawberry-light);color:#fff;border-color:#c97a7a;
-  transform:translateY(-2px);
-}
-.back-link svg{width:16px;height:16px}
-.page-title{
-  font-family:var(--font-title);font-size:1.35rem;font-weight:700;
-  white-space:nowrap;letter-spacing:.02em;
-}
+/* Top Bar */
+.topbar{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.back{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;text-decoration:none;color:var(--text-2);font-size:.84rem;font-weight:600;border:2px solid var(--border);border-radius:30px;background:#fffdfb;box-shadow:var(--shadow-s);transition:all .25s var(--bounce);white-space:nowrap}
+.back:hover{background:var(--strawberry-light);color:#fff;border-color:#c97a7a;transform:translateY(-2px)}
+.back svg{width:15px;height:15px}
+.topbar-title{font-size:1.1rem;font-weight:700;color:var(--text-1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-/* === Latest Section === */
-.latest-section{margin-bottom:36px}
-.latest-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:18px;
-}
-.latest-card{
-  background:#fffdfb;border:var(--border-width) solid var(--border-dark);
-  border-radius:var(--radius-xl);padding:24px 22px 22px;
-  box-shadow:var(--shadow-soft);position:relative;overflow:hidden;
-  transition:all .35s var(--transition-bounce);
-}
-.latest-card:hover{
-  transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-deep);
-}
-.latest-card--launcher{background:linear-gradient(135deg,#f0faf6 0%,#e4f5ed 100%)}
-.latest-card--game{background:linear-gradient(135deg,#fefbf0 0%,#fdf3dc 100%)}
-.latest-card-header{
-  display:flex;align-items:center;gap:10px;margin-bottom:16px;
-}
-.latest-card-icon{
-  width:40px;height:40px;border-radius:12px;display:flex;
-  align-items:center;justify-content:center;flex-shrink:0;
-}
-.latest-card--launcher .latest-card-icon{background:rgba(168,216,200,.3)}
-.latest-card--game .latest-card-icon{background:rgba(251,232,195,.4)}
-.latest-card-icon svg{width:20px;height:20px}
-.latest-card--launcher .latest-card-icon svg{color:#5ba88a}
-.latest-card--game .latest-card-icon svg{color:#b8943e}
-.latest-card-type{font-weight:700;font-size:.95rem;color:var(--text-primary)}
-.latest-badge{
-  padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;
-  background:var(--strawberry-light);color:#fff;border:2px solid #c97a7a;
-  margin-left:auto;flex-shrink:0;
-}
-.latest-version{
-  font-family:var(--font-title);font-size:1.55rem;font-weight:800;
-  color:var(--text-primary);margin-bottom:8px;letter-spacing:.01em;
-}
-.latest-meta{
-  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;
-}
-.latest-meta-item{
-  font-size:.82rem;color:var(--text-secondary);display:flex;align-items:center;gap:4px;
-}
-.latest-meta-item svg{width:14px;height:14px;color:var(--text-muted);flex-shrink:0}
-.latest-compat{
-  font-size:.8rem;color:var(--mint-jelly);font-weight:600;
-  background:rgba(168,216,200,.15);padding:4px 12px;border-radius:20px;
-  display:inline-block;margin-bottom:14px;
-}
-.latest-compat--warn{color:#c49a3a;background:rgba(251,232,195,.2)}
-.latest-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.btn-download{
-  display:inline-flex;align-items:center;gap:6px;padding:10px 22px;
-  background:var(--strawberry-milk);color:#fff;border:var(--border-width) solid #c97a7a;
-  border-radius:30px;font-weight:700;font-size:.88rem;cursor:pointer;
-  text-decoration:none;white-space:nowrap;
-  transition:all .3s var(--transition-bounce);font-family:var(--font-body);
-}
-.btn-download:hover{background:#fff;color:var(--strawberry-milk);transform:scale(1.05)}
-.btn-download svg{width:16px;height:16px}
-.btn-history{
-  display:inline-flex;align-items:center;gap:4px;padding:8px 16px;
-  background:transparent;color:var(--text-secondary);
-  border:2px solid var(--border-dark);border-radius:30px;font-weight:600;
-  font-size:.82rem;cursor:pointer;text-decoration:none;white-space:nowrap;
-  transition:all .25s var(--transition-bounce);font-family:var(--font-body);
-}
-.btn-history:hover{
-  background:var(--lavender-light);color:var(--text-primary);border-color:var(--lavender);
-}
-.btn-history svg{width:14px;height:14px}
+/* Search */
+.search{position:relative;margin-bottom:14px}
+.search-input{width:100%;padding:13px 44px 13px 20px;font-size:.92rem;border:var(--bw) solid var(--border);border-radius:50px;background:#fffdfb;color:var(--text-1);outline:none;transition:all .25s;box-shadow:var(--shadow-s);font-family:inherit}
+.search-input:focus{box-shadow:var(--shadow-m);border-color:var(--strawberry)}
+.search-input::placeholder{color:var(--text-3)}
+.search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--text-3);pointer-events:none}
+.search-clear{position:absolute;right:40px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:none;background:var(--text-3);color:#fff;border-radius:50%;font-size:13px;cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1;transition:background .15s}
+.search-clear:hover{background:var(--text-2)}
+.search-clear.show{display:flex}
 
-/* === Search & Filter === */
-.search-filter{margin-bottom:28px}
-.search-bar{
-  position:relative;margin-bottom:14px;
-}
-.search-input{
-  width:100%;padding:14px 48px 14px 22px;font-size:.95rem;
-  border:var(--border-width) solid var(--border-dark);border-radius:50px;
-  background:#fffdfb;color:var(--text-primary);outline:none;
-  transition:all .3s;box-shadow:var(--shadow-soft);font-family:var(--font-body);
-}
-.search-input:focus{box-shadow:var(--shadow-deep);border-color:var(--strawberry-milk)}
-.search-input::placeholder{color:var(--text-muted)}
-.search-icon{
-  position:absolute;right:16px;top:50%;transform:translateY(-50%);
-  width:20px;height:20px;color:var(--text-muted);pointer-events:none;
-}
-.filter-tags{display:flex;gap:12px;flex-wrap:wrap}
-.filter-tag{
-  display:inline-flex;align-items:center;padding:9px 20px;
-  background:#fffdfb;border:var(--border-width) solid var(--border-dark);
-  border-radius:30px 30px 22px 22px;cursor:pointer;font-size:.85rem;
-  font-weight:600;color:var(--text-primary);user-select:none;
-  box-shadow:var(--shadow-soft);transition:all .3s var(--transition-bounce);
-}
-.filter-tag::before{
-  content:'';display:inline-block;width:10px;height:10px;
-  border:2px solid var(--border-dark);border-radius:50%;margin-right:8px;
-  transition:background .3s;
-}
-.filter-tag.active{background:var(--strawberry-light);color:#fff;border-color:#c97a7a}
-.filter-tag.active::before{background:#fff;border-color:#c97a7a}
-.filter-tag--launcher::before{background:var(--mint-light)}
-.filter-tag--game::before{background:var(--cream-yellow)}
-.filter-tag--launcher.active::before,
-.filter-tag--game.active::before{background:#fff;border-color:#c97a7a}
+/* Filter Pills */
+.pills{display:flex;gap:10px;margin-bottom:24px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:2px solid var(--border);border-radius:24px;font-size:.84rem;font-weight:600;color:var(--text-1);cursor:pointer;user-select:none;background:#fffdfb;box-shadow:var(--shadow-s);transition:all .25s var(--bounce)}
+.pill::before{content:'';width:8px;height:8px;border-radius:50%;border:2px solid var(--border);transition:all .25s}
+.pill--launcher::before{background:var(--mint-light)}
+.pill--game::before{background:var(--cream)}
+.pill.active{color:#fff;border-color:#c97a7a;background:var(--strawberry-light)}
+.pill.active::before{background:#fff;border-color:#c97a7a}
+.pill:hover:not(.active){transform:translateY(-2px);box-shadow:var(--shadow-m)}
 
-/* === Timeline === */
-.timeline-section{margin-bottom:40px}
-.timeline-title{
-  font-size:1.3rem;font-weight:700;margin-bottom:22px;padding-left:16px;
-  border-left:6px solid var(--strawberry-milk);display:inline-block;position:relative;
-}
-.timeline-title::after{
-  content:'';position:absolute;bottom:-4px;left:0;width:40px;height:4px;
-  background:var(--mint-jelly);border-radius:2px;
-}
-.timeline{position:relative;padding-left:32px}
-.timeline::before{
-  content:'';position:absolute;left:11px;top:8px;bottom:8px;width:2.5px;
-  background:repeating-linear-gradient(to bottom,#d5cdc0 0,#d5cdc0 6px,transparent 6px,transparent 12px);
-  border-radius:2px;
-}
-.timeline-item{
-  position:relative;margin-bottom:20px;
-  animation:fadeSlideIn .5s cubic-bezier(.16,1,.3,1) both;
-}
-.timeline-item:nth-child(2){animation-delay:.06s}
-.timeline-item:nth-child(3){animation-delay:.12s}
-.timeline-item:nth-child(4){animation-delay:.18s}
-.timeline-item:nth-child(5){animation-delay:.24s}
-@keyframes fadeSlideIn{
-  from{opacity:0;transform:translateY(16px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.timeline-node{
-  position:absolute;left:-32px;top:18px;width:22px;height:22px;
-  border-radius:50%;border:3px solid var(--border-dark);z-index:2;
-  display:flex;align-items:center;justify-content:center;
-}
-.timeline-node--launcher{background:var(--mint-light)}
-.timeline-node--game{background:var(--cream-yellow)}
-.timeline-node svg{width:10px;height:10px}
-.timeline-node--launcher svg{color:#5ba88a}
-.timeline-node--game svg{color:#b8943e}
+/* Latest Section */
+.latest-title{font-size:1.15rem;font-weight:700;margin-bottom:14px;padding-left:14px;border-left:5px solid var(--strawberry);display:inline-block}
+.latest-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px}
+.latest-grid.single{grid-template-columns:1fr}
 
-.timeline-card{
-  background:#fffdfb;border:var(--border-width) solid var(--border-dark);
-  border-radius:22px;padding:18px 20px;box-shadow:var(--shadow-soft);
-  transition:all .3s var(--transition-bounce);
-}
-.timeline-card:hover{
-  transform:translateY(-3px);box-shadow:var(--shadow-medium);
-}
-.timeline-card-header{
-  display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;
-}
-.timeline-version{font-weight:800;font-size:1.05rem;color:var(--text-primary)}
-.timeline-type-tag{
-  padding:3px 12px;border-radius:20px;font-size:.72rem;font-weight:700;
-  border:2px solid var(--border-dark);
-}
-.timeline-type-tag--launcher{background:var(--mint-light);color:#4a8a6e;border-color:#8cc8a0}
-.timeline-type-tag--game{background:var(--cream-yellow);color:#8a7a3e;border-color:#d4c47a}
-.timeline-new-badge{
-  padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:700;
-  background:var(--strawberry-light);color:#fff;border:2px solid #c97a7a;
-}
-.timeline-date{font-size:.82rem;color:var(--text-muted);margin-left:auto;white-space:nowrap}
-.timeline-info{
-  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font-size:.82rem;
-  color:var(--text-secondary);
-}
-.timeline-info-item{display:flex;align-items:center;gap:4px}
-.timeline-info-item svg{width:13px;height:13px;color:var(--text-muted);flex-shrink:0}
-.timeline-compat{
-  font-size:.78rem;color:var(--mint-jelly);font-weight:600;
-  background:rgba(168,216,200,.12);padding:3px 10px;border-radius:20px;
-  display:inline-flex;align-items:center;gap:3px;
-}
-.timeline-compat svg{width:12px;height:12px}
-.timeline-changelog{
-  color:var(--text-secondary);font-size:.88rem;line-height:1.65;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
-  overflow:hidden;transition:all .3s ease;margin-bottom:4px;
-  white-space:pre-line;
-}
-.timeline-changelog.expanded{-webkit-line-clamp:unset;display:block}
-.changelog-toggle{
-  color:var(--strawberry-milk);font-weight:600;cursor:pointer;
-  font-size:.84rem;display:inline-block;margin-bottom:8px;
-  transition:color .2s;background:none;border:none;font-family:var(--font-body);
-  padding:0;
-}
-.changelog-toggle:hover{text-decoration:underline}
-.timeline-downloads{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.btn-dl{
-  display:inline-flex;align-items:center;gap:5px;padding:8px 18px;
-  background:var(--strawberry-milk);color:#fff;border:2px solid #c97a7a;
-  border-radius:30px;font-weight:700;font-size:.82rem;cursor:pointer;
-  text-decoration:none;white-space:nowrap;
-  transition:all .3s var(--transition-bounce);font-family:var(--font-body);
-}
-.btn-dl:hover{background:#fff;color:var(--strawberry-milk);transform:scale(1.05)}
-.btn-dl svg{width:14px;height:14px}
+/* Latest Card */
+.lcard{background:#fffdfb;border:var(--bw) solid var(--border);border-radius:var(--r);padding:18px 18px 16px;box-shadow:var(--shadow-s);transition:all .3s var(--bounce);position:relative;overflow:hidden}
+.lcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.lcard--launcher{background:linear-gradient(135deg,#f4faf8 0%,#edf7f3 100%)}
+.lcard--game{background:linear-gradient(135deg,#fefbf0 0%,#fdf6e6 100%)}
+.lcard-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:10px}
+.lcard-icon{width:48px;height:48px;border-radius:14px;object-fit:cover;flex-shrink:0;border:2px solid var(--border);background:#fff}
+.lcard-info{flex:1;min-width:0}
+.lcard-ver{font-size:1.2rem;font-weight:800;color:var(--text-1);line-height:1.3}
+.lcard-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.68rem;font-weight:700;background:var(--strawberry-light);color:#fff;border:1.5px solid #c97a7a;margin-left:8px;vertical-align:middle}
+.lcard-type{font-size:.8rem;color:var(--text-2);font-weight:600;margin-top:2px}
+.lcard-meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:6px;font-size:.8rem;color:var(--text-2)}
+.lcard-meta span{display:inline-flex;align-items:center;gap:3px}
+.lcard-meta svg{width:13px;height:13px;color:var(--text-3);flex-shrink:0}
+.lcard-compat{font-size:.76rem;color:#5ba88a;font-weight:600;background:rgba(168,216,200,.18);padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:3px;margin-top:6px}
+.lcard-compat svg{width:12px;height:12px}
+.lcard-desc{font-size:.84rem;color:var(--text-2);line-height:1.6;margin:10px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;transition:all .3s}
+.lcard-desc.expanded{-webkit-line-clamp:unset;display:block}
+.lcard-toggle{color:var(--strawberry);font-weight:600;cursor:pointer;font-size:.82rem;background:none;border:none;font-family:inherit;padding:0;margin-top:2px}
+.lcard-toggle:hover{text-decoration:underline}
+.lcard-dls{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dl-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;background:var(--strawberry);color:#fff;border:2px solid #c97a7a;border-radius:30px;font-weight:700;font-size:.8rem;cursor:pointer;text-decoration:none;white-space:nowrap;transition:all .25s var(--bounce);font-family:inherit}
+.dl-btn:hover{background:#fff;color:var(--strawberry);transform:scale(1.04)}
+.dl-btn svg{width:13px;height:13px}
 
-/* === Empty State === */
-.empty-state{
-  text-align:center;padding:50px 20px;color:var(--text-muted);
-  border:var(--border-width) solid var(--border-dark);border-radius:22px;
-  background:#fffdfb;
-}
-.empty-state svg{width:40px;height:40px;color:#d5cdc0;margin-bottom:12px}
-.empty-state p{font-size:.95rem}
+/* History Section */
+.hist-title{font-size:1.15rem;font-weight:700;margin-bottom:14px;padding-left:14px;border-left:5px solid var(--mint);display:inline-block;position:relative}
+.hist-title::after{content:'';position:absolute;bottom:-3px;left:14px;width:32px;height:3px;background:var(--cream);border-radius:2px}
+.hist-list{display:flex;flex-direction:column;gap:10px}
 
-/* === Footer === */
-.footer{text-align:center;padding:30px 4px 20px;color:var(--text-muted);font-size:.88rem}
-.footer a{color:var(--strawberry-milk);text-decoration:none}
+/* History Card */
+.hcard{background:#fffdfb;border:var(--bw) solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-s);transition:all .25s var(--bounce);animation:fadeUp .4s cubic-bezier(.16,1,.3,1) both}
+.hcard:hover{transform:translateY(-2px);box-shadow:var(--shadow-m)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.hcard-ver{font-weight:800;font-size:1rem;color:var(--text-1)}
+.hcard-tag{padding:2px 10px;border-radius:20px;font-size:.7rem;font-weight:700;border:1.5px solid var(--border)}
+.hcard-tag--launcher{background:var(--mint-light);color:#4a8a6e;border-color:#8cc8a0}
+.hcard-tag--game{background:var(--cream);color:#8a7a3e;border-color:#d4c47a}
+.hcard-date{font-size:.8rem;color:var(--text-3);margin-left:auto;white-space:nowrap}
+.hcard-size{font-size:.8rem;color:var(--text-2);margin-bottom:6px}
+.hcard-desc{font-size:.84rem;color:var(--text-2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;transition:all .3s}
+.hcard-desc.expanded{-webkit-line-clamp:unset;display:block}
+.hcard-toggle{color:var(--strawberry);font-weight:600;cursor:pointer;font-size:.82rem;background:none;border:none;font-family:inherit;padding:0;margin-top:2px}
+.hcard-toggle:hover{text-decoration:underline}
+.hcard-dls{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.hcard-dls .dl-btn{padding:7px 14px;font-size:.78rem}
+
+/* Empty State */
+.empty{text-align:center;padding:40px 16px;color:var(--text-3);border:var(--bw) solid var(--border);border-radius:var(--r);background:#fffdfb;font-size:.9rem}
+.empty svg{width:32px;height:32px;color:#d5cdc0;margin-bottom:8px}
+
+/* Highlight Mark */
+mark{background:rgba(232,155,155,.22);color:var(--text-1);border-radius:3px;padding:0 2px;font-weight:inherit}
+
+/* Footer */
+.footer{text-align:center;padding:28px 0 16px;color:var(--text-3);font-size:.84rem}
+.footer a{color:var(--strawberry);text-decoration:none}
 .footer a:hover{text-decoration:underline}
 
-/* === Toast === */
-.toast{
-  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);
-  background:#fffefb;border:1.5px solid #d5cdc0;border-radius:24px;
-  padding:10px 22px;font-weight:550;font-size:.88rem;color:var(--text-primary);
-  box-shadow:var(--shadow-deep);z-index:600;white-space:nowrap;
-  transition:transform .35s cubic-bezier(.34,1.4,.64,1);pointer-events:none;
-}
+/* Toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#fffdfb;border:1.5px solid #d5cdc0;border-radius:22px;padding:9px 20px;font-weight:550;font-size:.85rem;color:var(--text-1);box-shadow:var(--shadow-m);transition:transform .3s cubic-bezier(.34,1.4,.64,1);z-index:600;white-space:nowrap;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
-/* === Responsive === */
+/* Responsive */
 @media(max-width:640px){
   .latest-grid{grid-template-columns:1fr}
-  .latest-version{font-size:1.3rem}
-  .page-header{justify-content:center;text-align:center}
-  .page-title{width:100%;text-align:center}
-  .timeline{padding-left:26px}
-  .timeline::before{left:8px}
-  .timeline-node{left:-26px;width:18px;height:18px}
-  .timeline-node svg{width:8px;height:8px}
-  .timeline-date{margin-left:0;flex-basis:100%}
-  .main-container{padding:18px 14px 40px}
+  .wrap{padding:16px 14px 48px}
+  .topbar-title{font-size:1rem}
+  .lcard-ver{font-size:1.05rem}
+  .hcard-date{margin-left:0;flex-basis:100%}
 }
 </style>
 </head>
 <body>
 
-<!-- Loading -->
-<div class="loading-overlay" id="loadingOverlay">
-  <div class="loading-spinner"></div>
-  <p class="loading-text">正在加载版本信息...</p>
+<div class="loading" id="loadingOverlay">
+  <div class="loading-spin"></div>
+  <p class="loading-txt">正在加载版本信息...</p>
 </div>
 
-<div class="main-container" id="mainContent">
+<div class="wrap" id="mainContent">
 
-  <!-- Header -->
-  <header class="page-header">
-    <a href="../../index.html" class="back-link">
+  <!-- Top Bar -->
+  <nav class="topbar">
+    <a href="../../index.html" class="back">
       <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      返回MOD站
+      返回
     </a>
-    <h1 class="page-title">塔Ⅱ 手机版更新中心</h1>
-  </header>
+    <span class="topbar-title">塔Ⅱ手机版 · 更新中心</span>
+  </nav>
 
-  <!-- Latest Versions -->
-  <section class="latest-section">
+  <!-- Search -->
+  <div class="search">
+    <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号，如 0.103.2 ..." autocomplete="off">
+    <button class="search-clear" id="searchClear">&times;</button>
+    <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.35-4.35"/></svg>
+  </div>
+
+  <!-- Filter Pills -->
+  <div class="pills" id="pills">
+    <span class="pill pill--launcher" data-type="launcher">启动器</span>
+    <span class="pill pill--game" data-type="game">游戏本体</span>
+  </div>
+
+  <!-- Latest Section -->
+  <section>
+    <h2 class="latest-title">最新版本</h2>
     <div class="latest-grid" id="latestGrid"></div>
   </section>
 
-  <!-- Search & Filter -->
-  <section class="search-filter">
-    <div class="search-bar">
-      <input type="text" class="search-input" id="searchInput" placeholder="搜索版本号，如 0.103.2 ..." autocomplete="off">
-      <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.35-4.35"/></svg>
-    </div>
-    <div class="filter-tags" id="filterTags">
-      <span class="filter-tag active" data-filter="all">全部</span>
-      <span class="filter-tag filter-tag--launcher" data-filter="launcher">APK 启动器</span>
-      <span class="filter-tag filter-tag--game" data-filter="game">游戏本体</span>
-    </div>
-  </section>
-
-  <!-- Timeline -->
-  <section class="timeline-section">
-    <h2 class="timeline-title">历史版本</h2>
-    <div class="timeline" id="timeline"></div>
+  <!-- History Section -->
+  <section>
+    <h2 class="hist-title">历史版本</h2>
+    <div class="hist-list" id="histList"></div>
   </section>
 
   <!-- Footer -->
@@ -389,279 +202,270 @@ body{
   </footer>
 </div>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <script>
 (function(){
+  /* ── Fixed icon URLs (not from JSON) ── */
+  var ICON_LAUNCHER = 'http://shp.qpic.cn/collector/1976464052/97d2e4e6-a0ac-4104-99ec-13b66af8a785/0';
+  var ICON_GAME     = 'http://shp.qpic.cn/collector/1976464052/e2e5de8f-a1cd-40e2-aef5-e6acc9327b3b/0';
+
   var DATA_URL = '../json/game_update/game_versions.json';
-  var allData = { launcher: [], game: [] };
-  var combinedList = [];
-  var activeFilter = 'all';
-  var searchQuery = '';
+  var allData  = { launcher: [], game: [] };
+
+  var activeFilter = null; // null = show both, 'launcher' or 'game'
+  var searchQuery  = '';
 
   var loadingOverlay = document.getElementById('loadingOverlay');
-  var mainContent = document.getElementById('mainContent');
-  var latestGrid = document.getElementById('latestGrid');
-  var timeline = document.getElementById('timeline');
-  var searchInput = document.getElementById('searchInput');
-  var filterTags = document.getElementById('filterTags');
-  var toastEl = document.getElementById('toast');
+  var mainContent    = document.getElementById('mainContent');
+  var latestGrid     = document.getElementById('latestGrid');
+  var histList       = document.getElementById('histList');
+  var searchInput    = document.getElementById('searchInput');
+  var searchClear    = document.getElementById('searchClear');
+  var pillsEl        = document.getElementById('pills');
+  var toastEl        = document.getElementById('toast');
   var toastTimer;
 
-  function showToast(msg) {
-    clearTimeout(toastTimer);
-    toastEl.textContent = msg;
-    toastEl.classList.add('show');
-    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
-  }
-
-  function copyText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text);
-    }
-    return new Promise(function(resolve, reject) {
-      var ta = document.createElement('textarea');
-      ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
-      document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); resolve(); } catch(e) { reject(e); }
-      document.body.removeChild(ta);
-    });
-  }
-
-  /* === SVG Icons === */
-  var ICONS = {
-    phone: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
-    package: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>',
-    calendar: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
-    hardrive: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg>',
-    link: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>',
-    download: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>',
-    info: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
-    arrowDown: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>',
-    empty: '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>'
+  /* ── Icons (inline SVGs) ── */
+  var SVG = {
+    calendar: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    size:     '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+    info:     '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+    download: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>'
   };
 
-  /* === Data Loading === */
-  async function loadData() {
-    try {
-      var controller = new AbortController();
-      var tid = setTimeout(function(){ controller.abort(); }, 8000);
-      var resp = await fetch(DATA_URL, { signal: controller.signal, cache: 'no-store' });
+  /* ── Utilities ── */
+  function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+  function showToast(msg){
+    clearTimeout(toastTimer);
+    toastEl.textContent=msg;
+    toastEl.classList.add('show');
+    toastTimer=setTimeout(function(){ toastEl.classList.remove('show'); },2200);
+  }
+
+  function highlightText(text, query){
+    if(!query) return esc(text);
+    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    var re = new RegExp('('+escaped+')','gi');
+    return esc(text).replace(re,'<mark>$1</mark>');
+  }
+
+  /* ── Data Loading ── */
+  async function loadData(){
+    try{
+      var ctrl=new AbortController();
+      var tid=setTimeout(function(){ctrl.abort();},8000);
+      var resp=await fetch(DATA_URL,{signal:ctrl.signal,cache:'no-store'});
       clearTimeout(tid);
-      if (!resp.ok) throw new Error('HTTP ' + resp.status);
-      var data = await resp.json();
-      allData.launcher = data.launcher || [];
-      allData.game = data.game || [];
-    } catch(e) {
-      console.error('加载版本数据失败:', e);
-      allData.launcher = [];
-      allData.game = [];
+      if(!resp.ok) throw new Error('HTTP '+resp.status);
+      var data=await resp.json();
+      allData.launcher=data.launcher||[];
+      allData.game=data.game||[];
+    }catch(e){
+      console.error('加载版本数据失败:',e);
+      allData.launcher=[];
+      allData.game=[];
     }
-    buildCombinedList();
   }
 
-  function buildCombinedList() {
-    combinedList = [];
-    allData.launcher.forEach(function(v){
-      combinedList.push(Object.assign({}, v, { type: 'launcher' }));
-    });
-    allData.game.forEach(function(v){
-      combinedList.push(Object.assign({}, v, { type: 'game' }));
-    });
-    combinedList.sort(function(a, b){
-      return b.date.localeCompare(a.date) || b.version.localeCompare(a.version);
-    });
+  /* ── Build combined list for history ── */
+  function getCombinedList(){
+    var list=[];
+    allData.launcher.forEach(function(v){ list.push(Object.assign({},v,{type:'launcher'})); });
+    allData.game.forEach(function(v){ list.push(Object.assign({},v,{type:'game'})); });
+    list.sort(function(a,b){ return b.date.localeCompare(a.date)||b.version.localeCompare(a.version); });
+    return list;
   }
 
-  /* === Render Latest Cards === */
-  function renderLatestCards() {
-    var latestLauncher = allData.launcher[0] || null;
-    var latestGame = allData.game[0] || null;
-    var html = '';
-
-    // Launcher card
-    html += '<div class="latest-card latest-card--launcher">';
-    html += '<div class="latest-card-header">';
-    html += '<div class="latest-card-icon">' + ICONS.phone + '</div>';
-    html += '<span class="latest-card-type">APK 启动器</span>';
-    html += '<span class="latest-badge">最新</span>';
-    html += '</div>';
-    if (latestLauncher) {
-      html += '<div class="latest-version">' + esc(latestLauncher.version) + '</div>';
-      html += '<div class="latest-meta">';
-      html += '<span class="latest-meta-item">' + ICONS.calendar + esc(latestLauncher.date) + '</span>';
-      html += '<span class="latest-meta-item">' + ICONS.hardrive + esc(latestLauncher.size) + '</span>';
-      html += '</div>';
-      if (latestLauncher.requiredGameVersion) {
-        var compatClass = 'latest-compat';
-        if (latestGame && latestLauncher.requiredGameVersion.indexOf(latestGame.version.replace('v','')) === -1) {
-          compatClass += ' latest-compat--warn';
-        }
-        html += '<div class="' + compatClass + '">' + ICONS.info + ' 需配合游戏本体 ' + esc(latestLauncher.requiredGameVersion) + '</div>';
-      }
-      html += '<div class="latest-actions">';
-      latestLauncher.downloadLinks.forEach(function(dl){
-        html += '<a href="' + esc(dl.url) + '" target="_blank" rel="noopener" class="btn-download">' + ICONS.download + esc(dl.text) + '</a>';
+  /* ── Filter + Search ── */
+  function getFilteredList(){
+    var list=getCombinedList();
+    // Remove latest of each type
+    var latestL=allData.launcher[0];
+    var latestG=allData.game[0];
+    list=list.filter(function(v){
+      if(v.type==='launcher' && latestL && v.version===latestL.version && v.date===latestL.date) return false;
+      if(v.type==='game' && latestG && v.version===latestG.version && v.date===latestG.date) return false;
+      return true;
+    });
+    if(activeFilter) list=list.filter(function(v){ return v.type===activeFilter; });
+    if(searchQuery){
+      var q=searchQuery.toLowerCase();
+      list=list.filter(function(v){
+        return v.version.toLowerCase().indexOf(q)!==-1 || v.changelog.toLowerCase().indexOf(q)!==-1;
       });
-      html += '<a href="#timeline-section" class="btn-history">' + ICONS.arrowDown + ' 历史版本</a>';
-      html += '</div>';
-    } else {
-      html += '<div class="latest-version">暂无</div>';
-      html += '<p style="color:var(--text-muted);font-size:.88rem">暂无启动器版本信息</p>';
     }
-    html += '</div>';
-
-    // Game card
-    html += '<div class="latest-card latest-card--game">';
-    html += '<div class="latest-card-header">';
-    html += '<div class="latest-card-icon">' + ICONS.package + '</div>';
-    html += '<span class="latest-card-type">游戏本体</span>';
-    html += '<span class="latest-badge">最新</span>';
-    html += '</div>';
-    if (latestGame) {
-      html += '<div class="latest-version">' + esc(latestGame.version) + '</div>';
-      html += '<div class="latest-meta">';
-      html += '<span class="latest-meta-item">' + ICONS.calendar + esc(latestGame.date) + '</span>';
-      html += '<span class="latest-meta-item">' + ICONS.hardrive + esc(latestGame.size) + '</span>';
-      html += '</div>';
-      html += '<div class="latest-actions">';
-      latestGame.downloadLinks.forEach(function(dl){
-        html += '<a href="' + esc(dl.url) + '" target="_blank" rel="noopener" class="btn-download">' + ICONS.download + esc(dl.text) + '</a>';
-      });
-      html += '<a href="#timeline-section" class="btn-history">' + ICONS.arrowDown + ' 历史版本</a>';
-      html += '</div>';
-    } else {
-      html += '<div class="latest-version">暂无</div>';
-      html += '<p style="color:var(--text-muted);font-size:.88rem">暂无游戏本体版本信息</p>';
-    }
-    html += '</div>';
-
-    latestGrid.innerHTML = html;
+    return list;
   }
 
-  /* === Render Timeline === */
-  function renderTimeline() {
-    var filtered = combinedList.slice();
+  /* ── Render Latest ── */
+  function renderLatest(){
+    var latestL=allData.launcher[0]||null;
+    var latestG=allData.game[0]||null;
+    var html='';
+    var showL=!activeFilter||activeFilter==='launcher';
+    var showG=!activeFilter||activeFilter==='game';
 
-    // Filter by type
-    if (activeFilter !== 'all') {
-      filtered = filtered.filter(function(v){ return v.type === activeFilter; });
+    // Determine grid class
+    var singleMode=(activeFilter!==null);
+    latestGrid.className='latest-grid'+(singleMode?' single':'');
+
+    if(showL && latestL){
+      html+=buildLatestCard(latestL,'launcher',ICON_LAUNCHER);
+    }
+    if(showG && latestG){
+      html+=buildLatestCard(latestG,'game',ICON_GAME);
     }
 
-    // Filter by search
-    if (searchQuery) {
-      var q = searchQuery.toLowerCase();
-      filtered = filtered.filter(function(v){
-        return v.version.toLowerCase().indexOf(q) !== -1 ||
-               v.changelog.toLowerCase().indexOf(q) !== -1;
-      });
+    if(!html){
+      html='<div class="empty" style="grid-column:1/-1">暂无版本信息</div>';
     }
+    latestGrid.innerHTML=html;
+    bindToggles(latestGrid);
+  }
 
-    if (filtered.length === 0) {
-      timeline.innerHTML = '<div class="empty-state">' + ICONS.empty + '<p>没有找到匹配的版本</p></div>';
+  function buildLatestCard(v,type,iconUrl){
+    var typeLabel=type==='launcher'?'APK 启动器':'游戏本体';
+    var h='<div class="lcard lcard--'+type+'">';
+
+    // Top: icon + info
+    h+='<div class="lcard-top">';
+    h+='<img class="lcard-icon" src="'+esc(iconUrl)+'" alt="'+typeLabel+'" onerror="this.style.display=\'none\'">';
+    h+='<div class="lcard-info">';
+    h+='<div class="lcard-ver">'+highlightText(v.version,searchQuery)+'<span class="lcard-badge">最新版</span></div>';
+    h+='<div class="lcard-type">'+typeLabel+'</div>';
+    h+='<div class="lcard-meta">';
+    h+='<span>'+SVG.calendar+esc(v.date)+'</span>';
+    h+='<span>'+SVG.size+esc(v.size)+'</span>';
+    h+='</div>';
+    if(type==='launcher'&&v.requiredGameVersion){
+      h+='<div class="lcard-compat">'+SVG.info+'需本体 '+esc(v.requiredGameVersion)+'</div>';
+    }
+    h+='</div></div>';
+
+    // Changelog
+    var descId='ld-'+type;
+    h+='<div class="lcard-desc" id="'+descId+'">'+highlightText(v.changelog,searchQuery)+'</div>';
+    h+='<button class="lcard-toggle" data-target="'+descId+'">展开</button>';
+
+    // Downloads
+    h+='<div class="lcard-dls">';
+    v.downloadLinks.forEach(function(dl){
+      h+='<a href="'+esc(dl.url)+'" target="_blank" rel="noopener" class="dl-btn">'+SVG.download+esc(dl.text)+'</a>';
+    });
+    h+='</div>';
+
+    h+='</div>';
+    return h;
+  }
+
+  /* ── Render History ── */
+  function renderHistory(){
+    var list=getFilteredList();
+    if(!list.length){
+      histList.innerHTML='<div class="empty">'+SVG.download.replace('width="24"','width="32"').replace('height="24"','height="32"')+'<p>没有找到匹配的版本</p></div>';
       return;
     }
 
-    var latestLauncherVersion = (allData.launcher[0] || {}).version;
-    var latestGameVersion = (allData.game[0] || {}).version;
-
-    var html = '';
-    filtered.forEach(function(v, idx) {
-      var isLatest = (v.type === 'launcher' && v.version === latestLauncherVersion) ||
-                    (v.type === 'game' && v.version === latestGameVersion);
-      var typeLabel = v.type === 'launcher' ? '启动器' : '游戏本体';
-      var nodeClass = v.type === 'launcher' ? 'timeline-node--launcher' : 'timeline-node--game';
-      var tagClass = v.type === 'launcher' ? 'timeline-type-tag--launcher' : 'timeline-type-tag--game';
-      var nodeIcon = v.type === 'launcher' ? ICONS.phone : ICONS.package;
-
-      html += '<div class="timeline-item" style="animation-delay:' + (idx * 0.06) + 's">';
-
-      // Node
-      html += '<div class="timeline-node ' + nodeClass + '">' + nodeIcon + '</div>';
-
-      // Card
-      html += '<div class="timeline-card">';
-      html += '<div class="timeline-card-header">';
-      html += '<span class="timeline-version">' + esc(v.version) + '</span>';
-      html += '<span class="timeline-type-tag ' + tagClass + '">' + typeLabel + '</span>';
-      if (isLatest) html += '<span class="timeline-new-badge">最新</span>';
-      html += '<span class="timeline-date">' + esc(v.date) + '</span>';
-      html += '</div>';
-
-      // Info
-      html += '<div class="timeline-info">';
-      html += '<span class="timeline-info-item">' + ICONS.hardrive + esc(v.size) + '</span>';
-      if (v.requiredGameVersion) {
-        html += '<span class="timeline-compat">' + ICONS.info + '需本体 ' + esc(v.requiredGameVersion) + '</span>';
-      }
-      html += '</div>';
-
-      // Changelog
-      if (v.changelog) {
-        var changelogId = 'cl-' + v.type + '-' + idx;
-        html += '<div class="timeline-changelog" id="' + changelogId + '">' + esc(v.changelog) + '</div>';
-        html += '<button class="changelog-toggle" data-target="' + changelogId + '">展开</button>';
-      }
-
-      // Downloads
-      html += '<div class="timeline-downloads">';
-      v.downloadLinks.forEach(function(dl){
-        html += '<a href="' + esc(dl.url) + '" target="_blank" rel="noopener" class="btn-dl">' + ICONS.download + esc(dl.text) + '</a>';
-      });
-      html += '</div>';
-
-      html += '</div>'; // card
-      html += '</div>'; // item
+    var html='';
+    list.forEach(function(v,idx){
+      html+=buildHistCard(v,idx);
     });
-
-    timeline.innerHTML = html;
-
-    // Bind changelog toggles
-    timeline.querySelectorAll('.changelog-toggle').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var target = document.getElementById(btn.dataset.target);
-        if (!target) return;
-        var expanded = target.classList.toggle('expanded');
-        btn.textContent = expanded ? '收起' : '展开';
-      });
-    });
-
-    // Add id for anchor link
-    var section = timeline.closest('.timeline-section');
-    if (section) section.id = 'timeline-section';
+    histList.innerHTML=html;
+    bindToggles(histList);
   }
 
-  function esc(s) {
-    var d = document.createElement('div');
-    d.textContent = s;
-    return d.innerHTML;
+  function buildHistCard(v,idx){
+    var typeLabel=v.type==='launcher'?'启动器':'游戏本体';
+    var tagCls=v.type==='launcher'?'hcard-tag--launcher':'hcard-tag--game';
+    var h='<div class="hcard" style="animation-delay:'+(idx*0.04)+'s">';
+
+    // Head
+    h+='<div class="hcard-head">';
+    h+='<span class="hcard-ver">'+highlightText(v.version,searchQuery)+'</span>';
+    h+='<span class="hcard-tag '+tagCls+'">'+typeLabel+'</span>';
+    h+='<span class="hcard-date">'+esc(v.date)+'</span>';
+    h+='</div>';
+
+    // Size + compat
+    h+='<div class="hcard-size">'+esc(v.size);
+    if(v.type==='launcher'&&v.requiredGameVersion){
+      h+=' &nbsp;·&nbsp; 需本体 '+esc(v.requiredGameVersion);
+    }
+    h+='</div>';
+
+    // Changelog
+    var descId='hd-'+v.type+'-'+idx;
+    h+='<div class="hcard-desc" id="'+descId+'">'+highlightText(v.changelog,searchQuery)+'</div>';
+    h+='<button class="hcard-toggle" data-target="'+descId+'">展开</button>';
+
+    // Downloads
+    h+='<div class="hcard-dls">';
+    v.downloadLinks.forEach(function(dl){
+      h+='<a href="'+esc(dl.url)+'" target="_blank" rel="noopener" class="dl-btn">'+SVG.download+esc(dl.text)+'</a>';
+    });
+    h+='</div>';
+
+    h+='</div>';
+    return h;
   }
 
-  /* === Filter Logic === */
-  filterTags.addEventListener('click', function(e){
-    var tag = e.target.closest('.filter-tag');
-    if (!tag) return;
-    filterTags.querySelectorAll('.filter-tag').forEach(function(t){ t.classList.remove('active'); });
-    tag.classList.add('active');
-    activeFilter = tag.dataset.filter;
-    renderTimeline();
+  /* ── Bind toggle buttons ── */
+  function bindToggles(container){
+    container.querySelectorAll('[data-target]').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var target=document.getElementById(btn.dataset.target);
+        if(!target) return;
+        var expanded=target.classList.toggle('expanded');
+        btn.textContent=expanded?'收起':'展开';
+      });
+    });
+  }
+
+  /* ── Render All ── */
+  function renderAll(){
+    renderLatest();
+    renderHistory();
+  }
+
+  /* ── Filter Pills ── */
+  pillsEl.addEventListener('click',function(e){
+    var pill=e.target.closest('.pill');
+    if(!pill) return;
+    var type=pill.dataset.type;
+    if(activeFilter===type){
+      activeFilter=null;
+      pill.classList.remove('active');
+    }else{
+      activeFilter=type;
+      pillsEl.querySelectorAll('.pill').forEach(function(p){p.classList.remove('active');});
+      pill.classList.add('active');
+    }
+    renderAll();
   });
 
-  searchInput.addEventListener('input', function(){
-    searchQuery = this.value.trim();
-    renderTimeline();
+  /* ── Search ── */
+  searchInput.addEventListener('input',function(){
+    searchQuery=this.value.trim();
+    searchClear.classList.toggle('show',searchQuery.length>0);
+    renderAll();
+  });
+  searchClear.addEventListener('click',function(){
+    searchInput.value='';
+    searchQuery='';
+    searchClear.classList.remove('show');
+    searchInput.focus();
+    renderAll();
   });
 
-  /* === Init === */
-  async function init() {
+  /* ── Init ── */
+  async function init(){
     await loadData();
-    renderLatestCards();
-    renderTimeline();
+    renderAll();
     loadingOverlay.classList.add('hidden');
-    mainContent.style.opacity = '1';
+    mainContent.style.opacity='1';
   }
-
   init();
 })();
 </script>
