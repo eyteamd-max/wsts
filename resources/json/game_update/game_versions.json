@@ -30,16 +30,6 @@
       "downloadLinks": [
         { "text": "夸克网盘", "url": "https://pan.quark.cn/s/4223d651f627" }
       ]
-    },
-    {
-      "version": "v1.2.0",
-      "date": "2026-04-15",
-      "size": "11.5 MB",
-      "requiredGameVersion": "≥ v0.102.0",
-      "changelog": "全新 UI 界面重构\n支持自定义游戏路径\n新增版本更新检测",
-      "downloadLinks": [
-        { "text": "夸克网盘", "url": "https://pan.quark.cn/s/4223d651f627" }
-      ]
     }
   ],
   "game": [
@@ -67,24 +57,6 @@
       "date": "2026-05-01",
       "size": "880 MB",
       "changelog": "新增储君角色\n新增联机模式基础框架\n大量卡牌调整",
-      "downloadLinks": [
-        { "text": "夸克网盘", "url": "https://pan.quark.cn/s/4223d651f627" }
-      ]
-    },
-    {
-      "version": "v0.102.5",
-      "date": "2026-04-20",
-      "size": "870 MB",
-      "changelog": "修复多人模式崩溃\n新增遗物系统优化",
-      "downloadLinks": [
-        { "text": "夸克网盘", "url": "https://pan.quark.cn/s/4223d651f627" }
-      ]
-    },
-    {
-      "version": "v0.102.0",
-      "date": "2026-04-01",
-      "size": "860 MB",
-      "changelog": "初始移植版本\n包含基础游戏内容",
       "downloadLinks": [
         { "text": "夸克网盘", "url": "https://pan.quark.cn/s/4223d651f627" }
       ]
