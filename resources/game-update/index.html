@@ -411,6 +411,17 @@ function showToast(msg){
   toastTimer=setTimeout(function(){toastEl.classList.remove('show')},2200);
 }
 
+/* 溢出检测：等两帧确保布局完成 */
+function checkOverflow(textEl, toggleEl){
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      if(textEl.scrollWidth > textEl.clientWidth + 2){
+        toggleEl.style.display='inline';
+      }
+    });
+  });
+}
+
 function renderLatestCard(){
   var latest=launcherData.find(function(d){return d.isLatest});
   if(!latest){latestCard.style.display='none';return}
@@ -432,11 +443,7 @@ function renderLatestCard(){
   var descEl=document.getElementById('latest-desc');
   var toggleEl=document.getElementById('latest-toggle');
   if(descEl&&toggleEl){
-    setTimeout(function(){
-      if(descEl.scrollWidth>descEl.clientWidth+2){
-        toggleEl.style.display='inline';
-      }
-    },30);
+    checkOverflow(descEl,toggleEl);
     toggleEl.addEventListener('click',function(){
       var expanded=descEl.classList.toggle('expanded');
       toggleEl.textContent=expanded?'收起':'展开';
@@ -465,8 +472,8 @@ function renderVersionCards(pageData){
   pageData.forEach(function(item,idx){
     var card=document.createElement('div');
     card.className='version-card';
-    var did='vd-'+activeTab+'-'+idx;
-    var tid='vt-'+activeTab+'-'+idx;
+    var did='vd-'+activeTab+'-'+currentPage+'-'+idx;
+    var tid='vt-'+activeTab+'-'+currentPage+'-'+idx;
     card.innerHTML=
       '<div class="version-card-inner">'+
         '<div class="version-info">'+
@@ -487,11 +494,7 @@ function renderVersionCards(pageData){
     var te=document.getElementById(tid);
     if(de&&te){
       (function(d,t){
-        setTimeout(function(){
-          if(d.scrollWidth>d.clientWidth+2){
-            t.style.display='inline';
-          }
-        },30);
+        checkOverflow(d,t);
         t.addEventListener('click',function(){
           var expanded=d.classList.toggle('expanded');
           t.textContent=expanded?'收起':'展开';
