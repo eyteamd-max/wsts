@@ -17,14 +17,25 @@
 .btn-outline:hover { background: #f8fafc; }
 .meta-card { transition: background .15s ease; }
 .meta-card:hover { background: #f8fafc; }
-.footer-text { display: block; width: 100%; white-space: nowrap; text-align: center; text-decoration: none; transition: color .15s ease; overflow: hidden; text-overflow: ellipsis; }
+
+.footer-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  transition: color .15s ease;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 12px;
+  line-height: 1.5;
+}
 .footer-text:hover { color: #64748b; }
 </style>
 </head>
 <body class="bg-slate-50 min-h-screen text-slate-900 antialiased">
 <div class="max-w-2xl mx-auto px-4 pt-8 pb-14">
 
-<!-- 文件信息卡片 -->
 <div class="mb-5 anim-fade-up" style="animation-delay:.06s">
 <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm px-5 py-4">
 <div class="flex items-center gap-3">
@@ -48,7 +59,6 @@
 </div>
 </div>
 
-<!-- 错误提示 -->
 <div id="error-card" class="hidden mb-6">
 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center">
 <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
@@ -57,132 +67,123 @@
 <p id="error-title" class="text-sm font-medium text-slate-700 mb-1">参数错误</p>
 <p id="error-desc" class="text-xs text-slate-400 mb-4">请提供有效的 GitHub 仓库链接作为 url 参数</p>
 <div class="text-xs text-slate-500 bg-slate-50 rounded-lg p-3 text-left font-mono break-all">
-示例: https://你的域名/本页面路径?url=https://github.com/owner/repo
+示例: https://axxxx.cyou/resources/github_parsing/?url=https://github.com/owner/repo
 </div>
 </div>
 </div>
 
-<!-- 下载卡片（自动生成） -->
 <div id="download-card" class="hidden mb-6"></div>
 
 <footer class="text-center anim-fade" style="animation-delay:.2s">
-<a href="../../index.html" class="footer-text text-slate-400 leading-relaxed">GitHub Releases 高速下载 / STS2娘化MOD站 © 2026 壹个屑猫猫</a>
+<a href="../../index.html" class="footer-text text-slate-400">GitHub Releases 解析 / STS2娘化MOD站 © 2026 壹个屑猫猫</a>
 </footer>
 </div>
 
 <script>
-// ========== 配置：你自己的代理地址 ==========
 var MY_PROXY_URL = 'https://dl.axxxx.cyou/';
 
-// ========== 工具函数 ==========
 function getQueryParam(name) {
-return new URLSearchParams(window.location.search).get(name);
+  return new URLSearchParams(window.location.search).get(name);
 }
 
 function parseGitHubRepoUrl(url) {
-if (!url) return null;
-var match = url.match(/^https?:\/\/github\.com\/([^\/]+)\/([^\/]+)\/?/);
-if (match && match[1] && match[2]) {
-return { owner: match[1], repo: match[2], fullName: match[1] + '/' + match[2] };
-}
-return null;
+  if (!url) return null;
+  var match = url.match(/^https?:\/\/github\.com\/([^\/]+)\/([^\/]+)\/?/);
+  if (match && match[1] && match[2]) {
+    return { owner: match[1], repo: match[2], fullName: match[1] + '/' + match[2] };
+  }
+  return null;
 }
 
-// ========== 获取最新 Release 信息 ==========
 var GITHUB_RELEASE_URL = '';
 var GITHUB_REPO_URL = '';
 var RELEASE = {
-version: '-',
-publishedAt: '-',
-author: '-',
-fileName: '-',
-fileSize: '-',
-downloadCount: '-',
-htmlUrl: '-'
+  version: '-',
+  publishedAt: '-',
+  author: '-',
+  fileName: '-',
+  fileSize: '-',
+  downloadCount: '-',
+  htmlUrl: '-'
 };
 
 async function fetchRelease(repoInfo) {
-try {
-var apiUrl = 'https://api.github.com/repos/' + repoInfo.fullName + '/releases/latest';
-var r = await fetch(apiUrl, {headers: {'Accept': 'application/vnd.github.v3+json'}});
-if (!r.ok) throw new Error('GitHub API 请求失败: ' + r.status);
-var d = await r.json();
-if (d.tag_name) RELEASE.version = d.tag_name;
-if (d.published_at) {
-var dt = new Date(d.published_at);
-RELEASE.publishedAt = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
-}
-if (d.author && d.author.login) RELEASE.author = d.author.login;
-if (d.html_url) RELEASE.htmlUrl = d.html_url;
-if (d.assets && d.assets.length > 0) {
-var a = d.assets[0];
-if (a.name) RELEASE.fileName = a.name;
-if (a.size) RELEASE.fileSize = (a.size / 1048576).toFixed(2) + ' MB';
-if (typeof a.download_count === 'number') RELEASE.downloadCount = a.download_count.toLocaleString();
-if (a.browser_download_url) GITHUB_RELEASE_URL = a.browser_download_url;
-}
-// 更新界面标题
-document.getElementById('header-filename').textContent = RELEASE.fileName;
-document.getElementById('header-size').textContent = RELEASE.fileSize;
-document.getElementById('header-repo').textContent = repoInfo.fullName;
-var repoLink = document.getElementById('header-repo-link');
-repoLink.href = GITHUB_REPO_URL;
-repoLink.classList.remove('hidden');
-return true;
-} catch (e) {
-console.error(e);
-document.getElementById('error-title').textContent = '获取仓库信息失败';
-document.getElementById('error-desc').textContent = '无法获取该仓库的最新 Release 信息，请检查链接是否正确或仓库是否存在。';
-document.getElementById('error-card').classList.remove('hidden');
-return false;
-}
+  try {
+    var apiUrl = 'https://api.github.com/repos/' + repoInfo.fullName + '/releases/latest';
+    var r = await fetch(apiUrl, {headers: {'Accept': 'application/vnd.github.v3+json'}});
+    if (!r.ok) throw new Error('GitHub API 请求失败: ' + r.status);
+    var d = await r.json();
+    if (d.tag_name) RELEASE.version = d.tag_name;
+    if (d.published_at) {
+      var dt = new Date(d.published_at);
+      RELEASE.publishedAt = dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+    }
+    if (d.author && d.author.login) RELEASE.author = d.author.login;
+    if (d.html_url) RELEASE.htmlUrl = d.html_url;
+    if (d.assets && d.assets.length > 0) {
+      var a = d.assets[0];
+      if (a.name) RELEASE.fileName = a.name;
+      if (a.size) RELEASE.fileSize = (a.size / 1048576).toFixed(2) + ' MB';
+      if (typeof a.download_count === 'number') RELEASE.downloadCount = a.download_count.toLocaleString();
+      if (a.browser_download_url) GITHUB_RELEASE_URL = a.browser_download_url;
+    }
+    document.getElementById('header-filename').textContent = RELEASE.fileName;
+    document.getElementById('header-size').textContent = RELEASE.fileSize;
+    document.getElementById('header-repo').textContent = repoInfo.fullName;
+    var repoLink = document.getElementById('header-repo-link');
+    repoLink.href = GITHUB_REPO_URL;
+    repoLink.classList.remove('hidden');
+    return true;
+  } catch (e) {
+    console.error(e);
+    document.getElementById('error-title').textContent = '获取仓库信息失败';
+    document.getElementById('error-desc').textContent = '无法获取该仓库的最新 Release 信息，请检查链接是否正确或仓库是否存在。';
+    document.getElementById('error-card').classList.remove('hidden');
+    return false;
+  }
 }
 
-// ========== 生成下载卡片（直接使用自建代理） ==========
 function renderDownloadCard() {
-var proxyDownloadUrl = MY_PROXY_URL + GITHUB_RELEASE_URL;
+  var proxyDownloadUrl = MY_PROXY_URL + GITHUB_RELEASE_URL;
 
-var html = '<div class="anim-fade-up"><div class="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">';
-html += '<div class="px-6 pt-5 pb-4"><div class="flex items-center gap-2.5 mb-4">';
-html += '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-semibold whitespace-nowrap">⚡ 自建高速节点</span>';
-html += '<span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-semibold whitespace-nowrap">香港 · 极速</span>';
-html += '</div>';
-html += '<h2 class="text-lg font-bold text-slate-900 mb-0.5">' + RELEASE.fileName + '</h2>';
-html += '<p class="text-sm text-slate-400">' + RELEASE.version + '</p></div>';
+  var html = '<div class="anim-fade-up"><div class="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">';
+  html += '<div class="px-6 pt-5 pb-4"><div class="flex items-center gap-2.5 mb-4">';
+  html += '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-semibold whitespace-nowrap">自建高速节点</span>';
+  html += '<span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 text-xs font-semibold whitespace-nowrap">稳定 · 极速</span>';
+  html += '</div>';
+  html += '<h2 class="text-lg font-bold text-slate-900 mb-0.5">' + RELEASE.fileName + '</h2>';
+  html += '<p class="text-sm text-slate-400">' + RELEASE.version + '</p></div>';
 
-// 文件详情
-html += '<div class="px-6 pb-5"><div class="grid grid-cols-2 sm:grid-cols-4 gap-3">';
-html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">版本</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.version + '</div></div>';
-html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">更新时间</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.publishedAt + '</div></div>';
-html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">作者</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.author + '</div></div>';
-html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">大小</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.fileSize + '</div></div>';
-html += '</div></div>';
+  html += '<div class="px-6 pb-5"><div class="grid grid-cols-2 sm:grid-cols-4 gap-3">';
+  html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">版本</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.version + '</div></div>';
+  html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">更新时间</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.publishedAt + '</div></div>';
+  html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">作者</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.author + '</div></div>';
+  html += '<div class="meta-card px-3 py-2.5 rounded-xl border border-slate-100"><div class="text-xs text-slate-400 mb-0.5">大小</div><div class="text-sm font-medium text-slate-700 truncate">' + RELEASE.fileSize + '</div></div>';
+  html += '</div></div>';
 
-// 下载按钮
-html += '<div class="border-t border-slate-100 px-6 py-4">';
-html += '<div class="flex flex-wrap items-center gap-2.5">';
-html += '<a href="' + proxyDownloadUrl + '" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-medium whitespace-nowrap shadow-md shadow-indigo-500/15"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>立即高速下载</a>';
-html += '<a href="' + RELEASE.htmlUrl + '" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium whitespace-nowrap"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>在 GitHub 中查看</a>';
-html += '</div></div>';
-html += '</div></div>';
+  html += '<div class="border-t border-slate-100 px-6 py-4">';
+  html += '<div class="flex flex-wrap items-center gap-2.5">';
+  html += '<a href="' + proxyDownloadUrl + '" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-medium whitespace-nowrap shadow-md shadow-indigo-500/15"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>立即高速下载</a>';
+  html += '<a href="' + RELEASE.htmlUrl + '" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 text-sm font-medium whitespace-nowrap"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>在 GitHub 中查看</a>';
+  html += '</div></div>';
+  html += '</div></div>';
 
-document.getElementById('download-card').innerHTML = html;
-document.getElementById('download-card').classList.remove('hidden');
+  document.getElementById('download-card').innerHTML = html;
+  document.getElementById('download-card').classList.remove('hidden');
 }
 
-// ========== 页面初始化 ==========
 window.addEventListener('DOMContentLoaded', async function() {
-var urlParam = getQueryParam('url');
-var repoInfo = parseGitHubRepoUrl(urlParam);
-if (!repoInfo) {
-document.getElementById('error-card').classList.remove('hidden');
-return;
-}
-GITHUB_REPO_URL = 'https://github.com/' + repoInfo.fullName;
-var success = await fetchRelease(repoInfo);
-if (success) {
-renderDownloadCard();
-}
+  var urlParam = getQueryParam('url');
+  var repoInfo = parseGitHubRepoUrl(urlParam);
+  if (!repoInfo) {
+    document.getElementById('error-card').classList.remove('hidden');
+    return;
+  }
+  GITHUB_REPO_URL = 'https://github.com/' + repoInfo.fullName;
+  var success = await fetchRelease(repoInfo);
+  if (success) {
+    renderDownloadCard();
+  }
 });
 </script>
 </body>
