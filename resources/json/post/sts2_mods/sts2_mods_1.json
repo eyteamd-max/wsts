@@ -1,5 +1,62 @@
-
 [
+  {
+    "id": "20260610195747241",
+    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
+    "category": "skin",
+    "size": "54.60MB",
+    "date": "2026-06-10",
+    "badge": "v6_0.0.16",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/ded4b62c-6d46-4c80-8100-9cd71484f210/0"
+    ],
+    "images": [],
+    "description": "修复多人游戏第一把数据异常的bug\n修复万物大同变大部分bug\n更换开局选本命蛊和杀招蛊方的流程，优化游戏体验",
+    "author": "荷拾叁",
+    "authorLinks": [
+      {
+        "text": "bilibili",
+        "url": "https://b23.tv/efSUWup"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "蛊真人",
+      "古月方源",
+      "荷拾叁",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组下载[主体]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzd9b81d5ca9ef4b39ab16e3a2ff07f182?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置[前置]",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/heshisan789-bot/STS2-Guzhenren-mod",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/6584eef9-5f46-4264-bd21-659214e7d17f/0",
+      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
+      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
+      "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
+    ]
+  },
   {
     "id": "20260605010029767",
     "title": "핏짜 的骨妹 - 白毛红帽 异瞳形象",
@@ -152,55 +209,6 @@
     ]
   },
   {
-    "id": "20260605010024406",
-    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
-    "category": "skin",
-    "size": "90.83MB",
-    "date": "2026-06-05",
-    "badge": "v5_0.0.8",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/ded4b62c-6d46-4c80-8100-9cd71484f210/0"
-    ],
-    "images": [],
-    "description": "本模组是蛊真人角色 mod 的塔二重写骨架\n前置需求：RitsuLib + BaseLib（需同时安装）\n\n预览视频演示版本为： \nRitsuLib v0.2.33 / BaseLib v3.1.3 / 本体 v0.103.2\n\nGitHub项目源码：\nhttps://github.com/heshisan789-bot/STS2-Guzhenren-mod",
-    "author": "荷拾叁",
-    "authorLinks": [
-      {
-        "text": "bilibili",
-        "url": "https://b23.tv/efSUWup"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "蛊真人",
-      "古月方源",
-      "荷拾叁",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组下载[主体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzec08e7a12c7c49f5963bf281d1d4cc8e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "所需前置[前置]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/6584eef9-5f46-4264-bd21-659214e7d17f/0",
-      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
-      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
-      "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
-    ]
-  },
-  {
     "id": "20260601194426119",
     "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
     "category": "skin",
@@ -338,30 +346,34 @@
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
       },
       {
         "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2"
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
       }
     ],
     "previewImages": [],
     "previewVideos": []
   },
   {
-    "id": "20260529181645234",
+    "id": "20260610195211964",
     "title": "战士皮肤-卡厄思千鹤 PelleasWorks",
     "category": "skin",
-    "size": "57.70MB",
-    "date": "2026-05-29",
-    "badge": "v0.3.0",
+    "size": "86.88MB",
+    "date": "2026-06-10",
+    "badge": "v0.4.3",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/74438e3351f037fa.png"
     ],
     "images": [],
-    "description": "将千鹤作为铁甲战士的角色外观替换\n\n更新日志\n新增战斗待机、攻击、防御、施放、受击与战败演出。 新增千鹤语音、战斗音效（SFX）与战斗特效（FX）。 新增角色选择界面视觉效果、左侧出牌演出与战败 CG。 新增游戏内 CZN Mod Config 设置页面。 支持英文、中文、日文游戏内文本。\n\nPS：\n我感觉这个模组的特效挺有打击感的\n//角色死亡后会出现战败动画哦",
+    "description": "将千鹤作为铁甲战士的角色外观替换\nPS：我感觉这个模组的特效挺有打击感的\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.4.3\n适配范围：v0.103.2~0.107.0\n--\n模组版本：v0.3.0\n适配范围：v0.103.2~0.107.0\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
     "author": "PelleasWorks",
     "authorLinks": [
       {
@@ -382,8 +394,25 @@
     ],
     "downloadLinks": [
       {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzc60ab15c7e05487181adbecfc486d4ff?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "text": "战士皮肤-卡厄思千鹤",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz09b4383c4ebf4678913b91338e562be8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/914",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "战士皮肤-卡厄思千鹤",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzc60ab15c7e05487181adbecfc486d4ff?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.3.0",
+        "size": "57.70MB",
+        "date": "2026-05-29"
       }
     ],
     "previewImages": [
@@ -402,19 +431,19 @@
     ]
   },
   {
-    "id": "20260529175936307",
+    "id": "20260610183945525",
     "title": "猎人皮肤-卡厄思特莱莎 PelleasWorks",
     "category": "skin",
-    "size": "25.93MB",
-    "date": "2026-05-29",
-    "badge": "v0.1.0",
+    "size": "32.60MB",
+    "date": "2026-06-10",
+    "badge": "v0.2.1",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
       "http://shp.qpic.cn/collector/1976464052/8d0635ff-f17f-40cc-92e6-13de365954be/0"
     ],
     "images": [],
-    "description": "将德蕾莎作为静默猎手的角色外观替换\n\n更新日志：\n新增角色选择界面立绘与角色大厅切换功能\n新增德蕾莎日文语音、战斗音效（SFX）及部分战斗特效（FX）。 新增休息点演出与语音\n优化游戏内 CZN Mod Config 设置页面，使选项名称与说明更易于理解。\n调整部分战斗动作的攻击时机、目标命中特效与音效播放，使战斗反馈更贴合德蕾莎的角色风格\n\n\nPS：\n我感觉这个模组的特效挺有打击感的\n//角色死亡后会出现战败动画哦",
+    "description": "将德蕾莎作为静默猎手的角色外观替换\nPS：我感觉这个模组的特效挺有打击感的\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.2.1\n适配范围：v0.103.2~0.107.0\n--\n模组版本：v0.1.0\n适配范围：v0.103.2~0.107.0\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
     "author": "PelleasWorks",
     "authorLinks": [
       {
@@ -436,8 +465,25 @@
     ],
     "downloadLinks": [
       {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz3938b565424441cea1b2d5c08f43f9a0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "text": "猎人皮肤-卡厄思特莱莎",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz4939b39f60aa428990546b6e443b2343?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/1052",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "猎人皮肤-卡厄思特莱莎",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1243676af8b74bfb820a3d07622e3954?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.1.0",
+        "size": "26.06MB",
+        "date": "2026-06-10"
       }
     ],
     "previewImages": [
@@ -567,18 +613,18 @@
     ],
     "images": [],
     "description": "超级炫酷的瓦库动态立绘替换！原版瓦库画得跟奶龙似的，堂堂恶魔怎能这么难看？本模组重绘了动态立绘，让瓦库终于有个恶魔该有的样子了。\n\n\n制作：\n画师＃聖银十字-墨殒辰星\n代码man＃NotBear_As\n骨骼动画＃mmmmm基因\n\n\nPS：\n模组里还藏了个小细节“恶魔不能同时眨眼”",
-    "author": "聖银十字-墨殒辰星，NotBear_As，mmmmm基因",
+    "author": "[画师] - 聖银十字-墨殒辰星 [代码] - NotBear_As [骨骼动画] - mmmmm基因",
     "authorLinks": [
       {
-        "text": "B站｜聖银十字-墨殒辰星",
+        "text": "B站|聖银十字-墨殒辰星",
         "url": "https://b23.tv/nQET0Jt"
       },
       {
-        "text": "B站｜NotBear_As",
+        "text": "B站|NotBear_As",
         "url": "https://b23.tv/UAjVkzT"
       },
       {
-        "text": "B站｜mmmmm基因",
+        "text": "B站|mmmmm基因",
         "url": "https://b23.tv/ytVlztJ"
       }
     ],
@@ -1057,19 +1103,28 @@
     "downloadLinks": [
       {
         "text": "v0.103.2正式版[推荐]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/859",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
       },
       {
         "text": "v0.103.2兼容版[备选]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "N网下载[历史与最新版]",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/859"
-      },
-      {
-        "text": "在线解析最新版[基于GH Releases]",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history"
       }
     ],
     "previewImages": [
@@ -1120,11 +1175,15 @@
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
       },
       {
         "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LinXce/merchant-2-cute-ii"
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LinXce/merchant-2-cute-ii",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
       }
     ],
     "previewImages": [
@@ -1156,18 +1215,18 @@
     ],
     "images": [],
     "description": "此模组是B站UP主 Xpp__ 大佬所发布的【二次元猎宝2-v1.2】这是一款静默猎手的卡面美化MOD，卡面共修改56张，多为卡通风格。基于AI生成的纯色背景立绘，又经PS手工修改\n\n\n视频制作与发布：Xpp__\nMod编写及修缮：@绫末LingEnd  \n特别感谢：@GhoulEmperor 、@失地骑士Hatk  ",
-    "author": "Xpp__，绫末LingEnd",
+    "author": "[视频] - Xpp__ [代码] - 绫末LingEnd",
     "authorLinks": [
       {
-        "text": "B站｜Xpp__",
+        "text": "B站|Xpp__",
         "url": "https://b23.tv/cRuTAVP"
       },
       {
-        "text": "爱发电｜Xpp__",
+        "text": "爱发电|Xpp__",
         "url": "https://ifdian.net/a/xppppx"
       },
       {
-        "text": "B站｜绫末LingEnd",
+        "text": "B站|绫末LingEnd",
         "url": "https://b23.tv/4aj5HaH"
       }
     ],
@@ -1365,14 +1424,14 @@
     ],
     "images": [],
     "description": "该MOD的夸克网盘路径：\n❶→先民美化 MOD / \n❷→先民美化-欧洛巴斯+特兹卡塔拉.zip\n\n\nMOD介绍：\n本模组将先古之民「特兹卡塔拉（南瓜）」与「欧洛巴斯（大眼）」的外观进行了替换/美化。\n\n\n制作人员：\n动画：Dodobird\nMod 作者：LunchShark（점심상어）",
-    "author": "LunchShark（점심상어），Dodobird",
+    "author": "[动画] - Dodobird [作者] - LunchShark（점심상어）",
     "authorLinks": [
       {
-        "text": "X：Dodobird",
+        "text": "X|Dodobird",
         "url": "https://x.com/DodoBird0615"
       },
       {
-        "text": "X：LunchShark（점심상어）",
+        "text": "X|LunchShark（점심상어）",
         "url": "https://x.com/lunchshark01"
       }
     ],
@@ -1419,15 +1478,19 @@
     ],
     "images": [],
     "description": "这是一位韩国大佬制作的外观替换MOD，具体修改内容为：替换了骨妹的的战斗视觉效果、商人视觉效果、休息站界面、角色选择界面以及其他一些相关的 UI 素材（本帖收录的版本为2026年5月14日下午12:27更新的最新版，我把该模组的前置和主体MOD整合到一起了，里面会显示有两个文件夹，不用管他正常导入就行）\n\n---\n\n更新日志：\n\n构建错误修复\n\n修复了在 Radeon 显卡上启用 MSAA 时角色在战斗中不出现的问题。\n\n减小了 Necrobinder 图集的大小，以消除锯齿/锯齿边缘。\n\n移除未使用的子视口相关内容。\n\n修复了商家动画可能卡顿的问题\n\n修复了仅限测试版使用的清单兼容性问题\n\n移除了 BaseLib 依赖项\n\n---\n\n该模组的Twitter原文链接：\nhttps://x.com/i/status/2053763683134939613\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"BN契约师\"是 v1.0.3 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路",
-    "author": "JINROU，Iyan-kim，Jiun Kim",
+    "author": "[作者] - JINROU [程序员] - 𝑰𝒚𝒂𝒏-𝑲𝒊𝒎 [动画师] - Jiun Kim",
     "authorLinks": [
       {
-        "text": "X : @JINROU",
+        "text": "X|JINROU",
         "url": "https://x.com/rkem741"
       },
       {
-        "text": "X : @Iyan-kim",
+        "text": "X|𝑰𝒚𝒂𝒏-𝑲𝒊𝒎",
         "url": "https://x.com/IyanE_VRC_"
+      },
+      {
+        "text": "X|Jiun Kim",
+        "url": "https://x.com/insanus_calva"
       }
     ],
     "tags": [
@@ -1707,15 +1770,15 @@
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/20260520_160816.jpg"
     ],
     "images": [],
-    "description": "储君 Mesugaki_Regent 版本 0.1.1 更新\n\n- 补丁说明\n\n1. 模式现在即使在 MAC 环境下也能正常运行！[修改 dll 文件]\n\n2. 小储君 [点] 现在正确显示在百科全书等物品中。\n\n3. 角色选择界面的屏幕比例已更改，以支持从 16:9 到 21:9。\n\n4. 射击动作变得更可爱了。\n\n---\n\nTwitter(MOD原帖)：https://x.com/i/status/2043730520031613188\n\n预览图片和预览视频我放的韩文展示画面，但国内玩家实装后会正常显示中文，请放心使用。\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"MR储君\"是 v0.1.0 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路\n\n\n",
-    "author": "Seic_Oh，DodoBird0615",
+    "description": "储君 Mesugaki_Regent 版本 0.1.1 更新\n\n- 补丁说明\n\n1. 模式现在即使在 MAC 环境下也能正常运行！[修改 dll 文件]\n\n2. 小储君 [点] 现在正确显示在百科全书等物品中。\n\n3. 角色选择界面的屏幕比例已更改，以支持从 16:9 到 21:9。\n\n4. 射击动作变得更可爱了。\n\n---\n\nTwitter(MOD原帖)：https://x.com/i/status/2043730520031613188\n\n预览图片和预览视频我放的韩文展示画面，但国内玩家实装后会正常显示中文，请放心使用。\n\n---\n\n// PS：我发现 _冬雪寒 网盘内分享的\"MR储君\"是 v0.1.0 的旧版本，因此猫猫自行上传了最新版本，并提供了在线下载线路",
+    "author": "[作者] - Seic_Oh [作者] - Dodobird",
     "authorLinks": [
       {
-        "text": "X : @Seic_Oh",
+        "text": "Seic_Oh|Seic_Oh",
         "url": "https://x.com/Seic_Oh"
       },
       {
-        "text": "X : @DodoBird0615",
+        "text": "X|Dodobird",
         "url": "https://x.com/DodoBird0615"
       }
     ],
@@ -1810,14 +1873,14 @@
     ],
     "images": [],
     "description": "本版本为A大充电群\"魔改圈\"内的粉丝\"jszsjs\"自行移植的静默猎手外观替换MOD。该MOD原为 dd1 (暗黑地牢1) 的弩手模组，现已移植至杀戮尖塔Ⅱ，并更名为\"魅魔修女\"。目前，该模组文件已被A大从充电群中移除，后续大概率不会再更新了\n\nPS：此版本修复了卡结算的问题（理论上）",
-    "author": "anaertailin(作者)，jszsjs(存疑)",
+    "author": "[作者] - anaertailin [移植] - jszsjs(存疑)",
     "authorLinks": [
       {
-        "text": "bilibili",
+        "text": "bilibili|anaertailin",
         "url": "https://b23.tv/TSlqNJh"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       }
     ],
@@ -1866,18 +1929,18 @@
     ],
     "images": [],
     "description": "该MOD的夸克网盘路径：\n❶→角色皮肤 MOD/\n❷→静默猎手/ \n❸→猎手皮肤-A大猎宝改选人小图小头像版.zip\n\n\nMOD介绍：\n\n此改版目前同步的是 A大 的《STS2劣人0.8,增加选人界面动画》最新版（暂时）。此改版在选人画面和局内画面中新增了 A大 未加入的小头像，并将其替换为B站UP主“蛞蝓仔仔”所绘制的\"小猎宝抓蛇咬\"形象。",
-    "author": "anaertailin（A大）",
+    "author": "[作者] - anaertailin（A大） [小头像画师] - 蛞蝓仔仔",
     "authorLinks": [
       {
-        "text": "bilibili(A大)",
+        "text": "bilibili|anaertailin（A大）",
         "url": "https://b23.tv/GE9akQ7"
       },
       {
-        "text": "爱发电(A大)",
+        "text": "爱发电|anaertailin（A大）",
         "url": "https://www.ifdian.net/a/anaertailin"
       },
       {
-        "text": "蛞蝓仔仔(小头像画师)",
+        "text": "B站|蛞蝓仔仔",
         "url": "https://b23.tv/sds19Xy"
       }
     ],
@@ -1973,10 +2036,10 @@
     ],
     "images": [],
     "description": "该MOD的夸克网盘路径：\n❶→角色皮肤 MOD / \n❷→铁甲战士 / \n❸→战士皮肤-银龙奥卡(婚纱板甲 自由切换).zip\n\n---\n介绍：\n银龙奥卡战士皮肤-奥卡奥伽尼斯，善良勇敢又不失优雅的白发红瞳半银龙少女-正式版1.5.1现已发布！大更新！！\n---\nPS：\n这也是大佬的最后一次更新\n好好珍惜吧，呜呜呜 இwஇ \n---\n永久下架通知：\n关于杀戮尖塔二银龙奥卡模组下架相关事宜：\n渡鸦大佬的原文声明：https://b23.tv/2DRb59e",
-    "author": "独角渡鸦，断茎之花",
+    "author": "[作者] - 独角渡鸦 [形象] - 断茎之花",
     "authorLinks": [
       {
-        "text": "bilibili",
+        "text": "bilibili|独角渡鸦",
         "url": "https://b23.tv/RoLbGXy"
       }
     ],
