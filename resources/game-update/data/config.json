@@ -1,0 +1,9 @@
+{
+  "fallbackLatest": {
+    "version": "v0.1.1",
+    "date": "2026-06-08",
+    "size": "65.98MB",
+    "description": "修复鸿蒙设备启动问题 修复一些设备上字体图标显示不出来的问题（改用矢量图标） 修复先古卡牌显示为白色的问题 新增了logcat日志sts2.log 新增局域网联机Patch开关 修复大厅mod连接超时问题",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz3275a5209ceb44dcb86d40730dc1509f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  }
+}
