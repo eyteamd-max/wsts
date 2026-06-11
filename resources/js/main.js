@@ -10,9 +10,7 @@ var taskId = ++this.taskIdCounter;
 var self = this;
 return new Promise(function (resolve, reject) {
 self.activeTasks[taskId] = { resolve: resolve, reject: reject, cancelled: false };
-self.queue.push({
-taskId: taskId,
-run: function () {
+self.queue.push({ taskId: taskId, run: function () {
 if (!self.activeTasks[taskId] || self.activeTasks[taskId].cancelled) {
 delete self.activeTasks[taskId];
 self.running--;
@@ -20,40 +18,21 @@ self._next();
 return;
 }
 taskFn().then(function (result) {
-if (!self.activeTasks[taskId]) {
-self.running--;
-self._next();
-return;
-}
-if (self.activeTasks[taskId].cancelled) {
-delete self.activeTasks[taskId];
-self.running--;
-self._next();
-return;
-}
+if (!self.activeTasks[taskId]) { self.running--; self._next(); return; }
+if (self.activeTasks[taskId].cancelled) { delete self.activeTasks[taskId]; self.running--; self._next(); return; }
 self.activeTasks[taskId].resolve(result);
 delete self.activeTasks[taskId];
 self.running--;
 self._next();
 }).catch(function (err) {
-if (!self.activeTasks[taskId]) {
-self.running--;
-self._next();
-return;
-}
-if (self.activeTasks[taskId].cancelled) {
-delete self.activeTasks[taskId];
-self.running--;
-self._next();
-return;
-}
+if (!self.activeTasks[taskId]) { self.running--; self._next(); return; }
+if (self.activeTasks[taskId].cancelled) { delete self.activeTasks[taskId]; self.running--; self._next(); return; }
 self.activeTasks[taskId].reject(err);
 delete self.activeTasks[taskId];
 self.running--;
 self._next();
 });
-}
-});
+}});
 self._next();
 });
 },
@@ -287,11 +266,14 @@ textarea.style.pointerEvents = 'none';
 document.body.appendChild(textarea);
 textarea.focus();
 textarea.select();
-try { document.execCommand('copy'); document.body.removeChild(textarea); resolve(); } catch (err) { document.body.removeChild(textarea); reject(err); }
+try { document.execCommand('copy'); document.body.removeChild(textarea); resolve(); }
+catch (err) { document.body.removeChild(textarea); reject(err); }
 });
 }
 }
-function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function esc(s) {
+return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
 function gCS(m) {
 if (!m.coverImage) return '';
 if (Array.isArray(m.coverImage)) return m.coverImage[0] || '';
@@ -337,7 +319,8 @@ return a.map(function (x) {
 var mt = [];
 l.forEach(function (li) {
 var ln = eNL(li.text);
-if (ln && x.name && (x.name.indexOf(ln) !== -1 || ln.indexOf(x.name) !== -1 || x.name.replace(/[（）()]/g, '').indexOf(ln.replace(/[（）()]/g, '')) !== -1)) mt.push(li);
+if (ln && x.name && (x.name.indexOf(ln) !== -1 || ln.indexOf(x.name) !== -1 || x.name.replace(/[（）()]/g, '').indexOf(ln.replace(/[（）()]/g, '')) !== -1))
+mt.push(li);
 });
 return Object.assign({}, x, { links: mt });
 });
@@ -346,13 +329,18 @@ function cLL(ls) {
 var la = [], al = [], hi = [];
 if (!ls || !ls.length) return { latest: la, alternative: al, history: hi };
 ls.forEach(function (l) {
-if (l.category === 'history') { hi.push(l); return; }
-if (l.category === 'alternative') { al.push(l); return; }
-if (l.category === 'latest') { la.push(l); return; }
-var t = l.text;
-if (t.includes('兼容') || t.includes('备选') || t.includes('旧版') || t.includes('历史版本')) hi.push(l);
-else if (t.includes('在线解析') || t.includes('N网') || /官方帖子/.test(t)) al.push(l);
+if (l.category) {
+if (l.category === 'history') hi.push(l);
+else if (l.category === 'alternative') al.push(l);
 else la.push(l);
+} else {
+var t = l.text;
+if (t.includes('兼容') || t.includes('备选') || t.includes('旧版') || t.includes('历史版本'))
+hi.push(l);
+else if (t.includes('在线解析') || t.includes('N网') || /官方帖子/.test(t))
+al.push(l);
+else la.push(l);
+}
 });
 return { latest: la, alternative: al, history: hi };
 }
@@ -364,6 +352,13 @@ if (te.scrollHeight > te.clientHeight + 2) tg.style.display = 'inline-block';
 else tg.style.display = 'none';
 });
 });
+}
+function gDLM(dl) {
+var dm = [];
+if (dl.version) dm.push(dl.version);
+if (dl.size) dm.push(dl.size);
+if (dl.date) dm.push(dl.date);
+return dm.length ? '<span class="dm">' + dm.map(function(p){return esc(p)}).join(' · ') + '</span>' : '';
 }
 function parseManifestRange(rangeStr) {
 if (!rangeStr || typeof rangeStr !== 'string') return [];
@@ -436,7 +431,8 @@ return rawData;
 } catch (error) { return []; }
 })();
 dataLoadingPromises[categoryKey] = promise;
-try { var result = await promise; return result; } finally { delete dataLoadingPromises[categoryKey]; }
+try { var result = await promise; return result; }
+finally { delete dataLoadingPromises[categoryKey]; }
 }
 var preloadState = { currentPreloadPage: 0 };
 function extractCoverUrls(dataSlice) {
@@ -481,7 +477,10 @@ return preloadImagesWithConcurrency(previewUrls, 4);
 });
 }
 async function priorityPreload() {
-await Promise.all([ loadAllDataForCategory('all'), loadAllDataForCategory('skin') ]);
+await Promise.all([
+loadAllDataForCategory('all'),
+loadAllDataForCategory('skin')
+]);
 var defaultData = allSiteData['all'] || [];
 var page1Data = getPageSlice(defaultData, 1);
 var page1Covers = extractCoverUrls(page1Data);
@@ -641,10 +640,10 @@ var ch = cs ? '<img src="' + cs + '" alt="' + esc(mod.title) + '" onerror="this.
 var MX = 4, tg = mod.tags || [], vt = tg.slice(0, MX), ec = tg.length - MX;
 var th = vt.map(function (t) { return '<span class="ti ' + t.toLowerCase() + '">' + esc(t) + '</span>'; }).join('');
 if (ec > 0) th += '<span class="tm2">+' + ec + '</span>';
-c.innerHTML = '<div class="cv" style="background:' + mod.coverGradient + '">' + ch + '</div>' +
-'<div class="ci"><div class="tr"><span class="tt">' + esc(mod.title) + '</span><span class="tv">' + esc(mod.badge) + '</span></div>' +
-'<div class="tl">' + th + '</div>' +
-'<div class="mt"><span>' + esc(mod.size) + '</span><span class="md">·</span><span>' + esc(mod.date) + '</span></div></div>';
+c.innerHTML = '<div class="cv" style="background:' + mod.coverGradient + '">' + ch + '</div>'
++ '<div class="ci"><div class="tr"><span class="tt">' + esc(mod.title) + '</span><span class="tv">' + esc(mod.badge) + '</span></div>'
++ '<div class="tl">' + th + '</div>'
++ '<div class="mt"><span>' + esc(mod.size) + '</span><span class="md">·</span><span>' + esc(mod.date) + '</span></div></div>';
 c.addEventListener('click', function () { oM(mod); });
 mG.appendChild(c);
 });
@@ -699,7 +698,12 @@ h += '<div class="dsw ls"><div class="sh" onclick="window._tS(this)"><span class
 if (cl.latest.length) {
 cl.latest.forEach(function (dl, i) {
 h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
-if (i === 0) h += '<span class="dm">' + esc(mod.badge) + ' · ' + esc(mod.size) + ' · ' + esc(mod.date) + '</span>';
+var dlMeta = gDLM(dl);
+if (dlMeta) {
+h += dlMeta;
+} else if (i === 0) {
+h += '<span class="dm">' + esc(mod.badge) + ' · ' + esc(mod.size) + ' · ' + esc(mod.date) + '</span>';
+}
 h += '</div>';
 if (dl.desc) h += '<div class="id" id="lD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="lD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
 h += '</div><a class="db" href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
@@ -711,7 +715,9 @@ h += '</div></div></div>';
 if (cl.alternative.length) {
 h += '<div class="dsw"><div class="sh" onclick="window._tS(this)"><span class="st">其他下载方式<span class="sc">(' + cl.alternative.length + ')</span></span><span class="sa2">▾</span></div><div class="sb co"><div class="sbi">';
 cl.alternative.forEach(function (dl, i) {
-h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span></div>';
+h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
+h += gDLM(dl);
+h += '</div>';
 if (dl.desc) h += '<div class="id" id="aD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="aD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
 h += '</div><a class="db" href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
 });
@@ -721,7 +727,9 @@ h += '<div class="sl"><span>更多</span></div>';
 h += '<div class="dsw"><div class="sh" onclick="window._tS(this)"><span class="st">历史版本<span class="sc">' + (cl.history.length ? '(' + cl.history.length + ')' : '') + '</span></span><span class="sa2">▾</span></div><div class="sb co"><div class="sbi">';
 if (cl.history.length) {
 cl.history.forEach(function (dl, i) {
-h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span></div>';
+h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
+h += gDLM(dl);
+h += '</div>';
 if (dl.desc) h += '<div class="id" id="hD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="hD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
 h += '</div><a class="db" href="' + dl.url + '" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
 });
@@ -789,14 +797,8 @@ window._cPT = copyText;
 window._sTM = showToast;
 window._tS = function (el) {
 var b = el.nextElementSibling, a = el.querySelector('.sa2'), c = b.classList.contains('co');
-if (c) {
-b.classList.remove('co');
-b.style.maxHeight = b.scrollHeight + 'px';
-a.classList.add('op');
-} else {
-b.style.maxHeight = b.scrollHeight + 'px';
-requestAnimationFrame(function () { b.classList.add('co'); a.classList.remove('op'); });
-}
+if (c) { b.classList.remove('co'); b.style.maxHeight = b.scrollHeight + 'px'; a.classList.add('op'); }
+else { b.style.maxHeight = b.scrollHeight + 'px'; requestAnimationFrame(function () { b.classList.add('co'); a.classList.remove('op'); }); }
 };
 window._tID = function (el) {
 var tid = el.getAttribute('data-target'), de = document.getElementById(tid);
@@ -1028,9 +1030,6 @@ loadModData('all');
 }
 if (hasRid) { handleUrlParams(); }
 }
-if (document.readyState === 'loading') {
-document.addEventListener('DOMContentLoaded', initPage);
-} else {
-initPage();
-}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initPage); }
+else { initPage(); }
 })();
