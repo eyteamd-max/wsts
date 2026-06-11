@@ -58,143 +58,6 @@
     ]
   },
   {
-    "id": "20260610195211964",
-    "title": "战士皮肤-卡厄思千鹤 PelleasWorks",
-    "category": "skin",
-    "size": "86.88MB",
-    "date": "2026-06-10",
-    "badge": "v0.4.3",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/74438e3351f037fa.png"
-    ],
-    "images": [],
-    "description": "将千鹤作为铁甲战士的角色外观替换\nPS：我感觉这个模组的特效挺有打击感的\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.4.3\n适配范围：v0.103.2~0.107.0\n--\n模组版本：v0.3.0\n适配范围：v0.103.2~0.107.0\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
-    "author": "PelleasWorks",
-    "authorLinks": [
-      {
-        "text": "N网主页",
-        "url": "https://www.nexusmods.com/profile/PelleasWorks"
-      },
-      {
-        "text": "YouTube",
-        "url": "https://youtube.com/@pelleasworks"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "铁甲战士",
-      "外观替换",
-      "PelleasWorks",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "战士皮肤-卡厄思千鹤",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz09b4383c4ebf4678913b91338e562be8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "N网下载",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/914",
-        "category": "alternative",
-        "version": "最新版本",
-        "size": "历史版本",
-        "date": "海外"
-      },
-      {
-        "text": "v0.3.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzc60ab15c7e05487181adbecfc486d4ff?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/74438e3351f037fa.png",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/338cdc3156b5d056.png",
-      "http://shp.qpic.cn/collector/1976464052/ba831617-cd83-436e-9b14-cfb505a1ab2e/0",
-      "http://shp.qpic.cn/collector/1976464052/c6fb5f5b-aecd-4595-9d2b-0d567364248c/0",
-      "http://shp.qpic.cn/collector/1976464052/44037357-dbb1-452d-aa25-845658b7e2b3/0",
-      "http://shp.qpic.cn/collector/1976464052/1d28c781-b2f6-4650-a2f8-19b365ccc6e8/0"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/fd608bdf22176a4a.mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/57849a9a51085365.mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/aeb1142f74c1e16e.mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/141ac5cbbabdd8f7.mp4"
-    ]
-  },
-  {
-    "id": "20260610183945525",
-    "title": "猎人皮肤-卡厄思特莱莎 PelleasWorks",
-    "category": "skin",
-    "size": "32.60MB",
-    "date": "2026-06-10",
-    "badge": "v0.2.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/8d0635ff-f17f-40cc-92e6-13de365954be/0"
-    ],
-    "images": [],
-    "description": "将德蕾莎作为静默猎手的角色外观替换\nPS：我感觉这个模组的特效挺有打击感的\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.2.1\n适配范围：v0.103.2~0.107.0\n--\n模组版本：v0.1.0\n适配范围：v0.103.2~0.107.0\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
-    "author": "PelleasWorks",
-    "authorLinks": [
-      {
-        "text": "N网主页",
-        "url": "https://www.nexusmods.com/profile/PelleasWorks"
-      },
-      {
-        "text": "YouTube",
-        "url": "https://youtube.com/@pelleasworks"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "静默猎手",
-      "猎宝",
-      "外观替换",
-      "PelleasWorks",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "猎人皮肤-卡厄思特莱莎",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz4939b39f60aa428990546b6e443b2343?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "N网下载",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/1052",
-        "category": "alternative",
-        "version": "最新版本",
-        "size": "历史版本",
-        "date": "海外"
-      },
-      {
-        "text": "v0.1.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1243676af8b74bfb820a3d07622e3954?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/8d0635ff-f17f-40cc-92e6-13de365954be/0",
-      "http://shp.qpic.cn/collector/1976464052/25dbbba1-2ad8-443e-94e4-acb392665c3e/0",
-      "http://shp.qpic.cn/collector/1976464052/17e7e7d7-13e9-40a8-bbdd-aaa8181b237d/0",
-      "http://shp.qpic.cn/collector/1976464052/4193cde2-2c6d-4eef-b0a4-b84c51ba3fdf/0",
-      "http://shp.qpic.cn/collector/1976464052/63dedec3-1114-440e-9976-f838dc9ae01d/0",
-      "http://shp.qpic.cn/collector/1976464052/d079fc3e-81bc-4205-8295-13d7266f9ae5/0",
-      "http://shp.qpic.cn/collector/1976464052/119a1375-1685-42e8-a0f9-8acfd5faab0c/0",
-      "http://shp.qpic.cn/collector/1976464052/e902d0a3-4078-4f61-a817-6d1fffe656c6/0"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/65c530a719a8665d.mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4b617fdebf906512.mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4dd3db9c523ce912.mp4",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/5e97d5ee0df82d94.mp4"
-    ]
-  },
-  {
     "id": "20260605010029767",
     "title": "핏짜 的骨妹 - 白毛红帽 异瞳形象",
     "category": "skin",
@@ -496,6 +359,149 @@
     ],
     "previewImages": [],
     "previewVideos": []
+  },
+  {
+    "id": "20260610195211964",
+    "title": "战士皮肤-卡厄思千鹤 PelleasWorks",
+    "category": "skin",
+    "size": "86.88MB",
+    "date": "2026-06-10",
+    "badge": "v0.4.3",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/74438e3351f037fa.png"
+    ],
+    "images": [],
+    "description": "将千鹤作为铁甲战士的角色外观替换\nPS：我感觉这个模组的特效挺有打击感的\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.4.3\n适配范围：v0.103.2~0.107.0\n--\n模组版本：v0.3.0\n适配范围：v0.103.2~0.107.0\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
+    "author": "PelleasWorks",
+    "authorLinks": [
+      {
+        "text": "N网主页",
+        "url": "https://www.nexusmods.com/profile/PelleasWorks"
+      },
+      {
+        "text": "YouTube",
+        "url": "https://youtube.com/@pelleasworks"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "PelleasWorks",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "战士皮肤-卡厄思千鹤",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz09b4383c4ebf4678913b91338e562be8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/914",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "战士皮肤-卡厄思千鹤",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzc60ab15c7e05487181adbecfc486d4ff?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.3.0",
+        "size": "57.70MB",
+        "date": "2026-05-29"
+      }
+    ],
+    "previewImages": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/74438e3351f037fa.png",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/338cdc3156b5d056.png",
+      "http://shp.qpic.cn/collector/1976464052/ba831617-cd83-436e-9b14-cfb505a1ab2e/0",
+      "http://shp.qpic.cn/collector/1976464052/c6fb5f5b-aecd-4595-9d2b-0d567364248c/0",
+      "http://shp.qpic.cn/collector/1976464052/44037357-dbb1-452d-aa25-845658b7e2b3/0",
+      "http://shp.qpic.cn/collector/1976464052/1d28c781-b2f6-4650-a2f8-19b365ccc6e8/0"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/fd608bdf22176a4a.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/57849a9a51085365.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/aeb1142f74c1e16e.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/141ac5cbbabdd8f7.mp4"
+    ]
+  },
+  {
+    "id": "20260610183945525",
+    "title": "猎人皮肤-卡厄思特莱莎 PelleasWorks",
+    "category": "skin",
+    "size": "32.60MB",
+    "date": "2026-06-10",
+    "badge": "v0.2.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/8d0635ff-f17f-40cc-92e6-13de365954be/0"
+    ],
+    "images": [],
+    "description": "将德蕾莎作为静默猎手的角色外观替换\nPS：我感觉这个模组的特效挺有打击感的\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.2.1\n适配范围：v0.103.2~0.107.0\n--\n模组版本：v0.1.0\n适配范围：v0.103.2~0.107.0\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
+    "author": "PelleasWorks",
+    "authorLinks": [
+      {
+        "text": "N网主页",
+        "url": "https://www.nexusmods.com/profile/PelleasWorks"
+      },
+      {
+        "text": "YouTube",
+        "url": "https://youtube.com/@pelleasworks"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "静默猎手",
+      "猎宝",
+      "外观替换",
+      "PelleasWorks",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "猎人皮肤-卡厄思特莱莎",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz4939b39f60aa428990546b6e443b2343?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/1052",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "猎人皮肤-卡厄思特莱莎",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1243676af8b74bfb820a3d07622e3954?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.1.0",
+        "size": "26.06MB",
+        "date": "2026-06-10"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8d0635ff-f17f-40cc-92e6-13de365954be/0",
+      "http://shp.qpic.cn/collector/1976464052/25dbbba1-2ad8-443e-94e4-acb392665c3e/0",
+      "http://shp.qpic.cn/collector/1976464052/17e7e7d7-13e9-40a8-bbdd-aaa8181b237d/0",
+      "http://shp.qpic.cn/collector/1976464052/4193cde2-2c6d-4eef-b0a4-b84c51ba3fdf/0",
+      "http://shp.qpic.cn/collector/1976464052/63dedec3-1114-440e-9976-f838dc9ae01d/0",
+      "http://shp.qpic.cn/collector/1976464052/d079fc3e-81bc-4205-8295-13d7266f9ae5/0",
+      "http://shp.qpic.cn/collector/1976464052/119a1375-1685-42e8-a0f9-8acfd5faab0c/0",
+      "http://shp.qpic.cn/collector/1976464052/e902d0a3-4078-4f61-a817-6d1fffe656c6/0"
+    ],
+    "previewVideos": [
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/65c530a719a8665d.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4b617fdebf906512.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4dd3db9c523ce912.mp4",
+      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/5e97d5ee0df82d94.mp4"
+    ]
   },
   {
     "id": "20260529163707000",
