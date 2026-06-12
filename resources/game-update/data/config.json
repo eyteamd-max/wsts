@@ -3,7 +3,7 @@
   "gameIcon": "https://cdn.example.com/game-icon.png",
   "tutorialUrl": "https://b23.tv/RlzpOlN",
   "githubApiUrl": "https://api.github.com/repos/Ekyso/StS2-Launcher/releases/latest",
-  "githubParsingUrl": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/Ekyso/StS2-Launcher",
+  "githubParsingUrl": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/ModinMobileSTS/Sts2MobileLauncher",
   "fallbackLatest": {
     "version": "v0.1.1",
     "date": "2026-06-08",
