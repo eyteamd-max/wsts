@@ -1,5 +1,56 @@
 [
   {
+    "id": "20260612222915669",
+    "title": "铁甲战士-铁甲樱花少女皮肤-粉毛",
+    "badge": "v1.0.0",
+    "size": "4.12MB",
+    "date": "2026-06-12",
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "gurare",
+      "在线下载"
+    ],
+    "description": "将铁甲战士的外观替换为了“樱花少女”形象",
+    "author": "gurare",
+    "authorLinks": [
+      {
+        "text": "N网|gurare",
+        "url": "https://www.nexusmods.com/profile/gurare"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz0f91c537bc9b4e9fa2d1cfd0c2b74e2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "date": "2026-06-12"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/1186",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/2f3d1248-94a0-440b-8e16-a690a4573635/0",
+      "http://shp.qpic.cn/collector/1976464052/240bd493-0bb1-4b6c-9c88-40d32de7ae8b/0",
+      "http://shp.qpic.cn/collector/1976464052/ea015932-aa73-4c63-8792-725c19e0e582/0",
+      "http://shp.qpic.cn/collector/1976464052/bdab70ec-f6ff-4ddc-b5d2-9e38d8bf8da6/0",
+      "http://shp.qpic.cn/collector/1976464052/546c421b-086d-4d08-bf7b-cc6b8723f75d/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz71994f34958a412dbfa6a80b2484d291?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzcffc62dcaa6b494e9921ae3e32197229?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/2f3d1248-94a0-440b-8e16-a690a4573635/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260612093643849",
     "title": "猎手皮肤-雌化/兽人女猎手-蜥蜴人",
     "badge": "v1.0.0",
@@ -16,7 +67,8 @@
       "梅有根",
       "羽悯SaMa",
       "诘拉Jera",
-      "Reme"
+      "Reme",
+      "在线下载"
     ],
     "description": "替换猎人为蜥蜴猎人，包括模型、卡图等\n对于部分人群可能是成人向，所以打了NSFW",
     "author": "[作者] - 梅有根 [小伙伴] - 羽悯SaMa [小伙伴] - 诘拉Jera [程序设计] - Reme",
