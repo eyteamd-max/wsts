@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.1.3",
+    "date": "2026-06-13",
+    "size": "66.50MB",
+    "description": "- 增加 WebDAV 云存档中心 - 新增本地存档快照 - 改进横屏/平板启动器布局、设置页分区、主页状态卡和 MOD 导入冲突保护。 - 支持高刷，增加高刷新率请求、引入用于查看帧数的性能覆盖层 - 支持设置屏幕自动旋转 - 更多预加载选项，更细的 Android 预加载/缓存控制机制 - 增加 ADB 自动化调试入口，用于安装、推送 payload/compat/MOD、准备启动、采集日志和性能 trace。 - 修复或缓解多处兼容层问题，包括 v0.107.0 MOD importer shim、地图绘制、早期本地化 fallback、InitId guard、延迟高风险 UI mod patch 以及战斗/VFX 预热覆盖。修复了很多导致MOD无法加载的时序问题。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p9dc13fa5dd7549008a8e59f03a9ba99e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
     "version": "v0.1.1",
     "date": "2026-06-08",
     "size": "65.98MB",
