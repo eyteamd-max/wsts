@@ -14,13 +14,27 @@
       "亡灵契约师",
       "故障机器人",
       "语音替换",
-      "Yatima"
+      "牢平",
+      "Yatima2215",
+      "ph0neer"
     ],
-    "description": "这是《杀戮尖塔2》全角色（铁甲战士、静默猎手、故障机器人、亡灵契约师、储君）的娘化语音包模组，包含选人界面语音、局内战斗语音、互动语音及语音字幕等。",
-    "author": "Yatima",
+    "description": "这是《杀戮尖塔2》全角色（铁甲战士、静默猎手、故障机器人、亡灵契约师、储君）的娘化语音包模组，包含选人界面语音、局内战斗语音、互动语音及语音字幕等。\n\n\n制作人员清单 # #\n\n** 牢平 **\n他是 静默猎手、故障机器人、亡灵契约师 娘化语音模组作者，同时也是本整合包的整合者（负责将五个角色的娘化语音统一整合）\n\n** Yatima2215 **\n语音前置框架 \"VoiceModFramework\" 的作者，为其他四个角色的模组运行提供自动语音播放与字幕显示的依赖支持\n\n** ph0neer **\n铁甲战士 语音娘化的模组作者，一位无名的大佬",
+    "author": "[整合] - 牢平 [战士] - ph0neer [框架] - Yatima2215",
     "authorLinks": [
       {
-        "text": "N网|Yatima",
+        "text": "B站|牢平",
+        "url": "https://space.bilibili.com/1243442732"
+      },
+      {
+        "text": "N网|ph0neer",
+        "url": "https://www.nexusmods.com/profile/ph0neer"
+      },
+      {
+        "text": "YouTube|Yatima2215",
+        "url": "https://m.youtube.com/@Yatima-nv9dm"
+      },
+      {
+        "text": "N网|Yatima2215",
         "url": "https://www.nexusmods.com/profile/Yatima2215"
       }
     ],
@@ -28,8 +42,7 @@
       {
         "text": "在线下载",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz586565acc5b14424a8f603e2d4f84f23?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "date": "2026-06-14"
+        "category": "latest"
       }
     ],
     "previewImages": [],
@@ -64,8 +77,7 @@
       {
         "text": "在线下载",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz0f91c537bc9b4e9fa2d1cfd0c2b74e2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "date": "2026-06-12"
+        "category": "latest"
       },
       {
         "text": "N网下载",
@@ -115,23 +127,22 @@
     "authorLinks": [
       {
         "text": "B站|梅有根",
-        "url": "https://b23.tv/VY4pfmU"
+        "url": "https://space.bilibili.com/26026658"
       },
       {
         "text": "B站|羽悯SaMa",
-        "url": "https://b23.tv/gYDDx4k"
+        "url": "https://space.bilibili.com/306411939"
       },
       {
         "text": "B站|诘拉Jera",
-        "url": "https://b23.tv/G8rCBJY"
+        "url": "https://space.bilibili.com/3706961820387832"
       }
     ],
     "downloadLinks": [
       {
         "text": "在线下载",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1ee6624548cd4e478086379c482862d4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "date": "2026-06-12"
+        "category": "latest"
       }
     ],
     "previewImages": [
@@ -166,8 +177,8 @@
     "author": "荷拾叁",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/efSUWup"
+        "text": "B站|荷拾叁",
+        "url": "https://space.bilibili.com/1989739344"
       }
     ],
     "tags": [
@@ -224,11 +235,11 @@
     "author": "PelleasWorks",
     "authorLinks": [
       {
-        "text": "N网主页",
+        "text": "N网|PelleasWorks",
         "url": "https://www.nexusmods.com/profile/PelleasWorks"
       },
       {
-        "text": "YouTube",
+        "text": "YouTube|PelleasWorks",
         "url": "https://youtube.com/@pelleasworks"
       }
     ],
@@ -294,11 +305,11 @@
     "author": "PelleasWorks",
     "authorLinks": [
       {
-        "text": "N网主页",
+        "text": "N网|PelleasWorks",
         "url": "https://www.nexusmods.com/profile/PelleasWorks"
       },
       {
-        "text": "YouTube",
+        "text": "YouTube|PelleasWorks",
         "url": "https://youtube.com/@pelleasworks"
       }
     ],
@@ -367,11 +378,11 @@
     "author": "핏짜",
     "authorLinks": [
       {
-        "text": "FANBOX",
+        "text": "FANBOX|핏짜",
         "url": "https://piszzzza.fanbox.cc/"
       },
       {
-        "text": "Twitter(X)",
+        "text": "X|핏짜",
         "url": "https://x.com/piszzzza"
       }
     ],
@@ -423,8 +434,8 @@
     "author": "雪丶我",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/IiLTWxV"
+        "text": "B站|雪丶我",
+        "url": "https://space.bilibili.com/357877819"
       }
     ],
     "tags": [
@@ -466,11 +477,11 @@
     "author": "iKenster",
     "authorLinks": [
       {
-        "text": "N网主页",
+        "text": "N网|iKenster",
         "url": "https://www.nexusmods.com/profile/iKenster"
       },
       {
-        "text": "YouTube",
+        "text": "YouTube|iKenster",
         "url": "https://youtube.com/@ikenster-q3n"
       }
     ],
@@ -518,8 +529,8 @@
     "author": "命莲寺上单",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/2LaJNWm"
+        "text": "B站|命莲寺上单",
+        "url": "https://space.bilibili.com/123885777"
       }
     ],
     "tags": [
@@ -572,14 +583,14 @@
     ],
     "images": [],
     "description": "这是 anaertailin（A大）发布的亡灵契约师角色替换 MOD，详情请看预览视频和预览图片\n\nPS：\n此改版目前同步的是 A大 的《娘化骨妹》6/1最新版（暂时）。此改版在选人画面和局内画面中新增了 A大 未加入的小头像，并将其替换为“选人界面小图版”的形象喵",
-    "author": "anaertailin（A大）",
+    "author": "anaertailin",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/TSlqNJh"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       }
     ],
@@ -627,7 +638,7 @@
     "author": "erasels",
     "authorLinks": [
       {
-        "text": "Github主页",
+        "text": "Github|erasels",
         "url": "https://github.com/erasels"
       }
     ],
@@ -670,7 +681,7 @@
     "author": "Yatima2215",
     "authorLinks": [
       {
-        "text": "N网主页",
+        "text": "N网|Yatima2215",
         "url": "https://www.nexusmods.com/profile/Yatima2215"
       }
     ],
@@ -709,15 +720,15 @@
     "author": "白宵燿夜",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/g8r43SX"
+        "text": "B站|白宵燿夜",
+        "url": "https://space.bilibili.com/1422761554"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|白宵燿夜",
         "url": "https://www.ifdian.net/a/WIZ_Shirayoi_Kaguya?tab=feed&utm_source=copylink&utm_medium=link"
       },
       {
-        "text": "Twitter(X)",
+        "text": "X|白宵燿夜",
         "url": "https://x.com/shirayoikaguya"
       }
     ],
@@ -763,19 +774,19 @@
     ],
     "images": [],
     "description": "超级炫酷的瓦库动态立绘替换！原版瓦库画得跟奶龙似的，堂堂恶魔怎能这么难看？本模组重绘了动态立绘，让瓦库终于有个恶魔该有的样子了。\n\n\n制作：\n画师＃聖银十字-墨殒辰星\n代码man＃NotBear_As\n骨骼动画＃mmmmm基因\n\n\nPS：\n模组里还藏了个小细节“恶魔不能同时眨眼”",
-    "author": "[画师] - 聖银十字-墨殒辰星 [代码] - NotBear_As [骨骼动画] - mmmmm基因",
+    "author": "[画师] - 聖银十字-墨殒辰星 [代码] - NotBear_As [动画] - mmmmm基因",
     "authorLinks": [
       {
         "text": "B站|聖银十字-墨殒辰星",
-        "url": "https://b23.tv/nQET0Jt"
+        "url": "https://space.bilibili.com/310115203"
       },
       {
         "text": "B站|NotBear_As",
-        "url": "https://b23.tv/UAjVkzT"
+        "url": "https://space.bilibili.com/2096856761"
       },
       {
         "text": "B站|mmmmm基因",
-        "url": "https://b23.tv/ytVlztJ"
+        "url": "https://space.bilibili.com/51792041"
       }
     ],
     "tags": [
@@ -819,8 +830,12 @@
     "author": "鸣鸟乌与",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/jrKcFCK"
+        "text": "B站|鸣鸟乌与",
+        "url": "https://space.bilibili.com/116481932"
+      },
+      {
+        "text": "pixiv|鸣鸟乌与",
+        "url": "https://www.pixiv.net/users/41107742"
       }
     ],
     "tags": [
@@ -860,11 +875,11 @@
     "author": "anaertailin",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/ppxalX0"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       }
     ],
@@ -907,8 +922,8 @@
     "author": "Kiteseven",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/iptZUTM"
+        "text": "B站|Kiteseven",
+        "url": "https://space.bilibili.com/162927299"
       }
     ],
     "tags": [
@@ -951,8 +966,8 @@
     "author": "Kiteseven",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/iptZUTM"
+        "text": "B站|Kiteseven",
+        "url": "https://space.bilibili.com/162927299"
       }
     ],
     "tags": [
@@ -997,8 +1012,8 @@
     "author": "锭_grayingot",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/0G8IbgZ"
+        "text": "B站|锭_grayingot",
+        "url": "https://space.bilibili.com/1686072498"
       }
     ],
     "tags": [
@@ -1040,8 +1055,8 @@
     "author": "锭_grayingot",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/0G8IbgZ"
+        "text": "B站|锭_grayingot",
+        "url": "https://space.bilibili.com/1686072498"
       }
     ],
     "tags": [
@@ -1079,20 +1094,20 @@
       "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0"
     ],
     "images": [],
-    "description": "本模组将《杀戮尖塔1》中的观者角色重新加入二代，并且 角色/美化/卡面 一体，无需额外安装观者的素体人物MOD。\n\n\nCredits：\n观者MOD本体：Boninall\n卡面美化：失地骑士Hatk\n人物美化形象：anaertailin（A大）",
-    "author": "Boninall，失地骑士Hatk，anaertailin",
+    "description": "本模组将《杀戮尖塔1》中的观者角色重新加入二代，并且 角色/美化/卡面 一体，无需额外安装观者的素体人物MOD。\n\n\nCredits：\n观者MOD本体：Boninall\n卡面美化：失地骑士Hatk\n观者美化形象：anaertailin（A大）",
+    "author": "[模组本体] - Boninall [卡面美化] - 失地骑士Hatk [观者美化] - anaertailin",
     "authorLinks": [
       {
-        "text": "B站｜Boninall",
-        "url": "https://b23.tv/u4sGcFl"
+        "text": "B站|Boninall",
+        "url": "https://space.bilibili.com/11794571"
       },
       {
-        "text": "B站｜anaertailin",
-        "url": "https://b23.tv/ppxalX0"
+        "text": "B站|失地骑士Hatk",
+        "url": "https://space.bilibili.com/3546631035161405"
       },
       {
-        "text": "B站｜失地骑士Hatk",
-        "url": "https://b23.tv/Jj3rMqi"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       }
     ],
     "tags": [
@@ -1141,8 +1156,8 @@
     "author": "学习miku",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/AClcVZu"
+        "text": "B站|学习miku",
+        "url": "https://space.bilibili.com/3546383439104927"
       }
     ],
     "tags": [
@@ -1188,8 +1203,8 @@
     "author": "嫦娥未曾看见",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/oNS9OoA"
+        "text": "B站|嫦娥未曾看见",
+        "url": "https://space.bilibili.com/18711478"
       }
     ],
     "tags": [
@@ -1237,8 +1252,8 @@
     "author": "灯火橘Channel",
     "authorLinks": [
       {
-        "text": "B站｜灯火橘Channel",
-        "url": "https://b23.tv/WxskPAP"
+        "text": "B站|灯火橘Channel",
+        "url": "https://space.bilibili.com/32256434"
       }
     ],
     "tags": [
@@ -1309,8 +1324,8 @@
     "author": "Peslanna",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/h35srrd"
+        "text": "B站|Peslanna",
+        "url": "https://space.bilibili.com/218889846"
       }
     ],
     "tags": [
@@ -1369,7 +1384,7 @@
     "authorLinks": [
       {
         "text": "B站|Xpp__",
-        "url": "https://b23.tv/cRuTAVP"
+        "url": "https://space.bilibili.com/38777496"
       },
       {
         "text": "爱发电|Xpp__",
@@ -1416,19 +1431,19 @@
     ],
     "images": [],
     "description": "卡面由 AI 加 PS 制作，形象为 @anaertailin 老师的猎宝。卡面 MOD 技术支持为 @惜梦yy。该模组当前版本仅美化了猎宝的 35 张白卡，后续如有更新，本帖会持续跟进。您也可在群内 @壹个屑猫猫 提醒我更新",
-    "author": "[发布] - 羽饰panacheㅤ[形象] - anaertailin（A大）ㅤ[mod支持] - 惜梦yy",
+    "author": "[发布] - 羽饰panacheㅤ [形象] - anaertailin [mod支持] - 惜梦yy",
     "authorLinks": [
       {
-        "text": "B站｜羽饰panache",
-        "url": "https://b23.tv/wtieG9C"
+        "text": "B站|羽饰panacheㅤ",
+        "url": "https://space.bilibili.com/247515288"
       },
       {
-        "text": "B站｜anaertailin（A大）",
-        "url": "https://b23.tv/ppxalX0"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       },
       {
-        "text": "B站｜惜梦yy",
-        "url": "https://b23.tv/OyyLFnn"
+        "text": "B站|惜梦yy",
+        "url": "https://space.bilibili.com/387272014"
       }
     ],
     "tags": [
@@ -1468,19 +1483,19 @@
     ],
     "images": [],
     "description": "战士与鸡煲娘化卡面来自失地骑士Hatk老师，卡面的人物形象来自于anaertailin（A大）老师，喜欢的话记得去B站和爱发电支持。\n\nPS：预览图只展示了部分卡面\n此MOD将战士与鸡煲的娘化卡面合二为一了，没办法和其他的战士 or 鸡煲的卡面模组兼容…",
-    "author": "[发布] - 羽饰panache，[制作] - 失地骑士Hatk，[形象] - anaertailin（A大）",
+    "author": "[发布] - 羽饰panache， [制作] - 失地骑士Hatk [形象] - anaertailin",
     "authorLinks": [
       {
-        "text": "B站｜羽饰panache",
-        "url": "https://b23.tv/wtieG9C"
+        "text": "B站|羽饰panache，",
+        "url": "https://space.bilibili.com/247515288"
       },
       {
-        "text": "B站｜失地骑士Hatk",
-        "url": "https://b23.tv/onEtS1f"
+        "text": "B站|失地骑士Hatk",
+        "url": "https://space.bilibili.com/3546631035161405"
       },
       {
-        "text": "B站｜anaertailin（A大）",
-        "url": "https://b23.tv/KGeej7G"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       }
     ],
     "tags": [
@@ -1523,14 +1538,14 @@
     ],
     "images": [],
     "description": "本MOD是故障机器人的外观替换模组，原为A大的一代模组，现已简单移植到塔Ⅱ版本。最新移植优化版由热心网友Kira完成，系SFW鸡煲修正版 Ver1.0，此改版最后编辑于2026年4月19日…\n\n\n---\n\n\n改版调整：\n1.鸡煲拥有了简单的攻击动画\n2.细微调整了人物的大小比例\n3.修复了遗物错位的问题\n4.鸡煲在火堆处新增了插图\n5.添加了死亡动画，不再是原地待机了\n\n\n---\n\nPS：\n我发现 _冬雪寒 网盘内分享的\"A大鸡煲\"是早期移植的未优化版本，缺少攻击动画、死亡动画和营火人物贴图，且兼容性很差。因此，猫猫自行上传了最新的二代移植优化版，并提供了在线下载线路",
-    "author": "anaertailin（A大）",
+    "author": "anaertailin",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/GE9akQ7"
+        "text": "bilibili|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       }
     ],
@@ -1687,7 +1702,7 @@
     "author": "LunchShark (점심상어)",
     "authorLinks": [
       {
-        "text": "Twitter(X)",
+        "text": "X|LunchShark (점심상어)",
         "url": "https://x.com/lunchshark01"
       }
     ],
@@ -1731,8 +1746,8 @@
     "author": "千导院枫",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/TEdS6XL"
+        "text": "B站|千导院枫",
+        "url": "https://space.bilibili.com/10938519"
       }
     ],
     "tags": [
@@ -1777,8 +1792,8 @@
     "author": "阿塔_Official",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/fHSySTD"
+        "text": "B站|阿塔_Official",
+        "url": "https://space.bilibili.com/40706073"
       }
     ],
     "tags": [
@@ -1819,12 +1834,12 @@
       "http://shp.qpic.cn/collector/1976464052/eba5797e-3ffb-44b4-8895-a708b5569bcc/0"
     ],
     "images": [],
-    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→铁甲战士 / \n❸→战士皮肤-加丝敏.zip\n\n\nMOD介绍：\n\n本mod采用了﻿﻿﻿@比逗逗丶老师的模板+部分修改，替换了铁甲战士大部分原版动画素材\n食用方法：将文件解压进杀戮尖塔2本体文件的mods文件夹中，如果没有mods文件夹手动新建一个mods即可\n\n注意事项：\n1.如果是第一次安装mod的玩家注意有mod的存档与正常存档并不同步，需要手动覆盖存档，具体解决方法可在b站搜索\n2.安装了突破多人联机上限的mod可能会导致商店的动画出现问题。\n3.如果有其他采用﻿﻿@比逗逗丶老师 模板的mod，暂时不确定会不会有冲突出现，请多留意\n4.出现bug请在评论区留言反馈，会尽可能在后续版本中更新修复",
+    "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→铁甲战士 / \n❸→战士皮肤-加丝敏.zip\n\n\nMOD介绍：\n\n本mod采用了﻿﻿﻿@比逗逗丶老师的模板+部分修改，替换了铁甲战士大部分原版动画素材\n食用方法：将文件解压进杀戮尖塔2本体文件的mods文件夹中，如果没有mods文件夹手动新建一个mods即可\n\n注意事项：\n1.如果是第一次安装mod的玩家注意有mod的存档与正常存档并不同步，需要手动覆盖存档，具体解决方法可在b站搜索\n2.安装了突破多人联机上限的mod可能会导致商店的动画出现问题。\n3.如果有其他采用﻿﻿@比逗逗丶老师 模板的mod，暂时不确定会不会有冲突出现，请多留意\n4.出现bug请在B站评论区留言反馈，会尽可能在后续版本中更新修复",
     "author": "浅井猴猴_Saru",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/0RZOWRF"
+        "text": "B站|浅井猴猴_Saru",
+        "url": "https://space.bilibili.com/2848073"
       }
     ],
     "tags": [
@@ -1877,7 +1892,7 @@
     "author": "Aduare_rp",
     "authorLinks": [
       {
-        "text": "Twitter(X)",
+        "text": "X|Aduare_rp",
         "url": "https://x.com/Aduare_rp"
       }
     ],
@@ -1924,7 +1939,7 @@
     "author": "[作者] - Seic_Oh [作者] - Dodobird",
     "authorLinks": [
       {
-        "text": "Seic_Oh|Seic_Oh",
+        "text": "X|Seic_Oh",
         "url": "https://x.com/Seic_Oh"
       },
       {
@@ -1974,14 +1989,14 @@
     ],
     "images": [],
     "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→ / 储君\n❸→储君皮肤-A大(新增选人头像小图).zip\n\n---\n\nMOD介绍：\n\n此改版目前同步的是 A大 的《STS2储君抢先体验版》4/22最新版（暂时）。此改版在选人画面和局内画面中新增了 A大 未加入的小头像，并将其替换为“选人界面小图版”的形象。",
-    "author": "anaertailin（A大）",
+    "author": "anaertailin",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/TSlqNJh"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       }
     ],
@@ -2027,7 +2042,7 @@
     "authorLinks": [
       {
         "text": "bilibili|anaertailin",
-        "url": "https://b23.tv/TSlqNJh"
+        "url": "https://space.bilibili.com/2264658"
       },
       {
         "text": "爱发电|anaertailin",
@@ -2079,14 +2094,14 @@
     ],
     "images": [],
     "description": "该MOD的夸克网盘路径：\n❶→角色皮肤 MOD/\n❷→静默猎手/ \n❸→猎手皮肤-A大猎宝改选人小图小头像版.zip\n\n\nMOD介绍：\n\n此改版目前同步的是 A大 的《STS2劣人0.8,增加选人界面动画》最新版（暂时）。此改版在选人画面和局内画面中新增了 A大 未加入的小头像，并将其替换为B站UP主“蛞蝓仔仔”所绘制的\"小猎宝抓蛇咬\"形象。",
-    "author": "[作者] - anaertailin（A大） [小头像画师] - 蛞蝓仔仔",
+    "author": "[作者] - anaertailin [小头像画师] - 蛞蝓仔仔",
     "authorLinks": [
       {
-        "text": "bilibili|anaertailin（A大）",
-        "url": "https://b23.tv/GE9akQ7"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/https://space.bilibili.com/2264658"
       },
       {
-        "text": "爱发电|anaertailin（A大）",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       },
       {
@@ -2134,14 +2149,14 @@
     ],
     "images": [],
     "description": "该MOD的夸克网盘路径：\n❶→角色皮肤MOD / \n❷→铁甲战士 / \n❸→战士皮肤-A大（修复BUG）.zip\n\n---\n\nMOD介绍：\n\n此为 anaertailin（A大）发布的铁甲战士外观替换 MOD，更新于 4 月 22 日，人物替换为驼鹿。选人界面无小头像但有大图，篝火与商人处均配有人物插图，攻击与死亡动画质量较高",
-    "author": "anaertailin（A大）",
+    "author": "anaertailin",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/TSlqNJh"
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/https://space.bilibili.com/2264658"
       },
       {
-        "text": "爱发电",
+        "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
       }
     ],
@@ -2189,8 +2204,8 @@
     "author": "[作者] - 独角渡鸦 [形象] - 断茎之花",
     "authorLinks": [
       {
-        "text": "bilibili|独角渡鸦",
-        "url": "https://b23.tv/RoLbGXy"
+        "text": "B站|独角渡鸦",
+        "url": "https://space.bilibili.com/248340287"
       }
     ],
     "tags": [
@@ -2236,8 +2251,8 @@
     "author": "浅井猴猴_Saru",
     "authorLinks": [
       {
-        "text": "bilibili",
-        "url": "https://b23.tv/RiJUPEA"
+        "text": "B站|浅井猴猴_Saru",
+        "url": "https://space.bilibili.com/2848073"
       }
     ],
     "tags": [
