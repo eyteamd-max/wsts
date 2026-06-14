@@ -1,5 +1,45 @@
 [
   {
+    "id": "20260614133212510",
+    "title": "语音包-全角色娘化语音-(日语)",
+    "badge": "v1.0.0",
+    "size": "12.07MB",
+    "date": "2026-06-14",
+    "tags": [
+      "SFW",
+      "语音包",
+      "铁甲战士",
+      "静默猎手",
+      "储君",
+      "亡灵契约师",
+      "故障机器人",
+      "语音替换",
+      "Yatima"
+    ],
+    "description": "这是《杀戮尖塔2》全角色（铁甲战士、静默猎手、故障机器人、亡灵契约师、储君）的娘化语音包模组，包含选人界面语音、局内战斗语音、互动语音及语音字幕等。",
+    "author": "Yatima",
+    "authorLinks": [
+      {
+        "text": "N网|Yatima",
+        "url": "https://www.nexusmods.com/profile/Yatima2215"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz586565acc5b14424a8f603e2d4f84f23?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "date": "2026-06-14"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1gdJw6GEG3/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/9ef9abb6-27ca-4f03-b625-7b31fd36f616/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260612222915669",
     "title": "铁甲战士-铁甲樱花少女皮肤-粉毛",
     "badge": "v1.0.0",
