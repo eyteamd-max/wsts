@@ -1,5 +1,59 @@
 [
   {
+    "id": "20260616172608030",
+    "title": "当暗黑地牢老祖乱入杀戮尖塔2",
+    "badge": "v0.1",
+    "size": "33.93MB",
+    "date": "2026-06-16",
+    "tags": [
+      "SFW",
+      "语音",
+      "字幕",
+      "旁白",
+      "暗黑地牢",
+      "蛋炒炒炒炒饭",
+      "在线下载"
+    ],
+    "description": "情况还真是急转直下啊，情况还真是急转直下啊\n\n模组介绍：\n\n本模组主要为 \" 蛋炒炒炒炒饭 \" 自用，包含一些想到啥就加啥的功能，未来更新内容不确定。\n\n当前功能：\n简约伤害预测：更融入原版界面的伤害数值显示\n跳过启动Logo：快速进入游戏\n\n随机战斗骚话：战斗中随机出现的玩家自制台词\n\n暗黑地牢旁白：添加了《暗黑地牢》老祖的经典台词（语音）\n\n开局选牌预定：游戏开始时选择几张牌，将在后续几场战斗中必定掉落\n\n键盘操作支持：可使用键盘进行游戏操作\n\n注： 暗黑地牢旁白为自制替换，版权归 Red Hook Studios 所有，侵删。",
+    "author": "蛋炒炒炒炒饭",
+    "authorLinks": [
+      {
+        "text": "B站|蛋炒炒炒炒饭",
+        "url": "https://space.bilibili.com/10558107"
+      },
+      {
+        "text": "N网|蛋炒炒炒炒饭",
+        "url": "https://www.nexusmods.com/profile/rohmbauer"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5519918f078541238d654847312a3f77?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/1119",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/85f78397-ed08-4636-93f4-acb620ce881d/0",
+      "http://shp.qpic.cn/collector/1976464052/8664e55b-ef1f-4e0b-acc9-fb8fc9918650/0",
+      "http://shp.qpic.cn/collector/1976464052/b371111b-f0ee-4019-b05b-86f4edbe2616/0",
+      "http://shp.qpic.cn/collector/1976464052/077ae821-585e-4c61-8dfb-829b3413a165/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1ph726JE17/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/ff9b783f-c40d-4181-b3f7-d4418f94ee11/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260615194848250",
     "title": "Boss娘化-门扉缔造者の涩观者形象",
     "badge": "v0.0.1",
