@@ -1,5 +1,83 @@
 [
   {
+    "id": "20260617084200383",
+    "title": "观者MOD-自带美化版- ?! 观观 ?!",
+    "category": "skin",
+    "size": "59.47MB",
+    "date": "2026-06-17",
+    "badge": "v0.6.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0"
+    ],
+    "images": [],
+    "description": "本模组将《杀戮尖塔1》中的观者角色重新加入二代，并且 角色/美化/卡面 一体，无需额外安装观者的素体人物MOD\n\n\n--\n模组兼容测试[仅供参考]：\n--\n模组版本：v0.6.1正式版\n适配范围：0.103.2 ~ 0.103.3\n--\n模组版本：v0.6.1测试版\n适配范围：0.106.1 ~ 0.107.0\n--\n模组版本：v0.5.20\n适配范围：0.103.2 ~ 0.103.3\n--\n注意：以上适配范围仅供参考\n真正的兼容范围需您自行测试",
+    "author": "[模组本体] - Boninall [卡面美化] - 失地骑士Hatk [观者美化] - anaertailin",
+    "authorLinks": [
+      {
+        "text": "B站|Boninall",
+        "url": "https://space.bilibili.com/11794571"
+      },
+      {
+        "text": "B站|失地骑士Hatk",
+        "url": "https://space.bilibili.com/3546631035161405"
+      },
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "观者",
+      "新增角色",
+      "外观替换",
+      "失地骑士Hatk",
+      "anaertailin",
+      "Boninall",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "正式版 - 0.103.2 ~ 0.103.3",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p819d3264246b4f91ab1fa6b36836890a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.6.1",
+        "size": "59.47MB",
+        "date": "2026-06-17"
+      },
+      {
+        "text": "测试版 - 0.106.1 ~ 0.107.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p343e7f332db44300bc00dc89b50641e2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.6.1",
+        "size": "59.47MB",
+        "date": "2026-06-17"
+      },
+      {
+        "text": "观者MOD-自带美化版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414f934a75585743eda3e0317556293f6a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.5.20",
+        "size": "56.75MB",
+        "date": "2026-05-26"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0",
+      "http://shp.qpic.cn/collector/1976464052/98f335ff-a201-45b5-b389-ac22bb9177f6/0",
+      "http://shp.qpic.cn/collector/1976464052/220004d6-6b2a-47a3-a86e-6db29fa1312c/0",
+      "http://shp.qpic.cn/collector/1976464052/e92c20cb-7318-40a0-a78a-aae6e74df2a9/0",
+      "http://shp.qpic.cn/collector/1976464052/d99e5300-2f83-4bf5-a9fa-f59bbc7855a2/0",
+      "http://shp.qpic.cn/collector/1976464052/5feeea85-1f75-4c2e-b3a1-16af511a82d7/0",
+      "http://shp.qpic.cn/collector/1976464052/2663632c-23e8-4989-ab26-c0d27a95d1cd/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1B3DMByEi1/&type=mp4"
+    ]
+  },
+  {
     "id": "20260616172608030",
     "title": "当暗黑地牢老祖乱入杀戮尖塔2",
     "badge": "v0.1",
@@ -1384,64 +1462,6 @@
     ],
     "previewVideos": [
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1VmRiBbEb8/&type=mp4"
-    ]
-  },
-  {
-    "id": "20260526134130714",
-    "title": "观者MOD-自带美化版-103正式版",
-    "category": "skin",
-    "size": "56.75MB",
-    "date": "2026-05-26",
-    "badge": "v0.5.20",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0"
-    ],
-    "images": [],
-    "description": "本模组将《杀戮尖塔1》中的观者角色重新加入二代，并且 角色/美化/卡面 一体，无需额外安装观者的素体人物MOD。\n\n\nCredits：\n观者MOD本体：Boninall\n卡面美化：失地骑士Hatk\n观者美化形象：anaertailin（A大）",
-    "author": "[模组本体] - Boninall [卡面美化] - 失地骑士Hatk [观者美化] - anaertailin",
-    "authorLinks": [
-      {
-        "text": "B站|Boninall",
-        "url": "https://space.bilibili.com/11794571"
-      },
-      {
-        "text": "B站|失地骑士Hatk",
-        "url": "https://space.bilibili.com/3546631035161405"
-      },
-      {
-        "text": "B站|anaertailin",
-        "url": "https://space.bilibili.com/2264658"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "观者",
-      "新增角色",
-      "外观替换",
-      "失地骑士Hatk",
-      "anaertailin",
-      "Boninall",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414f934a75585743eda3e0317556293f6a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0",
-      "http://shp.qpic.cn/collector/1976464052/98f335ff-a201-45b5-b389-ac22bb9177f6/0",
-      "http://shp.qpic.cn/collector/1976464052/220004d6-6b2a-47a3-a86e-6db29fa1312c/0",
-      "http://shp.qpic.cn/collector/1976464052/e92c20cb-7318-40a0-a78a-aae6e74df2a9/0",
-      "http://shp.qpic.cn/collector/1976464052/d99e5300-2f83-4bf5-a9fa-f59bbc7855a2/0",
-      "http://shp.qpic.cn/collector/1976464052/5feeea85-1f75-4c2e-b3a1-16af511a82d7/0",
-      "http://shp.qpic.cn/collector/1976464052/2663632c-23e8-4989-ab26-c0d27a95d1cd/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1B3DMByEi1/&type=mp4"
     ]
   },
   {
