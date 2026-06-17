@@ -1,5 +1,113 @@
 [
   {
+    "id": "20260617200312137",
+    "rid": "98011169",
+    "title": "翠減の储君皮肤-优质｜踩脚袜｜雌小鬼",
+    "badge": "v0.1",
+    "size": "26.61MB",
+    "date": "2026-06-17",
+    "tags": [
+      "SFW",
+      "储君",
+      "外观替换",
+      "踩脚袜",
+      "雌小鬼",
+      "翠減",
+      "在线下载"
+    ],
+    "description": "翠減大佬制作的一款储君娘化MOD，可爱高质",
+    "author": "翠減",
+    "authorLinks": [
+      {
+        "text": "B站|翠減",
+        "url": "https://space.bilibili.com/330041887"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p3d868902aa334aed81edc0ffcfe48e79?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/0a4f4918-ff2a-4f9b-a415-044ab4724841/0",
+      "http://shp.qpic.cn/collector/1976464052/9d8de922-a32e-4927-924a-c866c68d5bdb/0",
+      "http://shp.qpic.cn/collector/1976464052/a7f36d76-ceb9-4f06-862f-3b70c21f309a/0",
+      "http://shp.qpic.cn/collector/1976464052/90990610-73a7-4a41-b753-0429750d8471/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p689285b36ff34838bb1c58fe5b1ec6db?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p4d93fff3fa794b05b3093b467c2a1ba6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p953bbc6ac700413b87a6bd6554dcae27?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f9b3cf1f-6ff5-4c93-ad65-19f78e8b335f/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260617234450646",
+    "title": "A大储君-脱鞋版【最新修复】Kira",
+    "category": "skin",
+    "size": "9.26MB",
+    "date": "2026-06-17",
+    "badge": "v2.2.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/7f3f550a-7388-464c-9d41-9fd0ae3e6ce5/0",
+    "images": [],
+    "description": "本改版目前暂同步至 A大 的《STS2储君抢先体验版》4/22最新版。在选人界面与局内画面中，本作补充了 A大 未加入的小头像，并统一替换为A大的“选人界面小图版”形象\n\n该改版由大佬“Kira”制作，他不仅修复了此模组的诸多Bug，还额外制作了储君的踩脚袜与脱鞋差分。（信仰Kira教...K门...）\n\n\nKira大佬的更新说明：\n\n26.4.18\n新增猎宝遗物图，修改了储君原遗物缺角的问题\n\n26.4.17\n新版本大门来咯~希望大家和我开开心心赤这一坨~\n\n修改了遗物图片错位的问题，请在排序界面将本mod放在列表最下方，如果你们有a大鸡煲mod，这样鸡煲的图标错位问题也会修复\n\n有人说单用这个mod鸡煲的图片图标也会被修改，这是肯定的，因为它是一整套图集，如果修改成一个储君专用的，那么同时用鸡煲和储君的就会受影响，只能说二者不可兼得吧~\n\n\n26.4.5 更新\n选人界面也修改了脱鞋，虽然会被选人框遮住大部分，但也算把整个mod修改完整了；\n\n全部动画重新导出，解决接缝问题；\n\n选人界面部分动画帧循环错误和部件断裂修复；\n\n\n26.3.31\n臭脚储君来咯~\n\n本来想连选人界面的动画也一起改了，但发现选人框把脚的大部分都遮住了，所以晚点再说吧，先让大家能玩到。\n\n如有问题请联系我 2376965486\n\n第一次捣鼓godot导出，非常感谢 @诗走 大佬的指导！",
+    "author": "[作者] - anaertailin [后续优化] - Kira",
+    "authorLinks": [
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
+      },
+      {
+        "text": "爱发电|anaertailin",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      },
+      {
+        "text": "QQ|Kira",
+        "url": "https://tool.gljlw.com/qq/?qq=2376965486"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "储君",
+      "外观替换",
+      "anaertailin",
+      "Kira",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p910ede26f9f747848121585a2be583ce?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "无修正_选人小图小头像版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p1a720456d54b450dbe6e83843f732129?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.0.1",
+        "size": "9.07MB",
+        "date": "2026-05-21"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/62711fef-1e82-4f4e-b5b6-cc3c4e06759d/0",
+      "http://shp.qpic.cn/collector/1976464052/704e22e9-6e65-493a-910b-09168b699fea/0",
+      "http://shp.qpic.cn/collector/1976464052/9668f329-5600-484a-ba2f-023d6600f5c6/0",
+      "http://shp.qpic.cn/collector/1976464052/2106685c-1824-46a2-9678-fd18f23e9802/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe2cc5998e87a47aa8865ad976e19a9e0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe61c4518a6ef4b8188d46b6a3f118ef9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pf83f5ff8ef9f42549fe01fb9c61a3d05?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "rid": "73533150"
+  },
+  {
     "id": "20260617084200383",
     "title": "观者MOD-自带美化版- ?! 观观 ?!",
     "category": "skin",
@@ -1898,15 +2006,19 @@
     ],
     "images": [],
     "description": "本MOD是故障机器人的外观替换模组，原为A大的一代模组，现已简单移植到塔Ⅱ版本。最新移植优化版由热心网友Kira完成，系SFW鸡煲修正版 Ver1.0，此改版最后编辑于2026年4月19日…\n\n\n---\n\n\n改版调整：\n1.鸡煲拥有了简单的攻击动画\n2.细微调整了人物的大小比例\n3.修复了遗物错位的问题\n4.鸡煲在火堆处新增了插图\n5.添加了死亡动画，不再是原地待机了\n\n\n---\n\nPS：\n我发现 _冬雪寒 网盘内分享的\"A大鸡煲\"是早期移植的未优化版本，缺少攻击动画、死亡动画和营火人物贴图，且兼容性很差。因此，猫猫自行上传了最新的二代移植优化版，并提供了在线下载线路",
-    "author": "anaertailin",
+    "author": "[作者] - anaertailin [后续优化] - Kira",
     "authorLinks": [
       {
-        "text": "bilibili|anaertailin",
+        "text": "B站|anaertailin",
         "url": "https://space.bilibili.com/2264658"
       },
       {
         "text": "爱发电|anaertailin",
         "url": "https://www.ifdian.net/a/anaertailin"
+      },
+      {
+        "text": "QQ|Kira",
+        "url": "https://tool.gljlw.com/qq/?qq=2376965486"
       }
     ],
     "tags": [
@@ -2347,57 +2459,6 @@
       "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/SaveTwitter.Net_HE4jS3XbIAA_bnI_(gif).mp4"
     ],
     "rid": "36960890"
-  },
-  {
-    "id": "20260521143157376",
-    "title": "储君皮肤-A大储君改选人小图小头像版",
-    "category": "skin",
-    "size": "9.07MB",
-    "date": "2026-05-21",
-    "badge": "v0.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/4440c227378cfe6a.jpg"
-    ],
-    "images": [],
-    "description": "此改版目前同步的是 A大 的《STS2储君抢先体验版》4/22最新版（暂时）。此改版在选人画面和局内画面中新增了 A大 未加入的小头像，并将其替换为“选人界面小图版”的形象。",
-    "author": "anaertailin",
-    "authorLinks": [
-      {
-        "text": "B站|anaertailin",
-        "url": "https://space.bilibili.com/2264658"
-      },
-      {
-        "text": "爱发电|anaertailin",
-        "url": "https://www.ifdian.net/a/anaertailin"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "储君",
-      "外观替换",
-      "anaertailin",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p1a720456d54b450dbe6e83843f732129?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      }
-    ],
-    "previewImages": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/f5759c20c303ac69.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/961990dc6c33372e.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/90338a468ec2ee63.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/80b62ee41d405db4.jpg",
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/3946075ef2539a5f.jpg"
-    ],
-    "previewVideos": [
-      "https://cdn.jsdmirror.com/gh/eyteamd-max/HTML-full-linked-html-/dbb156a1ffa016a5.mp4"
-    ],
-    "rid": "61469666"
   },
   {
     "id": "20260521130656862",
