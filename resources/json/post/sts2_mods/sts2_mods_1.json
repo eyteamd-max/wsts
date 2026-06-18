@@ -38,7 +38,9 @@
       "http://shp.qpic.cn/collector/1976464052/7ddf1e78-c00d-4a77-8c03-40d3331d5bf3/0",
       "http://shp.qpic.cn/collector/1976464052/518bacd9-ed78-4206-b61a-3a45d9f78b05/0"
     ],
-    "previewVideos": [],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p7f5e1bb0af7743bc89a8bd5afcd31469?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/2f1263cc-63d3-4c32-b995-978ceb99b632/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
