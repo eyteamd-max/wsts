@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.1.5",
+    "date": "2026-06-20",
+    "size": "66.92MB",
+    "description": "- 修复 v0.107.1 游戏结束后卡死。 - 修复创意工坊有时无法下载的问题。 - 修复创意工坊下载时卡顿的问题。 - 修复在启动器设置旋转 auto 模式不保存生效的问题。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p306218f963d245ec99f47a817fc7dc16?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
     "version": "v0.1.4",
     "date": "2026-06-20",
     "size": "66.92MB",
