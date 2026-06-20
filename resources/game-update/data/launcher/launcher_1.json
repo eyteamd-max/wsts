@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.1.4",
+    "date": "2026-06-20",
+    "size": "66.92MB",
+    "description": "- 新增 Steam 创意工坊页面 （感谢Apricityx的WorkshopAndroidDownloader项目提供的参考） - 新增v0.107.1兼容包 - 自动旋转功能 - 改进启动器系统栏/安全区域适配，避免沉浸式页面状态栏遮挡。 - 修复本地 LAN 多人存档玩家 ID canonicalization，避免平台/玩家 ID 后旧多人存档被误判为非本机。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pb0ebeb4863df49b39fc8097a0e33c2b7?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
     "version": "v0.1.3",
     "date": "2026-06-13",
     "size": "66.50MB",
