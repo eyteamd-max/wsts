@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.107.1",
+    "date": "2026-06-20",
+    "size": "865.41MB",
+    "description": "底层修复与功能拓展补丁。彻底重写随机数生成器（采用xoshiro256算法）修复卡牌抽取概率偏差的公平性问题；重磅新增Steam创意工坊与怪物图鉴；移除Boss门扉，由永恒沙漏正式取代。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe3548292205f482b9c94ccafe441a9c3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
     "version": "v0.103.2",
     "date": "2026-06-05",
     "size": "829.44MB",
@@ -24,7 +31,7 @@
     "version": "v0.107.0",
     "date": "2026-06-05",
     "size": "865.39MB",
-    "description": "这个版本我还没玩过，啥时候更新的？所以...猫猫暂时还没有想好介绍哦...",
+    "description": "平衡与体验优化补丁。Boss永劫沙漏移除虚弱效果，一层精英怪加强；全面调整全角色卡牌与遗物数值（如战士Juggernaut加强、摄政王Reflect削弱）；优化UI交互并修复大量Bug，新增角色强化动画。",
     "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz43be7b3709f540b5be6ba344a6212b33?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   }
 ]
