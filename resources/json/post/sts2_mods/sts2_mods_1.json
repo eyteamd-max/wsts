@@ -115,8 +115,8 @@
     "id": "20260620230519534",
     "rid": "95028646",
     "title": "空巢小梅林 - 本体+前置一体",
-    "badge": "v1.28afix",
-    "size": "174MB",
+    "badge": "v1.28b",
+    "size": "175.92MB",
     "date": "2026-06-20",
     "tags": [
       "NSFW",
@@ -127,7 +127,7 @@
       "在线下载",
       "夸克"
     ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n魔法少女小梅林OC角色mod，仅支持v0.107.1",
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n魔法少女小梅林OC角色mod\n兼容性：仅支持v0.107.1｜PC+安卓双支持\n前置需求：RitsuLib0.4.27（仅推荐 非绝对）",
     "author": "[作者1] - 空巢小梅林 [作者2] - nekonado",
     "authorLinks": [
       {
@@ -142,8 +142,16 @@
     "downloadLinks": [
       {
         "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p64c5a590c9164addb836f7578fe72cb4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pbe8e146173534850bc3da66321dc7640?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
+      },
+      {
+        "text": "模组前置",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pffbfe48ea2b84baa9b247952c1de124b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "RitsuLib0.4.27",
+        "size": "3.16MB",
+        "date": "推荐"
       },
       {
         "text": "解压密码",
