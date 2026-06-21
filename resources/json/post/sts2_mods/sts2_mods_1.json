@@ -1,5 +1,51 @@
 [
   {
+    "id": "20260621111158305",
+    "rid": "21772310",
+    "title": "植物大战僵尸 - 戴夫角色mod",
+    "badge": "v1.0.1",
+    "size": "24.84MB",
+    "date": "2026-06-21",
+    "tags": [
+      "SFW",
+      "戴夫",
+      "植物大战僵尸",
+      "新增角色",
+      "作息忌一"
+    ],
+    "description": "植物大战僵尸的戴夫角色mod，拥有许多全新的卡牌和机制，欢迎游玩！ 目前是初版，拥有一些bug，支持107版本",
+    "author": "[作者] - 作息忌一 [素材] - 一本郑经zyb",
+    "authorLinks": [
+      {
+        "text": "B站|作息忌一",
+        "url": "https://space.bilibili.com/494879857"
+      },
+      {
+        "text": "B站|一本郑经zyb",
+        "url": "https://space.bilibili.com/1816468342"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p33a13358eb7d4b7fa9f533c44483e1c8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748376669",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1NhjJ6rE9X/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/6d556bdc-f984-4f10-981c-f592fb066dda/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260620230519534",
     "rid": "95028646",
     "title": "空巢小梅林 - 本体+前置一体",
