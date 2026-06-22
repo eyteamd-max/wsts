@@ -1,5 +1,83 @@
 [
   {
+    "id": "20260623020730529",
+    "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
+    "category": "skin",
+    "size": "56.96MB",
+    "date": "2026-06-23",
+    "badge": "v2.2.8",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/df9aedd2-a871-466c-bc1a-67c2d22ff05f/0"
+    ],
+    "images": [],
+    "description": "蕾忍宗刻意路过的忍者\n通过蕾克拉驱动忍术和科学忍具\n听说尖塔再次开放了，于是决定再来打打看\n\n模组 v2.2.8 - 兼容测试：\n0.107.0~0.107.1可用｜PC+安卓支持\n\nPS：\n如果你用的是旧版本请下载v2.1版本的mod\n并使用旧版本的BaseLib前置，一定要注意喵",
+    "author": "命莲寺上单",
+    "authorLinks": [
+      {
+        "text": "B站|命莲寺上单",
+        "url": "https://space.bilibili.com/123885777"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "蕾忍",
+      "蕾忍宗",
+      "新增角色",
+      "命莲寺上单",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p7f8fb792262d46b78f7394915a51b56f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p02ead5e832134caa8eebf941490c0b15?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "BaseLib3.3.0",
+        "size": "374.53K",
+        "date": "推荐"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/Flimsyyy/LexNinja2",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "蕾忍MOD - 0.103.2",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz91e593559c734a69ad049afdf646e445?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v2.1",
+        "size": "36.65MB",
+        "date": "2026-06-23"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/ec5c16f1-5d29-4841-9636-72a2bcdfac72/0",
+      "http://shp.qpic.cn/collector/1976464052/e3342c15-a5de-44eb-8be5-2571f6a84c34/0",
+      "http://shp.qpic.cn/collector/1976464052/88e51138-8d14-4f19-af12-8f3a60c31e46/0",
+      "http://shp.qpic.cn/collector/1976464052/4bd02ec0-957e-460c-bab8-7d959b103526/0",
+      "http://shp.qpic.cn/collector/1976464052/1ed31da8-4b0a-42de-9231-963ac1fead68/0",
+      "http://shp.qpic.cn/collector/1976464052/509d04fe-b63b-4730-bb57-3fd734ad59c1/0",
+      "http://shp.qpic.cn/collector/1976464052/517e44b7-7887-4f7e-b703-b13a64cf3138/0",
+      "http://shp.qpic.cn/collector/1976464052/1412e1f9-da92-4440-b8c1-0d3896baede5/0",
+      "http://shp.qpic.cn/collector/1976464052/6d5a215a-ab91-4957-a83f-04d77943219c/0",
+      "http://shp.qpic.cn/collector/1976464052/ffaa1f50-2ff5-40b4-adf6-cda01feb8574/0",
+      "http://shp.qpic.cn/collector/1976464052/e1a5e453-d07c-48d9-9b55-6bcc573b5e27/0",
+      "http://shp.qpic.cn/collector/1976464052/df9aedd2-a871-466c-bc1a-67c2d22ff05f/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1Y59eBJEAn/&type=mp4"
+    ],
+    "rid": "24493150"
+  },
+  {
     "id": "20260623012107863",
     "rid": "97239627",
     "title": "猎手 一代移植 NSFW4.18 蹲姿版",
@@ -71,6 +149,53 @@
     "previewImages": [],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/aae3445e-9cbc-4777-8590-09ba3c96df72/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260623002422536",
+    "rid": "21772310",
+    "title": "植物大战僵尸 - 戴夫角色mod",
+    "badge": "v1.0.1",
+    "size": "24.84MB",
+    "date": "2026-06-22",
+    "tags": [
+      "SFW",
+      "戴夫",
+      "植物大战僵尸",
+      "新增角色",
+      "作息忌一",
+      "在线下载"
+    ],
+    "description": "植物大战僵尸的戴夫角色mod，拥有许多全新的卡牌和机制，支持107版本\n\n修复钢地刺持续时间逻辑，重复打出增加持续回合数。\n修复第三次更新时出现的钢地刺限伤数值异常的问题。\n修复全地形阵列与已有消耗词条的全栖牌交互时，可能不触发全栖减费和回手的问题。\n多张全地形阵列现在只叠加格挡数值，不会重复消耗同一张牌。\n南瓜头现在不能对同一张入槽牌重复附魔伶俐。\n统计页面补充 Dave 角色统计显示。",
+    "author": "[作者] - 作息忌一 [素材] - 一本郑经zyb",
+    "authorLinks": [
+      {
+        "text": "B站|作息忌一",
+        "url": "https://space.bilibili.com/494879857"
+      },
+      {
+        "text": "B站|一本郑经zyb",
+        "url": "https://space.bilibili.com/1816468342"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5c555ebaf9834371a2a4ac976b0b8556?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748376669",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1NhjJ6rE9X/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/6d556bdc-f984-4f10-981c-f592fb066dda/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
@@ -404,53 +529,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1fBjb6oED3/&type=mp4"
     ],
     "rid": "36960890"
-  },
-  {
-    "id": "20260623002422536",
-    "rid": "21772310",
-    "title": "植物大战僵尸 - 戴夫角色mod",
-    "badge": "v1.0.1",
-    "size": "24.84MB",
-    "date": "2026-06-22",
-    "tags": [
-      "SFW",
-      "戴夫",
-      "植物大战僵尸",
-      "新增角色",
-      "作息忌一",
-      "在线下载"
-    ],
-    "description": "植物大战僵尸的戴夫角色mod，拥有许多全新的卡牌和机制，支持107版本\n\n修复钢地刺持续时间逻辑，重复打出增加持续回合数。\n修复第三次更新时出现的钢地刺限伤数值异常的问题。\n修复全地形阵列与已有消耗词条的全栖牌交互时，可能不触发全栖减费和回手的问题。\n多张全地形阵列现在只叠加格挡数值，不会重复消耗同一张牌。\n南瓜头现在不能对同一张入槽牌重复附魔伶俐。\n统计页面补充 Dave 角色统计显示。",
-    "author": "[作者] - 作息忌一 [素材] - 一本郑经zyb",
-    "authorLinks": [
-      {
-        "text": "B站|作息忌一",
-        "url": "https://space.bilibili.com/494879857"
-      },
-      {
-        "text": "B站|一本郑经zyb",
-        "url": "https://space.bilibili.com/1816468342"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5c555ebaf9834371a2a4ac976b0b8556?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748376669",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1NhjJ6rE9X/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/6d556bdc-f984-4f10-981c-f592fb066dda/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
     "id": "20260620230519534",
@@ -1984,64 +2062,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1VFwVzmEjG/&type=mp4"
     ],
     "rid": "49218037"
-  },
-  {
-    "id": "20260601194426119",
-    "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
-    "category": "skin",
-    "size": "36.65MB",
-    "date": "2026-06-01",
-    "badge": "v2.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/df9aedd2-a871-466c-bc1a-67c2d22ff05f/0"
-    ],
-    "images": [],
-    "description": "蕾忍宗刻意路过的忍者\n通过蕾克拉驱动忍术和科学忍具\n听说尖塔再次开放了，于是决定再来打打看\n\n\nPS：\n喜报，现在移动端也可以正常加载蕾忍了\n运行需求：前置BaseLib v3.0.6 / 本体 v0.103.3",
-    "author": "命莲寺上单",
-    "authorLinks": [
-      {
-        "text": "B站|命莲寺上单",
-        "url": "https://space.bilibili.com/123885777"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "蕾忍",
-      "蕾忍宗",
-      "新增角色",
-      "命莲寺上单",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组下载[本体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz91e593559c734a69ad049afdf646e445?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      },
-      {
-        "text": "所需前置[前置]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz0cb677cab88943c9808465cc5be9ca53?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/ec5c16f1-5d29-4841-9636-72a2bcdfac72/0",
-      "http://shp.qpic.cn/collector/1976464052/e3342c15-a5de-44eb-8be5-2571f6a84c34/0",
-      "http://shp.qpic.cn/collector/1976464052/88e51138-8d14-4f19-af12-8f3a60c31e46/0",
-      "http://shp.qpic.cn/collector/1976464052/4bd02ec0-957e-460c-bab8-7d959b103526/0",
-      "http://shp.qpic.cn/collector/1976464052/1ed31da8-4b0a-42de-9231-963ac1fead68/0",
-      "http://shp.qpic.cn/collector/1976464052/509d04fe-b63b-4730-bb57-3fd734ad59c1/0",
-      "http://shp.qpic.cn/collector/1976464052/517e44b7-7887-4f7e-b703-b13a64cf3138/0",
-      "http://shp.qpic.cn/collector/1976464052/1412e1f9-da92-4440-b8c1-0d3896baede5/0",
-      "http://shp.qpic.cn/collector/1976464052/6d5a215a-ab91-4957-a83f-04d77943219c/0",
-      "http://shp.qpic.cn/collector/1976464052/ffaa1f50-2ff5-40b4-adf6-cda01feb8574/0",
-      "http://shp.qpic.cn/collector/1976464052/e1a5e453-d07c-48d9-9b55-6bcc573b5e27/0",
-      "http://shp.qpic.cn/collector/1976464052/df9aedd2-a871-466c-bc1a-67c2d22ff05f/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1Y59eBJEAn/&type=mp4"
-    ],
-    "rid": "24493150"
   },
   {
     "id": "20260601090139746",
