@@ -1,5 +1,71 @@
 [
   {
+    "id": "20260622113550470",
+    "rid": "78429111",
+    "title": "blacksouls2x杀戮尖塔2大型mod",
+    "badge": "v1.0.0",
+    "size": "254.35MB",
+    "date": "2026-06-22",
+    "tags": [
+      "SFW",
+      "blacksouls",
+      "格林",
+      "新增角色",
+      "四时雨",
+      "在线下载"
+    ],
+    "description": "包含119张新卡牌，4个新地图，26个新遗物，50+个新怪物和boos，10+个新事件，5个新远古先民的大型mod。\n\n兼容性：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.2.1（仅推荐 非绝对）",
+    "author": "四时雨",
+    "authorLinks": [
+      {
+        "text": "B站|四时雨",
+        "url": "https://space.bilibili.com/1045746975"
+      },
+      {
+        "text": "YouTube|四时雨",
+        "url": "https://www.youtube.com/watch?v=KzRPXuhekro&source_ve_path=OTY3MTQ&embeds_referring_euri=https%3A%2F%2Fsteamcommunity.com%2F&embeds_referring_origin=https%3A%2F%2Fsteamcommunity.com"
+      },
+      {
+        "text": "Steam|四时雨",
+        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p308176efa12c44928fcb7beb1dc9852a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5a04bf54e13c41e8a733e6ef64e37eb1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "Baselib3.2.1",
+        "size": "344.34KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8d23d685-0ee1-425b-ae9a-12ca08eae38a/0",
+      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0",
+      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
+      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
+      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
+      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260621224546980",
     "rid": "44442248",
     "title": "野兽尖塔涩图合集MOD - 全卡面",
