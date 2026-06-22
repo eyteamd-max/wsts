@@ -1,5 +1,136 @@
 [
   {
+    "id": "20260623012107863",
+    "rid": "97239627",
+    "title": "猎手 一代移植 NSFW4.18 蹲姿版",
+    "badge": "v1.0.0",
+    "size": "7.13MB",
+    "date": "2026-06-23",
+    "tags": [
+      "NSFW",
+      "静默猎手",
+      "猎宝",
+      "外观替换",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。",
+    "author": "",
+    "authorLinks": [],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p8f740ecce8ff41dea46b03376c481622?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/3f6a7b04-726c-413e-8b4e-80dd755c6ba5/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/82c1f390-1de6-4fba-a41a-e394fbad91ef/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260623010458596",
+    "rid": "36843455",
+    "title": "猎手-NSFW差分-选人大图动态版",
+    "badge": "v1.0.0",
+    "size": "3.40MB",
+    "date": "2026-06-23",
+    "tags": [
+      "NSFW",
+      "静默猎手",
+      "猎宝",
+      "外观替换",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。",
+    "author": "",
+    "authorLinks": [],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc7a86746055a489aae3018714f2b4301?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/aae3445e-9cbc-4777-8590-09ba3c96df72/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260622232049769",
+    "rid": "37670662",
+    "title": "STS2 - 模组加载顺序管理mod",
+    "badge": "v0.2.2",
+    "size": "45.86KB",
+    "date": "2026-06-23",
+    "tags": [
+      "SFW",
+      "功能mod",
+      "我叫煎包",
+      "在线下载"
+    ],
+    "description": "此模组在官方模组管理界面（Modding screen）中添加了一个“加载顺序”按钮。玩家可以重新排序模组（上移/下移/置顶/置底），应用更改后，新的加载顺序会写入 settings.save 文件。更改将在下次启动游戏时生效。\n\n支持多人游戏主机端安装：在多人游戏模式下，仅需主机端安装此模组即可生效。",
+    "author": "我叫煎包",
+    "authorLinks": [
+      {
+        "text": "B站|我叫煎包",
+        "url": "https://space.bilibili.com/234054413"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p15319e2b17914b4abdfae34044ca141e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/Jianbao233/STS2_mod/",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747605109",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/429",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1riQgBFEi8/&type=mp4",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1cLDqBvEDZ/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/73541fc4-a55f-4835-a8db-a97db9e1cd1b/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260622140538352",
     "rid": "47011294",
     "title": "储君 - 脱鞋版 - NSFW差分版修复",
@@ -275,12 +406,12 @@
     "rid": "36960890"
   },
   {
-    "id": "20260621111158305",
+    "id": "20260623002422536",
     "rid": "21772310",
     "title": "植物大战僵尸 - 戴夫角色mod",
     "badge": "v1.0.1",
     "size": "24.84MB",
-    "date": "2026-06-21",
+    "date": "2026-06-22",
     "tags": [
       "SFW",
       "戴夫",
@@ -289,7 +420,7 @@
       "作息忌一",
       "在线下载"
     ],
-    "description": "植物大战僵尸的戴夫角色mod，拥有许多全新的卡牌和机制，欢迎游玩！ 目前是初版，拥有一些bug，支持107版本",
+    "description": "植物大战僵尸的戴夫角色mod，拥有许多全新的卡牌和机制，支持107版本\n\n修复钢地刺持续时间逻辑，重复打出增加持续回合数。\n修复第三次更新时出现的钢地刺限伤数值异常的问题。\n修复全地形阵列与已有消耗词条的全栖牌交互时，可能不触发全栖减费和回手的问题。\n多张全地形阵列现在只叠加格挡数值，不会重复消耗同一张牌。\n南瓜头现在不能对同一张入槽牌重复附魔伶俐。\n统计页面补充 Dave 角色统计显示。",
     "author": "[作者] - 作息忌一 [素材] - 一本郑经zyb",
     "authorLinks": [
       {
@@ -304,7 +435,7 @@
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p33a13358eb7d4b7fa9f533c44483e1c8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5c555ebaf9834371a2a4ac976b0b8556?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       },
       {
