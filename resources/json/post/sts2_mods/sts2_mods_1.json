@@ -1,5 +1,69 @@
 [
   {
+    "id": "20260623124201809",
+    "rid": "04031872",
+    "title": "命主和谐版_Life_Master_Mod",
+    "badge": "v0.1.0",
+    "size": "64.90M",
+    "date": "2026-06-23",
+    "tags": [
+      "SFW",
+      "命主",
+      "新增角色",
+      "莱茵人偶",
+      "在线下载"
+    ],
+    "description": "此模组需要 SignatureLib(异画库) 和 BaseLib 作为前置(且仅支持107版本) 如还有错误请看下方↓\n\n如果加载出现报错：类型为System.Reflection.ReflectionTypeLoadException的异常，使用加载顺序调整mod，重新排序一遍，先加载异画库，再加载命主，大概率可以解决。\n\n加载顺序调整mod：\nhttps://axxxx.cyou/?rid=37670662\n\n---\n\n致谢(Steam创意工坊原文)：\n感谢 Alice OVO、Fried Rice、332 和其他大佬们帮忙编写代码，感谢 Shuangyun Pd、以及 Yingyou 和 Antarctica 等好友帮忙测试！\n感谢所有玩过这个 MOD 的玩家~",
+    "author": "莱茵人偶",
+    "authorLinks": [
+      {
+        "text": "Steam|莱茵人偶",
+        "url": "https://steamcommunity.com/profiles/76561198354903977/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pa5ec6fa5422242a5976b8b5f7b7854b0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置 - BaseLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p7758af778ede45e29800ebc4227bddeb?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "BaseLib3.3.1",
+        "size": "375.48KB",
+        "date": "推荐"
+      },
+      {
+        "text": "所需前置 - SignatureLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p3e6aaba3db43489ea65db9580d8fda5e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "异画库1.0.0",
+        "size": "45.52KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748424910",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/ee1d4d0a-3ed8-4f99-bc1a-8c61a732bf64/0",
+      "http://shp.qpic.cn/collector/1976464052/5f729170-2dca-4d81-8afe-d56197452dc5/0",
+      "http://shp.qpic.cn/collector/1976464052/b2ec3b67-6408-4441-9e0e-29e887753de9/0",
+      "http://shp.qpic.cn/collector/1976464052/fcdfae2b-3af0-4719-8393-939f3beafe79/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p3f08071ad9f0440c8f94ad04d66d667d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pbd1e4a129667460daa1f953595cf325c?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/bc44993d-d37b-4050-8f0b-8676732dad12/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260623025354051",
     "rid": "21881408",
     "title": "命主涩涩版_Life_Master_Mod",
