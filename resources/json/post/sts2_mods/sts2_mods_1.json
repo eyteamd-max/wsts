@@ -1,5 +1,108 @@
 [
   {
+    "id": "20260623222948040",
+    "rid": "59649693",
+    "title": "Fei [绯] - 静默猎手＆卡厄思梦境",
+    "badge": "v1.0.0",
+    "size": "39.48MB",
+    "date": "2026-06-23",
+    "tags": [
+      "SFW",
+      "静默猎手",
+      "猎宝",
+      "Fei",
+      "绯",
+      "卡厄思梦境",
+      "外观替换",
+      "我要死了",
+      "在线下载"
+    ],
+    "description": "本模组为“静默猎手”制作了全新的 Fei [绯] 皮肤，包含完整的视觉特效与配音等\n\n**模组兼容：**\n游戏版本：0.107.0+\n前置依赖：RitsuLib0.4.34 (非绝对 仅推荐)",
+    "author": "我要死了",
+    "authorLinks": [
+      {
+        "text": "Steam|我要死了",
+        "url": "https://steamcommunity.com/profiles/76561198972953169/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p1c41cd641796460f8e2ad9656a0723f6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/github_parsing/index.html?url=https%3A%2F%2Fgithub.com%2FBAKAOLC%2FSTS2-RitsuLib%2Freleases%2Fdownload%2Fv0.4.34%2FSTS2-RitsuLib.0.4.34.variant-pack.zip",
+        "category": "latest",
+        "version": "RitsuLib0.4.34",
+        "size": "3.25MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750304774",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/ef5d2f44-2197-4fe8-8227-f051643c8e27/0",
+      "http://shp.qpic.cn/collector/1976464052/57e6bc1b-b4a0-4682-81b8-8d5ddb2fd247/0",
+      "http://shp.qpic.cn/collector/1976464052/ea195557-338c-4db5-8b1e-3b25fbea3cae/0",
+      "http://shp.qpic.cn/collector/1976464052/60d2a912-8a69-411a-a77a-bd17ebd5af36/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p7d6a4b1a5d3a487da7ffaefca31a3017?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p831974d41f9f4d4987a728aaddb41592?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/82663719-6af3-4b64-b755-e8e294f7933e/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260623221028734",
+    "rid": "39783336",
+    "title": "钢管音效替换地图催促-钢管催促",
+    "badge": "v0.0.1",
+    "size": "48.30KB",
+    "date": "2026-06-23",
+    "tags": [
+      "SFW",
+      "语音",
+      "音效",
+      "钢管落地",
+      "小影moment",
+      "在线下载"
+    ],
+    "description": "将点击地图的音效替换为了\"钢管落地.mp3\"音效\n\n猜你想问 (doge) ：\n问：怎么让队友听见\n答1：双方都装这个MOD （或者强迫他装）\n答2：也可以把JSON文件里的gameplay改成true，这样你的队友必须加这个mod才能和你联机",
+    "author": "小影moment",
+    "authorLinks": [
+      {
+        "text": "B站|小影moment",
+        "url": "https://space.bilibili.com/372533472"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pbb6505d9d3684c4b823854a9fc4e8a1a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747809894",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV18vDYBKELq/&type=mp4"
+    ],
+    "coverImage": "https://i2.hdslb.com/bfs/archive/93d39bc59cac93db50854194631b3988641526e5.jpg",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260623124201809",
     "rid": "04031872",
     "title": "命主和谐版_Life_Master_Mod",
@@ -121,6 +224,80 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
+    "id": "20260623025350135",
+    "rid": "97239627",
+    "title": "猎手 一代移植 NSFW4.18 蹲姿版",
+    "badge": "v1.0.0",
+    "size": "7.13MB",
+    "date": "2026-06-23",
+    "tags": [
+      "NSFW",
+      "静默猎手",
+      "猎宝",
+      "外观替换",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。",
+    "author": "",
+    "authorLinks": [],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p8f740ecce8ff41dea46b03376c481622?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/3f6a7b04-726c-413e-8b4e-80dd755c6ba5/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/82c1f390-1de6-4fba-a41a-e394fbad91ef/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260623025346533",
+    "rid": "36843455",
+    "title": "猎手-NSFW差分-选人大图动态版",
+    "badge": "v1.0.0",
+    "size": "3.40MB",
+    "date": "2026-06-23",
+    "tags": [
+      "NSFW",
+      "静默猎手",
+      "猎宝",
+      "外观替换",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。",
+    "author": "",
+    "authorLinks": [],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc7a86746055a489aae3018714f2b4301?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/aae3445e-9cbc-4777-8590-09ba3c96df72/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260623020730529",
     "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
     "category": "skin",
@@ -197,80 +374,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1Y59eBJEAn/&type=mp4"
     ],
     "rid": "24493150"
-  },
-  {
-    "id": "20260623025350135",
-    "rid": "97239627",
-    "title": "猎手 一代移植 NSFW4.18 蹲姿版",
-    "badge": "v1.0.0",
-    "size": "7.13MB",
-    "date": "2026-06-23",
-    "tags": [
-      "NSFW",
-      "静默猎手",
-      "猎宝",
-      "外观替换",
-      "在线下载",
-      "夸克"
-    ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。",
-    "author": "",
-    "authorLinks": [],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p8f740ecce8ff41dea46b03376c481622?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "解压密码",
-        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
-        "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/3f6a7b04-726c-413e-8b4e-80dd755c6ba5/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/82c1f390-1de6-4fba-a41a-e394fbad91ef/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260623025346533",
-    "rid": "36843455",
-    "title": "猎手-NSFW差分-选人大图动态版",
-    "badge": "v1.0.0",
-    "size": "3.40MB",
-    "date": "2026-06-23",
-    "tags": [
-      "NSFW",
-      "静默猎手",
-      "猎宝",
-      "外观替换",
-      "在线下载",
-      "夸克"
-    ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。",
-    "author": "",
-    "authorLinks": [],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc7a86746055a489aae3018714f2b4301?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "解压密码",
-        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
-        "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/aae3445e-9cbc-4777-8590-09ba3c96df72/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
     "id": "20260623002422536",
