@@ -1,5 +1,59 @@
 [
   {
+    "id": "20260624082728855",
+    "rid": "03804485",
+    "title": "奥契丝 / Orchis Necrobinder Skin",
+    "badge": "v1.3.0",
+    "size": "32.37MB",
+    "date": "2026-06-24",
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "奥契丝",
+      "外观替换",
+      "恢于今天画稿了吗",
+      "在线下载"
+    ],
+    "description": "影之诗角色奥契丝替换亡灵契约师的皮肤Mod\n\n**兼容测试：**\n0.107.0~0.107.1可用｜PC+安卓支持\n\n**内容简介：**\n\n主要包含内容：\n· 选角界面插图及动画\n· 局内、商人、篝火界面角色及动画替换\n· 专属遗物：破旧玩偶\n· 25张更符合角色设定的全新卡图替换\n\n内置子mod：\n（相互独立，如果不想要某个mod的功能，可以在模组设置中自行禁用或在文件夹自行删除）\n· OrchisNecrobinderSkinMod：角色外观美化相关\n· NecrobinderOstyAnimMod：使当亡灵契约师攻击时，如果奥斯提存活，则奥斯提同步播放攻击动画\n· RestSiteFondleCursorMod：在篝火休息场景中，当鼠标悬停在角色上半身时，将光标替换为自定义的互动图标（可在mod文件夹中自行替换图片）\n· NecrobinderCardPortraits：卡图替换相关\n之后也会持续更新.",
+    "author": "恢于今天画稿了吗",
+    "authorLinks": [
+      {
+        "text": "恢于今天画稿了吗|恢于今天画稿了吗",
+        "url": "https://space.bilibili.com/3461573469276608"
+      },
+      {
+        "text": "爱发电|恢于今天画稿了吗",
+        "url": "https://afdian.com/a/Huiyuu"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p8e038fdead674ff7bb1b8b7366473af1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749627968",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/58fdd5d7-3ebe-4057-99c2-d093f859243c/0",
+      "http://shp.qpic.cn/collector/1976464052/fc9acd9a-0a51-4fdc-b278-7561eb0f9ffb/0",
+      "http://shp.qpic.cn/collector/1976464052/45fd24cb-b185-49d5-8956-f4454d3b0d46/0",
+      "http://shp.qpic.cn/collector/1976464052/bc11c667-e266-4784-b47d-adce2321e761/0",
+      "http://shp.qpic.cn/collector/1976464052/191648cd-193d-47c3-8cd8-5e45ddc603e0/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p1c65ec92cb3a4257ba56aa4b09118f2f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/abf34eee-63a4-4259-a2ec-bda09b91100a/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260623222948040",
     "rid": "59649693",
     "title": "Fei [绯] - 静默猎手＆卡厄思梦境",
