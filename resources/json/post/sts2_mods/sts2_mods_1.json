@@ -1,5 +1,69 @@
 [
   {
+    "id": "20260624104750350",
+    "rid": "72841059",
+    "title": "二阶堂希罗 - 魔法少女的魔女审判",
+    "badge": "v0.6.4",
+    "size": "126.26MB",
+    "date": "2026-06-24",
+    "tags": [
+      "SFW",
+      "二阶堂希罗",
+      "魔法少女",
+      "魔女",
+      "魔法少女的魔女审判",
+      "新增人物",
+      "How_Low_Hello",
+      "在线下载"
+    ],
+    "description": "Nikaido Hiro（二阶堂希罗）是一个出自于《魔法少女的魔女审判》的角色，现在作为杀戮尖塔2的一个自定义角色Mod，采用了围绕时间回溯能力与魔女因子的玩法设计。角色的上手难度友好，牌库现支持两大核心体系、两大副体系。玩家可以通过获取活力、回溯类卡牌、以及希罗特殊的卡牌附魔打造出强力组合。\n\n**兼容测试：**\n0.107.0~0.107.1可用｜PC+安卓支持\n前置需求：RitsuLib0.4.33(仅推荐 非绝对)",
+    "author": "How_Low_Hello",
+    "authorLinks": [
+      {
+        "text": "steam|How_Low_Hello",
+        "url": "https://steamcommunity.com/profiles/76561198165655887/myworkshopfiles/"
+      },
+      {
+        "text": "B站|How_Low_Hello",
+        "url": "https://space.bilibili.com/13353815"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p4a8f93238a17406fbe23c85555896f2b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.33",
+        "category": "latest",
+        "version": "RitsuLib0.4.33",
+        "size": "3.23MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748231835",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/b38b2fee-4c62-4ea8-9515-c3609a6cac69/0",
+      "http://shp.qpic.cn/collector/1976464052/d4688faa-e72e-49a1-8927-c273611193b0/0",
+      "http://shp.qpic.cn/collector/1976464052/7998438c-de1a-4f1c-8ada-779f0088e173/0",
+      "http://shp.qpic.cn/collector/1976464052/a1e429ca-15fb-4632-802d-a44abf02938c/0",
+      "http://shp.qpic.cn/collector/1976464052/cae663cc-d642-4462-86ff-1eef650dcc3d/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8484656b5d15845b9b60a1aa9dd8e332b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8f7d2f3a8b838416593eb765eecf135a8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/aaf809b2-187a-4ec7-9841-2542f82361dc/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260624082728855",
     "rid": "03804485",
     "title": "奥契丝 / Orchis Necrobinder Skin",
