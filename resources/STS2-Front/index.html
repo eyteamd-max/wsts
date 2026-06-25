@@ -1560,12 +1560,18 @@ var cached = localStorage.getItem(LIBS[libKey].cacheKey);
 if (!cached) return null;
 var data = JSON.parse(cached);
 if (Date.now() - data.timestamp > CACHE_DURATION) return null;
+var hasReleases = data.releases && data.releases.length > 0;
+var hasLatest = data.latest && data.latest.tag_name;
+if (!hasReleases && !hasLatest) return null;
 return data;
 } catch (e) { return null; }
 }
 
 function setLibCache(libKey, releases, latest) {
 try {
+var hasReleases = releases && releases.length > 0;
+var hasLatest = latest && latest.tag_name;
+if (!hasReleases && !hasLatest) return;
 localStorage.setItem(LIBS[libKey].cacheKey, JSON.stringify({
 timestamp: Date.now(),
 releases: releases,
