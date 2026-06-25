@@ -1338,23 +1338,16 @@ tag: t || ''
 function findReleasePage(libKey, tag) {
 var data = cacheData[libKey];
 if (!data || !data.releases) return null;
-var latestTag = data.latest && data.latest.tag_name ? data.latest.tag_name.toLowerCase().replace(/^v/, '') : '';
 var tagLower = tag ? tag.toLowerCase().replace(/^v/, '') : '';
-if (latestTag && tagLower && latestTag === tagLower) {
-return { isLatest: true, page: 0, index: -1 };
-}
-var latestFound = false;
-var historyIndex = 0;
+if (!tagLower) return null;
 for (var i = 0; i < data.releases.length; i++) {
 var r = data.releases[i];
 if (!r || !r.tag_name) continue;
 var rTag = r.tag_name.toLowerCase().replace(/^v/, '');
-if (rTag === latestTag) { latestFound = true; continue; }
 if (rTag === tagLower) {
-var page = Math.floor(historyIndex / ITEMS_PER_PAGE) + 1;
-return { isLatest: false, page: page, index: historyIndex };
+var page = Math.floor(i / ITEMS_PER_PAGE) + 1;
+return { isLatest: false, page: page, index: i };
 }
-historyIndex++;
 }
 return null;
 }
@@ -1501,21 +1494,8 @@ unlockPage();
 showToast('未找到对应版本：' + params.tag);
 return;
 }
-var latestTag = data.latest && data.latest.tag_name ? data.latest.tag_name.toLowerCase().replace(/^v/, '') : '';
-var paramTag = params.tag ? params.tag.toLowerCase().replace(/^v/, '') : '';
-var isLatest = latestTag && paramTag && latestTag === paramTag;
-var pos = null;
-if (!isLatest) pos = findReleasePage(params.lib, params.tag);
-if (isLatest) {
-setTimeout(function() {
-var card = document.getElementById('latestCard');
-if (card) {
-card.classList.add('highlight');
-setTimeout(function() { if (card) card.classList.remove('highlight'); }, 3000);
-card.scrollIntoView({behavior: 'smooth', block: 'center'});
-}
-}, 200);
-} else if (pos) {
+var pos = findReleasePage(params.lib, params.tag);
+if (pos) {
 currentPage = pos.page;
 renderHistory();
 setTimeout(function() {
@@ -1538,14 +1518,14 @@ setTimeout(function() {
 pageLockTip.textContent = '马上就好...';
 }, 200);
 setTimeout(function() {
-openShareDetail(params.lib, release, isLatest);
+openShareDetail(params.lib, release, false);
 setTimeout(function() {
 unlockPage();
 }, 900);
 }, 500);
 }).catch(function() {
 setTimeout(function() {
-openShareDetail(params.lib, release, isLatest);
+openShareDetail(params.lib, release, false);
 setTimeout(function() {
 unlockPage();
 }, 900);
@@ -1999,10 +1979,12 @@ items.forEach(function(it) { paginationEl.appendChild(it); });
 function getFilteredHistoryData() {
 var data = cacheData[activeLib];
 if (!data || !data.releases) return [];
-var latestTag = data.latest ? data.latest.tag_name : '';
-var historyData = data.releases.filter(function(r) {
-return r.tag_name !== latestTag;
-});
+var historyData = data.releases.slice();
+if (data.latest && data.latest.tag_name) {
+var latestTag = data.latest.tag_name;
+historyData = historyData.filter(function(r) { return r.tag_name !== latestTag; });
+historyData.unshift(data.latest);
+}
 if (!searchQuery) return historyData;
 var query = searchQuery.toLowerCase();
 return historyData.filter(function(r) {
@@ -2070,11 +2052,8 @@ searchDropdown.classList.remove('active');
 return;
 }
 var results = [];
-var latestTag = data.latest ? data.latest.tag_name : '';
 for (var i = 0; i < data.releases.length; i++) {
 var r = data.releases[i];
-// 只搜索历史版本，排除最新版本
-if (r.tag_name === latestTag) continue;
 if (r.tag_name.toLowerCase().indexOf(query) !== -1 || (r.body && r.body.toLowerCase().indexOf(query) !== -1)) {
 results.push({ item: r });
 }
