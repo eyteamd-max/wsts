@@ -1,5 +1,61 @@
 [
   {
+    "id": "20260625142533304",
+    "rid": "98107132",
+    "title": "绘印魔女-角色MOD：来自绘法师学院的抽象派绘师",
+    "badge": "v1.0.0",
+    "size": "54.44MB",
+    "date": "2026-06-25",
+    "tags": [
+      "SFW",
+      "绘印魔女",
+      "原创角色",
+      "OC",
+      "新增人物",
+      "节奏UwU",
+      "在线下载"
+    ],
+    "description": "原创角色mod：一位来自绘法师学院的抽象派绘师。\n\n主要机制：\n1、绘色机制，拥有6种颜色的额外能量，消耗该能量可以打出卡牌的额外效果。\n2、印记机制，拥有7种效果各异的印记，每个单位同时只能拥有1个印记。\n3、睡衣时间，特殊词条，每回合第一次手牌为空时，拥有该词条的卡从弃牌堆回到手牌。\n\n**兼容性测试：**\n兼容性：仅支持v0.107.1｜PC+安卓双支持\n前置需求：BaseLib v3.3.2（仅推荐 非绝对）",
+    "author": "节奏UwU",
+    "authorLinks": [
+      {
+        "text": "B站|节奏UwU",
+        "url": "https://space.bilibili.com/1892540"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8c98bbd1c79c54b47afa3fb2d8b18866b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib3.3.2",
+        "size": "375.5KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747647878",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/671e7855-baae-44b5-a4ac-50498b00f602/0",
+      "http://shp.qpic.cn/collector/1976464052/189f9541-d3f2-4950-9927-2d4cd78fb1af/0",
+      "http://shp.qpic.cn/collector/1976464052/b2902e80-f0af-473f-9842-2752d3fe2453/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1Ey7U6EEYA/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f2effa71-e7e7-450f-b0ba-b633bba2a315/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260625120155032",
     "rid": "13869119",
     "title": "杀戮尖塔2 - 诡秘之主MOD 更新",
