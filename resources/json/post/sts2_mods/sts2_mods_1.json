@@ -1,5 +1,65 @@
 [
   {
+    "id": "20260626155740685",
+    "title": "A大战士-驼鹿｜选人小图小头像版",
+    "category": "skin",
+    "size": "14.99MB",
+    "date": "2026-06-26",
+    "badge": "v0.0.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/9cf45704-9a54-4e62-9b0f-e4fd1bb52928/0",
+    "images": [],
+    "description": "铁甲战士外观替换 MOD，人物替换为了驼鹿\n\n**兼容性测试：**\n测试范围：0.103.2~0.107.1｜PC+安卓双支持",
+    "author": "anaertailin",
+    "authorLinks": [
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/https://space.bilibili.com/2264658"
+      },
+      {
+        "text": "爱发电|anaertailin",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "驼鹿",
+      "外观替换",
+      "anaertailin",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d88ab85431794d7696dfc6af337fc0cc?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "无小头像版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc771ab5e67684544bf5753fe6a78887e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.0.1",
+        "size": "4.77MB",
+        "date": "2026-05-21"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/4bb52846-5738-4d4d-a823-eef895bda6f5/0",
+      "http://shp.qpic.cn/collector/1976464052/5ea3061b-746f-4ecc-ad92-3df3dff09ed8/0",
+      "http://shp.qpic.cn/collector/1976464052/84b872d6-d735-456b-98de-1d9b51a01383/0",
+      "http://shp.qpic.cn/collector/1976464052/cbae4b66-e36c-46fb-ab71-c800e47d86a2/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bb74325a9e224d91829abbaed9e24450?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85b02ba18cb474c8abd93ef8fecb72c38?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8348c943afc654abc9fa8446573dbf918?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bbd879c37368456d8b93b7720d41e989?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "rid": "24941224"
+  },
+  {
     "id": "20260626102711255",
     "rid": "51167164",
     "title": "蛇蜥 与 蛇花 的双蛇娘化mod",
@@ -4145,58 +4205,6 @@
     ],
     "previewVideos": [],
     "rid": "32055550"
-  },
-  {
-    "id": "20260521091529089",
-    "title": "A大战士-STS2驼鹿【4/22】新版本",
-    "category": "skin",
-    "size": "4.77MB",
-    "date": "2026-05-21",
-    "badge": "v0.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/9031b2c2-c73b-4f38-8a3e-b830fb3d233b/0",
-    "images": [],
-    "description": "此为 anaertailin（A大）发布的铁甲战士外观替换 MOD，更新于 4 月 22 日，人物替换为驼鹿。选人界面无小头像但有大图，篝火与商人处均配有人物插图，攻击与死亡动画质量较高",
-    "author": "anaertailin",
-    "authorLinks": [
-      {
-        "text": "B站|anaertailin",
-        "url": "https://space.bilibili.com/https://space.bilibili.com/2264658"
-      },
-      {
-        "text": "爱发电|anaertailin",
-        "url": "https://www.ifdian.net/a/anaertailin"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "铁甲战士",
-      "驼鹿",
-      "外观替换",
-      "anaertailin",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc771ab5e67684544bf5753fe6a78887e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/4bb52846-5738-4d4d-a823-eef895bda6f5/0",
-      "http://shp.qpic.cn/collector/1976464052/5ea3061b-746f-4ecc-ad92-3df3dff09ed8/0",
-      "http://shp.qpic.cn/collector/1976464052/84b872d6-d735-456b-98de-1d9b51a01383/0",
-      "http://shp.qpic.cn/collector/1976464052/cbae4b66-e36c-46fb-ab71-c800e47d86a2/0"
-    ],
-    "previewVideos": [
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bb74325a9e224d91829abbaed9e24450?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85b02ba18cb474c8abd93ef8fecb72c38?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8348c943afc654abc9fa8446573dbf918?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bbd879c37368456d8b93b7720d41e989?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-    ],
-    "rid": "24941224"
   },
   {
     "id": "20260520185336385",
