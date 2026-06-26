@@ -1,5 +1,56 @@
 [
   {
+    "id": "20260626102711255",
+    "rid": "51167164",
+    "title": "蛇蜥 与 蛇花 的双蛇娘化mod",
+    "badge": "v0.1.0",
+    "size": "1.79MB",
+    "date": "2026-06-26",
+    "tags": [
+      "SFW",
+      "怪物娘化",
+      "外观替换",
+      "蛇蜥",
+      "蛇花",
+      "anaertailin",
+      "在线下载"
+    ],
+    "description": "这是anaertailin(A大)为 \" 蛇蜥 与 蛇花 \" 制作的一款娘化外观替换MOD\n\n兼容性：支持v0.107.x｜PC+安卓双支持\n前置需求：BaseLib v3.3.1（仅推荐 非绝对）",
+    "author": "anaertailin",
+    "authorLinks": [
+      {
+        "text": "爱发电|anaertailin",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      },
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8fdf39948bcc8443ca9ebf2c155963a2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.1",
+        "category": "latest",
+        "version": "BaseLib.3.3.1",
+        "size": "375.5 KB",
+        "date": "推荐"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/967c59d3-1d8e-4256-9d2e-beef9920c6bf/0",
+      "http://shp.qpic.cn/collector/1976464052/099b5e1e-0164-47d4-bbbc-1baba0ffd10a/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/6b3c4a81-ad60-45ac-9504-c63ade4eb1e4/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260626084625017",
     "rid": "95028646",
     "title": "空巢小梅林 - 被触手纠缠的魔法少女",
