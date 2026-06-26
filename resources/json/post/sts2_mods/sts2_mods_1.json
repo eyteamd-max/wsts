@@ -1,5 +1,55 @@
 [
   {
+    "id": "20260626161408419",
+    "rid": "90911326",
+    "title": "储君 - 白毛雌小鬼萝莉 - Musume_regent 皮肤",
+    "badge": "v0.3.0",
+    "size": "1.45MB",
+    "date": "2026-06-26",
+    "tags": [
+      "SFW",
+      "储君",
+      "雌小鬼",
+      "萝莉",
+      "外观替换",
+      "Kill a Tomato",
+      "volgo",
+      "在线下载"
+    ],
+    "description": "Regent 的 Musume 版本皮肤\n替换基础模型和动画\n角色选择界面插画将在未来更新\n休息处和石头剪刀布的手部动画也将在未来更新\n\n**兼容性测试：**\n测试范围：0.103.2~0.107.1｜PC+安卓双支持",
+    "author": "[作者] - Kill a Tomato [Dot icon] - volgo",
+    "authorLinks": [
+      {
+        "text": "X|Kill a Tomato",
+        "url": "https://x.com/Kill_a_Tomato"
+      },
+      {
+        "text": "x|volgo",
+        "url": "https://x.com/banggletjd"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82e58615a1ce7463484ddc2031efbfe83?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750777432",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/12beaac9-dda9-4533-99d7-5e84fcf3feb7/0",
+      "http://shp.qpic.cn/collector/1976464052/b3ce9856-805c-4c93-8f9c-dded009af7a2/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/0f22156e-612a-480c-9470-bd27e05e84fa/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260626155740685",
     "title": "A大战士-驼鹿｜选人小图小头像版",
     "category": "skin",
