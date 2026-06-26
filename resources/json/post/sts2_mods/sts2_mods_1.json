@@ -256,7 +256,8 @@
       "http://shp.qpic.cn/collector/1976464052/b3ce9856-805c-4c93-8f9c-dded009af7a2/0"
     ],
     "previewVideos": [
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83171cee56d534e168832ff7885e42ff2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83171cee56d534e168832ff7885e42ff2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1rZ7L68EYp/&type=mp4"
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/a388f079-4dcd-4a4e-97f7-9349aa4fd18f/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
