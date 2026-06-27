@@ -1,5 +1,52 @@
 [
   {
+    "id": "20260627134341695",
+    "rid": "08528801",
+    "title": "多尼斯异鸟娘化 - @会画画的Small_day",
+    "badge": "v2.0",
+    "size": "2.96MB",
+    "date": "2026-06-27",
+    "tags": [
+      "SFW",
+      "多尼斯异鸟",
+      "怪物娘化",
+      "外观替换",
+      "会画画的Small_day",
+      "在线下载"
+    ],
+    "description": "本模组为 多尼斯异鸟 替换了新的娘化形象",
+    "author": "[模组作者] - 会画画的Small_day [角色形象] - 狼狼okami_official",
+    "authorLinks": [
+      {
+        "text": "B站|会画画的Small_day",
+        "url": "https://space.bilibili.com/95250714"
+      },
+      {
+        "text": "B站|狼狼okami_official",
+        "url": "https://space.bilibili.com/20815435"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eb95803e75674e2394f5b95406f0d07d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3752065217",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1n67q6pEAA/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/0a2febb5-02ca-4a3c-a28a-976d43d383a4/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260627131023245",
     "rid": "90378660",
     "title": "无尽模式  / EndlessMode",
