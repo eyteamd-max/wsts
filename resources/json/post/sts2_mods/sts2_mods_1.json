@@ -1,5 +1,140 @@
 [
   {
+    "id": "20260627145719302",
+    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
+    "category": "skin",
+    "size": "111MB",
+    "date": "2026-06-27",
+    "badge": "v7_0.0.16",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/ded4b62c-6d46-4c80-8100-9cd71484f210/0"
+    ],
+    "images": [],
+    "description": "这是 杀戮尖塔2 的一款蛊真人模组\n\n**模组兼容性测试：**\n模组本体 \" v7_0.0.16 \"\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：BaseLib v3.2.2 (注意，重要配置)\n\nPS：\n0.103.x版本请使用历史版本中的v6_0.0.16",
+    "author": "荷拾叁",
+    "authorLinks": [
+      {
+        "text": "B站|荷拾叁",
+        "url": "https://space.bilibili.com/1989739344"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "蛊真人",
+      "古月方源",
+      "荷拾叁",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8f612681f6b4b4103b285a072bc7a79f6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib.3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750286343",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "蛊真人 v0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzd9b81d5ca9ef4b39ab16e3a2ff07f182?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v6_0.0.16",
+        "size": "54.60MB",
+        "date": "2026-06-10"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/6584eef9-5f46-4264-bd21-659214e7d17f/0",
+      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
+      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
+      "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
+    ],
+    "rid": "58580857"
+  },
+  {
+    "id": "20260627141328435",
+    "rid": "78429111",
+    "title": "blacksouls2x杀戮尖塔2大型mod",
+    "badge": "v1.1.2",
+    "size": "272.81MB",
+    "date": "2026-06-27",
+    "tags": [
+      "SFW",
+      "blacksouls",
+      "格林",
+      "新增角色",
+      "四时雨",
+      "在线下载"
+    ],
+    "description": "包含119张新卡牌，4个新地图，26个新遗物，50+个新怪物和boos，10+个新事件，5个新远古先民的大型mod。\n\n**更新日志：**\n修改格林立绘，感谢@飧祭 提供的美术\n尝试性修复多人数据不同步问题（待测试）\n修复小邮箱坐火黑屏\n修复打院长嗜血触发直接死亡\n增加新遗物“祝福”所有原版角色进入冬之钟自动获取，效果获得30点生命上限，每个回合获得1点能量抽一张牌。\n多人不再召唤多个同伴\n玛丽安不再召唤鬼祟珊瑚\n修复了诸多bug\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.2.1（仅推荐 非绝对）",
+    "author": "四时雨",
+    "authorLinks": [
+      {
+        "text": "B站|四时雨",
+        "url": "https://space.bilibili.com/1045746975"
+      },
+      {
+        "text": "YouTube|四时雨",
+        "url": "https://m.youtube.com/@sishiyusishiyu-p3m"
+      },
+      {
+        "text": "Steam|四时雨",
+        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b2f29952b55d494ebda090de3c728b7d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5a04bf54e13c41e8a733e6ef64e37eb1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "Baselib3.2.1",
+        "size": "344.34KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8d23d685-0ee1-425b-ae9a-12ca08eae38a/0",
+      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0",
+      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
+      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
+      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
+      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260627134341695",
     "rid": "08528801",
     "title": "多尼斯异鸟娘化 - @会画画的Small_day",
@@ -1592,72 +1727,6 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260622113550470",
-    "rid": "78429111",
-    "title": "blacksouls2x杀戮尖塔2大型mod",
-    "badge": "v1.0.0",
-    "size": "254.35MB",
-    "date": "2026-06-22",
-    "tags": [
-      "SFW",
-      "blacksouls",
-      "格林",
-      "新增角色",
-      "四时雨",
-      "在线下载"
-    ],
-    "description": "包含119张新卡牌，4个新地图，26个新遗物，50+个新怪物和boos，10+个新事件，5个新远古先民的大型mod。\n\n兼容性：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.2.1（仅推荐 非绝对）",
-    "author": "四时雨",
-    "authorLinks": [
-      {
-        "text": "B站|四时雨",
-        "url": "https://space.bilibili.com/1045746975"
-      },
-      {
-        "text": "YouTube|四时雨",
-        "url": "https://m.youtube.com/@sishiyusishiyu-p3m"
-      },
-      {
-        "text": "Steam|四时雨",
-        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p308176efa12c44928fcb7beb1dc9852a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5a04bf54e13c41e8a733e6ef64e37eb1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "Baselib3.2.1",
-        "size": "344.34KB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/8d23d685-0ee1-425b-ae9a-12ca08eae38a/0",
-      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0",
-      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
-      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
-      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
-      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
     "id": "20260621214639574",
     "rid": "37390178",
     "title": "The Reaper 唤死师 - new character",
@@ -2811,65 +2880,6 @@
     "coverImage": "http://shp.qpic.cn/collector/1976464052/87d08211-bca2-4e65-996e-71aab26dc46b/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)",
     "rid": "90088716"
-  },
-  {
-    "id": "20260610195747241",
-    "title": "杀戮尖塔2【蛊真人】MOD最新版！！",
-    "category": "skin",
-    "size": "54.60MB",
-    "date": "2026-06-10",
-    "badge": "v6_0.0.16",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/ded4b62c-6d46-4c80-8100-9cd71484f210/0"
-    ],
-    "images": [],
-    "description": "修复多人游戏第一把数据异常的bug\n修复万物大同变大部分bug\n更换开局选本命蛊和杀招蛊方的流程，优化游戏体验",
-    "author": "荷拾叁",
-    "authorLinks": [
-      {
-        "text": "B站|荷拾叁",
-        "url": "https://space.bilibili.com/1989739344"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "蛊真人",
-      "古月方源",
-      "荷拾叁",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组下载[主体]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgzd9b81d5ca9ef4b39ab16e3a2ff07f182?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置[前置]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41a103a44fa00c4b0c8cf2b4736821563d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/heshisan789-bot/STS2-Guzhenren-mod",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/6584eef9-5f46-4264-bd21-659214e7d17f/0",
-      "http://shp.qpic.cn/collector/1976464052/8e8755f3-5bed-43ca-b020-c768b70ea30a/0",
-      "http://shp.qpic.cn/collector/1976464052/e4cb9e54-7f22-4995-b6b6-dbfc1ce22cdb/0",
-      "http://shp.qpic.cn/collector/1976464052/556286ed-1643-47b5-a63f-9b49d4785ef6/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1RaVe6xEJi/&type=mp4"
-    ],
-    "rid": "58580857"
   },
   {
     "id": "20260610195211964",
