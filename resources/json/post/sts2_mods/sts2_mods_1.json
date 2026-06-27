@@ -1,5 +1,48 @@
 [
   {
+    "id": "20260627131023245",
+    "rid": "90378660",
+    "title": "无尽模式  / EndlessMode",
+    "badge": "v0.3.0",
+    "size": "242.36KB",
+    "date": "2026-06-27",
+    "tags": [
+      "SFW",
+      "娱乐mod",
+      "无尽模式",
+      "荒疫",
+      "onakasuitanie",
+      "在线下载"
+    ],
+    "description": "在建筑师事件中加入进入无尽模式的选项，让本次冒险重返第一层并继续累积挑战强度。每次进入新轮回都会获得或强化荒疫之矛与荒疫之盾，并按轮次解锁额外无尽遗物。\n角色选择界面提供配置面板，可调整荒疫之矛、荒疫之盾的强化百分比，也可以开关后续轮次的额外遗物奖励。联机时以房主配置为准。\n\n**兼容性测试：**\n仅支持0.107.1版本｜PC+安卓双兼容",
+    "author": "onakasuitanie",
+    "authorLinks": [
+      {
+        "text": "B站|onakasuitanie",
+        "url": "https://space.bilibili.com/3493298765301961"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8a576920a6c754f5d95cf2246815806f9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747729740",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1rQQTBHEQN/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/bd958bc0-df58-4129-9f65-00da9fbd3198/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260627120524775",
     "title": "观者MOD - 原版/美化 独立兼容版",
     "category": "skin",
