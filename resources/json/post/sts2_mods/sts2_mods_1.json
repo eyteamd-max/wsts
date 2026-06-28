@@ -1,6 +1,72 @@
 [
   {
-    "id": "20260629000041291",
+    "id": "20260629014038614",
+    "title": "语音包-全角色娘化语音-更新修复",
+    "badge": "v1.0.0",
+    "size": "12.39MB",
+    "date": "2026-06-28",
+    "tags": [
+      "SFW",
+      "语音包",
+      "铁甲战士",
+      "静默猎手",
+      "储君",
+      "亡灵契约师",
+      "故障机器人",
+      "语音替换",
+      "牢平",
+      "Yatima2215",
+      "ph0neer",
+      "在线下载"
+    ],
+    "description": "这是《杀戮尖塔2》全角色（铁甲战士、静默猎手、故障机器人、亡灵契约师、储君）的娘化语音包模组，包含选人界面语音、局内战斗语音、互动语音及语音字幕等。\n\n2026.06.28日更新：修复选人界面的头像切换与语音播报等问题，感谢B站up主@呆某熊\n\n制作人员清单 # #\n\n** 牢平 **\n他是 静默猎手、故障机器人、亡灵契约师 娘化语音模组作者，同时也是本整合包的整合者（负责将五个角色的娘化语音统一整合）\n\n** Yatima2215 **\n语音前置框架 \"VoiceModFramework\" 的作者，为其他四个角色的模组运行提供自动语音播放与字幕显示的依赖支持\n\n** ph0neer **\n铁甲战士 语音娘化的模组作者，一位无名的大佬",
+    "author": "[整合] - 牢平 [战士] - ph0neer [框架] - Yatima2215",
+    "authorLinks": [
+      {
+        "text": "B站|牢平",
+        "url": "https://space.bilibili.com/1243442732"
+      },
+      {
+        "text": "N网|ph0neer",
+        "url": "https://www.nexusmods.com/profile/ph0neer"
+      },
+      {
+        "text": "YouTube|Yatima2215",
+        "url": "https://m.youtube.com/@Yatima-nv9dm"
+      },
+      {
+        "text": "N网|Yatima2215",
+        "url": "https://www.nexusmods.com/profile/Yatima2215"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bbf468b63b8d4b2d896ae424ed47e725?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "历史版本",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc1a42af1c0314084a1dbfe60a6d4ea2c?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "视频同款",
+        "size": "12.07MB",
+        "date": "2026-06-29"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/3e0107bf-4594-49ea-8c3e-998f7b955836/0",
+      "http://shp.qpic.cn/collector/1976464052/2625a76c-312f-4a79-b34a-d2316980ab72/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1gdJw6GEG3/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/9ef9abb6-27ca-4f03-b625-7b31fd36f616/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)",
+    "rid": "03405521"
+  },
+  {
+    "id": "20260629014053506",
     "rid": "17629059",
     "title": "放中版史莱姆 - 基于A大，花花改版",
     "badge": "v0.0.1",
@@ -3201,61 +3267,6 @@
     "coverImage": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p93a0aaa7e48942d6b095399f84a8ff58?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)",
     "rid": "26178262"
-  },
-  {
-    "id": "20260614133212510",
-    "title": "语音包-全角色娘化语音-(日语)",
-    "badge": "v1.0.0",
-    "size": "12.07MB",
-    "date": "2026-06-15",
-    "tags": [
-      "SFW",
-      "语音包",
-      "铁甲战士",
-      "静默猎手",
-      "储君",
-      "亡灵契约师",
-      "故障机器人",
-      "语音替换",
-      "牢平",
-      "Yatima2215",
-      "ph0neer",
-      "在线下载"
-    ],
-    "description": "这是《杀戮尖塔2》全角色（铁甲战士、静默猎手、故障机器人、亡灵契约师、储君）的娘化语音包模组，包含选人界面语音、局内战斗语音、互动语音及语音字幕等。\n\n\n制作人员清单 # #\n\n** 牢平 **\n他是 静默猎手、故障机器人、亡灵契约师 娘化语音模组作者，同时也是本整合包的整合者（负责将五个角色的娘化语音统一整合）\n\n** Yatima2215 **\n语音前置框架 \"VoiceModFramework\" 的作者，为其他四个角色的模组运行提供自动语音播放与字幕显示的依赖支持\n\n** ph0neer **\n铁甲战士 语音娘化的模组作者，一位无名的大佬",
-    "author": "[整合] - 牢平 [战士] - ph0neer [框架] - Yatima2215",
-    "authorLinks": [
-      {
-        "text": "B站|牢平",
-        "url": "https://space.bilibili.com/1243442732"
-      },
-      {
-        "text": "N网|ph0neer",
-        "url": "https://www.nexusmods.com/profile/ph0neer"
-      },
-      {
-        "text": "YouTube|Yatima2215",
-        "url": "https://m.youtube.com/@Yatima-nv9dm"
-      },
-      {
-        "text": "N网|Yatima2215",
-        "url": "https://www.nexusmods.com/profile/Yatima2215"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pc1a42af1c0314084a1dbfe60a6d4ea2c?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1gdJw6GEG3/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/9ef9abb6-27ca-4f03-b625-7b31fd36f616/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)",
-    "rid": "03405521"
   },
   {
     "id": "20260612222915669",
