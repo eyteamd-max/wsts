@@ -1,5 +1,140 @@
 [
   {
+    "id": "20260628184603928",
+    "rid": "45131205",
+    "title": "远古好感度 / 先民好感度 ♡~",
+    "badge": "v0.1.0",
+    "size": "8.20MB",
+    "date": "2026-06-28",
+    "tags": [
+      "SFW",
+      "先古之民",
+      "欧洛巴斯",
+      "特兹卡塔拉",
+      "涅奥",
+      "佩尔",
+      "达弗",
+      "诺奴佩普",
+      "瓦库",
+      "坦克斯",
+      "好感度",
+      "nagisachan74",
+      "在线下载"
+    ],
+    "description": "为 杀戮尖塔2 的远古先民事件加入按档案保存的好感度互动，建议配合先民美化模组使用。\n\n\n**主要内容：**\n\n好感度：\n每位远古存在都有按档案保存的好感度。\n\n好感选项：\n远古事件中可能出现额外的好感选项。\n\n远古遗物奖励：\n好感选项会给予一件与该远古存在相关的随机遗物\n\n献身与宠爱遗物：\n随着好感度上升，部分遗物选项可能变为更强的自定义版本\n\n变化演出：\n奖励选项会短暂闪烁并变化，而不是静默替换。\n\n红色选项：\n好感度较低或为负时，部分选项会扭曲为敌意的红色选项，带来更强奖励与更沉重代价。\n\n\n红色遗物：\n责难：\n移除牌组中所有诅咒，包括10进阶诅咒。仅在你拥有诅咒时出现\n拷问：\n从牌组中移除卡牌\n勒索：\n获得大量金币\n骚扰：\n获得数件随机遗物\n注：\n红色遗物奖励会随章节提升：\n第2章金币+400或数量+2，第3章及以后再追加金币+400或数量+2\n\n\n受影响的远古先民：\n涅奥、欧罗巴斯、诺努佩佩、帕埃尔、达尔芙、特兹卡塔拉、瓦库、坦克斯\n\n\n当前注意事项：\n本模组仍在继续扩展与平衡调整\n英文与简体中文本地化已按当前好感遗物奖励行为整理\n多人游戏时，建议所有玩家都安装本模组和所需依赖\n\n\n错误修复：\n修复了包括升级版涅奥的骨骰在内的好感遗物选项可能不发放遗物奖励的问题\n修正了生成卡牌奖励的升级预览\n移除了卷轴匣的非预期金币损失\n\n\n控制台命令：\n\nancient_affection get [远古]\n显示好感度。省略远古时默认为 NEOW\n\nancient_affection add [远古] [数值]\n为指定远古之民增加好感度\n\nancient_affection set [远古] [数值]\n为指定远古之民设置好感度\n\nancient_affection reset [远古]\n将好感度重置为 0\n\nancient_affection set_all_tier [-2|-1|0|1|2|3]\n将所有远古存在的好感度设为对应阶段阈值\n\nancient_affection upgrades [on|off|status]\n切换好感度是否会强化遗物奖励。此设置会保存到你的档案；关闭时好感度仍会增加\n\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：BaseLib3.2.0+RitsuLib0.4.14 | 或更高",
+    "author": "nagisachan74",
+    "authorLinks": [
+      {
+        "text": "steam|nagisachan74",
+        "url": "https://steamcommunity.com/profiles/76561199566777377/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8f70bf6c0626f4785861d8c4304ec1ae9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置Base",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "前置Ritsu",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.41",
+        "category": "latest",
+        "version": "RitsuLib0.4.41",
+        "size": "3.57 MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750930021",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8c21373a-c2a4-4180-a01f-9101e7b8295b/0",
+      "http://shp.qpic.cn/collector/1976464052/5816bb27-b284-431b-baf6-27ae9c2c2713/0",
+      "http://shp.qpic.cn/collector/1976464052/99a17975-6a95-4397-a760-020ed4363556/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/8cda5d92-1021-4dd4-9bcb-38785a9ceb64/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260628182932771",
+    "rid": "41075907",
+    "title": "猪MOD｜YuWanCard（猪猪）",
+    "badge": "v0.5.9",
+    "size": "46.28MB",
+    "date": "2026-06-28",
+    "tags": [
+      "SFW",
+      "猪",
+      "猪进塔",
+      "猪降临",
+      "群友",
+      "猪猪",
+      "新增人物",
+      "一条鱼丸_",
+      "在线下载"
+    ],
+    "description": "角色 – 猪：完整可玩角色，起始生命 80，可使用所有颜色卡牌；专属猪主题起始牌组与遗物，独立卡牌池与遗物池；自定义立绘、动画、商店/休息处美术，以及“养猪大亨”成就徽章。\n\n**兼容性测试：** 模组版本 0.5.9\n范围：仅支持0.107.1｜PC+安卓双兼容\n\nPS：\n历史版本里收录了支持0.103.2版本的猪mod",
+    "author": "一条鱼丸_",
+    "authorLinks": [
+      {
+        "text": "B站|一条鱼丸_",
+        "url": "https://space.bilibili.com/438381132"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bce2ff62ccf74eaba032f9eb6484f21e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/YuWan886/Sts2-YuWanCard",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747566068",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "猪MOD - 0.103.2",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84fd2223ad8824623baf7cb8e889e6f63?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.5.2",
+        "size": "56.8 MB",
+        "date": "2026-06-28"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a39a52c9-7541-4348-8035-e179b0029747/0",
+      "http://shp.qpic.cn/collector/1976464052/cdae5e45-dca2-456c-8522-4306bacf1ae1/0",
+      "http://shp.qpic.cn/collector/1976464052/fdd2408f-e55f-428e-a3ca-9602388ac0c7/0",
+      "http://shp.qpic.cn/collector/1976464052/c570aa01-5ede-43ce-8958-6cc3284d9be3/0",
+      "http://shp.qpic.cn/collector/1976464052/2721d38b-e060-477e-ab5a-8042b1cc83c9/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV11mD5B5Esu/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/c48bd532-f823-4c26-b061-fa30b54d472a/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260628104910086",
     "rid": "70657315",
     "title": "黄油女主-奥薇乐 / nsfw补丁CG版",
@@ -80,7 +215,12 @@
       "达弗",
       "诺奴佩普",
       "瓦库",
-      "坦克斯"
+      "坦克斯",
+      "先民美化",
+      "先古之民",
+      "LunchShark（점심상어）",
+      "Dodobird",
+      "在线下载"
     ],
     "downloadLinks": [
       {
