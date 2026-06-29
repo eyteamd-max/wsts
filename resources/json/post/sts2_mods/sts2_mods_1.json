@@ -1,5 +1,60 @@
 [
   {
+    "id": "20260629231544643",
+    "rid": "56471032",
+    "title": "涅欧娜MOD - 神供仪涅欧娜 Newona",
+    "badge": "v1.0.5",
+    "size": "75.94MB",
+    "date": "2026-06-29",
+    "tags": [
+      "SFW",
+      "涅欧娜\n",
+      "Newona",
+      "神供仪涅欧娜",
+      "魔法少女",
+      "新增角色",
+      "陌离鸳",
+      "在线下载"
+    ],
+    "description": "添加了一个新的可游玩角色：涅欧娜(Newona)\n\n主要内容：\n专属牌组与机制：牌打出即消耗（我的门酱！！），牌数即为生命值，不会受到常规伤害；诅咒体系，状态牌体系，额外的塔罗牌等。\n与官方一样的82张卡牌(两张联机模式的牌，但因为作者没人能一起玩，所以没法测试:( )，额外的22张塔罗牌，若干状态牌遗物药水等。美术资源使用的原游戏的卡牌图片，部分AI生成。\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：BaseLib v3.3.2（ 或更高 ）",
+    "author": "陌离鸳",
+    "authorLinks": [
+      {
+        "text": "steam|陌离鸳",
+        "url": "https://steamcommunity.com/profiles/76561198882261577/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85fd246ca0a7d4639950b1874b38686c4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748996059",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/e3c953cf-7959-4bf2-94cc-1124e2d51f39/0",
+      "http://shp.qpic.cn/collector/1976464052/1c3fd097-4f6d-4c1f-a197-9f8053f9a45c/0",
+      "http://shp.qpic.cn/collector/1976464052/a4bde429-a70f-4a75-aae0-75da68757611/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/768b0f2d-0801-4a87-9227-8fe4c96cf5ba/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260629130958690",
     "rid": "90911326",
     "title": "储君 - 白毛雌小鬼萝莉 - Musume_regent 皮肤",
