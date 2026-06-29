@@ -1,5 +1,67 @@
 [
   {
+    "id": "20260630000440298",
+    "rid": "55762201",
+    "title": "洛茜RossiMod-明日方舟：终末地",
+    "badge": "v0.1.6",
+    "size": "62.23MB",
+    "date": "2026-06-30",
+    "tags": [
+      "SFW",
+      "洛茜",
+      "明日方舟：终末地",
+      "小红帽",
+      "狼",
+      "新增角色",
+      "诗走戏绘",
+      "白雪まち",
+      "在线下载"
+    ],
+    "description": "添加了一位来自 明日方舟：终末地 的角色 洛茜 \n\n**本模组包含：**\n全新的角色机制：狼之珀、灼燃附着、燃烧、破防、连携、追击……｜88张洛茜角色卡牌与10+张洛茜无色卡牌｜洛茜的专属遗物、先古遗物与一个特殊事件｜角色专属能量表盘、角色选择页面与相关界面资源｜一套可爱风角色卡图和角色动画\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：BaseLib v3.3.0（ 或更高 ）",
+    "author": "[模组作者] - 诗走戏绘 [图像授权] - 白雪まち",
+    "authorLinks": [
+      {
+        "text": "B站|诗走戏绘",
+        "url": "https://space.bilibili.com/424754266"
+      },
+      {
+        "text": "pixiv|白雪まち",
+        "url": "https://www.pixiv.net/users/30313016"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85d1df5e42e00499086a91a5ef8b9ba28?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748099434",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a193c052-3607-4c7c-af55-9fee25d497cc/0",
+      "http://shp.qpic.cn/collector/1976464052/d319c2da-9b57-46c8-82bc-ec9a5e9b5ce8/0",
+      "http://shp.qpic.cn/collector/1976464052/cc15f50d-8492-4095-bc48-49d80017b269/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1BfQTB2EyZ/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/243a4f10-ea34-4f7b-998b-34e37fdf5c5f/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260629231544643",
     "rid": "56471032",
     "title": "涅欧娜MOD - 神供仪涅欧娜 Newona",
