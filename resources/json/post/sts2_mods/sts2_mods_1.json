@@ -1,5 +1,65 @@
 [
   {
+    "id": "20260629085159707",
+    "rid": "31470944",
+    "title": "第四幕黑森林MOD - BlackForest",
+    "badge": "v0.1.3",
+    "size": "61.79MB",
+    "date": "2026-06-29",
+    "tags": [
+      "SFW",
+      "黑森林",
+      "脑叶公司",
+      "终末鸟",
+      "废墟图书馆",
+      "娱乐mod",
+      "路过的龙塔罗斯",
+      "在线下载"
+    ],
+    "description": "添加了第四幕黑森林，来自游戏废墟图书馆\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：RitsuLib v0.4.24（ 或更高 ）",
+    "author": "路过的龙塔罗斯",
+    "authorLinks": [
+      {
+        "text": "B站|路过的龙塔罗斯",
+        "url": "https://space.bilibili.com/174310900"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8998e4181b6324aeeb155b8805210401d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.41",
+        "category": "latest",
+        "version": "RitsuLib0.4.41",
+        "size": "3.57 MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750323547",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/293d8d67-79e4-4671-b879-0411bdcdfd3b/0",
+      "http://shp.qpic.cn/collector/1976464052/1b22aa00-0bed-4a4f-a050-e84237886e69/0",
+      "http://shp.qpic.cn/collector/1976464052/f73897d2-3027-4c0f-abac-6bad040f8500/0",
+      "http://shp.qpic.cn/collector/1976464052/b67fec27-900d-40df-b5b1-f9c7930d5009/0",
+      "http://shp.qpic.cn/collector/1976464052/99f32629-cb02-40fa-8b06-0550dfe3b433/0",
+      "http://shp.qpic.cn/collector/1976464052/ca18944b-7466-44f1-9eab-b34fd7f2644f/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1b2jR67EGg/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f49a7909-bdd9-49c1-9959-cd3561e0317f/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260629014053506",
     "rid": "17629059",
     "title": "放中版史莱姆 - 基于A大，花花改版",
