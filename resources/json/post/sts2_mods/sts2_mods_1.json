@@ -1,5 +1,78 @@
 [
   {
+    "id": "20260630010308691",
+    "rid": "75827892",
+    "title": "魔法少女的魔女审判ManosabaLin",
+    "badge": "v0.3.3",
+    "size": "247.58MB",
+    "date": "2026-06-30",
+    "tags": [
+      "SFW",
+      "魔法少女的魔女审判",
+      "艾玛",
+      "雪莉",
+      "希罗",
+      "新增人物",
+      "风中闲霖",
+      "在线下载"
+    ],
+    "description": "新增可玩角色樱羽艾玛，二阶堂希罗，橘雪莉，特色BOSS等\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：MinionLib0.5.2+RitsuLib0.4.34 | 或更高",
+    "author": "风中闲霖",
+    "authorLinks": [
+      {
+        "text": "B站|风中闲霖",
+        "url": "https://space.bilibili.com/313649193"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eefd4a55f09c441782273eb1ac8b5197?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "RitsuLib - 前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.42",
+        "category": "latest",
+        "version": "v0.4.34",
+        "size": "3.59MB",
+        "date": "推荐"
+      },
+      {
+        "text": "MinionLib - 前置",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.5.2",
+        "size": "510.92KB",
+        "date": "推荐"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/yeyilin0/ManosabaLin",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747637918",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/fab86b49-5b30-47ce-abcf-7a600b18fd6f/0",
+      "http://shp.qpic.cn/collector/1976464052/18b994c7-131f-4955-840a-e2f20d60f254/0",
+      "http://shp.qpic.cn/collector/1976464052/0d68d0cb-9b65-406e-ba78-30bf59f7d942/0",
+      "http://shp.qpic.cn/collector/1976464052/4e3ac004-f318-4ad0-9167-926c1ecc58b7/0",
+      "http://shp.qpic.cn/collector/1976464052/5d49c3e1-f860-45f2-afb6-74cdd551b9e7/0",
+      "http://shp.qpic.cn/collector/1976464052/23e95d16-ec2f-4c48-99ed-476d043170fb/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/c8f6e82e-17cd-4806-add4-c9f755131670/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260630000440298",
     "rid": "55762201",
     "title": "洛茜RossiMod-明日方舟：终末地",
