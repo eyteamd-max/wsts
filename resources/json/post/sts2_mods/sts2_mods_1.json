@@ -1,5 +1,59 @@
 [
   {
+    "id": "20260630173938925",
+    "rid": "26365592",
+    "title": "邪神巫女 Cthulhumiko",
+    "badge": "v0.1.0",
+    "size": "19.21MB",
+    "date": "2026-06-30",
+    "tags": [
+      "SFW",
+      "诅咒",
+      "触手",
+      "克苏鲁",
+      "巫女",
+      "邪神",
+      "新增人物",
+      "铃仙5号",
+      "在线下载"
+    ],
+    "description": "新增了B站up主 \" 铃仙5号 \" 的原创OC人物，该角色主要使用以诅咒牌为核心的体系\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：RitsuLib 0.4.43（ 仅推荐 ）",
+    "author": "铃仙5号",
+    "authorLinks": [
+      {
+        "text": "B站|铃仙5号",
+        "url": "https://space.bilibili.com/3493291943267068"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8e998625afbbe4f42a493988ac11d9f32?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.43",
+        "category": "latest",
+        "version": "RitsuLib0.4.43",
+        "size": "3.61MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3753408500",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1zaTg62E2W/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/9d9347eb-ba73-4052-bcf8-0ccc9e8e8c33/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260630111227608",
     "title": "语音包-全角色娘化语音-更新修复",
     "badge": "v1.0.0",
