@@ -1,5 +1,60 @@
 [
   {
+    "id": "20260701230243065",
+    "rid": "54468821",
+    "title": "晓美焰MOD ＆《 魔法少女小圆 》",
+    "badge": "v0.0.8",
+    "size": "68.40MB",
+    "date": "2026-07-01",
+    "tags": [
+      "SFW",
+      "晓美焰",
+      "魔法少女小圆",
+      "新增角色",
+      "股関節脱臼",
+      "在线下载"
+    ],
+    "description": "新可选人物：晓美焰\n测试阶段，暂时不支持联机\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：BaseLib v3.3.2（仅推荐）",
+    "author": "股関節脱臼",
+    "authorLinks": [
+      {
+        "text": "B站|股関節脱臼",
+        "url": "https://space.bilibili.com/22982687"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz868666ff189f244c3b8779c53f0664873?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "Baselib3.3.2",
+        "size": "344.34KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747496064",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/4ea6bf52-b930-4038-b478-630e95517030/0",
+      "http://shp.qpic.cn/collector/1976464052/a2ae9f41-133c-4e6b-8bec-2206e717a74b/0",
+      "http://shp.qpic.cn/collector/1976464052/2f109ee4-2f12-4476-a8d5-5d3bdff52236/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1jJ7a6hE6G/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/bfc37ef5-a229-4893-a1d4-8a65755bf7ca/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260701215026566",
     "rid": "15594184",
     "title": "杀戮尖塔2｜欲途MOD r18完整包",
