@@ -1,6 +1,61 @@
 [
   {
-    "id": "20260631183604804",
+    "id": "20260701073344639",
+    "rid": "44219589",
+    "title": "明日方舟维什戴尔mod",
+    "badge": "v0.0.0",
+    "size": "268.07MB",
+    "date": "2026-07-01",
+    "tags": [
+      "SFW",
+      "维什戴尔",
+      "明日方舟",
+      "新增角色",
+      "超高校级的非非非酋",
+      "在线下载"
+    ],
+    "description": "包含超过75张全新卡牌及立绘，1个全新遗物，全新角色语音，角色动画及背景。支持中文界面与中文卡牌描述。\n\n**注意事项：**\n装载此模组可能会显示 \" 有需要被迁移的模组清单(mod manifest) \" 这是小问题，并不影响游玩。\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.2（仅推荐）",
+    "author": "超高校级的非非非酋",
+    "authorLinks": [
+      {
+        "text": "B站|超高校级的非非非酋",
+        "url": "https://space.bilibili.com/29429051"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz88f94d337f7634c8e8632979ff9cc47c2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "Baselib3.3.2",
+        "size": "344.34KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3752596308",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/2fa6aea6-1ba5-409d-b049-71c6db2ff0a9/0",
+      "http://shp.qpic.cn/collector/1976464052/996cd1e8-e9fd-4fd7-b20d-5617a1c8c597/0",
+      "http://shp.qpic.cn/collector/1976464052/4a11c35c-9e00-43c4-bef5-1303713d0fb7/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1e3Le6oELw/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c32e33b-aa35-407e-b824-58ca0af62e36/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260701073333998",
     "rid": "94151970",
     "title": "铁甲战士 皮肤＆一代战士移植ᴬ",
     "badge": "v0.0.1",
