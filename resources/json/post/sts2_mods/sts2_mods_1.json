@@ -1,5 +1,67 @@
 [
   {
+    "id": "20260701182629635",
+    "rid": "76152685",
+    "title": "超时空辉夜姬mod",
+    "badge": "v3.0.9",
+    "size": "307.81MB",
+    "date": "2026-07-01",
+    "tags": [
+      "SFW",
+      "超时空辉夜姬",
+      "酒寄彩叶",
+      "辉夜",
+      "八千代",
+      "黑玛瑙",
+      "真实",
+      "芦花",
+      "月人",
+      "新增角色",
+      "宇迹SX",
+      "在线下载"
+    ],
+    "description": "该mod新增了2个来自《超时空辉夜姬》的电影主角作为角色：酒寄彩叶，辉夜\n新增了并替换了先古之民：八千代，辉夜，黑玛瑙，未来的彩叶，芦花和真实\n新增了来自原著中神战中的敌人和月人作为怪物和BOSS\n新增了来自原著中的数十种特殊事件\n新增了新机制“记忆碎片·回忆”，用于解锁自制的Act 4挑战\n还有许多新内容等待玩家自行体验~\n\n杀戮尖塔2《超时空辉夜姬》mod更新日志：\nhttps://docs.qq.com/doc/DTW9zbnpNc1dmVGNG\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.0（或更高）\n安卓用户可能会出现 选人界面小头像列表 来回弹动的Bug，这个暂时没有解决办法 只能等他不弹的时候再选（只影响选人体验感，但不影响游玩）",
+    "author": "宇迹SX",
+    "authorLinks": [
+      {
+        "text": "B站|宇迹SX",
+        "url": "https://space.bilibili.com/357374445"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84d62df6c6a5745299cd8bef051062d88?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib 3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747548629",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
+      "http://shp.qpic.cn/collector/1976464052/e8910669-990b-4eb8-b7a8-6dae41e51f31/0",
+      "http://shp.qpic.cn/collector/1976464052/651f5137-2eaf-40b7-9cc9-6cbce1630d4f/0",
+      "http://shp.qpic.cn/collector/1976464052/36f3f92a-25c8-4c1e-8ca4-096376604826/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1vE5F6cENw/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260701161327424",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
