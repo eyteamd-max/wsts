@@ -1,5 +1,202 @@
 [
   {
+    "id": "20260701125903771",
+    "title": "STS2 WineFox Mod / 酒狐MOD",
+    "category": "skin",
+    "size": "58.19MB",
+    "date": "2026-07-01",
+    "badge": "v1.2.10 5",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/b2d273e9-75d8-4343-a52b-d2953c12fbc0/0",
+    "images": [],
+    "description": "WineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：RitsuLib 0.4.45（ 或以上 ）",
+    "author": "灯火橘Channel",
+    "authorLinks": [
+      {
+        "text": "B站|灯火橘Channel",
+        "url": "https://space.bilibili.com/32256434"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "酒狐",
+      "WineFox",
+      "我的世界",
+      "Minecraft",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85a663db891594c1295649ab5cc425e1f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.2.10 5",
+        "size": "58.19MB",
+        "date": "2026-07-01"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.45",
+        "category": "latest",
+        "version": "RitsuLib0.4.45",
+        "size": "3.62 MB",
+        "date": "推荐"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/859",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "酒狐MOD - 0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89c474baab0754f5e89ee75bddbaf85f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.2.6",
+        "size": "49.88MB",
+        "date": "2026-07-01"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/02461e67-cef1-4641-b6bd-6ca7d48e7418/0",
+      "http://shp.qpic.cn/collector/1976464052/4438ba2d-3761-4994-b697-f10e3d8a1387/0",
+      "http://shp.qpic.cn/collector/1976464052/aa54aee7-05cf-411d-9556-b7592fe0f30b/0",
+      "http://shp.qpic.cn/collector/1976464052/9af99ffd-c6be-436d-aad1-4d164ae53989/0",
+      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
+      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1jgVZ6fEvt/&type=mp4"
+    ],
+    "rid": "10783631"
+  },
+  {
+    "id": "20260701130035812",
+    "title": "STS2-沙耶mod-非常可爱的沙耶",
+    "category": "skin",
+    "size": "44.30MB",
+    "date": "2026-07-01",
+    "badge": "v1.7.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/864c994c-3e77-480e-a179-7862e2f09e79/0",
+    "images": [],
+    "description": "本模MOD由B站UP主 千导院枫 所制作，新增的角色为沙耶，质量极高，非常可爱！目前可在选人界面的大图预览中切换五款皮肤：默认、兔女郎、肉粽、裸足、圣女。\n\n**兼容性测试：**\n范围：0.107.1｜PC+安卓双支持｜无需前置",
+    "author": "千导院枫",
+    "authorLinks": [
+      {
+        "text": "B站|千导院枫",
+        "url": "https://space.bilibili.com/10938519"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "沙耶",
+      "新增角色",
+      "沙耶之歌",
+      "千导院枫",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz87bbc6be7b94f4ce1b053be08d3660bb2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747508952",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "沙耶mod - 0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41fa15a4c7974f411daa61205cbf28d29a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.7_103",
+        "size": "55MB",
+        "date": "2026-05-23"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a21a965c-d53b-4d5e-81cc-553a4f7ccea8/0",
+      "http://shp.qpic.cn/collector/1976464052/9cc86a4e-3ebf-4214-8112-e91dacf2e246/0",
+      "http://shp.qpic.cn/collector/1976464052/84247fbf-fa2d-4198-9429-05a0900f94db/0",
+      "http://shp.qpic.cn/collector/1976464052/7911e010-4eae-48ef-ab0e-091d259a3e91/0",
+      "http://shp.qpic.cn/collector/1976464052/96e235a9-ef87-43a2-b791-f356458cea4f/0"
+    ],
+    "previewVideos": [],
+    "rid": "12593550"
+  },
+  {
+    "id": "20260623202948040",
+    "title": "战士&全卡图手绘替换：绯刃战姬",
+    "category": "skin",
+    "size": "20.06MB",
+    "date": "2026-07-01",
+    "badge": "v0.1.7",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/3bb19a16-9439-48c7-8469-f91da9d92fff/0"
+    ],
+    "images": [],
+    "description": "本 MOD 为铁甲战士的外观替换模组，可免费公开下载。所有美术资源均为手绘创作，不含任何 AI 生成内容，请尊重画师的劳动成果\n\n下载前建议关注 B 站 UP 主「阿塔Official」。卡图部分除「惊逃」那几张外已基本完成替换，并包含隐藏彩蛋\n\n功能说明 将铁甲战士替换为机娘「阿塔」，并替换绝大多数卡图\n\n制作信息 MOD 制作：OLC 角色形象原创：阿塔Official 美术绘制：百南芋、Coria、INGOTzw、闪光菠萝皮 等（阿塔Official 已委托并获得使用权）\n\n授权与版权 相关内容版权归阿塔Official 所有（All rights reserved） 本作品采用 CC BY-NC-ND 4.0 协议授权 转载请注明出处，禁止修改、二次创作及商业用途\n\n特别感谢 @灯火橘Channel、画师 blueles",
+    "author": "阿塔_Official",
+    "authorLinks": [
+      {
+        "text": "B站|阿塔_Official",
+        "url": "https://space.bilibili.com/40706073"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "绯刃战姬",
+      "阿塔_Official",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "皮肤 / 卡面「一体版」",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ab31121762e8497ba170ece6201f72ab?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "卡面「非皮肤 仅卡面」",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz852e9b96d310743249b3e016cfd89e9fd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.1.7",
+        "size": "18.92M",
+        "date": "2026-07-01"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/d980b79b-dca9-4447-ab6c-c68ce18ef3ad/0",
+      "http://shp.qpic.cn/collector/1976464052/36837cfe-2f4f-4787-8580-452d21ad51d4/0",
+      "http://shp.qpic.cn/collector/1976464052/c4063436-8b8d-46fd-ae0e-839e2763cdf9/0",
+      "http://shp.qpic.cn/collector/1976464052/2c7c81ba-a60a-4afc-92ad-532a567a0f79/0",
+      "http://shp.qpic.cn/collector/1976464052/92150c50-ae8f-4b6e-8627-59110d5b6011/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV17M9iBwEfz/&type=mp4",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b81179fdec6f4e9ab4d53ffc315f6711?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "rid": "37574622"
+  },
+  {
     "id": "20260701073344639",
     "rid": "44219589",
     "title": "明日方舟维什戴尔mod",
@@ -4662,83 +4859,10 @@
     "rid": "96710309"
   },
   {
-    "id": "20260525211008731",
-    "title": "STS2 WineFox Mod / 酒狐MOD",
-    "category": "skin",
-    "size": "57.38MB",
-    "date": "2026-05-25",
-    "badge": "v1.1.21",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/90aefd68-76cb-48d5-b4bc-1137881c2d7f/0"
-    ],
-    "images": [],
-    "description": "WineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃\n\n\nv1.1.21更新日志：\n1.[清算时间] 基础伤害与材料增伤修改 2 -> 1\n2.[规划专家] 改为被丢弃的技能牌获得保留。（含3回合结束弃牌）\n3.[铁镐] 升级效果改为（下两次你从牌中获得资源时，额外获得4个铁）\n4.更新[全力倾泻]卡面\n5.[魔力超负荷] 基础费用调整为 1\n6.[抓挠] 新增总伤害显示逻辑（power/hook）\n7.修复了沙漠神殿获取部分遗物时，效果不生效的问题\n8.添加对手机版的兼容\n\n\n注意：Mod适配了杀戮尖塔2beta版v0.105.0新更新的接口，由于接口大改，需要切换到beta版才能正常运行mod，使用正式版v0.103.2将无法正常继续游戏！\n\n\n开源地址：\nhttps://github.com/LuoTianOrange/STS2_WineFox\n前置库：\nhttps://github.com/BAKAOLC/STS2-RitsuLib",
-    "author": "灯火橘Channel",
-    "authorLinks": [
-      {
-        "text": "B站|灯火橘Channel",
-        "url": "https://space.bilibili.com/32256434"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "酒狐",
-      "WineFox",
-      "我的世界",
-      "Minecraft",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "v0.103.2正式版[推荐]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41dc5ec3634d004ae287388b736ebc8ea0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "N网下载",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/859",
-        "category": "alternative",
-        "version": "最新版本",
-        "size": "历史版本",
-        "date": "海外"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
-        "text": "v0.103.2兼容版[备选]",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41b2798f578b94446e83b7d3de1a26d70f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/c5629b80-166c-4d23-8a14-fd079d9329d0/0",
-      "http://shp.qpic.cn/collector/1976464052/ca877725-86f7-420b-a506-b9891550a622/0",
-      "http://shp.qpic.cn/collector/1976464052/7fb62f9d-f995-43f2-9f27-04e8ef714eeb/0",
-      "http://shp.qpic.cn/collector/1976464052/79d511f6-42b7-4da3-9565-0d66385c550a/0",
-      "http://shp.qpic.cn/collector/1976464052/c76aa0a4-1e19-4537-bf43-3055b744da50/0",
-      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0",
-      "http://shp.qpic.cn/collector/1976464052/d73bd772-9cb6-490d-ab23-053f90b0fe47/0",
-      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
-      "http://shp.qpic.cn/collector/1976464052/94d66fa0-b1b6-4269-9be2-caed8cff698d/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1thXRBNEi3/&type=mp4"
-    ],
-    "rid": "10783631"
-  },
-  {
     "id": "20260525211002363",
     "title": "杀戮尖塔2商人娘化-带日/中语音",
     "category": "skin",
-    "size": "8.03MB",
+    "size": "9.02MB",
     "date": "2026-05-25",
     "badge": "v1.5.0",
     "badgeClass": "star",
@@ -4747,7 +4871,7 @@
       "http://shp.qpic.cn/collector/1976464052/cfe2e5c3-bfd0-4b66-b889-3f3e08614fe2/0"
     ],
     "images": [],
-    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配；新增中日语音切换选项，商店选卡界面支持切换手或脚\n\n\n更新日志：\n\n最新v1.5.0，在设置里添加了按钮进行切换\n修了些小bug\n\n\n命令重置说明：\n\n- merchant point hand|foot|white|black\n- 示例：merchant point whit\n\n- merchant voice default|jp|zh|db <value>\n- 示例：merchant voice db 3.0将声音调高3分贝\n- 建议：10.0 dB以内，别伤到耳朵了。\n\n\n\n手脚切换教程(详细版)：\n控制台输入merchant hand/foot切换\n手机版不会用控制台的话看这个↓\n教程视频：https://b23.tv/MQDU5U5\n\n\nGitHub开源地址：\nhttps://github.com/LinXce/merchant-2-cute-ii",
+    "description": "该MOD替换了商人与假商人的外观，并进行了简单的动画适配\n\n参考预览图片的最后一张，你可以在mod的配置界面切换手部、裸足、黑丝和白丝，以及中文或日文配音。\n\n你也可以在控制台输入指令切换：\n- `merchant point hand` — 切换为手部\n- `merchant point foot` — 切换为足部\n- `merchant voice zh` — 切换为中文配音\n- `merchant voice db 5` — 音量额外加5分贝\n\n**兼容性测试：**\n范围：0.107.1｜PC+安卓双支持｜无需前置",
     "author": "Peslanna",
     "authorLinks": [
       {
@@ -4767,7 +4891,7 @@
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41747d71d66db9408db8a6be872134e496?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz887cfe40742fb43ed9fe3155df837fa5e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       },
       {
@@ -4776,18 +4900,25 @@
         "category": "alternative",
         "version": "GitHub Releases",
         "size": "在线解析"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748331824",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
       }
     ],
     "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/dfbed67a-0391-495f-82f0-7c0fe087a011/0",
-      "http://shp.qpic.cn/collector/1976464052/e6ae55a0-f06b-44bf-9280-404e21ed939b/0",
+      "http://shp.qpic.cn/collector/1976464052/61cfceb2-db1a-4afd-9174-3c4b7bd7803c/0",
+      "http://shp.qpic.cn/collector/1976464052/7cae6020-a58b-4800-ab47-5a7d29754270/0",
       "http://shp.qpic.cn/collector/1976464052/321835c1-be52-4b6a-8a88-93f931b90ccc/0",
-      "http://shp.qpic.cn/collector/1976464052/2b9b41aa-10c6-4918-aa62-5246a6172ce6/0",
+      "http://shp.qpic.cn/collector/1976464052/f6c4ef1e-130e-47cc-8269-720b9ddd0e2a/0",
       "http://shp.qpic.cn/collector/1976464052/ebb9d36b-25e7-45c4-88ab-9db7063505fe/0",
       "http://shp.qpic.cn/collector/1976464052/3e8918f4-6408-410b-85b1-8a6012064462/0",
       "http://shp.qpic.cn/collector/1976464052/a0880d8c-7442-4d50-9218-058025306fdb/0",
       "http://shp.qpic.cn/collector/1976464052/710eb09f-6400-4972-9a3b-fe0d78a0c740/0",
-      "http://shp.qpic.cn/collector/1976464052/a968c47a-56cc-4eb8-9fbf-9cb2f611d2f3/0"
+      "http://shp.qpic.cn/collector/1976464052/a968c47a-56cc-4eb8-9fbf-9cb2f611d2f3/0",
+      "http://shp.qpic.cn/collector/1976464052/4df0a4fa-ca70-41e8-a535-639bc5f0b937/0"
     ],
     "previewVideos": [
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1W1RNBbECy/&type=mp4"
@@ -5113,104 +5244,10 @@
     "rid": "02822439"
   },
   {
-    "id": "20260523151450874",
-    "title": "STS2-沙耶mod-非常可爱的沙耶",
-    "category": "skin",
-    "size": "55.41MB",
-    "date": "2026-05-23",
-    "badge": "v1.7",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0"
-    ],
-    "images": [],
-    "description": "本模MOD由B站UP主 千导院枫 所制作，新增的角色为沙耶，质量极高，非常可爱！目前可在选人界面的大图预览中切换四款皮肤：默认、兔女郎、赤足、圣女。后续更新将第一时间在本帖发布",
-    "author": "千导院枫",
-    "authorLinks": [
-      {
-        "text": "B站|千导院枫",
-        "url": "https://space.bilibili.com/10938519"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "沙耶",
-      "新增角色",
-      "沙耶之歌",
-      "千导院枫",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim41fa15a4c7974f411daa61205cbf28d29a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/6ea93b43-63cb-44e0-8621-078fdfd4831f/0",
-      "http://shp.qpic.cn/collector/1976464052/6c770708-7a31-4cdf-91b8-a7ae729f28fe/0",
-      "http://shp.qpic.cn/collector/1976464052/9341dc24-4182-406f-bab9-459f8054cb9f/0",
-      "http://shp.qpic.cn/collector/1976464052/9e75c918-f47b-4ccf-bb99-26c9c0432c5c/0",
-      "http://shp.qpic.cn/collector/1976464052/624a9a3a-573e-4a77-816b-2316117486e4/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1i1Gi6hETD/&type=mp4"
-    ],
-    "rid": "12593550"
-  },
-  {
-    "id": "20260523133736416",
-    "title": "战士&全卡图手绘替换：绯刃战姬",
-    "category": "skin",
-    "size": "20.06MB",
-    "date": "2026-05-23",
-    "badge": "v0.103.2",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/3bb19a16-9439-48c7-8469-f91da9d92fff/0"
-    ],
-    "images": [],
-    "description": "MOD介绍：\n\n本 MOD 为铁甲战士的外观替换模组，可免费公开下载。所有美术资源均为手绘创作，不含任何 AI 生成内容，请尊重画师的劳动成果\n\n下载前建议关注 B 站 UP 主「阿塔Official」。卡图部分除「惊逃」那几张外已基本完成替换，并包含隐藏彩蛋\n\n本 MOD 最后更新于 5 月 4 日，后续如有更新，会持续跟进\n\n功能说明 将铁甲战士替换为机娘「阿塔」，并替换绝大多数卡图\n\n制作信息 MOD 制作：OLC 角色形象原创：阿塔Official 美术绘制：百南芋、Coria、INGOTzw、闪光菠萝皮 等（阿塔Official 已委托并获得使用权）\n\n授权与版权 相关内容版权归阿塔Official 所有（All rights reserved） 本作品采用 CC BY-NC-ND 4.0 协议授权 转载请注明出处，禁止修改、二次创作及商业用途\n\n特别感谢 @灯火橘Channel、画师 blueles",
-    "author": "阿塔_Official",
-    "authorLinks": [
-      {
-        "text": "B站|阿塔_Official",
-        "url": "https://space.bilibili.com/40706073"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "铁甲战士",
-      "外观替换",
-      "阿塔_Official",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414072f4481d7f402bad7b7e531d73c0a1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/d980b79b-dca9-4447-ab6c-c68ce18ef3ad/0",
-      "http://shp.qpic.cn/collector/1976464052/36837cfe-2f4f-4787-8580-452d21ad51d4/0",
-      "http://shp.qpic.cn/collector/1976464052/c4063436-8b8d-46fd-ae0e-839e2763cdf9/0",
-      "http://shp.qpic.cn/collector/1976464052/2c7c81ba-a60a-4afc-92ad-532a567a0f79/0",
-      "http://shp.qpic.cn/collector/1976464052/92150c50-ae8f-4b6e-8627-59110d5b6011/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV17M9iBwEfz/&type=mp4",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b81179fdec6f4e9ab4d53ffc315f6711?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-    ],
-    "rid": "37574622"
-  },
-  {
     "id": "20260523133736016",
     "title": "战士外观替换MOD：加丝敏",
     "category": "skin",
-    "size": "7.09MB",
+    "size": "10.99MB",
     "date": "2026-05-23",
     "badge": "v0.1.1",
     "badgeClass": "star",
@@ -5219,7 +5256,7 @@
       "http://shp.qpic.cn/collector/1976464052/eba5797e-3ffb-44b4-8895-a708b5569bcc/0"
     ],
     "images": [],
-    "description": "本mod采用了﻿﻿﻿@比逗逗丶老师的模板+部分修改，替换了铁甲战士大部分原版动画素材\n食用方法：将文件解压进杀戮尖塔2本体文件的mods文件夹中，如果没有mods文件夹手动新建一个mods即可\n\n注意事项：\n1.如果是第一次安装mod的玩家注意有mod的存档与正常存档并不同步，需要手动覆盖存档，具体解决方法可在b站搜索\n2.安装了突破多人联机上限的mod可能会导致商店的动画出现问题。\n3.如果有其他采用﻿﻿@比逗逗丶老师 模板的mod，暂时不确定会不会有冲突出现，请多留意\n4.出现bug请在B站评论区留言反馈，会尽可能在后续版本中更新修复",
+    "description": "用猴妈家可爱的崽子加丝敏替换了游戏中除卡图以外铁甲战士的大部分美术素材，什么你问为什么是只狗子/狐狸/哈基米？ 其实是狼 美少女MOD肯定会有很多人做，四脚着地的就不好说了！\n\n**兼容性测试：**\n测试范围：0.103.2~0.107.1｜PC+安卓双支持",
     "author": "浅井猴猴_Saru",
     "authorLinks": [
       {
@@ -5238,7 +5275,7 @@
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p5026bb27da044e68b6ae01c7d4c46a5b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz849f17709028a4c32b0afb391c9ac90a0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       }
     ],
@@ -5416,7 +5453,7 @@
     "id": "20260430151207045",
     "title": "故障机器人外观替换MOD：猪煲",
     "category": "skin",
-    "size": "19.70M",
+    "size": "26.34MB",
     "date": "2026-05-20",
     "badge": "v0.1.1",
     "badgeClass": "heart",
@@ -5424,7 +5461,7 @@
     "coverChar": "加载中…",
     "coverImage": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz854ed1cfc77064581ba9d0a8175a35e60?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
     "images": [],
-    "description": "( 怎么是右边那只 )\n许多猪 ，强度：不可战胜\n\n猪煲mod更新至ver0.1.1\n修复了鸡煲独立启动时无法进入游戏的bug\n修复了字体与分辨率被更改的bug\n如果已经安装了旧版本记得先手动删掉！",
+    "description": "( 怎么是右边那只 )\n许多猪 ，强度：不可战胜\n\n**兼容性测试：**\n测试范围：0.103.2~0.107.1｜PC+安卓双支持",
     "author": "浅井猴猴_Saru",
     "authorLinks": [
       {
@@ -5443,7 +5480,8 @@
     "downloadLinks": [
       {
         "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim4102c494fc63364c6983f45b2992abcf9b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8245f754ec75b4757863e080b3341a805?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
       }
     ],
     "previewImages": [],
