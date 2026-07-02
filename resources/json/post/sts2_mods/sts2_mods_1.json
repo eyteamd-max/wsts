@@ -1,5 +1,120 @@
 [
   {
+    "id": "20260702224347930",
+    "rid": "06008294",
+    "title": "海克斯大乱斗＆原版 (模组本体)",
+    "badge": "v0.8.4",
+    "size": "16.57MB",
+    "date": "2026-07-02",
+    "tags": [
+      "SFW",
+      "海克斯符文",
+      "娱乐mod",
+      "玩法扩展",
+      "onakasuitanie",
+      "在线下载"
+    ],
+    "description": "在第1、2、3幕开始时选择海克斯符文，获得白银、黄金或棱彩阶的构筑改造；同一幕的敌人也会获得对应稀有度的敌方海克斯。包含专属图鉴分类、敌方海克斯顶部提示、中英文文本与联机同步支持\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：无需前置，可独立运行",
+    "author": "onakasuitanie",
+    "authorLinks": [
+      {
+        "text": "B站|onakasuitanie",
+        "url": "https://space.bilibili.com/3493298765301961"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz807b1a08ab76c480ea7536fb61acb1069?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747501308",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "历史版本 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ef10c1cbaafe491eb5f119696e05b3f1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.8.3",
+        "size": "16.17MB",
+        "date": "2026-07-01"
+      },
+      {
+        "text": "历史版本 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz889f2dbffae7f49e794cc53cfaec08d44?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.8.2",
+        "size": "15.53MB",
+        "date": "2026-06-28"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/e56f7293-9e05-4bf5-940a-2090ef594ca4/0",
+      "http://shp.qpic.cn/collector/1976464052/0169070c-0569-4fd7-a564-f2c210e901e9/0",
+      "http://shp.qpic.cn/collector/1976464052/306dde12-4856-4944-b87d-7ef98552a811/0",
+      "http://shp.qpic.cn/collector/1976464052/1e3cdcd5-75c7-4fb2-bfb5-1f9a2bc6115b/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1KeGb6oEr8/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/ee55ccb7-03ad-47cd-85b7-3682186e754c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260702224344904",
+    "rid": "87609210",
+    "title": "海克斯大乱斗＆拓展包 ( 可选 )",
+    "badge": "v0.8.4",
+    "size": "622.19KB",
+    "date": "2026-07-01",
+    "tags": [
+      "SFW",
+      "海克斯符文",
+      "娱乐mod",
+      "玩法扩展",
+      "onakasuitanie",
+      "在线下载"
+    ],
+    "description": "本模组是《海克斯大乱斗》的赞助者拓展包，需要同时安装《海克斯大乱斗》本体\n\n拓展包收录了一批由赞助者灵感创作、风格更独立的海克斯符文、附魔与属性锻造器内容。它们会接入本体的海克斯抽选池、锻造器系统与配置界面，为《杀戮尖塔2》的每一局带来更多构筑方向和变化规则\n\n如果你想体验更丰富、更实验性的海克斯内容，可以启用本拓展包；如果你更偏好本体统一风格，也可以只安装《海克斯大乱斗》本体\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：海克斯大乱斗本体 ↴\nhttps://axxxx.cyou/?rid=06008294",
+    "author": "onakasuitanie",
+    "authorLinks": [
+      {
+        "text": "B站|onakasuitanie",
+        "url": "https://space.bilibili.com/3493298765301961"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8c02bf6b03f3f43f8b6dbae8766cbd542?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749708876",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "历史版本 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bc37a15870174a0a8b8e527d153d705b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.8.1",
+        "size": "363.92KB",
+        "date": "2026-06-28"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/638d2d12-b164-46c2-9e64-646295948339/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/076b7306-c8de-42ff-ad8a-3363303a59b3/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260702212730385",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
@@ -400,113 +515,6 @@
     ],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/e74503ca-d74c-4068-86e5-1924f7abcd5b/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260701145049814",
-    "rid": "06008294",
-    "title": "海克斯大乱斗＆原版 (模组本体)",
-    "badge": "v0.8.3",
-    "size": "16.17MB",
-    "date": "2026-07-01",
-    "tags": [
-      "SFW",
-      "海克斯符文",
-      "娱乐mod",
-      "玩法扩展",
-      "onakasuitanie",
-      "在线下载"
-    ],
-    "description": "在第1、2、3幕开始时选择海克斯符文，获得白银、黄金或棱彩阶的构筑改造；同一幕的敌人也会获得对应稀有度的敌方海克斯。包含专属图鉴分类、敌方海克斯顶部提示、中英文文本与联机同步支持\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：无需前置，可独立运行",
-    "author": "onakasuitanie",
-    "authorLinks": [
-      {
-        "text": "B站|onakasuitanie",
-        "url": "https://space.bilibili.com/3493298765301961"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ef10c1cbaafe491eb5f119696e05b3f1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747501308",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz889f2dbffae7f49e794cc53cfaec08d44?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.8.2",
-        "size": "15.53MB",
-        "date": "2026-06-28"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/e56f7293-9e05-4bf5-940a-2090ef594ca4/0",
-      "http://shp.qpic.cn/collector/1976464052/0169070c-0569-4fd7-a564-f2c210e901e9/0",
-      "http://shp.qpic.cn/collector/1976464052/306dde12-4856-4944-b87d-7ef98552a811/0",
-      "http://shp.qpic.cn/collector/1976464052/1e3cdcd5-75c7-4fb2-bfb5-1f9a2bc6115b/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1KeGb6oEr8/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/ee55ccb7-03ad-47cd-85b7-3682186e754c/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260701145046471",
-    "rid": "87609210",
-    "title": "海克斯大乱斗＆拓展包 ( 可选 )",
-    "badge": "v0.8.3",
-    "size": "622.19KB",
-    "date": "2026-07-01",
-    "tags": [
-      "SFW",
-      "海克斯符文",
-      "娱乐mod",
-      "玩法扩展",
-      "onakasuitanie",
-      "在线下载"
-    ],
-    "description": "本模组是《海克斯大乱斗》的赞助者拓展包，需要同时安装《海克斯大乱斗》本体\n\n拓展包收录了一批由赞助者灵感创作、风格更独立的海克斯符文、附魔与属性锻造器内容。它们会接入本体的海克斯抽选池、锻造器系统与配置界面，为《杀戮尖塔2》的每一局带来更多构筑方向和变化规则\n\n如果你想体验更丰富、更实验性的海克斯内容，可以启用本拓展包；如果你更偏好本体统一风格，也可以只安装《海克斯大乱斗》本体\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：海克斯大乱斗本体 ↴\nhttps://axxxx.cyou/?rid=06008294",
-    "author": "onakasuitanie",
-    "authorLinks": [
-      {
-        "text": "B站|onakasuitanie",
-        "url": "https://space.bilibili.com/3493298765301961"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8c02bf6b03f3f43f8b6dbae8766cbd542?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749708876",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bc37a15870174a0a8b8e527d153d705b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.8.1",
-        "size": "363.92KB",
-        "date": "2026-06-28"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/638d2d12-b164-46c2-9e64-646295948339/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/076b7306-c8de-42ff-ad8a-3363303a59b3/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
