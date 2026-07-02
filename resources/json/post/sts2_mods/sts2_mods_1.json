@@ -1,5 +1,91 @@
 [
   {
+    "id": "20260702212730385",
+    "rid": "78429111",
+    "title": "blacksouls2x杀戮尖塔2大型mod",
+    "badge": "v1.2.3",
+    "size": "313.81MB",
+    "date": "2026-07-02",
+    "tags": [
+      "SFW",
+      "blacksouls",
+      "格林",
+      "新增角色",
+      "四时雨",
+      "在线下载"
+    ],
+    "description": "包含180+张新卡牌，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复较多bug\n优化体验\n重做同伴的底层逻辑（目前联机不确定会不会有问题，我尝试了使用人机队友mod是没啥问题的）\n小红帽随机卡将会过滤掉储君和故障机器人的卡\n双子的第三个选项给的稀有卡限定角色卡池，不再是随机卡池给了\n联机相对于旧版本变得更加稳定了\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.2（或更高）",
+    "author": "四时雨",
+    "authorLinks": [
+      {
+        "text": "B站|四时雨",
+        "url": "https://space.bilibili.com/1045746975"
+      },
+      {
+        "text": "YouTube|四时雨",
+        "url": "https://m.youtube.com/@sishiyusishiyu-p3m"
+      },
+      {
+        "text": "Steam|四时雨",
+        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz836a2ca9386c14bfd9712b225c6705869?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "Baselib3.3.2",
+        "size": "344.34KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "历史版本 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz806803350a5b2483d86e46d0bd38e29ac?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.2.1",
+        "size": "313.74MB",
+        "date": "2026-06-30"
+      },
+      {
+        "text": "历史版本 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b2f29952b55d494ebda090de3c728b7d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.1.2",
+        "size": "272.81MB",
+        "date": "2026-06-30"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/f792f345-f116-4520-89d4-59a587af6f6c/0",
+      "http://shp.qpic.cn/collector/1976464052/00e07a76-611f-49b6-a51c-3e0e4849eeeb/0",
+      "http://shp.qpic.cn/collector/1976464052/5d324cfb-e580-4c26-a884-c1662002f9e2/0",
+      "http://shp.qpic.cn/collector/1976464052/6fe2595c-bf94-4fbb-be5b-ef4c15ae58c0/0",
+      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
+      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
+      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0",
+      "http://shp.qpic.cn/collector/1976464052/146808e2-21e4-4b7b-95ff-181428b9a49a/0",
+      "http://shp.qpic.cn/collector/1976464052/25f287b8-f648-44fd-96a7-30cb959f28ba/0",
+      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260702075054338",
     "rid": "44442248",
     "title": "风骚/野兽尖塔涩图MOD - 全卡面",
@@ -274,92 +360,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1vE5F6cENw/&type=mp4"
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260701161327424",
-    "rid": "78429111",
-    "title": "blacksouls2x杀戮尖塔2大型mod",
-    "badge": "v1.2.2",
-    "size": "313.81MB",
-    "date": "2026-07-01",
-    "tags": [
-      "SFW",
-      "blacksouls",
-      "格林",
-      "新增角色",
-      "四时雨",
-      "在线下载"
-    ],
-    "description": "包含180+张新卡牌，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复了一二层会遇到冬之钟事件的bug\n修复了伊迪丝/荆棘魔姬，打人会卡死的问题\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.2（或更高）",
-    "author": "四时雨",
-    "authorLinks": [
-      {
-        "text": "B站|四时雨",
-        "url": "https://space.bilibili.com/1045746975"
-      },
-      {
-        "text": "YouTube|四时雨",
-        "url": "https://m.youtube.com/@sishiyusishiyu-p3m"
-      },
-      {
-        "text": "Steam|四时雨",
-        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ec4a24f340c34e97a25a3c4dbd45dcb9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
-        "category": "latest",
-        "version": "Baselib3.3.2",
-        "size": "344.34KB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz806803350a5b2483d86e46d0bd38e29ac?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v1.2.1",
-        "size": "313.74MB",
-        "date": "2026-06-30"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b2f29952b55d494ebda090de3c728b7d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v1.1.2",
-        "size": "272.81MB",
-        "date": "2026-06-30"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/f792f345-f116-4520-89d4-59a587af6f6c/0",
-      "http://shp.qpic.cn/collector/1976464052/00e07a76-611f-49b6-a51c-3e0e4849eeeb/0",
-      "http://shp.qpic.cn/collector/1976464052/5d324cfb-e580-4c26-a884-c1662002f9e2/0",
-      "http://shp.qpic.cn/collector/1976464052/6fe2595c-bf94-4fbb-be5b-ef4c15ae58c0/0",
-      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
-      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
-      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0",
-      "http://shp.qpic.cn/collector/1976464052/146808e2-21e4-4b7b-95ff-181428b9a49a/0",
-      "http://shp.qpic.cn/collector/1976464052/25f287b8-f648-44fd-96a7-30cb959f28ba/0",
-      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
