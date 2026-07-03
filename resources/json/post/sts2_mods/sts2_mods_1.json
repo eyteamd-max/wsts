@@ -1,5 +1,98 @@
 [
   {
+    "id": "20260703123523615",
+    "rid": "06159283",
+    "title": "终焉之莉莉 - 储君卡牌/卡面美化",
+    "badge": "v0.2.4",
+    "size": "23.69MB",
+    "date": "2026-07-03",
+    "tags": [
+      "SFW",
+      "储君",
+      "终焉之莉莉",
+      "卡面美化",
+      "Miiers",
+      "在线下载"
+    ],
+    "description": "本Mod更改了卡牌外框、卡牌图标，具体的局内预览请看底部的预览图片。",
+    "author": "Miiers",
+    "authorLinks": [
+      {
+        "text": "B站|Miiers",
+        "url": "https://space.bilibili.com/4583508"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ecc98b167a8742f09bde29536afe8d6c?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747592590",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a2b374c6-bdff-4b6a-8456-d8112e84dc3f/0",
+      "http://shp.qpic.cn/collector/1976464052/cfab6231-08c4-4a83-b4cf-14e617e831da/0",
+      "http://shp.qpic.cn/collector/1976464052/99b0d004-8507-46b6-9527-c7d73f253996/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/cfab6231-08c4-4a83-b4cf-14e617e831da/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260703123210092",
+    "rid": "17282257",
+    "title": "终焉之莉莉 - 替换储君皮肤",
+    "badge": "v2.0.3",
+    "size": "29.93MB",
+    "date": "2026-07-03",
+    "tags": [
+      "SFW",
+      "储君",
+      "终焉之莉莉",
+      "外观替换",
+      "Miiers",
+      "在线下载"
+    ],
+    "description": "将终焉之莉莉作为储君的皮肤，美化包括：对话信息、费用图标、攻击动画等一等\n\n推荐同步订阅使用：\n终焉之莉莉 - 纯手绘储君卡牌美化\nhttps://axxxx.cyou/?rid=06159283\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：无需前置，可独立运行",
+    "author": "Miiers",
+    "authorLinks": [
+      {
+        "text": "B站|Miiers",
+        "url": "https://space.bilibili.com/4583508"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83271e4b0fd734f238b848b7b63b11d75?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747591828",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/be24d12d-7923-408f-8942-8d9e463918d9/0",
+      "http://shp.qpic.cn/collector/1976464052/f13cdac6-33ca-4168-91c9-9b42042f8c31/0",
+      "http://shp.qpic.cn/collector/1976464052/2fcbc07f-6acc-420f-9121-34e24c653124/0",
+      "http://shp.qpic.cn/collector/1976464052/0a377648-1102-4ef6-80c5-f8f8ff503d4f/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1JboxBUEDw/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/6815d3a8-da3b-42ca-9036-3808fd38481e/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260702224347930",
     "rid": "06008294",
     "title": "海克斯大乱斗＆原版 (模组本体)",
