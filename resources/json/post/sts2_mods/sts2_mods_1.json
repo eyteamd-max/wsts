@@ -1,5 +1,58 @@
 [
   {
+    "id": "20260703180928173",
+    "rid": "74235507",
+    "title": "圣主历险记 ShengZhu Adventure",
+    "badge": "v1.0.8",
+    "size": "204.76MB",
+    "date": "2026-07-03",
+    "tags": [
+      "SFW",
+      "圣主历险记",
+      "成龙",
+      "新增人物",
+      "敞篷大别墅",
+      "在线下载"
+    ],
+    "description": "这是一个《杀戮尖塔 2》内容 Mod，围绕圣主、十二符咒、鬼影面具、黑手帮、阿福、龙小组与八大恶魔展开。当前源码统计：卡牌模型 153 张，其中正式卡牌 113 张、代币/预览卡 40 张；按正式卡牌类型统计为攻击 30 张、技能 53 张、能力 26 张、诅咒 4 张；其中远古/先古卡 4 张。另有事件 7 个、遗物 18 个。\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.4（或更高）",
+    "author": "敞篷大别墅",
+    "authorLinks": [
+      {
+        "text": "B站|敞篷大别墅",
+        "url": "https://space.bilibili.com/13495492"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8a869eb407fc048a89b1d08aa0664b221?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.4",
+        "category": "latest",
+        "version": "BaseLib3.3.4",
+        "size": "377.4 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747713325",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/718171e4-46e6-4972-a026-4f1a1b42c60d/0",
+      "http://shp.qpic.cn/collector/1976464052/744a2130-0820-4c5c-a60e-2ccc15cae46f/0",
+      "http://shp.qpic.cn/collector/1976464052/ce998a72-6c19-4040-81c6-ee619792fbe2/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/d06e322d-2e67-420c-8e23-d57bd633124c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260703171142256",
     "title": "建筑师MOD-第4章节最终关卡",
     "category": "skin",
