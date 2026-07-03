@@ -1,5 +1,69 @@
 [
   {
+    "id": "20260703143119976",
+    "rid": "52229388",
+    "title": "Arknights Mizuki 明日方舟水月",
+    "badge": "v0.9.9",
+    "size": "83.98MB",
+    "date": "2026-07-03",
+    "tags": [
+      "SFW",
+      "水月",
+      "明日方舟",
+      "新增角色",
+      "星空狂想岚",
+      "在线下载"
+    ],
+    "description": "添加了明日方舟中的水月，包含8个遗物，88张卡牌，2个boss，1个四层看门精英，1个解锁4层的特殊事件，以及4层\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：MinionLib0.5.2+BaseLib3.3.2",
+    "author": "星空狂想岚",
+    "authorLinks": [
+      {
+        "text": "B站|星空狂想岚",
+        "url": "https://space.bilibili.com/60506058"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89fd7c04bc57d4623a49a2da1c2812d1b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "BaseLib - 前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "MinionLib - 前置",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "MinionLib0.5.2",
+        "size": "510.92KB",
+        "date": "必装"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748946560",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/559fd677-0434-4750-b95c-066dbed162a3/0",
+      "http://shp.qpic.cn/collector/1976464052/a263e1d2-a043-4f90-8fc2-79455439476b/0",
+      "http://shp.qpic.cn/collector/1976464052/11e9eeac-8b93-4c2c-aa05-71192c86b74a/0",
+      "http://shp.qpic.cn/collector/1976464052/80f25b45-e7cd-48ed-9e77-e5e9c991aa3c/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1MdoxBcEQS/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/5fec0e87-91f3-4a2d-80e5-c8f8e4167d56/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260703123523615",
     "rid": "06159283",
     "title": "终焉之莉莉 - 储君卡牌/卡面美化",
