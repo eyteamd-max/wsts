@@ -1,5 +1,75 @@
 [
   {
+    "id": "20260703171142256",
+    "title": "建筑师MOD-第4章节最终关卡",
+    "category": "skin",
+    "size": "21.41MB",
+    "date": "2026-07-03",
+    "badge": "v0.1.4",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0"
+    ],
+    "images": [],
+    "description": "新增自定义章节，包含全新事件和一场策略性十足的史诗级 Boss 战。现在，您将有更多机会使用您的终局卡组！\n\n概要 ↴\n在第 3 幕结束后，即可进入第 4 幕 （无需任何条件），其中包括一场极具策略性的 Boss 战。\n第四幕死亡没有惩罚。角色属性和游戏历史记录有单独的第四幕切换开关。\n游玩第四幕 可以获得更多经验值，用于解锁时间线。\n\n平衡 ↴\n第一幕至第三幕不变\n难度会根据玩家人数、第四幕难度设置以及略微的飞升等级而调整。\n\n模组 v2.2.8 - 兼容测试：\n范围：0.107.1｜PC+安卓支持\n前置：BaseLib v3.3.3（仅推荐）\n\nPS：\n0.103.x请下载历史版本中v0.1.2e版本的模组\n并使用旧版本的BaseLib前置，一定要注意喵",
+    "author": "iKenster",
+    "authorLinks": [
+      {
+        "text": "N网|iKenster",
+        "url": "https://www.nexusmods.com/profile/iKenster"
+      },
+      {
+        "text": "YouTube|iKenster",
+        "url": "https://youtube.com/@ikenster-q3n"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "建筑师",
+      "BOSS",
+      "玩法扩展",
+      "iKenster",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz850573184ec6b4040a0840ab526ae3e65?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.3",
+        "category": "latest",
+        "version": "BaseLib3.3.3",
+        "size": "377.4 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "建筑师MOD - 0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz8c73083328e04628a2a8b860a125fa0e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.1.2e",
+        "size": "8.16MB",
+        "date": "2026-06-03"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/088c9693-73b5-4491-b414-9810848a2dbb/0",
+      "http://shp.qpic.cn/collector/1976464052/3fe12934-5ff0-416d-8389-a02c42f5a945/0",
+      "http://shp.qpic.cn/collector/1976464052/a2f8139e-e608-44f2-afc6-8f2b88a8c699/0",
+      "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0",
+      "http://shp.qpic.cn/collector/1976464052/d0772f6f-799b-4071-ba5f-7791aaa3dbd1/0",
+      "http://shp.qpic.cn/collector/1976464052/db8e89fd-c89b-4c76-93a3-c05f9b8530ff/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bfb0aa7cf08e40ebab4c50d8be87aa89?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1VFwVzmEjG/&type=mp4"
+    ],
+    "rid": "49218037"
+  },
+  {
     "id": "20260703143119976",
     "rid": "52229388",
     "title": "Arknights Mizuki 明日方舟水月",
@@ -4520,59 +4590,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1SYdaBLEwh/&type=mp4"
     ],
     "rid": "32879717"
-  },
-  {
-    "id": "20260603192403392",
-    "title": "建筑师MOD-第4章节最终关卡",
-    "category": "skin",
-    "size": "8.16MB",
-    "date": "2026-06-03",
-    "badge": "v0.1.2e",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0"
-    ],
-    "images": [],
-    "description": "新增自定义章节，包含全新事件和一场策略性十足的史诗级 Boss 战。现在，您将有更多机会使用您的终局卡组！\n\n概要 ↴\n在第 3 幕结束后，即可进入第 4 幕 （无需任何条件），其中包括一场极具策略性的 Boss 战。\n第四幕死亡没有惩罚。角色属性和游戏历史记录有单独的第四幕切换开关。\n游玩第四幕 可以获得更多经验值，用于解锁时间线。\n\n平衡 ↴\n第一幕至第三幕不变\n难度会根据玩家人数、第四幕难度设置以及略微的飞升等级而调整。",
-    "author": "iKenster",
-    "authorLinks": [
-      {
-        "text": "N网|iKenster",
-        "url": "https://www.nexusmods.com/profile/iKenster"
-      },
-      {
-        "text": "YouTube|iKenster",
-        "url": "https://youtube.com/@ikenster-q3n"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "建筑师",
-      "BOSS",
-      "玩法扩展",
-      "iKenster",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz8c73083328e04628a2a8b860a125fa0e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/088c9693-73b5-4491-b414-9810848a2dbb/0",
-      "http://shp.qpic.cn/collector/1976464052/3fe12934-5ff0-416d-8389-a02c42f5a945/0",
-      "http://shp.qpic.cn/collector/1976464052/a2f8139e-e608-44f2-afc6-8f2b88a8c699/0",
-      "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0",
-      "http://shp.qpic.cn/collector/1976464052/d0772f6f-799b-4071-ba5f-7791aaa3dbd1/0",
-      "http://shp.qpic.cn/collector/1976464052/b017122b-5cf8-4da2-9957-ef68f8cd770a/0"
-    ],
-    "previewVideos": [
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bfb0aa7cf08e40ebab4c50d8be87aa89?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1VFwVzmEjG/&type=mp4"
-    ],
-    "rid": "49218037"
   },
   {
     "id": "20260601090139746",
