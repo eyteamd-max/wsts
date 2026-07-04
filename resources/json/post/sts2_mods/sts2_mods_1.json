@@ -1,5 +1,52 @@
 [
   {
+    "id": "20260704164241366",
+    "rid": "40881177",
+    "title": "储君卡面-两只鸽子-RegentCardsAnimeRework",
+    "badge": "v0.7",
+    "size": "28.59MB",
+    "date": "2026-07-04",
+    "tags": [
+      "SFW",
+      "储君",
+      "卡面美化",
+      "两只鸽子",
+      "在线下载"
+    ],
+    "description": "B站up主 两只鸽子 制作的一款储君卡面美化mod",
+    "author": "两只鸽子",
+    "authorLinks": [
+      {
+        "text": "B站|两只鸽子",
+        "url": "https://space.bilibili.com/372337618"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83fbd42c27d63450789a7bef47f308310?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747626664",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/d844929a-2997-40b5-8122-e31b4288ec14/0",
+      "http://shp.qpic.cn/collector/1976464052/10b70530-2d04-457d-ae93-72e7af960c9a/0",
+      "http://shp.qpic.cn/collector/1976464052/765e93eb-0114-4c8b-89cb-e772cac60aec/0",
+      "http://shp.qpic.cn/collector/1976464052/79d95dbc-ca60-4528-9f3e-72a92997ab30/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1cB7q69Ech/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/e46e5ae7-be18-43a0-9e83-a486333f9bdc/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260704124545727",
     "rid": "13531959",
     "title": "白毛御姐骨妹 - 亡灵契约师mod｜HarenRubeos",
