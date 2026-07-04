@@ -1,5 +1,51 @@
 [
   {
+    "id": "20260704124545727",
+    "rid": "13531959",
+    "title": "白毛御姐骨妹 - 亡灵契约师mod｜HarenRubeos",
+    "badge": "v1.0.0",
+    "size": "1.51MB",
+    "date": "2026-07-04",
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换",
+      "김국희",
+      "在线下载"
+    ],
+    "description": "韩国 \"김국희 \"大佬制作的一款骨妹外观替换模组",
+    "author": "김국희",
+    "authorLinks": [
+      {
+        "text": "x|김국희",
+        "url": "https://x.com/SS_cook2"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz81ccc2cc1bcb44604996c74ea16bc06c5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3755470351",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/b5e90aed-6c51-4253-aaec-7a1cb53c3309/0",
+      "http://shp.qpic.cn/collector/1976464052/45bded60-ca41-4690-8599-0c07fe58dee4/0",
+      "http://shp.qpic.cn/collector/1976464052/fa73cebf-176c-4a2d-b22a-39efb4f3ea8d/0",
+      "http://shp.qpic.cn/collector/1976464052/1b23cd93-7a6e-4a7f-9f29-3a000fa43735/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/a6056a37-d54c-4c92-9995-917fe61d4208/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260704095723139",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
