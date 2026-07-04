@@ -1,5 +1,65 @@
 [
   {
+    "id": "20260705021244887",
+    "title": "薄荷尖塔 2-MintySpire2＃功能mod",
+    "category": "skin",
+    "size": "362.52KB",
+    "date": "2026-07-05",
+    "badge": "v1.1.9",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/3581728035/f13e5c4a-e99d-42a9-af48-f870f0af58bf/0"
+    ],
+    "images": [],
+    "description": "它汇集了一系列提升游戏体验的小改动，旨在减少游戏过程中的不便，而不会提供玩家通常无法获取的额外信息或更改游戏中的任何系统。\n\n\n薄荷尖塔2当前功能：\n\n▪战斗画面\n在你的生命值条旁边显示累计受到的伤害。\n多次攻击意图造成的伤害总和。\n在跟踪多个值的幂上显示第二个数值（kiooeht）\n加快将弃牌堆洗入抽牌堆的动画速度（混乱）\n\n▪遗物提醒\n在卡片上添加指示器，显示钢笔尖、音叉或银河尘埃触发时的提示（书籍和橡皮擦）。\n使历史课程显示脉冲并显示卡片工具提示（kiooeht）\n如果现在结束回合会触发遗物效果，则将它们显示在回合结束按钮附近。\n\n▪其他\n休息站点的“修复预览”按钮位于其余按钮上方\n增加购买后黄金数量的预览（Ind-E）\n将鼠标悬停在顶部栏的角色头像上时显示升天效果（kiooeht）\n重新排列战斗奖励顺序，以防止像“偷窃跳跃者”这样的特殊卡牌奖励在默认顺序点击时覆盖普通卡牌奖励（kiooeht）\n让火炬可以点击熄灭和点燃（cany0udance）\n让帕尔之眼圣物看向鼠标光标（mangochicken）\n\n▪配置\n现在可以通过模组设置切换一些更高级的功能。要访问这些设置，请在主菜单中通过选项菜单导航至模组菜单，然后从列表中选择 Minty Spire 2。模组图像上方右上角应该有一个齿轮图标。点击该齿轮图标即可打开菜单。",
+    "author": "erasels",
+    "authorLinks": [
+      {
+        "text": "Github|erasels",
+        "url": "https://github.com/erasels"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "功能mod",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ae030294079344afa7651d96b8d23d2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置 - BaseLib3.3.2",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "v3.3.2",
+        "size": "375.5 KB",
+        "date": "推荐"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "模组本体 - 0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.0.1",
+        "size": "362.52KB",
+        "date": "2026-07-05"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "rid": "17752099"
+  },
+  {
     "id": "20260704232933443",
     "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
     "category": "skin",
@@ -4942,50 +5002,6 @@
       "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ca482d789bcf4180962eabce80e345c7?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
     ],
     "rid": "54592938"
-  },
-  {
-    "id": "20260531095016263",
-    "title": "薄荷尖塔 2-MintySpire2＃功能mod",
-    "category": "skin",
-    "size": "362.52KB",
-    "date": "2026-05-31",
-    "badge": "v1.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/3581728035/f13e5c4a-e99d-42a9-af48-f870f0af58bf/0"
-    ],
-    "images": [],
-    "description": "v1.0.1_103 兼容版\n\nMOD介绍：\n\n它汇集了一系列提升游戏体验的小改动，旨在减少游戏过程中的不便，而不会提供玩家通常无法获取的额外信息或更改游戏中的任何系统。\n\n\n薄荷尖塔2当前功能：\n\n▪战斗画面\n在你的生命值条旁边显示累计受到的伤害。\n多次攻击意图造成的伤害总和。\n在跟踪多个值的幂上显示第二个数值（kiooeht）\n加快将弃牌堆洗入抽牌堆的动画速度（混乱）\n\n▪遗物提醒\n在卡片上添加指示器，显示钢笔尖、音叉或银河尘埃触发时的提示（书籍和橡皮擦）。\n使历史课程显示脉冲并显示卡片工具提示（kiooeht）\n如果现在结束回合会触发遗物效果，则将它们显示在回合结束按钮附近。\n\n▪其他\n休息站点的“修复预览”按钮位于其余按钮上方\n增加购买后黄金数量的预览（Ind-E）\n将鼠标悬停在顶部栏的角色头像上时显示升天效果（kiooeht）\n重新排列战斗奖励顺序，以防止像“偷窃跳跃者”这样的特殊卡牌奖励在默认顺序点击时覆盖普通卡牌奖励（kiooeht）\n让火炬可以点击熄灭和点燃（cany0udance）\n让帕尔之眼圣物看向鼠标光标（mangochicken）\n\n▪配置\n现在可以通过模组设置切换一些更高级的功能。要访问这些设置，请在主菜单中通过选项菜单导航至模组菜单，然后从列表中选择 Minty Spire 2。模组图像上方右上角应该有一个齿轮图标。点击该齿轮图标即可打开菜单。\n\n\nGithub项目地址：\nhttps://github.com/erasels/Minty-Spire-2",
-    "author": "erasels",
-    "authorLinks": [
-      {
-        "text": "Github|erasels",
-        "url": "https://github.com/erasels"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "功能mod",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [],
-    "rid": "17752099"
   },
   {
     "id": "20260529163707000",
