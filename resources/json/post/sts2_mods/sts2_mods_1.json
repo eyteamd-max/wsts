@@ -41,7 +41,9 @@
       "http://shp.qpic.cn/collector/1976464052/fa73cebf-176c-4a2d-b22a-39efb4f3ea8d/0",
       "http://shp.qpic.cn/collector/1976464052/1b23cd93-7a6e-4a7f-9f29-3a000fa43735/0"
     ],
-    "previewVideos": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1UwMc6uEt7/&type=mp4"
+    ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/a6056a37-d54c-4c92-9995-917fe61d4208/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
