@@ -1,5 +1,64 @@
 [
   {
+    "id": "20260704211743294",
+    "title": "莫德凯撒MOD-两度被杀 三度重生...",
+    "category": "skin",
+    "size": "108.50MB",
+    "date": "2026-07-04",
+    "badge": "v0.1.9",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/90c9bef4-0cb8-407b-83fe-d1290fe341d1/0"
+    ],
+    "images": [],
+    "description": "莫德凯撒mod 新增了英雄联盟的角色 莫德凯撒\n解锁方式为：进行完任意一场对局，于故事线中解锁角色故事，即可解锁角色。\n\n**兼容性测试：**\n仅支持v0.107.1｜PC+安卓双支持｜无需前置",
+    "author": "雪丶我",
+    "authorLinks": [
+      {
+        "text": "B站|雪丶我",
+        "url": "https://space.bilibili.com/357877819"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "莫德凯撒",
+      "新增角色",
+      "雪丶我",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8c43aa37de9ef411fa454e48f04cc0da6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747599417",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "历史版本",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1143c3ff3b1d4edabf866e713f5e94dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.1.8",
+        "size": "101.80MB",
+        "date": "2026-06-04"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/0098eca3-9012-4f7f-8e01-a791018ba50e/0",
+      "http://shp.qpic.cn/collector/1976464052/a764fbdb-2f61-41c9-b79f-47334d257dc6/0",
+      "http://shp.qpic.cn/collector/1976464052/837d8016-b84a-4783-86c0-b9f04c357af5/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1SYdaBLEwh/&type=mp4"
+    ],
+    "rid": "32879717"
+  },
+  {
     "id": "20260704172742401",
     "rid": "08702191",
     "title": "机器人卡图 - 鸡煲卡图H版*ᴬ故障机器人",
@@ -4778,50 +4837,6 @@
     "coverImage": "http://shp.qpic.cn/collector/1976464052/87d08211-bca2-4e65-996e-71aab26dc46b/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)",
     "rid": "90088716"
-  },
-  {
-    "id": "20260604004917269",
-    "title": "莫德凯撒MOD-两度被杀 三度重生...",
-    "category": "skin",
-    "size": "101.80MB",
-    "date": "2026-06-04",
-    "badge": "v0.1.8",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/90c9bef4-0cb8-407b-83fe-d1290fe341d1/0"
-    ],
-    "images": [],
-    "description": "MOD调整介绍v0.1.8：\n现在莫德凯撒时间线解锁会在对局结束后提示并要求解锁后才能进行其他行为了\n\n现在莫德凯撒能够存储自己的一些进度了，当前存储的有：最高进阶，时间线解锁，当你卸载mod时，这些存档仍然留在你的存档文件夹中，除非你将拥有莫德凯撒进度的存档进行删除（比如说原游戏存档3打了个进阶10然后给存档3删了，mod的进度存档也会跟着删除）（目前支持云存档）\n\n不灭之身现在有最高层数限制了：999999",
-    "author": "雪丶我",
-    "authorLinks": [
-      {
-        "text": "B站|雪丶我",
-        "url": "https://space.bilibili.com/357877819"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "莫德凯撒",
-      "新增角色",
-      "雪丶我",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz1143c3ff3b1d4edabf866e713f5e94dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/0098eca3-9012-4f7f-8e01-a791018ba50e/0",
-      "http://shp.qpic.cn/collector/1976464052/a764fbdb-2f61-41c9-b79f-47334d257dc6/0",
-      "http://shp.qpic.cn/collector/1976464052/837d8016-b84a-4783-86c0-b9f04c357af5/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1SYdaBLEwh/&type=mp4"
-    ],
-    "rid": "32879717"
   },
   {
     "id": "20260601090139746",
