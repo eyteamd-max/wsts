@@ -1,6 +1,6 @@
 [
   {
-    "id": "20260707014153736",
+    "id": "20260707023017583",
     "rid": "71938012",
     "title": "储君nswf卡图（QOS警告）！！",
     "badge": "v1.0.0",
@@ -35,7 +35,7 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260707014149855",
+    "id": "20260707023014303",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
     "badge": "v1.3.1",
@@ -105,7 +105,7 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260707010546116",
+    "id": "20260707023004812",
     "rid": "05903648",
     "title": "女王美化MOD - 会画画的Small_day",
     "badge": "v2.0",
@@ -143,7 +143,7 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260707010337909",
+    "id": "20260707022959242",
     "rid": "76387714",
     "title": "女王小弟灯萝莉美化 - 人型版本",
     "badge": "v2.0",
@@ -180,7 +180,7 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260707004828027",
+    "id": "20260707022953469",
     "rid": "20064102",
     "title": "女王小弟灯萝莉美化 - 怪物版本",
     "badge": "v2.0",
@@ -215,6 +215,78 @@
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/eed88fc5-4d81-4ccc-8d88-4c9ab8c9454e/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707022621161",
+    "title": "Boss娘化-永世沙漏の娘化皮肤",
+    "category": "skin",
+    "size": "248.33MB",
+    "date": "2026-07-07",
+    "badge": "v1.5",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/f60826fd-afa3-465e-a215-66716cc61eae/0"
+    ],
+    "images": [],
+    "description": "本模组将STS2第三层的Boss \"永世沙漏\" 替换为了B站up主 Kiteseven 所绘制的娘化形象\n\n**普通版说明：**\n普通版为受到低伤害时触发害羞脸，受到超过30点伤害时触发嫌弃脸\n\n**反转版说明：**\n反转版为受到低伤害时触发嫌弃脸，受到超过30点伤害时触发害羞脸\n\nPS：以上两个版本二选一即可（ 如果觉得难选的话，猫猫觉得普通版比较符合大众审美，所以... ）",
+    "author": "Kiteseven",
+    "authorLinks": [
+      {
+        "text": "B站|Kiteseven",
+        "url": "https://space.bilibili.com/162927299"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "永世沙漏",
+      "怪物娘化",
+      "BOSS",
+      "外观替换",
+      "Kiteseven",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "沙漏娘化 - 普通版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz81514835f7d6c4388a63d4651a9c35324?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "沙漏娘化 - 反转版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8dff947f233a644d280e75720051b6e18?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.5",
+        "size": "248.33MB",
+        "date": "2026-07-07"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/kiteseven/Aeonglass-Feminization",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/games/slaythespire2/mods/855",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747661487",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1UvVD6tER6/&type=mp4"
+    ],
+    "rid": "34795886"
   },
   {
     "id": "20260706231357644",
@@ -2519,7 +2591,7 @@
       "在线下载",
       "夸克"
     ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n此改版将一层的树叶史莱姆和树枝史莱姆的所有大小的形态进行了补全+nsfw (某位🌸🌸大佬的改版)",
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n此改版将一层的树叶史莱姆和树枝史莱姆的所有大小的形态进行了补全+nsfw (某位������🌸大佬的改版)",
     "author": "",
     "authorLinks": [],
     "downloadLinks": [
@@ -5477,51 +5549,6 @@
       "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz86a3298c213bc4d69b40630522ca21f82?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
     ],
     "rid": "40501649"
-  },
-  {
-    "id": "20260526193258464",
-    "title": "Boss娘化-永世沙漏の娘化皮肤",
-    "category": "skin",
-    "size": "248.2MB",
-    "date": "2026-05-26",
-    "badge": "v1.4",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/f60826fd-afa3-465e-a215-66716cc61eae/0"
-    ],
-    "images": [],
-    "description": "本模组将STS2荣耀阶段的Boss\"永世沙漏\"替换为了B站up主 Kiteseven 所绘制的娘化形象\n\n\nv1.4更新日志：\n本次更新优化了性能表现。因需预加载挂载脚本，首次进入场景时可能存在短暂加载时间。攻击动画已调整，两版受击动画已合并：受到低伤害时触发害羞脸，受到超过30点伤害时触发嫌弃脸。编写了伤害检测补丁，联机模式下是否存在问题尚待验证",
-    "author": "Kiteseven",
-    "authorLinks": [
-      {
-        "text": "B站|Kiteseven",
-        "url": "https://space.bilibili.com/162927299"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "永世沙漏",
-      "怪物娘化",
-      "BOSS",
-      "外观替换",
-      "Kiteseven",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/uim414de1fefee4e04dab95070b8ba8a36858?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/06d0dc51-72b9-444a-86c6-89058d86136f/0",
-      "http://shp.qpic.cn/collector/1976464052/92aaf4de-8e69-4f3a-b749-e2d667633835/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1BeVP6kEK2/&type=mp4"
-    ],
-    "rid": "34795886"
   },
   {
     "id": "20260526192411155",
