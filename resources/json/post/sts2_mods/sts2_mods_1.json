@@ -1,5 +1,90 @@
 [
   {
+    "id": "20260706210409891",
+    "rid": "41075907",
+    "title": "猪MOD｜YuWanCard（猪猪）",
+    "badge": "v0.5.10",
+    "size": "51.80MB",
+    "date": "2026-07-06",
+    "tags": [
+      "SFW",
+      "猪",
+      "猪进塔",
+      "猪降临",
+      "群友",
+      "猪猪",
+      "新增角色",
+      "一条鱼丸_",
+      "在线下载"
+    ],
+    "description": "角色 – 猪 (可切换猪猪女孩皮肤) ：完整可玩角色，起始生命 80，可使用所有颜色卡牌；专属猪主题起始牌组与遗物，独立卡牌池与遗物池；自定义立绘、动画、商店/休息处美术，以及“养猪大亨”成就徽章。\n\n**兼容性测试：** 模组版本 0.5.10\n范围：0.107.1~0.108.0｜PC+安卓双兼容\n前置：RitsuLib v0.4.53（ 仅推荐 非绝对 ）\n\nPS：\n历史版本里收录了支持0.103.2版本的猪mod",
+    "author": "一条鱼丸_",
+    "authorLinks": [
+      {
+        "text": "B站|一条鱼丸_",
+        "url": "https://space.bilibili.com/438381132"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8fed444e77ab343aca92e0a99c6713501?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.53",
+        "category": "latest",
+        "version": "RitsuLib0.4.53",
+        "size": "7.30 MB",
+        "date": "推荐"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/YuWan886/Sts2-YuWanCard",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747566068",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "猪MOD - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bce2ff62ccf74eaba032f9eb6484f21e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.5.9",
+        "size": "46.28MB",
+        "date": "2026-06-28"
+      },
+      {
+        "text": "猪MOD - 0.103.2",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84fd2223ad8824623baf7cb8e889e6f63?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.5.2",
+        "size": "56.8 MB",
+        "date": "2026-06-28"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/0b50256e-3713-43b7-a5cd-8da2aadba7af/0",
+      "http://shp.qpic.cn/collector/1976464052/41b61c14-e96c-42f8-9839-721e4fee318a/0",
+      "http://shp.qpic.cn/collector/1976464052/94f010e7-1069-4a91-a326-7988bce2492c/0",
+      "http://shp.qpic.cn/collector/1976464052/babb64df-16e2-4415-a2c7-cb9d2bc8cc81/0",
+      "http://shp.qpic.cn/collector/1976464052/fdd2408f-e55f-428e-a3ca-9602388ac0c7/0",
+      "http://shp.qpic.cn/collector/1976464052/c570aa01-5ede-43ce-8958-6cc3284d9be3/0",
+      "http://shp.qpic.cn/collector/1976464052/2721d38b-e060-477e-ab5a-8042b1cc83c9/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV11mD5B5Esu/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/c48bd532-f823-4c26-b061-fa30b54d472a/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260706200317068",
     "rid": "45131205",
     "title": "远古好感度 / 先民好感度 ♡~",
@@ -2279,73 +2364,6 @@
     "previewImages": [],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/77fea3bd-dd57-4ed6-91c8-4c473943a472/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260628182932771",
-    "rid": "41075907",
-    "title": "猪MOD｜YuWanCard（猪猪）",
-    "badge": "v0.5.9",
-    "size": "46.28MB",
-    "date": "2026-06-28",
-    "tags": [
-      "SFW",
-      "猪",
-      "猪进塔",
-      "猪降临",
-      "群友",
-      "猪猪",
-      "新增角色",
-      "一条鱼丸_",
-      "在线下载"
-    ],
-    "description": "角色 – 猪：完整可玩角色，起始生命 80，可使用所有颜色卡牌；专属猪主题起始牌组与遗物，独立卡牌池与遗物池；自定义立绘、动画、商店/休息处美术，以及“养猪大亨”成就徽章。\n\n**兼容性测试：** 模组版本 0.5.9\n范围：仅支持0.107.1｜PC+安卓双兼容\n\nPS：\n历史版本里收录了支持0.103.2版本的猪mod",
-    "author": "一条鱼丸_",
-    "authorLinks": [
-      {
-        "text": "B站|一条鱼丸_",
-        "url": "https://space.bilibili.com/438381132"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bce2ff62ccf74eaba032f9eb6484f21e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/YuWan886/Sts2-YuWanCard",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747566068",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "猪MOD - 0.103.2",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84fd2223ad8824623baf7cb8e889e6f63?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.5.2",
-        "size": "56.8 MB",
-        "date": "2026-06-28"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/a39a52c9-7541-4348-8035-e179b0029747/0",
-      "http://shp.qpic.cn/collector/1976464052/cdae5e45-dca2-456c-8522-4306bacf1ae1/0",
-      "http://shp.qpic.cn/collector/1976464052/fdd2408f-e55f-428e-a3ca-9602388ac0c7/0",
-      "http://shp.qpic.cn/collector/1976464052/c570aa01-5ede-43ce-8958-6cc3284d9be3/0",
-      "http://shp.qpic.cn/collector/1976464052/2721d38b-e060-477e-ab5a-8042b1cc83c9/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV11mD5B5Esu/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/c48bd532-f823-4c26-b061-fa30b54d472a/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
