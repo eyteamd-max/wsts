@@ -1,5 +1,908 @@
 [
   {
+    "id": "20260707210032892",
+    "rid": "82425424",
+    "title": "CNR整合 - ᴬ战士卡图美化nsfw",
+    "badge": "v5.29",
+    "size": "16.96MB",
+    "date": "2026-07-07",
+    "tags": [
+      "NSFW",
+      "铁甲战士",
+      "卡面美化",
+      "CNR",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n替换并美化了铁甲战士的卡图，不改变游戏玩法",
+    "author": "",
+    "authorLinks": [],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8cffce5094b03444bb583fd215238078a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/0ef623ed3b7e",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/50360633-e88d-4a46-96ae-db289b10e858/0",
+      "http://shp.qpic.cn/collector/1976464052/aef071d8-1417-44c4-b6aa-b62391db06ab/0",
+      "http://shp.qpic.cn/collector/1976464052/002ba14b-402e-47a7-95d7-a90a67b49a06/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/aef071d8-1417-44c4-b6aa-b62391db06ab/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707210011405",
+    "rid": "45131205",
+    "title": "远古好感度 / 先民好感度 ♡~",
+    "badge": "v0.1.0",
+    "size": "1.57MB",
+    "date": "2026-07-06",
+    "tags": [
+      "SFW",
+      "先古之民",
+      "欧洛巴斯",
+      "特兹卡塔拉",
+      "涅奥",
+      "佩尔",
+      "达弗",
+      "诺奴佩普",
+      "瓦库",
+      "坦克斯",
+      "好感度",
+      "nagisachan74",
+      "在线下载"
+    ],
+    "description": "为 杀戮尖塔2 的远古先民事件加入按档案保存的好感度互动，建议配合先民美化模组使用。\n\n\n**主要内容：**\n\n好感度：\n每位远古存在都有按档案保存的好感度。\n\n好感选项：\n远古事件中可能出现额外的好感选项。\n\n远古遗物奖励：\n好感选项会给予一件与该远古存在相关的随机遗物\n\n献身与宠爱遗物：\n随着好感度上升，部分遗物选项可能变为更强的自定义版本\n\n变化演出：\n奖励选项会短暂闪烁并变化，而不是静默替换。\n\n红色选项：\n好感度较低或为负时，部分选项会扭曲为敌意的红色选项，带来更强奖励与更沉重代价。\n\n\n红色遗物：\n责难：\n移除牌组中所有诅咒，包括10进阶诅咒。仅在你拥有诅咒时出现\n拷问：\n从牌组中移除卡牌\n勒索：\n获得大量金币\n骚扰：\n获得数件随机遗物\n注：\n红色遗物奖励会随章节提升：\n第2章金币+400或数量+2，第3章及以后再追加金币+400或数量+2\n\n\n受影响的远古先民：\n涅奥、欧罗巴斯、诺努佩佩、帕埃尔、达尔芙、特兹卡塔拉、瓦库、坦克斯\n\n\n当前注意事项：\n本模组仍在继续扩展与平衡调整\n英文与简体中文本地化已按当前好感遗物奖励行为整理\n多人游戏时，建议所有玩家都安装本模组和所需依赖\n\n\n错误修复：\n修复了包括升级版涅奥的骨骰在内的好感遗物选项可能不发放遗物奖励的问题\n修正了生成卡牌奖励的升级预览\n移除了卷轴匣的非预期金币损失\n\n\n控制台命令：\n\nancient_affection get [远古]\n显示好感度。省略远古时默认为 NEOW\n\nancient_affection add [远古] [数值]\n为指定远古之民增加好感度\n\nancient_affection set [远古] [数值]\n为指定远古之民设置好感度\n\nancient_affection reset [远古]\n将好感度重置为 0\n\nancient_affection set_all_tier [-2|-1|0|1|2|3]\n将所有远古存在的好感度设为对应阶段阈值\n\nancient_affection upgrades [on|off|status]\n切换好感度是否会强化遗物奖励。此设置会保存到你的档案；关闭时好感度仍会增加\n\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：BaseLib3.3.5+RitsuLib0.4.53 | 仅推荐",
+    "author": "nagisachan74",
+    "authorLinks": [
+      {
+        "text": "steam|nagisachan74",
+        "url": "https://steamcommunity.com/profiles/76561199566777377/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz834cfd4c0b9614bf4936668e714ec6b11?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置Base",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
+        "category": "latest",
+        "version": "BaseLib3.3.5",
+        "size": "382.5KB",
+        "date": "推荐"
+      },
+      {
+        "text": "前置Ritsu",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.41",
+        "category": "latest",
+        "version": "RitsuLib0.4.53",
+        "size": "7.30MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750930021",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8c21373a-c2a4-4180-a01f-9101e7b8295b/0",
+      "http://shp.qpic.cn/collector/1976464052/5816bb27-b284-431b-baf6-27ae9c2c2713/0",
+      "http://shp.qpic.cn/collector/1976464052/99a17975-6a95-4397-a760-020ed4363556/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/8cda5d92-1021-4dd4-9bcb-38785a9ceb64/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707195848099",
+    "rid": "95028646",
+    "title": "空巢小梅林 - 被触手纠缠的魔法少女",
+    "badge": "v1.29jfix",
+    "size": "187MB",
+    "date": "2026-07-07",
+    "tags": [
+      "NSFW",
+      "魔法少女",
+      "新增角色",
+      "nekonado",
+      "空巢小梅林",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**兼容说明**\n\n版本：v1.29jfix\n范围：仅支持v0.108.0｜PC+安卓双支持\n前置：RitsuLib v0.4.54（仅推荐 非绝对）\n\n---\n\n版本：1.29ffix\n范围：仅支持v0.107.1｜PC+安卓双支持\n前置：RitsuLib v0.4.54（仅推荐 非绝对）",
+    "author": "[作者1] - 空巢小梅林 [作者2] - nekonado",
+    "authorLinks": [
+      {
+        "text": "B站|空巢小梅林",
+        "url": "https://space.bilibili.com/105173145"
+      },
+      {
+        "text": "B站|nekonado",
+        "url": "https://space.bilibili.com/54486983"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz883be93a0a5594482966e7d0412e3e833?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "# 前置 - RitsuLib #",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.37",
+        "category": "latest",
+        "version": "RitsuLib0.4.37",
+        "size": "3.16MB",
+        "date": "推荐"
+      },
+      {
+        "text": "＃＃ 解压密码 ＃＃",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/f3ed9e0aa29c",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      },
+      {
+        "text": "模组本体 - 0.107.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83f679423720a4890b03c9dd57e67989b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "1.29ffix",
+        "size": "187.01MB",
+        "date": "2026-07-07"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/b9ab6ce1-b6aa-4c35-baa6-e7443e9a5890/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707182052039",
+    "rid": "52492783",
+    "title": "夜隐猫忍(静默猎手皮肤/卡图)",
+    "badge": "v0.1.0",
+    "size": "17.55MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "静默猎手",
+      "猎宝",
+      "夜隐猫忍",
+      "外观替换",
+      "卡面美化",
+      "阿塔_Official",
+      "在线下载"
+    ],
+    "description": "替换了静默猎手人物与卡面，存在Ritsulib时，可以设置不同素材开关（卡图/人物模型等）。Mod美术资源采用纯手绘，无AI使用\n\n**兼容性测试：**\n测试范围：0.103.2~0.108.0｜PC+安卓双支持",
+    "author": "[作者] - 阿塔_Official [设计] - 不愿透露姓名的Coria [设计] - 百南芋 [设计] - silly傻枭 [设计] - INGOTzw [研发] - 欧艾露汐 [设计] - 毛毛毛鹿",
+    "authorLinks": [
+      {
+        "text": "B站|阿塔_Official",
+        "url": "https://space.bilibili.com/40706073"
+      },
+      {
+        "text": "B站|不愿透露姓名的Coria",
+        "url": "https://space.bilibili.com/7323950"
+      },
+      {
+        "text": "B站|百南芋",
+        "url": "https://space.bilibili.com/1299581"
+      },
+      {
+        "text": "B站|silly傻枭",
+        "url": "https://space.bilibili.com/575710"
+      },
+      {
+        "text": "B站|INGOTzw",
+        "url": "https://space.bilibili.com/691316252"
+      },
+      {
+        "text": "B站|欧艾露汐",
+        "url": "https://space.bilibili.com/3818840"
+      },
+      {
+        "text": "B站|毛毛毛鹿",
+        "url": "https://space.bilibili.com/253789"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85833448262574b60bb05438fbaa984b8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/7cb06061-508c-4be1-a44a-e13fb42274c0/0",
+      "http://shp.qpic.cn/collector/1976464052/85d8bc46-6028-4ae4-90bf-268d2aee986c/0",
+      "http://shp.qpic.cn/collector/1976464052/b58aaeb0-9b9b-407e-a35f-0ebadbcb4611/0",
+      "http://shp.qpic.cn/collector/1976464052/f4da98de-8888-41f0-a4e7-e5142cf185e5/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8a661fc0e61a347458ed0dc655cd2f1dc?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d2d74f43e4ff408d8bd45309cae68b52?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1kyM46iEhe/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/07d9b8cf-43c4-4dc3-a11c-2635d2e5cad6/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707174629706",
+    "rid": "01071505",
+    "title": "铁甲战士＆闪刀姬 - 零衣- Ironclad Replacement Mod",
+    "badge": "v1.0.1",
+    "size": "16.51MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "闪刀姬",
+      "零衣",
+      "外观替换",
+      "ＡＯ タケマ-spineのお仕事募集中  ",
+      "在线下载"
+    ],
+    "description": "本 MOD 会将铁甲战士替换为“闪刀姬－零衣”\n目前正在制作与调整各种动画、演出，以及角色选择画面等内容\n\n**兼容性测试：**\n测试范围：0.103.2~0.108.0｜PC+安卓双支持",
+    "author": "ＡＯ タケマ-spineのお仕事募集中",
+    "authorLinks": [
+      {
+        "text": "X|ＡＯ タケマ-spineのお仕事募集中",
+        "url": "https://x.com/lensuge02"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8346f5e4347ff4dadaefafb5b2c8be227?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3756670882",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/728978e4-6e54-4aca-820a-baead59a0d69/0",
+      "http://shp.qpic.cn/collector/1976464052/73be5915-6f70-419c-a134-23f01b033fb4/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d1085216887342bcb923b9e09858a9c0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8c6dde1d401284101aab80ddd0432ae84?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/366cf355-0a5b-4cbb-84ed-712bb05cc054/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707170244052",
+    "rid": "75827892",
+    "title": "魔法少女的魔女审判ManosabaLin",
+    "badge": "v0.3.5",
+    "size": "362.90MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "魔法少女的魔女审判",
+      "艾玛",
+      "雪莉",
+      "希罗",
+      "新增角色",
+      "风中闲霖",
+      "在线下载"
+    ],
+    "description": "注意了喵！如果你是0.107.1版本的玩家，请在本帖的 \"历史版本\" 区域下载对应的v0.3.3版本哦。\n\n新增可玩角色樱羽艾玛，二阶堂希罗，橘雪莉，特色BOSS等\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：MinionLib0.5.2+RitsuLib0.4.54 | 或更高",
+    "author": "风中闲霖",
+    "authorLinks": [
+      {
+        "text": "B站|风中闲霖",
+        "url": "https://space.bilibili.com/313649193"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ca60fb4eb08a40b9a1dfc4e5ad7feaa5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "# 前置 - RitsuLib #",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "v0.4.54",
+        "size": "7.31MB",
+        "date": "推荐"
+      },
+      {
+        "text": "# MinionLib - 前置 #",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.5.2",
+        "size": "510.92KB",
+        "date": "推荐"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/yeyilin0/ManosabaLin",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747637918",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eefd4a55f09c441782273eb1ac8b5197?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.3.3",
+        "size": "247.58MB",
+        "date": "2026-06-30"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/f7f46a0b-b5d6-40e1-8871-450465b09cc0/0",
+      "http://shp.qpic.cn/collector/1976464052/1e065e65-bd57-4415-b202-b726b144ab20/0",
+      "http://shp.qpic.cn/collector/1976464052/fab86b49-5b30-47ce-abcf-7a600b18fd6f/0",
+      "http://shp.qpic.cn/collector/1976464052/18b994c7-131f-4955-840a-e2f20d60f254/0",
+      "http://shp.qpic.cn/collector/1976464052/0d68d0cb-9b65-406e-ba78-30bf59f7d942/0",
+      "http://shp.qpic.cn/collector/1976464052/4e3ac004-f318-4ad0-9167-926c1ecc58b7/0",
+      "http://shp.qpic.cn/collector/1976464052/5d49c3e1-f860-45f2-afb6-74cdd551b9e7/0",
+      "http://shp.qpic.cn/collector/1976464052/23e95d16-ec2f-4c48-99ed-476d043170fb/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f7f46a0b-b5d6-40e1-8871-450465b09cc0/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707163825268",
+    "title": "STS2 WineFox Mod / 酒狐MOD",
+    "category": "skin",
+    "size": "55.80MB",
+    "date": "2026-07-01",
+    "badge": "v1.2.12",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/b2d273e9-75d8-4343-a52b-d2953c12fbc0/0",
+    "images": [],
+    "description": "如果你是0.103.2或0.107.1玩家，请在本帖的 \"历史版本\" 区域下载对应的版本，并使用旧版的前置\n\n\n**模组介绍：**\n\nWineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃",
+    "author": "灯火橘Channel",
+    "authorLinks": [
+      {
+        "text": "B站|灯火橘Channel",
+        "url": "https://space.bilibili.com/32256434"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "酒狐",
+      "WineFox",
+      "我的世界",
+      "Minecraft",
+      "新增角色",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz88b3290413f7d406eb254150848618581?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "# 前置 - RitsuLib #",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.45",
+        "category": "latest",
+        "version": "RitsuLib0.4.45",
+        "size": "3.62 MB",
+        "date": "推荐"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/859",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "酒狐MOD - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85a663db891594c1295649ab5cc425e1f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.2.10 5",
+        "size": "58.19MB",
+        "date": "2026-07-01"
+      },
+      {
+        "text": "酒狐MOD - 0.103.2",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89c474baab0754f5e89ee75bddbaf85f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.2.6",
+        "size": "49.88MB",
+        "date": "2026-07-01"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/02461e67-cef1-4641-b6bd-6ca7d48e7418/0",
+      "http://shp.qpic.cn/collector/1976464052/4438ba2d-3761-4994-b697-f10e3d8a1387/0",
+      "http://shp.qpic.cn/collector/1976464052/aa54aee7-05cf-411d-9556-b7592fe0f30b/0",
+      "http://shp.qpic.cn/collector/1976464052/9af99ffd-c6be-436d-aad1-4d164ae53989/0",
+      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
+      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1jgVZ6fEvt/&type=mp4"
+    ],
+    "rid": "10783631"
+  },
+  {
+    "id": "20260707155835139",
+    "rid": "19452412",
+    "title": "蕾米莉亚·斯卡雷特 ~ 东方红魔乡",
+    "badge": "v1.0.2",
+    "size": "83.15MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "东方 Project",
+      "吸血鬼",
+      "红魔乡",
+      "蕾米莉亚·斯卡雷特",
+      "新增角色",
+      "在线下载"
+    ],
+    "description": "[v1.0.2 beta] ，简称v1.0.2\n该版本仅支持 0.108.0｜如果你是0.107.1版本的玩家，请在本帖的 \"历史版本\" 区域下载 v1.0.1 版本\n\n[v1.0.1 main]，简称v1.0.1\n该版本仅支持 0.107.1｜如果你是0.108.0版本的玩家，请下载本帖最新的 v1.0.2 版本\n\n---\n\n**本体 v1.0.2 beta - 兼容测试：**\n范围：0.108.0可用｜PC+安卓支持\n前置：RitsuLib0.4.54 (仅推荐 非绝对)\n\n---\n\n**本体 v1.0.1 main - 兼容测试：**\n范围：0.107.1可用｜PC+安卓支持\n前置：RitsuLib0.4.54 (仅推荐 非绝对)\n\n---\n\n**角色介绍：**\n\n她是居住在红魔馆的吸血鬼，是红魔馆的主人，拥有操纵命运程度的能力。\n\n在尖塔中，这位千年吸血鬼以鲜血为媒介，将所受的伤痛化为力量。失去的生命不会白白流逝——它们汇入「血池」，等待被挥霍于致命一击、华丽格挡，或是令敌人染疫的诅咒之中。\n\n\n**核心机制：**\n\n血池 — 失去生命时，部分伤害会转化为血池。血池可用于强化卡牌效果、回复生命、获得格挡或能量，是蕾米莉亚战斗节奏的核心资源。战斗结束后，剩余血池会部分保留至下一场战斗。\n\n爪痕 — 施加于敌人的减益。敌人身上的爪痕层数越高，来自攻击的伤害越高。\n\n血疫 — 敌人获得负面效果时会受到伤害。\n\n渴血诅咒 — 部分强力卡牌会将诅咒牌加入手牌。诅咒既是代价，也可通过特定能力转化为力量与抽牌资源。",
+    "author": "绯夜氏",
+    "authorLinks": [
+      {
+        "text": "B站|绯夜氏",
+        "url": "https://space.bilibili.com/44942"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8857b1a0bd3c54a8eb1721497d19b596a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "# 前置 - RitsuLib #",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "RitsuLib0.4.54",
+        "size": "7.31MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747515571",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b9f7400d042a45e9b65ac779378e2556?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.0.1",
+        "size": "83.14MB",
+        "date": "2026-07-07"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8e0cdec9-1b23-4fe0-bb9a-6e73c57a757c/0",
+      "http://shp.qpic.cn/collector/1976464052/414f434b-6cb6-4fe1-a3da-7a0523cfaaa6/0",
+      "http://shp.qpic.cn/collector/1976464052/67ccd235-90bc-4948-a60e-0904e519f7ac/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/cc4b39c5-b15b-4936-bc8a-886ce106f4b7/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707145505485",
+    "rid": "76152685",
+    "title": "超时空辉夜姬mod",
+    "badge": "v3.1.2",
+    "size": "307.82MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "超时空辉夜姬",
+      "酒寄彩叶",
+      "辉夜",
+      "八千代",
+      "黑玛瑙",
+      "真实",
+      "芦花",
+      "月人",
+      "新增角色",
+      "宇迹SX",
+      "在线下载"
+    ],
+    "description": "[v3.1.2 beta] ，简称v3.1.2\n该版本仅支持 0.108.0｜如果你是0.107.1版本的玩家，请在本帖的 \"历史版本\" 区域下载 v3.1.1 版本\n\n[v3.1.1 main]，简称v3.1.1\n该版本仅支持 0.107.1｜如果你是0.108.0版本的玩家，请下载本帖最新的 v3.1.2 版本\n\n---\n\n**本体 v3.1.2 beta - 兼容测试：**\n范围：0.108.0可用｜PC+安卓支持\n前置：BaseLib 3.3.5 (仅推荐 非绝对)\n\n---\n\n**本体 v3.1.1 main - 兼容测试：**\n范围：0.107.1可用｜PC+安卓支持\n前置：BaseLib 3.3.5 (仅推荐 非绝对)\n\n---\n\n该mod新增了2个来自《超时空辉夜姬》的电影主角作为角色：酒寄彩叶，辉夜\n新增了并替换了先古之民：八千代，辉夜，黑玛瑙，未来的彩叶，芦花和真实\n新增了来自原著中神战中的敌人和月人作为怪物和BOSS\n新增了来自原著中的数十种特殊事件\n新增了新机制“记忆碎片·回忆”，用于解锁自制的Act 4挑战\n还有许多新内容等待玩家自行体验~\n\n杀戮尖塔2《超时空辉夜姬》mod更新日志：\nhttps://docs.qq.com/doc/DTW9zbnpNc1dmVGNG\n\nPS：\n安卓用户可能会出现 选人界面小头像列表 来回弹动的Bug，这个暂时没有解决办法 只能等他不弹的时候再选（只影响选人体验感，但不影响游玩）",
+    "author": "宇迹SX",
+    "authorLinks": [
+      {
+        "text": "B站|宇迹SX",
+        "url": "https://space.bilibili.com/357374445"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz890312a1b075b449793e977c745f8fca3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "# 前置 - BaseLib #",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "BaseLib 3.3.5",
+        "size": "382.5KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747548629",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84a4668b217054272b4e8a47931850a00?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v3.1.1",
+        "size": "307.82MB",
+        "date": "2026-07-06"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
+      "http://shp.qpic.cn/collector/1976464052/e8910669-990b-4eb8-b7a8-6dae41e51f31/0",
+      "http://shp.qpic.cn/collector/1976464052/651f5137-2eaf-40b7-9cc9-6cbce1630d4f/0",
+      "http://shp.qpic.cn/collector/1976464052/36f3f92a-25c8-4c1e-8ca4-096376604826/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1vE5F6cENw/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707132818386",
+    "rid": "06008294",
+    "title": "海克斯大乱斗＆原版 (模组本体)",
+    "badge": "v0.8.5b",
+    "size": "15.93MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "海克斯符文",
+      "娱乐mod",
+      "玩法扩展",
+      "onakasuitanie",
+      "在线下载"
+    ],
+    "description": "[v0.8.5 beta] ，简称v0.8.5b\n仅支持0.108.0｜如果你是0.107.1版本的玩家，请在本帖的 \"历史版本\" 区域下载v0.8.5m版本\n\n[v0.8.5 main]，简称v0.8.5m\n该版本仅支持0.107.1｜如果你是0.108.0版本的玩家，请下载本帖最新的 v0.8.5d 版本\n\n---\n\n**本体 v0.8.5 beta - 兼容测试：**\n范围：0.108.0可用｜PC+安卓支持\n\n---\n\n**本体 v0.8.5 main - 兼容测试：**\n范围：0.107.1可用｜PC+安卓支持\n\n---\n\n在第1、2、3幕开始时选择海克斯符文，获得白银、黄金或棱彩阶的构筑改造；同一幕的敌人也会获得对应稀有度的敌方海克斯。包含专属图鉴分类、敌方海克斯顶部提示、中英文文本与联机同步支持\n\n**模组兼容性测试：**\n范围：仅支持v0.108.0\n适配：PC+安卓适配尚可\n前置：无需前置，可独立运行",
+    "author": "onakasuitanie",
+    "authorLinks": [
+      {
+        "text": "B站|onakasuitanie",
+        "url": "https://space.bilibili.com/3493298765301961"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84257d0ea82f74b2db34ddc9a21db4136?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747501308",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "历史版本 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d812080dec4341219116c536f5645edf?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.8.5m",
+        "size": "15.93MB",
+        "date": "2026-07-07"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/e56f7293-9e05-4bf5-940a-2090ef594ca4/0",
+      "http://shp.qpic.cn/collector/1976464052/0169070c-0569-4fd7-a564-f2c210e901e9/0",
+      "http://shp.qpic.cn/collector/1976464052/306dde12-4856-4944-b87d-7ef98552a811/0",
+      "http://shp.qpic.cn/collector/1976464052/1e3cdcd5-75c7-4fb2-bfb5-1f9a2bc6115b/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1KeGb6oEr8/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/ee55ccb7-03ad-47cd-85b7-3682186e754c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707132814220",
+    "rid": "87609210",
+    "title": "海克斯大乱斗＆拓展包 ( 可选 )",
+    "badge": "v0.8.5m",
+    "size": "658.17KB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "海克斯符文",
+      "娱乐mod",
+      "玩法扩展",
+      "onakasuitanie",
+      "在线下载"
+    ],
+    "description": "本模组是《海克斯大乱斗》的赞助者拓展包，需要同时安装《海克斯大乱斗》本体\n\n拓展包收录了一批由赞助者灵感创作、风格更独立的海克斯符文、附魔与属性锻造器内容。它们会接入本体的海克斯抽选池、锻造器系统与配置界面，为《杀戮尖塔2》的每一局带来更多构筑方向和变化规则\n\n如果你想体验更丰富、更实验性的海克斯内容，可以启用本拓展包；如果你更偏好本体统一风格，也可以只安装《海克斯大乱斗》本体\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：海克斯大乱斗本体 ↴\nhttps://axxxx.cyou/?rid=06008294",
+    "author": "onakasuitanie",
+    "authorLinks": [
+      {
+        "text": "B站|onakasuitanie",
+        "url": "https://space.bilibili.com/3493298765301961"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz817fece206b434864ae06821c83d512fb?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749708876",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/638d2d12-b164-46c2-9e64-646295948339/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/076b7306-c8de-42ff-ad8a-3363303a59b3/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707124655879",
+    "title": "薄荷尖塔 2-MintySpire2＃功能mod",
+    "category": "skin",
+    "size": "390.91KB",
+    "date": "2026-07-07",
+    "badge": "v1.1.1",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/3581728035/f13e5c4a-e99d-42a9-af48-f870f0af58bf/0"
+    ],
+    "images": [],
+    "description": "如果你是0.103.2或0.107.1玩家，请在本帖的 \"历史版本\" 区域下载对应的版本，并使用旧版的前置\n\n它汇集了一系列提升游戏体验的小改动，旨在减少游戏过程中的不便，而不会提供玩家通常无法获取的额外信息或更改游戏中的任何系统。\n\n\n薄荷尖塔2当前功能：\n\n▪战斗画面\n在你的生命值条旁边显示累计受到的伤害。\n多次攻击意图造成的伤害总和。\n在跟踪多个值的幂上显示第二个数值（kiooeht）\n加快将弃牌堆洗入抽牌堆的动画速度（混乱）\n\n▪遗物提醒\n在卡片上添加指示器，显示钢笔尖、音叉或银河尘埃触发时的提示（书籍和橡皮擦）。\n使历史课程显示脉冲并显示卡片工具提示（kiooeht）\n如果现在结束回合会触发遗物效果，则将它们显示在回合结束按钮附近。\n\n▪其他\n休息站点的“修复预览”按钮位于其余按钮上方\n增加购买后黄金数量的预览（Ind-E）\n将鼠标悬停在顶部栏的角色头像上时显示升天效果（kiooeht）\n重新排列战斗奖励顺序，以防止像“偷窃跳跃者”这样的特殊卡牌奖励在默认顺序点击时覆盖普通卡牌奖励（kiooeht）\n让火炬可以点击熄灭和点燃（cany0udance）\n让帕尔之眼圣物看向鼠标光标（mangochicken）\n\n▪配置\n现在可以通过模组设置切换一些更高级的功能。要访问这些设置，请在主菜单中通过选项菜单导航至模组菜单，然后从列表中选择 Minty Spire 2。模组图像上方右上角应该有一个齿轮图标。点击该齿轮图标即可打开菜单。",
+    "author": "erasels",
+    "authorLinks": [
+      {
+        "text": "Github|erasels",
+        "url": "https://github.com/erasels"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "功能mod",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89ce79a00c27c450a8844fee43a852207?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置 - BaseLib3.3.5",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB",
+        "date": "推荐"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
+      },
+      {
+        "text": "模组本体 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ae030294079344afa7651d96b8d23d2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.1.9",
+        "size": "396.39KB",
+        "date": "2026-07-07"
+      },
+      {
+        "text": "模组本体 - 0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.0.1",
+        "size": "362.52KB",
+        "date": "2026-07-05"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "rid": "17752099"
+  },
+  {
+    "id": "20260707113349615",
+    "rid": "78429111",
+    "title": "blacksouls2x杀戮尖塔2大型mod",
+    "badge": "v1.3.2",
+    "size": "000.00MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "blacksouls",
+      "格林",
+      "新增角色",
+      "四时雨",
+      "在线下载"
+    ],
+    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复联机同伴导致的多人数据不同步\n新增三层荣耀boos“海尔凯撒”。\n蕾克大改并新增部分印卡流卡牌。\n格林新增加3张魂牌，4张童话牌，7张武器，削弱魂流部分卡牌。\n额外九种难度重新设计。\n噩梦灵不强制打，击杀噩梦灵后本层不再出现噩梦灵，击杀噩梦灵给予金卡奖励\n修复魂共鸣bug\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
+    "author": "四时雨",
+    "authorLinks": [
+      {
+        "text": "B站|四时雨",
+        "url": "https://space.bilibili.com/1045746975"
+      },
+      {
+        "text": "YouTube|四时雨",
+        "url": "https://m.youtube.com/@sishiyusishiyu-p3m"
+      },
+      {
+        "text": "Steam|四时雨",
+        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "Baselib3.3.5",
+        "size": "382.5KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz895123186832b41fca2b290049f57118e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.3.1",
+        "size": "326.33MB",
+        "date": "2026-07-06"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/f792f345-f116-4520-89d4-59a587af6f6c/0",
+      "http://shp.qpic.cn/collector/1976464052/00e07a76-611f-49b6-a51c-3e0e4849eeeb/0",
+      "http://shp.qpic.cn/collector/1976464052/5d324cfb-e580-4c26-a884-c1662002f9e2/0",
+      "http://shp.qpic.cn/collector/1976464052/6fe2595c-bf94-4fbb-be5b-ef4c15ae58c0/0",
+      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
+      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
+      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0",
+      "http://shp.qpic.cn/collector/1976464052/146808e2-21e4-4b7b-95ff-181428b9a49a/0",
+      "http://shp.qpic.cn/collector/1976464052/25f287b8-f648-44fd-96a7-30cb959f28ba/0",
+      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260707112701965",
+    "rid": "31470944",
+    "title": "第四幕黑森林MOD - BlackForest",
+    "badge": "v0.1.7",
+    "size": "63.43MB",
+    "date": "2026-07-07",
+    "tags": [
+      "SFW",
+      "黑森林",
+      "脑叶公司",
+      "终末鸟",
+      "废墟图书馆",
+      "娱乐mod",
+      "路过的龙塔罗斯",
+      "在线下载"
+    ],
+    "description": "添加了第四幕黑森林，来自游戏废墟图书馆\n\n---\n\n**本体 v0.1.7 - 兼容测试：**\n范围：0.108.0可用｜PC+安卓支持\n前置：RitsuLib0.4.54 (仅推荐 非绝对)\n\n---\n\n**本体 v0.1.5 - 兼容测试：**\n范围：0.107.1可用｜PC+安卓支持\n前置：RitsuLib0.4.54 (仅推荐 非绝对)\n\n---\n\n如果你是0.107.1版本的玩家，请在本帖的 \"历史版本\" 区域下载对应的版本，并使用旧版的前置",
+    "author": "路过的龙塔罗斯",
+    "authorLinks": [
+      {
+        "text": "B站|路过的龙塔罗斯",
+        "url": "https://space.bilibili.com/174310900"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b24620fa71074409a8a00d835893d131?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "#  前置  -  RitsuLib  #",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "RitsuLib0.4.54",
+        "size": "7.31MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750323547",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      },
+      {
+        "text": "模组本体 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz807cd342e2ce244fba9333398b4c3673b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.1.5",
+        "size": "63.17MB",
+        "date": "2026-06-30"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/293d8d67-79e4-4671-b879-0411bdcdfd3b/0",
+      "http://shp.qpic.cn/collector/1976464052/1b22aa00-0bed-4a4f-a050-e84237886e69/0",
+      "http://shp.qpic.cn/collector/1976464052/f73897d2-3027-4c0f-abac-6bad040f8500/0",
+      "http://shp.qpic.cn/collector/1976464052/b67fec27-900d-40df-b5b1-f9c7930d5009/0",
+      "http://shp.qpic.cn/collector/1976464052/99f32629-cb02-40fa-8b06-0550dfe3b433/0",
+      "http://shp.qpic.cn/collector/1976464052/ca18944b-7466-44f1-9eab-b34fd7f2644f/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1b2jR67EGg/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f49a7909-bdd9-49c1-9959-cd3561e0317f/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260707023017583",
     "rid": "71938012",
     "title": "储君nswf卡图（QOS警告）！！",
@@ -32,76 +935,6 @@
     "previewImages": [],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/a5614e04-45a4-41a6-b740-5f2601d648fa/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260707023014303",
-    "rid": "78429111",
-    "title": "blacksouls2x杀戮尖塔2大型mod",
-    "badge": "v1.3.1",
-    "size": "326.33MB",
-    "date": "2026-07-06",
-    "tags": [
-      "SFW",
-      "blacksouls",
-      "格林",
-      "新增角色",
-      "四时雨",
-      "在线下载"
-    ],
-    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复部分bug（多人模式数据不同步尝试性修复，暂时没时间测试）\n蕾克大改并新增部分印卡流卡牌。\n格林新增加3张魂牌，4张童话牌，7张武器，削弱魂流部分卡牌。\n新增三层荣耀boos“海尔凯撒”。\n额外九种难度重新设计。\n噩梦灵不强制打，击杀噩梦灵后本层不再出现噩梦灵，击杀噩梦灵给予金卡奖励\n修复魂共鸣bug\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
-    "author": "四时雨",
-    "authorLinks": [
-      {
-        "text": "B站|四时雨",
-        "url": "https://space.bilibili.com/1045746975"
-      },
-      {
-        "text": "YouTube|四时雨",
-        "url": "https://m.youtube.com/@sishiyusishiyu-p3m"
-      },
-      {
-        "text": "Steam|四时雨",
-        "url": "https://steamcommunity.com/profiles/76561199162744838/myworkshopfiles/?appid=2868840"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz895123186832b41fca2b290049f57118e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
-        "category": "latest",
-        "version": "Baselib3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749061519",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/f792f345-f116-4520-89d4-59a587af6f6c/0",
-      "http://shp.qpic.cn/collector/1976464052/00e07a76-611f-49b6-a51c-3e0e4849eeeb/0",
-      "http://shp.qpic.cn/collector/1976464052/5d324cfb-e580-4c26-a884-c1662002f9e2/0",
-      "http://shp.qpic.cn/collector/1976464052/6fe2595c-bf94-4fbb-be5b-ef4c15ae58c0/0",
-      "http://shp.qpic.cn/collector/1976464052/fe1dbf4f-46c6-4e4d-a737-97afb755dbde/0",
-      "http://shp.qpic.cn/collector/1976464052/66354033-3cfb-4646-997d-231b0a3553dc/0",
-      "http://shp.qpic.cn/collector/1976464052/2e74076e-82d4-4651-afd2-4f70e6c480f6/0",
-      "http://shp.qpic.cn/collector/1976464052/146808e2-21e4-4b7b-95ff-181428b9a49a/0",
-      "http://shp.qpic.cn/collector/1976464052/25f287b8-f648-44fd-96a7-30cb959f28ba/0",
-      "http://shp.qpic.cn/collector/1976464052/3e5d0036-8a06-44e0-ae15-8f87fcb99d66/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV14mj866EZZ/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/5c2b0cb0-c121-4d2f-8f5f-5500bc122a0c/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
@@ -577,74 +1410,6 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260706200317068",
-    "rid": "45131205",
-    "title": "远古好感度 / 先民好感度 ♡~",
-    "badge": "v0.1.0",
-    "size": "1.57MB",
-    "date": "2026-07-06",
-    "tags": [
-      "SFW",
-      "先古之民",
-      "欧洛巴斯",
-      "特兹卡塔拉",
-      "涅奥",
-      "佩尔",
-      "达弗",
-      "诺奴佩普",
-      "瓦库",
-      "坦克斯",
-      "好感度",
-      "nagisachan74",
-      "在线下载"
-    ],
-    "description": "为 杀戮尖塔2 的远古先民事件加入按档案保存的好感度互动，建议配合先民美化模组使用。\n\n\n**主要内容：**\n\n好感度：\n每位远古存在都有按档案保存的好感度。\n\n好感选项：\n远古事件中可能出现额外的好感选项。\n\n远古遗物奖励：\n好感选项会给予一件与该远古存在相关的随机遗物\n\n献身与宠爱遗物：\n随着好感度上升，部分遗物选项可能变为更强的自定义版本\n\n变化演出：\n奖励选项会短暂闪烁并变化，而不是静默替换。\n\n红色选项：\n好感度较低或为负时，部分选项会扭曲为敌意的红色选项，带来更强奖励与更沉重代价。\n\n\n红色遗物：\n责难：\n移除牌组中所有诅咒，包括10进阶诅咒。仅在你拥有诅咒时出现\n拷问：\n从牌组中移除卡牌\n勒索：\n获得大量金币\n骚扰：\n获得数件随机遗物\n注：\n红色遗物奖励会随章节提升：\n第2章金币+400或数量+2，第3章及以后再追加金币+400或数量+2\n\n\n受影响的远古先民：\n涅奥、欧罗巴斯、诺努佩佩、帕埃尔、达尔芙、特兹卡塔拉、瓦库、坦克斯\n\n\n当前注意事项：\n本模组仍在继续扩展与平衡调整\n英文与简体中文本地化已按当前好感遗物奖励行为整理\n多人游戏时，建议所有玩家都安装本模组和所需依赖\n\n\n错误修复：\n修复了包括升级版涅奥的骨骰在内的好感遗物选项可能不发放遗物奖励的问题\n修正了生成卡牌奖励的升级预览\n移除了卷轴匣的非预期金币损失\n\n\n控制台命令：\n\nancient_affection get [远古]\n显示好感度。省略远古时默认为 NEOW\n\nancient_affection add [远古] [数值]\n为指定远古之民增加好感度\n\nancient_affection set [远古] [数值]\n为指定远古之民设置好感度\n\nancient_affection reset [远古]\n将好感度重置为 0\n\nancient_affection set_all_tier [-2|-1|0|1|2|3]\n将所有远古存在的好感度设为对应阶段阈值\n\nancient_affection upgrades [on|off|status]\n切换好感度是否会强化遗物奖励。此设置会保存到你的档案；关闭时好感度仍会增加\n\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：BaseLib3.3.5+RitsuLib0.4.53 | 仅推荐",
-    "author": "nagisachan74",
-    "authorLinks": [
-      {
-        "text": "steam|nagisachan74",
-        "url": "https://steamcommunity.com/profiles/76561199566777377/myworkshopfiles/"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8478a756e96a34f5d984b42c5787e8d2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "前置Base",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
-        "category": "latest",
-        "version": "BaseLib3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
-      },
-      {
-        "text": "前置Ritsu",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.41",
-        "category": "latest",
-        "version": "RitsuLib0.4.53",
-        "size": "7.30MB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750930021",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/8c21373a-c2a4-4180-a01f-9101e7b8295b/0",
-      "http://shp.qpic.cn/collector/1976464052/5816bb27-b284-431b-baf6-27ae9c2c2713/0",
-      "http://shp.qpic.cn/collector/1976464052/99a17975-6a95-4397-a760-020ed4363556/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/8cda5d92-1021-4dd4-9bcb-38785a9ceb64/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
     "id": "20260705162237875",
     "rid": "75560343",
     "title": "7.3-6.雕像形象替换(🌸花自改N)",
@@ -715,66 +1480,6 @@
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/55ae105f-9bad-4601-928e-ac5143a840d9/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260705021244887",
-    "title": "薄荷尖塔 2-MintySpire2＃功能mod",
-    "category": "skin",
-    "size": "362.52KB",
-    "date": "2026-07-05",
-    "badge": "v1.1.9",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/3581728035/f13e5c4a-e99d-42a9-af48-f870f0af58bf/0"
-    ],
-    "images": [],
-    "description": "它汇集了一系列提升游戏体验的小改动，旨在减少游戏过程中的不便，而不会提供玩家通常无法获取的额外信息或更改游戏中的任何系统。\n\n\n薄荷尖塔2当前功能：\n\n▪战斗画面\n在你的生命值条旁边显示累计受到的伤害。\n多次攻击意图造成的伤害总和。\n在跟踪多个值的幂上显示第二个数值（kiooeht）\n加快将弃牌堆洗入抽牌堆的动画速度（混乱）\n\n▪遗物提醒\n在卡片上添加指示器，显示钢笔尖、音叉或银河尘埃触发时的提示（书籍和橡皮擦）。\n使历史课程显示脉冲并显示卡片工具提示（kiooeht）\n如果现在结束回合会触发遗物效果，则将它们显示在回合结束按钮附近。\n\n▪其他\n休息站点的“修复预览”按钮位于其余按钮上方\n增加购买后黄金数量的预览（Ind-E）\n将鼠标悬停在顶部栏的角色头像上时显示升天效果（kiooeht）\n重新排列战斗奖励顺序，以防止像“偷窃跳跃者”这样的特殊卡牌奖励在默认顺序点击时覆盖普通卡牌奖励（kiooeht）\n让火炬可以点击熄灭和点燃（cany0udance）\n让帕尔之眼圣物看向鼠标光标（mangochicken）\n\n▪配置\n现在可以通过模组设置切换一些更高级的功能。要访问这些设置，请在主菜单中通过选项菜单导航至模组菜单，然后从列表中选择 Minty Spire 2。模组图像上方右上角应该有一个齿轮图标。点击该齿轮图标即可打开菜单。",
-    "author": "erasels",
-    "authorLinks": [
-      {
-        "text": "Github|erasels",
-        "url": "https://github.com/erasels"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "功能mod",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ae030294079344afa7651d96b8d23d2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "前置 - BaseLib3.3.2",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
-        "category": "latest",
-        "version": "v3.3.2",
-        "size": "375.5 KB",
-        "date": "推荐"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
-        "text": "模组本体 - 0.103.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v1.0.1",
-        "size": "362.52KB",
-        "date": "2026-07-05"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [],
-    "rid": "17752099"
   },
   {
     "id": "20260704211743294",
@@ -964,46 +1669,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1UwMc6uEt7/&type=mp4"
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/a6056a37-d54c-4c92-9995-917fe61d4208/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260703203924659",
-    "rid": "82425424",
-    "title": "CNR整合 - ᴬ战士卡图美化nsfw",
-    "badge": "v5.24",
-    "size": "16.96MB",
-    "date": "2026-07-03",
-    "tags": [
-      "NSFW",
-      "铁甲战士",
-      "卡面美化",
-      "CNR",
-      "在线下载",
-      "夸克"
-    ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n替换并美化了铁甲战士的卡图，不改变游戏玩法",
-    "author": "",
-    "authorLinks": [],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89a982bb586ea4ce581adb5e83356a0a5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "解压密码",
-        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/ab6311ca2bbf",
-        "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/50360633-e88d-4a46-96ae-db289b10e858/0",
-      "http://shp.qpic.cn/collector/1976464052/aef071d8-1417-44c4-b6aa-b62391db06ab/0",
-      "http://shp.qpic.cn/collector/1976464052/002ba14b-402e-47a7-95d7-a90a67b49a06/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/aef071d8-1417-44c4-b6aa-b62391db06ab/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
@@ -1287,121 +1952,6 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260702224347930",
-    "rid": "06008294",
-    "title": "海克斯大乱斗＆原版 (模组本体)",
-    "badge": "v0.8.4",
-    "size": "16.57MB",
-    "date": "2026-07-02",
-    "tags": [
-      "SFW",
-      "海克斯符文",
-      "娱乐mod",
-      "玩法扩展",
-      "onakasuitanie",
-      "在线下载"
-    ],
-    "description": "在第1、2、3幕开始时选择海克斯符文，获得白银、黄金或棱彩阶的构筑改造；同一幕的敌人也会获得对应稀有度的敌方海克斯。包含专属图鉴分类、敌方海克斯顶部提示、中英文文本与联机同步支持\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：无需前置，可独立运行",
-    "author": "onakasuitanie",
-    "authorLinks": [
-      {
-        "text": "B站|onakasuitanie",
-        "url": "https://space.bilibili.com/3493298765301961"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz807b1a08ab76c480ea7536fb61acb1069?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747501308",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ef10c1cbaafe491eb5f119696e05b3f1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.8.3",
-        "size": "16.17MB",
-        "date": "2026-07-01"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz889f2dbffae7f49e794cc53cfaec08d44?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.8.2",
-        "size": "15.53MB",
-        "date": "2026-06-28"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/e56f7293-9e05-4bf5-940a-2090ef594ca4/0",
-      "http://shp.qpic.cn/collector/1976464052/0169070c-0569-4fd7-a564-f2c210e901e9/0",
-      "http://shp.qpic.cn/collector/1976464052/306dde12-4856-4944-b87d-7ef98552a811/0",
-      "http://shp.qpic.cn/collector/1976464052/1e3cdcd5-75c7-4fb2-bfb5-1f9a2bc6115b/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1KeGb6oEr8/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/ee55ccb7-03ad-47cd-85b7-3682186e754c/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260702224344904",
-    "rid": "87609210",
-    "title": "海克斯大乱斗＆拓展包 ( 可选 )",
-    "badge": "v0.8.3",
-    "size": "622.19KB",
-    "date": "2026-07-01",
-    "tags": [
-      "SFW",
-      "海克斯符文",
-      "娱乐mod",
-      "玩法扩展",
-      "onakasuitanie",
-      "在线下载"
-    ],
-    "description": "本模组是《海克斯大乱斗》的赞助者拓展包，需要同时安装《海克斯大乱斗》本体\n\n拓展包收录了一批由赞助者灵感创作、风格更独立的海克斯符文、附魔与属性锻造器内容。它们会接入本体的海克斯抽选池、锻造器系统与配置界面，为《杀戮尖塔2》的每一局带来更多构筑方向和变化规则\n\n如果你想体验更丰富、更实验性的海克斯内容，可以启用本拓展包；如果你更偏好本体统一风格，也可以只安装《海克斯大乱斗》本体\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：海克斯大乱斗本体 ↴\nhttps://axxxx.cyou/?rid=06008294",
-    "author": "onakasuitanie",
-    "authorLinks": [
-      {
-        "text": "B站|onakasuitanie",
-        "url": "https://space.bilibili.com/3493298765301961"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8c02bf6b03f3f43f8b6dbae8766cbd542?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749708876",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "历史版本 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bc37a15870174a0a8b8e527d153d705b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.8.1",
-        "size": "363.92KB",
-        "date": "2026-06-28"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/638d2d12-b164-46c2-9e64-646295948339/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/076b7306-c8de-42ff-ad8a-3363303a59b3/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
     "id": "20260702075054338",
     "rid": "44442248",
     "title": "风骚/野兽尖塔涩图MOD - 全卡面",
@@ -1563,122 +2113,6 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260701195136118",
-    "rid": "95028646",
-    "title": "空巢小梅林 - 被触手纠缠的魔法少女",
-    "badge": "v1.29e",
-    "size": "187.00MB",
-    "date": "2026-07-01",
-    "tags": [
-      "NSFW",
-      "魔法少女",
-      "新增角色",
-      "nekonado",
-      "空巢小梅林",
-      "在线下载",
-      "夸克"
-    ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n魔法少女小梅林OC角色mod\n兼容性：仅支持v0.107.1｜PC+安卓双支持\n前置需求：RitsuLib0.4.27（仅推荐 非绝对）",
-    "author": "[作者1] - 空巢小梅林 [作者2] - nekonado",
-    "authorLinks": [
-      {
-        "text": "B站|空巢小梅林",
-        "url": "https://space.bilibili.com/105173145"
-      },
-      {
-        "text": "B站|nekonado",
-        "url": "https://space.bilibili.com/54486983"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8dcdb37a7927246a882469152c0c5bdc1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.37",
-        "category": "latest",
-        "version": "RitsuLib0.4.37",
-        "size": "3.16MB",
-        "date": "推荐"
-      },
-      {
-        "text": "解压密码",
-        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/f3ed9e0aa29c",
-        "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/b9ab6ce1-b6aa-4c35-baa6-e7443e9a5890/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260701182629635",
-    "rid": "76152685",
-    "title": "超时空辉夜姬mod",
-    "badge": "v3.0.9",
-    "size": "307.81MB",
-    "date": "2026-07-01",
-    "tags": [
-      "SFW",
-      "超时空辉夜姬",
-      "酒寄彩叶",
-      "辉夜",
-      "八千代",
-      "黑玛瑙",
-      "真实",
-      "芦花",
-      "月人",
-      "新增角色",
-      "宇迹SX",
-      "在线下载"
-    ],
-    "description": "该mod新增了2个来自《超时空辉夜姬》的电影主角作为角色：酒寄彩叶，辉夜\n新增了并替换了先古之民：八千代，辉夜，黑玛瑙，未来的彩叶，芦花和真实\n新增了来自原著中神战中的敌人和月人作为怪物和BOSS\n新增了来自原著中的数十种特殊事件\n新增了新机制“记忆碎片·回忆”，用于解锁自制的Act 4挑战\n还有许多新内容等待玩家自行体验~\n\n杀戮尖塔2《超时空辉夜姬》mod更新日志：\nhttps://docs.qq.com/doc/DTW9zbnpNc1dmVGNG\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.0（或更高）\n安卓用户可能会出现 选人界面小头像列表 来回弹动的Bug，这个暂时没有解决办法 只能等他不弹的时候再选（只影响选人体验感，但不影响游玩）",
-    "author": "宇迹SX",
-    "authorLinks": [
-      {
-        "text": "B站|宇迹SX",
-        "url": "https://space.bilibili.com/357374445"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84d62df6c6a5745299cd8bef051062d88?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
-        "category": "latest",
-        "version": "BaseLib 3.3.2",
-        "size": "375.5 KB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747548629",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
-      "http://shp.qpic.cn/collector/1976464052/e8910669-990b-4eb8-b7a8-6dae41e51f31/0",
-      "http://shp.qpic.cn/collector/1976464052/651f5137-2eaf-40b7-9cc9-6cbce1630d4f/0",
-      "http://shp.qpic.cn/collector/1976464052/36f3f92a-25c8-4c1e-8ca4-096376604826/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1vE5F6cENw/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
     "id": "20260701160201184",
     "rid": "20284645",
     "title": "故障机器人 - 韩国Aduare＆🌸自改",
@@ -1717,88 +2151,6 @@
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/e74503ca-d74c-4068-86e5-1924f7abcd5b/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260701142246019",
-    "title": "STS2 WineFox Mod / 酒狐MOD",
-    "category": "skin",
-    "size": "58.19MB",
-    "date": "2026-07-01",
-    "badge": "v1.2.10 5",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/b2d273e9-75d8-4343-a52b-d2953c12fbc0/0",
-    "images": [],
-    "description": "WineFox（酒狐）是一个出自于Minecraft模组车万女仆的角色，现在作为杀戮尖塔2的一个自定义角色Mod，围绕材料合成与资源管理的玩法设计。通过获取木板、圆石、铁锭、钻石等材料，利用合成、应力等机制打出强力组合。\n\n\n作者：\n程序员：OLC，灯火橘\n数值策划，卡牌设计：IAmNotFood，明风OuO，晓月漓风，末影酱安德Channel\n卡面制作：灯火橘，钩ハ\n画师：穰雀，Linger铃\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：RitsuLib 0.4.45（ 或以上 ）",
-    "author": "灯火橘Channel",
-    "authorLinks": [
-      {
-        "text": "B站|灯火橘Channel",
-        "url": "https://space.bilibili.com/32256434"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "酒狐",
-      "WineFox",
-      "我的世界",
-      "Minecraft",
-      "新增角色",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85a663db891594c1295649ab5cc425e1f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v1.2.10 5",
-        "size": "58.19MB",
-        "date": "2026-07-01"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.45",
-        "category": "latest",
-        "version": "RitsuLib0.4.45",
-        "size": "3.62 MB",
-        "date": "推荐"
-      },
-      {
-        "text": "N网下载",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/859",
-        "category": "alternative",
-        "version": "最新版本",
-        "size": "历史版本",
-        "date": "海外"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/LuoTianOrange/STS2_WineFox",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
-        "text": "酒狐MOD - 0.103.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89c474baab0754f5e89ee75bddbaf85f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v1.2.6",
-        "size": "49.88MB",
-        "date": "2026-07-01"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/02461e67-cef1-4641-b6bd-6ca7d48e7418/0",
-      "http://shp.qpic.cn/collector/1976464052/4438ba2d-3761-4994-b697-f10e3d8a1387/0",
-      "http://shp.qpic.cn/collector/1976464052/aa54aee7-05cf-411d-9556-b7592fe0f30b/0",
-      "http://shp.qpic.cn/collector/1976464052/9af99ffd-c6be-436d-aad1-4d164ae53989/0",
-      "http://shp.qpic.cn/collector/1976464052/0d7de6ee-cd0e-4cc8-85aa-659813d14a6b/0",
-      "http://shp.qpic.cn/collector/1976464052/213f4f29-0b47-4d5d-82d8-7fafd79bfa87/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1jgVZ6fEvt/&type=mp4"
-    ],
-    "rid": "10783631"
   },
   {
     "id": "20260701142149004",
@@ -2262,79 +2614,6 @@
     "rid": "03405521"
   },
   {
-    "id": "20260630010308691",
-    "rid": "75827892",
-    "title": "魔法少女的魔女审判ManosabaLin",
-    "badge": "v0.3.3",
-    "size": "247.58MB",
-    "date": "2026-06-30",
-    "tags": [
-      "SFW",
-      "魔法少女的魔女审判",
-      "艾玛",
-      "雪莉",
-      "希罗",
-      "新增角色",
-      "风中闲霖",
-      "在线下载"
-    ],
-    "description": "新增可玩角色樱羽艾玛，二阶堂希罗，橘雪莉，特色BOSS等\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：MinionLib0.5.2+RitsuLib0.4.34 | 或更高",
-    "author": "风中闲霖",
-    "authorLinks": [
-      {
-        "text": "B站|风中闲霖",
-        "url": "https://space.bilibili.com/313649193"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eefd4a55f09c441782273eb1ac8b5197?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "RitsuLib - 前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.42",
-        "category": "latest",
-        "version": "v0.4.34",
-        "size": "3.59MB",
-        "date": "推荐"
-      },
-      {
-        "text": "MinionLib - 前置",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v0.5.2",
-        "size": "510.92KB",
-        "date": "推荐"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/yeyilin0/ManosabaLin",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747637918",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/fab86b49-5b30-47ce-abcf-7a600b18fd6f/0",
-      "http://shp.qpic.cn/collector/1976464052/18b994c7-131f-4955-840a-e2f20d60f254/0",
-      "http://shp.qpic.cn/collector/1976464052/0d68d0cb-9b65-406e-ba78-30bf59f7d942/0",
-      "http://shp.qpic.cn/collector/1976464052/4e3ac004-f318-4ad0-9167-926c1ecc58b7/0",
-      "http://shp.qpic.cn/collector/1976464052/5d49c3e1-f860-45f2-afb6-74cdd551b9e7/0",
-      "http://shp.qpic.cn/collector/1976464052/23e95d16-ec2f-4c48-99ed-476d043170fb/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/c8f6e82e-17cd-4806-add4-c9f755131670/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
     "id": "20260630000440298",
     "rid": "55762201",
     "title": "洛茜RossiMod-明日方舟：终末地",
@@ -2514,66 +2793,6 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260629085159707",
-    "rid": "31470944",
-    "title": "第四幕黑森林MOD - BlackForest",
-    "badge": "v0.1.3",
-    "size": "61.79MB",
-    "date": "2026-06-29",
-    "tags": [
-      "SFW",
-      "黑森林",
-      "脑叶公司",
-      "终末鸟",
-      "废墟图书馆",
-      "娱乐mod",
-      "路过的龙塔罗斯",
-      "在线下载"
-    ],
-    "description": "添加了第四幕黑森林，来自游戏废墟图书馆\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持\n前置：RitsuLib v0.4.24（ 或更高 ）",
-    "author": "路过的龙塔罗斯",
-    "authorLinks": [
-      {
-        "text": "B站|路过的龙塔罗斯",
-        "url": "https://space.bilibili.com/174310900"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8998e4181b6324aeeb155b8805210401d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.41",
-        "category": "latest",
-        "version": "RitsuLib0.4.41",
-        "size": "3.57 MB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750323547",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/293d8d67-79e4-4671-b879-0411bdcdfd3b/0",
-      "http://shp.qpic.cn/collector/1976464052/1b22aa00-0bed-4a4f-a050-e84237886e69/0",
-      "http://shp.qpic.cn/collector/1976464052/f73897d2-3027-4c0f-abac-6bad040f8500/0",
-      "http://shp.qpic.cn/collector/1976464052/b67fec27-900d-40df-b5b1-f9c7930d5009/0",
-      "http://shp.qpic.cn/collector/1976464052/99f32629-cb02-40fa-8b06-0550dfe3b433/0",
-      "http://shp.qpic.cn/collector/1976464052/ca18944b-7466-44f1-9eab-b34fd7f2644f/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1b2jR67EGg/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/f49a7909-bdd9-49c1-9959-cd3561e0317f/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
     "id": "20260629014053506",
     "rid": "17629059",
     "title": "放中版史莱姆 - 基于ᴬ｜🌸🌸改版",
@@ -2591,7 +2810,7 @@
       "在线下载",
       "夸克"
     ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n此改版将一层的树叶史莱姆和树枝史莱姆的所有大小的形态进行了补全+nsfw (某位������🌸大佬的改版)",
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n此改版将一层的树叶史莱姆和树枝史莱姆的所有大小的形态进行了补全+nsfw (某位🌸🌸大佬的改版)",
     "author": "",
     "authorLinks": [],
     "downloadLinks": [
