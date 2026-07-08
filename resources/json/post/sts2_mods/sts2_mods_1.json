@@ -1,5 +1,61 @@
 [
   {
+    "id": "20260708113911810",
+    "rid": "65561045",
+    "title": "蜘蛛巢中指护父 马蒂亚斯",
+    "badge": "v2.3.0",
+    "size": "157.20MB",
+    "date": "2026-07-08",
+    "tags": [
+      "SFW",
+      "中指护父 ",
+      "蜘蛛巢",
+      "马蒂亚斯",
+      "新增角色",
+      "边狱巴士",
+      "我不想当坏Sephirah",
+      "在线下载"
+    ],
+    "description": "添加了边狱巴士第九章中的马蒂亚斯作为可游玩角色，并可切换成中指父辈奥提斯的人格投影\n\n**兼容性测试：**\n范围：仅支持v0.107.1｜PC+安卓双支持\n前置：BaseLib v3.3.5（  仅推荐  非绝对  ）",
+    "author": "我不想当坏Sephirah",
+    "authorLinks": [
+      {
+        "text": "B站|我不想当坏Sephirah",
+        "url": "https://space.bilibili.com/470104878"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b050e3c90b1f4d38829ef6f0491f7d21?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "BaseLib3.3.5",
+        "size": "382.5KB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748908012",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/2ad84c99-beee-4d3f-911c-1bec96f928a4/0",
+      "http://shp.qpic.cn/collector/1976464052/5920e627-e1ee-464b-b677-528f9603fad5/0",
+      "http://shp.qpic.cn/collector/1976464052/2f5e2c40-a0bd-40a7-aed3-410e13c4b5ec/0",
+      "http://shp.qpic.cn/collector/1976464052/70ccd8e5-2615-4c83-adb4-9625b559a8e6/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/2ad84c99-beee-4d3f-911c-1bec96f928a4/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260708011614304",
     "rid": "15594184",
     "title": "杀戮尖塔2｜欲途MOD r18完整包",
