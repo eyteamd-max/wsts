@@ -1,5 +1,49 @@
 [
   {
+    "id": "20260709000851654",
+    "rid": "65977786",
+    "title": "仪式兽 娘化皮肤 - BossSkin",
+    "badge": "v0.0.3",
+    "size": "22.25MB",
+    "date": "2026-07-09",
+    "tags": [
+      "SFW",
+      "仪式兽",
+      "BOSS",
+      "怪物娘化",
+      "外观替换",
+      "锭_grayingot",
+      "在线下载"
+    ],
+    "description": "将一层的 仪式兽 BOSS 替换为了人形娘化形象",
+    "author": "锭_grayingot",
+    "authorLinks": [
+      {
+        "text": "B站|锭_grayingot",
+        "url": "https://space.bilibili.com/1686072498"
+      },
+      {
+        "text": "爱发电|锭_grayingot",
+        "url": "https://if.net/a/grayingot"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz880e1976c35424cf280e57a3851fdc600?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/dada85ac-4c12-401f-b9e2-d4c44d025015/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d13e7db61d294ddd95c127ecca732865?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/6961ebbf-1581-4446-8cbb-b61e0c17c56d/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260708225750734",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
