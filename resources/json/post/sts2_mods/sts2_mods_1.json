@@ -1,5 +1,52 @@
 [
   {
+    "id": "20260708155819111",
+    "rid": "51828230",
+    "title": "亡灵契约师皮肤—归还者skin",
+    "badge": "v0.2.0",
+    "size": "19.00MB",
+    "date": "2026-07-08",
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换"
+    ],
+    "description": "自生与死之峡间的归还者啊，去攀登，去寻觅，去拿回那些失落之物吧。本模组为亡灵契约师提供一个新的可选皮肤形象\n\n**兼容性测试：**\n测试范围：0.103.2~0.108.0｜PC+安卓双支持",
+    "author": "杏仁抹茶",
+    "authorLinks": [
+      {
+        "text": "QQ|杏仁抹茶",
+        "url": "https://tool.gljlw.com/qq/?qq=2581192220"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz824f58c3e53f4428d9352ddf827f3ba32?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3759729532",
+        "category": "alternative",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/396e2a34-b7a5-4e49-97cc-dd653c910cd6/0",
+      "http://shp.qpic.cn/collector/1976464052/4a141059-2479-4e21-b50a-878ef5d84d97/0",
+      "http://shp.qpic.cn/collector/1976464052/0e0a513b-1b17-41fe-a7ba-ec66f74a0555/0",
+      "http://shp.qpic.cn/collector/1976464052/8088566d-53f5-4cc7-ace1-070a2a179642/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85f2e5315cd6d4ea3a1f31e9300afe561?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8e0a37d3e362d418a80ceca8956c49032?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/8ff34046-a9a7-476c-afd3-9ebb7d845fbf/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260708144913296",
     "rid": "06021311",
     "title": "亚托莉 ATRI - 角色MOD",
