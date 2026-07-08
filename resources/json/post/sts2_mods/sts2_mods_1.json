@@ -1,5 +1,66 @@
 [
   {
+    "id": "20260709013113358",
+    "rid": "27528123",
+    "title": "拇指护父-瓦伦希娜mod＆边狱巴士",
+    "badge": "v7.0",
+    "size": "103.15MB",
+    "date": "2026-07-09",
+    "tags": [
+      "SFW",
+      "拇指护父",
+      "瓦伦希娜",
+      "边狱巴士",
+      "新增人物",
+      "拟南鼠Arabidopsis",
+      "在线下载"
+    ],
+    "description": "本mod为还原 Limbuscompany CantoIX 中的敌人 thumb nursefather Valencia 所制作的角色\n\n**兼容性测试：**\n兼容性：仅支持v0.107.1｜PC+安卓双支持\n前置需求：RitsuLib 0.4.54（仅推荐 非绝对）",
+    "author": "拟南鼠Arabidopsis",
+    "authorLinks": [
+      {
+        "text": "B站|拟南鼠Arabidopsis",
+        "url": "https://space.bilibili.com/291398450"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8a59d219ea24b430fad037c1b817cc098?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "所需前置",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "RitsuLib.0.4.54",
+        "size": "7.31MB",
+        "date": "推荐"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747747045",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/1c209d54-6500-44b3-bfb5-89cbcac4225e/0",
+      "http://shp.qpic.cn/collector/1976464052/e6b76bfb-d0a7-4eca-bf21-3c4db207f0c5/0",
+      "http://shp.qpic.cn/collector/1976464052/fae1ebe9-b34a-40c2-9bb9-ec68a32dc0a3/0",
+      "http://shp.qpic.cn/collector/1976464052/25c0fae1-e5a2-4965-9463-51775cf2e619/0",
+      "http://shp.qpic.cn/collector/1976464052/f180570c-aa6a-45a7-8990-786a030f3f8d/0",
+      "http://shp.qpic.cn/collector/1976464052/cae4ab9e-e9a7-4403-b55d-ff711a23e65f/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz878fd797e480f4ccb88b0bb18f2e5f130?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d9eff45d777d48c38ee29a5e6eff77ea?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1dBLz6CEL1/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/1c209d54-6500-44b3-bfb5-89cbcac4225e/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260709000851654",
     "rid": "65977786",
     "title": "仪式兽 娘化皮肤 - BossSkin",
@@ -4177,67 +4238,6 @@
     ],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/e1016ff2-b5ac-4f23-b3c0-62c12993df5f/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260624220551376",
-    "rid": "27528123",
-    "title": "拇指护父-瓦伦希娜mod＆边狱巴士",
-    "badge": "v0.6.2",
-    "size": "103.15MB",
-    "date": "2026-06-24",
-    "tags": [
-      "SFW",
-      "拇指护父",
-      "瓦伦希娜",
-      "边狱巴士",
-      "新增人物",
-      "拟南鼠Arabidopsis",
-      "在线下载"
-    ],
-    "description": "本mod为还原 Limbuscompany CantoIX 中的敌人 thumb nursefather Valencia 所制作的角色，目前支持 中英 日韩 （日韩还未校对）语言，添加了100余张卡牌以及数个附带内容，还在持续更新中\n\n**兼容性测试：**\n兼容性：仅支持v0.107.1｜PC+安卓双支持\n前置需求：RitsuLib 0.4.14（仅推荐 非绝对）",
-    "author": "拟南鼠Arabidopsis",
-    "authorLinks": [
-      {
-        "text": "B站|拟南鼠Arabidopsis",
-        "url": "https://space.bilibili.com/291398450"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz86bbd82ab7fee4c829db008b423879406?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.14",
-        "category": "latest",
-        "version": "RitsuLib.0.4.14",
-        "size": "8.74MB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747747045",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/1c209d54-6500-44b3-bfb5-89cbcac4225e/0",
-      "http://shp.qpic.cn/collector/1976464052/e6b76bfb-d0a7-4eca-bf21-3c4db207f0c5/0",
-      "http://shp.qpic.cn/collector/1976464052/fae1ebe9-b34a-40c2-9bb9-ec68a32dc0a3/0",
-      "http://shp.qpic.cn/collector/1976464052/25c0fae1-e5a2-4965-9463-51775cf2e619/0",
-      "http://shp.qpic.cn/collector/1976464052/f180570c-aa6a-45a7-8990-786a030f3f8d/0",
-      "http://shp.qpic.cn/collector/1976464052/cae4ab9e-e9a7-4403-b55d-ff711a23e65f/0"
-    ],
-    "previewVideos": [
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz878fd797e480f4ccb88b0bb18f2e5f130?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8d9eff45d777d48c38ee29a5e6eff77ea?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1dBLz6CEL1/&type=mp4"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/1c209d54-6500-44b3-bfb5-89cbcac4225e/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
