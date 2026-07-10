@@ -1,5 +1,50 @@
 [
   {
+    "id": "20260710165137009",
+    "rid": "47027651",
+    "title": "东方project - 厄神 键山雏 MOD",
+    "badge": "v1.4.0",
+    "size": "65.30MB",
+    "date": "2026-07-10",
+    "tags": [
+      "SFW",
+      "东方project",
+      "键山雏",
+      "新增角色",
+      "何为北之北"
+    ],
+    "description": "紧扣尖塔 2 自带的灾厄，荆棘，诅咒机制，全部卡牌没有任何小作文，机制简单易懂。设计指标是略强于塔 2 原版的五个角色\n\n**兼容性测试：**\n范围：仅支持v0.107.1\n平台：PC+安卓适配尚可",
+    "author": "何为北之北",
+    "authorLinks": [
+      {
+        "text": "B站|何为北之北",
+        "url": "https://space.bilibili.com/288997434"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sc015d6a9305840f08c4d61f450162a7f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3758102500",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/aade673e-874f-4ce8-9e90-1a5f0997302a/0",
+      "http://shp.qpic.cn/collector/1976464052/5af3b43b-9502-4bc6-9dde-91d2a68a710f/0",
+      "http://shp.qpic.cn/collector/1976464052/8ce29cd8-ec49-428e-96ff-5bdc9e9c7c40/0",
+      "http://shp.qpic.cn/collector/1976464052/896a3792-5c92-4949-9a76-1a8cce2fb163/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/40347ce8-58b3-48a8-a647-2d3c5fcd03d9/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260710150202389",
     "rid": "63091363",
     "title": "韩国Aduare 鸡煲 - 去披风 双差分",
@@ -6239,7 +6284,7 @@
       "http://shp.qpic.cn/collector/1976464052/b4d932a3-9c8e-4ff9-bd43-4b24bd149815/0"
     ],
     "images": [],
-    "description": "储小鬼 / 雌小鬼储君的 Kaguya 式外观替换皮肤\n\n简介：\n为 STS2 角色「储君 (Regent)」的外观更换为白宵燿夜的\"储君 Kaguya式皮肤\"，模组内包含全新的立绘、动画与音效，质量较高\n\n制作人员：\n美术：原画 - 白宵燿夜 (Shirayoi=Kaguya)\n　　　动画 - 小丧狗\n程序：文和 (VIN) / 协力 - AOShiRo\n音效：未来猫\n特别感谢：wsl\n\n注意事项：\n本模组内置 Harmony 本地化补丁，安装后可能会对游戏部分文本进行修改。\n如果和其他同样使用 Harmony 的文本类 Mod 一起使用，可能出现冲突，请自行排查。",
+    "description": "储小鬼 / 雌小鬼储君的 Kaguya 式外观替换皮肤\n\n简介：\n为 STS2 角色「储君 (Regent)」的外观更换为白宵燿夜的\"储君 Kaguya式皮肤\"，模组内包含全新的立绘、动画与音效，质量较高\n\nPS：这个黑皮储君看久了别有一番风味 嘻嘻~\n\n制作人员：\n美术：原画 - 白宵燿夜 (Shirayoi=Kaguya)\n　　　动画 - 小丧狗\n程序：文和 (VIN) / 协力 - AOShiRo\n音效：未来猫\n特别感谢：wsl\n\n注意事项：\n本模组内置 Harmony 本地化补丁，安装后可能会对游戏部分文本进行修改。\n如果和其他同样使用 Harmony 的文本类 Mod 一起使用，可能出现冲突，请自行排查。",
     "author": "白宵燿夜",
     "authorLinks": [
       {
