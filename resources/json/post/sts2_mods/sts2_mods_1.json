@@ -3178,17 +3178,17 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260701142149004",
+    "id": "20260710210320928",
     "title": "战士皮肤-卡厄思千鹤 PelleasWorks",
     "category": "skin",
-    "size": "89.05MB",
-    "date": "2026-07-01",
-    "badge": "v0.5.4",
+    "size": "90.65MB",
+    "date": "2026-07-10",
+    "badge": "v0.7.0",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8e8be04ef1b4d4bef8926553522f15ce5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
     "images": [],
-    "description": "将千鹤作为铁甲战士的角色外观替换\nPS：这个模组的特效做的很酷 有很强的打击感\n\n**兼容性测试：**\n范围：v0.107.1｜PC+安卓双支持｜无需前置",
+    "description": "如果你是0.103.x或0.107.x版本的玩家，请在本帖的 \"历史版本\" 区域下载对应的版本，谢谢\n\n**模组介绍：**\n将千鹤作为铁甲战士的角色外观替换\nPS：这个模组的特效做的很酷 有很强的打击感\n\n**兼容性测试：** 模组：v0.7.0 - [beta]\n范围：v0.108.0｜PC+安卓双支持｜无需前置\n\n**兼容性测试：** 模组：v0.6.0 - [main]\n范围：v0.107.1｜PC+安卓双支持｜无需前置",
     "author": "PelleasWorks",
     "authorLinks": [
       {
@@ -3210,8 +3210,8 @@
     ],
     "downloadLinks": [
       {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8537f1a8854a04692ba25b2c5ccbcd109?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "text": "千鹤 - 0.108.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s83c5c275b35949eb8f34af7fde081c89?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       },
       {
@@ -3221,6 +3221,14 @@
         "version": "最新版本",
         "size": "历史版本",
         "date": "海外"
+      },
+      {
+        "text": "千鹤 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s4ef9086325d34f2a9403cde468a3493e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.6.0",
+        "size": "89.18MB",
+        "date": "2026-07-10"
       },
       {
         "text": "千鹤 - 0.103.x",
