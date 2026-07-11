@@ -1,5 +1,55 @@
 [
   {
+    "id": "20260711110827233",
+    "rid": "12801478",
+    "title": "东方Project - 古明地恋",
+    "badge": "v1.08.15",
+    "size": "106MB",
+    "date": "2026-07-11",
+    "tags": [
+      "SFW",
+      "古明地恋",
+      "新增角色",
+      "东方",
+      "东方Project",
+      "XecoMeltal铄金",
+      "在线下载"
+    ],
+    "description": "新增古明地恋（可切换初始遗物/卡组）与先古之民古明地觉（4池13遗物）。包含三色UFO、奖惩机制及20+游戏彩蛋卡。\n\n**模组兼容性测试：**\n范围：0.107.1~0.108.0\n适配：PC+安卓适配尚可\n前置：无需前置 可独立运行",
+    "author": "XecoMeltal铄金",
+    "authorLinks": [
+      {
+        "text": "B站|XecoMeltal铄金",
+        "url": "https://space.bilibili.com/1229745645"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s5de7291dcbeb4993a7724dfdc5a85c3b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747502705",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/f4c28e85-4101-456b-9bbf-f8bb01cff5c3/0",
+      "http://shp.qpic.cn/collector/1976464052/3987c382-6994-4ee1-9505-dbba56e193a3/0",
+      "http://shp.qpic.cn/collector/1976464052/490d28b3-d202-48ce-94cd-ba96bb4d798c/0",
+      "http://shp.qpic.cn/collector/1976464052/941002e0-2693-4259-9e1e-c76ee195baf7/0",
+      "http://shp.qpic.cn/collector/1976464052/6b5f5c15-d563-4170-91cc-ce0c5778f90d/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8se85d0ebf4a00484e9bf67a665ead1bfc?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/02453b77-9c7b-46a5-b9ec-c2de173c73a5/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260711095705311",
     "rid": "61108037",
     "title": "东方Project - 帕秋莉·诺蕾姬",
