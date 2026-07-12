@@ -186,6 +186,79 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
+    "id": "20260710210320928",
+    "title": "战士皮肤-卡厄思千鹤 PelleasWorks",
+    "category": "skin",
+    "size": "90.65MB",
+    "date": "2026-07-10",
+    "badge": "v0.7.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8e8be04ef1b4d4bef8926553522f15ce5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+    "images": [],
+    "description": "如果你是0.103.x或0.107.x版本的玩家，请在本帖的 \"历史版本\" 区域下载对应的版本，谢谢\n\n**模组介绍：**\n将千鹤作为铁甲战士的角色外观替换\nPS：这个模组的特效做的很酷 有很强的打击感\n\n**兼容性测试：** 模组：v0.7.0 - [beta]\n范围：v0.108.0｜PC+安卓双支持｜无需前置\n\n**兼容性测试：** 模组：v0.6.0 - [main]\n范围：v0.107.1｜PC+安卓双支持｜无需前置",
+    "author": "PelleasWorks",
+    "authorLinks": [
+      {
+        "text": "N网|PelleasWorks",
+        "url": "https://www.nexusmods.com/profile/PelleasWorks"
+      },
+      {
+        "text": "YouTube|PelleasWorks",
+        "url": "https://youtube.com/@pelleasworks"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "卡厄思梦境",
+      "PelleasWorks",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "千鹤 - 0.108.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s83c5c275b35949eb8f34af7fde081c89?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/914",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      },
+      {
+        "text": "千鹤 - 0.107.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s4ef9086325d34f2a9403cde468a3493e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.6.0",
+        "size": "89.18MB",
+        "date": "2026-07-10"
+      },
+      {
+        "text": "千鹤 - 0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz09b4383c4ebf4678913b91338e562be8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.4.3",
+        "size": "86.88MB",
+        "date": "2026-06-10"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/dc1502d5-b7d9-41c1-8e9e-6f26318a5055/0",
+      "http://shp.qpic.cn/collector/1976464052/3658aa24-9815-420f-a776-0a919380a388/0",
+      "http://shp.qpic.cn/collector/1976464052/ba831617-cd83-436e-9b14-cfb505a1ab2e/0",
+      "http://shp.qpic.cn/collector/1976464052/c6fb5f5b-aecd-4595-9d2b-0d567364248c/0",
+      "http://shp.qpic.cn/collector/1976464052/44037357-dbb1-452d-aa25-845658b7e2b3/0",
+      "http://shp.qpic.cn/collector/1976464052/1d28c781-b2f6-4650-a2f8-19b365ccc6e8/0"
+    ],
+    "previewVideos": [],
+    "rid": "78265349"
+  },
+  {
     "id": "20260710183623718",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
@@ -855,10 +928,10 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
         "category": "latest",
-        "version": "RitsuLib.0.4.54",
+        "version": "v0.4.54",
         "size": "7.31MB",
         "date": "推荐"
       },
@@ -1151,12 +1224,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
         "category": "latest",
-        "version": "BaseLib3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
+        "version": "v3.3.5",
+        "size": "382.5KB"
       },
       {
         "text": "Steam创意工坊",
@@ -1458,20 +1530,18 @@
         "category": "latest"
       },
       {
-        "text": "前置Base",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "BaseLib3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
+        "version": "v3.3.5",
+        "size": "382.5KB"
       },
       {
-        "text": "前置Ritsu",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.41",
         "category": "latest",
-        "version": "RitsuLib0.4.53",
-        "size": "7.30MB",
-        "date": "推荐"
+        "version": "v0.4.53",
+        "size": "7.30MB"
       },
       {
         "text": "Steam创意工坊",
@@ -1673,9 +1743,9 @@
     "id": "20260707170244052",
     "rid": "75827892",
     "title": "魔法少女的魔女审判ManosabaLin",
-    "badge": "v0.3.5",
-    "size": "362.90MB",
-    "date": "2026-07-07",
+    "badge": "v0.3.3",
+    "size": "247.58MB",
+    "date": "2026-06-30",
     "tags": [
       "SFW",
       "魔法少女的魔女审判",
@@ -1696,25 +1766,46 @@
     ],
     "downloadLinks": [
       {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eefd4a55f09c441782273eb1ac8b5197?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.3.3",
+        "size": "247.58MB",
+        "date": "2026-06-30"
+      },
+      {
+        "text": "前置MinionLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.5.2",
+        "size": "510.92KB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "v0.4.54",
+        "size": "7.31MB",
+        "date": "2026-07-12"
+      },
+      {
         "text": "模组本体 - 0.108.0",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ca60fb4eb08a40b9a1dfc4e5ad7feaa5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "testBranch"
       },
       {
-        "text": "# 前置 - RitsuLib #",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
         "category": "testBranch",
         "version": "v0.4.54",
-        "size": "7.31MB",
-        "date": "推荐"
+        "size": "7.31MB"
       },
       {
-        "text": "# MinionLib - 前置 #",
+        "text": "前置MinionLib",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "testBranch",
         "version": "v0.5.2",
-        "size": "510.92KB",
-        "date": "推荐"
+        "size": "510.92KB"
       },
       {
         "text": "在线解析最新版",
@@ -1728,14 +1819,6 @@
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747637918",
         "category": "alternative",
         "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eefd4a55f09c441782273eb1ac8b5197?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v0.3.3",
-        "size": "247.58MB",
-        "date": "2026-06-30"
       }
     ],
     "previewImages": [
@@ -1756,9 +1839,9 @@
     "id": "20260707163825268",
     "title": "STS2 WineFox Mod / 酒狐MOD",
     "category": "skin",
-    "size": "55.80MB",
+    "size": "58.19MB",
     "date": "2026-07-01",
-    "badge": "v1.2.12",
+    "badge": "v1.2.10 5",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": "http://shp.qpic.cn/collector/1976464052/b2d273e9-75d8-4343-a52b-d2953c12fbc0/0",
@@ -1782,17 +1865,39 @@
     ],
     "downloadLinks": [
       {
+        "text": "酒狐MOD - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85a663db891594c1295649ab5cc425e1f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.2.10 5",
+        "size": "58.19MB",
+        "date": "2026-07-01"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.45",
+        "category": "latest",
+        "version": "v0.4.45",
+        "size": "3.62 MB"
+      },
+      {
         "text": "模组本体 - 0.108.0",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz88b3290413f7d406eb254150848618581?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "testBranch"
       },
       {
-        "text": "# 前置 - RitsuLib #",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.45",
         "category": "testBranch",
-        "version": "RitsuLib0.4.45",
-        "size": "3.62 MB",
-        "date": "推荐"
+        "version": "v0.4.45",
+        "size": "3.62 MB"
+      },
+      {
+        "text": "酒狐MOD - 0.103.2",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89c474baab0754f5e89ee75bddbaf85f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v1.2.6",
+        "size": "49.88MB",
+        "date": "2026-07-01"
       },
       {
         "text": "N网下载",
@@ -1808,22 +1913,6 @@
         "category": "alternative",
         "version": "GitHub Releases",
         "size": "在线解析"
-      },
-      {
-        "text": "酒狐MOD - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85a663db891594c1295649ab5cc425e1f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v1.2.10 5",
-        "size": "58.19MB",
-        "date": "2026-07-01"
-      },
-      {
-        "text": "酒狐MOD - 0.103.2",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89c474baab0754f5e89ee75bddbaf85f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v1.2.6",
-        "size": "49.88MB",
-        "date": "2026-07-01"
       }
     ],
     "previewImages": [
@@ -1843,8 +1932,8 @@
     "id": "20260707155835139",
     "rid": "19452412",
     "title": "蕾米莉亚·斯卡雷特 ~ 东方红魔乡",
-    "badge": "v1.0.2",
-    "size": "83.15MB",
+    "badge": "v1.0.1",
+    "size": "83.14MB",
     "date": "2026-07-07",
     "tags": [
       "SFW",
@@ -1865,31 +1954,37 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8857b1a0bd3c54a8eb1721497d19b596a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "# 前置 - RitsuLib #",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
-        "category": "testBranch",
-        "version": "RitsuLib0.4.54",
-        "size": "7.31MB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747515571",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
         "text": "模组本体 - 0.107.1",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b9f7400d042a45e9b65ac779378e2556?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "v1.0.1",
         "size": "83.14MB",
         "date": "2026-07-07"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "v0.4.54",
+        "size": "7.31MB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8857b1a0bd3c54a8eb1721497d19b596a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "testBranch",
+        "version": "v0.4.54",
+        "size": "7.31MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747515571",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
       }
     ],
     "previewImages": [
@@ -1905,9 +2000,9 @@
     "id": "20260707145505485",
     "rid": "76152685",
     "title": "超时空辉夜姬mod",
-    "badge": "v3.1.2",
+    "badge": "v3.1.1",
     "size": "307.82MB",
-    "date": "2026-07-07",
+    "date": "2026-07-06",
     "tags": [
       "SFW",
       "超时空辉夜姬",
@@ -1932,15 +2027,30 @@
     ],
     "downloadLinks": [
       {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84a4668b217054272b4e8a47931850a00?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v3.1.1",
+        "size": "307.82MB",
+        "date": "2026-07-06"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
         "text": "模组本体 - 0.108.0",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz890312a1b075b449793e977c745f8fca3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "testBranch"
       },
       {
-        "text": "# 前置 - BaseLib #",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
         "category": "testBranch",
-        "version": "BaseLib 3.3.5",
+        "version": "v3.3.5",
         "size": "382.5KB",
         "date": "推荐"
       },
@@ -1949,14 +2059,6 @@
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747548629",
         "category": "alternative",
         "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84a4668b217054272b4e8a47931850a00?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v3.1.1",
-        "size": "307.82MB",
-        "date": "2026-07-06"
       }
     ],
     "previewImages": [
@@ -2074,9 +2176,9 @@
     "id": "20260707124655879",
     "title": "薄荷尖塔 2-MintySpire2＃功能mod",
     "category": "skin",
-    "size": "390.91KB",
+    "size": "396.39KB",
     "date": "2026-07-07",
-    "badge": "v1.1.1",
+    "badge": "v1.1.9",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
@@ -2098,26 +2200,6 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89ce79a00c27c450a8844fee43a852207?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "前置 - BaseLib3.3.5",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
-        "category": "testBranch",
-        "version": "v3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
         "text": "模组本体 - 0.107.x",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ae030294079344afa7651d96b8d23d2d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
@@ -2126,12 +2208,39 @@
         "date": "2026-07-07"
       },
       {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz89ce79a00c27c450a8844fee43a852207?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "testBranch",
+        "version": "v3.3.5",
+        "size": "382.5KB",
+        "date": "推荐"
+      },
+      {
         "text": "模组本体 - 0.103.x",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz79f045f8e52945078ae1c990de4a9aa1?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "history",
         "version": "v1.0.1",
         "size": "362.52KB",
         "date": "2026-07-05"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/erasels/Minty-Spire-2",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
       }
     ],
     "previewImages": [],
@@ -2142,9 +2251,9 @@
     "id": "20260707112701965",
     "rid": "31470944",
     "title": "第四幕黑森林MOD - BlackForest",
-    "badge": "v0.1.7",
-    "size": "63.43MB",
-    "date": "2026-07-07",
+    "badge": "v0.1.5",
+    "size": "63.17MB",
+    "date": "2026-06-30",
     "tags": [
       "SFW",
       "黑森林",
@@ -2165,31 +2274,37 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b24620fa71074409a8a00d835893d131?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "#  前置  -  RitsuLib  #",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
-        "category": "testBranch",
-        "version": "RitsuLib0.4.54",
-        "size": "7.31MB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750323547",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
         "text": "模组本体 - 0.107.x",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz807cd342e2ce244fba9333398b4c3673b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "v0.1.5",
         "size": "63.17MB",
         "date": "2026-06-30"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "v0.4.54",
+        "size": "7.31MB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8b24620fa71074409a8a00d835893d131?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "testBranch",
+        "version": "v0.4.54",
+        "size": "7.31MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750323547",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
       }
     ],
     "previewImages": [
@@ -2481,8 +2596,8 @@
     "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
     "category": "skin",
     "size": "56.93MB",
-    "date": "2026-07-06",
-    "badge": "v3.0.4",
+    "date": "2026-07-04",
+    "badge": "v3.0.3",
     "badgeClass": "star",
     "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
     "coverImage": [
@@ -2507,34 +2622,6 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83f497a552bf34177ac9171c7ae21ff4e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "＃前置 - BaseLib＃",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
-        "category": "testBranch",
-        "version": "BaseLib3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
-      },
-      {
-        "text": "＃前置 - RitsuLib＃",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.53",
-        "category": "testBranch",
-        "version": "RitsuLib0.4.53",
-        "size": "7.30MB",
-        "date": "推荐"
-      },
-      {
-        "text": "在线解析最新版",
-        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/Flimsyyy/LexNinja2",
-        "category": "alternative",
-        "version": "GitHub Releases",
-        "size": "在线解析"
-      },
-      {
         "text": "蕾忍MOD - 0.107.1",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz823e28937705744fcadebace4fa041593?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
@@ -2543,12 +2630,52 @@
         "date": "2026-07-04"
       },
       {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.53",
+        "category": "latest",
+        "version": "v0.4.53",
+        "size": "7.30MB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83f497a552bf34177ac9171c7ae21ff4e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "testBranch",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.53",
+        "category": "testBranch",
+        "version": "v0.4.53",
+        "size": "7.30MB"
+      },
+      {
         "text": "蕾忍MOD - 0.103.2",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz91e593559c734a69ad049afdf646e445?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "history",
         "version": "v2.1",
         "size": "36.65MB",
         "date": "2026-06-23"
+      },
+      {
+        "text": "在线解析最新版",
+        "url": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/Flimsyyy/LexNinja2",
+        "category": "alternative",
+        "version": "GitHub Releases",
+        "size": "在线解析"
       }
     ],
     "previewImages": [
@@ -2656,17 +2783,25 @@
     ],
     "downloadLinks": [
       {
-        "text": "在线下载",
+        "text": "模组本体 - 0.107.1",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8fed444e77ab343aca92e0a99c6713501?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.53",
         "category": "latest",
-        "version": "RitsuLib0.4.53",
+        "version": "v0.4.53",
         "size": "7.30 MB",
         "date": "推荐"
+      },
+      {
+        "text": "猪MOD - 0.103.2",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84fd2223ad8824623baf7cb8e889e6f63?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.5.2",
+        "size": "56.8 MB",
+        "date": "2026-06-28"
       },
       {
         "text": "在线解析最新版",
@@ -2680,22 +2815,6 @@
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747566068",
         "category": "alternative",
         "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "猪MOD - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bce2ff62ccf74eaba032f9eb6484f21e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v0.5.9",
-        "size": "46.28MB",
-        "date": "2026-06-28"
-      },
-      {
-        "text": "猪MOD - 0.103.2",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz84fd2223ad8824623baf7cb8e889e6f63?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.5.2",
-        "size": "56.8 MB",
-        "date": "2026-06-28"
       }
     ],
     "previewImages": [
@@ -3005,12 +3124,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.4",
         "category": "latest",
-        "version": "BaseLib3.3.4",
-        "size": "377.4 KB",
-        "date": "推荐"
+        "version": "v3.3.4",
+        "size": "377.4 KB"
       },
       {
         "text": "Steam创意工坊",
@@ -3068,12 +3186,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.3",
         "category": "latest",
-        "version": "BaseLib3.3.3",
-        "size": "377.4 KB",
-        "date": "推荐"
+        "version": "v3.3.3",
+        "size": "377.4 KB"
       },
       {
         "text": "建筑师MOD - 0.103.x",
@@ -3128,20 +3245,18 @@
         "category": "latest"
       },
       {
-        "text": "BaseLib - 前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "BaseLib3.3.2",
-        "size": "375.5 KB",
-        "date": "推荐"
+        "version": "v3.3.2",
+        "size": "375.5 KB"
       },
       {
-        "text": "MinionLib - 前置",
+        "text": "前置MinionLib",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
-        "version": "MinionLib0.5.2",
-        "size": "510.92KB",
-        "date": "必装"
+        "version": "v0.5.2",
+        "size": "510.92KB"
       },
       {
         "text": "Steam创意工坊",
@@ -3338,10 +3453,10 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置Baselib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "Baselib3.3.2",
+        "version": "v3.3.2",
         "size": "344.34KB",
         "date": "推荐"
       },
@@ -3362,79 +3477,6 @@
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/bfc37ef5-a229-4893-a1d4-8a65755bf7ca/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260710210320928",
-    "title": "战士皮肤-卡厄思千鹤 PelleasWorks",
-    "category": "skin",
-    "size": "90.65MB",
-    "date": "2026-07-10",
-    "badge": "v0.7.0",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8e8be04ef1b4d4bef8926553522f15ce5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-    "images": [],
-    "description": "如果你是0.103.x或0.107.x版本的玩家，请在本帖的 \"历史版本\" 区域下载对应的版本，谢谢\n\n**模组介绍：**\n将千鹤作为铁甲战士的角色外观替换\nPS：这个模组的特效做的很酷 有很强的打击感\n\n**兼容性测试：** 模组：v0.7.0 - [beta]\n范围：v0.108.0｜PC+安卓双支持｜无需前置\n\n**兼容性测试：** 模组：v0.6.0 - [main]\n范围：v0.107.1｜PC+安卓双支持｜无需前置",
-    "author": "PelleasWorks",
-    "authorLinks": [
-      {
-        "text": "N网|PelleasWorks",
-        "url": "https://www.nexusmods.com/profile/PelleasWorks"
-      },
-      {
-        "text": "YouTube|PelleasWorks",
-        "url": "https://youtube.com/@pelleasworks"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "铁甲战士",
-      "外观替换",
-      "卡厄思梦境",
-      "PelleasWorks",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "千鹤 - 0.108.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s83c5c275b35949eb8f34af7fde081c89?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "N网下载",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/914",
-        "category": "alternative",
-        "version": "最新版本",
-        "size": "历史版本",
-        "date": "海外"
-      },
-      {
-        "text": "千鹤 - 0.107.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s4ef9086325d34f2a9403cde468a3493e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v0.6.0",
-        "size": "89.18MB",
-        "date": "2026-07-10"
-      },
-      {
-        "text": "千鹤 - 0.103.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz09b4383c4ebf4678913b91338e562be8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.4.3",
-        "size": "86.88MB",
-        "date": "2026-06-10"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/dc1502d5-b7d9-41c1-8e9e-6f26318a5055/0",
-      "http://shp.qpic.cn/collector/1976464052/3658aa24-9815-420f-a776-0a919380a388/0",
-      "http://shp.qpic.cn/collector/1976464052/ba831617-cd83-436e-9b14-cfb505a1ab2e/0",
-      "http://shp.qpic.cn/collector/1976464052/c6fb5f5b-aecd-4595-9d2b-0d567364248c/0",
-      "http://shp.qpic.cn/collector/1976464052/44037357-dbb1-452d-aa25-845658b7e2b3/0",
-      "http://shp.qpic.cn/collector/1976464052/1d28c781-b2f6-4650-a2f8-19b365ccc6e8/0"
-    ],
-    "previewVideos": [],
-    "rid": "78265349"
   },
   {
     "id": "20260701142143481",
@@ -3650,12 +3692,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置Baselib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "Baselib3.3.2",
-        "size": "344.34KB",
-        "date": "推荐"
+        "version": "v3.3.2",
+        "size": "344.34KB"
       },
       {
         "text": "Steam创意工坊",
@@ -3708,12 +3749,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.43",
         "category": "latest",
-        "version": "RitsuLib0.4.43",
-        "size": "3.61MB",
-        "date": "推荐"
+        "version": "v0.4.43",
+        "size": "3.61MB"
       },
       {
         "text": "Steam创意工坊",
@@ -3832,10 +3872,10 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "BaseLib3.3.2",
+        "version": "v3.3.2",
         "size": "375.5 KB",
         "date": "推荐"
       },
@@ -3889,12 +3929,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "BaseLib3.3.2",
-        "size": "375.5 KB",
-        "date": "推荐"
+        "version": "v3.3.2",
+        "size": "375.5 KB"
       },
       {
         "text": "Steam创意工坊",
@@ -4037,18 +4076,17 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.40",
-        "category": "latest",
-        "version": "RitsuLib0.4.40",
-        "size": "3.56 MB",
-        "date": "推荐"
-      },
-      {
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/ab6311ca2bbf",
         "category": "latest",
         "version": "文件里面的密钥就是解压密码❗️❗️"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.40",
+        "category": "latest",
+        "version": "v0.4.40",
+        "size": "3.56 MB"
       },
       {
         "text": "Steam创意工坊",
@@ -4086,12 +4124,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.40",
         "category": "latest",
-        "version": "RitsuLib0.4.40",
-        "size": "3.56 MB",
-        "date": "推荐"
+        "version": "v0.4.40",
+        "size": "3.56 MB"
       },
       {
         "text": "Steam创意工坊",
@@ -4147,18 +4184,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "BaseLib.3.3.2",
-        "size": "375.5 KB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750286343",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
+        "version": "v3.3.2",
+        "size": "375.5 KB"
       },
       {
         "text": "蛊真人 v0.103.x",
@@ -4167,6 +4197,12 @@
         "version": "v6_0.0.16",
         "size": "54.60MB",
         "date": "2026-06-10"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3750286343",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
       }
     ],
     "previewImages": [
@@ -4741,12 +4777,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置BaseLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.2",
         "category": "latest",
-        "version": "BaseLib3.3.2",
-        "size": "375.5KB",
-        "date": "推荐"
+        "version": "v3.3.2",
+        "size": "375.5KB"
       },
       {
         "text": "Steam创意工坊",
@@ -4844,12 +4879,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.20",
         "category": "latest",
-        "version": "RitsuLib0.4.20",
-        "size": "8.81MB",
-        "date": "推荐"
+        "version": "v0.4.20",
+        "size": "8.81MB"
       },
       {
         "text": "Steam创意工坊",
@@ -4954,12 +4988,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置RitsuLib",
         "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.33",
         "category": "latest",
-        "version": "RitsuLib0.4.33",
-        "size": "3.23MB",
-        "date": "推荐"
+        "version": "v0.4.33",
+        "size": "3.23MB"
       },
       {
         "text": "Steam创意工坊",
@@ -5225,20 +5258,18 @@
         "category": "latest"
       },
       {
-        "text": "所需前置 - BaseLib",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p7758af778ede45e29800ebc4227bddeb?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.1",
         "category": "latest",
-        "version": "BaseLib3.3.1",
-        "size": "375.48KB",
-        "date": "推荐"
+        "version": "v3.3.1",
+        "size": "375.48KB"
       },
       {
-        "text": "所需前置 - SignatureLib",
+        "text": "前置SignatureLib",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p3e6aaba3db43489ea65db9580d8fda5e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "异画库1.0.0",
-        "size": "45.52KB",
-        "date": "推荐"
+        "size": "45.52KB"
       },
       {
         "text": "Steam创意工坊",
@@ -5290,20 +5321,18 @@
         "version": "文件里面的密钥就是解压密码❗️❗️"
       },
       {
-        "text": "所需前置 - BaseLib",
+        "text": "前置BaseLib",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p7758af778ede45e29800ebc4227bddeb?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
-        "version": "BaseLib3.3.1",
-        "size": "375.48KB",
-        "date": "推荐"
+        "version": "v3.3.1",
+        "size": "375.48KB"
       },
       {
-        "text": "所需前置 - SignatureLib",
+        "text": "前置SignatureLib",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p3e6aaba3db43489ea65db9580d8fda5e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "异画库1.0.0",
-        "size": "45.52KB",
-        "date": "推荐"
+        "size": "45.52KB"
       },
       {
         "text": "Steam创意工坊",
@@ -5528,12 +5557,11 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
+        "text": "前置Baselib",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p02ead5e832134caa8eebf941490c0b15?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
-        "version": "Baselib3.3.0",
-        "size": "372.35KB",
-        "date": "推荐"
+        "version": "v3.3.0",
+        "size": "372.35KB"
       },
       {
         "text": "Steam创意工坊",
@@ -6338,7 +6366,7 @@
       "orgn927",
       "在线下载"
     ],
-    "description": "新增一个角色是我妻由乃，新增90+张卡牌，20+遗物，支持中文和英文。\n\n前置要求：RitsuLib(0.2.13)\n仅支持正式版，不支持beta测试版",
+    "description": "新增一个角色是我妻由乃，新增90+张卡牌，20+遗物，支持中文和英文。",
     "author": "orgn927",
     "authorLinks": [
       {
