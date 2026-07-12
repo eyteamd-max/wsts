@@ -1133,7 +1133,7 @@
     "rid": "06021311",
     "title": "亚托莉 ATRI - 角色MOD",
     "badge": "v0.2.8-lite",
-    "size": "19.55MB",
+    "size": "19.27MB",
     "date": "2026-07-08",
     "tags": [
       "SFW",
@@ -1155,31 +1155,37 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85fe285b4e6c341719ecf9aa7f991ebb3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "＃BaseLib - 前置＃",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
-        "category": "testBranch",
-        "version": "BaseLib3.3.5",
-        "size": "382.5KB",
-        "date": "推荐"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3756612853",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
         "text": "模组本体 - 0.107.1",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8f6cf661b066d4c3da466202c88390ba7?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "v0.2.8-lite",
         "size": "19.27MB",
         "date": "2026-07-08"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz85fe285b4e6c341719ecf9aa7f991ebb3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "testBranch",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3756612853",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
       }
     ],
     "previewImages": [
@@ -1563,8 +1569,8 @@
     "id": "20260707195848099",
     "rid": "95028646",
     "title": "空巢小梅林 - 被触手纠缠的魔法少女",
-    "badge": "v1.29jfix",
-    "size": "187MB",
+    "badge": "1.29ffix",
+    "size": "187.01MB",
     "date": "2026-07-07",
     "tags": [
       "NSFW",
@@ -1589,31 +1595,38 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz883be93a0a5594482966e7d0412e3e833?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
-      },
-      {
-        "text": "# 前置 - RitsuLib #",
-        "url": "https://wsts.pages.dev/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
-        "category": "testBranch",
-        "version": "RitsuLib0.4.54",
-        "size": "7.31MB",
-        "date": "推荐"
-      },
-      {
-        "text": "＃＃ 解压密码 ＃＃",
-        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/f3ed9e0aa29c",
-        "category": "testBranch",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
-      },
-      {
         "text": "模组本体 - 0.107.0",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz83f679423720a4890b03c9dd57e67989b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "1.29ffix",
         "size": "187.01MB",
         "date": "2026-07-07"
+      },
+      {
+        "text": "＃＃ 解压密码 ＃＃",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/f3ed9e0aa29c",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://wsts.pages.dev/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "v0.4.54",
+        "size": "7.31MB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz883be93a0a5594482966e7d0412e3e833?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://wsts.pages.dev/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "testBranch",
+        "version": "v0.4.54",
+        "size": "7.31MB",
+        "date": "推荐"
       }
     ],
     "previewImages": [],
