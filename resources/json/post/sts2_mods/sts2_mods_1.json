@@ -1,5 +1,59 @@
 [
   {
+    "id": "20260712201745583",
+    "rid": "01006375",
+    "title": "Faust-浮士德 [Limbus Company] /【边狱巴士】【边狱公司】",
+    "badge": "v0.2.0",
+    "size": "235.73MB",
+    "date": "2026-07-12",
+    "tags": [
+      "SFW",
+      "浮士德",
+      "边狱巴士",
+      "新增角色"
+    ],
+    "description": "增加了新角色 : 永恒 浮士德\n本模组无需前置，安卓+PC双支持",
+    "author": "火怨霸丸",
+    "authorLinks": [
+      {
+        "text": "B站|火怨霸丸",
+        "url": "https://space.bilibili.com/87686082"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s893483a98a6845a3951ee4bafb22eaea?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.2.0",
+        "size": "235.73MB",
+        "date": "2026-07-12"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s3ff99f2ec5d744249f5b7ee730763173?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.1.9b",
+        "size": "235.73MB",
+        "date": "2026-07-12"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747531032",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/f70d3c03-53d0-43f8-a359-b7d1cc3d6809/0",
+      "http://shp.qpic.cn/collector/1976464052/ddf4cc2c-1692-4546-88cf-bea79f4c44bf/0",
+      "http://shp.qpic.cn/collector/1976464052/fd23455b-0b85-4b07-baeb-8e1fc7317a7c/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/2fb57085-d07e-4d8b-8312-d9c082d1dd4d/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260711110827233",
     "rid": "12801478",
     "title": "东方Project - 古明地恋",
