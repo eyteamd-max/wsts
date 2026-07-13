@@ -1,5 +1,72 @@
 [
   {
+    "id": "20260713174713125",
+    "rid": "80169029",
+    "title": "雷横角色MOD - 边狱巴士",
+    "badge": "v0.2.80.6",
+    "size": "145MB",
+    "date": "2026-07-13",
+    "tags": [
+      "SFW",
+      "雷横",
+      "边狱巴士",
+      "新增角色",
+      "Fr0sts",
+      "在线下载"
+    ],
+    "description": "增加了一位来自 \"边狱巴士\" 的角色 雷横\n\n该mod仍在开发中,目前只有70多张卡牌\n但是有个贾丘作为BOSS,需要通过事件才能开启和他的战斗\n\n天退星BGM和贾丘战斗的BGM的音量,都可以在ritsulib的设置中调节(不过调节后会导致重新播放)\n\n手机端的兼容性较为玄学，部分机型可能会出现战斗开始时闪退的情况（原因暂且不知）",
+    "author": "Fr0sts",
+    "authorLinks": [
+      {
+        "text": "B站|Fr0sts",
+        "url": "https://space.bilibili.com/506443592"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s70eceb3ddfc3449996092a6ed43f3065?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.2.80.6",
+        "size": "145MB",
+        "date": "2026-07-13"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.57",
+        "category": "latest",
+        "version": "v0.4.57",
+        "size": "7.38MB"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sc4e015cf8e6647adb1af13cb1795b6f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.2.80.6b",
+        "size": "145MB",
+        "date": "2026-07-13"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.57",
+        "category": "testBranch",
+        "version": "v0.4.57",
+        "size": "7.38MB"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/903f53fb-4dbf-4919-8240-4ab7c697e9cc/0",
+      "http://shp.qpic.cn/collector/1976464052/aa0a378b-2972-4cb1-aa48-20b59909ec80/0",
+      "http://shp.qpic.cn/collector/1976464052/fef763cb-cfc3-4093-8588-bf81c85b5b90/0",
+      "http://shp.qpic.cn/collector/1976464052/49ca7c22-2f23-43a5-98a5-d5567616709b/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s446d74e4fb86455da5d475ffff2d6db4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f6b5fff6-0eef-4a9b-9cd8-9e90d0c835cf/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260713113946894",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
