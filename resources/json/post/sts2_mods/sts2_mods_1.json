@@ -6499,8 +6499,8 @@
     "rid": "02759025",
     "title": "全员娘化的杀戮尖塔 - 剔除/分离版",
     "badge": "v0.2.0",
-    "size": "62.41MB",
-    "date": "2026-06-19",
+    "size": "37.52MB",
+    "date": "2026-07-14",
     "tags": [
       "SFW",
       "外观替换",
@@ -6516,7 +6516,7 @@
       "兰术",
       "在线下载"
     ],
-    "description": "这是\"全员娘化的杀戮尖塔\"的分离版，将部分娘化内容单独剔除了出来",
+    "description": "这是\"全员娘化的杀戮尖塔\"的分离版，将原模组的 娘化 or 美化 内容单独剔除出来，并分为了下面几个版本：",
     "author": "[作者] - 1987的某一天 [美术] - 蛞蝓仔仔 [卡图] - 兰术",
     "authorLinks": [
       {
@@ -6534,17 +6534,36 @@
     ],
     "downloadLinks": [
       {
-        "text": "怪物+先古(其他内容已剔除)",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pcfe4c64bce0c4bb08c9d2668f24d2f81?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "怪物的娘化(其他内容已剔除)",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pfe64e34711d244eabbe9c96ddabc3591?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "text": "先民的娘化 (其他内容已剔除)",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s3b85cf018867426e866e7df4f77c4b0a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "v0.2.0",
-        "size": "62.39MB",
-        "date": "2026-06-19"
+        "size": "37.52MB",
+        "date": "2026-07-14"
+      },
+      {
+        "text": "怪物的娘化 (其他内容已剔除)",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sbac2a791341e4d9591cb0a25c6f7c21f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.2.0",
+        "size": "6.56MB",
+        "date": "2026-07-14"
+      },
+      {
+        "text": "全角色娘化 (其他内容已剔除)",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s7958bd114caa4425921d4c918b741137?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.2.0",
+        "size": "67.95MB",
+        "date": "2026-07-14"
+      },
+      {
+        "text": "卡面的美化 (其他内容已剔除)",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sc45d47347ffb465f9feaae7df82c1b60?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.2.0",
+        "size": "17.35MB",
+        "date": "2026-07-14"
       }
     ],
     "previewImages": [],
