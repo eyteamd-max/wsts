@@ -171,11 +171,11 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260714000427966",
+    "id": "20260714175601485",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
-    "badge": "v1.4.3",
-    "size": "336.75MB",
+    "badge": "v1.4.4",
+    "size": "337.02MB",
     "date": "2026-07-14",
     "tags": [
       "SFW",
@@ -185,7 +185,7 @@
       "四时雨",
       "在线下载"
     ],
-    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复九难不生效\n修复模仿bug\n修复打出战锤多人数据不同步\n新增巢穴强怪“彩虹蘑菇”，精英“玛坦戈”\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
+    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n增加多人保护机制把怪物hp强制同步以防多人数据不同步（未测试）\n修复模仿打不出\n新增加轻松九难选项\n新增不死轮回模式\n削弱九难buff\n九难去除难以杀灭\n处刑人凯奇第一回合 易伤改为虚弱\n噩梦灵调整至第六回合\n削弱玛坦戈\n削弱彩虹蘑菇\n削弱无头骑士\n不死优先级将大于灾厄\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
     "author": "四时雨",
     "authorLinks": [
       {
@@ -204,7 +204,7 @@
     "downloadLinks": [
       {
         "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s28b5d0a50812486ab1da2846701514b4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sb303a9aada194b819d9cddc5118aa9a6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       },
       {
@@ -1742,7 +1742,7 @@
       "在线下载",
       "夸克"
     ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n本帖将 \"欲途模组本体\" 和 \"欲途成人向补丁\" 整合到了该帖的\"游戏本体\"压缩包内，您在安装此模组时可以自行选择是否留存此成人向补丁\n\n**兼容性测试：**\n范围：0.107.1｜PC+安卓双支持\n前置：KitLib 0.24.0 + RitsuLib.0.4.54\n\n我把这两个前置整合到了该帖的\"所需前置\"压缩包内，你可以直接下载后直接导入同款配置",
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n本帖将 \"欲途模组本体\" 和 \"欲途成人向补丁\" 整合到了该帖的\"游戏本体\"压缩包内，您在安装此模组时可以自行选择是否留存此成人向补丁\n\n**兼容性测试：**\n范围：0.107.1｜PC+安卓双支持\n前置：KitLib 0.27.0 + RitsuLib 0.4.54\n\n我把这两个前置整合到了该帖的\"所需前置\"压缩包内，你可以直接下载后直接导入同款配置",
     "author": "",
     "authorLinks": [],
     "downloadLinks": [
@@ -1752,19 +1752,25 @@
         "category": "latest"
       },
       {
-        "text": "所需前置",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz81aa89c7c76d04fb899cbf2915721fc9a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "K+R双前置",
-        "size": "34.97MB",
-        "date": "重要 ！！"
-      },
-      {
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
         "category": "latest",
         "version": "文件里面的密钥就是解压密码❗️❗️",
         "type": "password"
+      },
+      {
+        "text": "前置KitLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s47f551913f294e49bb9e807074369984?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.27.0",
+        "size": "34.97MB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "category": "latest",
+        "version": "v0.4.54",
+        "size": "7.31MB"
       },
       {
         "text": "N网下载",
