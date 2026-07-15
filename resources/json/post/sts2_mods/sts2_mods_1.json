@@ -1,5 +1,65 @@
 [
   {
+    "id": "20260715132020094",
+    "rid": "31291475",
+    "title": "Ryoshu-良秀 [Limbus Company] /【边狱巴士】【边狱公司】",
+    "badge": "v0.3.7",
+    "size": "123.51MB",
+    "date": "2026-07-15",
+    "tags": [
+      "SFW",
+      "良秀",
+      "边狱巴士",
+      "新增角色",
+      "火怨霸丸",
+      "在线下载"
+    ],
+    "description": "本模组新增了一个可玩的角色——良秀，来自边狱巴士的四号罪人，同时也有天杀星之称。",
+    "author": "火怨霸丸",
+    "authorLinks": [
+      {
+        "text": "B站|火怨霸丸",
+        "url": "https://space.bilibili.com/87686082"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sb1e1de4cee7f42b4850a862e1da648f3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.3.7",
+        "size": "123.51MB",
+        "date": "2026-07-15"
+      },
+      {
+        "text": "模组本体 - 0.108.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s29882270dd93468caeb2cb643cd90df4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.3.6b",
+        "size": "123.51MB",
+        "date": "2026-07-15"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747528329",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/373a4e2c-6ee1-486a-b8f8-ea58937f64e5/0",
+      "http://shp.qpic.cn/collector/1976464052/6258325d-bade-4164-ada5-d914bc429d0f/0",
+      "http://shp.qpic.cn/collector/1976464052/0955b5d7-f129-470a-9f1f-f9b5d203d47d/0",
+      "http://shp.qpic.cn/collector/1976464052/f887c0a3-c7b2-44ab-b96b-81415108fcd1/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s9005024c6da147c583d4e91494adb4c4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s6d4a5b94d70344c1845bea6a7fe3f26a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/43d91f86-a502-4f02-8137-07fc2dc12a35/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260714202956454",
     "rid": "06739849",
     "title": "怪物娘化 - 共 6 位 / 猎杀,地道虫等等",
