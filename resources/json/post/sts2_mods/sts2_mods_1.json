@@ -1,5 +1,70 @@
 [
   {
+    "id": "20260715162837756",
+    "rid": "64368345",
+    "title": "东方Project - 博丽灵梦 @诗音",
+    "badge": "v1.0.0",
+    "size": "55.35MB",
+    "date": "2026-07-15",
+    "tags": [
+      "SFW",
+      "博丽灵梦",
+      "东方",
+      "东方Project",
+      "新增角色",
+      "诗音",
+      "在线下载"
+    ],
+    "description": "本模组是东方 Project 的同人模组，添加了一名新的可游玩角色 博丽灵梦",
+    "author": "诗音",
+    "authorLinks": [
+      {
+        "text": "steam|诗音",
+        "url": "https://steamcommunity.com/profiles/76561198169298594/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s667de270217141629d8540fdc0b265bf?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.0.0",
+        "size": "55.35MB",
+        "date": "2026-07-15"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      },
+      {
+        "text": "前置SignatureLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s97fb1eed5e6c4a90855da0aa88b06e5e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "异画库1.0.0",
+        "size": "112.28KB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747544312",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/e3f9c146-e78a-48bd-bd4a-04c2c9853aff/0",
+      "http://shp.qpic.cn/collector/1976464052/9004f432-eaaa-422b-aa17-0fb0fb0d5467/0",
+      "http://shp.qpic.cn/collector/1976464052/84a9c42d-f518-450e-b2d4-c430611aa428/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s6acbeb3fd325428e992688aeb09ac226?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/a9c3778c-8a6c-4368-844c-3b31b00c3ee9/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260715144144756",
     "rid": "69613497",
     "title": "狂猎-希斯克里夫 Heathcliff Wild Hunt",
@@ -157,12 +222,12 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260714175601485",
+    "id": "20260715171407196",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
-    "badge": "v1.4.4",
-    "size": "337.02MB",
-    "date": "2026-07-14",
+    "badge": "v1.4.5",
+    "size": "340.09MB",
+    "date": "2026-07-15",
     "tags": [
       "SFW",
       "blacksouls",
@@ -171,7 +236,7 @@
       "四时雨",
       "在线下载"
     ],
-    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n增加多人保护机制把怪物hp强制同步以防多人数据不同步（未测试）\n修复模仿打不出\n新增加轻松九难选项\n新增不死轮回模式\n削弱九难buff\n九难去除难以杀灭\n处刑人凯奇第一回合 易伤改为虚弱\n噩梦灵调整至第六回合\n削弱玛坦戈\n削弱彩虹蘑菇\n削弱无头骑士\n不死优先级将大于灾厄\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
+    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n根源性修复火堆闪退问题\n修复部分小bug\n修复琳达梅尔二阶段与不死轮回冲突\n优化多人模式强制怪物数据同步逻辑\n新增一层弱怪绅士\n密林第一只怪固定为食尸兔，暗港第一只怪固定为绅士\n古兰最终阶段不塞状态牌了\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
     "author": "四时雨",
     "authorLinks": [
       {
@@ -190,7 +255,7 @@
     "downloadLinks": [
       {
         "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sb303a9aada194b819d9cddc5118aa9a6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s99c08ee4965b42baa4770aca32f39ae9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest"
       },
       {
