@@ -1,5 +1,54 @@
 [
   {
+    "id": "20260715144144756",
+    "rid": "69613497",
+    "title": "狂猎-希斯克里夫 Heathcliff Wild Hunt",
+    "badge": "v1.0",
+    "size": "401.97MB",
+    "date": "2026-07-15",
+    "tags": [
+      "SFW",
+      "新增角色",
+      "第四幕",
+      "边狱巴士",
+      "狂猎希斯克里夫",
+      "Kiteseven",
+      "在线下载"
+    ],
+    "description": "本模组添加了一个新角色：狂猎-希斯克里夫。\n目前拥有1个新角色、80+张卡牌、多个遗物、新添加的第4幕呼啸山庄、新添加的第五幕心意相悖。\n\n新添加魔王希斯克里夫皮肤、希斯克里夫？皮肤、死兔帮老大皮肤、脑叶公司E.G.O::狐雨皮肤，可供切换。\n包含多场普通敌人战斗、多场精英战斗、3场boss战。\n注：目前参考RitsuLib的实现原理，采用分版本选择dll以实现同时兼容 正式版107 和 beta 108 版本",
+    "author": "Kiteseven",
+    "authorLinks": [
+      {
+        "text": "B站|Kiteseven",
+        "url": "https://space.bilibili.com/162927299"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s55a44bbebf5949cc9fbfbda689527987?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.0",
+        "size": "401.97MB",
+        "date": "2026-07-15"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/96fed036-45bf-40cf-89be-5cc5c289fb4c/0",
+      "http://shp.qpic.cn/collector/1976464052/be910c84-386e-4011-a830-5d639f78bec9/0",
+      "http://shp.qpic.cn/collector/1976464052/ffa1cf90-6aa9-4d1e-8259-f317ae432f7d/0",
+      "http://shp.qpic.cn/collector/1976464052/9b86beb4-cdea-4bb8-b0cd-50c68bbedc26/0",
+      "http://shp.qpic.cn/collector/1976464052/9016c453-f8ff-4060-8fc3-fdd61979ccd5/0",
+      "http://shp.qpic.cn/collector/1976464052/54746feb-a920-446d-acee-02f3d8bbe636/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s84eddd9aa33b4564a86208079b40cd9d?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s5be55fb1edf5431aac8dcaff81e33f36?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/05073f5a-54d3-4a60-8339-2420d3982245/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260715132020094",
     "rid": "31291475",
     "title": "Ryoshu-良秀 [Limbus Company] /【边狱巴士】【边狱公司】",
