@@ -1,5 +1,54 @@
 [
   {
+    "id": "20260716230954583",
+    "rid": "95203681",
+    "title": "铁甲战士 - 黄毛萝莉皮肤 巨斧 [Ironclad skin] Retriever Rerie",
+    "badge": "v1.0.3",
+    "size": "4.31MB",
+    "date": "2026-07-16",
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "在线下载",
+      "Kill a Tomato"
+    ],
+    "description": "Kill a Tomato老师制作的一款 \" 铁甲战士 - 黄毛萝莉皮肤 \" 模组，详情请看 预览视频 和 预览图片 。",
+    "author": "Kill a Tomato",
+    "authorLinks": [
+      {
+        "text": "X|Kill a Tomato",
+        "url": "https://x.com/Kill_a_Tomato"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sd7a1baae1ccc404cb77a1494f0c371f2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.0.3",
+        "size": "4.31MB",
+        "date": "2026-07-16"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747516671",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/670566c8-aeeb-4ca3-a23c-3c2f03ada810/0",
+      "http://shp.qpic.cn/collector/1976464052/ccbd3be0-2bce-4e0f-955f-597544adc128/0",
+      "http://shp.qpic.cn/collector/1976464052/1b6dab53-2f16-4803-bff4-6e2c618bced5/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1a4Kj6nEwn/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/584b5c8b-f48b-4e37-872a-fa6d5db04726/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260716214233795",
     "rid": "42517494",
     "title": "HongLu鸿璐 Limbus Company 【边狱巴士】【边狱公司】",
