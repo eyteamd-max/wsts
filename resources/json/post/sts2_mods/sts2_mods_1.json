@@ -1,11 +1,64 @@
 [
   {
+    "id": "20260716202405880",
+    "rid": "70609637",
+    "title": "魔女审判 - 黑部奈叶香 神秘持枪女",
+    "badge": "v0.99.4",
+    "size": "102.88MB",
+    "date": "2026-07-16",
+    "tags": [
+      "SFW",
+      "黑部奈叶香",
+      "狙击手",
+      "魔法少女",
+      "魔法少女的魔女审判",
+      "新增角色",
+      "妲娅",
+      "在线下载"
+    ],
+    "description": "一位失忆的神秘持枪少女\n能使用幻视魔法，窥探所接触之物的全部记忆\n\n模组内容：1名新角色，含88张卡牌、2件角色遗物以及3种角色专属药水，目前仅支持 0.107.1 版本",
+    "author": "妲娅",
+    "authorLinks": [
+      {
+        "text": "steam|妲娅",
+        "url": "https://steamcommunity.com/id/dayaYorigami/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sf93ce1c0c5e445e3bc843d34aefc0212?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.99.4",
+        "size": "102.88MB",
+        "date": "2026-07-16"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/6f6559e0-088a-47a2-8b84-fea52b60078c/0",
+      "http://shp.qpic.cn/collector/1976464052/f3547d4d-03cc-402f-ba48-cecc4ee71313/0",
+      "http://shp.qpic.cn/collector/1976464052/2c08906b-c83c-4c73-b68b-cc5692f63fdd/0",
+      "http://shp.qpic.cn/collector/1976464052/4ede6970-fce8-41bc-8880-e19aabb34015/0",
+      "http://shp.qpic.cn/collector/1976464052/3a6362bc-4403-4eed-a51c-44f1eaac8489/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/4fc76646-8018-4f0d-9173-699f532ae8f3/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260715174858974",
     "rid": "95028646",
     "title": "空巢小梅林 - 被触手纠缠的魔法少女",
     "badge": "1.29ffix",
     "size": "187.01MB",
-    "date": "2026-07-07",
+    "date": "2026-07-15",
     "tags": [
       "NSFW",
       "魔法少女",
