@@ -1,5 +1,65 @@
 [
   {
+    "id": "20260717193521915",
+    "rid": "01926256",
+    "title": "仪式兽 娘化皮肤 有手鹿 / 无手鹿",
+    "badge": "v2.0",
+    "size": "1.79MB",
+    "date": "2026-07-17",
+    "tags": [
+      "SFW",
+      "仪式兽",
+      "BOSS",
+      "怪物娘化",
+      "锭_grayingot"
+    ],
+    "description": "将一层的 仪式兽 BOSS 替换为了“半人马”形象的娘化皮肤，并提供了有手版和无手版，你只需要根据自己的XP选择其中一项即可。",
+    "author": "[模组作者] - 锭_grayingot [形象原型] - Jinzi166",
+    "authorLinks": [
+      {
+        "text": "B站|锭_grayingot",
+        "url": "https://space.bilibili.com/95250714"
+      },
+      {
+        "text": "B站|Jinzi166",
+        "url": "https://space.bilibili.com/313229361"
+      },
+      {
+        "text": "pixiv|Jinzi166",
+        "url": "https://www.pixiv.net/users/75100057"
+      },
+      {
+        "text": "X|Jinzi166",
+        "url": "https://x.com/jinzi16681906"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 有手版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sf62efcec336d4851b03a1aff2a143b54?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v2.0",
+        "size": "1.79MB",
+        "date": "2026-07-17"
+      },
+      {
+        "text": "模组本体 - 无手版",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s10ec1baf92bb42cc97a1793a3f9738aa?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v2.0",
+        "size": "1.79MB",
+        "date": "2026-07-17"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/181f38a6-c377-473d-8bb7-c77072f99258/0",
+      "http://shp.qpic.cn/collector/1976464052/5bd1c01d-3fe5-4ece-a1cb-3b969a3a76d3/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/9cc19185-2647-4640-8955-fe3c64c8d46b/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260717111536220",
     "rid": "78148217",
     "title": "宽额头 - 新增战损系统与选人切换",
