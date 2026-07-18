@@ -1,5 +1,48 @@
 [
   {
+    "id": "20260718215122328",
+    "rid": "76555895",
+    "title": "A大＆一代战士姐皮肤 0.8发布！！",
+    "badge": "v0.8",
+    "size": "4.58MB",
+    "date": "2026-07-18",
+    "tags": [
+      "SFW",
+      "铁甲战士",
+      "外观替换",
+      "anaertailin",
+      "在线下载"
+    ],
+    "description": "A大的铁甲战士皮肤，重做休息处与选人大图。",
+    "author": "anaertailin",
+    "authorLinks": [
+      {
+        "text": "爱发电|anaertailin",
+        "url": "https://www.ifdian.net/a/anaertailin"
+      },
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s73ad89b17b8048b99dc4343370917aea?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/ebbaecf6-bb76-4dca-aa62-f86af5b7fc19/0",
+      "http://shp.qpic.cn/collector/1976464052/275e947f-00df-49cb-9e59-e945efb33803/0",
+      "http://shp.qpic.cn/collector/1976464052/87abc6cb-2c29-414f-82cd-cdb9985e3d86/0",
+      "http://shp.qpic.cn/collector/1976464052/f25c300e-54b6-42b8-96d4-f34e4204cabc/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/4cd93bbb-57af-4140-821f-4834d3870e17/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260718105450421",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
@@ -5527,51 +5570,6 @@
     "previewImages": [],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/b857f1a5-aeea-4cce-a94a-57a99d15d347/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260626214501486",
-    "rid": "76555895",
-    "title": "【A大】一代战士移植＆先行测试",
-    "badge": "v0.0.1",
-    "size": "3.32MB",
-    "date": "2026-06-26",
-    "tags": [
-      "SFW",
-      "铁甲战士",
-      "外观替换",
-      "anaertailin",
-      "在线下载"
-    ],
-    "description": "A大的铁甲战士皮肤先行测试... 待完善...\n\n**兼容性测试：**\n测试范围：0.103.2~0.107.1｜PC+安卓双支持",
-    "author": "anaertailin",
-    "authorLinks": [
-      {
-        "text": "爱发电|anaertailin",
-        "url": "https://www.ifdian.net/a/anaertailin"
-      },
-      {
-        "text": "B站|anaertailin",
-        "url": "https://space.bilibili.com/2264658"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz88f56fb7d7f174c0dace84057dac83026?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/181426d7-ac3b-4be6-bc2f-028efd1663c0/0",
-      "http://shp.qpic.cn/collector/1976464052/951dcfa2-ad84-4119-b3b8-5b9691ac1325/0"
-    ],
-    "previewVideos": [
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8644e791da84e46c68d3574600bf1ee78?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz81a3db2e7745c49c59b9ca33451e76439?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz87f5a089349584ffea6a95fc3ce728de3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/2fa1c3f4-0431-4eac-92a2-6c6cadc5e430/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
