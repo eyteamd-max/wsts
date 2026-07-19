@@ -1,7 +1,7 @@
 {
   "launcherIcon": "https://cdn.example.com/launcher-icon.png",
   "gameIcon": "https://cdn.example.com/game-icon.png",
-  "tutorialUrl": "https://b23.tv/RlzpOlN",
+  "tutorialUrl": "https://www.bilibili.com/video/BV1FuKq6WEF2",
   "githubApiUrl": "https://api.github.com/repos/ModinMobileSTS/Sts2MobileLauncher/releases/latest",
   "githubParsingUrl": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/ModinMobileSTS/Sts2MobileLauncher",
   "fallbackLatest": {
