@@ -2974,12 +2974,12 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260707170244052",
+    "id": "20260720012608990",
     "rid": "75827892",
     "title": "魔法少女的魔女审判ManosabaLin",
-    "badge": "v0.3.3",
-    "size": "247.58MB",
-    "date": "2026-06-30",
+    "badge": "v0.4.0",
+    "size": "460.77MB",
+    "date": "2026-07-20",
     "tags": [
       "SFW",
       "魔法少女的魔女审判",
@@ -2990,7 +2990,7 @@
       "风中闲霖",
       "在线下载"
     ],
-    "description": "注意了喵！如果你是0.107.1版本的玩家，请在本帖的 \"历史版本\" 区域下载对应的v0.3.3版本哦。\n\n新增可玩角色樱羽艾玛，二阶堂希罗，橘雪莉，特色BOSS等\n\n**兼容性测试：**\n范围：仅支持 v0.107.1｜PC+安卓双支持\n前置：MinionLib0.5.2+RitsuLib0.4.54 | 或更高",
+    "description": "新增可玩角色夏目安安、樱羽艾玛，二阶堂希罗，橘雪莉，特色BOSS等",
     "author": "风中闲霖",
     "authorLinks": [
       {
@@ -3001,45 +3001,47 @@
     "downloadLinks": [
       {
         "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8eefd4a55f09c441782273eb1ac8b5197?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8scacba4b79d4645b79922c4cd27420abf?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
-        "version": "v0.3.3",
-        "size": "247.58MB",
-        "date": "2026-06-30"
+        "version": "v0.4.0",
+        "size": "460.77MB",
+        "date": "2026-07-20"
       },
       {
         "text": "前置MinionLib",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s033b17152de64474b7487fbf42676ad0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "v0.5.2",
-        "size": "510.92KB"
+        "size": "510.87KB"
       },
       {
         "text": "前置RitsuLib",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.60",
         "category": "latest",
-        "version": "v0.4.54",
-        "size": "7.31MB",
-        "date": "2026-07-12"
+        "version": "v0.4.60",
+        "size": "11.06MB"
       },
       {
-        "text": "模组本体 - 0.108.0",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8ca60fb4eb08a40b9a1dfc4e5ad7feaa5?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "testBranch"
+        "text": "模组本体 - 0.109.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s4fe5a65fb2734174a0537ac6d0ff5458?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.4.1",
+        "size": "536.90MB",
+        "date": "2026-07-20"
       },
       {
         "text": "前置RitsuLib",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.60",
         "category": "testBranch",
-        "version": "v0.4.54",
-        "size": "7.31MB"
+        "version": "v0.4.60",
+        "size": "11.06MB"
       },
       {
         "text": "前置MinionLib",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz82438cc56d94e419cb72982adef183631?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s7e903088bd214f008a1fa6b2c44048f4?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "testBranch",
-        "version": "v0.5.2",
-        "size": "510.92KB"
+        "version": "v0.6.1",
+        "size": "516.82KB"
       },
       {
         "text": "在线解析最新版",
@@ -3056,17 +3058,21 @@
       }
     ],
     "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/f7f46a0b-b5d6-40e1-8871-450465b09cc0/0",
-      "http://shp.qpic.cn/collector/1976464052/1e065e65-bd57-4415-b202-b726b144ab20/0",
-      "http://shp.qpic.cn/collector/1976464052/fab86b49-5b30-47ce-abcf-7a600b18fd6f/0",
-      "http://shp.qpic.cn/collector/1976464052/18b994c7-131f-4955-840a-e2f20d60f254/0",
-      "http://shp.qpic.cn/collector/1976464052/0d68d0cb-9b65-406e-ba78-30bf59f7d942/0",
-      "http://shp.qpic.cn/collector/1976464052/4e3ac004-f318-4ad0-9167-926c1ecc58b7/0",
-      "http://shp.qpic.cn/collector/1976464052/5d49c3e1-f860-45f2-afb6-74cdd551b9e7/0",
-      "http://shp.qpic.cn/collector/1976464052/23e95d16-ec2f-4c48-99ed-476d043170fb/0"
+      "http://shp.qpic.cn/collector/1976464052/4350030c-91ae-4c4f-8ca3-47653d81c2f6/0",
+      "http://shp.qpic.cn/collector/1976464052/ef7825d3-8342-433f-b013-db29f6a14152/0",
+      "http://shp.qpic.cn/collector/1976464052/e9735edc-d29a-4950-a600-bf1f9cb6097d/0",
+      "http://shp.qpic.cn/collector/1976464052/48af8ae6-5ff3-4308-8db1-0915f00a6d3b/0",
+      "http://shp.qpic.cn/collector/1976464052/e10c7c8f-3ec1-41a0-90db-e00aceb484c8/0",
+      "http://shp.qpic.cn/collector/1976464052/922674c1-2355-4839-b266-c270ef4fe33b/0",
+      "http://shp.qpic.cn/collector/1976464052/eb70b606-ee1b-40b9-819c-96df52886a3f/0",
+      "http://shp.qpic.cn/collector/1976464052/fc1064cb-eda1-458b-ba8e-cac424a755ee/0",
+      "http://shp.qpic.cn/collector/1976464052/2884c25d-ec2a-4110-9f51-32207acc8899/0",
+      "http://shp.qpic.cn/collector/1976464052/92e985da-dd69-4d27-b839-5621d837163f/0",
+      "http://shp.qpic.cn/collector/1976464052/79d337a5-c5b0-41e1-938c-4ab237c4c289/0",
+      "http://shp.qpic.cn/collector/1976464052/310716cf-7dad-4df9-8f1c-452abd125fc6/0"
     ],
     "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/f7f46a0b-b5d6-40e1-8871-450465b09cc0/0",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/4350030c-91ae-4c4f-8ca3-47653d81c2f6/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
