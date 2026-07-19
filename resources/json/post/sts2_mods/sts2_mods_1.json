@@ -1,5 +1,61 @@
 [
   {
+    "id": "20260719163824817",
+    "rid": "73321093",
+    "title": "犹格索托斯的庭院",
+    "badge": "v0.0.1",
+    "size": "47.83MB",
+    "date": "2026-07-19",
+    "tags": [
+      "SFW",
+      "犹格索托斯",
+      "霞露零",
+      "特莉波卡",
+      "小叶子",
+      "新增角色",
+      "笑看落花尘埃LDF",
+      "末旅鸟",
+      "在线下载"
+    ],
+    "description": "《犹格索托斯的庭院》——杀戮尖塔 2 角色/内容模组，包含自定义角色、卡牌、遗物、能力与事件等。共添加3名来自庭院的角色——特莉波卡、霞露零和小叶子。\n\n其中特莉波卡已基本完成测试与平衡调整，完成度较高，平均强度大于原版角色",
+    "author": "[作者1] - 笑看落花尘埃LDF [作者2] - 末旅鸟",
+    "authorLinks": [
+      {
+        "text": "B|笑看落花尘埃LDF",
+        "url": "https://space.bilibili.com/89209915"
+      },
+      {
+        "text": "B站|末旅鸟",
+        "url": "https://space.bilibili.com/296461271"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s0f59fc3e19ba4fcea866a4e38e455d8a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置Baselib",
+        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=baselib&t=v3.3.5",
+        "category": "latest",
+        "version": "v3.3.5",
+        "size": "382.5KB"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/27657b1c-b9c8-4b34-bd19-08965f2e5cae/0",
+      "http://shp.qpic.cn/collector/1976464052/155d7d53-b26d-46f2-823b-dc625ea302a8/0",
+      "http://shp.qpic.cn/collector/1976464052/42c217f5-a9b6-4973-9477-e3fa72581a76/0",
+      "http://shp.qpic.cn/collector/1976464052/2d042786-7b4a-423c-af69-9af0c460e312/0",
+      "http://shp.qpic.cn/collector/1976464052/e9c3efda-514a-4b35-9eba-c12777cfc42f/0",
+      "http://shp.qpic.cn/collector/1976464052/0bcddd4f-3f1b-4ef9-a234-e848c64f4245/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/4f51fc42-459b-419b-a286-255a4c728f3a/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260718215122328",
     "rid": "76555895",
     "title": "A大＆一代战士姐皮肤 0.8发布！！",
