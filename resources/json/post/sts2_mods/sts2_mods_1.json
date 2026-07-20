@@ -1,5 +1,136 @@
 [
   {
+    "id": "20260720215206188",
+    "rid": "30737560",
+    "title": "观者「Watcher 」角色MOD",
+    "badge": "v0.9.18",
+    "size": "15.94MB",
+    "date": "2026-07-20",
+    "tags": [
+      "SFW",
+      "观者",
+      "新增角色",
+      "外观替换",
+      "Boninall",
+      "在线下载"
+    ],
+    "description": "为 塔2 加入了 塔1 的\"观者\"角色，本模组可独立运行不依赖任何前置 ( 觉得原版形象不符合审美的 也可搭配本站的“观者美化包”皮肤使用 )\n\n观者美化包：https://axxxx.cyou/?rid=13027312",
+    "author": "Boninall",
+    "authorLinks": [
+      {
+        "text": "B站|Boninall",
+        "url": "https://space.bilibili.com/11794571"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sc2d679f2c31f4b17b586b178e3d6379b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.9.18",
+        "size": "15.94MB",
+        "date": "2026-07-20"
+      },
+      {
+        "text": "模组本体 - 0.109.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s33813e8011374a8a9e9ba1e852d4668c?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.9.18b",
+        "size": "15.94MB",
+        "date": "2026-07-20"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/bae60f8e-2036-4e3d-b309-c6c133ba750d/0",
+      "http://shp.qpic.cn/collector/1976464052/03438f7d-6ee8-4f21-8109-ecd3237921c0/0",
+      "http://shp.qpic.cn/collector/1976464052/19829cd2-0f0e-4b52-a1b5-f17c535c0356/0",
+      "http://shp.qpic.cn/collector/1976464052/4990c14b-fe9c-4499-b331-d1ca0e13ff6d/0",
+      "http://shp.qpic.cn/collector/1976464052/09e4500a-2494-4d4d-8e3d-5b27f6d65d75/0",
+      "http://shp.qpic.cn/collector/1976464052/31a3b090-4ddd-4ac8-9066-8dd5a1655d3b/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/a10009ff-b9e1-4361-8485-d3965b548342/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
+    "id": "20260720214805178",
+    "title": "观者MOD - 美化包 (依赖本体)",
+    "category": "skin",
+    "size": "16.22MB",
+    "date": "2026-07-20",
+    "badge": "v0.9.8",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/d7330df6-5b10-4a3f-8471-c1dfb47dca06/0",
+    "images": [],
+    "description": "观者美化版，美术皮肤包。本模组无法独立运行，需配合原版「观者(Watcher)」mod 本体包使用。\n\n观者(Watcher)mod 本体包：\n本体包：https://axxxx.cyou/?rid=30737560",
+    "author": "[模组本体] - Boninall [卡面美化] - 失地骑士Hatk [观者美化] - anaertailin",
+    "authorLinks": [
+      {
+        "text": "B站|Boninall",
+        "url": "https://space.bilibili.com/11794571"
+      },
+      {
+        "text": "B站|失地骑士Hatk",
+        "url": "https://space.bilibili.com/3546631035161405"
+      },
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "观者",
+      "外观替换",
+      "失地骑士Hatk",
+      "anaertailin",
+      "Boninall",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s4aa69b3896864f09b5a4bed0bce11380?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.9.8",
+        "size": "16.22MB",
+        "date": "2026-07-20"
+      },
+      {
+        "text": "前置观者(Watcher)本体",
+        "url": "https://axxxx.cyou/?rid=30737560",
+        "category": "latest",
+        "version": "RID:30737560",
+        "size": "必选"
+      },
+      {
+        "text": "观者 - 自带美化 v0.103.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p819d3264246b4f91ab1fa6b36836890a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "history",
+        "version": "v0.6.1",
+        "size": "59.47MB",
+        "date": "2026-06-17"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747526116",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/d7330df6-5b10-4a3f-8471-c1dfb47dca06/0",
+      "http://shp.qpic.cn/collector/1976464052/98f335ff-a201-45b5-b389-ac22bb9177f6/0",
+      "http://shp.qpic.cn/collector/1976464052/220004d6-6b2a-47a3-a86e-6db29fa1312c/0",
+      "http://shp.qpic.cn/collector/1976464052/e92c20cb-7318-40a0-a78a-aae6e74df2a9/0",
+      "http://shp.qpic.cn/collector/1976464052/d99e5300-2f83-4bf5-a9fa-f59bbc7855a2/0",
+      "http://shp.qpic.cn/collector/1976464052/5feeea85-1f75-4c2e-b3a1-16af511a82d7/0"
+    ],
+    "previewVideos": [],
+    "rid": "13027312"
+  },
+  {
     "id": "20260720101406916",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
@@ -5546,89 +5677,6 @@
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/bd958bc0-df58-4129-9f65-00da9fbd3198/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260627120524775",
-    "title": "观者MOD - 原版/美化 独立兼容版",
-    "category": "skin",
-    "size": "15.97MB",
-    "date": "2026-06-27",
-    "badge": "v0.9.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0"
-    ],
-    "images": [],
-    "description": "杀戮尖塔2的一款观者MOD，帖内收录了该模组的的本体包和美化包。本体包可独立运行，经典原皮/无需前置。美化包依赖本体包运行，与本体一起装载后将会对观者的原版形象进行美化\n\n**兼容性测试：**\n范围：0.9.1本体+0.9.0美化\n仅支持0.107.1版本｜PC+安卓双兼容\n\n**观者美化（依赖本体）说明：**\n这是 \" 观者本体 (素体原皮) \" 角色 mod 的美化资源替换包，无法独立运行，需装载观者本体\n\n**观者本体（素体原皮）说明：**\n为 塔2 加入了 塔1 的\"观者\"角色 (原版形象，无美化本体) ，本模组可独立运行不依赖任何前置",
-    "author": "[模组本体] - Boninall [卡面美化] - 失地骑士Hatk [观者美化] - anaertailin",
-    "authorLinks": [
-      {
-        "text": "B站|Boninall",
-        "url": "https://space.bilibili.com/11794571"
-      },
-      {
-        "text": "B站|失地骑士Hatk",
-        "url": "https://space.bilibili.com/3546631035161405"
-      },
-      {
-        "text": "B站|anaertailin",
-        "url": "https://space.bilibili.com/2264658"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "观者",
-      "新增角色",
-      "外观替换",
-      "失地骑士Hatk",
-      "anaertailin",
-      "Boninall",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "观者本体（素体原皮）",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8a63fac5a3d034baeaf6981ae2dc678f2?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "观者美化（依赖本体）",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz830cba21c08824c4385dfdc73c3c13276?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v0.9.0",
-        "size": "17.27MB",
-        "date": "2026-06-27"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747526116",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      },
-      {
-        "text": "观者 - 自带美化 v0.103.x",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1p819d3264246b4f91ab1fa6b36836890a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "history",
-        "version": "v0.6.1",
-        "size": "59.47MB",
-        "date": "2026-06-17"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/8b4b0f60-f404-4571-bbbb-cd072081b938/0",
-      "http://shp.qpic.cn/collector/1976464052/98f335ff-a201-45b5-b389-ac22bb9177f6/0",
-      "http://shp.qpic.cn/collector/1976464052/220004d6-6b2a-47a3-a86e-6db29fa1312c/0",
-      "http://shp.qpic.cn/collector/1976464052/e92c20cb-7318-40a0-a78a-aae6e74df2a9/0",
-      "http://shp.qpic.cn/collector/1976464052/d99e5300-2f83-4bf5-a9fa-f59bbc7855a2/0",
-      "http://shp.qpic.cn/collector/1976464052/5feeea85-1f75-4c2e-b3a1-16af511a82d7/0",
-      "http://shp.qpic.cn/collector/1976464052/2663632c-23e8-4989-ab26-c0d27a95d1cd/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1B3DMByEi1/&type=mp4",
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1B8NuzHEfe/&type=mp4"
-    ],
-    "rid": "13027312"
   },
   {
     "id": "20260626235224865",
