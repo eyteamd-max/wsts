@@ -1,24 +1,24 @@
 [
   {
-    "version": "v0.109.0",
+    "version": "v0.107.1 - 当前正式版",
+    "date": "2026-06-20",
+    "size": "865.41MB",
+    "description": "底层修复与功能拓展补丁。彻底重写随机数生成器（采用xoshiro256算法）修复卡牌抽取概率偏差的公平性问题；重磅新增Steam创意工坊与怪物图鉴；移除Boss门扉，由永恒沙漏正式取代。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe3548292205f482b9c94ccafe441a9c3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.109.0 - beta测试版",
     "date": "2026-07-18",
     "size": "922MB",
     "description": "大规模卡牌平衡与新机制拓展补丁。针对玩家核心关注点，实装“放血变蓝”及“午夜伤害骤降33点（联机卡大削）”等重磅调整；多角色卡牌迎来大规模品阶洗牌与数值重做（如恶魔形态增力、触媒降蓝、计划妥当重做等）；遗物系统大换血，头冠新增首回合固定护甲，原初之爪与卓越斗篷等效果重做，沙漏与女王侍从Boss数值同步微调；新增“龙涎香”药水（半血回复+额外回合）及“探寻”衍生卡牌机制，并提升达弗遗物池中加费遗物的出现概率。",
     "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s2cbea0e5f14c43e3b3940b5b3c26e62b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   },
   {
-    "version": "v0.108.0",
+    "version": "v0.108.0 - beta测试版",
     "date": "2026-07-11",
     "size": "870.11MB",
     "description": "视觉表现与功能完善补丁。实装第三幕BOSS“永恒沙漏”的完整动态动画演出；为删卡、消耗及无源奥布等核心操作新增专属视觉特效；加入大量多人模式新卡牌，并修复充能球与再生药水触发顺序导致的意外死亡问题，同步优化模组适配与底层稳定性。",
     "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s74f77a76d6a1453eb6251fa7d752d9cc?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-  },
-  {
-    "version": "v0.107.1",
-    "date": "2026-06-20",
-    "size": "865.41MB",
-    "description": "底层修复与功能拓展补丁。彻底重写随机数生成器（采用xoshiro256算法）修复卡牌抽取概率偏差的公平性问题；重磅新增Steam创意工坊与怪物图鉴；移除Boss门扉，由永恒沙漏正式取代。",
-    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe3548292205f482b9c94ccafe441a9c3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   },
   {
     "version": "v0.103.2",
