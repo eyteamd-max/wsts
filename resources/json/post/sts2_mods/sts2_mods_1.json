@@ -213,12 +213,12 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
-    "id": "20260719211000489",
+    "id": "20260720101406916",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
-    "badge": "v1.5.3.1",
+    "badge": "v1.5.3.2",
     "size": "373.82MB",
-    "date": "2026-07-19",
+    "date": "2026-07-20",
     "tags": [
       "SFW",
       "blacksouls",
@@ -227,7 +227,7 @@
       "四时雨",
       "在线下载"
     ],
-    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复外来者之魂bug\n修复梅菲利亚卡住\n修复誓约克缇多人数据不通过\n修复酒多人数据不同步\n7难下不再开空宝箱，改为商店涨价\n急修兰洁莉娜到处搞事情（各层乱窜）\n增加“多人数据不同步时继续游戏不掉线”选项设置，可在设置中开启或关闭（未测试，开启后触发会发生什么我也不知道）\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
+    "description": "包含180+张新卡牌，两个新角色，5个新地图，28+个新遗物，55+个新怪物和boos，17+个新事件，6个新远古先民的巨型mod\n\n**更新日志：**\n修复开启难度后多人数据不同步\n修复多人sl后数据不同步\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：BaseLib v3.3.5（或更高）",
     "author": "四时雨",
     "authorLinks": [
       {
@@ -246,7 +246,7 @@
     "downloadLinks": [
       {
         "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s27a2c70721d3426f979e4bf83d957418?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "url": "",
         "category": "latest"
       },
       {
