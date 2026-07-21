@@ -1,5 +1,76 @@
 [
   {
+    "id": "20260721102553551",
+    "rid": "05017845",
+    "title": "魔法少女的魔女审判 - 11位角色",
+    "badge": "v1.6.6",
+    "size": "525.32MB",
+    "date": "2026-07-21",
+    "tags": [
+      "SFW",
+      "魔法少女的魔女审判",
+      "希罗",
+      "雪莉",
+      "冰上梅露露",
+      "城崎诺亚",
+      "佐伯米莉亚",
+      "远野汉娜",
+      "宝生玛格",
+      "莲见蕾雅",
+      "黑部奈叶香",
+      "夏目安安",
+      "紫藤亚里沙",
+      "新增角色",
+      "Clione1096",
+      "在线下载"
+    ],
+    "description": "模组中加入了 11 位来自《魔法少女的魔女审判》的角色：\n二阶堂希罗\n冰上梅露露\n橘雪莉\n城崎诺亚\n佐伯米莉亚\n远野汉娜\n宝生玛格\n莲见蕾雅\n黑部奈叶香\n夏目安安\n紫藤亚里沙\n\n同时也新增了超过 200 张卡牌。",
+    "author": "Clione1096",
+    "authorLinks": [
+      {
+        "text": "B站|Clione1096",
+        "url": "https://space.bilibili.com/3546624787744797"
+      },
+      {
+        "text": "steam|Clione1096",
+        "url": "https://steamcommunity.com/profiles/76561198228591048/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s79845d3c09db416c862eec4fd67cced6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.6.6",
+        "size": "525.32MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747536026",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/9f36c22a-cb19-4d06-8fb1-db053400ed9e/0",
+      "http://shp.qpic.cn/collector/1976464052/b9ac7979-e758-4c5d-833a-4d2e9e26d5d1/0",
+      "http://shp.qpic.cn/collector/1976464052/cc709671-57d5-46dd-a621-710e82d70026/0",
+      "http://shp.qpic.cn/collector/1976464052/b3764ca2-f320-447b-9ab9-c19279aa5a2a/0",
+      "http://shp.qpic.cn/collector/1976464052/f8ee89af-98e9-44ad-9e45-4b5427906171/0",
+      "http://shp.qpic.cn/collector/1976464052/d056ea68-ab1b-471c-b64c-3c6b30572f61/0",
+      "http://shp.qpic.cn/collector/1976464052/271e3828-f897-498b-aff0-fe389895b1af/0",
+      "http://shp.qpic.cn/collector/1976464052/c47400dd-58a9-4b10-b710-a1ab3d5fee35/0",
+      "http://shp.qpic.cn/collector/1976464052/03f896c0-077c-414c-a59e-f60133249d3c/0",
+      "http://shp.qpic.cn/collector/1976464052/12ec063c-b9e5-4ce2-9bc0-e68433a55eca/0",
+      "http://shp.qpic.cn/collector/1976464052/62493ad6-0198-4df3-be82-44086488ac1e/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8seb48ccb84ec04640a51c5687f5fab0a0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/45199a68-51a9-46d6-9962-28e7761d7bf7/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260720225528880",
     "title": "猎宝-原版风格卡面美化 @羽饰panacheㅤ",
     "category": "skin",
