@@ -1,5 +1,78 @@
 [
   {
+    "id": "20260722000028300",
+    "rid": "34686965",
+    "title": "情报可可mod - 魔法少女的魔女审判",
+    "badge": "v1.0.669",
+    "size": "47.65MB",
+    "date": "2026-07-21",
+    "tags": [
+      "SFW",
+      "情报可可",
+      "魔法少女",
+      "新增角色",
+      "魔法少女的魔女审判",
+      "白观梦",
+      "在线下载"
+    ],
+    "description": "添加了泽渡可可作为可游玩角色，包含74张卡牌和7个遗物。\n\n**角色机制：**\n情报量&脑容量：通过直播积累情报量，打出强力卡牌制胜吧！不过，如果情报量超出脑容量，会有糟糕的事情发生。\n迷因：回合结束时让卡牌从弃牌堆回到抽牌堆顶部的效果，玩梗是无法停下的！\n原罪：需要13点情报量才能打出的卡牌，一定很强力吧！（真的吗）\n\n**兼容测试：**\n\n版本 : 1.0.669\n支持 : 0.107.1\n前置 : BaseLib 3.3.8\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.21 ]\n\n版本 : 1.0.669b\n支持 : 0.109.0\n前置 : BaseLib 3.3.8\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.21 ]",
+    "author": "白观梦",
+    "authorLinks": [
+      {
+        "text": "B站|白观梦",
+        "url": "https://space.bilibili.com/14425512"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sd61c1d08fe5d4406a53849f5e1764936?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.0.669",
+        "size": "47.65MB",
+        "date": "2026-07-21"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s532b42168fef4a3cb1b7b7308abe04c9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v3.3.8",
+        "size": "1.09MB"
+      },
+      {
+        "text": "模组本体 - 0.109.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s09ed8ff599f44724816df1bcad77ef67?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v1.0.669b",
+        "size": "47.65MB",
+        "date": "2026-07-21"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s532b42168fef4a3cb1b7b7308abe04c9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v3.3.8",
+        "size": "1.09MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3766893645",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/05093a13-ea29-45e6-94a7-f32d8fbaabc0/0",
+      "http://shp.qpic.cn/collector/1976464052/902bd4b6-1609-468e-9106-c7d9f5480960/0",
+      "http://shp.qpic.cn/collector/1976464052/8fc322da-e709-476c-a527-a441b07d81db/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s10354cfa401f4479beb8fb3125e66bb3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/425a97a0-b1b7-4b08-a7a5-d2126fe4752d/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260721210301670",
     "rid": "15594184",
     "title": "杀戮尖塔2｜欲途MOD",
