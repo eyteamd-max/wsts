@@ -1,5 +1,83 @@
 [
   {
+    "id": "20260721210301670",
+    "rid": "15594184",
+    "title": "杀戮尖塔2｜欲途MOD",
+    "badge": "v0.21.1",
+    "size": "86.86MB",
+    "date": "2026-07-21",
+    "tags": [
+      "NSFW",
+      "欲途",
+      "狐狸",
+      "狐妖",
+      "新增角色",
+      "在线下载",
+      "夸克"
+    ],
+    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**兼容测试：**\n\n版本 : 0.21.1\n支持 : 0.107.1\n前置 : KitLib 0.24.0+RitsuLib 0.4.54\n补丁 : LustTravel2_Patch 0.21.1「以内置」\n系统 : Windows [通过]、安卓 [通过] 2026-07.21\n\n版本 : 0.30.0\n支持 : 0.109.0\n前置 : RitsuLib 0.4.62\n系统 : Windows [通过]、安卓 [通过] 2026-07.21",
+    "author": "",
+    "authorLinks": [],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s1e216a2024684ca4b5fb874d06d5c52a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.21.1",
+        "size": "86.86MB",
+        "date": "2026-07-21"
+      },
+      {
+        "text": "解压密码",
+        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/ab6311ca2bbf",
+        "category": "latest",
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
+      },
+      {
+        "text": "前置KitLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8se7ab756438b344d499d366cbd25843f7?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.24.0",
+        "size": "2.64MB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8se27a5a63e88e470b9e038d4fec1a97d8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.53",
+        "size": "7.30MB",
+        "date": "2026-07-21"
+      },
+      {
+        "text": "模组本体 - 108~109",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sacde8096a8c148a3866ca994b987dd87?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.30.0",
+        "size": "82.91MB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s2e5a72a7b062401ca72c998658f0c639?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.4.62",
+        "size": "11.07MB"
+      },
+      {
+        "text": "N网下载",
+        "url": "https://www.nexusmods.com/slaythespire2/mods/965?tab=description",
+        "category": "alternative",
+        "version": "最新版本",
+        "size": "历史版本",
+        "date": "海外"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/f8058953-12d5-4e9a-8cf3-5b0db5d604f8/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260721102553551",
     "rid": "05017845",
     "title": "魔法少女的魔女审判 - 11位角色",
@@ -2900,66 +2978,6 @@
     ],
     "previewVideos": [],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/2ad84c99-beee-4d3f-911c-1bec96f928a4/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260708011614304",
-    "rid": "15594184",
-    "title": "杀戮尖塔2｜欲途MOD r18完整包",
-    "badge": "v0.20.2",
-    "size": "55.41MB",
-    "date": "2026-07-08",
-    "tags": [
-      "NSFW",
-      "欲途",
-      "狐狸",
-      "狐妖",
-      "新增角色",
-      "在线下载",
-      "夸克"
-    ],
-    "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n本帖将 \"欲途模组本体\" 和 \"欲途成人向补丁\" 整合到了该帖的\"游戏本体\"压缩包内，您在安装此模组时可以自行选择是否留存此成人向补丁\n\n**兼容性测试：**\n范围：0.107.1｜PC+安卓双支持\n前置：KitLib 0.27.0 + RitsuLib 0.4.54\n\n我把这两个前置整合到了该帖的\"所需前置\"压缩包内，你可以直接下载后直接导入同款配置",
-    "author": "",
-    "authorLinks": [],
-    "downloadLinks": [
-      {
-        "text": "模组本体",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8494413ad390549fbbfab3ce63c1f7671?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "解压密码",
-        "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
-        "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️",
-        "type": "password"
-      },
-      {
-        "text": "前置KitLib",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s47f551913f294e49bb9e807074369984?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest",
-        "version": "v0.27.0",
-        "size": "34.97MB"
-      },
-      {
-        "text": "前置RitsuLib",
-        "url": "https://axxxx.cyou/resources/STS2-Front/index.html?l=ritsu&t=v0.4.54",
-        "category": "latest",
-        "version": "v0.4.54",
-        "size": "7.31MB"
-      },
-      {
-        "text": "N网下载",
-        "url": "https://www.nexusmods.com/slaythespire2/mods/965?tab=description",
-        "category": "alternative",
-        "version": "最新版本",
-        "size": "历史版本",
-        "date": "海外"
-      }
-    ],
-    "previewImages": [],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/f8058953-12d5-4e9a-8cf3-5b0db5d604f8/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
