@@ -1,5 +1,63 @@
 [
   {
+    "id": "20260723212409128",
+    "title": "猎宝-原版风格卡面美化 @羽饰panacheㅤ",
+    "category": "skin",
+    "size": "17.27MB",
+    "date": "2026-07-23",
+    "badge": "v0.3.0",
+    "badgeClass": "star",
+    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
+    "coverImage": [
+      "http://shp.qpic.cn/collector/1976464052/4f87d742-5e88-4b6e-8897-a0afa3d8b5a9/0"
+    ],
+    "images": [],
+    "description": "根据Anaertailin老师的静默猎手形象制作的卡面美化，由AI+PS制作，目前已经完成86张基础卡的卡图+3先古卡的卡图，共计89张卡图的美化",
+    "author": "[发布] - 羽饰panacheㅤ [形象] - anaertailin [mod支持] - 惜梦yy",
+    "authorLinks": [
+      {
+        "text": "B站|羽饰panacheㅤ",
+        "url": "https://space.bilibili.com/247515288"
+      },
+      {
+        "text": "B站|anaertailin",
+        "url": "https://space.bilibili.com/2264658"
+      },
+      {
+        "text": "B站|惜梦yy",
+        "url": "https://space.bilibili.com/387272014"
+      }
+    ],
+    "tags": [
+      "SFW",
+      "静默猎手",
+      "猎宝",
+      "卡面美化",
+      "羽饰panache",
+      "惜梦yy",
+      "anaertailin",
+      "在线下载"
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s2f94fc0bfb1b48fcbfa48ad340ea4049?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/85a02cf4-e126-4128-8457-4ecf64d7c3d2/0",
+      "http://shp.qpic.cn/collector/1976464052/42b1bc75-816a-47f5-b387-d0ffff66c46c/0",
+      "http://shp.qpic.cn/collector/1976464052/fb7fc513-bc29-49fa-aaa8-a1c097f03d69/0",
+      "http://shp.qpic.cn/collector/1976464052/a2b2fdcd-a0e3-4d98-9d6d-6ff1f21c4155/0",
+      "http://shp.qpic.cn/collector/1976464052/3e27a786-9bbb-4f0d-aa22-6a607d19d69b/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1zng16QEGL/&type=mp4"
+    ],
+    "rid": "86012620"
+  },
+  {
     "id": "20260723201333133",
     "rid": "13869119",
     "title": "杀戮尖塔2 - 诡秘之主 - 适配版",
@@ -282,60 +340,6 @@
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/45199a68-51a9-46d6-9962-28e7761d7bf7/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260720225528880",
-    "title": "猎宝-原版风格卡面美化 @羽饰panacheㅤ",
-    "category": "skin",
-    "size": "10.57MB",
-    "date": "2026-07-20",
-    "badge": "v0.0.1",
-    "badgeClass": "star",
-    "coverGradient": "linear-gradient(135deg,#e8e0f0 0%,#d5c8e8 100%)",
-    "coverImage": [
-      "http://shp.qpic.cn/collector/1976464052/4f87d742-5e88-4b6e-8897-a0afa3d8b5a9/0"
-    ],
-    "images": [],
-    "description": "卡面用ai加ps制作，卡面形象是 @anaertailin   老师的猎宝，卡面替换mod支持是 @惜梦yy 。目前已完成60张白蓝卡+1金卡+2先古，共美化63张卡图。",
-    "author": "[发布] - 羽饰panacheㅤ [形象] - anaertailin [mod支持] - 惜梦yy",
-    "authorLinks": [
-      {
-        "text": "B站|羽饰panacheㅤ",
-        "url": "https://space.bilibili.com/247515288"
-      },
-      {
-        "text": "B站|anaertailin",
-        "url": "https://space.bilibili.com/2264658"
-      },
-      {
-        "text": "B站|惜梦yy",
-        "url": "https://space.bilibili.com/387272014"
-      }
-    ],
-    "tags": [
-      "SFW",
-      "静默猎手",
-      "猎宝",
-      "卡面美化",
-      "羽饰panache",
-      "惜梦yy",
-      "anaertailin",
-      "在线下载"
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s500474453751403a85750d58a7ff883e?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/a57f79bb-594c-4e86-a6c2-3fffb5a07d01/0"
-    ],
-    "previewVideos": [
-      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV19Vjh6QECb/&type=mp4"
-    ],
-    "rid": "86012620"
   },
   {
     "id": "20260720215206188",
