@@ -498,7 +498,7 @@
       if (scope === 'top') state.composeAtt = [];
       var cdEl = composeEl.querySelector('.cm-cooldown');
       startCooldown(btn, cdEl, 5);
-      // 立即将新评论插入本地树，pending 状态仅自己可见并显示"审核中"
+      // 立即将新评论插入本地树，pending 状态仅自己可见并显示“审核中”
       insertNewComment(d, scope, parentId);
       if (d.status === 'pending') {
         d._localPending = true;
@@ -811,7 +811,7 @@
       await api('/api/comments/' + id, { method: 'DELETE' });
       toast('已删除');
       if (document.getElementById('cmDetailOverlay')) { closeDetailOverlay(); return; }
-      // 从本地 pending 缓存中移除被删除的评论及其子评论，避免 mergeLocalPending 误判"服务器未返回"而重新插入
+      // 从本地 pending 缓存中移除被删除的评论及其子评论，避免 mergeLocalPending 误判“服务器未返回”而重新插入
       removeLocalPendingById(Number(id));
       // 同步从当前 tree 中立即移除，避免 loadComments 返回前的短暂残留
       removeNodeFromTree(Number(id));
@@ -1682,7 +1682,6 @@
     var obs = new MutationObserver(function () { tryMount(); });
     obs.observe(mO, { attributes: true, attributeFilter: ['class'] });
     obs.observe(mC, { childList: true });
-    setInterval(tryMount, 800);
     tryMount();
   }
 
