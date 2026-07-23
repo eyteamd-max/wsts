@@ -1,5 +1,60 @@
 [
   {
+    "id": "20260723201333133",
+    "rid": "13869119",
+    "title": "杀戮尖塔2 - 诡秘之主 - 适配版",
+    "badge": "v0.1.3",
+    "size": "240.83MB",
+    "date": "2026-07-23",
+    "tags": [
+      "SFW",
+      "诡秘之主",
+      "新增角色",
+      "yoruneko",
+      "在线下载 "
+    ],
+    "description": "增加1个新角色以及80张全新卡牌，增加22条神之途径和220种序列魔药，增加部分新遗物。火堆增加全新选项-祈祷：晋升序列，获得下一序列的魔药，50%概率受到诅咒。序列4以下魔药有概率通过战利品、商店获得。每层初始房间的第四选项可以直接获得下一序列药水（当前可选途径：占卜家、学徒、偷盗者、观众、水手、秘祈人、歌颂者、战士）\n\n**兼容测试：**\n\n版本 : 0.1.3\n支持 : 0.107.1\n前置 : RitsuLib 0.4.62\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.21 ]",
+    "author": "yoruneko",
+    "authorLinks": [
+      {
+        "text": "steam|yoruneko",
+        "url": "https://steamcommunity.com/profiles/76561199738221341/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s5b3a63be60774407b202908dd9843398?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s2e5a72a7b062401ca72c998658f0c639?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.62",
+        "size": "11.07MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748304038",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/dcb7dca0-8786-4e19-a460-6e6b2d0b83a4/0",
+      "http://shp.qpic.cn/collector/1976464052/8f9ac990-6b9d-4c3a-9955-bf708bf5bb56/0",
+      "http://shp.qpic.cn/collector/1976464052/5f7bda48-bda4-4be9-ad5d-3ef80d98408f/0",
+      "http://shp.qpic.cn/collector/1976464052/596ce07c-adae-4068-92ca-013d9dae2993/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz840c1a9887a7449c884f0d080fe62f524?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bad15bdaff0247788385d2a0cfaf0e55?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/4f9b6503-2718-4e2c-9a8e-f274224b5a53/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260722000028300",
     "rid": "34686965",
     "title": "情报可可mod - 魔法少女的魔女审判",
@@ -6274,52 +6329,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1Ey7U6EEYA/&type=mp4"
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/f2effa71-e7e7-450f-b0ba-b633bba2a315/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260625120155032",
-    "rid": "13869119",
-    "title": "杀戮尖塔2 - 诡秘之主MOD 更新",
-    "badge": "v0.1.0",
-    "size": "409.95MB",
-    "date": "2026-06-25",
-    "tags": [
-      "SFW",
-      "诡秘之主",
-      "新增角色",
-      "yoruneko",
-      "在线下载 "
-    ],
-    "description": "增加1个新角色以及80张全新卡牌，增加22条神之途径和220种序列魔药，增加部分新遗物。火堆增加全新选项-祈祷：晋升序列，获得下一序列的魔药，50%概率受到诅咒。序列4以下魔药有概率通过战利品、商店获得。每层初始房间的第四选项可以直接获得下一序列药水（当前可选途径：占卜家、学徒、偷盗者、观众、水手、秘祈人、歌颂者、战士）\n\n**兼容性测试：**\n本体v0.107.1｜无需前置｜PC支持｜安卓闪退",
-    "author": "yoruneko",
-    "authorLinks": [
-      {
-        "text": "steam|yoruneko",
-        "url": "https://steamcommunity.com/profiles/76561199738221341/myworkshopfiles/"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "在线下载",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz898ba5371ba37460196e3bd38ee42d7af?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3748304038",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/4a1a84d3-741b-4954-a4ae-e5592fcc0a2d/0",
-      "http://shp.qpic.cn/collector/1976464052/61c35fc6-0be0-4247-a44f-24dec744bef4/0"
-    ],
-    "previewVideos": [
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz840c1a9887a7449c884f0d080fe62f524?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-      "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz8bad15bdaff0247788385d2a0cfaf0e55?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
-    ],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/4f9b6503-2718-4e2c-9a8e-f274224b5a53/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
