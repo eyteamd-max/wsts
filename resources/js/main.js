@@ -387,7 +387,7 @@
         var path = 'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 0 1-3.46 0';
         if (type === 'reply') path = 'M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z';
         if (type === 'like') path = 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z';
-        if (type === 'reject') path = 'M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z M12 9v4 M12 17h.01';
+        if (type === 'reject') path = 'M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0 M12 9v4 M12 17h.01';
         if (type === 'mute') path = 'M11 5L6 9H2v6h4l5 4V5z M19.07 4.93a10 10 0 0 1 0 14.14 M15.54 8.46a5 5 0 0 1 0 7.07';
         if (type === 'unmute') path = 'M11 5L6 9H2v6h4l5 4V5z M22 12h-6 M18 8l-4 4 4 4';
         return '<svg viewBox="0 0 24 24" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="' + path + '"/></svg>';
@@ -629,9 +629,11 @@
     var notifLastFetch = 0;
     async function fetchServerNotifications() {
         if (!window.COMMENT_API_BASE) return;
+        // 未登录用户不请求通知
+        if (!currentMenuUser) return;
         var now = Date.now();
-        // 防抖：10 秒内不重复请求
-        if (now - notifLastFetch < 10000) return;
+        // 防抖：30 秒内不重复请求
+        if (now - notifLastFetch < 30000) return;
         // 去重：如果已有请求在飞，不重复发
         if (notifFetching) return;
         notifFetching = true;
@@ -667,15 +669,17 @@
     }
     function startNotifPolling() {
         clearNotifTimers();
+        // 未登录用户不轮询
+        if (!currentMenuUser) return;
         // 页面隐藏或窗口失焦时完全停止轮询（visibilitychange 监听器会负责恢复）
         if (document.hidden || document.visibilityState !== 'visible') return;
         var menuOpen = menuPanel && menuPanel.classList.contains('open');
         if (menuOpen) {
-            // 菜单打开：30 秒
-            notifFastTimer = setInterval(fetchServerNotifications, 30000);
+            // 菜单打开：60 秒
+            notifFastTimer = setInterval(fetchServerNotifications, 60000);
         } else {
-            // 菜单关闭：5 分钟（仅更新红点）
-            notifSlowTimer = setInterval(fetchServerNotifications, 300000);
+            // 菜单关闭：10 分钟（仅更新红点）
+            notifSlowTimer = setInterval(fetchServerNotifications, 600000);
         }
     }
 
@@ -1467,13 +1471,24 @@
         }).catch(function () {});
       } catch (e) {}
     }
+    // mod-stats 本地缓存（5 分钟内同一 rid 不重复请求）
+    var modStatsCache = {};
+    var MOD_STATS_CACHE_TTL = 300000; // 5 分钟
     // 加载并显示统计
     function loadModStats(rid) {
       var el = document.getElementById('mmsStats');
       if (!el) return;
+      // 检查缓存
+      var cached = modStatsCache[rid];
+      var now = Date.now();
+      if (cached && (now - cached.ts < MOD_STATS_CACHE_TTL)) {
+        el.innerHTML = '<span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">' + (cached.data.viewCount || 0) + ' 次查看</span><span class="mms-sep" style="color:inherit;opacity:.5;">·</span><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">' + (cached.data.downloadCount || 0) + ' 次下载</span>';
+        return;
+      }
       fetch((window.COMMENT_API_BASE || '') + '/api/mod-stats/' + encodeURIComponent(rid), {
         credentials: 'include'
       }).then(function (r) { return r.json(); }).then(function (d) {
+        modStatsCache[rid] = { ts: now, data: d };
         if (el) el.innerHTML = '<span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">' + (d.viewCount || 0) + ' 次查看</span><span class="mms-sep" style="color:inherit;opacity:.5;">·</span><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">' + (d.downloadCount || 0) + ' 次下载</span>';
       }).catch(function () {
         if (el) el.innerHTML = '<span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">- 次查看</span><span class="mms-sep" style="color:inherit;opacity:.5;">·</span><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">- 次下载</span>';
