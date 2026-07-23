@@ -326,6 +326,14 @@
     var toastTimer;
     var groupInviteToast = document.getElementById('groupInviteToast');
     var groupInviteShown = false;
+    var menuBadge = document.getElementById('menuBadge');
+    var menuNotifications = document.getElementById('menuNotifications');
+    var menuUserSection = document.getElementById('menuUserSection');
+    var menuUserEmpty = document.getElementById('menuUserEmpty');
+    var NOTIF_KEY = 'sts2_notifications_v2_guest';
+    var notifications = [];
+    var currentNotifTab = 'reply';
+    var currentMenuUser = null;
     var dlS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:12px;height:12px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6M7 10l5 5 5-5M12 15V3"/></svg>';
     var imS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
     var viS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>';
@@ -341,6 +349,461 @@
             tT.classList.remove('sh2');
         }, 2200);
     }
+
+    // ---------- 评论 API 辅助（与评论区共享认证 Cookie） ----------
+    async function cmApi(path, opts) {
+        opts = opts || {};
+        opts.credentials = 'include';
+        if (opts.body && typeof opts.body !== 'string' && !(opts.body instanceof FormData)) {
+            opts.headers = Object.assign({ 'Content-Type': 'application/json' }, opts.headers || {});
+            opts.body = JSON.stringify(opts.body);
+        }
+        var r = await fetch(window.COMMENT_API_BASE + path, opts);
+        var data = null;
+        try { data = await r.json(); } catch (e) {}
+        if (!r.ok) throw { status: r.status, message: (data && data.error) || ('请求失败 (' + r.status + ')') };
+        return data;
+    }
+
+    // ---------- 全局通知系统（右上角菜单） ----------
+    function notifTitle(type) {
+        switch (type) {
+            case 'reply': return '回复我的';
+            case 'like': return '收到的赞';
+            case 'reject': return '审核未通过';
+            case 'mute': return '禁言通知';
+            case 'unmute': return '禁言解除';
+            case 'system': return '系统通知';
+            default: return '通知';
+        }
+    }
+    function notifIcon(type) {
+        var color = '#e89b9b';
+        if (type === 'system') color = '#f4b960';
+        if (type === 'reply') color = '#a8d8c8';
+        if (type === 'like') color = '#e89b9b';
+        if (type === 'reject' || type === 'mute') color = '#b14b4b';
+        if (type === 'unmute') color = '#4a8a5a';
+        var path = 'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 0 1-3.46 0';
+        if (type === 'reply') path = 'M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z';
+        if (type === 'like') path = 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z';
+        if (type === 'reject') path = 'M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z M12 9v4 M12 17h.01';
+        if (type === 'mute') path = 'M11 5L6 9H2v6h4l5 4V5z M19.07 4.93a10 10 0 0 1 0 14.14 M15.54 8.46a5 5 0 0 1 0 7.07';
+        if (type === 'unmute') path = 'M11 5L6 9H2v6h4l5 4V5z M22 12h-6 M18 8l-4 4 4 4';
+        return '<svg viewBox="0 0 24 24" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="' + path + '"/></svg>';
+    }
+    function relTimeNotif(ts) {
+        if (!ts) return '';
+        var d = new Date(ts.replace(' ', 'T') + (ts.indexOf('T') === -1 ? 'Z' : ''));
+        var diff = (Date.now() - d.getTime()) / 1000;
+        if (isNaN(diff)) return ts.slice(0, 10);
+        if (diff < 60) return '刚刚';
+        if (diff < 3600) return Math.floor(diff / 60) + '分钟前';
+        if (diff < 86400) return Math.floor(diff / 3600) + '小时前';
+        if (diff < 2592000) return Math.floor(diff / 86400) + '天前';
+        return ts.slice(0, 10);
+    }
+    function loadNotifications(userId) {
+        NOTIF_KEY = 'sts2_notifications_v2_' + (userId || 'guest');
+        try {
+            var raw = localStorage.getItem(NOTIF_KEY);
+            if (raw) notifications = JSON.parse(raw);
+        } catch (e) { notifications = []; }
+        if (!Array.isArray(notifications)) notifications = [];
+        renderNotifications();
+        updateNotifBadge();
+    }
+    function saveNotifications() {
+        try {
+            localStorage.setItem(NOTIF_KEY, JSON.stringify(notifications.slice(0, 100)));
+        } catch (e) {}
+    }
+    function addNotification(message, type, data) {
+        type = type || 'system';
+        var n = {
+            id: 'local_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+            type: type,
+            title: notifTitle(type),
+            message: String(message || ''),
+            read: false,
+            createdAt: new Date().toISOString(),
+            data: data || null
+        };
+        notifications.unshift(n);
+        saveNotifications();
+        renderNotifications();
+        updateNotifBadge();
+    }
+    function getFilteredNotifications() {
+        var tab = currentNotifTab;
+        return notifications.filter(function (n) {
+            if (tab === 'reply') return n.type === 'reply';
+            if (tab === 'like') return n.type === 'like';
+            if (tab === 'system') return ['mute', 'unmute', 'reject', 'system'].indexOf(n.type) !== -1;
+            return true;
+        });
+    }
+    function renderNotifications() {
+        if (!menuNotifications) return;
+        var h = '<div class="notif-tabs">' +
+            '<button class="notif-tab' + (currentNotifTab === 'reply' ? ' active' : '') + '" data-tab="reply">回复我的</button>' +
+            '<button class="notif-tab' + (currentNotifTab === 'like' ? ' active' : '') + '" data-tab="like">收到的赞</button>' +
+            '<button class="notif-tab' + (currentNotifTab === 'system' ? ' active' : '') + '" data-tab="system">系统通知</button>' +
+            '</div>';
+        var filtered = getFilteredNotifications();
+        if (!filtered.length) {
+            h += '<div class="menu-empty">暂无消息</div>';
+            menuNotifications.innerHTML = h;
+            bindNotifTabs();
+            return;
+        }
+        h += '<div class="notif-list">';
+        for (var i = 0; i < filtered.length; i++) {
+            var n = filtered[i];
+            var msg = String(n.message || '');
+            if (msg.length > 72) msg = msg.slice(0, 72) + '…';
+            h += '<div class="menu-notification ' + (n.read ? '' : 'unread') + ' type-' + esc(n.type) + '" data-id="' + esc(n.id) + '">';
+            h += '<div class="menu-notification-icon">' + notifIcon(n.type) + '</div>';
+            h += '<div class="menu-notification-body">';
+            h += '<div class="menu-notification-title">' + esc(notifTitle(n.type)) + '</div>';
+            h += '<div class="menu-notification-msg">' + esc(msg) + '</div>';
+            h += '<div class="menu-notification-time">' + esc(relTimeNotif(n.createdAt)) + '</div>';
+            h += '</div></div>';
+        }
+        h += '</div>';
+        menuNotifications.innerHTML = h;
+        bindNotifTabs();
+        menuNotifications.querySelectorAll('.menu-notification').forEach(function (el) {
+            el.addEventListener('click', function () {
+                markNotifRead(el.getAttribute('data-id'));
+            });
+        });
+    }
+    function bindNotifTabs() {
+        if (!menuNotifications) return;
+        menuNotifications.querySelectorAll('.notif-tab').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                currentNotifTab = btn.getAttribute('data-tab');
+                renderNotifications();
+            });
+        });
+    }
+    function updateNotifBadge() {
+        if (!menuBadge) return;
+        var unread = notifications.filter(function (n) { return !n.read && n.type === 'reply'; }).length;
+        menuBadge.style.display = unread > 0 ? 'block' : 'none';
+        menuBadge.textContent = unread > 99 ? '99+' : (unread > 0 ? String(unread) : '');
+    }
+    function markNotifRead(id) {
+        var n = notifications.find(function (x) { return String(x.id) === String(id); });
+        if (n && !n.read) {
+            n.read = true;
+            saveNotifications();
+            renderNotifications();
+            updateNotifBadge();
+            if (n.serverId && window.COMMENT_API_BASE) {
+                fetch(window.COMMENT_API_BASE + '/api/notifications/' + n.serverId + '/read', { method: 'POST', credentials: 'include' }).catch(function () {});
+            }
+        }
+        // 点击通知后跳转到对应帖子
+        if (n && n.data && n.data.rid) {
+            if (menuPanel) menuPanel.classList.remove('open');
+            openModByRid(n.data.rid, n.data.commentId, n.data.parentId);
+        }
+    }
+
+    // 轮询等待评论区加载完成（#cmRoot 存在且不在 loading 态）
+    function waitForCommentsLoaded(timeoutMs) {
+        timeoutMs = timeoutMs || 6000;
+        return new Promise(function (resolve) {
+            var start = Date.now();
+            function check() {
+                var root = document.getElementById('cmRoot');
+                if (root && !root.querySelector('.cm-loading')) { resolve(true); return; }
+                if (Date.now() - start >= timeoutMs) { resolve(false); return; }
+                setTimeout(check, 150);
+            }
+            check();
+        });
+    }
+
+    async function openModByRid(rid, commentId, parentId) {
+        if (!rid) return;
+        showToast('正在跳转…');
+        var found = await performGlobalRidSearch(rid);
+        if (!found) { showToast('该帖子可能已下架'); return; }
+        oM(found);
+        var loaded = await waitForCommentsLoaded(6000);
+        if (!loaded) {
+            // 超时兜底：滚动到评论区顶部
+            var cmFb = document.getElementById('cmRoot') || document.querySelector('.cm-root');
+            if (cmFb) cmFb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+        if (parentId) {
+            // 是回复：先打开楼层详情页，再定位到子回复
+            if (window._openReplyDetail) {
+                window._openReplyDetail(parentId);
+                // 详情页异步渲染，延迟后高亮（highlightComment 内含重试）
+                setTimeout(function () { highlightComment(commentId); }, 400);
+            } else {
+                var cm = document.getElementById('cmRoot') || document.querySelector('.cm-root');
+                if (cm) cm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } else if (commentId) {
+            // 是楼层：直接定位
+            highlightComment(commentId);
+        } else {
+            // 无 commentId：滚动到评论区顶部
+            var cm2 = document.getElementById('cmRoot') || document.querySelector('.cm-root');
+            if (cm2) cm2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // 高亮指定评论并闪烁（未找到时重试，覆盖详情页异步渲染场景）
+    function highlightComment(commentId, retries) {
+        if (!commentId) return;
+        retries = (typeof retries === 'number') ? retries : 6;
+        var el = document.querySelector('[data-id="' + commentId + '"]');
+        if (!el) {
+            // 可能在详情页内
+            var overlay = document.getElementById('cmDetailOverlay');
+            if (overlay) el = overlay.querySelector('[data-id="' + commentId + '"]');
+        }
+        if (!el) {
+            if (retries > 0) {
+                setTimeout(function () { highlightComment(commentId, retries - 1); }, 200);
+                return;
+            }
+            // 重试耗尽，元素真的找不到
+            showToast('评论已删除或正在加载');
+            return;
+        }
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('cm-highlight');
+        setTimeout(function () { el.classList.remove('cm-highlight'); }, 3000);
+    }
+    function markAllNotifRead() {
+        var changed = false;
+        notifications.forEach(function (n) { if (!n.read) { n.read = true; changed = true; } });
+        if (changed) {
+            saveNotifications();
+            renderNotifications();
+            updateNotifBadge();
+            if (window.COMMENT_API_BASE) {
+                fetch(window.COMMENT_API_BASE + '/api/notifications/read-all', { method: 'POST', credentials: 'include' }).catch(function () {});
+            }
+        }
+    }
+    function mergeServerNotifications(list) {
+        if (!Array.isArray(list)) return;
+        var changed = false;
+        list.forEach(function (srv) {
+            if (!srv || !srv.id) return;
+            var exists = notifications.find(function (n) { return n.serverId === srv.id; });
+            if (!exists) {
+                notifications.unshift({
+                    serverId: srv.id,
+                    id: 'srv_' + srv.id,
+                    type: srv.type || 'system',
+                    title: notifTitle(srv.type),
+                    message: String(srv.message || ''),
+                    read: !!srv.read,
+                    createdAt: srv.createdAt || new Date().toISOString(),
+                    data: srv.data || null
+                });
+                changed = true;
+            } else if (!!srv.read && !exists.read) {
+                exists.read = true;
+                changed = true;
+            }
+        });
+        if (changed) {
+            saveNotifications();
+            renderNotifications();
+            updateNotifBadge();
+        }
+    }
+    var notifFetching = false;
+    var notifLastFetch = 0;
+    async function fetchServerNotifications() {
+        if (!window.COMMENT_API_BASE) return;
+        var now = Date.now();
+        // 防抖：10 秒内不重复请求
+        if (now - notifLastFetch < 10000) return;
+        // 去重：如果已有请求在飞，不重复发
+        if (notifFetching) return;
+        notifFetching = true;
+        notifLastFetch = now;
+        try {
+            var r = await fetch(window.COMMENT_API_BASE + '/api/notifications', { credentials: 'include' });
+            if (r.status === 401) {
+                console.log('[notif] 401 未登录');
+                if (currentMenuUser) {
+                    currentMenuUser = null;
+                    renderMenuUser(null);
+                    loadNotifications(null);
+                    showToast('登录已过期，请重新登录');
+                }
+                return;
+            }
+            if (!r.ok) { console.log('[notif] 非 ok 状态', r.status); return; }
+            var d = await r.json();
+            mergeServerNotifications(d.notifications || []);
+        } catch (e) {
+            console.log('[fetchServerNotifications]', e);
+        } finally {
+            notifFetching = false;
+        }
+    }
+
+    // 智能轮询调度：菜单开 5 秒高频、关 30 秒慢频、页面隐藏暂停
+    var notifSlowTimer = null;
+    var notifFastTimer = null;
+    function clearNotifTimers() {
+        if (notifSlowTimer) { clearInterval(notifSlowTimer); notifSlowTimer = null; }
+        if (notifFastTimer) { clearInterval(notifFastTimer); notifFastTimer = null; }
+    }
+    function startNotifPolling() {
+        clearNotifTimers();
+        // 页面隐藏或窗口失焦时完全停止轮询（visibilitychange 监听器会负责恢复）
+        if (document.hidden || document.visibilityState !== 'visible') return;
+        var menuOpen = menuPanel && menuPanel.classList.contains('open');
+        if (menuOpen) {
+            // 菜单打开：30 秒
+            notifFastTimer = setInterval(fetchServerNotifications, 30000);
+        } else {
+            // 菜单关闭：5 分钟（仅更新红点）
+            notifSlowTimer = setInterval(fetchServerNotifications, 300000);
+        }
+    }
+
+    // ---------- 菜单用户信息 ----------
+    function avatarUrl(key) {
+        return key ? (window.COMMENT_API_BASE + '/api/files/' + encodeURIComponent(key)) : null;
+    }
+    function avatarHtml(user, cls) {
+        cls = cls || 'menu-user-avatar';
+        var nick = (user && user.nickname) || '?';
+        var u = avatarUrl(user && user.avatarKey);
+        if (u) return '<img class="' + cls + '" src="' + esc(u) + '" alt="' + esc(nick) + '" onerror="this.outerHTML=\'<div class=&quot;' + cls + ' def&quot;>' + esc(nick.slice(0, 1)) + '</div>\'">';
+        return '<div class="' + cls + ' def">' + esc(nick.slice(0, 1)) + '</div>';
+    }
+    function renderMenuUser(user) {
+        currentMenuUser = user || null;
+        if (!menuUserSection) return;
+        if (!user) {
+            menuUserSection.innerHTML =
+                '<div class="menu-user-info">' +
+                '<div class="menu-user-main">' +
+                '<div class="menu-user-avatar def">?</div>' +
+                '<div class="menu-user-text">' +
+                '<div class="menu-user-title">未登录</div>' +
+                '<div class="menu-user-subtitle">登录后可评论、点赞与接收通知</div>' +
+                '</div></div>' +
+                '<button class="menu-item menu-user-action" id="menuLoginBtn">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10,17 15,12 10,7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>' +
+                '<span>登录 / 注册</span></button>' +
+                '</div>';
+            bindMenuLogin();
+            return;
+        }
+        var tags = '';
+        if (user.isAdmin) tags += '<span class="menu-user-tag admin">管理员</span>';
+        if (user.isVerified) tags += '<span class="menu-user-tag verified">已验证</span>';
+        else tags += '<span class="menu-user-tag unverified">未验证</span>';
+        var mutedHtml = '';
+        if (user.mutedUntil && new Date(user.mutedUntil) > new Date()) {
+            mutedHtml = '<div class="menu-user-muted">禁言中，结束时间：' + esc(new Date(user.mutedUntil).toLocaleString()) + '</div>';
+        }
+        var adminHtml = '';
+        // 管理功能已集成到评论区管理面板中，不再需要独立入口
+        menuUserSection.innerHTML =
+            '<div class="menu-user-info">' +
+            '<div class="menu-user-main">' +
+            avatarHtml(user, 'menu-user-avatar') +
+            '<div class="menu-user-text">' +
+            '<div class="menu-user-title">' + esc(user.nickname) + '</div>' +
+            '<div class="menu-user-subtitle">' + esc(user.email) + '</div>' +
+            '<div class="menu-user-tags">' + tags + '</div>' +
+            mutedHtml +
+            '</div></div>' +
+            '<div class="menu-user-actions">' +
+            '<button class="menu-item" id="menuProfileBtn">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>' +
+            '<span>个人资料</span></button>' +
+            adminHtml +
+            '<button class="menu-item" id="menuLogoutBtn">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>' +
+            '<span>退出登录</span></button>' +
+            '</div>' +
+            '</div>';
+        bindMenuLogout();
+        bindMenuProfile();
+    }
+    function bindMenuProfile() {
+        var btn = document.getElementById('menuProfileBtn');
+        if (!btn) return;
+        btn.onclick = function (e) {
+            e.stopPropagation();
+            menuPanel.classList.remove('open');
+            if (mO && mO.classList.contains('act')) {
+                if (typeof window._cmOpenProfile === 'function') window._cmOpenProfile();
+                else showToast('请在评论区头像处打开个人资料');
+            } else {
+                showToast('请打开任意 MOD 详情页后查看个人资料');
+            }
+        };
+    }
+    function bindMenuLogin() {
+        var btn = document.getElementById('menuLoginBtn');
+        if (!btn) return;
+        btn.onclick = function (e) {
+            e.stopPropagation();
+            menuPanel.classList.remove('open');
+            // 优先调用评论区弹窗（如果评论区已挂载）
+            if (typeof window._cmOpenAuth === 'function') {
+                window._cmOpenAuth('login');
+            } else if (mO && mO.classList.contains('act') && typeof window._openCmAuth === 'function') {
+                window._openCmAuth('login');
+            } else {
+                showToast('请打开任意 MOD 详情页，在评论区点击登录');
+            }
+        };
+    }
+    function bindMenuLogout() {
+        var btn = document.getElementById('menuLogoutBtn');
+        if (!btn) return;
+        btn.onclick = async function (e) {
+            e.stopPropagation();
+            try { await cmApi('/api/auth/logout', { method: 'POST' }); } catch (err) {}
+            currentMenuUser = null;
+            notifications = [];
+            loadNotifications(null);
+            renderMenuUser(null);
+            if (typeof window._onUserChange === 'function') window._onUserChange(null);
+            showToast('已退出登录');
+        };
+    }
+    async function loadMenuUser() {
+        if (!window.COMMENT_API_BASE) return;
+        try {
+            var d = await cmApi('/api/auth/me');
+            renderMenuUser(d.user);
+            loadNotifications(d.user && d.user.id);
+        } catch (e) {
+            renderMenuUser(null);
+            loadNotifications(null);
+        }
+    }
+    window._addNotification = addNotification;
+    window.fetchServerNotifications = fetchServerNotifications;
+    window._onUserChange = function (user) {
+        renderMenuUser(user);
+        if (user && user.id) loadNotifications(user.id);
+    };
+    window._openModByRid = openModByRid;
 
     function copyText(text) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -986,8 +1449,41 @@
         return h + '</div>';
     }
 
+    // 上报查看量（fire-and-forget）
+    function reportModView(rid) {
+      try {
+        fetch((window.COMMENT_API_BASE || '') + '/api/mod-stats/' + encodeURIComponent(rid) + '/view', {
+          method: 'POST',
+          credentials: 'include'
+        }).catch(function () {});
+      } catch (e) {}
+    }
+    // 上报下载量（fire-and-forget）
+    function reportModDownload(rid) {
+      try {
+        fetch((window.COMMENT_API_BASE || '') + '/api/mod-stats/' + encodeURIComponent(rid) + '/download', {
+          method: 'POST',
+          credentials: 'include'
+        }).catch(function () {});
+      } catch (e) {}
+    }
+    // 加载并显示统计
+    function loadModStats(rid) {
+      var el = document.getElementById('mmsStats');
+      if (!el) return;
+      fetch((window.COMMENT_API_BASE || '') + '/api/mod-stats/' + encodeURIComponent(rid), {
+        credentials: 'include'
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (el) el.innerHTML = '<span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">' + (d.viewCount || 0) + ' 次查看</span><span class="mms-sep" style="color:inherit;opacity:.5;">·</span><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">' + (d.downloadCount || 0) + ' 次下载</span>';
+      }).catch(function () {
+        if (el) el.innerHTML = '<span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">- 次查看</span><span class="mms-sep" style="color:inherit;opacity:.5;">·</span><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">- 次下载</span>';
+      });
+    }
+    window._rMD = reportModDownload;
+
     function oM(mod) {
         currentMod = mod;
+        window._cMR = mod.rid;
         var cl = cLL(mod.downloadLinks);
         currentCl = cl;
         var h = '';
@@ -1000,6 +1496,7 @@
         h += '<span class="mmi">' + esc(mod.date) + '</span><span class="mms">·</span>';
         h += '<span class="mmi">axxxx.cyou</span>';
         h += '</div>';
+        h += '<div class="mms-stats" id="mmsStats" style="font-size:.78rem;font-weight:400;color:#9a92a5;line-height:1.4;margin:6px 0 10px;"><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">加载中</span><span class="mms-sep" style="color:inherit;opacity:.5;">·</span><span class="mms-stat" style="font-size:inherit;font-weight:inherit;color:inherit;">加载中</span></div>';
         h += '<div class="mrg-wrap">';
         h += '<span class="mr"><span class="mrt">RID ' + mod.rid + '</span></span>';
         h += '<a class="mra" onclick="event.preventDefault();window._cPT(\'RID:' + mod.rid + '\').then(function(){window._sTM(\'RID已复制\')})" title="复制RID">' + coS + '复制</a>';
@@ -1020,7 +1517,7 @@
         h += '<div class="dsw ls"><div class="sh" onclick="window._tS(this)"><span class="st">正式版本<span class="sc">(' + cl.latest.main.length + ')</span></span><span class="sa2 op">▾</span></div><div class="sb"><div class="sbi">';
         if (cl.latest.main.length) {
             cl.latest.main.forEach(function (dl, i) {
-                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
+                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
                 var dlMeta = gDLM(dl);
                 if (i === 0) {
                     var v = dl.version || mod.badge;
@@ -1034,11 +1531,11 @@
                 if (dl.desc) h += '<div class="id" id="lD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="lD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
                 var hasPr = cl.latest.prereqs && cl.latest.prereqs.length;
                 if (dl.type === 'password') {
-                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
+                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
                 } else if (hasPr) {
                     h += '</div><a class="db" href="#" onclick="event.preventDefault();window._oP(window._cPR(\'latest\'),\'' + dl.url + '\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
                 } else {
-                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
+                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
                 }
             });
         } else {
@@ -1048,7 +1545,7 @@
         if (cl.testBranch.main.length) {
             h += '<div class="dsw"><div class="sh" onclick="window._tS(this)"><span class="st">测试分支版本<span class="sc">(' + cl.testBranch.main.length + ')</span></span><span class="sa2">▾</span></div><div class="sb co"><div class="sbi">';
             cl.testBranch.main.forEach(function (dl, i) {
-                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
+                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
                 if (i === 0) {
                     var v = dl.version || mod.badge;
                     var s = dl.size || mod.size;
@@ -1061,11 +1558,11 @@
                 if (dl.desc) h += '<div class="id" id="tD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="tD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
                 var hasPr = cl.testBranch.prereqs && cl.testBranch.prereqs.length;
                 if (dl.type === 'password') {
-                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
+                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
                 } else if (hasPr) {
                     h += '</div><a class="db" href="#" onclick="event.preventDefault();window._oP(window._cPR(\'testBranch\'),\'' + dl.url + '\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
                 } else {
-                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
+                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
                 }
             });
             h += '</div></div></div>';
@@ -1074,17 +1571,17 @@
         h += '<div class="dsw"><div class="sh" onclick="window._tS(this)"><span class="st">历史版本<span class="sc">' + (cl.history.main.length ? '(' + cl.history.main.length + ')' : '') + '</span></span><span class="sa2">▾</span></div><div class="sb co"><div class="sbi">';
         if (cl.history.main.length) {
             cl.history.main.forEach(function (dl, i) {
-                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
+                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
                 h += gDLM(dl);
                 h += '</div>';
                 if (dl.desc) h += '<div class="id" id="hD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="hD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
                 var hasPr = cl.history.prereqs && cl.history.prereqs.length;
                 if (dl.type === 'password') {
-                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
+                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
                 } else if (hasPr) {
                     h += '</div><a class="db" href="#" onclick="event.preventDefault();window._oP(window._cPR(\'history\'),\'' + dl.url + '\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
                 } else {
-                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
+                    h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '下载</a></div>';
                 }
             });
         } else {
@@ -1094,11 +1591,11 @@
         if (cl.alternative.length) {
             h += '<div class="dsw"><div class="sh" onclick="window._tS(this)"><span class="st">其他下载方式<span class="sc">(' + cl.alternative.length + ')</span></span><span class="sa2">▾</span></div><div class="sb co"><div class="sbi">';
             cl.alternative.forEach(function (dl, i) {
-                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
+                h += '<div class="di"><div class="dic"><div class="dih"><span class="dn"><a href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + esc(dl.text) + '</a></span>';
                 h += gDLM(dl);
                 h += '</div>';
                 if (dl.desc) h += '<div class="id" id="aD' + i + '">' + esc(dl.desc) + '</div><span class="idt" data-target="aD' + i + '" onclick="window._tID(this)" style="display:none">展开</span>';
-                h += '</div><a class="db" href="#" onclick="event.preventDefault();window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
+                h += '</div><a class="db" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dl.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">' + dlS + '前往</a></div>';
             });
             h += '</div></div></div>';
         }
@@ -1148,6 +1645,8 @@
         }, 100);
         window._cm = mod;
         window._ap = hi && hv ? 'images' : null;
+        reportModView(mod.rid);
+        loadModStats(mod.rid);
     }
 
     function cM() {
@@ -1181,7 +1680,7 @@
             }
             h += '</div><a class="pbil" href="#" onclick="event.preventDefault();window.open(\'' + p.url + '\',\'_blank\')" target="_blank" rel="noopener noreferrer">安装</a></div>';
         });
-        h += '<div class="pbi pblb"><div class="pbl"><div class="pbin" style="font-weight:600">已装前置？下载模组本体 →</div></div><a class="pbil pbdl" href="#" onclick="event.preventDefault();window.open(\'' + dlUrl + '\',\'_blank\');window._cP()" target="_blank" rel="noopener noreferrer">下载</a></div>';
+        h += '<div class="pbi pblb"><div class="pbl"><div class="pbin" style="font-weight:600">已装前置？下载模组本体 →</div></div><a class="pbil pbdl" href="#" onclick="event.preventDefault();window._rMD(window._cMR);window.open(\'' + dlUrl + '\',\'_blank\');window._cP()" target="_blank" rel="noopener noreferrer">下载</a></div>';
         pB.innerHTML = h;
         document.body.style.overflow = 'hidden';
         pO.classList.add('act');
@@ -1566,11 +2065,41 @@
         menuBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             menuPanel.classList.toggle('open');
+            if (menuPanel.classList.contains('open')) {
+                fetchServerNotifications();
+            }
+            startNotifPolling();
         });
         document.addEventListener('click', function (e) {
             if (menuPanel.classList.contains('open') && !menuPanel.contains(e.target) && e.target !== menuBtn) {
                 menuPanel.classList.remove('open');
+                startNotifPolling();
             }
+        });
+    }
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            // 页面切到后台时立即停止轮询，节省 Workers 配额
+            clearNotifTimers();
+        } else {
+            // 切回前台时立即拉一次 + 恢复轮询
+            fetchServerNotifications();
+            startNotifPolling();
+        }
+    });
+    // 窗口失焦（切到其他窗口/应用）时也暂停轮询
+    window.addEventListener('blur', clearNotifTimers);
+    window.addEventListener('focus', function () {
+        if (document.visibilityState === 'visible') {
+            fetchServerNotifications();
+            startNotifPolling();
+        }
+    });
+    var menuClearAll = document.getElementById('menuClearAll');
+    if (menuClearAll) {
+        menuClearAll.addEventListener('click', function (e) {
+            e.stopPropagation();
+            markAllNotifRead();
         });
     }
 
@@ -1601,10 +2130,15 @@
     async function handleUrlParams() {
         var params = new URLSearchParams(window.location.search);
         var rid = params.get('rid');
+        var commentId = params.get('commentId');
         if (rid) {
             var found = await performGlobalRidSearch(rid);
             if (found) {
                 oM(found);
+                if (commentId) {
+                    var loaded = await waitForCommentsLoaded(6000);
+                    if (loaded) highlightComment(Number(commentId));
+                }
             } else {
                 showToast('未找到该帖子');
             }
@@ -1613,6 +2147,10 @@
     }
 
     async function initPage() {
+        await loadMenuUser();
+        fetchServerNotifications();
+        startNotifPolling();
+
         var loadingGifUrls = [
             'http://shp.qpic.cn/collector/1976464052/8ca28b73-c355-4abe-92e8-d4da82b9c560/0',
             'https://p.qpic.cn/psn_labels/ayJapABWAwW4hmBFXiaqn7icrqSOuPYeSRQw4iaPl6ZCFxU66CiaGkhEicLCnEibnfSRX2T4Zhze15Rbg/0'
