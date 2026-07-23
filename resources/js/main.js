@@ -1453,11 +1453,11 @@
         return h + '</div>';
     }
 
-    // 上报查看量（fire-and-forget，10 分钟内同一帖子不重复上报）
+    // 上报查看量（fire-and-forget，10 秒内同一帖子不重复上报）
     var reportedViews = {};
     function reportModView(rid) {
       var now = Date.now();
-      if (reportedViews[rid] && (now - reportedViews[rid] < 600000)) return;
+      if (reportedViews[rid] && (now - reportedViews[rid] < 10000)) return;
       reportedViews[rid] = now;
       try {
         fetch((window.COMMENT_API_BASE || '') + '/api/mod-stats/' + encodeURIComponent(rid) + '/view', {
@@ -1466,11 +1466,11 @@
         }).catch(function () {});
       } catch (e) {}
     }
-    // 上报下载量（fire-and-forget，10 分钟内同一帖子不重复上报）
+    // 上报下载量（fire-and-forget，10 秒内同一帖子不重复上报）
     var reportedDownloads = {};
     function reportModDownload(rid) {
       var now = Date.now();
-      if (reportedDownloads[rid] && (now - reportedDownloads[rid] < 600000)) return;
+      if (reportedDownloads[rid] && (now - reportedDownloads[rid] < 10000)) return;
       reportedDownloads[rid] = now;
       try {
         fetch((window.COMMENT_API_BASE || '') + '/api/mod-stats/' + encodeURIComponent(rid) + '/download', {
