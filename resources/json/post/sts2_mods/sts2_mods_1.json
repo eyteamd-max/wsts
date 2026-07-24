@@ -1,5 +1,62 @@
 [
   {
+    "id": "20260724154138988",
+    "rid": "83854816",
+    "title": "魔理沙2 - 东方Project",
+    "badge": "v0.4.0",
+    "size": "20.73MB",
+    "date": "2026-07-24",
+    "tags": [
+      "SFW",
+      "雾雨魔理沙",
+      "东方",
+      "Project",
+      "新增角色",
+      "和莱_",
+      "在线下载"
+    ],
+    "description": "本 Mod 新增可玩角色雾雨魔理沙。基于原版角色强度进行数值平衡。在保留蓄力、增幅两种机制和较高操作精度以及高火力的原有特色基础上，对部分一代内容进行了重制，并加入了全新的机制与卡牌。GitHub项目：https://github.com/lf201014/STS2_MarisaMod\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：BaseLib 3.3.8（非绝对）",
+    "author": "和莱_",
+    "authorLinks": [
+      {
+        "text": "B站|和莱_",
+        "url": "https://space.bilibili.com/396088"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8scaf27cc04c9a4dbcaf8a52aeee555ddd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s532b42168fef4a3cb1b7b7308abe04c9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v3.3.8",
+        "size": "1.09MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747647777",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/8fcd2fdc-db6b-46de-9976-c8acbfdf8f5b/0",
+      "http://shp.qpic.cn/collector/1976464052/d1fe951c-6045-4710-8cf6-6b1382439e7d/0",
+      "http://shp.qpic.cn/collector/1976464052/237c3ae3-1e40-449c-88c2-f946c704f44c/0",
+      "http://shp.qpic.cn/collector/1976464052/1860b545-517f-4a25-b231-d2d274e97b96/0",
+      "http://shp.qpic.cn/collector/1976464052/f3ae45b4-9722-455b-96b7-1a9e8937d136/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s65fb3d74bde840e7a0f9202eb5b7a734?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/bf2d7333-9c07-41d8-b8f8-6dfde148fc4b/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260724131816836",
     "rid": "06008294",
     "title": "海克斯大乱斗＆原版 (模组本体)",
@@ -944,7 +1001,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/f3ed9e0aa29c",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       },
       {
         "text": "模组本体 - 108~109",
@@ -999,7 +1057,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/0ef623ed3b7e",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       },
       {
         "text": "模组本体 - 108~109",
@@ -1113,7 +1172,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/65eeeab83580",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [
@@ -1489,7 +1549,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/65eeeab83580",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [
@@ -1553,7 +1614,8 @@
         "text": "解压密码 - 本帖通用",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/c1ddfd6e94e7",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [
@@ -1621,7 +1683,8 @@
         "text": "解压密码 - 本帖通用",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/0ef623ed3b7e",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [
@@ -1704,7 +1767,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/4809010256b0",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [],
@@ -1741,7 +1805,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/65eeeab83580",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [],
@@ -1777,7 +1842,8 @@
         "text": "解压密码",
         "url": "https://axxxx.cyou/resources/link_skip/?link=https://pan.quark.cn/s/65eeeab83580",
         "category": "latest",
-        "version": "文件里面的密钥就是解压密码❗️❗️"
+        "version": "文件里面的密钥就是解压密码❗️❗️",
+        "type": "password"
       }
     ],
     "previewImages": [],
