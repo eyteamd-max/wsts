@@ -233,6 +233,54 @@
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
+    "id": "20260724121816836",
+    "rid": "87609210",
+    "title": "海克斯大乱斗＆拓展包 ( 可选 )",
+    "badge": "v0.8.7",
+    "size": "814.12KB",
+    "date": "2026-07-24",
+    "tags": [
+      "SFW",
+      "海克斯符文",
+      "娱乐mod",
+      "玩法扩展",
+      "onakasuitanie",
+      "在线下载"
+    ],
+    "description": "本模组是《海克斯大乱斗》的赞助者拓展包，需要同时安装《海克斯大乱斗》本体\n\n拓展包收录了一批由赞助者灵感创作、风格更独立的海克斯符文、附魔与属性锻造器内容。它们会接入本体的海克斯抽选池、锻造器系统与配置界面，为《杀戮尖塔2》的每一局带来更多构筑方向和变化规则\n\n如果你想体验更丰富、更实验性的海克斯内容，可以启用本拓展包；如果你更偏好本体统一风格，也可以只安装《海克斯大乱斗》本体\n\n**兼容测试：**\n\n版本 : 0.8.7\n支持 : 0.107.1~0.109.0\n前置 : 海克斯大乱斗本体\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.24 ]",
+    "author": "onakasuitanie",
+    "authorLinks": [
+      {
+        "text": "B站|onakasuitanie",
+        "url": "https://space.bilibili.com/3493298765301961"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sfdd1893cf4384afba821b9b246d7e17b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置海克斯大乱斗",
+        "url": "https://axxxx.cyou/?rid=06008294",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749708876",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/638d2d12-b164-46c2-9e64-646295948339/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/076b7306-c8de-42ff-ad8a-3363303a59b3/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260723221023129",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
@@ -3972,49 +4020,6 @@
       "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1vE5F6cENw/&type=mp4"
     ],
     "coverImage": "http://shp.qpic.cn/collector/1976464052/1cd6bf50-30b3-4db6-9fa6-91d807065083/0",
-    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
-  },
-  {
-    "id": "20260707132814220",
-    "rid": "87609210",
-    "title": "海克斯大乱斗＆拓展包 ( 可选 )",
-    "badge": "v0.8.5m",
-    "size": "658.17KB",
-    "date": "2026-07-07",
-    "tags": [
-      "SFW",
-      "海克斯符文",
-      "娱乐mod",
-      "玩法扩展",
-      "onakasuitanie",
-      "在线下载"
-    ],
-    "description": "本模组是《海克斯大乱斗》的赞助者拓展包，需要同时安装《海克斯大乱斗》本体\n\n拓展包收录了一批由赞助者灵感创作、风格更独立的海克斯符文、附魔与属性锻造器内容。它们会接入本体的海克斯抽选池、锻造器系统与配置界面，为《杀戮尖塔2》的每一局带来更多构筑方向和变化规则\n\n如果你想体验更丰富、更实验性的海克斯内容，可以启用本拓展包；如果你更偏好本体统一风格，也可以只安装《海克斯大乱斗》本体\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置：海克斯大乱斗本体 ↴\nhttps://axxxx.cyou/?rid=06008294",
-    "author": "onakasuitanie",
-    "authorLinks": [
-      {
-        "text": "B站|onakasuitanie",
-        "url": "https://space.bilibili.com/3493298765301961"
-      }
-    ],
-    "downloadLinks": [
-      {
-        "text": "模组本体 - 0.107.1",
-        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/27xz817fece206b434864ae06821c83d512fb?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
-        "category": "latest"
-      },
-      {
-        "text": "Steam创意工坊",
-        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3749708876",
-        "category": "alternative",
-        "version": "创意工坊 · 官方最新版"
-      }
-    ],
-    "previewImages": [
-      "http://shp.qpic.cn/collector/1976464052/638d2d12-b164-46c2-9e64-646295948339/0"
-    ],
-    "previewVideos": [],
-    "coverImage": "http://shp.qpic.cn/collector/1976464052/076b7306-c8de-42ff-ad8a-3363303a59b3/0",
     "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
   },
   {
