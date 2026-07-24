@@ -1,5 +1,86 @@
 [
   {
+    "id": "20260724172039744",
+    "rid": "62239987",
+    "title": "崩坠Downfall",
+    "badge": "v0.1.4",
+    "size": "91.27MB",
+    "date": "2026-07-24",
+    "tags": [
+      "SFW",
+      "亡命之徒",
+      "觉醒者",
+      "收藏家",
+      "第一勇士",
+      "铜制机械人偶",
+      "地精小队",
+      "守护者",
+      "六火亡魂",
+      "史莱姆老大",
+      "异蛇",
+      "怪物",
+      "新增角色",
+      "lamali",
+      "在线下载"
+    ],
+    "description": "崩坠由 塔1 的同名模组移植而来，目前仍在开发中。此模组包含10个角色：亡命之徒、觉醒者、铜制机械人偶、第一勇士、收藏家、地精小队、守护者、六火亡魂、史莱姆老大和异蛇。\n\nPS：崩坠尚未完成！可能会出现占位图片、逻辑缺失以及其他问题。\n\n**兼容测试：**\n\n版本 : 0.1.4\n支持 : 0.107.1~0.109.0\n前置 : 无需前置 可独立运行\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.24 ]",
+    "author": "lamali",
+    "authorLinks": [
+      {
+        "text": "steam|lamali",
+        "url": "https://steamcommunity.com/id/lamali/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sb729b2855ab64f929989d97a74f116a0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置Trans",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s81e05b87c24d441faca6d69b2bb0a381?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.1.0",
+        "size": "1.04MB"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s532b42168fef4a3cb1b7b7308abe04c9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v3.3.8",
+        "size": "1.09MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747508091",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/18a89f90-6977-4bea-bd5c-670ce5b76faa/0",
+      "http://shp.qpic.cn/collector/1976464052/3d18a3ea-2b80-4a2b-8e51-ab0b2597f460/0",
+      "http://shp.qpic.cn/collector/1976464052/60d1dc44-3a6b-43d7-9b83-fb5727053889/0",
+      "http://shp.qpic.cn/collector/1976464052/59836f00-f57c-4c63-92f4-cb0e00af9633/0",
+      "http://shp.qpic.cn/collector/1976464052/8a3fac57-ac7d-4aaf-ba11-43f5e0c5cd9e/0",
+      "http://shp.qpic.cn/collector/1976464052/06268b73-6832-4ca2-b005-4df594c15dae/0",
+      "http://shp.qpic.cn/collector/1976464052/807743ba-45f8-47c3-963e-3315fdb58cfb/0",
+      "http://shp.qpic.cn/collector/1976464052/7ec01821-7930-44b0-bfdf-4a29e8abb1b9/0",
+      "http://shp.qpic.cn/collector/1976464052/c29a54d1-c336-4862-bc21-2af17fb0d217/0",
+      "http://shp.qpic.cn/collector/1976464052/4f69ea24-7ef5-4bdd-9a82-addc3f7b0312/0",
+      "http://shp.qpic.cn/collector/1976464052/186b7df9-4922-4725-b160-ee163fab532a/0",
+      "http://shp.qpic.cn/collector/1976464052/018d3e0a-4987-4237-86c2-07fc049d3537/0",
+      "http://shp.qpic.cn/collector/1976464052/c952fe6b-b6a5-4307-9c96-4e7e5ac7a30c/0",
+      "http://shp.qpic.cn/collector/1976464052/c05f84c5-f5d2-4e4a-b5b4-14b02776613b/0",
+      "http://shp.qpic.cn/collector/1976464052/21adc9fd-6ad8-494e-990d-b218c39b3d8b/0",
+      "http://shp.qpic.cn/collector/1976464052/f3895209-1c25-4eca-9fcc-c89014a65903/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/21adc9fd-6ad8-494e-990d-b218c39b3d8b/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260724154138988",
     "rid": "83854816",
     "title": "魔理沙2 - 东方Project",
@@ -71,7 +152,7 @@
       "onakasuitanie",
       "在线下载"
     ],
-    "description": "在第1、2、3幕开始时选择海克斯符文，获得白银、黄金或棱彩阶的构筑改造；同一幕的敌人也会获得对应稀有度的敌方海克斯。包含专属图鉴分类、敌方海克斯顶部提示、中英文文本与联机同步支持\n\n**兼容测试：**\n\n版本 : 0.8.8\n支持 : 0.107.1~0.109.0\n前置 : 无需前置 可独立运行\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.21 ]",
+    "description": "在第1、2、3幕开始时选择海克斯符文，获得白银、黄金或棱彩阶的构筑改造；同一幕的敌人也会获得对应稀有度的敌方海克斯。包含专属图鉴分类、敌方海克斯顶部提示、中英文文本与联机同步支持\n\n**兼容测试：**\n\n版本 : 0.8.8\n支持 : 0.107.1~0.109.0\n前置 : 无需前置 可独立运行\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.24 ]",
     "author": "onakasuitanie",
     "authorLinks": [
       {
