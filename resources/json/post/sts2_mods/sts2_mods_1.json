@@ -1,5 +1,49 @@
 [
   {
+    "id": "20260724222450601",
+    "rid": "79298728",
+    "title": "旧日雕像 - 娘化｜锭_grayingot",
+    "badge": "v2.0",
+    "size": "1.36MB",
+    "date": "2026-07-24",
+    "tags": [
+      "SFW",
+      "旧日雕像",
+      "怪物娘化",
+      "在线下载",
+      "锭_grayingot"
+    ],
+    "description": "将 杀戮尖塔2 中的 \"旧日雕像\" 进行了娘化",
+    "author": "锭_grayingot",
+    "authorLinks": [
+      {
+        "text": "B站|锭_grayingot",
+        "url": "https://space.bilibili.com/95250714"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s001c3e3cb051487a89110de027d75698?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3770720212",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/4a7c9235-3081-434e-a77a-c49235e959a4/0"
+    ],
+    "previewVideos": [
+      "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sc36b98baf3284b31a2560249f99729a0?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/aa465f4b-1742-459e-8ff1-bdb306395543/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260724172039744",
     "rid": "62239987",
     "title": "崩坠Downfall",
