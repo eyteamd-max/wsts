@@ -37,7 +37,7 @@ export async function get(env, key) {
   if (cached !== null) return cached;
 
   try {
-    const raw = await env.FILE_STORE.get(k);
+    const raw = await env.CACHE_STORE.get(k);
     if (raw == null) return null;
     const value = JSON.parse(raw);
     l1Set(k, value);
@@ -52,7 +52,7 @@ export async function set(env, key, value, ttlSec) {
   l1Set(k, value);
 
   try {
-    await env.FILE_STORE.put(k, JSON.stringify(value), {
+    await env.CACHE_STORE.put(k, JSON.stringify(value), {
       expirationTtl: ttlSec,
     });
     return true;
@@ -66,7 +66,7 @@ export async function del(env, key) {
   l1Del(k);
 
   try {
-    await env.FILE_STORE.delete(k);
+    await env.CACHE_STORE.delete(k);
     return true;
   } catch {
     return null;
