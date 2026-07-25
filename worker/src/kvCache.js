@@ -31,44 +31,66 @@ function l1Del(key) {
   l1.delete(key);
 }
 
+// L2 KV 写入临时禁用，使用内存 L1 缓存仅
+// 待 CACHE_STORE 命名空间部署后恢复
+const L2_ENABLED = false;
+
+function l2Get(env, key) {
+  if (!L2_ENABLED) return null;
+  try {
+    const raw = env.CACHE_STORE ? env.CACHE_STORE.get(key) : null;
+    if (raw == null) return null;
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function l2Set(env, key, value, ttlSec) {
+  if (!L2_ENABLED) return null;
+  try {
+    if (env.CACHE_STORE) {
+      return env.CACHE_STORE.put(key, JSON.stringify(value), {
+        expirationTtl: ttlSec,
+      });
+    }
+  } catch {}
+  return null;
+}
+
+function l2Del(env, key) {
+  if (!L2_ENABLED) return null;
+  try {
+    if (env.CACHE_STORE) {
+      return env.CACHE_STORE.delete(key);
+    }
+  } catch {}
+  return null;
+}
+
 export async function get(env, key) {
   const k = fullKey(key);
   const cached = l1Get(k);
   if (cached !== null) return cached;
 
-  try {
-    const raw = await env.CACHE_STORE.get(k);
-    if (raw == null) return null;
-    const value = JSON.parse(raw);
-    l1Set(k, value);
-    return value;
-  } catch {
-    return null;
+  const l2 = await l2Get(env, k);
+  if (l2 !== null) {
+    l1Set(k, l2);
+    return l2;
   }
+  return null;
 }
 
 export async function set(env, key, value, ttlSec) {
   const k = fullKey(key);
   l1Set(k, value);
-
-  try {
-    await env.CACHE_STORE.put(k, JSON.stringify(value), {
-      expirationTtl: ttlSec,
-    });
-    return true;
-  } catch {
-    return null;
-  }
+  await l2Set(env, k, value, ttlSec);
+  return true;
 }
 
 export async function del(env, key) {
   const k = fullKey(key);
   l1Del(k);
-
-  try {
-    await env.CACHE_STORE.delete(k);
-    return true;
-  } catch {
-    return null;
-  }
+  await l2Del(env, k);
+  return true;
 }
