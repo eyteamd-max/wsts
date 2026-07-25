@@ -676,40 +676,55 @@
     if (!attBox) { toast('附件容器未找到，请刷新页面重试'); return; }
     var progressItems = [];
     for (var i = 0; i < files.length && arr.length + progressItems.length < MAX_ATTACH; i++) {
-      var f = files[i];
-      var item = document.createElement('div');
-      item.className = 'cm-upload-progress';
-      item.innerHTML = '<div class="cm-upload-name">' + esc(f.name) + '</div>' +
-        '<div class="cm-upload-bar-wrap"><div class="cm-upload-bar" style="width:0%"></div></div>' +
-        '<div class="cm-upload-percent">0%</div>';
-      attBox.appendChild(item);
-      progressItems.push({ file: f, el: item });
+      (function (f) {
+        var item = document.createElement('div');
+        item.className = 'cm-upload-progress';
+        item.innerHTML = '<div class="cm-upload-name">' + esc(f.name) + '</div>' +
+          '<div class="cm-upload-bar-wrap"><div class="cm-upload-bar" style="width:0%"></div></div>' +
+          '<div class="cm-upload-percent">0%</div>';
+        attBox.appendChild(item);
+        progressItems.push({ file: f, el: item });
+      })(files[i]);
     }
     if (!progressItems.length) { toast('最多上传 ' + MAX_ATTACH + ' 个附件'); return; }
     var successCount = 0;
+    var failCount = 0;
+    var failMsgs = [];
+    var uploadPromises = [];
     for (var j = 0; j < progressItems.length; j++) {
-      var pi = progressItems[j];
-      try {
-        var d = await uploadFileWithProgress(pi.file, function (loaded, total, percent) {
-          var bar = pi.el.querySelector('.cm-upload-bar');
-          var pct = pi.el.querySelector('.cm-upload-percent');
-          if (bar) bar.style.width = percent + '%';
-          if (pct) pct.textContent = percent + '%';
+      (function (pi) {
+        var p = new Promise(function (resolve) {
+          uploadFileWithProgress(pi.file, function (loaded, total, percent) {
+            var bar = pi.el.querySelector('.cm-upload-bar');
+            var pct = pi.el.querySelector('.cm-upload-percent');
+            if (bar) bar.style.width = percent + '%';
+            if (pct) pct.textContent = percent + '%';
+          }).then(function (d) {
+            pi.el.querySelector('.cm-upload-bar').style.width = '100%';
+            pi.el.querySelector('.cm-upload-percent').textContent = '100%';
+            arr.push(d);
+            successCount++;
+            pi.el.remove();
+            resolve();
+          }).catch(function (e) {
+            failCount++;
+            failMsgs.push((pi.file.name || '文件') + ': ' + (e.message || '上传失败'));
+            pi.el.classList.add('error');
+            pi.el.querySelector('.cm-upload-percent').textContent = e.message || '失败';
+            setTimeout(function () { pi.el.remove(); }, 3000);
+            resolve();
+          });
         });
-        pi.el.querySelector('.cm-upload-bar').style.width = '100%';
-        pi.el.querySelector('.cm-upload-percent').textContent = '100%';
-        arr.push(d);
-        successCount++;
-        pi.el.remove();
-      } catch (e) {
-        pi.el.classList.add('error');
-        pi.el.querySelector('.cm-upload-percent').textContent = e.message || '失败';
-        (function (item) { setTimeout(function () { item.remove(); }, 2000); })(pi.el);
-      }
+        uploadPromises.push(p);
+      })(progressItems[j]);
     }
+    await Promise.all(uploadPromises);
     renderAttachments2(composeEl);
     if (successCount > 0) {
       toast('上传成功 ' + successCount + ' 个附件');
+    }
+    if (failCount > 0) {
+      toast(failMsgs[0] || ('上传失败 ' + failCount + ' 个'));
     }
   }
   function renderAttachments2(composeEl) {
