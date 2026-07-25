@@ -1,0 +1,35 @@
+name = "sts2-comments"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# 绑定自定义子域（与主站 axxxx.cyou 同站，SameSite=Lax Cookie 可在 fetch 中携带）
+# 前提：axxxx.cyou zone 在当前 Cloudflare 账号下。deploy 时会自动创建 DNS 记录。
+routes = [
+  { custom_domain = true, pattern = "cmt.axxxx.cyou" }
+]
+
+# D1 数据库
+[[d1_databases]]
+binding = "DB"
+database_name = "sts2_comments"
+database_id = "f89e05e0-703b-462e-a59e-d2339f686c45"
+
+# KV 命名空间（文件存储，替代 R2）
+[[kv_namespaces]]
+binding = "FILE_STORE"
+id = "4aa632fd7d0249baa00bd6b789ef1208"
+
+# KV 命名空间（缓存专用，与文件存储隔离）
+[[kv_namespaces]]
+binding = "CACHE_STORE"
+id = "6cee58db801c4cc3a3dce77eafb72eb5"
+
+[vars]
+SITE_ORIGIN = "https://axxxx.cyou"
+# 验证链接 / 回复通知里的链接前缀（指向本 Worker 域）
+API_ORIGIN = "https://cmt.axxxx.cyou"
+MAIL_FROM = "noreply@axxxx.cyou"
+
+[observability]
+enabled = true
