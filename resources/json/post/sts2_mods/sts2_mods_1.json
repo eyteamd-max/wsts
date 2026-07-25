@@ -1,5 +1,64 @@
 [
   {
+    "id": "20260725131415868",
+    "rid": "09336868",
+    "title": "尖塔之心 Heart of the Spire",
+    "badge": "v0.3.7",
+    "size": "17.42MB",
+    "date": "2026-07-25",
+    "tags": [
+      "SFW",
+      "腐化之心",
+      "第四幕",
+      "心脏",
+      "BOSS",
+      "Boninall",
+      "在线下载"
+    ],
+    "description": "把《杀戮尖塔》一代的真结局作为独立的第四幕加入二代——集齐三把钥匙，在建筑师之后下降到腐化之心的密室，迎战一代的最终 BOSS。\n\n核心玩法\n三把钥匙：红宝石钥匙（火堆「回忆」处取得）、绿宝石钥匙（击败带火精英掉落）、蓝宝石钥匙（宝箱中以一件遗物为代价换取）。顶栏钥匙槽实时显示收集进度。\n下降至第四幕：集齐三把钥匙后，在末幕建筑师之后触发开门动画，下降进入腐化之心的密室。\n高塔之盾与高塔之矛：密室前的精英战。\n腐化之心：一代的最终 BOSS——坚不可摧、死亡律动、多段重击、15 连击、施加大量减益。\n\n\n**兼容测试：**\n\n版本 : 0.3.7\n支持 : 0.107.1\n前置 : 无需前置 可独立运行\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.25 ]\n\n版本 : 0.3.7b\n支持 : 0.109.0\n前置 : 无需前置 可独立运行\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.25 ]",
+    "author": "Boninall",
+    "authorLinks": [
+      {
+        "text": "B站|Boninall",
+        "url": "https://space.bilibili.com/11794571"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8sadc3d4bd2ea04e9cb3bd7258a4534b60?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "模组本体 - 0.109.0",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s98b04e1107fe48d9a6071b4241187f40?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "testBranch",
+        "version": "v0.3.7b",
+        "size": "17.42MB",
+        "date": "2026-07-25"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3756024281",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a0ada8ae-4e18-4247-ad5b-8f7b79221508/0",
+      "http://shp.qpic.cn/collector/1976464052/9fa97060-cb75-4569-a941-3d9302c67bc7/0",
+      "http://shp.qpic.cn/collector/1976464052/ad0da18e-e0b6-44ba-a20b-efef4dc44467/0",
+      "http://shp.qpic.cn/collector/1976464052/95d029dc-7672-48d5-a689-043b7e32828e/0",
+      "http://shp.qpic.cn/collector/1976464052/1d2fac47-a041-4028-a84f-a67413327b56/0",
+      "http://shp.qpic.cn/collector/1976464052/80e2730c-3799-483f-aeb2-661062a5587d/0",
+      "http://shp.qpic.cn/collector/1976464052/09c275a1-9186-4f46-9364-9750d82fcb35/0",
+      "http://shp.qpic.cn/collector/1976464052/de582889-1f22-4021-9560-63d91466473c/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/de582889-1f22-4021-9560-63d91466473c/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260724230954000",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
@@ -5009,7 +5068,7 @@
       "http://shp.qpic.cn/collector/1976464052/2dfcd2da-7a71-4b52-92c0-543520bf33bd/0"
     ],
     "images": [],
-    "description": "新增自定义章节，包含全新事件和一场策略性十足的史诗级 Boss 战。现在，您将有更多机会使用您的终局卡组！\n\n概要 ↴\n在第 3 幕结束后，即可进入第 4 幕 （无需任何条件），其中包括一场极具策略性的 Boss 战。\n第四幕死亡没有惩罚。角色属性和游戏历史记录有单独的第四幕切换开关。\n游玩第四幕 可以获得更多经验值，用于解锁时间线。\n\n平衡 ↴\n第一幕至第三幕不变\n难度会根据玩家人数、第四幕难度设置以及略微的飞升等级而调整。\n\n模组 v2.2.8 - 兼容测试：\n范围：0.107.1｜PC+安卓支持\n前置：BaseLib v3.3.3（仅推荐）\n\nPS：\n0.103.x请下载历史版本中v0.1.2e版本的模组\n并使用旧版本的BaseLib前置，一定要注意喵",
+    "description": "新增自定义章节，包含全新事件和一场策略性十足的史诗级 Boss 战。现在，您将有更多机会使用您的终局卡组！\n\n概要 ↴\n在第 3 幕结束后，即可进入第四幕 （无需任何条件），其中包括一场极具策略性的 Boss 战。\n第四幕死亡没有惩罚。角色属性和游戏历史记录有单独的第四幕切换开关。\n游玩第四幕 可以获得更多经验值，用于解锁时间线。\n\n平衡 ↴\n第一幕至第三幕不变\n难度会根据玩家人数、第四幕难度设置以及略微的飞升等级而调整。\n\n模组 v2.2.8 - 兼容测试：\n范围：0.107.1｜PC+安卓支持\n前置：BaseLib v3.3.3（仅推荐）\n\nPS：\n0.103.x请下载历史版本中v0.1.2e版本的模组\n并使用旧版本的BaseLib前置，一定要注意喵",
     "author": "iKenster",
     "authorLinks": [
       {
