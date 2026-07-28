@@ -1,0 +1,40 @@
+name = "sts2-modsync"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# 绑定自定义子域（与主站 axxxx.cyou 同站，SameSite=Lax Cookie 可在 fetch 中携带）
+# 前提：axxxx.cyou zone 在当前 Cloudflare 账号下。deploy 时会自动创建 DNS 记录。
+routes = [
+  { custom_domain = true, pattern = "sync.axxxx.cyou" }
+]
+
+# D1 数据库（部署后通过 `wrangler d1 create sts2_modsync` 获取 database_id 填回此处）
+[[d1_databases]]
+binding = "DB"
+database_name = "sts2_modsync"
+database_id = "<部署后填入>"
+
+# KV 命名空间（缓存专用，部署后通过 `wrangler kv namespace create MOD_CACHE` 获取 id 填回此处）
+[[kv_namespaces]]
+binding = "MOD_CACHE"
+id = "<部署后填入>"
+
+[vars]
+SITE_ORIGIN = "https://axxxx.cyou"
+TEST_SITE_ORIGIN = "https://test.axxxx.cyou"
+API_ORIGIN = "https://sync.axxxx.cyou"
+# 静态站所在的 GitHub 仓库（owner/repo），用于 promote 时通过 GitHub MCP 提交 JSON 文件
+GITHUB_REPO = "<用户补充：owner/repo>"
+GITHUB_BRANCH = "main"
+GITHUB_MOD_FILE_PATH = "resources/json/post/sts2_mods/sts2_mods_1.json"
+STEAM_WORKSHOP_BULK_ENDPOINT = "https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/"
+# 管理员 token（生产环境用 `wrangler secret put ADMIN_TOKEN` 设置，此处留空占位）
+# 也可复用 cmt.axxxx.cyou 的 admin JWT cookie（同站场景）
+
+# 每 6 小时轮询一次 Steam 创意工坊（0 */6 * * *）
+[triggers]
+crons = ["0 */6 * * *"]
+
+[observability]
+enabled = true

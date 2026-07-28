@@ -1,0 +1,618 @@
+// index.js — sts2-modsync Worker 入口
+// 路由分发 + Cron Trigger + 静态 admin UI 托管
+//
+// 管理面板 HTML 完整内联在下方 ADMIN_HTML 常量中。
+// 源文件位于 modsync-worker/admin-ui/index.html，修改后请同步到此处
+// （或后续接入 wrangler [[rules]] type="Text" 自动导入）。
+import { ensureSchema } from './db.js';
+import { json, err, handleOptions, HttpError, nowIso, requireAdmin } from './utils.js';
+import * as publicApi from './publicApi.js';
+import * as admin from './admin.js';
+import * as promote from './promote.js';
+import * as submission from './submission.js';
+import { pollAll } from './steam.js';
+
+const ADMIN_HTML = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STS2 模组同步 · 管理面板</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+  .tab-btn.active { background: #4f46e5; color: #fff; }
+  pre { white-space: pre-wrap; word-break: break-all; }
+</style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900 antialiased">
+<div class="max-w-6xl mx-auto px-4 pt-6 pb-14">
+
+  <header class="mb-6 flex items-center gap-3 flex-wrap">
+    <h1 class="text-2xl font-bold">STS2 模组同步</h1>
+    <span class="text-xs text-slate-400" id="originLabel"></span>
+    <span class="text-xs px-2 py-0.5 rounded bg-slate-200 text-slate-600" id="authStatus">未登录</span>
+    <button id="loginBtn" class="ml-auto text-xs px-3 py-1.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">设置 Admin Token</button>
+  </header>
+
+  <nav class="flex gap-2 mb-6 flex-wrap">
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="pending">待审核</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="mods">模组列表</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="diff">差异预览</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="promote">迁移到生产</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="sources">来源管理</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="submit">提交表单</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="history">迁移历史</button>
+    <button class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white border border-slate-200 hover:border-indigo-300" data-tab="poll">Steam 轮询</button>
+  </nav>
+
+  <div id="tab-pending" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-mods" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-diff" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-promote" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-sources" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-submit" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-history" class="tab-panel hidden space-y-4"></div>
+  <div id="tab-poll" class="tab-panel hidden space-y-4"></div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2.5 rounded-xl bg-slate-800 text-white text-sm font-medium shadow-xl hidden z-50"></div>
+</div>
+
+<script>
+var API_BASE = window.location.origin;
+var adminToken = localStorage.getItem('sts2_admin_token') || '';
+
+document.getElementById('originLabel').textContent = API_BASE;
+updateAuthUI();
+
+function updateAuthUI() {
+  var el = document.getElementById('authStatus');
+  var btn = document.getElementById('loginBtn');
+  if (adminToken) {
+    el.textContent = 'Token 已设置';
+    el.className = 'text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-700';
+    btn.textContent = '修改 Token';
+  } else {
+    el.textContent = '未登录';
+    el.className = 'text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-700';
+    btn.textContent = '设置 Admin Token';
+  }
+}
+
+document.getElementById('loginBtn').addEventListener('click', function() {
+  var t = prompt('请输入 Admin Token（对应 Worker 的 ADMIN_TOKEN secret）：', adminToken);
+  if (t !== null) {
+    adminToken = t.trim();
+    if (adminToken) localStorage.setItem('sts2_admin_token', adminToken);
+    else localStorage.removeItem('sts2_admin_token');
+    updateAuthUI();
+    showToast(adminToken ? 'Token 已保存' : 'Token 已清除');
+  }
+});
+
+function showToast(msg, isError) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2.5 rounded-xl text-white text-sm font-medium shadow-xl z-50 ' + (isError ? 'bg-red-600' : 'bg-slate-800');
+  t.classList.remove('hidden');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function() { t.classList.add('hidden'); }, 2500);
+}
+
+async function api(path, options) {
+  options = options || {};
+  options.headers = options.headers || {};
+  if (adminToken) options.headers['X-Admin-Token'] = adminToken;
+  if (options.body && typeof options.body === 'object') {
+    options.headers['Content-Type'] = 'application/json';
+    options.body = JSON.stringify(options.body);
+  }
+  options.credentials = 'include';
+  var resp = await fetch(API_BASE + path, options);
+  var data;
+  try { data = await resp.json(); } catch { data = { ok: false, error: '响应解析失败' }; }
+  if (!resp.ok || data.ok === false) {
+    throw new Error(data.error || ('HTTP ' + resp.status));
+  }
+  return data;
+}
+
+function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// Tab 切换
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var tab = btn.getAttribute('data-tab');
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.add('hidden'); });
+    document.getElementById('tab-' + tab).classList.remove('hidden');
+    loadTab(tab);
+  });
+});
+
+function loadTab(tab) {
+  if (tab === 'pending') loadPending();
+  else if (tab === 'mods') loadMods();
+  else if (tab === 'diff') loadDiff();
+  else if (tab === 'promote') loadPromote();
+  else if (tab === 'sources') loadSources();
+  else if (tab === 'submit') loadSubmitForm();
+  else if (tab === 'history') loadHistory();
+  else if (tab === 'poll') loadPoll();
+}
+
+// ---- 待审核 ----
+async function loadPending() {
+  var el = document.getElementById('tab-pending');
+  el.innerHTML = '<p class="text-sm text-slate-400">加载中...</p>';
+  try {
+    var data = await api('/api/admin/pending');
+    var h = '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><h2 class="text-base font-semibold mb-3">自动检测（Steam 创意工坊）<span class="text-xs text-slate-400 ml-2">' + data.auto.length + ' 条</span></h2>';
+    if (!data.auto.length) h += '<p class="text-sm text-slate-400">暂无</p>';
+    else {
+      h += '<div class="space-y-2">';
+      data.auto.forEach(function(item) {
+        h += '<div class="border border-slate-200 rounded-xl p-3"><div class="flex items-center gap-2 mb-1"><span class="text-xs px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600 font-mono">' + esc(item.rid) + '</span><span class="text-sm font-medium">' + esc(item.payload.title || '(无标题)') + '</span></div>';
+        h += '<div class="text-xs text-slate-500 mb-2">检测时间: ' + esc(item.detectedAt) + ' · 旧版本: ' + esc(item.oldVersion || '-') + ' · 新版本: ' + esc(item.newVersion || '-') + '</div>';
+        if (item.payload.description) h += '<details class="mb-2"><summary class="text-xs text-slate-400 cursor-pointer">查看 Steam 描述</summary><pre class="text-xs text-slate-600 mt-1 bg-slate-50 p-2 rounded max-h-40 overflow-auto">' + esc(item.payload.description.slice(0, 500)) + '</pre></details>';
+        h += '<div class="flex gap-2"><button class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100" onclick="approveAuto(' + item.id + ',\'' + esc(item.rid) + '\')">通过并应用到 staging</button><button class="text-xs px-2.5 py-1 rounded-lg bg-red-50 text-red-700 hover:bg-red-100" onclick="rejectPending(' + item.id + ')">拒绝</button></div></div>';
+      });
+      h += '</div>';
+    }
+    h += '</div>';
+
+    h += '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><h2 class="text-base font-semibold mb-3">人工提交<span class="text-xs text-slate-400 ml-2">' + data.manual.length + ' 条</span></h2>';
+    if (!data.manual.length) h += '<p class="text-sm text-slate-400">暂无</p>';
+    else {
+      h += '<div class="space-y-2">';
+      data.manual.forEach(function(item) {
+        h += '<div class="border border-slate-200 rounded-xl p-3"><div class="flex items-center gap-2 mb-1"><span class="text-xs px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 font-mono">' + esc(item.rid || '新模组') + '</span><span class="text-sm font-medium">' + esc(item.submitterName) + '</span></div>';
+        h += '<div class="text-xs text-slate-500 mb-1">新版本: ' + esc(item.newVersion || '-') + ' · 提交时间: ' + esc(item.detectedAt) + '</div>';
+        if (item.downloadUrl) h += '<div class="text-xs text-slate-500 mb-1 break-all">下载链接: <a href="' + esc(item.downloadUrl) + '" target="_blank" class="text-indigo-600 underline">' + esc(item.downloadUrl) + '</a></div>';
+        if (item.notes) h += '<div class="text-xs text-slate-600 bg-slate-50 p-2 rounded mb-2">' + esc(item.notes) + '</div>';
+        h += '<div class="flex gap-2"><button class="text-xs px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100" onclick="mergeSubmission(' + item.id + ',\'' + esc(item.rid || '') + '\')">合并到 staging</button><button class="text-xs px-2.5 py-1 rounded-lg bg-red-50 text-red-700 hover:bg-red-100" onclick="rejectSubmission(' + item.id + ')">拒绝</button></div></div>';
+      });
+      h += '</div>';
+    }
+    h += '</div>';
+    el.innerHTML = h;
+  } catch (e) {
+    el.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">' + esc(e.message) + '</div>';
+  }
+}
+
+window.approveAuto = async function(id, rid) {
+  var badge = prompt('输入要更新的 badge（留空则不更新 badge，仅追加下载链接）：', '');
+  if (badge === null) return;
+  try {
+    await api('/api/admin/pending/' + id + '/approve', {
+      method: 'POST',
+      body: {
+        applyFields: {
+          badge: badge || undefined,
+          downloadLink: { category: 'alternative', text: 'Steam 创意工坊更新' }
+        }
+      }
+    });
+    showToast('已应用到 staging');
+    loadPending();
+  } catch (e) { showToast(e.message, true); }
+};
+
+window.rejectPending = async function(id) {
+  if (!confirm('确认拒绝该条更新？')) return;
+  try {
+    await api('/api/admin/pending/' + id + '/reject', { method: 'POST' });
+    showToast('已拒绝');
+    loadPending();
+  } catch (e) { showToast(e.message, true); }
+};
+
+window.mergeSubmission = async function(id, rid) {
+  if (!rid) { showToast('新模组请在模组列表中手动新增', true); return; }
+  var version = prompt('版本号（如 v1.2.3）：', '');
+  if (version === null) return;
+  var category = prompt('分类（latest / testBranch / alternative / history）：', 'testBranch');
+  if (!category) return;
+  try {
+    await api('/api/admin/submissions/' + id + '/merge', {
+      method: 'POST',
+      body: { downloadLink: { version: version, category: category } }
+    });
+    showToast('已合并到 staging');
+    loadPending();
+  } catch (e) { showToast(e.message, true); }
+};
+
+window.rejectSubmission = async function(id) {
+  if (!confirm('确认拒绝该提交？')) return;
+  try {
+    await api('/api/admin/submissions/' + id + '/reject', { method: 'POST' });
+    showToast('已拒绝');
+    loadPending();
+  } catch (e) { showToast(e.message, true); }
+};
+
+// ---- 模组列表 ----
+var modsPage = 1;
+async function loadMods(page) {
+  modsPage = page || 1;
+  var el = document.getElementById('tab-mods');
+  el.innerHTML = '<div class="flex gap-2 mb-3"><input id="modsSearch" class="flex-1 px-3 py-2 rounded-lg border border-slate-200 text-sm" placeholder="搜索 rid / 标题 / 作者 / 标签..."><button id="modsSearchBtn" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm">搜索</button><button id="modsCreateBtn" class="px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm">新增</button></div><div id="modsList" class="text-sm text-slate-400">加载中...</div>';
+  document.getElementById('modsSearchBtn').addEventListener('click', function() { loadMods(1); });
+  document.getElementById('modsSearch').addEventListener('keypress', function(e) { if (e.key === 'Enter') loadMods(1); });
+  document.getElementById('modsCreateBtn').addEventListener('click', function() { openModEditor(null); });
+  await fetchMods();
+}
+
+async function fetchMods() {
+  var q = (document.getElementById('modsSearch') || {}).value || '';
+  var listEl = document.getElementById('modsList');
+  try {
+    var data = await api('/api/admin/mods?q=' + encodeURIComponent(q) + '&page=' + modsPage + '&pageSize=20');
+    var h = '<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden"><table class="w-full text-sm"><thead class="bg-slate-50 text-xs text-slate-500"><tr><th class="text-left p-3">RID</th><th class="text-left p-3">标题</th><th class="text-left p-3">Badge</th><th class="text-left p-3">日期</th><th class="text-left p-3">操作</th></tr></thead><tbody>';
+    data.list.forEach(function(m) {
+      h += '<tr class="border-t border-slate-100"><td class="p-3 font-mono text-xs">' + esc(m.rid) + '</td><td class="p-3">' + esc(m.title) + '</td><td class="p-3"><span class="text-xs px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600">' + esc(m.badge || '-') + '</span></td><td class="p-3 text-xs text-slate-500">' + esc(m.date || '-') + '</td><td class="p-3"><button class="text-xs text-indigo-600 hover:underline" onclick="openModEditor(\'' + esc(m.rid) + '\')">编辑</button> <button class="text-xs text-red-600 hover:underline ml-2" onclick="deleteMod(\'' + esc(m.rid) + '\')">删除</button></td></tr>';
+    });
+    h += '</tbody></table></div>';
+    h += '<div class="flex items-center justify-between mt-3 text-xs text-slate-500"><span>共 ' + data.total + ' 条 · 第 ' + data.page + '/' + Math.ceil(data.total / data.pageSize) + ' 页</span><div class="flex gap-2"><button class="px-3 py-1 rounded border border-slate-200" onclick="loadMods(' + (modsPage - 1) + ')" ' + (modsPage <= 1 ? 'disabled' : '') + '>上一页</button><button class="px-3 py-1 rounded border border-slate-200" onclick="loadMods(' + (modsPage + 1) + ')" ' + (modsPage * data.pageSize >= data.total ? 'disabled' : '') + '>下一页</button></div></div>';
+    listEl.innerHTML = h;
+  } catch (e) {
+    listEl.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">' + esc(e.message) + '</div>';
+  }
+}
+
+window.openModEditor = async function(rid) {
+  var mod = null;
+  if (rid) {
+    try {
+      var data = await api('/api/admin/mods/' + encodeURIComponent(rid));
+      mod = data.mod;
+    } catch (e) { showToast(e.message, true); return; }
+  } else {
+    mod = { rid: '', title: '', badge: '', size: '', date: new Date().toISOString().slice(0, 10), tags: [], description: '', author: '', downloadLinks: [], previewImages: [], coverImage: '' };
+  }
+  var el = document.getElementById('tab-mods');
+  var h = '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><div class="flex items-center justify-between mb-4"><h2 class="text-base font-semibold">' + (rid ? '编辑模组 ' + esc(rid) : '新增模组') + '</h2><button class="text-sm text-slate-500 hover:text-slate-700" onclick="loadMods(' + modsPage + ')">← 返回列表</button></div>';
+  h += '<textarea id="modEditor" class="w-full h-96 px-3 py-2 rounded-lg border border-slate-200 text-xs font-mono">' + esc(JSON.stringify(mod, null, 2)) + '</textarea>';
+  h += '<div class="flex gap-2 mt-3"><button class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm" onclick="saveMod(' + (rid ? 'true' : 'false') + ')">保存到 staging</button><button class="px-4 py-2 rounded-lg border border-slate-200 text-sm" onclick="loadMods(' + modsPage + ')">取消</button></div>';
+  h += '<p class="text-xs text-slate-400 mt-2">提示：直接编辑 JSON。保存后立即生效于 test.axxxx.cyou，不影响生产站。</p>';
+  h += '</div>';
+  el.innerHTML = h;
+};
+
+window.saveMod = async function(isUpdate) {
+  var text = document.getElementById('modEditor').value;
+  var mod;
+  try { mod = JSON.parse(text); } catch (e) { showToast('JSON 格式错误: ' + e.message, true); return; }
+  try {
+    if (isUpdate) {
+      await api('/api/admin/mods/' + encodeURIComponent(mod.rid), { method: 'PUT', body: { mod: mod } });
+    } else {
+      await api('/api/admin/mods', { method: 'POST', body: { mod: mod } });
+    }
+    showToast('已保存到 staging');
+    loadMods(modsPage);
+  } catch (e) { showToast(e.message, true); }
+};
+
+window.deleteMod = async function(rid) {
+  if (!confirm('确认从 staging 删除模组 ' + rid + '？（不影响生产）')) return;
+  try {
+    await api('/api/admin/mods/' + encodeURIComponent(rid), { method: 'DELETE' });
+    showToast('已删除');
+    loadMods(modsPage);
+  } catch (e) { showToast(e.message, true); }
+};
+
+// ---- 差异预览 ----
+async function loadDiff() {
+  var el = document.getElementById('tab-diff');
+  el.innerHTML = '<p class="text-sm text-slate-400">加载中...</p>';
+  try {
+    var data = await api('/api/admin/diff');
+    var s = data.summary;
+    var h = '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm mb-4"><div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center"><div class="p-3 rounded-lg bg-slate-50"><div class="text-2xl font-bold text-slate-700">' + s.stagingTotal + '</div><div class="text-xs text-slate-500">staging 总数</div></div><div class="p-3 rounded-lg bg-slate-50"><div class="text-2xl font-bold text-slate-700">' + s.prodTotal + '</div><div class="text-xs text-slate-500">prod 总数</div></div><div class="p-3 rounded-lg bg-emerald-50"><div class="text-2xl font-bold text-emerald-600">+' + s.added + '</div><div class="text-xs text-emerald-700">新增</div></div><div class="p-3 rounded-lg bg-amber-50"><div class="text-2xl font-bold text-amber-600">~' + s.modified + '</div><div class="text-xs text-amber-700">修改</div></div><div class="p-3 rounded-lg bg-red-50"><div class="text-2xl font-bold text-red-600">-' + s.removed + '</div><div class="text-xs text-red-700">删除</div></div></div></div>';
+
+    if (data.added.length) {
+      h += '<div class="bg-white rounded-2xl border border-emerald-200 p-4 mb-3"><h3 class="text-sm font-semibold text-emerald-700 mb-2">新增（' + data.added.length + '）</h3><div class="space-y-1">' + data.added.map(function(m) { return '<div class="text-xs"><span class="font-mono text-slate-500">' + esc(m.rid) + '</span> ' + esc(m.title) + ' <span class="text-slate-400">' + esc(m.badge || '') + '</span></div>'; }).join('') + '</div></div>';
+    }
+    if (data.modified.length) {
+      h += '<div class="bg-white rounded-2xl border border-amber-200 p-4 mb-3"><h3 class="text-sm font-semibold text-amber-700 mb-2">修改（' + data.modified.length + '）</h3><div class="space-y-2">' + data.modified.map(function(m) { return '<div class="text-xs"><span class="font-mono text-slate-500">' + esc(m.rid) + '</span> ' + esc(m.title) + '<div class="ml-4 text-slate-500">旧: ' + esc(JSON.stringify(m.old)) + '</div><div class="ml-4 text-emerald-700">新: ' + esc(JSON.stringify(m.new)) + '</div></div>'; }).join('') + '</div></div>';
+    }
+    if (data.removed.length) {
+      h += '<div class="bg-white rounded-2xl border border-red-200 p-4 mb-3"><h3 class="text-sm font-semibold text-red-700 mb-2">删除（' + data.removed.length + '）</h3><div class="space-y-1">' + data.removed.map(function(m) { return '<div class="text-xs"><span class="font-mono text-slate-500">' + esc(m.rid) + '</span> ' + esc(m.title) + ' <span class="text-slate-400">' + esc(m.badge || '') + '</span></div>'; }).join('') + '</div></div>';
+    }
+    if (!data.added.length && !data.modified.length && !data.removed.length) {
+      h += '<div class="bg-white rounded-2xl border border-slate-200 p-6 text-center text-sm text-slate-400">staging 与 prod 完全一致，无差异</div>';
+    }
+    el.innerHTML = h;
+  } catch (e) {
+    el.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">' + esc(e.message) + '</div>';
+  }
+}
+
+// ---- 迁移到生产 ----
+async function loadPromote() {
+  var el = document.getElementById('tab-promote');
+  el.innerHTML = '<p class="text-sm text-slate-400">加载预览中...</p>';
+  try {
+    var data = await api('/api/admin/promote', { method: 'POST', body: { confirm: false } });
+    var s = data.diff.summary;
+    var h = '<div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4 text-sm text-amber-800"><strong>⚠️ 迁移到生产将：</strong>把 staging 全量数据通过 GitHub commit 覆盖 <code>' + esc(data.pendingCommit.path) + '</code>，触发 Cloudflare Pages 重建生产站 <code>axxxx.cyou</code>。</div>';
+    h += '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm mb-4"><h3 class="text-sm font-semibold mb-3">即将提交的 commit</h3><div class="text-xs space-y-1 font-mono text-slate-600"><div>repo: ' + esc(data.pendingCommit.repo) + '</div><div>branch: ' + esc(data.pendingCommit.branch) + '</div><div>message: ' + esc(data.pendingCommit.message) + '</div></div></div>';
+    h += '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm mb-4"><h3 class="text-sm font-semibold mb-3">变更摘要</h3><div class="text-sm text-slate-600">新增 +' + s.added + ' · 修改 ~' + s.modified + ' · 删除 -' + s.removed + ' · staging 总数 ' + s.stagingTotal + '</div></div>';
+    h += '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><label class="block text-sm font-medium mb-2">确认词：请输入 <code class="bg-slate-100 px-1.5 py-0.5 rounded">MIGRATE</code></label><input id="confirmPhrase" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm font-mono" placeholder="MIGRATE"><button id="doPromoteBtn" class="mt-3 px-5 py-2.5 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-700">确认迁移到生产</button><p class="text-xs text-slate-400 mt-2">迁移后 mods_prod 会自动同步为 staging 的副本，Cloudflare Pages 约 30 秒后完成重建。</p></div>';
+    el.innerHTML = h;
+    document.getElementById('doPromoteBtn').addEventListener('click', doPromote);
+  } catch (e) {
+    el.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">' + esc(e.message) + '</div>';
+  }
+}
+
+async function doPromote() {
+  var phrase = document.getElementById('confirmPhrase').value.trim();
+  if (phrase !== 'MIGRATE') { showToast('确认词错误，请输入 MIGRATE', true); return; }
+  if (!confirm('最终确认：将 staging 迁移到生产（覆盖 axxxx.cyou 的模组数据）？')) return;
+  var btn = document.getElementById('doPromoteBtn');
+  btn.disabled = true; btn.textContent = '迁移中...';
+  try {
+    var data = await api('/api/admin/promote', { method: 'POST', body: { confirm: true, confirmPhrase: phrase } });
+    showToast('迁移成功！commit: ' + (data.commitSha || '').slice(0, 7));
+    loadPromote();
+  } catch (e) {
+    showToast(e.message, true);
+    btn.disabled = false; btn.textContent = '确认迁移到生产';
+  }
+}
+
+// ---- 来源管理 ----
+async function loadSources() {
+  var el = document.getElementById('tab-sources');
+  el.innerHTML = '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm mb-4"><h3 class="text-sm font-semibold mb-3">添加来源</h3><div class="grid grid-cols-1 sm:grid-cols-4 gap-2"><input id="srcRid" class="px-3 py-2 rounded-lg border border-slate-200 text-sm" placeholder="RID"><select id="srcType" class="px-3 py-2 rounded-lg border border-slate-200 text-sm"><option value="steam">steam</option><option value="github">github</option><option value="zoho">zoho</option><option value="manual">manual</option></select><input id="srcUrl" class="sm:col-span-2 px-3 py-2 rounded-lg border border-slate-200 text-sm" placeholder="来源 URL（如 https://steamcommunity.com/sharedfiles/filedetails/?id=XXX）"></div><button id="addSrcBtn" class="mt-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm">添加</button></div><div id="srcList" class="text-sm text-slate-400">加载中...</div>';
+  document.getElementById('addSrcBtn').addEventListener('click', addSource);
+  await fetchSources();
+}
+
+async function fetchSources() {
+  var listEl = document.getElementById('srcList');
+  try {
+    var data = await api('/api/admin/sources');
+    var h = '<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden"><table class="w-full text-sm"><thead class="bg-slate-50 text-xs text-slate-500"><tr><th class="text-left p-3">ID</th><th class="text-left p-3">RID</th><th class="text-left p-3">类型</th><th class="text-left p-3">来源 ID</th><th class="text-left p-3">URL</th><th class="text-left p-3">最后检查</th><th class="text-left p-3">操作</th></tr></thead><tbody>';
+    data.list.forEach(function(s) {
+      h += '<tr class="border-t border-slate-100"><td class="p-3 text-xs">' + s.id + '</td><td class="p-3 font-mono text-xs">' + esc(s.rid) + '</td><td class="p-3"><span class="text-xs px-1.5 py-0.5 rounded bg-slate-100">' + esc(s.source_type) + '</span></td><td class="p-3 font-mono text-xs">' + esc(s.source_id || '-') + '</td><td class="p-3 text-xs max-w-xs truncate"><a href="' + esc(s.source_url) + '" target="_blank" class="text-indigo-600 hover:underline">' + esc(s.source_url) + '</a></td><td class="p-3 text-xs text-slate-500">' + esc(s.last_checked_at || '-') + '</td><td class="p-3"><button class="text-xs text-red-600 hover:underline" onclick="deleteSource(' + s.id + ')">删除</button></td></tr>';
+    });
+    h += '</tbody></table></div>';
+    if (!data.list.length) h = '<div class="bg-white rounded-2xl border border-slate-200 p-6 text-center text-sm text-slate-400">暂无来源。添加 Steam 创意工坊 URL 后将自动每 6 小时轮询。</div>';
+    listEl.innerHTML = h;
+  } catch (e) {
+    listEl.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">' + esc(e.message) + '</div>';
+  }
+}
+
+async function addSource() {
+  var rid = document.getElementById('srcRid').value.trim();
+  var type = document.getElementById('srcType').value;
+  var url = document.getElementById('srcUrl').value.trim();
+  if (!rid || !url) { showToast('RID 和 URL 必填', true); return; }
+  try {
+    await api('/api/admin/sources', { method: 'POST', body: { rid: rid, sourceType: type, sourceUrl: url } });
+    showToast('已添加');
+    document.getElementById('srcRid').value = '';
+    document.getElementById('srcUrl').value = '';
+    fetchSources();
+  } catch (e) { showToast(e.message, true); }
+}
+
+window.deleteSource = async function(id) {
+  if (!confirm('确认删除该来源？')) return;
+  try {
+    await api('/api/admin/sources/' + id, { method: 'DELETE' });
+    showToast('已删除');
+    fetchSources();
+  } catch (e) { showToast(e.message, true); }
+};
+
+// ---- 提交表单（公开）----
+function loadSubmitForm() {
+  var el = document.getElementById('tab-submit');
+  el.innerHTML = '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm max-w-xl"><h3 class="text-sm font-semibold mb-3">模组作者提交新版本（公开接口，无需登录）</h3><div class="space-y-3"><div><label class="block text-xs text-slate-500 mb-1">提交者名称 *</label><input id="subName" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm"></div><div><label class="block text-xs text-slate-500 mb-1">联系方式（B站/QQ/邮箱）</label><input id="subContact" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm"></div><div><label class="block text-xs text-slate-500 mb-1">对应模组 RID（可选，新模组留空）</label><input id="subRid" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm"></div><div><label class="block text-xs text-slate-500 mb-1">新版本号</label><input id="subVersion" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm"></div><div><label class="block text-xs text-slate-500 mb-1">下载链接</label><input id="subUrl" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm"></div><div><label class="block text-xs text-slate-500 mb-1">备注</label><textarea id="subNotes" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm" rows="3"></textarea></div><button id="doSubmitBtn" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm">提交（等待管理员审核）</button></div><p class="text-xs text-slate-400 mt-3">提示：这是公开接口 <code>POST /api/submit</code>，模组作者可在 QQ 群/B站引导用户填写。管理员在「待审核」页签处理。</p></div>';
+  document.getElementById('doSubmitBtn').addEventListener('click', doSubmit);
+}
+
+async function doSubmit() {
+  var body = {
+    rid: document.getElementById('subRid').value.trim(),
+    submitterName: document.getElementById('subName').value.trim(),
+    submitterContact: document.getElementById('subContact').value.trim(),
+    newVersion: document.getElementById('subVersion').value.trim(),
+    downloadUrl: document.getElementById('subUrl').value.trim(),
+    notes: document.getElementById('subNotes').value.trim()
+  };
+  try {
+    await api('/api/submit', { method: 'POST', body: body });
+    showToast('提交成功，等待管理员审核');
+    ['subName','subContact','subRid','subVersion','subUrl','subNotes'].forEach(function(id) { document.getElementById(id).value = ''; });
+  } catch (e) { showToast(e.message, true); }
+}
+
+// ---- 迁移历史 ----
+async function loadHistory() {
+  var el = document.getElementById('tab-history');
+  el.innerHTML = '<p class="text-sm text-slate-400">加载中...</p>';
+  try {
+    var data = await api('/api/admin/promotions');
+    var h = '<div class="bg-white rounded-2xl border border-slate-200 overflow-hidden"><table class="w-full text-sm"><thead class="bg-slate-50 text-xs text-slate-500"><tr><th class="text-left p-3">时间</th><th class="text-left p-3">操作者</th><th class="text-left p-3">Commit</th><th class="text-left p-3">模组数</th><th class="text-left p-3">摘要</th></tr></thead><tbody>';
+    data.list.forEach(function(p) {
+      h += '<tr class="border-t border-slate-100"><td class="p-3 text-xs">' + esc(p.promoted_at) + '</td><td class="p-3 text-xs">' + esc(p.by_user) + '</td><td class="p-3 font-mono text-xs">' + esc((p.commit_sha || '').slice(0, 7)) + '</td><td class="p-3 text-xs">' + p.mods_count + '</td><td class="p-3 text-xs text-slate-500">' + esc(p.snapshot_json) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    if (!data.list.length) h = '<div class="bg-white rounded-2xl border border-slate-200 p-6 text-center text-sm text-slate-400">暂无迁移记录</div>';
+    el.innerHTML = h;
+  } catch (e) {
+    el.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">' + esc(e.message) + '</div>';
+  }
+}
+
+// ---- Steam 轮询 ----
+function loadPoll() {
+  var el = document.getElementById('tab-poll');
+  el.innerHTML = '<div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><h3 class="text-sm font-semibold mb-2">Steam 创意工坊轮询</h3><p class="text-xs text-slate-500 mb-3">Cron Trigger 每 6 小时自动执行一次。也可手动触发：</p><button id="doPollBtn" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm">立即轮询</button><div id="pollResult" class="mt-3 text-xs text-slate-600"></div></div>';
+  document.getElementById('doPollBtn').addEventListener('click', doPoll);
+}
+
+async function doPoll() {
+  var btn = document.getElementById('doPollBtn');
+  var resultEl = document.getElementById('pollResult');
+  btn.disabled = true; btn.textContent = '轮询中...'; resultEl.textContent = '';
+  try {
+    var data = await api('/api/steam/poll', { method: 'POST' });
+    resultEl.innerHTML = '<pre class="bg-slate-50 p-3 rounded">' + esc(JSON.stringify(data, null, 2)) + '</pre>';
+    showToast('轮询完成');
+  } catch (e) {
+    resultEl.innerHTML = '<div class="text-red-600">' + esc(e.message) + '</div>';
+    showToast(e.message, true);
+  } finally {
+    btn.disabled = false; btn.textContent = '立即轮询';
+  }
+}
+
+// 默认加载第一个 tab
+document.querySelector('.tab-btn[data-tab="pending"]').click();
+</script>
+</body>
+</html>`;
+
+function route(method, path, handler) {
+  return { method, path, handler };
+}
+
+// 路径匹配：返回 params 或 null
+function matchPath(pattern, pathname) {
+  // pattern 如 /api/admin/mods/:rid，pathname 如 /api/admin/mods/123
+  const pp = pattern.split('/').filter(Boolean);
+  const pa = pathname.split('/').filter(Boolean);
+  if (pp.length !== pa.length) return null;
+  const params = {};
+  for (let i = 0; i < pp.length; i++) {
+    if (pp[i].startsWith(':')) {
+      params[pp[i].slice(1)] = decodeURIComponent(pa[i]);
+    } else if (pp[i] !== pa[i]) {
+      return null;
+    }
+  }
+  return params;
+}
+
+const ROUTES = [
+  // 公开
+  route('GET', '/api/mods', publicApi.mods),
+  route('GET', '/api/mods/:rid', publicApi.modByRid),
+  route('POST', '/api/submit', submission.submit),
+
+  // 管理员 - 待审核
+  route('GET', '/api/admin/pending', admin.pending),
+  route('POST', '/api/admin/pending/:id/approve', admin.approvePending),
+  route('POST', '/api/admin/pending/:id/reject', admin.rejectPending),
+
+  // 管理员 - 模组 CRUD
+  route('GET', '/api/admin/mods', admin.listMods),
+  route('POST', '/api/admin/mods', admin.createMod),
+  route('GET', '/api/admin/mods/:rid', admin.getMod),
+  route('PUT', '/api/admin/mods/:rid', admin.updateMod),
+  route('DELETE', '/api/admin/mods/:rid', admin.deleteMod),
+
+  // 管理员 - 模组来源
+  route('GET', '/api/admin/sources', admin.listSources),
+  route('POST', '/api/admin/sources', admin.addSource),
+  route('DELETE', '/api/admin/sources/:id', admin.deleteSource),
+
+  // 管理员 - 迁移
+  route('GET', '/api/admin/diff', promote.diff),
+  route('POST', '/api/admin/promote', promote.promote),
+  route('GET', '/api/admin/promotions', promote.promotions),
+  route('POST', '/api/admin/resync-prod', admin.resyncProd),
+
+  // 管理员 - 人工提交
+  route('GET', '/api/admin/submissions', submission.listSubmissions),
+  route('POST', '/api/admin/submissions/:id/merge', submission.mergeSubmission),
+  route('POST', '/api/admin/submissions/:id/reject', submission.rejectSubmission),
+
+  // 管理员 - 手动触发 Steam 轮询
+  route('POST', '/api/steam/poll', async (req, env) => {
+    await requireAdmin(req, env);
+    const result = await pollAll(env);
+    return json(result, {}, req);
+  }),
+
+  // 健康检查
+  route('GET', '/api/health', async (req, env) => {
+    return json({
+      ok: true,
+      service: 'sts2-modsync',
+      time: nowIso(),
+      hasDb: !!env.DB,
+      hasKv: !!env.MOD_CACHE,
+      hasGithubToken: !!env.GH_TOKEN,
+      githubRepo: env.GITHUB_REPO && !env.GITHUB_REPO.includes('<') ? env.GITHUB_REPO : null,
+    }, {}, req);
+  }),
+];
+
+export default {
+  async fetch(req, env, ctx) {
+    // 首次冷启动：幂等建表
+    if (env.DB) {
+      try { await ensureSchema(env); } catch (e) {
+        console.error('ensureSchema failed:', e);
+      }
+    }
+
+    const url = new URL(req.url);
+    const method = req.method;
+    const pathname = url.pathname;
+
+    // CORS 预检
+    if (method === 'OPTIONS') return handleOptions(req);
+
+    // 管理面板首页
+    if ((method === 'GET') && (pathname === '/' || pathname === '/admin' || pathname === '/admin/')) {
+      return new Response(ADMIN_HTML, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+    }
+
+    // 路由匹配
+    for (const r of ROUTES) {
+      if (r.method !== method) continue;
+      const params = matchPath(r.path, pathname);
+      if (params) {
+        try {
+          return await r.handler(req, env, params);
+        } catch (e) {
+          if (e instanceof HttpError) {
+            return err(e.status, e.message, req);
+          }
+          console.error('handler error:', r.method, r.path, e);
+          return err(500, '服务器内部错误: ' + (e.message || String(e)), req);
+        }
+      }
+    }
+
+    return err(404, `未找到路由 ${method} ${pathname}`, req);
+  },
+
+  // Cron Trigger：每 6 小时轮询 Steam 创意工坊
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil((async () => {
+      try {
+        if (env.DB) {
+          await ensureSchema(env);
+          const result = await pollAll(env);
+          console.log('Steam poll result:', JSON.stringify(result));
+        }
+      } catch (e) {
+        console.error('scheduled pollAll failed:', e);
+      }
+    })());
+  },
+};

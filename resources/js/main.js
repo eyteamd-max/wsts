@@ -316,6 +316,10 @@
         all: 'resources/json/post/sts2_mods/sts2_mods_1.json',
         skin: 'resources/json/post/O.o_interface/O.o_interface_1.json'
     };
+    // 测试环境（test.axxxx.cyou）从 sts2-modsync Worker 拉取 staging 数据
+    // 生产环境（axxxx.cyou / www.axxxx.cyou）仍用静态 JSON，不受 staging 影响
+    var MODSYNC_ENABLED = (window.location.hostname === 'test.axxxx.cyou') && !!window.MODSYNC_API;
+    var MODSYNC_API_BASE = window.MODSYNC_API || '';
     var dataCache = {};
     var currentMod = null;
     var currentCl = null;
@@ -1010,6 +1014,24 @@
             delete allSiteData[categoryKey];
         }
         var promise = (async function () {
+            // 测试环境：从 sts2-modsync Worker 拉 staging 数据（仅 all 分类）
+            if (MODSYNC_ENABLED && categoryKey === 'all') {
+                try {
+                    var apiUrl = MODSYNC_API_BASE + '/api/mods?env=staging&category=all';
+                    var controller = new AbortController();
+                    var timeoutId = setTimeout(function () { controller.abort(); }, 10000);
+                    var response = await fetch(apiUrl, { signal: controller.signal, cache: 'no-store' });
+                    clearTimeout(timeoutId);
+                    if (!response.ok) throw new Error('API ' + response.status);
+                    var apiData = await response.json();
+                    apiData = sortModsByTimeId(apiData);
+                    allSiteData[categoryKey] = apiData;
+                    return apiData;
+                } catch (error) {
+                    console.warn('[modsync] staging API 失败，回退到静态 JSON:', error.message);
+                    // 回退到静态 JSON（确保测试站不会因 API 故障完全无数据）
+                }
+            }
             var manifest = await loadManifest(categoryKey);
             var dirMap = {
                 all: 'sts2_mods',
