@@ -1,5 +1,67 @@
 [
   {
+    "id": "20260729133023521",
+    "rid": "84072544",
+    "title": "你画瓦猜 / 你画我猜",
+    "badge": "v0.7.43",
+    "size": "61.12MB",
+    "date": "2026-07-29",
+    "tags": [
+      "SFW",
+      "娱乐mod",
+      "画画",
+      "绘画",
+      "瓦库",
+      "鸡煲",
+      "青天零云",
+      "在线下载"
+    ],
+    "description": "**模组介绍：**\nhttp://shp.qpic.cn/collector/1976464052/686ef547-f41a-4e41-b00b-5033a9817d38/0\n\n**兼容测试：**\n\n版本 : 0.7.43\n支持 : 0.109.x\n前置 : RitsuLib 0.4.64\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.29 ]",
+    "author": "青天零云",
+    "authorLinks": [
+      {
+        "text": "B站|青天零云",
+        "url": "https://space.bilibili.com/283430131"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx3c6f4d1c77fd40bb9985db881ede841f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.7.43",
+        "size": "61.12MB",
+        "date": "2026-07-29"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx4a7dd6850bb44212aa9657867f383b95?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.64",
+        "size": "38.28MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3769077257",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/3932320806/28546140-145d-4aa3-808c-9e70df599eab/0",
+      "http://shp.qpic.cn/collector/3932320806/ee46fa7b-24ab-438d-84e7-58a92297c4a6/0",
+      "http://shp.qpic.cn/collector/3932320806/42c0858f-d749-4ca2-b20a-3dce0ad8ea7c/0",
+      "http://shp.qpic.cn/collector/3932320806/25ff1a89-7611-4ea7-8c9a-471ff6231eac/0",
+      "http://shp.qpic.cn/collector/3932320806/f9556eeb-c226-478a-b9f1-cfdfe8a7a2d3/0",
+      "http://shp.qpic.cn/collector/3932320806/a3f401ba-00d1-48c9-8da3-900066c6d820/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1D5Kh6REi6/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/3932320806/7cf9f457-1ef8-400a-9b14-e0b26c7a9389/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260725131415868",
     "rid": "09336868",
     "title": "尖塔之心 Heart of the Spire",
