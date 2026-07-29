@@ -1,5 +1,64 @@
 [
   {
+    "id": "20260729162905478",
+    "rid": "18665568",
+    "title": "碧蓝航线领航员TBmod Azurlane_TBMod",
+    "badge": "v0.1.0",
+    "size": "94.83MB",
+    "date": "2026-07-29",
+    "tags": [
+      "SFW",
+      "TB",
+      "碧蓝航线",
+      "新增角色",
+      "这辈子就是被酮了口牙\n",
+      "在线下载"
+    ],
+    "description": "TB 是一名围绕 心智积累、信息丧失、指令能力与仲裁机关 展开的数据型角色。她通过数据模拟、数据演算、数据侵入三条路线构筑战斗节奏，并在后期借助仲裁机关放大战果。熟练运用指令与状态联动后，TB 能不断修正局势，将敌人的行动转化为自己的胜机。\n\n**更加完整详细的介绍：**\nhttp://shp.qpic.cn/collector/1976464052/24684868-26b6-4019-bbce-a73a5778a4be/0\n\n**模组兼容性测试：**\n范围：仅支持v0.107.1\n适配：PC+安卓适配尚可\n前置需求：RitsuLib 0.4.66 ( 或更高 )",
+    "author": "这辈子就是被酮了口牙",
+    "authorLinks": [
+      {
+        "text": "B站|这辈子就是被酮了口牙",
+        "url": "https://space.bilibili.com/3546734913391039"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx54246005ab4a44189fd0f5c593b31db8?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxbef5ae2ec60a4afda66b8592fcdc548f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.66",
+        "size": "38.69MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3772033715",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a79081f4-bda5-4085-917c-13db6963b827/0",
+      "http://shp.qpic.cn/collector/1976464052/010b4b82-1d27-426d-afa5-0cb105bd3249/0",
+      "http://shp.qpic.cn/collector/1976464052/449103c3-1869-49ad-bb65-023fb63dd74d/0",
+      "http://shp.qpic.cn/collector/1976464052/e93b1d98-7939-4c67-928d-5b0a6447e371/0",
+      "http://shp.qpic.cn/collector/1976464052/5fd45cb4-4043-40ff-ba47-9639567cdb94/0",
+      "http://shp.qpic.cn/collector/1976464052/efe8d245-daa7-48ff-ae17-3b4d9f8f5b6a/0",
+      "http://shp.qpic.cn/collector/1976464052/ae9d8c9f-f3a7-489e-8405-ad437c6464d7/0",
+      "http://shp.qpic.cn/collector/1976464052/0d48b4a9-0180-4af0-93ab-46395c0e3589/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1nR376UEJc/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/196d061e-ff32-4328-a25a-a4155606e55b/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260729155006636",
     "rid": "30553738",
     "title": "鸡煲帮你画 / 你画瓦猜作弊器",
