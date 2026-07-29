@@ -1,5 +1,69 @@
 [
   {
+    "id": "20260729155006636",
+    "rid": "30553738",
+    "title": "鸡煲帮你画 / 你画瓦猜作弊器",
+    "badge": "v0.3.4",
+    "size": "129.25KB",
+    "date": "2026-07-29",
+    "tags": [
+      "SFW",
+      "娱乐mod",
+      "作弊器",
+      "辅助mod",
+      "画画",
+      "绘画",
+      "瓦库",
+      "鸡煲",
+      "WarZ0neLe9end",
+      "在线下载"
+    ],
+    "description": "这是 你画瓦猜 / Draw & Guess 的仅客户端绘画辅助Mod，因此需要你画瓦猜本体作为前置Mod。\n\n在绘画界面右上角增加“潦草急就”和“机器学习”两个按钮，点击按钮后选择一张卡即可让鸡煲帮你画图。\n\n**绘画模式：**\n潦草急就：用尽可能少的色块来还原画作，有时候会有很难绷的效果，建议提前在模组设置生成色块图（因为是Vibe Coding且没进行任何优化的算法，所以会很慢）\n机器学习：直接打印出你想要的卡原图，想要什么牌自己印。\nMod卡牌兼容性：选卡范围会跟随你画瓦猜Mod。\n\n**使用方法：**\n打出“你画瓦猜”的空白卡，或在事件中进入绘画界面。\n点击右上角的“潦草急就”或“机器学习”。\n搜索并选择一张可以绘制的卡牌。\n等待绘画完成，随后点确认即可。\n\n**联机说明：**\n本助手为仅客户端 Mod，可以和你没安装mod的朋友联机 ( 对可能发生的友尽、被踢等后果不负责 )",
+    "author": "WarZ0neLe9end",
+    "authorLinks": [
+      {
+        "text": "B站|WarZ0neLe9end",
+        "url": "https://space.bilibili.com/4325235"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx311949ac587d42c8a56273a756c48a46?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置你画瓦猜",
+        "url": "https://axxxx.cyou/?rid=84072544",
+        "category": "latest",
+        "version": "PS : 本体文件 (必装)"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxbef5ae2ec60a4afda66b8592fcdc548f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.66",
+        "size": "38.69MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773228646",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/69cd97c4-d8ba-40a9-84d2-dae95f86f529/0",
+      "http://shp.qpic.cn/collector/1976464052/09ffcdb1-37ed-4ef7-aad2-234a75c50352/0",
+      "http://shp.qpic.cn/collector/1976464052/57328bce-6125-481f-9e97-0d9f865b1285/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1D43i6SEjw/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/0ec3099d-4b18-43b5-b891-43d82a1d41b8/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260729145941631",
     "rid": "81136662",
     "title": "往昔之章 ( 将 塔一 移植到 塔二 )",
