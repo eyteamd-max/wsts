@@ -1,5 +1,74 @@
 [
   {
+    "id": "20260729145941631",
+    "rid": "81136662",
+    "title": "往昔之章 ( 将 塔一 移植到 塔二 )",
+    "badge": "v1.0.4",
+    "size": "106.29MB",
+    "date": "2026-07-29",
+    "tags": [
+      "SFW",
+      "玩法扩展",
+      "塔底",
+      "城市",
+      "深处",
+      "Cany",
+      "在线下载"
+    ],
+    "description": "模组移植了 杀戮尖塔 1 中的章节等内容，包括 Exordium、The City 和 The Beyond。这些章节通过 BaseLib 的 CustomActModel 添加到基础游戏的章节池中。模组还包含了第一代游戏中的所有事件，A Note For Yourself 除外。此外，部分敌人还获得了视觉上的优化！\n\nPS：你可以在主界面的“模组配置”选项中配置编辑“往昔之章”和“Act Toggler”的参数，这两个选项的预览可以看本帖预览图片后三张\n\n**兼容测试：**\n\n版本 : 1.0.4\n支持 : 0.109.x\n前置 : BaseLib 3.3.8 (模组依赖)\n补丁 : ActToggler 1.0.2 (章节编辑)\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.29 ]",
+    "author": "Cany",
+    "authorLinks": [
+      {
+        "text": "steam|Cany",
+        "url": "https://steamcommunity.com/profiles/76561199143917132/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.109.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxcbc264a39d1c420f9c5d1045b401591f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置ActToggler",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxfa74bda407ac4a9cbc17725342a9b115?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v1.0.2",
+        "size": "301.52KB"
+      },
+      {
+        "text": "前置BaseLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s532b42168fef4a3cb1b7b7308abe04c9?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v3.3.8",
+        "size": "1.09MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3746969593",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/73f9075a-9dc5-4fbf-b7a3-a78e66920f95/0",
+      "http://shp.qpic.cn/collector/1976464052/8d252acd-63de-4105-b2e2-265b1c19866f/0",
+      "http://shp.qpic.cn/collector/1976464052/91780e8c-ca35-456c-8f00-ee39ed5f680f/0",
+      "http://shp.qpic.cn/collector/1976464052/d806c1b3-f20d-4938-926f-7dd732e7e7dc/0",
+      "http://shp.qpic.cn/collector/1976464052/47b11a89-ecaa-4f7a-a567-cbbb7275b841/0",
+      "http://shp.qpic.cn/collector/1976464052/eb3849d6-20b1-4c14-9b24-2f455f162c83/0",
+      "http://shp.qpic.cn/collector/1976464052/ef641ddc-491e-490c-9b1b-c9ea6738de89/0",
+      "http://shp.qpic.cn/collector/1976464052/6ca19c28-7024-40ec-9d17-4bd65d35d8ac/0",
+      "http://shp.qpic.cn/collector/1976464052/cc12e419-8171-4471-bf93-0e90fcc8a17a/0",
+      "http://shp.qpic.cn/collector/1976464052/06394434-0a08-47e7-ae17-bc1048a4d142/0",
+      "http://shp.qpic.cn/collector/1976464052/e686da15-90e7-4ae3-a275-1bbe6f35af49/0",
+      "http://shp.qpic.cn/collector/1976464052/cd003bd7-863f-4081-ac65-df23d7a1323f/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/7e35bae6-fd92-443b-a606-177da924acca/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260729133023521",
     "rid": "84072544",
     "title": "你画瓦猜 / 你画我猜",
@@ -26,7 +95,7 @@
     ],
     "downloadLinks": [
       {
-        "text": "模组本体",
+        "text": "模组本体 - 0.109.x",
         "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx3c6f4d1c77fd40bb9985db881ede841f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
         "category": "latest",
         "version": "v0.7.43",
