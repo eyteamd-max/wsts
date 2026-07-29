@@ -1,5 +1,58 @@
 [
   {
+    "id": "20260729172501722",
+    "rid": "29008086",
+    "title": "Layla / 莱依拉 - 角色mod",
+    "badge": "v0.1.0",
+    "size": "32.77MB",
+    "date": "2026-07-29",
+    "tags": [
+      "SFW",
+      "Layla",
+      "莱依拉",
+      "新增角色"
+    ],
+    "description": "本 Mod 将《原神》中的莱依拉作为可操作角色加入《杀戮尖塔2》，带来一套围绕姿态管理、学术压力、晚星与星标构筑的卡牌体系。\n\n\n**兼容测试：**\n\n版本 : 0.1.0\n支持 : 0.109.x\n前置 : RitsuLib 0.4.66\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.29 ]",
+    "author": "呆呆兽",
+    "authorLinks": [
+      {
+        "text": "steam|呆呆兽",
+        "url": "https://steamcommunity.com/profiles/76561198140631361/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.109.x",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx2502ff0b7a2b4957b79581d1189d3c09?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxbef5ae2ec60a4afda66b8592fcdc548f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.66",
+        "size": "38.69MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773093986",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/11261b25-ea91-474e-9a20-8d5b1c12dceb/0",
+      "http://shp.qpic.cn/collector/1976464052/f3e774a3-d334-45c8-abcb-9aece8a24bd4/0",
+      "http://shp.qpic.cn/collector/1976464052/3853aef9-c69d-45d0-b0db-6f839c7159bb/0",
+      "http://shp.qpic.cn/collector/1976464052/59d9a865-54a9-4dd0-aff1-ddf4b2d3cf8c/0",
+      "http://shp.qpic.cn/collector/1976464052/300d8493-1c73-4511-ba87-6a1625fa3df6/0",
+      "http://shp.qpic.cn/collector/1976464052/a5fda1e6-a701-4c35-b1b5-02bea8aa28ba/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/e4d39e35-13ba-4f4a-8f5d-0c3cf097b9c7/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260729162905478",
     "rid": "18665568",
     "title": "碧蓝航线领航员TBmod Azurlane_TBMod",
