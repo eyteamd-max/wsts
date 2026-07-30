@@ -1,5 +1,52 @@
 [
   {
+    "id": "20260730203737270",
+    "rid": "03747157",
+    "title": "亡灵契约师 - 韩国骨手遮奶皮肤",
+    "badge": "v0.1.0",
+    "size": "61.22MB",
+    "date": "2026-07-30",
+    "tags": [
+      "SFW",
+      "亡灵契约师",
+      "骨妹",
+      "外观替换"
+    ],
+    "description": "这是一款二次元萌系风格的亡灵契约师皮肤MOD\n目前已对：角色选择界面、战斗、商店、休息处、角色头像、奥斯提(骨手)等资源进行了美术替换\n\n作者，X(Twitter)：\n美术：MaGnet (@AKWLSPT)\n动画：Aduare (@Aduare_rp)\n\nPS：模组原名为“Moe-Necrobinder”",
+    "author": "[动画] - Aduare [美术] - MaGnet",
+    "authorLinks": [
+      {
+        "text": "X|Aduare",
+        "url": "https://x.com/Aduare_rp"
+      },
+      {
+        "text": "X|MaGnet",
+        "url": "https://x.com/AKWLSPT"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "在线下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxa4feb5b7c5cf49988b14f451fb7125b3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773814239",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/a9bbbd4e-8de4-41e8-827b-443107b668da/0",
+      "http://shp.qpic.cn/collector/1976464052/6d5c2a97-6d2d-4e7d-849b-db6aa9589e4d/0",
+      "http://shp.qpic.cn/collector/1976464052/afb2b7e9-884e-46f7-b3dc-d178f4c3c211/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/357ef313-166c-4665-a6b9-29501482e297/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260730181327866",
     "rid": "04075350",
     "title": "[BlueArchive] 霞沢美游+第4章",
