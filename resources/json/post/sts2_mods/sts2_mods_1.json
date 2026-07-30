@@ -1,5 +1,59 @@
 [
   {
+    "id": "20260731004344923",
+    "rid": "21659382",
+    "title": "明日方舟 - 艾丽妮 角色MOD",
+    "badge": "v0.1.3",
+    "size": "37.71MB",
+    "date": "2026-07-30",
+    "tags": [
+      "SFW",
+      "艾丽妮",
+      "明日方舟",
+      "新增角色"
+    ],
+    "description": "新增了1个新角色：艾丽妮，以及她的91张卡牌（包含5张联机专属卡）、9件遗物、3种药水、2套皮肤，和1个公共的随机事件\n\n**角色机制：**\n灯火是艾丽妮的核心资源，艾丽妮的部分卡牌需要灯火才能打出，它们具有强大的效果和持续的收益。战斗结束时，剩余的灯火还能转化为生命。\n浮空可以让敌人的攻击伤害降低，并使艾丽妮的卡牌产生协同效果。\n迅捷剑术牌的攻击伤害同时受力量和敏捷修正，并无视敌人的格挡。\n\n**兼容测试：**\n\n版本 : 0.1.3\n支持 : 0.107.1~0.109.0\n前置 : RitsuLib 0.4.66\n系统 : Windows [通过]、安卓 [通过]\n测试人员：壹个屑猫猫 [ 2026-07.30 ]",
+    "author": "Ophidy",
+    "authorLinks": [
+      {
+        "text": "steam|Ophidy",
+        "url": "https://steamcommunity.com/id/EfleurOphidy/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 107~109",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxb1ed9a7e454d4f18b792eef53605fb09?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxbef5ae2ec60a4afda66b8592fcdc548f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.66",
+        "size": "38.69MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3773165357",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/85d86132-420c-4959-a2ab-c108374168e8/0",
+      "http://shp.qpic.cn/collector/1976464052/349d3ece-daa0-48e8-86a9-92a486e40322/0",
+      "http://shp.qpic.cn/collector/1976464052/31a1db4f-8921-4825-a561-f95e492ac82d/0",
+      "http://shp.qpic.cn/collector/1976464052/d8a4cea4-0627-4d2a-ac9b-c23eeedeb236/0",
+      "http://shp.qpic.cn/collector/1976464052/bea0ac25-b541-4405-aa07-8d3cfa809d54/0",
+      "http://shp.qpic.cn/collector/1976464052/591437f5-66a5-47e9-8a7f-1f7a6bf1a670/0",
+      "http://shp.qpic.cn/collector/1976464052/53cc3b97-8203-4f8f-8943-5400b98dfda8/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/788e111d-44cf-4b6a-9392-28fd5e7cd016/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260731002910789",
     "rid": "78429111",
     "title": "blacksouls2x杀戮尖塔2大型mod",
