@@ -1,5 +1,73 @@
 [
   {
+    "id": "20260730181327866",
+    "rid": "04075350",
+    "title": "[BlueArchive] 霞沢美游+第4章",
+    "badge": "v1.1.6",
+    "size": "170.91MB",
+    "date": "2026-07-30",
+    "tags": [
+      "SFW",
+      "霞沢美游",
+      "碧蓝档案"
+    ],
+    "description": "添加了 霞沢美游  新角色 与 第四章 钢铁大陆 (可自选) 。本mod提供，开关是否出现总力战Boss 角色选择界面Live2D，可以尝试摸头。第4层“钢铁大陆”：包含87张可获取卡牌、2张多人卡牌、3个药水、22个遗物、5个事件、1个先古之名、5个Boss\n\n\n**兼容测试：**\n\n版本 : 1.0.6.1\n支持 : 0.107.1\n前置 : RitsuLib 0.4.66 + ArchiveLibrary 1.1.6\n系统 : Windows [通过]、安卓 [通过]、其他[未知]",
+    "author": "潜入awa",
+    "authorLinks": [
+      {
+        "text": "B站|潜入awa",
+        "url": "https://space.bilibili.com/1552616472"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体 - 0.107.1",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxb8b2cca4feb3456ca51cdce84699ce78?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "前置ArchiveLibrary",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx283da6cc923e4a3496c46dbeacccb5cc?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "档案库 v1.1.6",
+        "size": "28.37MB"
+      },
+      {
+        "text": "前置RitsuLib",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxbef5ae2ec60a4afda66b8592fcdc548f?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "v0.4.66",
+        "size": "38.69MB"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3747819405",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/e041858a-a107-492e-8ec8-1593febf4735/0",
+      "http://shp.qpic.cn/collector/1976464052/204a15c7-ad7f-488d-918c-00c58aaaff57/0",
+      "http://shp.qpic.cn/collector/1976464052/fd6be58e-b13a-422f-acde-fee2568e749b/0",
+      "http://shp.qpic.cn/collector/1976464052/8bfc07df-e83e-4b39-834d-8df77b730b8d/0",
+      "http://shp.qpic.cn/collector/1976464052/d79f50e2-013c-45c7-ba06-82c90ca25454/0",
+      "http://shp.qpic.cn/collector/1976464052/765f45e1-8255-4e97-95be-a08b21f18e31/0",
+      "http://shp.qpic.cn/collector/1976464052/30467256-47fb-4289-bb8a-b27282be035f/0",
+      "http://shp.qpic.cn/collector/1976464052/e8db68ee-3d13-43c8-a42c-75a00dcb149f/0",
+      "http://shp.qpic.cn/collector/1976464052/b96a42fd-2a83-4a45-8a72-c91d62a45326/0",
+      "http://shp.qpic.cn/collector/1976464052/92625b83-72fd-4fc0-86d4-16f06824c458/0",
+      "http://shp.qpic.cn/collector/1976464052/f5a4078a-c28e-42a5-a0b6-11ba6730ab87/0",
+      "http://shp.qpic.cn/collector/1976464052/321cb324-8391-4980-b65d-773f3c8cf64c/0",
+      "http://shp.qpic.cn/collector/1976464052/de1494bc-dafe-4d83-9b85-4d76611bf57c/0",
+      "http://shp.qpic.cn/collector/1976464052/d3994ba4-4e09-460e-9a91-410d8654abe6/0",
+      "http://shp.qpic.cn/collector/1976464052/a03b7f5c-1cd2-4571-bd39-d5ae06a5ce26/0"
+    ],
+    "previewVideos": [],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/204a15c7-ad7f-488d-918c-00c58aaaff57/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260729172501722",
     "rid": "29008086",
     "title": "Layla / 莱依拉 - 角色mod",
@@ -1580,7 +1648,7 @@
       "在线下载",
       "夸克",
       "🌲🌲",
-      "🌸������"
+      "🌸🌸"
     ],
     "description": "NSFW警告！！ㅤ需解压密码：\n\n本模组包含成人内容、裸露场景及性相关题材，仅适合18岁以上用户浏览和使用。\n\n**使用须知：**\n- 本模组为第三方创作内容，与原版游戏官方无关\n- 安装前请务必备份您的游戏存档\n- 部分功能可能与其他模组存在冲突，建议单独测试\n- 请在私密环境下浏览相关内容，避免在公共场合展示\n\n**免责声明：**\n本模组仅供个人娱乐使用，严禁用于商业用途或非法传播。因使用本模组造成的任何账号封禁、存档损坏或其他问题，制作团队概不负责。\n\n**年龄确认：**\n继续浏览即表示您已年满18周岁，且自愿承担使用本模组可能带来的一切后果。如未达到法定年龄，请立即关闭本页面并卸载相关内容。\n\n**模组介绍：**\n基于🌲🌲的韩国鸡煲制作，增加了战损系统。在选人界面点击可切换露熊立绘，血量掉到不同阶段，会出现不同程度的衣物破损 ( 75%、50%、25% ) ，形态分别是：完整、露熊、战损、半裸 这四个形态。篝火处的图片也会随血量发生改变。",
     "author": "",
