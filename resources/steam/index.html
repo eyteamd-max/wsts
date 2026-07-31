@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STS2 创意工坊解析站</title>
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="img-src * data:;">
+  <style>
+    .loading-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: #faf7f4; z-index: 9999;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .loading-spinner-main {
+      width: 48px; height: 48px;
+      border: 4px solid #e2dbd0;
+      border-top-color: #e89b9b;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    .loading-text {
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-size: 1.1rem; color: #6b6378;
+      animation: loadingPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes loadingPulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <link rel="stylesheet" href="css/steam.css?v=20260731a">
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner-main"></div>
+    <p class="loading-text">正在连接 Steam 创意工坊...</p>
+  </div>
+
+  <div class="main-container" id="mainContent" style="opacity:0;transition:opacity .5s ease;">
+    <div class="mc">
+      <!-- 顶部导航 -->
+      <header class="hdr">
+        <div class="la">
+          <a href="../../index.html" class="back-btn" title="返回主页">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+          </a>
+          <div class="logo-text-wrap">
+            <span class="ln">STS2 工坊解析站</span>
+            <span class="ln-sub">Steam Workshop · 自动解析 · 秒速下载</span>
+          </div>
+        </div>
+        <div class="sw">
+          <div class="search-container">
+            <input type="text" class="si" id="searchInput" placeholder="输入模组 ID 或创意工坊链接...（多个用逗号分隔）" autocomplete="off">
+            <button class="parse-btn" id="parseBtn" title="解析">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>解析</span>
+            </button>
+          </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle" title="切换主题">
+          <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="themeIconMoon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </header>
+
+      <!-- 功能说明区 -->
+      <section class="info-bar">
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>秒速下载 · CDN 加速</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+          <span>支持批量解析</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>实时同步工坊数据</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>自动抓取封面与简介</span>
+        </div>
+      </section>
+
+      <!-- 解析结果区 -->
+      <div class="results-section" id="resultsSection">
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>输入模组 ID 开始解析</h3>
+          <p>支持单个 ID、批量 ID（逗号分隔）、或 Steam 工坊链接</p>
+          <div class="examples">
+            <button class="example-btn" data-example="3773165357">试试: 艾丽妮角色MOD</button>
+            <button class="example-btn" data-example="3749061519">试试: BS2大型MOD</button>
+            <button class="example-btn" data-example="3769077257">试试: 你画瓦猜</button>
+          </div>
+        </div>
+        <div class="results-grid" id="resultsGrid"></div>
+        <div class="loading-more" id="loadingMore" style="display:none;">
+          <div class="loading-spinner"></div>
+          <span>正在解析...</span>
+        </div>
+      </div>
+
+      <footer class="ft">
+        <p>STS2 创意工坊解析站 &copy; 2026 · 基于 Cloudflare Workers 构建</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- 模组详情弹窗 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- 图片预览 -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" alt="预览大图">
+  </div>
+
+  <!-- Toast 提示 -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Worker API 地址（部署后替换为实际域名，或留空使用相对路径）
+    window.STEAM_API_BASE = "https://steam.axxxx.cyou";
+  </script>
+  <script src="js/steam.js?v=20260731a" defer></script>
+</body>
+</html>
