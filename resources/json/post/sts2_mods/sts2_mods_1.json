@@ -1,5 +1,53 @@
 [
   {
+    "id": "20260731101653210",
+    "rid": "48992180",
+    "title": "更炫酷的特效 @KineticKinkajou",
+    "badge": "v0.3.1",
+    "size": "2.75MB",
+    "date": "2026-07-31",
+    "tags": [
+      "SFW",
+      "特效",
+      "视觉",
+      "娱乐mod",
+      "KineticKinkajou",
+      "在线下载"
+    ],
+    "description": "目前仅制作了故障机器人、铁甲战士、静默猎手、储君的特效，其他角色的特效需等待作者后续更新。模组适配范围交给大家测试了，目前仅确认0.109.0版本可正常使用，更高或更低版本的兼容性暂未测试。",
+    "author": "KineticKinkajou",
+    "authorLinks": [
+      {
+        "text": "steam|KineticKinkajou",
+        "url": "https://steamcommunity.com/id/2335380300/myworkshopfiles/"
+      }
+    ],
+    "downloadLinks": [
+      {
+        "text": "模组本体",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx02bcba5bbda647cd9b80cb80385a1d5b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest"
+      },
+      {
+        "text": "Steam创意工坊",
+        "url": "https://steamcommunity.com/id/2335380300/myworkshopfiles/",
+        "category": "alternative",
+        "version": "创意工坊 · 官方最新版"
+      }
+    ],
+    "previewImages": [
+      "http://shp.qpic.cn/collector/1976464052/93079dbc-b39d-4c68-b8d3-98c92257b713/0",
+      "http://shp.qpic.cn/collector/1976464052/eb2b8f74-ed9d-47f6-8bc2-0498b42ad88b/0",
+      "http://shp.qpic.cn/collector/1976464052/3e7f163a-fdad-4382-a9cd-98f8932d72ef/0",
+      "http://shp.qpic.cn/collector/1976464052/dc8c077f-1efe-4b46-99ad-dcc27114e50b/0"
+    ],
+    "previewVideos": [
+      "https://api.mir6.com/api/bzjiexi?url=https://www.bilibili.com/video/BV1to3x6JEn5/&type=mp4"
+    ],
+    "coverImage": "http://shp.qpic.cn/collector/1976464052/3e7f163a-fdad-4382-a9cd-98f8932d72ef/0",
+    "coverGradient": "linear-gradient(135deg,#f5f2f8,#ece7f3)"
+  },
+  {
     "id": "20260731100122419",
     "title": "蕾忍MOD-听说尖塔再次开放...[握握手]",
     "category": "skin",
