@@ -7,14 +7,21 @@
     "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe3548292205f482b9c94ccafe441a9c3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   },
   {
-    "version": "v0.109.0 - beta测试版",
+    "version": "v0.110.0 - beta测试版",
+    "date": "2026-08-01",
+    "size": "924.64MB",
+    "description": "特斯卡塔拉（稻草人）成为第二层“最美丽的女人”，重做其温暖手套（改为消耗手牌）并优化金币遗物数值；铁甲战士撕裂伤害大幅加强；静默猎手爆发、迷雾及侧步（原恐吓）迎来彻底重做，精心备战费用上调；储君创世之柱回退至无限触发模式，故障机器人火箭拳遭机制削弱，先古之民多张卡牌与遗物数值同步迭代或回调。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxa3401dcd7aa145c2974ef1dc83f136dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.109.0",
     "date": "2026-07-18",
     "size": "922MB",
     "description": "大规模卡牌平衡与新机制拓展补丁。针对玩家核心关注点，实装“放血变蓝”及“午夜伤害骤降33点（联机卡大削）”等重磅调整；多角色卡牌迎来大规模品阶洗牌与数值重做（如恶魔形态增力、触媒降蓝、计划妥当重做等）；遗物系统大换血，头冠新增首回合固定护甲，原初之爪与卓越斗篷等效果重做，沙漏与女王侍从Boss数值同步微调；新增“龙涎香”药水（半血回复+额外回合）及“探寻”衍生卡牌机制，并提升达弗遗物池中加费遗物的出现概率。",
     "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s2cbea0e5f14c43e3b3940b5b3c26e62b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   },
   {
-    "version": "v0.108.0 - beta测试版",
+    "version": "v0.108.0",
     "date": "2026-07-11",
     "size": "870.11MB",
     "description": "视觉表现与功能完善补丁。实装第三幕BOSS“永恒沙漏”的完整动态动画演出；为删卡、消耗及无源奥布等核心操作新增专属视觉特效；加入大量多人模式新卡牌，并修复充能球与再生药水触发顺序导致的意外死亡问题，同步优化模组适配与底层稳定性。",
