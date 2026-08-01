@@ -1,14 +1,58 @@
-{
-  "launcherIcon": "https://cdn.example.com/launcher-icon.png",
-  "gameIcon": "https://cdn.example.com/game-icon.png",
-  "tutorialUrl": "https://www.bilibili.com/video/BV1FuKq6WEF2",
-  "githubApiUrl": "https://api.github.com/repos/ModinMobileSTS/Sts2MobileLauncher/releases/latest",
-  "githubParsingUrl": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/ModinMobileSTS/Sts2MobileLauncher",
-  "fallbackLatest": {
-    "version": "v0.1.8",
+[
+  {
+    "version": "v0.107.1 - 当前正式版",
+    "date": "2026-06-20",
+    "size": "865.41MB",
+    "description": "底层修复与功能拓展补丁。彻底重写随机数生成器（采用xoshiro256算法）修复卡牌抽取概率偏差的公平性问题；重磅新增Steam创意工坊与怪物图鉴；移除Boss门扉，由永恒沙漏正式取代。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/6ur1pe3548292205f482b9c94ccafe441a9c3?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.110.0 - beta测试版",
     "date": "2026-08-01",
-    "size": "68.26MB",
-    "description": "新增《杀戮尖塔 2》v0.110.0 public-beta 独立完整兼容目标，并让共享的 v0.109.x 目标同时按原版 DLL 精确匹配 v0.109.0 与 v0.109.1；当前七个 active target 均继续内置。\n更新 v0.110.0 游戏本体导入与启动准备：支持新版 C# SentryBootstrap autoload 的等长禁用，并会重新检查旧 schema 1 PCK patch 记录，避免旧记录导致新版 payload 漏处理。\n改进兼容包管理与启动流程：schema 2 family 目标按包折叠分组；当前启动配置缺少包或 target 时，会先推荐精确匹配的完整兼容目标，仅在没有完整匹配时才提供离线兜底，且只有用户确认后才写回配置。\n将通用离线启动层升级为 probe v2：按已知 ModelDb.Init API 形状适配无参及默认空注入集合，保留显式注入原版路径，对未知语义 fail closed；真实 ModelDb two-phase 完成后才标记 ready，已知失败组合不再自动推荐。\n修复部分网络环境下 Steam 创意工坊区域 CDN 重定向、HTTP 代理优先级和超时策略问题，同时限制 depot auth token 只发送到受信任的 Steam 内容端点。\n修复普通 MOD 通过 Harmony PatchAll() 过早 patch STS2 UI 类型时可能提前触发静态构造并导致加载失败的问题；危险 UI target 延迟到 essential 初始化后按原 Harmony job 顺序重放，安全模型 target 仍立即应用。\n修复从 Steam Cloud 拉取的历史记录在 Android 上因 Steamworks 原生库不可用而显示空白的问题；历史页面身份查询现在可回落到 Android/null-platform 身份，不改写原历史文件。\n修复音量上键或游戏内快捷面板请求软键盘时输入法可能不显示的问题；现在复用 Godot 自带的 GodotEditText/输入管线，并转发输入设备实际产生的 F1–F12 按键事件。\n兼容性：\n\n内置完整兼容包支持 v0.103.2/v0.103.3、v0.106.1 beta、v0.107.0 beta、v0.107.1、v0.108.0、v0.109.0/v0.109.1 与 v0.110.0 public-beta。\nv0.110.0 修改了原版托管 API、联机协议、输入与存档/玩法接口；直接引用已删除成员的第三方 MOD 需要安装其 v0.110.0 适配版本，不能由 Android 兼容层自动补齐。\n导入版 APK 不包含游戏本体，公开 Release 只分发导入版。包含本地游戏 payload 的直装版仅用于本地或已授权测试。\n已知问题：\n\n本次按 pre-release 发布。v0.110.0 本身仍是 public-beta，发布候选已通过七目标编译、契约与打包校验，但尚未覆盖所有设备上的 v0.110.0 战斗、第三方 MOD、存档迁移和 PC↔Android LAN 实机组合；升级前请备份存档。\n通用离线启动层是未知版本的尽力诊断兜底，不代表未来版本兼容认证；优先使用与游戏版本/SHA 匹配的完整兼容包。\n当前 release APK 仍保留 debuggable 以便诊断，请勿向不受信任的电脑授予 ADB 调试权限。",
-    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx5a1d91f10fb24b2780efd241f21da3ad?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    "size": "924.64MB",
+    "description": "特斯卡塔拉（稻草人）成为第二层“最美丽的女人”，重做其温暖手套（改为消耗手牌）并优化金币遗物数值；铁甲战士撕裂伤害大幅加强；静默猎手爆发、迷雾及侧步（原恐吓）迎来彻底重做，精心备战费用上调；储君创世之柱回退至无限触发模式，故障机器人火箭拳遭机制削弱，先古之民多张卡牌与遗物数值同步迭代或回调。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bxa3401dcd7aa145c2974ef1dc83f136dd?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.109.0",
+    "date": "2026-07-18",
+    "size": "922MB",
+    "description": "大规模卡牌平衡与新机制拓展补丁。针对玩家核心关注点，实装“放血变蓝”及“午夜伤害骤降33点（联机卡大削）”等重磅调整；多角色卡牌迎来大规模品阶洗牌与数值重做（如恶魔形态增力、触媒降蓝、计划妥当重做等）；遗物系统大换血，头冠新增首回合固定护甲，原初之爪与卓越斗篷等效果重做，沙漏与女王侍从Boss数值同步微调；新增“龙涎香”药水（半血回复+额外回合）及“探寻”衍生卡牌机制，并提升达弗遗物池中加费遗物的出现概率。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s2cbea0e5f14c43e3b3940b5b3c26e62b?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.108.0",
+    "date": "2026-07-11",
+    "size": "870.11MB",
+    "description": "视觉表现与功能完善补丁。实装第三幕BOSS“永恒沙漏”的完整动态动画演出；为删卡、消耗及无源奥布等核心操作新增专属视觉特效；加入大量多人模式新卡牌，并修复充能球与再生药水触发顺序导致的意外死亡问题，同步优化模组适配与底层稳定性。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s74f77a76d6a1453eb6251fa7d752d9cc?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.103.2",
+    "date": "2026-06-05",
+    "size": "829.44MB",
+    "description": "首个大更新！重做进阶6（删卡变贵），数值锁上限并移除纪元遗物以强力限制无限流，Boss重做，新增徽章与恐惧症模式。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6b56a9c2329149028afac59056d22849?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.103.3",
+    "date": "2026-06-05",
+    "size": "829.44MB",
+    "description": "纯修Bug补丁（v0.103.2的修复版）。重点修复游戏崩溃、手柄交互、多人联机及遗物软锁问题，无新机制，纯粹提升稳定性。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz6ff2c90c0b7248249d818620ae68b451?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.106.1",
+    "date": "2026-06-05",
+    "size": "862.12MB",
+    "description": "新Boss修复。专为v0.106.0新增Boss永劫沙漏修Bug，修复其Wither卡牌在金字塔下异常保留、误强化及意图显示错误。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgza86aaebac7d941cf8067bb86a0fd48be?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+  },
+  {
+    "version": "v0.107.0",
+    "date": "2026-06-05",
+    "size": "865.39MB",
+    "description": "平衡与体验优化补丁。Boss永劫沙漏移除虚弱效果，一层精英怪加强；全面调整全角色卡牌与遗物数值（如战士Juggernaut加强、摄政王Reflect削弱）；优化UI交互并修复大量Bug，新增角色强化动画。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/05fgz43be7b3709f540b5be6ba344a6212b33?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   }
-}
+]
