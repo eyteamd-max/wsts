@@ -5,10 +5,10 @@
   "githubApiUrl": "https://api.github.com/repos/ModinMobileSTS/Sts2MobileLauncher/releases/latest",
   "githubParsingUrl": "https://axxxx.cyou/resources/github_parsing/?url=https://github.com/ModinMobileSTS/Sts2MobileLauncher",
   "fallbackLatest": {
-    "version": "v0.1.7",
-    "date": "2026-07-18",
-    "size": "68.01MB",
-    "description": "- v0.109.0 兼容 - 重做 Steam 登录恢复流程：手机确认开始后即可切到 Steam App，前台认证服务会继续轮询并在连接中断、Activity 重建或可恢复的进程重启后恢复短期事务，不再依赖小窗或额外的“已批准”按钮；密码与本次 Guard 动态码仍只驻留内存。 - 加速并增强 Steam 游戏本体下载：支持 1/2/4 个 chunk worker、受内存预算约束的并发流水线、已校验 chunk 断点续传、稳定任务目录、代理到源站回退、auth token 刷新以及向下取消当前网络请求。 - 修复多次前后台与焦点切换后触屏或蓝牙鼠标可能无法点击的问题，并重构高刷新率请求为绑定 Activity generation 与 Surface epoch 的单次投票和有界验证。 - 恢复游戏内动态渲染分辨率切换；渲染目标与逻辑 UI/输入坐标分离，切换分辨率、恢复 Auto、前后台和窗口变化时均会幂等重投，不再通过 Android Surface 重建改变触控映射。 - 改进资源生命周期：缓存淘汰时不再显式释放仍被节点、对象池或异步任务持有的 Godot Resource，同时保持原有预加载范围、时机、学习资源上限与 warm cache 保护。 - 本地 LAN 联机改回使用当前游戏版本原版消息类型排序、ID 与反序列化协议，以修复 PC 原版与 Android 之间的大厅和 heartbeat 协议不一致；参与联机的 Android 设备应一起升级。 - 修复 schema 2 family 兼容包在相同大小 DLL 的目标间切换时可能继续复用旧 DLL 的问题；启动准备现在按实际内容比较、复制后复核，并把已安装包 SHA 纳入缓存 stamp。",
-    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/dzw8s6ccd2e7ba3314096821ffc8257be9c85?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
+    "version": "v0.1.8",
+    "date": "2026-08-01",
+    "size": "68.26MB",
+    "description": "新增《杀戮尖塔 2》v0.110.0 public-beta 独立完整兼容目标，并让共享的 v0.109.x 目标同时按原版 DLL 精确匹配 v0.109.0 与 v0.109.1；当前七个 active target 均继续内置。\n更新 v0.110.0 游戏本体导入与启动准备：支持新版 C# SentryBootstrap autoload 的等长禁用，并会重新检查旧 schema 1 PCK patch 记录，避免旧记录导致新版 payload 漏处理。\n改进兼容包管理与启动流程：schema 2 family 目标按包折叠分组；当前启动配置缺少包或 target 时，会先推荐精确匹配的完整兼容目标，仅在没有完整匹配时才提供离线兜底，且只有用户确认后才写回配置。\n将通用离线启动层升级为 probe v2：按已知 ModelDb.Init API 形状适配无参及默认空注入集合，保留显式注入原版路径，对未知语义 fail closed；真实 ModelDb two-phase 完成后才标记 ready，已知失败组合不再自动推荐。\n修复部分网络环境下 Steam 创意工坊区域 CDN 重定向、HTTP 代理优先级和超时策略问题，同时限制 depot auth token 只发送到受信任的 Steam 内容端点。\n修复普通 MOD 通过 Harmony PatchAll() 过早 patch STS2 UI 类型时可能提前触发静态构造并导致加载失败的问题；危险 UI target 延迟到 essential 初始化后按原 Harmony job 顺序重放，安全模型 target 仍立即应用。\n修复从 Steam Cloud 拉取的历史记录在 Android 上因 Steamworks 原生库不可用而显示空白的问题；历史页面身份查询现在可回落到 Android/null-platform 身份，不改写原历史文件。\n修复音量上键或游戏内快捷面板请求软键盘时输入法可能不显示的问题；现在复用 Godot 自带的 GodotEditText/输入管线，并转发输入设备实际产生的 F1–F12 按键事件。\n兼容性：\n\n内置完整兼容包支持 v0.103.2/v0.103.3、v0.106.1 beta、v0.107.0 beta、v0.107.1、v0.108.0、v0.109.0/v0.109.1 与 v0.110.0 public-beta。\nv0.110.0 修改了原版托管 API、联机协议、输入与存档/玩法接口；直接引用已删除成员的第三方 MOD 需要安装其 v0.110.0 适配版本，不能由 Android 兼容层自动补齐。\n导入版 APK 不包含游戏本体，公开 Release 只分发导入版。包含本地游戏 payload 的直装版仅用于本地或已授权测试。\n已知问题：\n\n本次按 pre-release 发布。v0.110.0 本身仍是 public-beta，发布候选已通过七目标编译、契约与打包校验，但尚未覆盖所有设备上的 v0.110.0 战斗、第三方 MOD、存档迁移和 PC↔Android LAN 实机组合；升级前请备份存档。\n通用离线启动层是未知版本的尽力诊断兜底，不代表未来版本兼容认证；优先使用与游戏版本/SHA 匹配的完整兼容包。\n当前 release APK 仍保留 debuggable 以便诊断，请勿向不受信任的电脑授予 ADB 调试权限。",
+    "downloadUrl": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx5a1d91f10fb24b2780efd241f21da3ad?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D"
   }
 }
