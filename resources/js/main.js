@@ -1325,6 +1325,22 @@
     }
 
     function renderModCards(dataArray) {
+        // 防御性日志：记录字段缺失/非字符串的帖子，便于排查渲染异常
+        dataArray.forEach(function (mod, idx) {
+            ['id', 'title', 'category', 'size', 'date', 'coverGradient', 'badge'].forEach(function (field) {
+                var val = mod[field];
+                if (val === undefined || val === null) {
+                    console.warn('[renderModCards] 帖子字段缺失', { index: idx, field: field, id: mod.id, title: mod.title });
+                }
+            });
+            if (mod.tags && Array.isArray(mod.tags)) {
+                mod.tags.forEach(function (tag, tidx) {
+                    if (typeof tag !== 'string') {
+                        console.warn('[renderModCards] 帖子标签非字符串', { id: mod.id, title: mod.title, tagIndex: tidx, tag: tag });
+                    }
+                });
+            }
+        });
         mG.innerHTML = '';
         if (dataArray.length === 0) {
             mG.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:50px;color:var(--tm)">没有找到相关MOD</div>';
