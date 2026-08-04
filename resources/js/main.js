@@ -1436,10 +1436,13 @@
                 }
             }
 
+            var cl = cLL(mod.downloadLinks);
+            var latestVersion = (cl.latest.main[0] && cl.latest.main[0].version) || '';
+            var versionHTML = latestVersion ? '<span class="md">·</span><span>v' + esc(latestVersion) + '</span>' : '';
             c.innerHTML = '<div class="cv" style="background:' + mod.coverGradient + '">' + ch + '</div>' +
                 '<div class="ci"><div class="tr"><span class="' + titleClass + '">' + titleHTML + '</span><span class="tv">' + esc(mod.badge) + '</span></div>' +
                 '<div class="tl">' + th + '</div>' +
-                '<div class="mt"><span>' + esc(mod.size) + '</span><span class="md">·</span><span>' + esc(mod.date) + '</span>' + matchHintHTML + '</div></div>';
+                '<div class="mt"><span>' + esc(mod.size) + '</span><span class="md">·</span><span>' + esc(mod.date) + '</span>' + versionHTML + matchHintHTML + '</div></div>';
             c.addEventListener('click', function () {
                 oM(mod);
             });
