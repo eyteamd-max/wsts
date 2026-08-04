@@ -1384,7 +1384,7 @@
                         return '<mark>' + esc(m) + '</mark>';
                     });
                 }
-                return '<span class="ti ' + t.toLowerCase() + '">' + tagHTML + '</span>';
+                return '<span class="ti ' + (t || '').toLowerCase() + '">' + tagHTML + '</span>';
             }).join('');
             if (ec > 0) th += '<span class="tm2">+' + ec + '</span>';
 
@@ -1529,7 +1529,7 @@
         if (mod.tags && mod.tags.length) {
             h += '<div class="mts">';
             mod.tags.forEach(function (t) {
-                h += '<span class="mtg ' + t.toLowerCase() + '">' + esc(t) + '</span>';
+                h += '<span class="mtg ' + (t || '').toLowerCase() + '">' + esc(t) + '</span>';
             });
             h += '</div>';
         }
