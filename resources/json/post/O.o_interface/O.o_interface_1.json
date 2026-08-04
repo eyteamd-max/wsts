@@ -90,5 +90,86 @@
     "previewImages": [],
     "previewVideos": [],
     "rid": "65995372"
+  },
+  {
+    "id": "WS_3775063334",
+    "title": "雌小鬼剑士——维尔薇娜",
+    "category": "skin",
+    "size": "315.9MB",
+    "date": "2026-08-04",
+    "coverImage": [
+      "https://images.steamusercontent.com/ugc/16960475731653135924/32FD7CEC4F126C461AB8CA2DA0E5FDCCDA2714E2/"
+    ],
+    "images": [],
+    "description": "添加一名拥有多套独特机制的新角色维尔薇娜。她擅长以灵巧身法戏弄对手，在敌人攻势中寻找破绽，并通过积累战斗兴致强化自身。卡牌围绕闪避、弱点打击、架势切换与对手意图展开，节奏鲜明且应变能力强。特色系统包括：闪避（区别于格挡的防御方式，可完全避开攻击但可能被强力攻击突破）、兴致（闪避与击破弱点提升兴致，增强攻击与闪避）、弱点打击（消耗敌人破绽触发追加效果）、挑衅与交涉（扰乱敌人行动并改变意图）、架势切换（基础卡牌转化为另一套效果）、仆从（召唤协助战斗并强化）、特殊状态互动、回想房（记录特殊演出）、专属遗物池与进化、发言系统（战斗各阶段发表符合性格的台词）。",
+    "author": "言刃文刀",
+    "authorLinks": [],
+    "tags": [
+      "SFW",
+      "增角色",
+      "职业",
+      "卡牌",
+      "遗物",
+      "机制修改",
+      "二次元",
+      "角色娘化"
+    ],
+    "downloadLinks": [
+      {
+        "text": "public 待同步",
+        "url": "#",
+        "category": "history",
+        "desc": "Zoho同步未完成，直链待补"
+      },
+      {
+        "text": "public 待同步",
+        "url": "#",
+        "category": "history",
+        "desc": "Zoho同步未完成，直链待补"
+      }
+    ],
+    "previewImages": [
+      "https://images.steamusercontent.com/ugc/15778915218797525671/24B3352A9DB6ECFFF40F174EF56BC7E531410368/",
+      "https://images.steamusercontent.com/ugc/15816454263279036598/90778D2A9634E6DD04272E96D77CA1B810339CC8/",
+      "https://images.steamusercontent.com/ugc/18046009234929823200/67240B1D83079B4558EF1EC51747F04D5E2728EB/"
+    ],
+    "previewVideos": [],
+    "rid": "3775063334"
+  },
+  {
+    "id": "WS_3747602295",
+    "title": "RitsuLib",
+    "category": "skin",
+    "size": "61.5MB",
+    "date": "2026-08-04",
+    "coverImage": [
+      "https://images.steamusercontent.com/ugc/12461122915507013322/CE21AEADC5DF137D18B3BF2A4C51D8A54E7FD9C5/"
+    ],
+    "images": [],
+    "description": "RitsuLib 是《杀戮尖塔 2》模组共享框架库，为模组作者和普通玩家提供大量 QoL 与工具组件。它本身不添加卡牌、遗物、敌人或平衡改动，而是提供运行时框架支持、兼容性辅助以及面向玩家的管理工具。玩家功能包括：游戏内模组设置中心（含界面主题、主菜单快捷入口、热键总览）、内容来源悬停提示（显示卡牌/遗物/药水等来源模组）、内容模组加载顺序工具（预览、排序、复制/恢复顺序）、Steam 创意工坊管理（搜索、订阅、查看更新）、更新检查（可选）、Steam 云同步模组数据、多人联机诊断（更清晰的加入失败与状态分歧报告）、以及基于浏览器的实时日志查看器。模组作者工具包括内容注册（模型、关键词、自定义卡牌堆、顶栏按钮、时间线、解锁、奖励、目标类型、次要资源等）。",
+    "author": "OLC",
+    "authorLinks": [],
+    "tags": [
+      "SFW",
+      "前置框架",
+      "功能mod",
+      "UI优化",
+      "工具类",
+      "联机增强",
+      "辅助类"
+    ],
+    "downloadLinks": [
+      {
+        "text": "正式版 0.5.5下载",
+        "url": "https://files.zohopublic.com.cn/public/workdrive-public/download/2u3bx202aa8f45edc4a478a36033785449148?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%2C%22isWDSupport%22%3Afalse%7D",
+        "category": "latest",
+        "version": "0.5.5",
+        "size": "61.5MB",
+        "date": "2026-08-04"
+      }
+    ],
+    "previewImages": [],
+    "previewVideos": [],
+    "rid": "3747602295"
   }
 ]
