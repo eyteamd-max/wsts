@@ -312,9 +312,10 @@
     var pO = document.getElementById('pO');
     var pB = document.getElementById('pB');
     var tT = document.getElementById('tT');
+    var _cacheBuster = '?v=' + Date.now();
     var dataSources = {
-        all: 'resources/json/post/sts2_mods/sts2_mods_1.json',
-        skin: 'resources/json/post/O.o_interface/O.o_interface_1.json'
+        all: 'resources/json/post/sts2_mods/sts2_mods_1.json' + _cacheBuster,
+        skin: 'resources/json/post/O.o_interface/O.o_interface_1.json' + _cacheBuster
     };
     var dataCache = {};
     var currentMod = null;
@@ -969,7 +970,7 @@
         };
         var dir = dirMap[categoryKey];
         if (!dir) return null;
-        var manifestUrl = 'resources/json/post/' + dir + '/manifest.json';
+        var manifestUrl = 'resources/json/post/' + dir + '/manifest.json?v=' + Date.now();
         try {
             var resp = await fetch(manifestUrl, { cache: 'no-store' });
             if (!resp.ok) return null;
@@ -988,7 +989,7 @@
         };
         var dir = dirMap[categoryKey];
         if (!dir) return [];
-        var url = 'resources/json/post/' + dir + '/' + dir + '_' + fileIndex + '.json';
+        var url = 'resources/json/post/' + dir + '/' + dir + '_' + fileIndex + '.json?v=' + Date.now();
         try {
             var controller = new AbortController();
             var timeoutId = setTimeout(function () { controller.abort(); }, 8000);
