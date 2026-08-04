@@ -836,7 +836,14 @@
     }
 
     function esc(s) {
-        return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        if (s === undefined || s === null) {
+            console.warn('[esc] 收到空值，已自动转为空字符串。调用栈：', new Error().stack);
+            s = '';
+        } else if (typeof s !== 'string') {
+            console.warn('[esc] 收到非字符串值，已自动转字符串：', s, '调用栈：', new Error().stack);
+            s = String(s);
+        }
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
     function gCS(m) {
